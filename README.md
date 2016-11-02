@@ -13,3 +13,6 @@ This plugin utilises the following extensions:
 ## Credits
 This plugin uses many code snippets from other plugins over the years. 
 Due to the time gap of the plugin being written (2014) and as of writing - Credit where credit is due, and I do not claim ownership over said code snippets.
+
+- Source game map jointly developed by Steveh, Mario6493 and Testinglol
+- Particles by Testinglol
