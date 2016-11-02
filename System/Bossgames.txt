@@ -1,0 +1,43 @@
+"Bossgames"
+{
+	"1"
+	{
+		"Enabled"		"1"
+		"Duration"		"53.0"
+		"BackgroundMusic"	"stsv/microtf2/bossgame/1.mp3"
+		"EntryPoint"		"Bossgame1_EntryPoint"
+		"Caption"		"ROCKET JUMP TO THE TOP!"
+	}
+	"2"
+	{
+		"Enabled"		"1"
+		"Duration"		"45.0"
+		"BackgroundMusic"	"stsv/microtf2/bossgame/2.mp3"
+		"EntryPoint"		"Bossgame2_EntryPoint"
+		"Caption"		"RACE THROUGH THE FACTORY!"
+	}
+	"3"
+	{
+		"Enabled"		"1"
+		"Duration"		"60.0"
+		"BackgroundMusic"	"stsv/microtf2/bossgame/3.mp3"
+		"EntryPoint"		"Bossgame3_EntryPoint"
+		"Caption"		"FIGHT YOUR OPPONENTS AND SURVIVE!"
+	}
+	"4"
+	{
+		"Enabled"		"1"
+		"Duration"		"60.0"
+		"BackgroundMusic"	"stsv/microtf2/bossgame/4.mp3"
+		"EntryPoint"		"Bossgame4_EntryPoint"
+		"Caption"		"DON'T FALL INTO THE WATER!"
+	}
+	"5"
+	{
+		"Enabled"		"1"
+		"Duration"		"120.0"
+		"BackgroundMusic"	"stsv/microtf2/bossgame/5.mp3"
+		"EntryPoint"		"Bossgame5_EntryPoint"
+		"Caption"		"GET TO THE END!"
+	}
+}

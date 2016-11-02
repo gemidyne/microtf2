@@ -1,0 +1,187 @@
+"Minigames"
+{
+	"1"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/1.mp3"
+		"Caption"		"GET TO THE END!"
+		"EntryPoint"		"Minigame1_EntryPoint"
+	}
+	"2"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/2.mp3"
+		"Caption"		"KILL AN ENEMY!"
+		"EntryPoint"		"Minigame2_EntryPoint"
+	}
+	"3"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/3.mp3"
+		"Caption"		"BREAK THE BARRELS!"
+		"EntryPoint"		"Minigame3_EntryPoint"
+	}
+	"4"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/4.mp3"
+		"Caption"		"AIRBLAST AND STAY ALIVE!"
+		"EntryPoint"		"Minigame4_EntryPoint"
+	}
+	"5"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"Caption"		"STICKY JUMP!"
+		"EntryPoint"		"Minigame5_EntryPoint"
+	}
+	"6"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/6.mp3"
+		"Caption"		"SAY THE WORD!"
+		"CaptionIsDynamic"	"1"
+		"EntryPoint"		"Minigame6_EntryPoint"
+		"DynamicCaptionMethod"	"Minigame6_GetDynamicCaption"
+	}
+	"7"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/7.mp3"
+		"Caption"		"ROCKET JUMP!"
+		"EntryPoint"		"Minigame7_EntryPoint"
+	}
+	"8"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/8.mp3"
+		"Caption"		"ANSWER THE QUESTION!"
+		"CaptionIsDynamic"	"1"
+		"EntryPoint"		"Minigame8_EntryPoint"
+		"DynamicCaptionMethod"	"Minigame8_GetDynamicCaption"
+	}
+	"9"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/9.mp3"
+		"CaptionIsDynamic"	"1"
+		"Caption"		"SIMON SAYS!" // This will be changed at runtime.
+		"DynamicCaptionMethod"	"Minigame9_GetDynamicCaption"
+		"EntryPoint"		"Minigame9_EntryPoint"
+	}
+	"10"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/10.mp3"
+		"CaptionIsDynamic"	"1"
+		"Caption"		"AVOID THE KAMIKAZE / KILL AS MANY AS YOU CAN!" // This will be changed at runtime
+		"DynamicCaptionMethod"	"Minigame10_GetDynamicCaption"
+		"EntryPoint"		"Minigame10_EntryPoint"
+	}
+	"11"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/11.mp3"
+		"CaptionIsDynamic"	"1"
+		"Caption"		"KEEP MOVING! / DON'T STOP MOVING!" // This will be changed.
+		"DynamicCaptionMethod"	"Minigame11_GetDynamicCaption"
+		"EntryPoint"		"Minigame11_EntryPoint"
+	}
+	"12"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/12.mp3"
+		"Caption"		"GET ON A PLATFORM!"
+		"EntryPoint"		"Minigame12_EntryPoint"
+	}
+	"13"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/15.mp3"
+		"Caption"		"SPYCRAB!"
+		"EntryPoint"		"Minigame13_EntryPoint"
+	}
+	"14"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/14.mp3"
+		"Caption"		"GET INTO THE WATER!"
+		"EntryPoint"		"Minigame14_EntryPoint"
+	}
+	"15"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/15.mp3"
+		"Caption"		"BUILD SOMETHING!" // This will be changed.
+		"CaptionIsDynamic"	"1"
+		"DynamicCaptionMethod"	"Minigame15_GetDynamicCaption"
+		"EntryPoint"		"Minigame15_EntryPoint"
+	}
+	"16"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/16.mp3"
+		"Caption"		"JARATE AN ENEMY!"
+		"EntryPoint"		"Minigame16_EntryPoint"
+	}
+	"17"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/17.mp3"
+		"CaptionIsDynamic"	"1"
+		"Caption"		"HIT A HEAVY / GET HIT BY A MEDIC!" // Changed at runtime
+		"DynamicCaptionMethod"	"Minigame17_GetDynamicCaption"
+		"EntryPoint"		"Minigame17_EntryPoint"
+	}
+	"18"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/18.mp3"
+		"Caption"		"HIT THE TARGET!"
+		"EntryPoint"		"Minigame18_EntryPoint"
+	}
+	"19"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/19.mp3"
+		"Caption"		"CHANGE CLASS!"
+		"EntryPoint"		"Minigame19_EntryPoint"
+	}
+	"20"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/20.mp3"
+		"CaptionIsDynamic"	"1"
+		"Caption"		"MUNCH / DRINK!" // Changed at runtime
+		"DynamicCaptionMethod"	"Minigame20_GetDynamicCaption"
+		"EntryPoint"		"Minigame20_EntryPoint"
+	}
+	"21"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/21.mp3"
+		"Caption"		"STUN AN ENEMY!"
+		"EntryPoint"		"Minigame21_EntryPoint"
+	}
+	"22"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/22.mp3"
+		"Caption"		"STAY ON THE GROUND!"
+		"EntryPoint"		"Minigame22_EntryPoint"
+	}
+	"23"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/23.mp3"
+		"Caption"		"DOUBLE JUMP!"
+		"EntryPoint"		"Minigame23_EntryPoint"
+	}
+	"24"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"Caption"		"NEEDLEJUMP!"
+		"EntryPoint"		"Minigame24_EntryPoint"
+	}
+}

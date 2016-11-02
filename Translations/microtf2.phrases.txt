@@ -1,0 +1,40 @@
+"Phrases"
+{
+	"PlayerSpawn_RespawnNotice"
+	{
+		"en"		"You will be respawned once the current minigame or boss has finished."
+	}
+
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"en"		"YOU HAVE BEEN KNOCKED OUT!"
+	}
+	"General_Loser"
+	{
+		"en"		"Loser!"
+	}
+	"General_Winner"
+	{
+		"en"		"Winner!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"en"		"== THE SPECIAL ROUND HAS FINISHED! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"en"		"The winner is..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"en"		"The winners are..."
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"en"		"There were no winners!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"en"		"Spycrabs must crouch and look up!"
+	}
+}
