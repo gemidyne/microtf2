@@ -1,0 +1,34 @@
+# Ignore compiled SM binaries
+*.smx
+
+# Ignore Hammer / VBSP / VVIS / VRAD generated files
+*.log
+*.prt
+*.vmx
+
+# Ignore Source cache files
+*.cache
+
+# Ignore Vegas files
+*.sfk
+*.veg.bak
+
+# NuGet Packages Directory
+[Pp]ackages/
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# User-specific files
+*.user
+*.suo
+*.sln.docstates
+
+# Ignore compressed files
+*.bz2
