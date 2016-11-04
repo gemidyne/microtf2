@@ -16,3 +16,5 @@ Due to the time gap of the plugin being written (2014) and as of writing - Credi
 
 - Source game map jointly developed by Steveh, Mario6493 and Testinglol
 - Particles by Testinglol
+- Textures by Mario6493 and Testinglol
+- Overlays by Steveh
