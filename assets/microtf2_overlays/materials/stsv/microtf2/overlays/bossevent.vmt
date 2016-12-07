@@ -1,0 +1,6 @@
+"Unlitgeneric"
+{
+	"$basetexture" "stsv/microtf2/overlays/bossevent"
+	"$translucent" 1
+	"%keywords" "microTF2"
+}

@@ -1,0 +1,107 @@
+"UnlitGeneric"
+{
+	"$basetexture" "effects/laserplane"
+	"$additive" "1"
+
+    "$noise_alpha" 0.0
+
+    "$opaque_distance" 192.0
+    "$fade_distance" 768.0
+    "$fade_min" 0.1
+    "$fade_scale" 0.9  // 1 - fade_min
+
+    "$tmp1" 0.0
+    "$tmp2" 0.0
+    "$tmp3" 0.0
+    "$tmp4" 0.0
+    "$tmp5" 0.0
+
+    "$player_distance" 0.0
+    "$near_alpha" 0.0
+    "$far_alpha" 0.0
+    "$distance_alpha" 0.0
+    "$final_distance_alpha" 0.0
+
+    "Proxies"
+    {
+        "UniformNoise"
+        {
+            "minVal" 0.75
+            "maxVal" 1.0
+            "resultVar" "$noise_alpha"
+        }
+
+        "PlayerProximity"
+        {
+            "scale" 1.0
+            "resultVar" "$player_distance" 
+        }
+        "Divide"
+        {
+            "srcVar1" "$player_distance"
+            "srcVar2" "$opaque_distance"
+            "resultVar" "$tmp1"
+        }
+        "Clamp"
+        {
+            "min" 0.0
+            "max" 1.0
+            "srcVar1" "$tmp1"
+            "resultVar" "$near_alpha"
+        }
+
+        "Subtract"
+        {
+            "srcVar1" "$fade_distance"
+            "srcVar2" "$player_distance"
+            "resultVar" "$tmp2"
+        }
+        "Subtract"
+        {
+            "srcVar1" "$fade_distance"
+            "srcVar2" "$opaque_distance"
+            "resultVar" "$tmp3"
+        }
+        "Divide"
+        {
+            "srcVar1" "$tmp2"
+            "srcVar2" "$tmp3"
+            "resultVar" "$tmp4"
+        }
+        "Clamp"
+        {
+            "min" 0.0
+            "max" 1.0
+            "srcVar1" "$tmp4"
+            "resultVar" "$far_alpha"
+        }
+        
+        "Multiply"
+        {
+            "srcVar1" "$near_alpha"
+            "srcVar2" "$far_alpha"
+            "resultVar" "$distance_alpha"
+        }
+
+        "Multiply"
+        {
+            "srcVar1" "$distance_alpha"
+            "srcVar2" "$fade_scale"
+            "resultVar" "$tmp5"
+        }
+        "Add"
+        {
+            "srcVar1" "$tmp5"
+            "srcVar2" "$fade_min"
+            "resultVar" "$final_distance_alpha"
+        }        
+        
+        "Multiply"
+        {
+            "srcVar1" "$noise_alpha"
+            "srcVar2" "$final_distance_alpha"
+            "resultVar" "$alpha"
+        }
+                
+    }
+}

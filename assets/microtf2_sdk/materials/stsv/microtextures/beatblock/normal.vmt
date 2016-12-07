@@ -1,0 +1,5 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "stsv/microtextures/beatblock/normal"
+	"$surfaceprop" "Concrete_Block"
+}

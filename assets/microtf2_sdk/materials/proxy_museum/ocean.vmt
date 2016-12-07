@@ -1,0 +1,202 @@
+"LightmappedGeneric"
+{
+    "$basetexture" "proxy_museum/foam"
+    "$additive" "1"
+
+    "$minus_one" -1.0
+    "$zero" 0
+    "$half" 0.5
+    "$quarter" 0.25
+    "$one" 1
+    "$two" 2
+    
+    // Variables
+    "$s" 0.0
+    "$ds" 0.0
+    "$sx" 0.0
+    "$s_plus_1" 0.0
+    "$s_minus_1" 0.0
+    "$ds_plus_2" 0.0
+    "$abs_sx" 0.0
+    "$s_is_positive" 0
+    "$s_is_negative" 0
+    "$ds_is_positive" 0
+    "$ds_is_negative" 0
+    "$translate" "[0 0]"
+
+    // Intermediate values
+    "$x_tmp1" 0.0
+    "$x_tmp2" 0.0
+    "$x_tmp3" 0.0
+    "$x_tmp4" 0.0
+    "$a_tmp1" 0.0
+    "$a_tmp2" 0.0
+    "$a_tmp3" 0.0
+    "$a_tmp4" 0.0
+
+    "Proxies"
+    {
+        // The sine wave and its derivative
+        "Sine"
+        {
+            "sinemin" -1
+            "sinemax" 1
+            "sineperiod" 8.0
+            "resultVar" "$s"
+        }
+        "Sine"
+        {
+            "sinemin" -1
+            "sinemax" 1
+            "sineperiod" 8.0
+            "resultVar" "$ds"
+            "timeoffset" 6.0
+        }
+        "Sine"
+        {
+            "sinemin" -1
+            "sinemax" 1
+            "sineperiod" 16.0
+            "resultVar" "$sx"
+            "timeoffset" 2.0
+        }
+
+        
+        // Derive s+1, s-1, s+2, abs_sx
+        "Add"
+        {
+            "srcVar1" "$s"
+            "srcVar2" "$one"
+            "resultVar" "$s_plus_1"
+        }
+        "Subtract"
+        {
+            "srcVar1" "$s"
+            "srcVar2" "$one"
+            "resultVar" "$s_minus_1"
+        }
+        "Add"
+        {
+            "srcVar1" "$ds"
+            "srcVar2" "$two"
+            "resultVar" "$ds_plus_2"
+        }
+        "Abs"
+        {
+            "srcVar1" "$sx"
+            "resultVar" "$abs_sx"
+        }
+
+
+        // Derive variables for positive and negative quadrants
+        "LessOrEqual"
+        {
+            "LessEqualVar" "$zero"
+            "greaterVar" "$one"
+            "srcVar1" "$s"
+            "srcVar2" "$zero"
+            "resultVar" "$s_is_positive"            
+        }
+        "Subtract"
+        {
+            "srcVar1" "$one"
+            "srcVar2" "$s_is_positive"
+            "resultVar" "$s_is_negative"
+        }
+        "LessOrEqual"
+        {
+            "LessEqualVar" "$zero"
+            "greaterVar" "$one"
+            "srcVar1" "$ds"
+            "srcVar2" "$zero"
+            "resultVar" "$ds_is_positive"            
+        }
+        "Subtract"
+        {
+            "srcVar1" "$one"
+            "srcVar2" "$ds_is_positive"
+            "resultVar" "$ds_is_negative"
+        }
+
+        // Y is (1/4)(S - 1)
+        "Multiply"
+        {
+            "srcVar1" "$quarter"
+            "srcVar2" "$s_minus_1"
+            "resultVar" "$translate[1]"
+        }        
+
+        // X is (1/2)(ds_is_negative * abs_sx + (ds_is_positive * (1 - abs_sx))
+        "Multiply"
+        {
+            "srcVar1" "$ds_is_negative"
+            "srcVar2" "$abs_sx"
+            "resultVar" "$x_tmp1"
+        }
+        "Subtract"
+        {
+            "srcVar1" "$two"
+            "srcVar2" "$abs_sx"
+            "resultVar" "$x_tmp2"
+        }
+        "Multiply"
+        {
+            "srcVar1" "$ds_is_positive"
+            "srcVar2" "$x_tmp2"
+            "resultVar" "$x_tmp3"
+        }
+        "Add"
+        {
+            "srcVar1" "$x_tmp1"
+            "srcVar2" "$x_tmp3"
+            "resultVar" "$x_tmp4"
+        }
+        "Multiply"
+        {
+            "srcVar1" "$x_tmp4"
+            "srcVar2" "$half"
+            "resultVar" "$translate[0]"
+        }
+        
+        "TextureTransform"
+        {
+            "translateVar" "$translate"
+            "centerVar" "$center"
+            "rotateVar" "$rotate"
+            "resultVar" "$basetexturetransform"
+        }
+
+        // Alpha is (ds_is_negative * clamp(s to 0,1)) + (ds_is_positive * 1/2 * s_plus_1)
+        "Clamp"
+        {
+            "min" "0"
+            "max" "1"
+            "srcVar1" "$s"
+            "resultVar" "$a_tmp1"
+        }
+        "Multiply"
+        {
+            "srcVar1" "$a_tmp1"
+            "srcVar2" "$ds_is_negative"
+            "resultVar" "$a_tmp2"
+        }
+        "Multiply"
+        {
+            "srcVar1" "$s_plus_1"
+            "srcVar2" "$half"
+            "resultVar" "$a_tmp3"
+        }
+        "Multiply"
+        {
+            "srcVar1" "$a_tmp3"
+            "srcVar2" "$ds_is_positive"
+            "resultVar" "$a_tmp4"
+        }
+        "Add"
+        {
+            "srcVar1" "$a_tmp2"
+            "srcVar2" "$a_tmp4"
+            "resultVar" "$alpha"
+        }
+    }
+}

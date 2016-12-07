@@ -1,0 +1,26 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "models/props_c17/bladeblur"
+
+    "$angle" 0.0
+    "$translate" "[0.0 0.0]"
+    "$center" "[-0.5 -0.5]"
+
+    "Proxies"
+    {
+        "LinearRamp"
+        {
+            "rate" 45
+            "initialValue" 0.0
+            "resultVar" "$angle"
+        }
+
+        "TextureTransform"
+        {
+            "translateVar" "$translate" // we don't need this, but it's not optional
+            "rotateVar" "$angle"
+            "centerVar" "$center"
+            "resultVar" "$basetexturetransform"
+        }
+    } 
+}

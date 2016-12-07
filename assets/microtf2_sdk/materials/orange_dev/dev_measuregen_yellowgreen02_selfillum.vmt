@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "orange_dev/dev_measuregen_yellowgreen02"
+	"$surfaceprop" "tile"
+	"$selfillum" "1"
+	"%keywords" "tf"
+}

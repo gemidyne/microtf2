@@ -1,0 +1,14 @@
+"VertexLitGeneric"
+{
+	"$basetexture"	"models/props_spytech/computer_screen_01"
+	"$basemapalphaphongmask" "1"
+	"$phong" "1"
+	"$phongexponent" "10"
+	"$phongboost" ".1"	
+	"$phongfresnelranges"	"[4 15 20]"
+	"$selfillum" "1"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.3 .3 .3]"
+}
+
+//This is the screen surface, with the illumination.

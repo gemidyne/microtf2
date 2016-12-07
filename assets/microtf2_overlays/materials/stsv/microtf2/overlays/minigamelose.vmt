@@ -1,0 +1,15 @@
+"Unlitgeneric"
+{
+	"$basetexture" "stsv/microtf2/overlays/minigamelose"
+	"$translucent" 1
+	"%keywords" "microTF2"
+   	"Proxies"
+	{
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$basetexture"
+			"animatedtextureframenumvar" "$frame"
+			"animatedtextureframerate" 30
+		}
+   	}
+}

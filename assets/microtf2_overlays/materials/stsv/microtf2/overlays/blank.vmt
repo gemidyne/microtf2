@@ -1,0 +1,5 @@
+"Unlitgeneric"
+{
+	"$basetexture" "stsv/microtf2/overlays/blank"
+	"$translucent" 1
+}

@@ -1,0 +1,7 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "stsv/microtextures/tiles/grey07"
+	"$surfaceprop" "tile"
+	"$selfillum" "1"
+	"%keywords" "tf"
+}

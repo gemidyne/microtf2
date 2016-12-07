@@ -1,0 +1,38 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "Metal/metalwall078a"
+	"$surfaceprop" "metal"
+
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[ .56 .56 .75 ]"
+
+    "$bumpmap" "metal/metalwall078a_normal"
+    "$nodiffusebumplighting" 1
+    "$normalmapalphaenvmapmask" 1
+
+    "$dpscale" 7.0
+    "$dotproduct" 0.0
+    "$alpha_unclamped" 0.0
+
+    "Proxies"
+    {
+        "PlayerView"
+        {
+            "scale" 7.0
+            "resultVar" "$dotproduct"
+        }
+        "Subtract"
+        {
+            "srcVar1" "$dpscale"
+            "srcVar2" "$dotproduct"
+            "resultVar" "$alpha_unclamped"
+        }
+        "Clamp"
+        {
+            "min" 0.0
+            "max" 1.0
+            "srcVar1" "$alpha_unclamped"
+            "resultVar" "$alpha"
+        }
+    }
+}

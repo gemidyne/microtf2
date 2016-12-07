@@ -1,0 +1,13 @@
+"LightmappedGeneric"
+{
+	"$baseTexture" "props/metaldoor01_192"
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" 1.25
+			"texturescrollangle" 90
+		}
+	}
+}

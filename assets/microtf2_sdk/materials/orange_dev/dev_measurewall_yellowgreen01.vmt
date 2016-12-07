@@ -1,0 +1,6 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "orange_dev/dev_measurewall_yellowgreen01"
+	"$surfaceprop" "concrete"
+	"%keywords" "tf"
+}

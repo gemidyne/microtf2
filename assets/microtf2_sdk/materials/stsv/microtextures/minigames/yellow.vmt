@@ -1,0 +1,6 @@
+"UnlitGeneric"
+{
+	// Original shader: BaseTimesLightmap
+	"$basetexture" "stsv/microtextures/minigames/yellow"
+	"$additive" 1
+}

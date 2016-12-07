@@ -1,0 +1,9 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "orange_dev/dev_measuregen_redviolet02"
+	"$surfaceprop" "glass"
+	"$translucent" "1"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.5 .5 .5]"
+	"%keywords" "tf"
+}

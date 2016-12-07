@@ -1,0 +1,6 @@
+"Unlitgeneric"
+{
+	"$basetexture" "stsv/microtf2/overlays/gameover"
+	"$translucent" 1
+	"%keywords" "microTF2"
+}

@@ -1,0 +1,44 @@
+"UnlitTwoTexture"
+{
+	"$abovewater" 0	
+	"$basetexture"	"liquids/!toxic_anim"
+
+	"$texture2" 	"liquids/!slime_overlay"
+	"$texture2scale" 1
+
+	"%keywords" "bms"
+
+	"$tex2offset"	"[0 0]"
+	"%compilewater" 1
+
+	"$surfaceprop" "slime"
+	"$fogenable" 1
+	"$fogcolor" "{96 255 0}"
+	"$fogstart" 1.00
+	"$fogend" 400.00
+
+	"Proxies"
+	{
+		"LinearRamp"
+		{
+			"resultVar" "$tex2offset[0]"
+			"rate" 0.001
+		}
+		"LinearRamp"
+		{
+			"resultVar" "$tex2offset[1]"
+			"rate" -0.01
+		}
+		"TextureTransform"
+		{
+			"translateVar"	"$tex2offset"
+			"resultVar"	"$texture2transform"
+		}
+		"AnimatedTexture"
+		{
+			"animatedtexturevar" "$basetexture"
+			"animatedtextureframenumvar" "$frame"
+			"animatedtextureframerate" 8
+		}
+	}
+}

@@ -1,0 +1,14 @@
+"UnlitGeneric"
+{
+	"$basetexture" "stsv/microtextures/beatblock/winarea"
+	"$translucent" 1
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" -0.25
+			"texturescrollangle" 0
+		}
+	}
+}

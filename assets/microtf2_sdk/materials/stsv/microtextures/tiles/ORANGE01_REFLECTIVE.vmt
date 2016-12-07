@@ -1,0 +1,8 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "stsv/microtextures/tiles/orange01"
+	"$surfaceprop" "metal"
+	"$envmap" "env_cubemap"
+	"$envmaptint" "[.5 .5 .5]"
+	"%keywords" "tf"
+}

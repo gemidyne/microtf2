@@ -1,0 +1,7 @@
+LightMappedGeneric
+{
+$basetexture "overlays/stain_oil_01"
+$surfaceprop default
+$translucent 1
+$decal 1
+}

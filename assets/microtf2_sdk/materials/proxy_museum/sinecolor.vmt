@@ -1,0 +1,36 @@
+"LightmappedGeneric"
+{
+	"$basetexture" "scripted/breen_fakemonitor_"
+
+    // The base texture will be multiplied by this color
+    "$color" "[1.0 1.0 1.0]"
+
+    "$offset" "0"
+	
+	"Proxies"
+	{
+        "EntityRandom"
+        {
+            "scale" "12"
+            "resultVar" "$offset"
+        }
+        "Sine"
+        {
+            "sineperiod" 4
+            "timeoffset" "$offset"	       
+            "resultVar" "$color[0]"
+        }
+        "Sine"
+        {
+            "sineperiod" 8
+            "timeoffset" "$offset"	       
+            "resultVar" "$color[1]"
+        }
+        "Sine"
+        {
+            "sineperiod" 12
+            "timeoffset" "$offset"	       
+            "resultVar" "$color[2]"
+        }
+	}
+}

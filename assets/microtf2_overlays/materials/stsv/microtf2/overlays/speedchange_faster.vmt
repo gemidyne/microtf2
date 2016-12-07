@@ -1,0 +1,16 @@
+"Unlitgeneric"
+{
+	"$basetexture" "stsv/microtf2/overlays/speedchange_faster"
+	"$translucent" 1
+	"%keywords" "microTF2"
+	"$frame" 8
+   	"Proxies"
+	{
+	     	"AnimatedTexture"
+	     	{
+			"animatedtexturevar" "$basetexture"
+			"animatedtextureframenumvar" "$frame"
+			"animatedtextureframerate" 30
+		}
+   	}
+}

@@ -1,0 +1,4 @@
+particles_manifest
+{
+	"file"	"particles/microtf2_v9.pcf"
+}
