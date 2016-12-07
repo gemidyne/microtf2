@@ -63,3 +63,6 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+*.vmf filter=lfs diff=lfs merge=lfs -text
+*.vtf filter=lfs diff=lfs merge=lfs -text
+*.pcf filter=lfs diff=lfs merge=lfs -text
