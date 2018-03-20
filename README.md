@@ -18,3 +18,5 @@ Due to the time gap of the plugin being written (2014) and as of writing - Credi
 - Particles by Testinglol
 - Textures by Mario6493 and Testinglol
 - Overlays by Steveh
+
+MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
