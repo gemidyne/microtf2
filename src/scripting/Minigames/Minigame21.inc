@@ -38,7 +38,6 @@ public Minigame21_OnMinigameSelected(client)
 
 		SetPlayerHealth(client, 1000);
 		SetPlayerAmmo(client, 5);
-		SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
 	}
 }
 

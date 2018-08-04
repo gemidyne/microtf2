@@ -65,6 +65,8 @@ stock SetPlayerHealth(client, health)
 
 stock IsViewModelVisible(client, bool:visible)
 {
+	return; // Due to viewmodel issues.
+
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
 		new weapon = GetEntDataEnt2(client, FindSendPropOffs("CTFPlayer", "m_hActiveWeapon"));

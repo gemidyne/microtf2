@@ -91,7 +91,6 @@ public Bossgame3_OnMinigameSelected(client)
 
 		TeleportEntity(client, pos, ang, vel);
 
-		SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
 		IsGodModeEnabled(client, false);
 		IsViewModelVisible(client, true);
 		ResetHealth(client);

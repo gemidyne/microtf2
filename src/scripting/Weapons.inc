@@ -40,8 +40,11 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 			{
 				SetSpeshulAmmo(iClient, weaponSlot, weaponAmmo);
 			}
-			new weapon = GetPlayerWeaponSlot(iClient, weaponSlot);
-			SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", weapon);
+
+			// Requires testing. ViewModels are pretty broken right now..
+			// new weapon = GetPlayerWeaponSlot(iClient, weaponSlot);
+			// SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", weapon);
+
 		}
 		else ThrowError("GiveWeapon() Error: IsValidEntity() = False");
 	}
@@ -1254,7 +1257,7 @@ CreateWeaponTrie()
 	SetTrieString(g_WeaponTrie, "326_attribs", "2 ; 1.25 ; 69 ; 0.25 ; 108 ; 1.5");
 	SetTrieValue(g_WeaponTrie, "326_ammo", -1);
 
-//Claidheamh Mòr
+//Claidheamh Mï¿½r
 	SetTrieString(g_WeaponTrie, "327_classname", "tf_weapon_sword");
 	SetTrieValue(g_WeaponTrie, "327_index", 327);
 	SetTrieValue(g_WeaponTrie, "327_slot", 2);

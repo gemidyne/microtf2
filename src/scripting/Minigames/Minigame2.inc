@@ -103,8 +103,6 @@ public MinigameTwo_OnSelection(client)
 		SetPlayerHealth(client, 1);
 		IsGodModeEnabled(client, false);
 		IsViewModelVisible(client, true);
-
-		SetEntProp(client, Prop_Send, "m_iHideHUD", HIDEHUD_MISCSTATUS);
 	}
 }
 

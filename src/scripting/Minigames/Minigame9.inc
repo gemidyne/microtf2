@@ -53,7 +53,8 @@ public Minigame9_GetDynamicCaption(client)
 			case 6: text = "SOMEONE SAYS: CROUCH!";
 		}
 
-		MinigameCaption[client] = text;
+		MinigameCaption[client] = text; // for storage only
+		TrainingMessageToClient(client, text, "...", 3.0);
 	}
 }
 
@@ -72,9 +73,9 @@ public MinigameNine_OnGameFrame()
 					{
 						ClientWonMinigame(i);
 					}
-					else if (MinigameNine_Mode == 6)
+					else if (MinigameNine_Mode == 6 && PlayerStatus[i] != PlayerStatus_Failed)
 					{
-						MinigameCaption[i] = "(SIMON DIDN\'T SAY IT..)";
+						TrainingMessageToClient(i, MinigameCaption[i], "(SIMON DIDN\'T SAY IT..)", 3.0);
 						PlayerStatus[i] = PlayerStatus_Failed;
 					}
 				}
@@ -87,9 +88,9 @@ public MinigameNine_OnGameFrame()
 				else if (MinigameNine_Mode == 2)
 				{ 
 					//Someone Says: Taunt!
-					if (TF2_IsPlayerInCondition(i, TFCond_Taunting))
+					if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
 					{
-						MinigameCaption[i] = "(SIMON DIDN\'T SAY IT..)";
+						TrainingMessageToClient(i, MinigameCaption[i], "(SIMON DIDN\'T SAY IT..)", 3.0);
 						PlayerStatus[i] = PlayerStatus_Failed;
 					}
 				}
@@ -101,9 +102,9 @@ public MinigameNine_OnGameFrame()
 				else if (MinigameNine_Mode == 4)
 				{ 
 					//Someone Says: Jump!
-					if ((button & IN_JUMP) == IN_JUMP)
+					if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 					{
-						MinigameCaption[i] = "(SIMON DIDN\'T SAY IT..)";
+						TrainingMessageToClient(i, MinigameCaption[i], "(SIMON DIDN\'T SAY IT..)", 3.0);
 						PlayerStatus[i] = PlayerStatus_Failed;
 					}
 				}

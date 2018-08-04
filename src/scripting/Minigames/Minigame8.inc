@@ -77,9 +77,9 @@ public Minigame8_GetDynamicCaption(client)
 	{
 		decl String:text[64];
 
-		Format(text, sizeof(text), "%s\n%s = ?", MinigameCaption[client], MinigameEight_SayTextQuestion);
+		Format(text, sizeof(text), "%s = ?", MinigameEight_SayTextQuestion);
 
-		MinigameCaption[client] = text;
+		TrainingMessageToClient(client, MinigameCaption[client], text, 3.0);
 	}
 }
 

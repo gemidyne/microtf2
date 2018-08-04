@@ -14,7 +14,7 @@
 #include <training>
 
 #undef REQUIRE_PLUGIN
-#include <Framework>
+//#include <Framework>
 
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
@@ -38,7 +38,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "{TsukuruVersion}"
+#define PLUGIN_VERSION "2018.8A"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00MicroTF2 \x0700FFFF] {default}"
 
 #include Header.inc
@@ -68,11 +68,13 @@ public OnPluginStart()
 {
 	// Do our pre-requisite checks
 
+#if defined FIXED_IP
 	new hostIP = GetConVarInt(FindConVar("hostip"));
 	if (hostIP != FIXED_IP)
 	{
 		SetFailState("This server has not been authorized to run MicroTF2.");
 	}
+#endif
 
 	decl String:gameFolder[32];
 	GetGameFolderName(gameFolder, sizeof(gameFolder));
@@ -368,7 +370,6 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 			Client_RemoveAllDecals(i);
 
 			SetEntityGravity(i, 1.0);
-			SetEntProp(i, Prop_Send, "m_iHideHUD", HIDEHUD_HEALTH | HIDEHUD_MISCSTATUS | HIDEHUD_WEAPONSELECTION);
 			SetEntProp(i, Prop_Send, "m_bGlowEnabled", 0);
 
 			PlayerStatus[i] = PlayerStatus_NotWon;
@@ -472,19 +473,36 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 			if (BossgameID > 0) 
 			{
-				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);
+				if (!isCaptionDynamic)
+				{
+					decl String:objective[64];
+					Format(objective, sizeof(objective), BossgameCaptions[BossgameID]);
+
+					strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);
+
+					TrainingMessageToClient(i, objective, "", 5.0);
+				}
+
 				PlaySoundToPlayer(i, BossgameMusic[BossgameID]);
 			}
 			else if (MinigameID > 0)
 			{
 				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, MinigameCaptions[MinigameID]);
+
+				if (!isCaptionDynamic)
+				{
+					decl String:objective[64];
+					Format(objective, sizeof(objective), MinigameCaptions[MinigameID]);
+					TrainingMessageToClient(i, objective, "", 3.0);
+				}
+
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
 				PlaySoundToPlayer(i, SYSFX_CLOCK);
 			}
 
 			if (IsPlayerParticipant[i])
 			{
-				DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
+				DisplayOverlayToClient(i, OVERLAY_BLANK);
 
 				if (isCaptionDynamic)
 				{
@@ -678,7 +696,6 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 			}
 
 			PlayerStatus[i] = PlayerStatus_NotWon;
-			SetEntProp(i, Prop_Send, "m_iHideHUD", HIDEHUD_HEALTH | HIDEHUD_MISCSTATUS | HIDEHUD_WEAPONSELECTION);
 
 			ResetWeapon(i, false);
 			IsPlayerCollisionsEnabled(i, true);
@@ -895,8 +912,9 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				winnerCount++;
 
-				if (Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
+				if (false) //(Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
 				{
+					// TODO: Remove StSv centric code from plugin
 					// The reason I do this is so that the points are copied into a separate variable
 					// and wont change suddenly.
 					new points = PlayerScore[i] * 2;
@@ -929,7 +947,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			}
 			else
 			{
-				if (Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
+				if (false) //(Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
 				{
 					// The reason I do this is so that the points are copied into a separate variable
 					// and wont change suddenly.
@@ -1170,7 +1188,6 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 				if (IsClientInGame(i) && !IsFakeClient(i))
 				{
 					EmitSoundToClient(i, SYSMUSIC_WAITINGFORPLAYERS);
-					SetEntProp(i, Prop_Send, "m_iHideHUD", 0);
 				}
 			}
 		}

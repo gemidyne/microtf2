@@ -74,11 +74,11 @@ public Minigame17_GetDynamicCaption(client)
 	{
 		if (GetClientTeam(client) == Minigame17_ClientTeam)
 		{
-			MinigameCaption[client] = "HIT A HEAVY!";
+			TrainingMessageToClient(client, "HIT A HEAVY!", "", 3.0);			
 		}
 		else
 		{
-			MinigameCaption[client] = "GET HIT BY A MEDIC!";
+			TrainingMessageToClient(client, "GET HIT BY A MEDIC!", "", 3.0);			
 		}
 	}
 }

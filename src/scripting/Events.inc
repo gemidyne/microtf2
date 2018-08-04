@@ -20,8 +20,6 @@ public Action:Timer_PlayerSpawn(Handle:timer, any:client)
 {
 	if (IsClientValid(client))
 	{
-		SetEntProp(client, Prop_Send, "m_iHideHUD", HIDEHUD_HEALTH);
-
 		RemovePlayerWearables(client);
 
 		if (!IsBonusRound)
@@ -405,15 +403,6 @@ public OnGameFrame()
 						}
 
 						strcopy(buffer, sizeof(buffer), rewritten);
-					}
-
-					if (strlen(buffer) > 0)
-					{
-						ShowSyncHudText(i, HudSync_Caption, buffer);
-					}
-					else
-					{
-						ClearSyncHud(i, HudSync_Caption);
 					}
 				}
 			}

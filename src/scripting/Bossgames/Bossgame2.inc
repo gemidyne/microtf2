@@ -63,7 +63,7 @@ public Bossgame2_OnSelection(client)
 		IsPlayerCollisionsEnabled(client, false);
 
 		SetPlayerHealth(client, 5000);
-		SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
+		//SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
 
 		TeleportEntity(client, pos, ang, vel);
 	}

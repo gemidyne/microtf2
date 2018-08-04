@@ -165,12 +165,14 @@ stock EndBoss()
 
 stock SetMinigameCaptionForAll(const String:text[])
 {
+	decl String:objective[64];
+	Format(objective, sizeof(objective), text);
+
 	for (new i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
-			DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
-			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, text);
+			TrainingMessage("INFORMATION", objective, 3.0);
 		}
 	}
 }

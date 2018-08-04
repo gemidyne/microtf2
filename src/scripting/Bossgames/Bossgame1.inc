@@ -36,7 +36,6 @@ public Bossgame1_OnMinigameSelected(client)
 		IsPlayerCollisionsEnabled(client, false);
 
 		SetPlayerHealth(client, 5000);
-		SetEntProp(client, Prop_Send, "m_iHideHUD", HIDEHUD_MISCSTATUS);
 
 		new column = client;
 		new row = 0;

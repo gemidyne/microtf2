@@ -90,7 +90,7 @@ public Minigame20_GetDynamicCaption(client)
 			}
 		}
 
-		MinigameCaption[client] = text;
+		TrainingMessageToClient(client, text, "", 3.0);
 	}
 }
 

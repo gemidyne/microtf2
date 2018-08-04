@@ -34,8 +34,6 @@ public Minigame16_OnMinigameSelected(client)
 		ResetWeapon(client, true);
 		GiveWeapon(client, 58);
 		IsViewModelVisible(client, true);
-
-		SetEntProp(client, Prop_Send, "m_iHideHUD", HIDEHUD_MISCSTATUS | HIDEHUD_WEAPONSELECTION);
 	}
 }
 

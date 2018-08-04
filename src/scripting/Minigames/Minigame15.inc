@@ -66,7 +66,6 @@ public Minigame15_OnMinigameSelected(client)
 		TF2_RegeneratePlayer(client);
 		IsViewModelVisible(client, true);
 		SetEntData(client, FindDataMapOffs(client, "m_iAmmo") + (3 * 4), 200, 4);
-		SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
 	}
 }
 
@@ -100,7 +99,7 @@ public Minigame15_GetDynamicCaption(client)
 			text = "BUILD SOMETHING!";
 		}
 
-		MinigameCaption[client] = text;
+		TrainingMessageToClient(client, text, "", 3.0);			
 	}
 }
 
