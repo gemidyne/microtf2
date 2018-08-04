@@ -10,6 +10,8 @@
 #define SPR_MAX 32
 #define SPR_NAME_LENGTH 64
 #define SPR_DESC_LENGTH 256
+#define SPR_FAKECOND_LENGTH 64
+#define SPR_FAKECOND_CAPACITY 256
 
 new SpecialRoundsLoaded = 0;
 
@@ -20,6 +22,9 @@ new String:SpecialRoundDescriptions[SPR_MAX+1][SPR_DESC_LENGTH];
 new bool:SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
 new bool:SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
 new SpecialRoundBossGameThreshold[SPR_MAX+1];
+
+new String:SpecialRoundFakeConditions[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
+new SpecialRoundFakeConditionsCount = 0;
 
 new bool:IsChoosingSpecialRound = false;
 
@@ -60,6 +65,8 @@ stock InitializeSpecialRounds()
  
 	CloseHandle(kv);
 
+	Special_LoadFakeConditions();
+
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
 }
@@ -95,7 +102,7 @@ public SpecialRound_PrintRandomNameWhenChoosing()
 		return;
 	}
 
-	decl String:buffer[64];
+	decl String:buffer[128];
 
 	if (GetRandomInt(0, 1) == 1)
 	{
@@ -103,87 +110,9 @@ public SpecialRound_PrintRandomNameWhenChoosing()
 	}
 	else
 	{
-		switch (GetRandomInt(0, 77))
-		{
-			case 0: buffer = "EPISODE THREE";
-			case 1: buffer = "TEA FORTRESS 2";
-			case 2: buffer = "GHOST FORTRESS 2";
-			case 3: buffer = "TENTACLE FORTRESS 2";
-			case 4: buffer = "AWESOMEMOD2";
-			case 5: buffer = "1 VERSUS ALL";
-			case 6: buffer = "MIRRORS EDGE";
-			case 7: buffer = "SAXTONER";
-			case 8: buffer = "HALF-LIFE 3"; 
-			case 9: buffer = "PLAMS";
-			case 10: buffer = "ALMA RAPE MODE";
-			case 11: buffer = "GENKI DOME IV";
-			case 12: buffer = "SONIC NEXUS";
-			case 13: buffer = "THE HIDDEN";
-			case 14: buffer = "GORDON!";
-			case 15: buffer = "THRILLING";
-			case 16: buffer = "SKIN TESTING";
-			case 17: buffer = "THE DASH";
-			case 18: buffer = "THE STEVEH CAVE";
-			case 19: buffer = "SCORCHED COWS";
-			case 20: buffer = "NUCLEAR WARFARE";
-			case 21: buffer = "SPAGHETT";
-			case 22: buffer = "SONIC && THE SECRET RINGS";
-			case 23: buffer = "GEOMETRY WARS";
-			case 24: buffer = "PROJECT GOTHAM RACING 3";
-			case 25: buffer = "LAUNCH HOUR";
-			case 26: buffer = "SONIC '06";
-			case 27: buffer = "ZTV NEWS";
-			case 28: buffer = "AUNTIE MABEL'S SAUCY SALAD";
-			case 29: buffer = "I UPDATED MY F-LIST!";
-			case 30: buffer = "BOKU NO PICO MODE";
-			case 31: buffer = "NANOMACHINES, SON";
-			case 32: buffer = "ROBOTNIK'S POTATOSHIP";
-			case 33: buffer = "ITS HUUURTING";
-			case 34: buffer = "SMASHING";
-			case 35: buffer = "MIGHTY SWITCH FORCE! MEGA DRIVE EDITION";
-			case 36: buffer = "KAGURA AND TOMO'S BIZARRE ADVENTURE!";
-			case 37: buffer = "MEGAMI'S FUCKING STRIPPING RIGHT NOW";
-			case 38: buffer = "CHECK THE SUNSET FADE BY RENARD";
-			case 39: buffer = "PANTY AND STOCKING WITH GARTERBELT";
-			case 40: buffer = "YOU'RE FALLING FOR SOME BIG IDIOT";
-			case 41: buffer = "YESTERDAY, YOU SAID TOMORROW SO JUST...";
-			case 42: buffer = "DO IT!!";
-			case 43: buffer = "HONNOUJI ACADEMY GRADUATION DAY!!!";
-			case 44: buffer = "THERES NOT ENOUGH ANIME REFERENCES HERE";
-			case 45: buffer = "KAZUKI ISN'T REALLY DEAD!!";
-			case 46: buffer = "STOP WATCHING ME ONII-CHANNNN!";
-			case 47: buffer = "HARDCORE REALLY HARDCORE REALLY HARDCORE";
-			case 48: buffer = "PARADISE MIRAGE!";
-			case 49: buffer = "AMANE IS BEST GIRL";
-			case 50: buffer = "SOMEONE HELP ME GET ME OUT OF HERE";
-			case 51: buffer = "NO STYLE, NO GRACE";
-			case 52: buffer = "GET A LOAD OF THIS";
-			case 53: buffer = "OOO BANANA";
-			case 54: buffer = "DONG EXPANSION";
-			case 55: buffer = "STOCKING BEST WAIFU";
-			case 56: buffer = "I'M REALLY FEELING IT";
-			case 57: buffer = "CHANCE TIME";
-			case 58: buffer = "NUDISTO BEEEEEACH";
-			case 59: buffer = "SMOKE WEED EVERYDAY";
-			case 60: buffer = "DROP IT LIKE IT'S HOT";
-			case 61: buffer = "GOTTA GO FAST";
-			case 62: buffer = "WAIFU SHITTALKING";
-			case 63: buffer = "NO WAIFU NO LAIFU";
-			case 64: buffer = "IT'S A ME, MARIO";
-			case 65: buffer = "THE MEMES, JACK";
-			case 66: buffer = "TRAIN RAIN";
-			case 67: buffer = "JOHN MADDEN";
-			case 68: buffer = "NOT THE BEES";
-			case 69: buffer = "#REMOVEMATHS";
-			case 70: buffer = "I'LL MAKE YOU EAT THOSE WORDS";
-			case 71: buffer = "YOU'RE A KID NOW";
-			case 72: buffer = "YOU'RE A SQUID NOW";
-			case 73: buffer = "SPOOKY SCARY SKELETONS";
-			case 74: buffer = "RATTLE ME BONES";
-			case 75: buffer = "WHO'S BEEN DRAWING DICKS?";
-			case 76: buffer = "KNOCK KNOCK IT'S KNUCKLES";
-			case 77: buffer = "&& KNUCKLES";
-		}
+		new index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
+
+		strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
 	}
 
 	PrintCenterTextAll("NEW CONDITION: %s!", buffer);
@@ -241,9 +170,10 @@ stock PrintSelectedSpecialRound()
 	PrintCenterTextAll("NEW CONDITION: %s!", name);
 
 	#if defined NEW_HUD
+
 	decl String:objective[64];
 	Format(objective, sizeof(objective), "The next Special Round is... %s!", SpecialRounds[SpecialRoundID]);
-	TrainingMessage(objective, SpecialRoundDescriptions[SpecialRoundID], 5.0);
+	DisplayHudMessage(objective, SpecialRoundDescriptions[SpecialRoundID], 5.0);
 
 	#else
 	
@@ -492,4 +422,44 @@ stock bool:Special_AreSpeedEventsEnabled()
 	}
 
 	return !SpecialRoundSpeedEventsDisabled[SpecialRoundID];
+}
+
+stock Special_LoadFakeConditions()
+{
+	LogMessage("Initializing Special Round random non-existant conditions");
+
+	decl String:manifestPath[128];
+	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/specialroundfakeconditions.txt");
+
+	new Handle:file = OpenFile(manifestPath, "r"); // Only need r for read
+
+	if (file == INVALID_HANDLE)
+	{
+		LogError("Failed to open SpecialRoundFakeConditions.txt in data/microtf2! Lagspikes may occur during the game.");
+		return;
+	}
+
+	decl String:line[SPR_FAKECOND_LENGTH];
+	new bool:loggedError = false;
+
+	while (ReadFileLine(file, line, sizeof(line)))
+	{
+		if (SpecialRoundFakeConditionsCount >= SPR_FAKECOND_CAPACITY)
+		{
+			LogError("Hit the hardcoded limit of Special Round fake conditions. If you really want to add more, recompile the plugin with the limit changed.");
+			break;
+		}
+
+		TrimString(line);
+
+		if (strlen(line) == 0)
+		{
+			continue;
+		}
+
+		SpecialRoundFakeConditions[SpecialRoundFakeConditionsCount] = line;
+		SpecialRoundFakeConditionsCount++;
+	}
+
+	CloseHandle(file);
 }
