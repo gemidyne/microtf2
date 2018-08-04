@@ -68,6 +68,40 @@ stock TrainingMessage(String:objective[], String:message[], Float:duration=0.0)
 	}
 }
 
+stock TrainingMessageToClient(client, String:objective[], String:message[], Float:duration=0.0)
+{
+	new entity = FindEntityByClassname(-1, "tf_gamerules");
+	if (IsValidHandle(TimerHUD))
+		KillTimer(TimerHUD);
+	
+	SendProxy_Unhook(entity, "m_bIsInTraining", SendProxy_CallbackTrue);
+	SendProxy_Unhook(entity, "m_bIsTrainingHUDVisible", SendProxy_CallbackTrue);
+	SetEntProp(entity, Prop_Send, "m_bIsInTraining", 0);
+	SetEntProp(entity, Prop_Send, "m_bIsTrainingHUDVisible", 0);
+	
+	SendProxy_Hook(entity, "m_bIsInTraining", Prop_Int, SendProxy_CallbackTrue);
+	SendProxy_Hook(entity, "m_bIsTrainingHUDVisible", Prop_Int, SendProxy_CallbackTrue);
+	
+	new Handle:MessageObj = StartMessageOne("TrainingObjective", client);
+	if (MessageObj != INVALID_HANDLE)
+	{
+		BfWriteString(MessageObj, objective); //Message
+		EndMessage();
+	}
+	
+	new Handle:Message = StartMessageOne("TrainingMsg", client);
+	if (Message != INVALID_HANDLE)
+	{
+		BfWriteString(Message, message); //Message
+		EndMessage();
+	}
+	
+	if (duration > 0.0)
+	{
+		TimerHUD = CreateTimer(duration, ClearHud, entity);
+	}
+}
+
 /* Annontation Filters */
 
 stock DoFilter(entity)
