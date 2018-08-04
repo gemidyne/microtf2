@@ -90,7 +90,7 @@ public Minigame20_GetDynamicCaption(client)
 			}
 		}
 
-		TrainingMessageToClient(client, text, "", 3.0);
+		DisplayHudMessageToClient(client, text, "", 3.0);
 	}
 }
 

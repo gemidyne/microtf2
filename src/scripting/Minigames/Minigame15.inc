@@ -99,7 +99,7 @@ public Minigame15_GetDynamicCaption(client)
 			text = "BUILD SOMETHING!";
 		}
 
-		TrainingMessageToClient(client, text, "", 3.0);			
+		DisplayHudMessageToClient(client, text, "", 3.0);			
 	}
 }
 

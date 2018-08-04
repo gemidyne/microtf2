@@ -462,7 +462,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 					strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);
 
-					TrainingMessageToClient(i, objective, "", 5.0);
+					DisplayHudMessageToClient(i, objective, "", 5.0);
 				}
 
 				PlaySoundToPlayer(i, BossgameMusic[BossgameID]);
@@ -475,7 +475,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 				{
 					decl String:objective[64];
 					Format(objective, sizeof(objective), MinigameCaptions[MinigameID]);
-					TrainingMessageToClient(i, objective, "", 3.0);
+					DisplayHudMessageToClient(i, objective, "", 3.0);
 				}
 
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
@@ -1000,11 +1000,11 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 
 		if (SpecialRoundID == 17)
 		{
-			TrainingMessage(prefix, names, 8.0);
+			DisplayHudMessage(prefix, names, 8.0);
 		}
 		else
 		{
-			TrainingMessage(prefix, names, 8.0);
+			DisplayHudMessage(prefix, names, 8.0);
 		}
 
 		#else

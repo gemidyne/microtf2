@@ -59,7 +59,7 @@ public Minigame6_GetDynamicCaption(client)
 {
 	if (IsClientValid(client))
 	{
-		TrainingMessageToClient(client, MinigameCaption[client], MinigameSix_SayTextAnswer, 3.0);
+		DisplayHudMessageToClient(client, MinigameCaption[client], MinigameSix_SayTextAnswer, 3.0);
 	}
 }
 

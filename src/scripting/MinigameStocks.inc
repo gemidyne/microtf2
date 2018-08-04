@@ -172,7 +172,7 @@ stock SetMinigameCaptionForAll(const String:text[])
 	{
 		if (IsClientValid(i))
 		{
-			TrainingMessage("INFORMATION", objective, 3.0);
+			DisplayHudMessage("INFORMATION", objective, 3.0);
 		}
 	}
 }

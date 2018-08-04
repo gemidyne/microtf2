@@ -502,3 +502,13 @@ stock RemoveAllJarateEntities()
 		AcceptEntityInput(iEnt, "Kill");
 	}
 }
+
+stock DisplayHudMessage(const String:title[], const String:body[], Float:duration)
+{
+	TrainingMessage(title, body, duration);
+}
+
+stock DisplayHudMessageToClient(client, const String:title[], const String:body[], Float:duration)
+{
+	TrainingMessageToClient(client, title, body, duration);
+}

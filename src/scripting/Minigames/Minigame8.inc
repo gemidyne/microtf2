@@ -79,7 +79,7 @@ public Minigame8_GetDynamicCaption(client)
 
 		Format(text, sizeof(text), "%s = ?", MinigameEight_SayTextQuestion);
 
-		TrainingMessageToClient(client, MinigameCaption[client], text, 3.0);
+		DisplayHudMessageToClient(client, MinigameCaption[client], text, 3.0);
 	}
 }
 

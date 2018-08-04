@@ -34,7 +34,7 @@ stock CreateTagOnEntity(entity, Float:lifetime, String:message[], bool:filter)
 }
 
 /* Sends Training Mode Hud Message */
-stock TrainingMessage(String:objective[], String:message[], Float:duration=0.0)
+stock TrainingMessage(const String:objective[], const String:message[], Float:duration=0.0)
 {
 	new entity = FindEntityByClassname(-1, "tf_gamerules");
 	if (IsValidHandle(TimerHUD))
@@ -68,7 +68,7 @@ stock TrainingMessage(String:objective[], String:message[], Float:duration=0.0)
 	}
 }
 
-stock TrainingMessageToClient(client, String:objective[], String:message[], Float:duration=0.0)
+stock TrainingMessageToClient(client, const String:objective[], const String:message[], Float:duration=0.0)
 {
 	new entity = FindEntityByClassname(-1, "tf_gamerules");
 	if (IsValidHandle(TimerHUD))

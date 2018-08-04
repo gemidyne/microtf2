@@ -108,7 +108,7 @@ public Minigame10_GetDynamicCaption(client)
 			text = "RUN FROM THE KAMIKAZE!";
 		}
 
-		TrainingMessageToClient(client, text, "", 3.0);			
+		DisplayHudMessageToClient(client, text, "", 3.0);			
 	}
 }
 
