@@ -48,7 +48,8 @@ stock PreloadSound(const String:sound[])
 public Action:GamemodeAdvertisement(Handle:timer)
 {
 	CPrintToChatAll("%sYou're playing MicroTF2! - v%s", PLUGIN_PREFIX, PLUGIN_VERSION);
-	CPrintToChatAll("%sBy Anarchy Steven, TestingLol & Mario6493!", PLUGIN_PREFIX);
+	CPrintToChatAll("%sBy Stevu (Anarchy Steven), TestingLol & Mario6493!", PLUGIN_PREFIX);
+	CPrintToChatAll("%shttps://gemini.software/", PLUGIN_PREFIX);
 
 	return Plugin_Continue;
 }
