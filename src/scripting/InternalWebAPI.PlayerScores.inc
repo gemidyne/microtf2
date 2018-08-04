@@ -12,7 +12,7 @@ stock WebAPI_AddPointsForPlayer(client, points)
 	Steam_SetHTTPRequestNetworkActivityTimeout(hRequest, 60); // IWA might be updating / recompiling. Allow 60 seconds leanway - otherwise the IWA is very quick.
 	Steam_SendHTTPRequest(hRequest, PlayerScores_OnHttpRequestComplete);
 
-	CPrintToChat(client, "%sYou have been awarded %d StevehPoints for playing.", IWA_MSGPREFIX, points);
+	CPrintToChat(client, "%sYou have been awarded %d$ for playing.", IWA_MSGPREFIX, points);
 }
 
 public PlayerScores_OnHttpRequestComplete(HTTPRequestHandle:HTTPRequest, bool:requestSuccessful, HTTPStatusCode:statusCode)
