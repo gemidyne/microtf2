@@ -330,12 +330,24 @@ public Action:Client_TakeDamage(victim, &attacker, &inflictor, &Float:damage, &d
 	if (IsBlockingDamage || (IsBonusRound && IsPlayerWinner[attacker] == 0))
 	{
 		damage = 0.0;
+
+		if (inflictor < 0) 
+		{
+			inflictor = 0;
+		}
+		
 		return Plugin_Changed;
 	}
 
 	if (IsOnlyBlockingDamageByPlayers && IsClientValid(attacker) && IsPlayerParticipant[attacker])
 	{
 		damage = 0.0;
+		
+		if (inflictor < 0) 
+		{
+			inflictor = 0;
+		}
+
 		return Plugin_Changed;
 	}
 
