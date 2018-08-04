@@ -58,10 +58,10 @@
 public Plugin:myinfo = 
 {
 	name = "MicroTF2",
-	author = "StSv.TF Productions, in association with GEMINI Developments",
-	description = "WarioWare - Community made!",
+	author = "GEMINI Developments",
+	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
-	url = "http://www.stsv.tf/"
+	url = "http://www.gemini.software/"
 }
 
 public OnPluginStart()
@@ -117,24 +117,6 @@ public OnMapStart()
 {
 	if (IsMicroTF2Map())
 	{
-		if (MaxClients > 24)
-		{
-			new bool:isReplayEnabled = GetConVarBool(FindConVar("replay_enable"));
-			new bool:isSrcTVEnabled = GetConVarBool(FindConVar("tv_enable"));
-
-			if (isReplayEnabled || isSrcTVEnabled)
-			{
-				if (MaxClients > 25)
-				{
-					SetFailState("MicroTF2 is currently not supported on servers with more than 24 player slots with Replay / SrcTV enabled.");
-				}
-			}
-			else
-			{
-				SetFailState("MicroTF2 is currently not supported on servers with more than 24 player slots.");
-			}
-		}
-
 		Steam_SetGameDescription("WarioWare (MicroTF2)");
 
 		CreateTimer(120.0, GamemodeAdvertisement, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
