@@ -18,3 +18,5 @@ This plugin uses many code snippets from other plugins over the years. Credit wh
 - Particles by Testinglol
 - Textures by Mario6493 and Testinglol
 - Overlays by Steveh
+
+MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
