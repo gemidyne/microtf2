@@ -5,8 +5,10 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 	new weaponSlot;
 	new String:formatBuffer[32];
 	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "slot");
+
 	new bool:isValidItem = GetTrieValue(g_WeaponTrie, formatBuffer, weaponSlot);
-	if(!isValidItem)
+	
+	if (!isValidItem)
 	{
 		ThrowError("GiveWeapon() Error: isValidItem = False");
 	}
@@ -24,7 +26,7 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 		new entity = TF2Items_GiveNamedItem(iClient, hWeapon);
 		CloseHandle(hWeapon);
 	
-		if(IsValidEntity(entity))
+		if (IsValidEntity(entity))
 		{
 			decl String:classname[64];
 			Format(formatBuffer, sizeof(formatBuffer), "%d_%s", weaponLookupIndex, "classname");
@@ -42,8 +44,8 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 			}
 
 			// Requires testing. ViewModels are pretty broken right now..
-			// new weapon = GetPlayerWeaponSlot(iClient, weaponSlot);
-			// SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", weapon);
+			new weapon = GetPlayerWeaponSlot(iClient, weaponSlot);
+			SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", weapon);
 
 		}
 		else ThrowError("GiveWeapon() Error: IsValidEntity() = False");
