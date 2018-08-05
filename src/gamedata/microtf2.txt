@@ -1,0 +1,15 @@
+"Games"
+{
+	"tf"
+	{
+		"Offsets"
+		{
+			"WeaponEquip"
+			{
+				"windows"	"264"
+				"linux"		"265"
+				"mac"		"265"
+			}
+		}
+	}
+}
