@@ -1,0 +1,39 @@
+"Phrases"
+{
+	"PlayerSpawn_RespawnNotice"
+	{
+		"ru"		"Возрождение произойдет после окончания раунда."
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"ru"		"ВАС ВЫБИЛИ ИЗ ИГРЫ!"
+	}
+	"General_Loser"
+	{
+		"ru"		"Лузер!"
+	}
+	"General_Winner"
+	{
+		"ru"		"Победитель!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"ru"		"== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"ru"		"Победителем стал..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"ru"		"Победителями стали..."
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"ru"		"Победителей нету!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"ru"		"Спайкрабы долнжны пригнутся и посмотреть вверх!"
+	}
+}
