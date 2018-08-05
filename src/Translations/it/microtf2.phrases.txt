@@ -1,0 +1,39 @@
+"Phrases"
+{
+	"PlayerSpawn_RespawnNotice"
+	{
+		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"it"		"SEI STATO ELIMINATO!"
+	}
+	"General_Loser"
+	{
+		"it"		"Perso!"
+	}
+	"General_Winner"
+	{
+		"it"		"Vinto!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"it"		"== IL ROUND SPECIALE È TERMINATO! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"it"		"Il vincitore è..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"it"		"I vincitori sono..."
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"it"		"Nessuno ha vinto!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"it"		"Gli Spycrab devono abbassarsi e guardare in alto!"
+	}
+}
