@@ -70,7 +70,7 @@ public MinigameNine_OnGameFrame()
 				{
 					case 1:
 					{
-						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Won) 
+						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
 							ClientWonMinigame(i);
 							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
@@ -93,7 +93,7 @@ public MinigameNine_OnGameFrame()
 					case 3:
 					{
 						new button = GetClientButtons(i);
-						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Won) 
+						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
 							ClientWonMinigame(i);
 							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
@@ -117,7 +117,7 @@ public MinigameNine_OnGameFrame()
 					case 5:
 					{
 						new button = GetClientButtons(i);
-						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Won)
+						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
 						{
 							ClientWonMinigame(i);
 							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
