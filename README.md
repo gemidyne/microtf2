@@ -14,9 +14,14 @@ This plugin utilises the following extensions:
 ## Credits
 This plugin uses many code snippets from other plugins over the years. Credit where credit is due, and I do not claim ownership over said code snippets.
 
+MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
+
 - Source game map jointly developed by Steveh, Mario6493 and Testinglol
 - Particles by Testinglol
 - Textures by Mario6493 and Testinglol
 - Overlays by Steveh
 
-MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
+### Translators
+If you don't see your language below, feel free to create an issue with the title "Translator request" with your language - we're looking to improve the multilingual aspect of the plugin so there will be more text to translate soon.
+
+Russian translator: [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
