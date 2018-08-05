@@ -1,5 +1,66 @@
 new Handle:g_WeaponTrie = INVALID_HANDLE;
 
+new Handle:g_hGameConfig = INVALID_HANDLE;
+new Handle:g_hWeaponEquip = INVALID_HANDLE;
+
+stock InitialiseWeaponEquip() 
+{
+	g_hGameConfig = LoadGameConfigFile("microtf2");
+	
+	if (!g_hGameConfig)
+	{
+		SetFailState("Missing gamedata file \"microtf2.txt\".");
+	}	
+
+	StartPrepSDKCall(SDKCall_Player);
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Virtual, "WeaponEquip");
+	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
+	g_hWeaponEquip = EndPrepSDKCall();
+
+	if (!g_hWeaponEquip)
+	{
+		SetFailState("Failed to prepare the SDKCall for weapon equipment. Try updating gamedata or restarting your server.");
+	}
+}
+
+// stock SetItemAlpha(item, alpha)
+// {
+// 	if (item > -1 && IsValidEdict(item))
+// 	{
+// 		// Don't bother checking the classname, it's always tf_weapon_[something] in TF2 for GetPlayerWeaponSlot
+// 		SetEntityRenderMode(item, RENDER_TRANSCOLOR);
+// 		SetEntityRenderColor(item, 255, 255, 255, alpha);
+		
+// 		new String:classname[65];
+// 		GetEntityClassname(item, classname, sizeof(classname));
+		
+// 		if (strncmp(classname, "tf_weapon_", 10) == 0)
+// 		{
+// 			new extraWearable = GetEntPropEnt(item, Prop_Send, "m_hExtraWearable");
+// 			if (extraWearable > -1 && IsValidEdict(extraWearable))
+// 			{
+// 				SetEntityRenderMode(extraWearable, RENDER_TRANSCOLOR);
+// 				SetEntityRenderColor(extraWearable, 255, 255, 255, alpha);
+// 			}
+			
+// 			extraWearable = GetEntPropEnt(item, Prop_Send, "m_hExtraWearableViewModel");
+// 			if (extraWearable > -1 && IsValidEdict(extraWearable))
+// 			{
+// 				SetEntityRenderMode(extraWearable, RENDER_TRANSCOLOR);
+// 				SetEntityRenderColor(extraWearable, 255, 255, 255, alpha);
+// 			}
+// 		}
+// 	}
+// }
+
+// public TF2Items_OnGiveNamedItem_Post(client, String:classname[], itemDefinitionIndex, itemLevel, itemQuality, entityIndex)
+// {
+// 	if (IsValidEntity(entityIndex))
+// 	{
+// 		SetItemAlpha(entityIndex, 255);
+// 	}
+// }
+
 stock GiveWeapon(iClient, weaponLookupIndex)
 {
 	new weaponSlot;
@@ -14,43 +75,62 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 	}
 	else
 	{
+		new String:weaponClassname[64];
 		new weaponIndex;
-		while ((weaponIndex = GetPlayerWeaponSlot(iClient, weaponSlot)) != -1)
-		{
-			RemovePlayerItem(iClient, weaponIndex);
-			RemoveEdict(weaponIndex);
-		}
+		new weaponSlot;
+		new weaponQuality;
+		new weaponLevel;
+		new String:weaponAttribs[256];
 
-		new Handle:hWeapon = PrepareItemHandle(weaponLookupIndex);
-	
-		new entity = TF2Items_GiveNamedItem(iClient, hWeapon);
-		CloseHandle(hWeapon);
-	
-		if (IsValidEntity(entity))
-		{
-			decl String:classname[64];
-			Format(formatBuffer, sizeof(formatBuffer), "%d_%s", weaponLookupIndex, "classname");
-			GetTrieString(g_WeaponTrie, formatBuffer, classname, sizeof(classname));
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "classname");
+		GetTrieString(g_WeaponTrie, formatBuffer, weaponClassname, 64);
 
-			EquipPlayerWeapon(iClient, entity);
-				
-			new weaponAmmo;
-			Format(formatBuffer, sizeof(formatBuffer), "%d_%s", weaponLookupIndex, "ammo");
-			GetTrieValue(g_WeaponTrie, formatBuffer, weaponAmmo);
-	
-			if (weaponAmmo != -1)
-			{
-				SetSpeshulAmmo(iClient, weaponSlot, weaponAmmo);
-			}
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "index");
+		GetTrieValue(g_WeaponTrie, formatBuffer, weaponIndex);
 
-			// Requires testing. ViewModels are pretty broken right now..
-			new weapon = GetPlayerWeaponSlot(iClient, weaponSlot);
-			SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", weapon);
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "slot");
+		GetTrieValue(g_WeaponTrie, formatBuffer, weaponSlot);
 
-		}
-		else ThrowError("GiveWeapon() Error: IsValidEntity() = False");
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "quality");
+		GetTrieValue(g_WeaponTrie, formatBuffer, weaponQuality);
+
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "level");
+		GetTrieValue(g_WeaponTrie, formatBuffer, weaponLevel);
+
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "attribs");
+		GetTrieString(g_WeaponTrie, formatBuffer, weaponAttribs, 256);
+
+		TF2_RemoveWeaponSlot(iClient, weaponSlot);
+
+		CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
 	}
 }
+
+stock CreateNamedItem(client, itemindex, const String:classname[], level, quality)
+{
+	new weapon = CreateEntityByName(classname);
+	
+	if (!IsValidEntity(weapon))
+	{
+		return false;
+	}
+	
+	decl String:entclass[64];
+	GetEntityNetClass(weapon, entclass, sizeof(entclass));	
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_iItemDefinitionIndex"), itemindex);
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_bInitialized"), 1);	
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_iEntityLevel"), level);
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_iEntityQuality"), quality);	
+	
+	if (StrEqual(classname, "tf_weapon_builder", true) || StrEqual(classname, "tf_weapon_sapper", true))
+	{
+		SetEntProp(weapon, Prop_Send, "m_iObjectType", 3 );
+	}
+	
+	DispatchSpawn(weapon);
+	SDKCall(g_hWeaponEquip, client, weapon);
+	return true;
+} 
 
 //DarthNinja..
 stock SetSpeshulAmmo(client, wepslot, newAmmo)
@@ -62,74 +142,6 @@ stock SetSpeshulAmmo(client, wepslot, newAmmo)
 		new iAmmoTable = FindSendPropInfo("CTFPlayer", "m_iAmmo");
 		SetEntData(client, iAmmoTable+iOffset, newAmmo, 4, true);
 	}
-}
-
-stock Handle:PrepareItemHandle(weaponLookupIndex, TFClassType:classbased = TFClass_Unknown)
-{
-	new String:formatBuffer[32];
-	new String:weaponClassname[64];
-	new weaponIndex;
-	new weaponSlot;
-	new weaponQuality;
-	new weaponLevel;
-	new String:weaponAttribs[256];
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "classname");
-	GetTrieString(g_WeaponTrie, formatBuffer, weaponClassname, 64);
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "index");
-	GetTrieValue(g_WeaponTrie, formatBuffer, weaponIndex);
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "slot");
-	GetTrieValue(g_WeaponTrie, formatBuffer, weaponSlot);
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "quality");
-	GetTrieValue(g_WeaponTrie, formatBuffer, weaponQuality);
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "level");
-	GetTrieValue(g_WeaponTrie, formatBuffer, weaponLevel);
-
-	Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "attribs");
-	GetTrieString(g_WeaponTrie, formatBuffer, weaponAttribs, 256);
-
-	new String:weaponAttribsArray[32][32];
-	new attribCount = ExplodeString(weaponAttribs, " ; ", weaponAttribsArray, 32, 32);
-
-	new flags = OVERRIDE_ALL;
-	if (strcmp(weaponClassname, "saxxy", false) != 0) flags |= FORCE_GENERATION;
-	new Handle:hWeapon = TF2Items_CreateItem(flags);
-//will switch this to use the FORCE_GENERATION bit later
-	if (strcmp(weaponClassname, "tf_weapon_shotgun_hwg", false) == 0 || strcmp(weaponClassname, "tf_weapon_shotgun_pyro", false) == 0 || strcmp(weaponClassname, "tf_weapon_shotgun_soldier", false) == 0)
-	{
-		switch (classbased)
-		{
-			case TFClass_Heavy: strcopy(weaponClassname, sizeof(weaponClassname), "tf_weapon_shotgun_hwg");
-			case TFClass_Soldier: strcopy(weaponClassname, sizeof(weaponClassname), "tf_weapon_shotgun_soldier");
-			case TFClass_Pyro: strcopy(weaponClassname, sizeof(weaponClassname), "tf_weapon_shotgun_pyro");
-		}
-	}
-
-	TF2Items_SetClassname(hWeapon, weaponClassname);
-	TF2Items_SetItemIndex(hWeapon, weaponIndex);
-	TF2Items_SetLevel(hWeapon, weaponLevel);
-	TF2Items_SetQuality(hWeapon, weaponQuality);
-
-	if (attribCount > 1) 
-	{
-		TF2Items_SetNumAttributes(hWeapon, attribCount/2);
-		new i2 = 0;
-		for (new i = 0; i < attribCount; i+=2) 
-		{
-			TF2Items_SetAttribute(hWeapon, i2, StringToInt(weaponAttribsArray[i]), StringToFloat(weaponAttribsArray[i+1]));
-			i2++;
-		}
-	} 
-	else 
-	{
-		TF2Items_SetNumAttributes(hWeapon, 0);
-	}
-
-	return hWeapon;
 }
 
 CreateWeaponTrie()
