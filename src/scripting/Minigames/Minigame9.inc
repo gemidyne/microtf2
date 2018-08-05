@@ -66,49 +66,76 @@ public MinigameNine_OnGameFrame()
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && MinigameNine_CanCheckConditions)
 			{
-				new button = GetClientButtons(i);
-				if ((button & IN_DUCK) == IN_DUCK)
+				switch (MinigameNine_Mode)
 				{
-					if (MinigameNine_Mode == 5) 
+					case 1:
 					{
-						ClientWonMinigame(i);
-						DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Won) 
+						{
+							ClientWonMinigame(i);
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+						}
+
+						break;
 					}
-					else if (MinigameNine_Mode == 6 && PlayerStatus[i] != PlayerStatus_Failed)
+
+					case 2: 
 					{
-						DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
-						PlayerStatus[i] = PlayerStatus_Failed;
+						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
+						{
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							PlayerStatus[i] = PlayerStatus_Failed;
+						}
+
+						break;
 					}
-				}
-	
-				if (MinigameNine_Mode == 1 && TF2_IsPlayerInCondition(i, TFCond_Taunting)) 
-				{
-					//Simon Says Taunt!
-					ClientWonMinigame(i);
-					DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
-				}
-				else if (MinigameNine_Mode == 2)
-				{ 
-					//Someone Says: Taunt!
-					if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
+
+					case 3:
 					{
-						DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
-						PlayerStatus[i] = PlayerStatus_Failed;
+						new button = GetClientButtons(i);
+						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Won) 
+						{
+							ClientWonMinigame(i);
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+						}
+
+						break;
 					}
-				}
-				else if (MinigameNine_Mode == 3 && (button & IN_JUMP) == IN_JUMP) 
-				{
-					//Simon Says: Jump!
-					ClientWonMinigame(i);
-					DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
-				}
-				else if (MinigameNine_Mode == 4)
-				{ 
-					//Someone Says: Jump!
-					if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
+
+					case 4:
 					{
-						DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
-						PlayerStatus[i] = PlayerStatus_Failed;
+						new button = GetClientButtons(i);
+						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
+						{
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							PlayerStatus[i] = PlayerStatus_Failed;
+						}
+
+						break;
+					}
+
+					case 5:
+					{
+						new button = GetClientButtons(i);
+						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Won)
+						{
+							ClientWonMinigame(i);
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+						}
+
+						break;
+					}
+
+					case 6:
+					{
+						new button = GetClientButtons(i);
+						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
+						{
+							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							PlayerStatus[i] = PlayerStatus_Failed;
+						}
+
+						break;
 					}
 				}
 			}
