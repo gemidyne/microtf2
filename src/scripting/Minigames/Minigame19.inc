@@ -12,7 +12,12 @@ public Minigame19_EntryPoint()
 
 public bool:Minigame19_OnCheck()
 {
+#if defined NEW_HUD
+	// While using the new hud, TF2 will block class changes through the UI. We can
+	return false;
+#else
 	return true;
+#endif
 }
 
 public Minigame19_OnMinigameSelectedPre()
