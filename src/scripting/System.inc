@@ -120,6 +120,8 @@ stock InitializeSystem()
 	InitializeMinigames();
 	InitialisePrecacheSystem();
 	InitialiseSecuritySystem();
+
+	InitialiseWeaponEquip();
 }
 
 public System_OnMapStart()
