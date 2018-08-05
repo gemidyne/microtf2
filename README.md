@@ -24,5 +24,5 @@ MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at 
 ### Translators
 If you don't see your language below, feel free to create an issue with the title "Translator request" with your language - we're looking to improve the multilingual aspect of the plugin so there will be more text to translate soon.
 
-Russian translator: [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
-Italian translator: [Mario6493](https://steamcommunity.com/profiles/76561198011478256/)
+- Russian translator: [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
+- Italian translator: [Mario6493](https://steamcommunity.com/profiles/76561198011478256/)
