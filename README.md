@@ -26,3 +26,4 @@ If you don't see your language below, feel free to create an issue with the titl
 
 - Russian translator: [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
 - Italian translator: [Mario6493](https://steamcommunity.com/profiles/76561198011478256/)
+- Spanish translator: [Nekky](https://steamcommunity.com/profiles/76561198036098881/)
