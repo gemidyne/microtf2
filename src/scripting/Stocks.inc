@@ -505,10 +505,18 @@ stock RemoveAllJarateEntities()
 
 stock DisplayHudMessage(const String:title[], const String:body[], Float:duration)
 {
+#if defined NEW_HUD
 	TrainingMessage(title, body, duration);
+#else
+
+#endif
 }
 
 stock DisplayHudMessageToClient(client, const String:title[], const String:body[], Float:duration)
 {
+#if defined NEW_HUD
 	TrainingMessageToClient(client, title, body, duration);
+#else
+
+#endif
 }

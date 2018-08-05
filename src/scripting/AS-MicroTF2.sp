@@ -5,13 +5,15 @@
 
 #pragma semicolon 1
 
+#define NEW_HUD // Use TrainingMessage HUD messages? (Requires SendProxy and sv_parallel_packentities to be 0.)
+
 #include <sourcemod>
 #include <sdktools>
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
 #include <smlib>
-#include <training>
+
 
 #undef REQUIRE_PLUGIN
 //#include <Framework>
@@ -19,7 +21,6 @@
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
 
-#define NEW_HUD
 //#define UMC_MAPCHOOSER
 
 #include <sdkhooks>
@@ -32,6 +33,10 @@
 #include <umc-core>
 #else
 #include <mapchooser>
+#endif
+
+#if defined NEW_HUD
+#include <training>
 #endif
 
 /**
@@ -103,6 +108,13 @@ public OnPluginStart()
 	{
 		SetFailState("The SoundLib Extension is not loaded.");
 	}
+
+#if defined NEW_HUD
+	if (GetExtensionFileStatus("sendproxy.ext") < 1)
+	{
+		SetFailState("The SendProxy Extension is not loaded.");
+	}
+#endif
 
 	LoadTranslations("microtf2.phrases.txt");
 
@@ -894,28 +906,6 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				winnerCount++;
 
-				if (false) //(Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
-				{
-					// TODO: Remove StSv centric code from plugin
-					// The reason I do this is so that the points are copied into a separate variable
-					// and wont change suddenly.
-					new points = PlayerScore[i] * 2;
-
-					if (SpecialRoundID == 16)
-					{
-						points = points / 2;
-					}
-					else if (SpecialRoundID == 9)
-					{
-						points = PlayerMinigamesLost[i] * 2;
-					}
-
-					if (points > 0)
-					{
-						WebAPI_AddPointsForPlayer(i, points);
-					}
-				}
-
 				ChooseRandomClass(i);
 				TF2_RegeneratePlayer(i);
 
@@ -929,27 +919,6 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			}
 			else
 			{
-				if (false) //(Framework_PlayerHasConnectAccount(i)) // && IsSteamLoaded
-				{
-					// The reason I do this is so that the points are copied into a separate variable
-					// and wont change suddenly.
-					new points = PlayerScore[i];
-
-					if (SpecialRoundID == 16)
-					{
-						points = points / 2;
-					}
-					else if (SpecialRoundID == 9)
-					{
-						points = PlayerMinigamesLost[i];
-					}
-
-					if (points > 0)
-					{
-						WebAPI_AddPointsForPlayer(i, points);
-					}
-				}
-
 				SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (~FCVAR_CHEAT));
 				ClientCommand(i, "thirdperson");
 				SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (FCVAR_CHEAT));
@@ -962,7 +931,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 
 	if (winnerCount > 0)
 	{
-		#if defined NEW_HUD
+#if defined NEW_HUD
 		for (new i = 0; i < GetArraySize(winners); i++)
 		{
 			new client = GetArrayCell(winners, i);
@@ -1007,7 +976,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			DisplayHudMessage(prefix, names, 8.0);
 		}
 
-		#else
+#else
 
 		for (new i = 0; i < GetArraySize(winners); i++)
 		{
@@ -1058,7 +1027,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 				}
 			}
 		}
-		#endif
+#endif
 	}
 	else
 	{
