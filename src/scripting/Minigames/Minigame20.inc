@@ -16,7 +16,8 @@ public Minigame20_EntryPoint()
 
 public bool:Minigame20_OnCheck()
 {
-	return true;
+	// TODO: Fix usage of lunchbox items
+	return false;
 }
 
 public Minigame20_OnMinigameSelectedPre()
