@@ -1,6 +1,6 @@
 /* 
  * MicroTF2 2014 Edition
- * Copyright (C) 2010 - 2015 StSv.TF productions, in association with GEMINI Developments.
+ * Copyright (C) 2010 - 2018 StSv.TF productions, in association with GEMINI Developments.
  */
 
 #pragma semicolon 1
