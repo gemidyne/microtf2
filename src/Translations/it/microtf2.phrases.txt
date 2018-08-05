@@ -2,7 +2,7 @@
 {
 	"PlayerSpawn_RespawnNotice"
 	{
-		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sar‡ terminato."
+		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sar√† terminato."
 	}
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{
@@ -18,11 +18,11 @@
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
-		"it"		"== IL ROUND SPECIALE » TERMINATO! =="
+		"it"		"== IL ROUND SPECIALE √à TERMINATO! =="
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"it"		"Il vincitore Ë..."
+		"it"		"Il vincitore √®..."
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
@@ -34,6 +34,7 @@
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
+		
 		"it"		"Gli Spycrab devono abbassarsi e guardare in alto!"
 	}
 }
