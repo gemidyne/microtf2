@@ -55,6 +55,7 @@ stock ShutdownCommands()
 	ResetConVar(FindConVar("mp_stalemate_enable"));
 	ResetConVar(FindConVar("mp_friendlyfire"));
 	ResetConVar(FindConVar("mp_waitingforplayers_time"));
+	ResetConVar(FindConVar("mp_disable_respawn_times"));
 	ResetConVar(FindConVar("mp_respawnwavetime"));
 	ResetConVar(FindConVar("mp_timelimit"));
 	ResetConVar(FindConVar("mp_forcecamera"));
@@ -93,6 +94,7 @@ stock PrepareConVars()
 	SetConVarInt(FindConVar("mp_stalemate_enable"), 0);
 	SetConVarInt(FindConVar("mp_friendlyfire"), 1);
 	SetConVarInt(FindConVar("mp_waitingforplayers_time"), 90);
+	SetConVarInt(FindConVar("mp_disable_respawn_times"), 0);
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
 	SetConVarInt(FindConVar("mp_timelimit"), 0);
 	SetConVarInt(FindConVar("mp_forcecamera"), 0);
