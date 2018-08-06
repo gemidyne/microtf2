@@ -17,27 +17,29 @@ This plugin uses many code snippets from other plugins over the years. Credit wh
 MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
 
 ### Project Lead / Lead Developer
-- Stevu
+
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
 ### Map Development
-- Mario6493
-- Testinglol
-- Stevu 
+- ![Mario6493's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a4/a4c061830d0fad6f9dd76686caa053c50a802cc8.jpg) Mario6493
+
+- ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu 
 
 ### Particle Manifest Development
-- Testinglol
+- ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
 
 ### Texture Development - Map and Particle Manifest
-- Mario6493 
-- Testinglol
+- ![Mario6493's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a4/a4c061830d0fad6f9dd76686caa053c50a802cc8.jpg) Mario6493 
+- ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
 
 ### Texture Development - Overlays R&D
-- Stevu
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
 ### Research and Development Department
-- Commander of Pie
-- Nekky
-- Stevu
+- ![Commander of Pie's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/55/55430e8601b97ff685dc6b8775fb83107edc0d08.jpg) Commander of Pie
+- ![Nekky's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d3/d3c2db267d15e4e90ef263a4dae2a21a8b4769df.jpg) Nekky
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
 ### Testing / Quality Assurance
 - Special thanks to all of our testers and server operators for allowing the plugin to be tested against various server environments.
@@ -45,9 +47,9 @@ MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at 
 ### Localisation Team
 If you don't see your language below, feel free to create an issue with the title "Translator request" with your language - we're looking to improve the multilingual aspect of the plugin so there will be more text to translate soon.
 
-- Russian translator: [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
-- Italian translator: [Mario6493](https://steamcommunity.com/profiles/76561198011478256/)
-- Spanish translator: [Nekky](https://steamcommunity.com/profiles/76561198036098881/)
+- Russian translator: ![GhostZeBears's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/86/86b35c5db321dd56e2942ca0feadaa0af6a7e86e.jpg) [GhostZeBear](https://steamcommunity.com/profiles/76561198063684719/)
+- Italian translator: ![Mario6493's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a4/a4c061830d0fad6f9dd76686caa053c50a802cc8.jpg) [Mario6493](https://steamcommunity.com/profiles/76561198011478256/)
+- Spanish translator: ![Nekky's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d3/d3c2db267d15e4e90ef263a4dae2a21a8b4769df.jpg) [Nekky](https://steamcommunity.com/profiles/76561198036098881/)
 
 ### Special Thanks
 - Vincentor for contributions towards map development.
