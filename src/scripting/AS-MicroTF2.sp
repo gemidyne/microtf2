@@ -129,7 +129,9 @@ public OnMapStart()
 {
 	if (IsMicroTF2Map())
 	{
-		Steam_SetGameDescription("WarioWare (MicroTF2)");
+		decl String:gameDescription[32];
+		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
+		Steam_SetGameDescription(gameDescription);
 
 		CreateTimer(120.0, GamemodeAdvertisement, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
 
