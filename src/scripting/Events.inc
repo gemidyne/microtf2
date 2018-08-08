@@ -6,6 +6,11 @@
 
 public Event_PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	if (event != INVALID_HANDLE)
 	{
 		new client = GetClientOfUserId(GetEventInt(event, "userid"));
@@ -18,6 +23,11 @@ public Event_PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
 
 public Action:Timer_PlayerSpawn(Handle:timer, any:client)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	if (IsClientValid(client))
 	{
 		RemovePlayerWearables(client);
@@ -46,6 +56,11 @@ public Action:Timer_PlayerSpawn(Handle:timer, any:client)
 
 public Event_PlayerTeam(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 
 	if (IsClientInGame(client) && !IsFakeClient(client))
@@ -57,22 +72,41 @@ public Event_PlayerTeam(Handle:event, const String:name[], bool:dontBroadcast)
 
 public Action:Event_Regenerate(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	CreateTimer(0.1, Timer_LockerWeaponReset, GetClientUserId(client));
+
+	return Plugin_Handled;
 }
 
 public Action:Timer_LockerWeaponReset(Handle:timer, any:userid)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	new client = GetClientOfUserId(userid);
 	if (IsClientValid(client) && !IsMinigameActive && !IsBonusRound)
 	{
 		RemovePlayerWearables(client);
 		ResetWeapon(client, false);
 	}
+
+	return Plugin_Handled;
 }
 
 public Action:Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	
 	if (IsClientInGame(client))
@@ -97,10 +131,17 @@ public Action:Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroa
 			CreateTimer(0.05, Timer_Respawn, client);
 		}
 	}
+
+	return Plugin_Handled;
 }
 
 public Action:Event_PlayerHurt(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	new attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
@@ -111,10 +152,17 @@ public Action:Event_PlayerHurt(Handle:event, const String:name[], bool:dontBroad
 		Call_PushCell(attacker);
 		Call_Finish();
 	}
+
+	return Plugin_Handled;
 }
 
 public Event_PlayerBuiltObject(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	new entity = GetEventInt(event, "index"); 
 
@@ -129,6 +177,11 @@ public Event_PlayerBuiltObject(Handle:event, const String:name[], bool:dontBroad
 
 public Event_PlayerStickyJump(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	if (GlobalForward_OnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
@@ -140,6 +193,11 @@ public Event_PlayerStickyJump(Handle:event, const String:name[], bool:dontBroadc
 
 public Action:Event_PlayerJarated(UserMsg:msg_id, Handle:bf, const players[], playersNum, bool:reliable, bool:init)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	new client = BfReadByte(bf);
 	new victim = BfReadByte(bf);
 
@@ -150,10 +208,17 @@ public Action:Event_PlayerJarated(UserMsg:msg_id, Handle:bf, const players[], pl
 		Call_PushCell(victim);
 		Call_Finish();
 	}
+
+	return Plugin_Continue;
 }
 
 public Event_PlayerRocketJump(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	if (GlobalForward_OnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
@@ -165,6 +230,11 @@ public Event_PlayerRocketJump(Handle:event, const String:name[], bool:dontBroadc
 
 public Event_PropBroken(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	if (GlobalForward_OnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
@@ -176,6 +246,11 @@ public Event_PropBroken(Handle:event, const String:name[], bool:dontBroadcast)
 
 public Event_PlayerChangeClass(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
 	if (GlobalForward_OnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
@@ -187,6 +262,11 @@ public Event_PlayerChangeClass(Handle:event, const String:name[], bool:dontBroad
 
 public Event_PlayerStunned(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
 	new victim = GetClientOfUserId(GetEventInt(event, "victim"));
 	if (GlobalForward_OnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
@@ -200,6 +280,11 @@ public Event_PlayerStunned(Handle:event, const String:name[], bool:dontBroadcast
 
 public Action:Hook_GameSound(clients[64], &numClients, String:sample[PLATFORM_MAX_PATH], &entity, &channel, &Float:volume, &level, &pitch, &flags, String:soundEntry[PLATFORM_MAX_PATH], &seed)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	new bool:isVoiceSound = StrContains(sample, "vo/scout_", false) != -1 
 		|| StrContains(sample, "vo/soldier_", false) != -1 
 		|| StrContains(sample, "vo/pyro_", false) != -1 
@@ -233,6 +318,11 @@ public Action:Hook_GameSound(clients[64], &numClients, String:sample[PLATFORM_MA
 
 public Action:TF2_CalcIsAttackCritical(client, weapon, String:weaponname[], &bool:result)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	if (GlobalForward_OnPlayerCalculateCritical != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnPlayerCalculateCritical);
@@ -249,6 +339,11 @@ public Action:TF2_CalcIsAttackCritical(client, weapon, String:weaponname[], &boo
 
 public Action:OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:angles[3], &weapon)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnPlayerRunCmd);
@@ -266,15 +361,27 @@ public Action:OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:ang
 
 public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadcast)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	if (GamemodeStatus != GameStatus_WaitingForPlayers)
 	{
 		IsMapEnding = true;
 		SpeedLevel = 1.0;
 	}
+
+	return Plugin_Continue;
 }
 
 public OnEntityCreated(entity, const String:classname[])
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	if (StrEqual(classname, "tf_wearable"))
 	{
 		// Delay is present so m_ModelName is set 
@@ -294,6 +401,11 @@ public OnEntityCreated(entity, const String:classname[])
 
 public Action:Timer_HatRemove(Handle:Timer, any:entity)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Handled;
+	}
+
 	if (IsValidEdict(entity))
 	{
 		//Hook transmit
@@ -309,6 +421,8 @@ public Action:Timer_HatRemove(Handle:Timer, any:entity)
 			SDKHook(entity, SDKHook_SetTransmit, Transmit_HatRemove);
 		}
 	}
+
+	return Plugin_Handled;
 }
 
 public Action:Transmit_HatRemove(entity, client)
@@ -318,6 +432,11 @@ public Action:Transmit_HatRemove(entity, client)
 
 public Action:Client_TakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	if (GlobalForward_OnPlayerTakeDamage != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnPlayerTakeDamage);
@@ -356,6 +475,11 @@ public Action:Client_TakeDamage(victim, &attacker, &inflictor, &Float:damage, &d
 
 public Action:TF2Items_OnGiveNamedItem(client, String:classname[], iItemDefinitionIndex, &Handle:hItem)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	if (StrEqual(classname, "tf_wearable", false) || StrEqual(classname, "tf_wearable_demoshield", false) || StrEqual(classname, "tf_powerup_bottle", false) || StrEqual(classname, "tf_weapon_spellbook", false))
 	{
 		return Plugin_Stop;
@@ -369,6 +493,11 @@ new currentUpdateFrame = 0;
 
 public OnGameFrame()
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new bool:isCurrentlyPlaying = (IsMinigameActive && GamemodeStatus == GameStatus_Playing && (MinigameID > 0 || BossgameID > 0));
 	new bool:isCurrentlyInTutorial = (GamemodeStatus == GameStatus_Tutorial);
 	new bool:isCurrentlyInGameOver = (GamemodeStatus == GameStatus_Playing && !IsMinigameActive && MinigamesPlayed == 0);
@@ -439,11 +568,21 @@ public OnGameFrame()
 
 public TF2_OnWaitingForPlayersStart()
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	ResetGamemode();
 }
 
 public TF2_OnWaitingForPlayersEnd()
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	PrepareConVars();
 
 	GamemodeStatus = GameStatus_Tutorial;
@@ -466,6 +605,11 @@ public TF2_OnWaitingForPlayersEnd()
 
 public TF2_OnConditionAdded(client, TFCond:condition)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	new bool:removeCondition = true;
 	switch (condition)
 	{
@@ -490,7 +634,12 @@ public TF2_OnConditionAdded(client, TFCond:condition)
 
 public OnClientPostAdminCheck(client)
 {
-	if (IsClientInGame(client) && !IsFakeClient(client) && IsMicroTF2Map())
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
+	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
 		SendConVarValue(client, FindConVar("sv_cheats"), "1");
 		if (GamemodeStatus == GameStatus_WaitingForPlayers)
@@ -514,6 +663,11 @@ public OnClientPostAdminCheck(client)
 
 public OnClientPutInServer(client)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	SDKHook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
 	SDKHook(client, SDKHook_Touch, Special_NoTouch);
 	SecuritySystem_OnClientPutInServer(client);
@@ -521,6 +675,11 @@ public OnClientPutInServer(client)
 
 public OnClientDisconnect(client)
 {
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
 	if (IsClientInGame(client))
 	{
 		PlayerScore[client] = 0;

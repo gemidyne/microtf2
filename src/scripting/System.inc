@@ -56,7 +56,7 @@ new Handle:HudSync_Caption;
 stock InitializeSystem()
 {
 	LogMessage("Initializing System...");
-
+	
 	InitializeForwards();
 	InitializeCommands();
 	InitializeSpecialRounds();

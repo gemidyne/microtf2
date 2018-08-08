@@ -61,6 +61,7 @@ new Float:SpeedLevel = 1.0;
  * Booleans
  */
 
+new bool:IsPluginEnabled = false;
 new bool:IsMinigameActive = false;
 new bool:IsMinigameEnding = false;
 new bool:IsMapEnding = false;

@@ -43,7 +43,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "2018.8A"
+#define PLUGIN_VERSION "2018.8B"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00MicroTF2 \x0700FFFF] {default}"
 
 #include Header.inc
@@ -127,7 +127,10 @@ public OnPluginStart()
 
 public OnMapStart()
 {
-	if (IsMicroTF2Map())
+	// Perform map check to see whether or not the plugin should do anything.
+	IsPluginEnabled = IsMicroTF2Map();
+
+	if (IsPluginEnabled)
 	{
 		decl String:gameDescription[32];
 		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
@@ -158,10 +161,6 @@ public OnMapStart()
 		{
 			SetFailState("MicroTF2 failed to initialise: ForwardSystem failed to start.");
 		}
-	}
-	else
-	{
-		UnloadPlugin();
 	}
 }
 

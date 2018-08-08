@@ -219,13 +219,8 @@ stock EndGame()
 
 	AcceptEntityInput(entity, "EndGame");
 
-	// Shutdown the system
-	RemoveForwardsFromMemory();
-	ShutdownCommands();
-
-	// Say bye!
+	ResetConVars();
 	EmitSoundToAll(SYSMUSIC_MAPEND);
-	UnloadPlugin();
 }
 
 stock GetActivePlayers(team = 0, bool:mustbealive = false)

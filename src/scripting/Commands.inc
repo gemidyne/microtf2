@@ -34,7 +34,7 @@ stock InitializeCommands()
 	}
 }
 
-stock ShutdownCommands()
+stock ResetConVars()
 {
 	ResetConVar(ConVar_HostTimescale);
 	ResetConVar(ConVar_PhysTimescale);
@@ -62,15 +62,7 @@ stock ShutdownCommands()
 
 	// TeamFortress ConVars
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
-
-	RemoveCommandListener(CmdOnPlayerTaunt, "taunt");
-	RemoveCommandListener(CmdOnPlayerTaunt, "+taunt");
-	RemoveCommandListener(CmdOnPlayerTaunt, "use_action_slot_item_server");
-	RemoveCommandListener(CmdOnPlayerTaunt, "+use_action_slot_item_server");
-
-	RemoveCommandListener(CmdOnPlayerKill, "kill");
-	RemoveCommandListener(CmdOnPlayerKill, "explode");
-
+	
 	new Handle:conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
 	{
@@ -127,6 +119,11 @@ stock PrepareConVars()
 
 public Action:CmdOnPlayerTaunt(client, const String:command[], args)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	#if defined DEBUG
 	PrintToChatAll("[DEBUG] Client num #%d CmdOnPlayerTaunt. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
 	#endif
@@ -136,6 +133,11 @@ public Action:CmdOnPlayerTaunt(client, const String:command[], args)
 
 public Action:CmdOnPlayerKill(client, const String:command[], args)
 {
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
 	#if defined DEBUG
 	PrintToChatAll("[DEBUG] Client num #%d CmdOnPlayerKill. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
 	#endif

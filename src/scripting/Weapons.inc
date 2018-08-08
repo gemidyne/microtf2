@@ -77,7 +77,6 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 	{
 		new String:weaponClassname[64];
 		new weaponIndex;
-		new weaponSlot;
 		new weaponQuality;
 		new weaponLevel;
 		new weaponAmmo;
@@ -88,9 +87,6 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 
 		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "index");
 		GetTrieValue(g_WeaponTrie, formatBuffer, weaponIndex);
-
-		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "slot");
-		GetTrieValue(g_WeaponTrie, formatBuffer, weaponSlot);
 
 		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "quality");
 		GetTrieValue(g_WeaponTrie, formatBuffer, weaponQuality);
