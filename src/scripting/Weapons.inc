@@ -80,6 +80,7 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 		new weaponSlot;
 		new weaponQuality;
 		new weaponLevel;
+		new weaponAmmo;
 		new String:weaponAttribs[256];
 
 		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "classname");
@@ -97,12 +98,20 @@ stock GiveWeapon(iClient, weaponLookupIndex)
 		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "level");
 		GetTrieValue(g_WeaponTrie, formatBuffer, weaponLevel);
 
+		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "ammo");
+		GetTrieValue(g_WeaponTrie, formatBuffer, weaponAmmo);
+
 		Format(formatBuffer, 32, "%d_%s", weaponLookupIndex, "attribs");
 		GetTrieString(g_WeaponTrie, formatBuffer, weaponAttribs, 256);
 
 		TF2_RemoveWeaponSlot(iClient, weaponSlot);
 
 		CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
+
+		if (weaponAmmo > -1) 
+		{
+			SetSpeshulAmmo(iClient, weaponSlot, weaponAmmo);
+		}
 	}
 }
 
