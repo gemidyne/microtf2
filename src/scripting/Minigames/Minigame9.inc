@@ -95,8 +95,8 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
-							ClientWonMinigame(i);
 							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+							ClientWonMinigame(i);
 						}
 
 						break;
@@ -119,8 +119,8 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
 						{
-							ClientWonMinigame(i);
 							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
+							ClientWonMinigame(i);
 						}
 
 						break;
