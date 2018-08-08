@@ -506,7 +506,37 @@ stock RemoveAllJarateEntities()
 stock DisplayHudMessage(const String:title[], const String:body[], Float:duration)
 {
 #if defined NEW_HUD
-	TrainingMessage(title, body, duration);
+	if (SpecialRoundID == 19)
+	{
+		new String:rewrittenTitle[MINIGAME_CAPTION_LENGTH];
+		new String:rewrittenBody[MINIGAME_CAPTION_LENGTH];
+
+		// Rewrite title
+		new rc = 0;
+		new len = strlen(title);
+
+		for (new c = len - 1; c >= 0; c--)
+		{
+			rewrittenTitle[rc] = title[c];
+			rc++;
+		}
+
+		// Rewrite body
+		rc = 0;
+		len = strlen(body);
+
+		for (new c = len - 1; c >= 0; c--)
+		{
+			rewrittenBody[rc] = body[c];
+			rc++;
+		}
+
+		TrainingMessage(rewrittenTitle, rewrittenBody, duration);
+	}
+	else
+	{
+		TrainingMessage(title, body, duration);
+	}
 #else
 
 #endif
@@ -515,7 +545,37 @@ stock DisplayHudMessage(const String:title[], const String:body[], Float:duratio
 stock DisplayHudMessageToClient(client, const String:title[], const String:body[], Float:duration)
 {
 #if defined NEW_HUD
-	TrainingMessageToClient(client, title, body, duration);
+	if (SpecialRoundID == 19)
+	{
+		new String:rewrittenTitle[MINIGAME_CAPTION_LENGTH];
+		new String:rewrittenBody[MINIGAME_CAPTION_LENGTH];
+
+		// Rewrite title
+		new rc = 0;
+		new len = strlen(title);
+
+		for (new c = len - 1; c >= 0; c--)
+		{
+			rewrittenTitle[rc] = title[c];
+			rc++;
+		}
+
+		// Rewrite body
+		rc = 0;
+		len = strlen(body);
+
+		for (new c = len - 1; c >= 0; c--)
+		{
+			rewrittenBody[rc] = body[c];
+			rc++;
+		}
+
+		TrainingMessageToClient(client, rewrittenTitle, rewrittenBody, duration);
+	}
+	else
+	{
+		TrainingMessageToClient(client, title, body, duration);
+	}
 #else
 
 #endif
