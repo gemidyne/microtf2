@@ -1,5 +1,18 @@
 "Phrases"
 {
+	"Startup_Header"
+	{
+		"it"		"Benvenuto a WarioWare!"
+	}
+	"Startup_BodyIntro"
+	{
+		"it"		"Il gioco comincerà a breve, sii pronto!"
+	}
+	"Startup_BodyCountdown"
+	{
+		"#format"	"{1:i}"
+		"it"		"Il gioco comincerà in {1}..."
+	}
 	"PlayerSpawn_RespawnNotice"
 	{
 		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
@@ -28,9 +41,21 @@
 	{
 		"it"		"I vincitori sono..."
 	}
+	"GameOver_WinnersAnd"
+	{
+		"it"		"e"
+	}
 	"GameOver_WinnerPrefixNoOne"
 	{
 		"it"		"Nessuno ha vinto!"
+	}
+	"Intermission_Header"
+	{
+		"en"		"Intervallo!"
+	}
+	"Intermission_Body"
+	{
+		"it"		"Pausa! È ora di votare per la prossima mappa."
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
