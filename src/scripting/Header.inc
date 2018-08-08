@@ -45,6 +45,7 @@ new MinigamesPlayed = 0;
 new BossGameThreshold = 20;
 new MaxRounds = 4;
 new RoundsPlayed = 0;
+new IntroCountdown = 0;
 new PlayerScore[MAXPLAYERS+1] = 0;
 new PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 new PlayerMinigamesWon[MAXPLAYERS+1] = 0;

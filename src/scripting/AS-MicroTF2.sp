@@ -166,10 +166,56 @@ public OnMapStart()
 
 public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
 {
+	IntroCountdown = 6;
 	GamemodeStatus = GameStatus_Playing;
-	SetMinigameCaptionForAll("NOW LOADING...");
 
-	CreateTimer(2.0, Timer_GameLogic_PrepareForMinigame);
+	for (new i = 1; i <= MaxClients; i++)
+	{
+		if (IsClientValid(i))
+		{
+			decl String:header[64];
+			Format(header, sizeof(header), "%T", "Startup_Header", i);
+
+			decl String:body[64];
+			Format(body, sizeof(body), "%T", "Startup_BodyIntro", i);
+
+			DisplayHudMessageToClient(i, header, body, 3.0);
+			DisplayOverlayToClient(i, OVERLAY_BLANK);
+		}
+	}
+
+	CreateTimer(1.0, Timer_GameLogic_EngineInitialisationCountdown);
+}
+
+public Action:Timer_GameLogic_EngineInitialisationCountdown(Handle:timer)
+{
+	if (IntroCountdown > 0)
+	{
+		IntroCountdown--;
+
+		if (IntroCountdown <= 3)
+		{
+			for (new i = 1; i <= MaxClients; i++)
+			{
+				if (IsClientValid(i))
+				{
+					decl String:header[64];
+					Format(header, sizeof(header), "%T", "Startup_Header", i);
+
+					decl String:body[64];
+					Format(body, sizeof(body), "%T", "Startup_BodyCountdown", i, IntroCountdown);
+
+					DisplayHudMessageToClient(i, header, body, 1.1);
+				}
+			}
+		}
+
+		CreateTimer(1.0, Timer_GameLogic_EngineInitialisationCountdown);
+	}
+	else
+	{
+		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame);
+	}
 }
 
 public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
@@ -941,7 +987,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				if (i >= (GetArraySize(winners)-1))
 				{
-					Format(names, sizeof(names), "%s and %N", names, client);
+					Format(names, sizeof(names), "%s %T %N", names, "GameOver_WinnersAnd", client);
 				}
 				else
 				{
@@ -1133,13 +1179,18 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 
 		if (isWaitingForVoteToFinish)
 		{
-			SetMinigameCaptionForAll("INTERMISSION!\nVOTE FOR THE NEXT MAP!");
-
 			for (new i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientInGame(i) && !IsFakeClient(i))
 				{
+					decl String:header[64];
+					Format(header, sizeof(header), "%T", "Intermission_Header", i);
+
+					decl String:body[64];
+					Format(body, sizeof(body), "%T", "Intermission_Body", i);
+
 					EmitSoundToClient(i, SYSMUSIC_WAITINGFORPLAYERS);
+					DisplayHudMessageToClient(i, header, body, 5.0);
 				}
 			}
 		}
