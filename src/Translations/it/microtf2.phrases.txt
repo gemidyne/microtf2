@@ -10,7 +10,6 @@
 	}
 	"Startup_BodyCountdown"
 	{
-		"#format"	"{1:i}"
 		"it"		"Il gioco comincerà in {1}..."
 	}
 	"PlayerSpawn_RespawnNotice"
