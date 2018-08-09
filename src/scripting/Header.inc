@@ -89,6 +89,7 @@ new Handle:ConVar_PhysTimescale = INVALID_HANDLE;
 new Handle:ConVar_ServerGravity = INVALID_HANDLE;
 new Handle:ConVar_TFCheapObjects = INVALID_HANDLE;
 new Handle:ConVar_TFFastBuild = INVALID_HANDLE;
+new Handle:ConVar_FriendlyFire = INVALID_HANDLE;
 new Handle:Handle_BossCheckTimer = INVALID_HANDLE;
 new Handle:Handle_ActiveGameTimer = INVALID_HANDLE;
 

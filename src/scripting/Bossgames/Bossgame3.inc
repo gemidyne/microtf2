@@ -43,7 +43,7 @@ public Bossgame3_OnMinigameSelectedPre()
 	{
 		Bossgame3_REDIdx = 1;
 		Bossgame3_BLUIdx = 1;
-		SetConVarInt(FindConVar("mp_friendlyfire"), 0);
+		SetConVarInt(ConVar_FriendlyFire, 0);
 	}
 }
 

@@ -33,6 +33,8 @@ public MinigameTwo_OnSelectionPre()
 {
 	if (MinigameID == 2)
 	{
+		SetConVarInt(ConVar_FriendlyFire, 1);
+
 		Minigame2_Class = GetRandomInt(0, 8);
 		IsBlockingDamage = false;
 		IsBlockingDeaths = false;

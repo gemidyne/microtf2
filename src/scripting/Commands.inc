@@ -20,6 +20,7 @@ stock InitializeCommands()
 	ConVar_ServerGravity = FindConVar("sv_gravity");
 	ConVar_TFCheapObjects = FindConVar("tf_cheapobjects");
 	ConVar_TFFastBuild = FindConVar("tf_fastbuild");
+	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
 	RegAdminCmd("mtf2_setnextspr", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Force a Special Round after this round!");
 	RegAdminCmd("mtf2_changespr", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If less than 0, or not found, Normal Gamemode is run. Otherwise, Special Round.");
@@ -53,7 +54,7 @@ stock ResetConVars()
 
 	// Multiplayer ConVars
 	ResetConVar(FindConVar("mp_stalemate_enable"));
-	ResetConVar(FindConVar("mp_friendlyfire"));
+	ResetConVar(ConVar_FriendlyFire);
 	ResetConVar(FindConVar("mp_waitingforplayers_time"));
 	ResetConVar(FindConVar("mp_disable_respawn_times"));
 	ResetConVar(FindConVar("mp_respawnwavetime"));
@@ -62,7 +63,8 @@ stock ResetConVars()
 
 	// TeamFortress ConVars
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
-	
+	ResetConVar(FindConVar("tf_max_health_boost"));
+
 	new Handle:conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
 	{
@@ -93,6 +95,7 @@ stock PrepareConVars()
 
 	// TeamFortress ConVars
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
+	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
 
 	// ConVars with Handles
 	SetConVarInt(ConVar_ServerGravity, 800);

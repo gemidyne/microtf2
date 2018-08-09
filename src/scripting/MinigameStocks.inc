@@ -129,7 +129,7 @@ stock EndBoss()
 {
 	if (IsMinigameActive && BossgameID > 0 && MinigameID == 0)
 	{
-		SetConVarInt(FindConVar("mp_friendlyfire"), 1);
+		SetConVarInt(ConVar_FriendlyFire, 1);
 
 		if (MinigamesPlayed != BossGameThreshold)
 		{
@@ -160,20 +160,6 @@ stock EndBoss()
 			Handle_ActiveGameTimer = INVALID_HANDLE;
 		}
 		CreateTimer(0.0, Timer_GameLogic_EndMinigame);
-	}
-}
-
-stock SetMinigameCaptionForAll(const String:text[])
-{
-	decl String:objective[64];
-	Format(objective, sizeof(objective), text);
-
-	for (new i = 1; i <= MaxClients; i++)
-	{
-		if (IsClientValid(i))
-		{
-			DisplayHudMessage("INFORMATION", objective, 3.0);
-		}
 	}
 }
 
