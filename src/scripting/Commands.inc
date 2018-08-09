@@ -96,6 +96,7 @@ stock PrepareConVars()
 	// TeamFortress ConVars
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
+	SetConVarInt(ConVar_TFFastBuild, 0);
 
 	// ConVars with Handles
 	SetConVarInt(ConVar_ServerGravity, 800);
