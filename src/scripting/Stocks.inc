@@ -538,7 +538,7 @@ stock DisplayHudMessage(const String:title[], const String:body[], Float:duratio
 		TrainingMessage(title, body, duration);
 	}
 #else
-
+	
 #endif
 }
 

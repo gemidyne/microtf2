@@ -59,7 +59,9 @@ public Minigame6_GetDynamicCaption(client)
 {
 	if (IsClientValid(client))
 	{
-		DisplayHudMessageToClient(client, MinigameCaption[client], MinigameSix_SayTextAnswer, 3.0);
+		decl String:text[64];	
+ 		Format(text, sizeof(text), "%s\n%s", MinigameCaption[client], MinigameSix_SayTextAnswer);	
+ 		MinigameCaption[client] = text;
 	}
 }
 

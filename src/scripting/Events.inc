@@ -526,6 +526,7 @@ public OnGameFrame()
 		if (canUpdateHudText)
 		{
 			SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
+			
 			for (new i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientValid(i))
@@ -546,6 +547,15 @@ public OnGameFrame()
 						}
 
 						strcopy(buffer, sizeof(buffer), rewritten);
+					}
+
+					if (strlen(buffer) > 0)	
+					{	
+						ShowSyncHudText(i, HudSync_Caption, buffer);	
+					}	
+					else	
+					{	
+						ClearSyncHud(i, HudSync_Caption);	
 					}
 				}
 			}

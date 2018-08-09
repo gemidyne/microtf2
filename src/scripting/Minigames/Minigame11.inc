@@ -55,7 +55,7 @@ public Minigame11_GetDynamicCaption(client)
 			text = "DON\'T MOVE!";
 		}
 
-		DisplayHudMessageToClient(client, text, "", 3.0);			
+		MinigameCaption[client]	= text;
 	}
 }
 

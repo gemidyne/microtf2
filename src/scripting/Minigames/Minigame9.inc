@@ -53,8 +53,7 @@ public Minigame9_GetDynamicCaption(client)
 			case 6: text = "SOMEONE SAYS: CROUCH!";
 		}
 
-		MinigameCaption[client] = text; // for storage only
-		DisplayHudMessageToClient(client, text, "...", 3.0);
+		MinigameCaption[client] = text; 
 	}
 }
 
@@ -73,7 +72,6 @@ public MinigameNine_OnGameFrame()
 						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
 							ClientWonMinigame(i);
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
 						}
 
 						break;
@@ -83,7 +81,7 @@ public MinigameNine_OnGameFrame()
 					{
 						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 
@@ -95,7 +93,6 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
 							ClientWonMinigame(i);
 						}
 
@@ -107,7 +104,7 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 
@@ -119,7 +116,6 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
 						{
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Good job!", 3.0);
 							ClientWonMinigame(i);
 						}
 
@@ -131,7 +127,7 @@ public MinigameNine_OnGameFrame()
 						new button = GetClientButtons(i);
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							DisplayHudMessageToClient(i, MinigameCaption[i], "Simon didn\'t say it...", 3.0);
+							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 

@@ -17,7 +17,7 @@ public Minigame20_EntryPoint()
 public bool:Minigame20_OnCheck()
 {
 	// TODO: Fix usage of lunchbox items
-	return false;
+	return true;
 }
 
 public Minigame20_OnMinigameSelectedPre()
@@ -91,7 +91,7 @@ public Minigame20_GetDynamicCaption(client)
 			}
 		}
 
-		DisplayHudMessageToClient(client, text, "", 3.0);
+		MinigameCaption[client] = text;
 	}
 }
 

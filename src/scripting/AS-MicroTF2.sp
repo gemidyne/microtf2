@@ -5,7 +5,7 @@
 
 #pragma semicolon 1
 
-#define NEW_HUD // Use TrainingMessage HUD messages? (Requires SendProxy and sv_parallel_packentities to be 0.)
+//#define NEW_HUD // Use TrainingMessage HUD messages? (Requires SendProxy and sv_parallel_packentities to be 0.)
 
 #include <sourcemod>
 #include <sdktools>
@@ -42,7 +42,7 @@
 /**
  * Defines
  */
-//#define DEBUG
+#define DEBUG
 #define PLUGIN_VERSION "2018.8B"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00MicroTF2 \x0700FFFF] {default}"
 
@@ -286,10 +286,6 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 		centerText = "";
 	}
 
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Preparing to choose minigame");
-	#endif
-
 	if (MinigamesPlayed >= BossGameThreshold)
 	{
 		new i = 0;
@@ -328,6 +324,10 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 			i++;
 		}
 		while (BossgameID == PreviousBossgameID);
+
+		#if defined DEBUG
+		PrintToChatAll("[DEBUG] Chose bossgame %i", BossgameID);
+		#endif
 	}
 	else
 	{
@@ -369,11 +369,16 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 						// This fixes a crash.
 						PreviousMinigameID = 1;
 					}
+
 				}
 
 				i++;
 			}
 			while (MinigameID == PreviousMinigameID);
+
+			#if defined DEBUG
+			PrintToChatAll("[DEBUG] Chose minigame %i", MinigameID);
+			#endif
 		}
 	}
 
@@ -437,7 +442,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 	PrintToChatAll("[DEBUG] Clients ready. Creating timer for Timer_GameLogic_StartMinigame");
 	#endif
 
-	CreateTimer(duration, Timer_GameLogic_StartMinigame);
+	CreateTimer(duration, Timer_GameLogic_StartMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	
 	return Plugin_Handled;
 }
@@ -514,6 +519,8 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 			if (BossgameID > 0) 
 			{
+				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);	
+
 				if (!isCaptionDynamic)
 				{
 					decl String:objective[64];
@@ -543,7 +550,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 			if (IsPlayerParticipant[i])
 			{
-				DisplayOverlayToClient(i, OVERLAY_BLANK);
+				DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
 
 				if (isCaptionDynamic)
 				{
@@ -566,30 +573,22 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 		}
 	}
 
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Clients prepared - calling post forward..");
-	#endif
-
 	if (GlobalForward_OnMinigameSelectedPost != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnMinigameSelectedPost);
 		Call_Finish();
 	}
 
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Forward called. Creating Timers for Timer_GameLogic_EndMinigame and OnPreFinish");
-	#endif
-
 	if (MinigameID > 0)
 	{
-		CreateTimer(MinigameMusicLength[MinigameID], Timer_GameLogic_EndMinigame);
-		CreateTimer((MinigameMusicLength[MinigameID] - 0.5), Timer_GameLogic_OnPreFinish);
+		CreateTimer(MinigameMusicLength[MinigameID], Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer((MinigameMusicLength[MinigameID] - 0.5), Timer_GameLogic_OnPreFinish, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else if (BossgameID > 0)
 	{
-		Handle_ActiveGameTimer = CreateTimer(BossgameLength[BossgameID], Timer_GameLogic_EndMinigame);
-		CreateTimer(10.0, Timer_RemoveBossOverlay);
-		Handle_BossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd);
+		Handle_ActiveGameTimer = CreateTimer(BossgameLength[BossgameID], Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(10.0, Timer_RemoveBossOverlay, _, TIMER_FLAG_NO_MAPCHANGE);
+		Handle_BossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
@@ -605,10 +604,6 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 {
 	IsMinigameEnding = true;
 
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Timer_GameLogic_EndMinigame called. Calling OnMinigameFinish forward.");
-	#endif
-
 	SetSpeed();
 	ShowPlayerScores(true);
 
@@ -617,10 +612,6 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 		Call_StartForward(GlobalForward_OnMinigameFinish);
 		Call_Finish();
 	}
-
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Saving data...");
-	#endif
 
 	new bool:playAnotherBossgame = false;
 	new bool:returnedFromBoss = false;
@@ -643,10 +634,6 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 		playAnotherBossgame = (SpecialRoundID == 10 && MinigamesPlayed == BossGameThreshold);
 	}
 
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Preparing env for next minigame");
-	#endif
-
 	IsMinigameActive = false;
 	IsMinigameEnding = false;
 	MinigamesPlayed++;
@@ -659,10 +646,6 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 	IsOnlyBlockingDamageByPlayers = false;
 
 	SpecialRound_SetupEnv();
-
-	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Preparing clients...");
-	#endif
 
 	for (new i = 1; i <= MaxClients; i++)
 	{
@@ -692,6 +675,10 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 				if (IsPlayerParticipant[i])
 				{
+					#if defined DEBUG
+					PrintToChatAll("[DEBUG] %N: Participant, NotWon/Failed", i);
+					#endif
+
 					SetEntProp(i, Prop_Send, "m_bGlowEnabled", 1);
 					SetPlayerHealth(i, 1);
 					PlayerMinigamesLost[i]++;
@@ -715,9 +702,19 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 						PlayerScore[i] = 0;
 					}
 				}
+				else
+				{
+					#if defined DEBUG
+					PrintToChatAll("[DEBUG] %N: NOT participant, NotWon/Failed", i);
+					#endif
+				}
 			}
 			else
 			{
+				#if defined DEBUG
+				PrintToChatAll("[DEBUG] %N: Participant, Winner", i);
+				#endif
+
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
 				PlaySoundToPlayer(i, SystemVocal[SYSFX_VOCAL_POSITIVE][GetRandomInt(0, 6)]);
 				DisplayOverlayToClient(i, OVERLAY_WON);
@@ -759,7 +756,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 		if (participants <= 1)
 		{
 			// End the round!
-			CreateTimer(2.0, Timer_GameLogic_GameOverStart);
+			CreateTimer(2.0, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
 			return Plugin_Handled;
 		}
 		else
@@ -783,7 +780,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 			PrintToChatAll("[DEBUG] Decided to do a speed change!");
 			#endif
 
-			CreateTimer(2.0, Timer_GameLogic_SpeedChange);
+			CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
 			return Plugin_Handled;
 		}
 	}
@@ -794,18 +791,18 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 		SpecialRoundID = GetRandomInt(SPR_MIN, SPR_MAX);
 
-		CreateTimer(2.0, Timer_GameLogic_SpecialRoundSelectionStart);
+		CreateTimer(2.0, Timer_GameLogic_SpecialRoundSelectionStart, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 
 	if ((SpecialRoundID != 10 && MinigamesPlayed == BossGameThreshold && !playAnotherBossgame) || (SpecialRoundID == 10 && (MinigamesPlayed == BossGameThreshold || playAnotherBossgame)))
 	{
-		CreateTimer(2.0, Timer_GameLogic_BossTime);
+		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 	else if (MinigamesPlayed > BossGameThreshold && !playAnotherBossgame)
 	{
-		CreateTimer(2.0, Timer_GameLogic_GameOverStart);
+		CreateTimer(2.0, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 
@@ -813,7 +810,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 	PrintToChatAll("[DEBUG] Decided to continue gameplay as normal.");
 	#endif
 
-	CreateTimer(2.0, Timer_GameLogic_PrepareForMinigame);
+	CreateTimer(2.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -855,7 +852,7 @@ public Action:Timer_GameLogic_SpeedChange(Handle:timer)
 		}
 	}
 
-	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP], Timer_GameLogic_PrepareForMinigame);
+	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -875,7 +872,7 @@ public Action:Timer_GameLogic_BossTime(Handle:timer)
 		}
 	}
 
-	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_BOSSTIME], Timer_GameLogic_PrepareForMinigame);
+	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_BOSSTIME], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -1033,7 +1030,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				if (i >= (GetArraySize(winners)-1))
 				{
-					Format(names, sizeof(names), "%s and {olive}%N{green}", names, client);
+					Format(names, sizeof(names), "%s %T {olive}%N{green}", names, "GameOver_WinnersAnd", client);
 				}
 				else
 				{
@@ -1066,11 +1063,11 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 
 				if (SpecialRoundID == 17)
 				{
-					CPrintToChat(i, "%s %s!", prefix, names);
+					CPrintToChat(i, "%s%s %s!", PLUGIN_PREFIX, prefix, names);
 				}
 				else
 				{
-					CPrintToChat(i, "%s %s {green}with %i points!", prefix, names, score);
+					CPrintToChat(i, "%s%s %s {green}with %i points!", PLUGIN_PREFIX, prefix, names, score);
 				}
 			}
 		}
@@ -1084,7 +1081,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixNoOne", i);
 
-				CPrintToChat(i, "%s", prefix);
+				CPrintToChat(i, "%s%s", PLUGIN_PREFIX, prefix);
 			}
 		}
 	}
@@ -1093,7 +1090,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 	CloseHandle(winners);
 	winners = INVALID_HANDLE;
 
-	CreateTimer(8.0, Timer_GameLogic_GameOverEnd);
+	CreateTimer(8.0, Timer_GameLogic_GameOverEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -1195,7 +1192,7 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 			}
 		}
 
-		CreateTimer(2.0, Timer_GameLogic_WaitForVoteToFinishIfAny);
+		CreateTimer(2.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
@@ -1218,7 +1215,7 @@ public Action:Timer_GameLogic_WaitForVoteToFinishIfAny(Handle:timer)
 
 	if (voteIsInProgress)
 	{
-		CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny);
+		CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 
@@ -1234,11 +1231,11 @@ public Action:Timer_GameLogic_WaitForVoteToFinishIfAny(Handle:timer)
 
 	if (GamemodeID == SPR_GAMEMODEID)
 	{
-		CreateTimer(0.0, Timer_GameLogic_SpecialRoundSelectionStart);
+		CreateTimer(0.0, Timer_GameLogic_SpecialRoundSelectionStart, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
-		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame);
+		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 
 	return Plugin_Handled;
@@ -1255,19 +1252,19 @@ public Action:Timer_GameLogic_SpecialRoundSelectionStart(Handle:timer)
 		PlaySoundToAll(SYSMUSIC_SPECIALROUND);
 	}
 	
-	CreateTimer(0.2, Timer_GameLogic_SpecialRoundChoosing3);
+	CreateTimer(0.2, Timer_GameLogic_SpecialRoundChoosing3, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
 public Action:Timer_GameLogic_SpecialRoundChoosing3(Handle:timer)
 {
-	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing2);
+	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing2, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
 public Action:Timer_GameLogic_SpecialRoundChoosing2(Handle:timer)
 {
-	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing1);
+	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing1, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -1277,7 +1274,7 @@ public Action:Timer_GameLogic_SpecialRoundChoosing1(Handle:timer)
 
 	DisplayOverlayToAll(OVERLAY_SPECIALROUND);
 
-	CreateTimer(6.8, Timer_GameLogic_SpecialRoundChoosing0);
+	CreateTimer(6.8, Timer_GameLogic_SpecialRoundChoosing0, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -1290,6 +1287,6 @@ public Action:Timer_GameLogic_SpecialRoundChoosing0(Handle:timer)
 	SelectNewSpecialRound();
 	PrintSelectedSpecialRound();
 
-	CreateTimer(5.0, Timer_GameLogic_PrepareForMinigame);
+	CreateTimer(5.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
