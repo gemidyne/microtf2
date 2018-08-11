@@ -42,7 +42,7 @@
 /**
  * Defines
  */
-#define DEBUG
+//#define DEBUG
 #define PLUGIN_VERSION "2018.8B"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00MicroTF2 \x0700FFFF] {default}"
 
@@ -118,10 +118,9 @@ public OnPluginStart()
 
 	LoadTranslations("microtf2.phrases.txt");
 
-	Offset_Collision = FindSendPropOffs("CBaseEntity", "m_CollisionGroup");
+	Offset_Collision = FindSendPropInfo("CBaseEntity", "m_CollisionGroup");
 
 	HookEvents();
-	CreateWeaponTrie();
 	InitializeSystem();
 }
 
@@ -1030,7 +1029,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			{
 				if (i >= (GetArraySize(winners)-1))
 				{
-					Format(names, sizeof(names), "%s %T {olive}%N{green}", names, "GameOver_WinnersAnd", client);
+					Format(names, sizeof(names), "%s and {olive}%N{green}", names, "GameOver_WinnersAnd", client); // "AND" here needs to be fixed!!!
 				}
 				else
 				{

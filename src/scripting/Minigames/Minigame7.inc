@@ -26,8 +26,7 @@ public Minigame7_OnMinigameSelected(client)
 	if (IsMinigameActive && MinigameID == 7 && IsClientValid(client))
 	{
 		TF2_SetPlayerClass(client, TFClass_Soldier);
-		TF2_RemoveAllWeapons(client);
-
+		ResetWeapon(client, true);
 		IsGodModeEnabled(client, false);
 		SetPlayerHealth(client, 1000);
 		GiveWeapon(client, 237);

@@ -440,7 +440,6 @@ stock Special_LoadFakeConditions()
 	}
 
 	decl String:line[SPR_FAKECOND_LENGTH];
-	new bool:loggedError = false;
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{

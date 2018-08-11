@@ -65,7 +65,15 @@ public Minigame15_OnMinigameSelected(client)
 		TF2_SetPlayerClass(client, TFClass_Engineer);
 		TF2_RegeneratePlayer(client);
 		IsViewModelVisible(client, true);
-		SetEntData(client, FindDataMapOffs(client, "m_iAmmo") + (3 * 4), 200, 4);
+
+		int ammoOffset = FindDataMapInfo(client, "m_iAmmo");
+
+		if (ammoOffset == -1)
+		{
+			SetFailState("Failed to find m_iAmmo offset on CTFPlayer.");
+		}
+
+		SetEntData(client, ammoOffset + (3 * 4), 200, 4);
 	}
 }
 
@@ -74,7 +82,7 @@ public Minigame15_GetDynamicCaption(client)
 	if (IsClientValid(client))
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
-		decl String:text[64];
+		char text[64];
 
 		if (Minigame15_AssertObject)
 		{

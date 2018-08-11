@@ -45,8 +45,6 @@ public MinigameTwo_OnSelection(client)
 {
 	if (IsMinigameActive && MinigameID == 2 && IsClientValid(client))
 	{
-		TF2_RemoveAllWeapons(client);
-
 		new TFClassType:class;
 		new weapon = 0;
 
@@ -99,7 +97,9 @@ public MinigameTwo_OnSelection(client)
 			}
 		}
 
-		TF2_SetPlayerClass(client, class);	
+		TF2_SetPlayerClass(client, class);
+
+		ResetWeapon(client, true);
 		GiveWeapon(client, weapon);
 
 		SetPlayerHealth(client, 1);

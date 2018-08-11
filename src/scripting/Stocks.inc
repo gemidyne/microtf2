@@ -54,29 +54,45 @@ stock DisplayOverlayToAll(const String:path[])
 	}
 }
 
-stock SetPlayerHealth(client, health)
+stock void SetPlayerHealth(int client, int health)
 {
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
-		SetEntData(client, FindDataMapOffs(client, "m_iMaxHealth"), health, 4, true);
-		SetEntData(client, FindDataMapOffs(client, "m_iHealth"), health, 4, true);
+		int maxHealthOffset = FindDataMapInfo(client, "m_iMaxHealth");
+		int healthOffset = FindDataMapInfo(client, "m_iHealth");
+
+		if (maxHealthOffset == -1 || healthOffset == -1)
+		{
+			SetFailState("Failed to find m_iMaxHealth / m_iHealth on CTFPlayer.");
+		}
+
+		SetEntData(client, maxHealthOffset, health, 4, true);
+		SetEntData(client, healthOffset, health, 4, true);
 	}
 }
 
-stock IsViewModelVisible(client, bool:visible)
+stock void IsViewModelVisible(int client, bool visible)
 {
-	return; // Due to viewmodel issues.
+	return;
 
-	if (IsClientInGame(client) && !IsFakeClient(client))
-	{
-		new weapon = GetEntDataEnt2(client, FindSendPropOffs("CTFPlayer", "m_hActiveWeapon"));
-		if (IsValidEntity(weapon))
-		{
-			SetEntityRenderColor(weapon, 255, 255, 255, (visible ? 255 : 0));
-			SetEntityRenderMode(weapon, (visible ? RENDER_NORMAL : RENDER_TRANSCOLOR));
-			SetEntProp(client, Prop_Send, "m_bDrawViewmodel", (visible ? 1 : 0));
-		}
-	}
+	// if (IsClientInGame(client) && !IsFakeClient(client))
+	// {
+	// 	int weaponOffset = FindSendPropOffs("CTFPlayer", "m_hActiveWeapon");
+
+	// 	if (weaponOffset <= 0)
+	// 	{
+	// 		SetFailState("Unable to find m_hActiveWeapon offset on CTFPlayer.");
+	// 	}
+
+	// 	int weapon = GetEntDataEnt2(client, weaponOffset);
+
+	// 	if (IsValidEntity(weapon))
+	// 	{
+	// 		SetEntityRenderColor(weapon, 255, 255, 255, (visible ? 255 : 0));
+	// 		SetEntityRenderMode(weapon, (visible ? RENDER_NORMAL : RENDER_TRANSCOLOR));
+	// 		SetEntProp(client, Prop_Send, "m_bDrawViewmodel", (visible ? 1 : 0));
+	// 	}
+	// }
 }
 
 stock IsGodModeEnabled(client, bool:enabled)
@@ -146,7 +162,7 @@ stock RemovePlayerWearables(client)
 	}
 }
 
-stock ResetWeapon(client, bool:viewModel)
+stock void ResetWeapon(int client, bool viewModel)
 {
 	if (IsClientInGame(client))
 	{
@@ -353,7 +369,7 @@ public AddClientToBitString(bitfield, client)
 
 stock SetPlayerAmmo(client, ammoCount)
 {
-	new activeweapon = FindSendPropOffs("CAI_BaseNPC", "m_hActiveWeapon");
+	new activeweapon = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
 
 	if (activeweapon <= 0)
 	{
@@ -369,7 +385,7 @@ stock SetPlayerAmmo(client, ammoCount)
 
 	new ammotype = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
 	new ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
-	new clip = FindSendPropOffs("CBaseCombatWeapon", "m_iClip1");
+	new clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
 
 	if (ammo <= 0)
 	{

@@ -27,7 +27,7 @@ stock InitializeCommands()
 
 	RegAdminCmd("mtf2_setgamemode", CmdSetGamemode, ADMFLAG_VOTE, "Sets the current gamemode.");
 
-	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", FCVAR_PLUGIN, true, 0.0);
+	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 
 	if (ConVar_MTF2MaxRounds != INVALID_HANDLE)
 	{

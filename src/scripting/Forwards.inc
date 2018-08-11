@@ -198,7 +198,7 @@ new Handle:GlobalForward_OnPlayerRunCmd;
  */
 new Handle:GlobalForward_OnBossStopAttempt;
 
-stock InitializeForwards()
+stock void InitializeForwards()
 {
 	LogMessage("Initializing Forwards...");
 
@@ -226,7 +226,7 @@ stock InitializeForwards()
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 }
 
-stock RemoveForwardsFromMemory()
+stock void RemoveForwardsFromMemory()
 {
 	SafelyRemoveAllFromForward(GlobalForward_OnMapStart);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreload);
@@ -251,7 +251,7 @@ stock RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
 }
 
-stock SafelyRemoveAllFromForward(Handle:hndl)
+stock void SafelyRemoveAllFromForward(Handle hndl)
 {
 	if (hndl != INVALID_HANDLE)
 	{

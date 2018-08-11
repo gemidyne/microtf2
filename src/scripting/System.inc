@@ -121,7 +121,7 @@ stock InitializeSystem()
 	InitialisePrecacheSystem();
 	InitialiseSecuritySystem();
 
-	InitialiseWeaponEquip();
+	InitialiseWeapons();
 }
 
 public System_OnMapStart()

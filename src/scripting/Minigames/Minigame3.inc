@@ -81,7 +81,6 @@ public MinigameThree_OnSelection(client)
 {
 	if (IsMinigameActive && MinigameID == 3 && IsClientValid(client))
 	{
-		TF2_RemoveAllWeapons(client);
 		TF2_SetPlayerClass(client, TFClass_Scout);
 		ResetWeapon(client, true);
 	}
