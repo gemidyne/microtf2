@@ -480,6 +480,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 	ShowPlayerScores(true);
 	SpecialRound_SetupEnv();
 
+	g_iCenterHudUpdateFrame = g_iCenterHudUpdateInterval + 1;
 	IsMinigameActive = true;
 
 	#if defined DEBUG
@@ -1191,7 +1192,9 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 					Format(body, sizeof(body), "%T", "Intermission_Body", i);
 
 					EmitSoundToClient(i, SYSMUSIC_WAITINGFORPLAYERS);
-					DisplayHudMessageToClient(i, header, body, 5.0);
+
+					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, header);
+					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, body);
 				}
 			}
 		}

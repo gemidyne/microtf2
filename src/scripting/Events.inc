@@ -490,9 +490,6 @@ public Action:TF2Items_OnGiveNamedItem(client, String:classname[], iItemDefiniti
 	return Plugin_Continue;
 }
 
-new nextUpdateFrame = 20;
-new currentUpdateFrame = 0;
-
 public OnGameFrame()
 {
 	if (!IsPluginEnabled)
@@ -507,7 +504,7 @@ public OnGameFrame()
 
 	if (canUpdateHudText)
 	{
-		currentUpdateFrame++;
+		g_iCenterHudUpdateFrame++;
 	}
 
 	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
@@ -521,7 +518,7 @@ public OnGameFrame()
 		GamemodeStatus = GameStatus_WaitingForPlayers;
 	}
 
-	if (currentUpdateFrame > nextUpdateFrame)
+	if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
 	{
 #if defined NEW_HUD
 #else
@@ -562,18 +559,18 @@ public OnGameFrame()
 				}
 			}
 
-			currentUpdateFrame = 0;
+			g_iCenterHudUpdateFrame = 0;
 		}
 
 #endif
 	}
 
 	#if defined DEBUG
-	if (GamemodeStatus != GameStatus_WaitingForPlayers && currentUpdateFrame > nextUpdateFrame)
+	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
 	{
 		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
 
-		currentUpdateFrame = 0;
+		g_iCenterHudUpdateFrame = 0;
 	}
 	#endif
 }

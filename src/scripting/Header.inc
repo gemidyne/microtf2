@@ -52,6 +52,9 @@ new PlayerMinigamesWon[MAXPLAYERS+1] = 0;
 new IsPlayerWinner[MAXPLAYERS+1] = 0;
 new PlayerIndex[MAXPLAYERS+1] = 0;
 
+new g_iCenterHudUpdateInterval = 33;
+new g_iCenterHudUpdateFrame = 0;
+
 /**
  * Floats
  */
