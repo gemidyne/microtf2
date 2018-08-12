@@ -50,7 +50,7 @@
 	}
 	"Intermission_Header"
 	{
-		"en"		"Intervallo!"
+		"it"		"Intervallo!"
 	}
 	"Intermission_Body"
 	{
