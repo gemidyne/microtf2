@@ -21,7 +21,7 @@ public Minigame12_OnMinigameSelectedPre()
 	if (MinigameID == 12)
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 
 		CreateTimer(0.15, Timer_Minigame12_TriggerWater);
 	}

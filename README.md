@@ -6,10 +6,10 @@ This plugin is now being maintained as of August 2018.
 
 ## Extension Dependencies
 This plugin utilises the following extensions:
-- Sound Info Library extension - https://forums.alliedmods.net/showthread.php?t=105816 / https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames.)
+- Sound Info Library extension - https://forums.alliedmods.net/showthread.php?t=105816 / https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 - SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
-- TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for giving player weapons, etc.)
-- SendProxy Manager extension - latest version at https://github.com/SlidyBat/sendproxy (Used for New HUD messaging. NOTE: On SM1.10 the plugin will automatically set sv_parallel_packentities to 0, so there may be a performance impact. Future documentation on NEW HUD is coming soon.)
+- TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
+- TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
 
 ## Credits
 This plugin uses many code snippets from other plugins over the years. Credit where credit is due, and I do not claim ownership over said code snippets.

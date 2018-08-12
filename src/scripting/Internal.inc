@@ -273,7 +273,7 @@ stock ResetGamemode()
 
 	IsBlockingDamage = true;
 	IsOnlyBlockingDamageByPlayers = false;
-	IsBlockingDeaths = true;
+	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 
 	for (new i = 1; i <= MaxClients; i++)

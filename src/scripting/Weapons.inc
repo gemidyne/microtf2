@@ -106,12 +106,25 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 		CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
 
+		int entityID = GetPlayerWeaponSlot(iClient, weaponSlot);
+
+		new String:weaponAttribsArray[32][32];
+		new attribCount = ExplodeString(weaponAttribs, " ; ", weaponAttribsArray, 32, 32);
+
+		if (attribCount > 1) 
+		{
+			for (new i = 0; i < attribCount; i+=2) 
+			{
+				TF2Attrib_SetByDefIndex(entityID, StringToInt(weaponAttribsArray[i]), StringToFloat(weaponAttribsArray[i+1]));
+			}
+		} 
+
 		if (weaponAmmo > -1) 
 		{
-			SetSpeshulAmmo(iClient, weaponSlot, weaponAmmo);
+			SetSpeshulAmmo(iClient, entityID, weaponAmmo);
 		}
 
-		SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(iClient, weaponSlot));
+		SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", entityID);
 	}
 }
 
@@ -143,12 +156,11 @@ stock bool CreateNamedItem(int client, int itemindex, const String:classname[], 
 } 
 
 //DarthNinja..
-stock void SetSpeshulAmmo(int client, int wepslot, int newAmmo)
+stock void SetSpeshulAmmo(int client, int weaponEntityId, int newAmmo)
 {
-	int weapon = GetPlayerWeaponSlot(client, wepslot);
-	if (IsValidEntity(weapon))
+	if (IsValidEntity(weaponEntityId))
 	{
-		int offset = GetEntProp(weapon, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
+		int offset = GetEntProp(weaponEntityId, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
 		int ammoTable = FindSendPropInfo("CTFPlayer", "m_iAmmo");
 
 		SetEntData(client, ammoTable+offset, newAmmo, 4, true);

@@ -295,7 +295,7 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 			TE_SendToAll();
 		}
 
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 		IsBlockingDamage = false;
 		
 		EmitAmbientSound(SOUND_BOOM, vec, client, SNDLEVEL_RAIDSIREN);

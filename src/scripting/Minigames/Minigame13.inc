@@ -28,7 +28,7 @@ public MinigameThirteen_OnMinigameFinishPre()
 {
 	if (MinigameID == 13)
 	{
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 
 		for (new i = 1; i <= MaxClients; i++)
 		{
@@ -47,11 +47,11 @@ public MinigameThirteen_OnMinigameFinishPre()
 				{
 					SlapPlayer(i, 5000, false);
 					PlayerStatus[i] = PlayerStatus_Failed;
-					CPrintToChat(i, "{green}%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
+					CPrintToChat(i, "%s%T", PLUGIN_PREFIX, "Minigame13_SpycrabsMustCrouchAndLookup", i);
 				}
 			}
 		}
 
-		IsBlockingDeaths = true;
+		IsBlockingDeathCommands = true;
 	}
 }

@@ -52,7 +52,7 @@ public Bossgame3_OnMinigameSelected(client)
 	if (IsMinigameActive && BossgameID == 3 && IsClientValid(client))
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = true;
 
 		TF2_RemoveAllWeapons(client);
 		TF2_SetPlayerClass(client, TFClass_Heavy);

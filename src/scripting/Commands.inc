@@ -147,7 +147,7 @@ public Action:CmdOnPlayerKill(client, const String:command[], args)
 	PrintToChatAll("[DEBUG] Client num #%d CmdOnPlayerKill. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
 	#endif
 
-	return (IsBlockingDeaths ? Plugin_Handled : Plugin_Continue);
+	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);
 }
 
 public Action:CmdSetNextSpecialRound(client, args)

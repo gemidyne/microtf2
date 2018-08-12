@@ -36,7 +36,7 @@ public Bossgame2_OnSelection(client)
 	{
 		Bossgame2_CanCheckPosition = false;
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = true;
 
 		new Float:ang[3] = { 0.0, 180.0, 0.0 };
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };

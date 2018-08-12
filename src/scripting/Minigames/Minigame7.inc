@@ -17,7 +17,7 @@ public Minigame7_OnMinigameSelectedPre()
 	if (MinigameID == 7)
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = true;
+		IsBlockingDeathCommands = true;
 	}
 }
 

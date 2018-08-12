@@ -36,7 +36,7 @@ public Bossgame5_OnMinigameSelectedPre()
 		Bossgame5_CanCheckPosition = false;
 		IsBlockingDamage = false;
 		IsOnlyBlockingDamageByPlayers = true;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 	}
 }
 

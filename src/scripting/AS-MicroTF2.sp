@@ -27,6 +27,7 @@
 #include <soundlib>
 #include <steamtools>
 #include <tf2items>
+#include <tf2attributes>
 
 
 #if defined UMC_MAPCHOOSER
@@ -648,7 +649,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 	BossgameID = 0;
 
 	IsBlockingDamage = true;
-	IsBlockingDeaths = true;
+	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
 
@@ -896,7 +897,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 	#endif
 
 	IsBlockingDamage = false;
-	IsBlockingDeaths = false;
+	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
 	IsOnlyBlockingDamageByPlayers = false;
 	IsBonusRound = true;
@@ -1144,7 +1145,7 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 	IsBonusRound = false;
 
 	IsBlockingDamage = true;
-	IsBlockingDeaths = true;
+	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
 

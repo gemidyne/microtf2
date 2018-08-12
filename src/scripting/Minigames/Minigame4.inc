@@ -35,7 +35,7 @@ public MinigameFour_OnMinigameSelectedPre()
 	if (MinigameID == 4)
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 		MinigameFour_TotalPlayers = GetActivePlayers();
 	}
 }

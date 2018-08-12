@@ -24,7 +24,7 @@ public Minigame19_OnMinigameSelectedPre()
 {
 	if (MinigameID == 19)
 	{
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 	}
 }
 

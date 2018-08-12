@@ -35,9 +35,9 @@ public MinigameTwo_OnSelectionPre()
 	{
 		SetConVarInt(ConVar_FriendlyFire, 1);
 
-		Minigame2_Class = GetRandomInt(0, 8);
+		Minigame2_Class = GetRandomInt(0, 7);
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = true;
 	}
 }
 
@@ -82,15 +82,10 @@ public MinigameTwo_OnSelection(client)
 			}
 			case 6:
 			{
-				class = TFClass_Medic;
-				weapon = 8;
-			}
-			case 7:
-			{
 				class = TFClass_Sniper;
 				weapon = 16;
 			}
-			case 8:
+			case 7:
 			{
 				class = TFClass_Spy;
 				weapon = 24;

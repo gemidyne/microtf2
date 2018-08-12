@@ -22,7 +22,7 @@ public Minigame5_OnMinigameSelectedPre()
 	if (MinigameID == 5)
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = true;
+		IsBlockingDeathCommands = true;
 	}
 }
 

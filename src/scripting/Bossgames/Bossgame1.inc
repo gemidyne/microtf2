@@ -22,7 +22,7 @@ public Bossgame1_OnMinigameSelected(client)
 	if (IsMinigameActive && BossgameID == 1 && IsClientValid(client))
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeaths = false;
+		IsBlockingDeathCommands = false;
 
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };
 		new Float:ang[3] = { 0.0, 180.0, 0.0 };
