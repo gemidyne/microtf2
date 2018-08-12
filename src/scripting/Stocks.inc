@@ -554,7 +554,17 @@ stock DisplayHudMessage(const String:title[], const String:body[], Float:duratio
 		TrainingMessage(title, body, duration);
 	}
 #else
-	
+	char formatted[MINIGAME_CAPTION_LENGTH];
+
+	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsClientInGame(i) && !IsFakeClient(i))
+		{
+			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, formatted);
+		}
+	}
 #endif
 }
 
@@ -593,6 +603,10 @@ stock DisplayHudMessageToClient(client, const String:title[], const String:body[
 		TrainingMessageToClient(client, title, body, duration);
 	}
 #else
+	char formatted[MINIGAME_CAPTION_LENGTH];
 
+	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
+
+	strcopy(MinigameCaption[client], MINIGAME_CAPTION_LENGTH, formatted);
 #endif
 }

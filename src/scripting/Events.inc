@@ -244,14 +244,15 @@ public Event_PropBroken(Handle:event, const String:name[], bool:dontBroadcast)
 	}
 }
 
-public Event_PlayerChangeClass(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerChangeClass(Handle:event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+
 	if (GlobalForward_OnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnPlayerClassChange);
@@ -260,15 +261,16 @@ public Event_PlayerChangeClass(Handle:event, const String:name[], bool:dontBroad
 	}
 }
 
-public Event_PlayerStunned(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
-	new victim = GetClientOfUserId(GetEventInt(event, "victim"));
+	int stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
+	int victim = GetClientOfUserId(GetEventInt(event, "victim"));
+
 	if (GlobalForward_OnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
 	{
 		Call_StartForward(GlobalForward_OnPlayerStunned);
@@ -613,14 +615,15 @@ public TF2_OnWaitingForPlayersEnd()
 	CreateTimer(0.1, Timer_GameLogic_EngineInitialisation);
 }
 
-public TF2_OnConditionAdded(client, TFCond:condition)
+public void TF2_OnConditionAdded(int client, TFCond condition)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new bool:removeCondition = true;
+	bool removeCondition = true;
+
 	switch (condition)
 	{
 		case 
@@ -642,7 +645,7 @@ public TF2_OnConditionAdded(client, TFCond:condition)
 	}
 }
 
-public OnClientPostAdminCheck(client)
+public void OnClientPostAdminCheck(int client)
 {
 	if (!IsPluginEnabled)
 	{
@@ -671,7 +674,7 @@ public OnClientPostAdminCheck(client)
 	}
 }
 
-public OnClientPutInServer(client)
+public void OnClientPutInServer(int client)
 {
 	if (!IsPluginEnabled)
 	{
@@ -683,7 +686,7 @@ public OnClientPutInServer(client)
 	SecuritySystem_OnClientPutInServer(client);
 }
 
-public OnClientDisconnect(client)
+public void OnClientDisconnect(int client)
 {
 	if (!IsPluginEnabled)
 	{
@@ -700,7 +703,7 @@ public OnClientDisconnect(client)
 	}
 }
 
-stock HookEvents()
+stock void HookEvents()
 {
 	HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
 	HookEvent("player_hurt", Event_PlayerHurt, EventHookMode_Pre);

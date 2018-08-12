@@ -93,6 +93,7 @@ new Handle:ConVar_FriendlyFire = INVALID_HANDLE;
 new Handle:Handle_BossCheckTimer = INVALID_HANDLE;
 new Handle:Handle_ActiveGameTimer = INVALID_HANDLE;
 
-new Handle:ConVar_MTF2MaxRounds = INVALID_HANDLE;
+Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
+Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
 
-new Offset_Collision;
+int Offset_Collision;

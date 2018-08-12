@@ -179,7 +179,7 @@ public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
 			Format(body, sizeof(body), "%T", "Startup_BodyIntro", i);
 
 			DisplayHudMessageToClient(i, header, body, 3.0);
-			DisplayOverlayToClient(i, OVERLAY_BLANK);
+			DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
 		}
 	}
 
@@ -205,6 +205,7 @@ public Action:Timer_GameLogic_EngineInitialisationCountdown(Handle:timer)
 					Format(body, sizeof(body), "%T", "Startup_BodyCountdown", i, IntroCountdown);
 
 					DisplayHudMessageToClient(i, header, body, 1.1);
+					DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
 				}
 			}
 		}
@@ -330,10 +331,17 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 	}
 	else
 	{
+		int forcedMinigameID = GetConVarInt(ConVar_MTF2ForceMinigame);
+
 		if (SpecialRoundID == 8)
 		{
 			PreviousMinigameID = 0;
 			MinigameID = 8;
+		}
+		else if (forcedMinigameID > 0 && forcedMinigameID <= MinigamesLoaded)
+		{
+			PreviousMinigameID = 0;
+			MinigameID = forcedMinigameID;
 		}
 		else
 		{
@@ -368,7 +376,6 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 						// This fixes a crash.
 						PreviousMinigameID = 1;
 					}
-
 				}
 
 				i++;
@@ -425,6 +432,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 			if (duration >= 1.0)
 			{
 				DisplayOverlayToClient(i, OVERLAY_BLANK);
+				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
 
 				if (SpecialRoundID != 12)
