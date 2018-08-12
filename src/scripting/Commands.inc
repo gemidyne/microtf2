@@ -4,7 +4,7 @@
  * Implements functionality for commands and convars.
  */
 
-stock InitializeCommands()
+stock void InitializeCommands()
 {
 	// Command Listeners
 	AddCommandListener(CmdOnPlayerTaunt, "taunt");
@@ -36,13 +36,14 @@ stock InitializeCommands()
 	}
 }
 
-stock ResetConVars()
+stock void ResetConVars()
 {
 	ResetConVar(ConVar_HostTimescale);
 	ResetConVar(ConVar_PhysTimescale);
 	ResetConVar(ConVar_ServerGravity);
 	ResetConVar(ConVar_TFCheapObjects);
 	ResetConVar(ConVar_TFFastBuild);
+	ResetConVar(ConVar_MTF2ForceMinigame);
 	
 	// Non-Exclusive ConVars
 	// Server ConVars
@@ -65,8 +66,9 @@ stock ResetConVars()
 	// TeamFortress ConVars
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
 	ResetConVar(FindConVar("tf_max_health_boost"));
+	ResetConVar(FindConVar("tf_airblast_cray_ground_minz"));
 
-	new Handle:conVar = FindConVar("sm_mapvote_extend");
+	Handle conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
 	{
 		ResetConVar(conVar);
@@ -79,7 +81,7 @@ stock ResetConVars()
 	}
 }
 
-stock PrepareConVars()
+stock void PrepareConVars()
 {
 	// Server ConVars	
 	SetConVarInt(FindConVar("sv_cheats"), 1);
@@ -98,6 +100,7 @@ stock PrepareConVars()
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
 	SetConVarInt(ConVar_TFFastBuild, 0);
+	SetConVarFloat(FindConVar("tf_airblast_cray_ground_minz"), 268.3281572999747);
 
 	// ConVars with Handles
 	SetConVarInt(ConVar_ServerGravity, 800);
@@ -105,7 +108,7 @@ stock PrepareConVars()
 	SetConVarFloat(ConVar_HostTimescale, 1.0);
 	SetConVarFloat(ConVar_PhysTimescale, 1.0);
 
-	new Handle:conVar = FindConVar("sm_mapvote_extend");
+	Handle conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
 	{
 		SetConVarInt(conVar, 0);
@@ -122,7 +125,7 @@ stock PrepareConVars()
 #endif
 }
 
-public Action:CmdOnPlayerTaunt(client, const String:command[], args)
+public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
 {
 	if (!IsPluginEnabled)
 	{
@@ -136,7 +139,7 @@ public Action:CmdOnPlayerTaunt(client, const String:command[], args)
 	return (IsBlockingTaunts ? Plugin_Handled : Plugin_Continue);
 }
 
-public Action:CmdOnPlayerKill(client, const String:command[], args)
+public Action CmdOnPlayerKill(int client, const char[] command, int args)
 {
 	if (!IsPluginEnabled)
 	{
@@ -150,12 +153,12 @@ public Action:CmdOnPlayerKill(client, const String:command[], args)
 	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);
 }
 
-public Action:CmdSetNextSpecialRound(client, args)
+public Action CmdSetNextSpecialRound(int client, int args)
 {
-	decl String:text[10];
+	char text[10];
 	GetCmdArg(1, text, sizeof(text));
 
-	new id = StringToInt(text);
+	int id = StringToInt(text);
 
 	if (id >= SPR_MIN && id <= SPR_MAX)
 	{
@@ -170,12 +173,12 @@ public Action:CmdSetNextSpecialRound(client, args)
 	}
 }
 
-public Action:CmdChangeSpecialRound(client, args)
+public Action CmdChangeSpecialRound(int client, int args)
 {
-	decl String:text[10];
+	char text[10];
 	GetCmdArg(1, text, sizeof(text));
 
-	new id = StringToInt(text);
+	int id = StringToInt(text);
 
 	if (id >= SPR_MIN && id <= SPR_MAX)
 	{
@@ -188,12 +191,12 @@ public Action:CmdChangeSpecialRound(client, args)
 	}
 }
 
-public Action:CmdSetGamemode(client, args)
+public Action CmdSetGamemode(int client, int args)
 {
-	decl String:text[10];
+	char text[10];
 	GetCmdArg(1, text, sizeof(text));
 
-	new id = StringToInt(text);
+	int id = StringToInt(text);
 
 	if (id < TOTAL_GAMEMODES)
 	{
@@ -208,9 +211,9 @@ public Action:CmdSetGamemode(client, args)
 }
 
 
-public OnMaxRoundsChanged(Handle:cvar, const String:oldVal[], const String:newVal[])
+public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
 {
-	new value = StringToInt(newVal);
+	int value = StringToInt(newVal);
 
 	MaxRounds = value;
 }

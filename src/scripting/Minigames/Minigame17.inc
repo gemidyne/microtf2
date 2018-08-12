@@ -83,7 +83,7 @@ public Minigame17_GetDynamicCaption(client)
 	}
 }
 
-public Minigame17_OnPlayerTakeDamage(victim, attacker, Float:damage)
+public void Minigame17_OnPlayerTakeDamage(int victim, int attacker, float damage)
 {
 	if (IsMinigameActive && MinigameID == 17)
 	{

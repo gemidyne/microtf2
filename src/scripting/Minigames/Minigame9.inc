@@ -23,8 +23,8 @@ public MinigameNine_OnMinigameSelectedPre()
 {
 	if (MinigameID == 9)
 	{
-		//IsBlockingTaunts = false;
-		MinigameNine_Mode = GetRandomInt(3, 6);
+		IsBlockingTaunts = false;
+		MinigameNine_Mode = GetRandomInt(1, 6);
 
 		MinigameNine_CanCheckConditions = false;
 		CreateTimer(1.5, Timer_MinigameNine_AllowConditions);		
@@ -73,8 +73,6 @@ public MinigameNine_OnGameFrame()
 						{
 							ClientWonMinigame(i);
 						}
-
-						break;
 					}
 
 					case 2: 
@@ -84,54 +82,48 @@ public MinigameNine_OnGameFrame()
 							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
-
-						break;
 					}
 
 					case 3:
 					{
 						new button = GetClientButtons(i);
+
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
 							ClientWonMinigame(i);
 						}
-
-						break;
 					}
 
 					case 4:
 					{
 						new button = GetClientButtons(i);
+
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 						{
 							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
-
-						break;
 					}
 
 					case 5:
 					{
 						new button = GetClientButtons(i);
+
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
 						{
 							ClientWonMinigame(i);
 						}
-
-						break;
 					}
 
 					case 6:
 					{
 						new button = GetClientButtons(i);
+
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
 						{
 							MinigameCaption[i] = "(Simon didn\'t say it...)";
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
-
-						break;
 					}
 				}
 			}

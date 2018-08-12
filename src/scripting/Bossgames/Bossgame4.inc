@@ -70,7 +70,7 @@ public Bossgame4_OnMinigameSelected(client)
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
+		IsBlockingDeathCommands = true;
 		IsOnlyBlockingDamageByPlayers = true;
 
 		ChooseRandomClass(client);

@@ -53,6 +53,7 @@ public Bossgame3_OnMinigameSelected(client)
 	{
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
+		IsOnlyBlockingDamageByPlayers = false;
 
 		TF2_RemoveAllWeapons(client);
 		TF2_SetPlayerClass(client, TFClass_Heavy);

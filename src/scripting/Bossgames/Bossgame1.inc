@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 1
  * 
- * Get to the End
+ * Get to the top 
  */
 
 public Bossgame1_EntryPoint()
@@ -22,7 +22,7 @@ public Bossgame1_OnMinigameSelected(client)
 	if (IsMinigameActive && BossgameID == 1 && IsClientValid(client))
 	{
 		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
+		IsBlockingDeathCommands = true;
 
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };
 		new Float:ang[3] = { 0.0, 180.0, 0.0 };

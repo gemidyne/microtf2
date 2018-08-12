@@ -5,7 +5,7 @@
  */
 
 #define MAXIMUM_MINIGAMES 64
-#define MINIGAME_CAPTION_LENGTH 64
+#define MINIGAME_CAPTION_LENGTH 128
 
 new MinigamesLoaded = 0;
 new BossgamesLoaded = 0;
