@@ -26,7 +26,7 @@ public bool:Minigame17_OnCheck()
 		return false;
 	}
 
-	return true;
+	return false; // Currently disabled due to TakeDamage issues.
 }
 
 public Minigame17_OnMinigameSelectedPre()
