@@ -4,7 +4,7 @@
  * Contains alot of Stocks for use in Minigames / Other stuff
  */
 
-stock IsClientValid(client)
+stock bool IsClientValid(int client)
 {
 	if (client <= 0 || client > MaxClients)
 	{
@@ -21,19 +21,12 @@ stock IsClientValid(client)
 		return false;
 	}
 
-	new team = GetClientTeam(client);
+	int team = GetClientTeam(client);
 
-	if (team == 2 || team == 3)
-	{
-		return true;
-	}
-	else
-	{
-		return false;
-	}
+	return team == 2 || team == 3;
 }
 
-stock DisplayOverlayToClient(client, const String:path[])
+stock void DisplayOverlayToClient(int client, const char[] path)
 {
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
@@ -43,14 +36,11 @@ stock DisplayOverlayToClient(client, const String:path[])
 	}
 }
 
-stock DisplayOverlayToAll(const String:path[])
+stock void DisplayOverlayToAll(const char[] path)
 {
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
-		{
-			DisplayOverlayToClient(i, path);
-		}
+		DisplayOverlayToClient(i, path);
 	}
 }
 
@@ -95,7 +85,7 @@ stock void IsViewModelVisible(int client, bool visible)
 	// }
 }
 
-stock IsGodModeEnabled(client, bool:enabled)
+stock void IsGodModeEnabled(int client, bool enabled)
 {
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
@@ -103,7 +93,7 @@ stock IsGodModeEnabled(client, bool:enabled)
 	}
 }
 
-stock IsPlayerCollisionsEnabled(client, bool:enabled)
+stock void IsPlayerCollisionsEnabled(int client, bool enabled)
 {
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
@@ -111,9 +101,9 @@ stock IsPlayerCollisionsEnabled(client, bool:enabled)
 	}
 }
 
-stock RemovePlayerWearables(client)
+stock void RemovePlayerWearables(client)
 {
-	new entity = -1;
+	int entity = -1;
 	while ((entity = FindEntityByClassname(entity, "tf_wearable")) != -1)
 	{
 		AcceptEntityInput(entity, "kill");
@@ -137,13 +127,13 @@ stock RemovePlayerWearables(client)
 		AcceptEntityInput(entity, "kill");
 	}
 
-	new edict = (MaxClients + 1);
+	int edict = (MaxClients + 1);
 	while ((edict = FindEntityByClassname2(edict, "tf_wearable")) != -1)
 	{
 		decl String:netclass[32];
 		if (GetEntityNetClass(edict, netclass, sizeof(netclass)) && StrEqual(netclass, "CTFWearable"))
 		{
-			new idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
+			int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
 			if ((idx == 57 || idx == 133 || idx == 231 || idx == 444 || idx == 405) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == client && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
 			{
 				RemoveEdict(edict);
@@ -171,11 +161,11 @@ stock void ResetWeapon(int client, bool viewModel)
 			TF2_RemoveCondition(client, TFCond_Taunting);
 		}
 
-		new weapon = 0;
-		new weaponID = -1;
-		new newWeaponID = 0;
+		int weapon = 0;
+		int weaponID = -1;
+		int newWeaponID = 0;
 
-		for (new i = 0; i <= 5; i++)
+		for (int i = 0; i <= 5; i++)
 		{
 			weapon = GetPlayerWeaponSlot(client, i);
 
@@ -219,12 +209,12 @@ stock void ResetWeapon(int client, bool viewModel)
 	}
 }
 
-stock ResetHealth(client)
+stock void ResetHealth(int client)
 {
 	if (IsClientInGame(client))
 	{
-		new TFClassType:class = TF2_GetPlayerClass(client);
-		new health = 125;
+		TFClassType class = TF2_GetPlayerClass(client);
+		int health = 125;
 
 		switch (class)
 		{
@@ -239,7 +229,7 @@ stock ResetHealth(client)
 	}
 }
 
-stock ChooseRandomClass(client)
+stock void ChooseRandomClass(int client)
 {
 	if (IsClientInGame(client))
 	{
@@ -258,7 +248,7 @@ stock ChooseRandomClass(client)
 	}
 }
 
-stock PlaySoundToPlayer(client, const String:sound[])
+stock void PlaySoundToPlayer(int client, const char[] sound)
 {
 	if (IsClientInGame(client) && !IsFakeClient(client) && !IsMapEnding)
 	{
@@ -266,7 +256,7 @@ stock PlaySoundToPlayer(client, const String:sound[])
 	}
 }
 
-stock PlaySoundToAll(const String:sound[])
+stock void PlaySoundToAll(const char[] sound)
 {
 	for (new i = 1; i <= MaxClients; i++)
 	{
@@ -274,7 +264,7 @@ stock PlaySoundToAll(const String:sound[])
 	}
 }
 
-public Action:Timer_Respawn(Handle:timer, any:client)
+public Action Timer_Respawn(Handle timer, int client)
 {
 	if (IsClientValid(client) && IsPlayerParticipant[client])
 	{
@@ -282,16 +272,16 @@ public Action:Timer_Respawn(Handle:timer, any:client)
 	}
 }
 
-stock ClientWonMinigame(client)
+stock void ClientWonMinigame(int client)
 {
 	if (IsClientValid(client) && PlayerStatus[client] == PlayerStatus_NotWon && IsPlayerParticipant[client])
 	{
 		PlayerStatus[client] = PlayerStatus_Winner;
 		EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 
-		new i = GetRandomInt(0, 5);
-		new String:colours[6][32] = { "Micro_Win_Blue", "Micro_Win_Green", "Micro_Win_Purple", "Micro_Win_Rainbow", "Micro_Win_Red", "Micro_Win_Yellow" };
-		new String:particle[128];
+		int i = GetRandomInt(0, 5);
+		char colours[6][32] = { "Micro_Win_Blue", "Micro_Win_Green", "Micro_Win_Purple", "Micro_Win_Rainbow", "Micro_Win_Red", "Micro_Win_Yellow" };
+		char particle[128];
 
 		particle = colours[i];
 
@@ -299,9 +289,9 @@ stock ClientWonMinigame(client)
 	}
 }
 
-stock ResizePlayer(client, Float:fScale = 1.0)
+stock void ResizePlayer(int client, float fScale = 1.0)
 {
-	new Float:fCurrent = GetEntPropFloat(client, Prop_Send, "m_flModelScale");
+	float fCurrent = GetEntPropFloat(client, Prop_Send, "m_flModelScale");
 
 	if (fCurrent == fScale || fScale == 0.0) 
 	{
@@ -311,29 +301,30 @@ stock ResizePlayer(client, Float:fScale = 1.0)
 	SetEntPropFloat(client, Prop_Send, "m_flModelScale", fScale);
 }
 
-new _annotationEventId = 0;
-stock ShowAnnotation(client, Float:lifetime, const String:text[])
+stock void ShowAnnotation(int client, float lifetime, const char[] text)
 {
-	new bitfield = BuildBitStringExcludingClient(client);
+	int bitfield = BuildBitStringExcludingClient(client);
+
 	ShowAnnotationWithBitfield(client, lifetime, text, bitfield);
 }
 
-stock ShowAnnotationWithBitfield(client, Float:lifetime, const String:text[], bitfield)
+stock void ShowAnnotationWithBitfield(int client, float lifetime, const char[] text, int bitfield)
 {
-	new Handle:event = CreateEvent("show_annotation");
+	Handle event = CreateEvent("show_annotation");
+
 	if (event == INVALID_HANDLE)
 	{
 		return;
 	}
 
-	if (_annotationEventId > 100000)
+	if (g_iAnnotationEventId > 100000)
 	{
 		// This shouldn't really happen...
-		_annotationEventId = 0;
+		g_iAnnotationEventId = 0;
 	}
 
 	//https://forums.alliedmods.net/showpost.php?p=1996379&postcount=14
-	SetEventInt(event, "id", _annotationEventId);
+	SetEventInt(event, "id", g_iAnnotationEventId);
 	SetEventInt(event, "follow_entindex", client);
 	SetEventFloat(event, "lifetime", lifetime);
 	SetEventString(event, "text", text);
@@ -342,15 +333,15 @@ stock ShowAnnotationWithBitfield(client, Float:lifetime, const String:text[], bi
 	SetEventInt(event, "visibilityBitfield", bitfield);
 	FireEvent(event);
 	
-	_annotationEventId++;
+	g_iAnnotationEventId++;
 }
 
-public BuildBitStringExcludingClient(client)
+public int BuildBitStringExcludingClient(int client)
 {
-	new bitfield = 0;
+	int bitfield = 0;
 
 	// Iterating through all clients to build a visibility bitfield of all alive players
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && i != client)
 		{
@@ -362,7 +353,7 @@ public BuildBitStringExcludingClient(client)
 	return bitfield;
 }
 
-public AddClientToBitString(bitfield, client)
+public void AddClientToBitString(int bitfield, int client)
 {
 	bitfield |= (1 << client);
 }
