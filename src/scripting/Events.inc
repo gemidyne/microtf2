@@ -4,7 +4,7 @@
  * Implements event functionality for the gamemode & minigames
  */
 
-public Event_PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
@@ -13,7 +13,8 @@ public Event_PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
 
 	if (event != INVALID_HANDLE)
 	{
-		new client = GetClientOfUserId(GetEventInt(event, "userid"));
+		int client = GetClientOfUserId(GetEventInt(event, "userid"));
+		
 		if (IsClientValid(client))
 		{
 			CreateTimer(0.2, Timer_PlayerSpawn, client);
@@ -21,7 +22,7 @@ public Event_PlayerSpawn(Handle:event, const String:name[], bool:dontBroadcast)
 	}
 }
 
-public Action:Timer_PlayerSpawn(Handle:timer, any:client)
+public Action Timer_PlayerSpawn(Handle timer, int client)
 {
 	if (!IsPluginEnabled)
 	{
@@ -54,14 +55,14 @@ public Action:Timer_PlayerSpawn(Handle:timer, any:client)
 	return Plugin_Continue;
 }
 
-public Event_PlayerTeam(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
 	if (IsClientInGame(client) && !IsFakeClient(client))
 	{
@@ -70,27 +71,27 @@ public Event_PlayerTeam(Handle:event, const String:name[], bool:dontBroadcast)
 	}
 }
 
-public Action:Event_Regenerate(Handle:event, const String:name[], bool:dontBroadcast)
+public Action Event_Regenerate(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	CreateTimer(0.1, Timer_LockerWeaponReset, GetClientUserId(client));
 
 	return Plugin_Handled;
 }
 
-public Action:Timer_LockerWeaponReset(Handle:timer, any:userid)
+public Action Timer_LockerWeaponReset(Handle timer, int userid)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
 
-	new client = GetClientOfUserId(userid);
+	int client = GetClientOfUserId(userid);
 	if (IsClientValid(client) && !IsMinigameActive && !IsBonusRound)
 	{
 		RemovePlayerWearables(client);
@@ -100,14 +101,14 @@ public Action:Timer_LockerWeaponReset(Handle:timer, any:userid)
 	return Plugin_Handled;
 }
 
-public Action:Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroadcast)
+public Action Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	
 	if (IsClientInGame(client))
 	{
@@ -117,7 +118,7 @@ public Action:Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroa
 			{
 				if (GlobalForward_OnPlayerDeath != INVALID_HANDLE)
 				{
-					new attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+					int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
 					Call_StartForward(GlobalForward_OnPlayerDeath);
 					Call_PushCell(client);
@@ -135,15 +136,15 @@ public Action:Event_PlayerDeath(Handle:event, const String:name[], bool:dontBroa
 	return Plugin_Handled;
 }
 
-public Action:Event_PlayerHurt(Handle:event, const String:name[], bool:dontBroadcast)
+public Action Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
-	new attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
 	if (GlobalForward_OnPlayerHurt != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[attacker])
 	{
@@ -156,15 +157,15 @@ public Action:Event_PlayerHurt(Handle:event, const String:name[], bool:dontBroad
 	return Plugin_Handled;
 }
 
-public Event_PlayerBuiltObject(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
-	new entity = GetEventInt(event, "index"); 
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int entity = GetEventInt(event, "index");
 
 	if (GlobalForward_OnBuildObject != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
@@ -175,14 +176,15 @@ public Event_PlayerBuiltObject(Handle:event, const String:name[], bool:dontBroad
 	}
 }
 
-public Event_PlayerStickyJump(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+
 	if (GlobalForward_OnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnStickyJump);
@@ -191,15 +193,15 @@ public Event_PlayerStickyJump(Handle:event, const String:name[], bool:dontBroadc
 	}
 }
 
-public Action:Event_PlayerJarated(UserMsg:msg_id, Handle:bf, const players[], playersNum, bool:reliable, bool:init)
+public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players, int playersNum, bool reliable, bool init)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
-	new client = BfReadByte(bf);
-	new victim = BfReadByte(bf);
+	int client = BfReadByte(bf);
+	int victim = BfReadByte(bf);
 
 	if (GlobalForward_OnPlayerJarated != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
 	{
@@ -212,14 +214,15 @@ public Action:Event_PlayerJarated(UserMsg:msg_id, Handle:bf, const players[], pl
 	return Plugin_Continue;
 }
 
-public Event_PlayerRocketJump(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+
 	if (GlobalForward_OnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnRocketJump);
@@ -228,14 +231,15 @@ public Event_PlayerRocketJump(Handle:event, const String:name[], bool:dontBroadc
 	}
 }
 
-public Event_PropBroken(Handle:event, const String:name[], bool:dontBroadcast)
+public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+
 	if (GlobalForward_OnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnPropBroken);
@@ -244,7 +248,7 @@ public Event_PropBroken(Handle:event, const String:name[], bool:dontBroadcast)
 	}
 }
 
-public void Event_PlayerChangeClass(Handle:event, const char[] name, bool dontBroadcast)
+public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
@@ -427,12 +431,12 @@ public Action:Timer_HatRemove(Handle:Timer, any:entity)
 	return Plugin_Handled;
 }
 
-public Action:Transmit_HatRemove(entity, client)
+public Action Transmit_HatRemove(int entity, int client)
 {
 	return Plugin_Handled;
 }
 
-public Action:Client_TakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
+public Action Client_TakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype)
 {
 	if (!IsPluginEnabled)
 	{
@@ -475,7 +479,7 @@ public Action:Client_TakeDamage(victim, &attacker, &inflictor, &Float:damage, &d
 	return Plugin_Continue;
 }
 
-public Action:TF2Items_OnGiveNamedItem(client, String:classname[], iItemDefinitionIndex, &Handle:hItem)
+public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDefinitionIndex, Handle &hItem)
 {
 	if (!IsPluginEnabled)
 	{
@@ -490,17 +494,17 @@ public Action:TF2Items_OnGiveNamedItem(client, String:classname[], iItemDefiniti
 	return Plugin_Continue;
 }
 
-public OnGameFrame()
+public void OnGameFrame()
 {
 	if (!IsPluginEnabled)
 	{
 		return;
 	}
 
-	new bool:isCurrentlyPlaying = (IsMinigameActive && GamemodeStatus == GameStatus_Playing && (MinigameID > 0 || BossgameID > 0));
-	new bool:isCurrentlyInTutorial = (GamemodeStatus == GameStatus_Tutorial);
-	new bool:isCurrentlyInGameOver = (GamemodeStatus == GameStatus_Playing && !IsMinigameActive && MinigamesPlayed == 0);
-	new bool:canUpdateHudText = (isCurrentlyPlaying || isCurrentlyInTutorial || isCurrentlyInGameOver);
+	bool isCurrentlyPlaying = (IsMinigameActive && GamemodeStatus == GameStatus_Playing && (MinigameID > 0 || BossgameID > 0));
+	bool isCurrentlyInTutorial = (GamemodeStatus == GameStatus_Tutorial);
+	bool isCurrentlyInGameOver = (GamemodeStatus == GameStatus_Playing && !IsMinigameActive && MinigamesPlayed == 0);
+	bool canUpdateHudText = (isCurrentlyPlaying || isCurrentlyInTutorial || isCurrentlyInGameOver);
 
 	if (canUpdateHudText)
 	{
@@ -526,20 +530,20 @@ public OnGameFrame()
 		{
 			SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
 			
-			for (new i = 1; i <= MaxClients; i++)
+			for (int i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientValid(i))
 				{
-					decl String:buffer[MINIGAME_CAPTION_LENGTH];
+					char buffer[MINIGAME_CAPTION_LENGTH];
 					Format(buffer, sizeof(buffer), MinigameCaption[i]);
 
 					if (SpecialRoundID == 19)
 					{
-						new String:rewritten[MINIGAME_CAPTION_LENGTH];
-						new rc = 0;
-						new len = strlen(buffer);
+						char rewritten[MINIGAME_CAPTION_LENGTH];
+						int rc = 0;
+						int len = strlen(buffer);
 
-						for (new c = len - 1; c >= 0; c--)
+						for (int c = len - 1; c >= 0; c--)
 						{
 							rewritten[rc] = buffer[c];
 							rc++;
@@ -575,7 +579,7 @@ public OnGameFrame()
 	#endif
 }
 
-public TF2_OnWaitingForPlayersStart()
+public void TF2_OnWaitingForPlayersStart()
 {
 	if (!IsPluginEnabled)
 	{
@@ -585,7 +589,7 @@ public TF2_OnWaitingForPlayersStart()
 	ResetGamemode();
 }
 
-public TF2_OnWaitingForPlayersEnd()
+public void TF2_OnWaitingForPlayersEnd()
 {
 	if (!IsPluginEnabled)
 	{
@@ -596,7 +600,7 @@ public TF2_OnWaitingForPlayersEnd()
 
 	GamemodeStatus = GameStatus_Tutorial;
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
