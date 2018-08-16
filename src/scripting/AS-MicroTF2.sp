@@ -167,7 +167,29 @@ public OnMapStart()
 public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
 {
 	IntroCountdown = 6;
+
 	GamemodeStatus = GameStatus_Playing;
+
+	MinigameID = 0;
+	BossgameID = 0;
+	PreviousMinigameID = 0;
+	PreviousBossgameID = 0;
+	SpecialRoundID = 0;
+	ScoreAmount = 1;
+	MinigamesPlayed = 0;
+	BossGameThreshold = 20;
+	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
+	RoundsPlayed = 0;
+	SpeedLevel = 1.0;
+
+	IsMinigameActive = false;
+	IsMinigameEnding = false;
+	IsMapEnding = false;
+	IsBonusRound = false;
+	IsBlockingTaunts = true;
+	IsBlockingDeathCommands = true;
+	IsBlockingDamage = true;
+	IsOnlyBlockingDamageByPlayers = false;
 
 	for (new i = 1; i <= MaxClients; i++)
 	{
