@@ -601,3 +601,19 @@ stock DisplayHudMessageToClient(client, const String:title[], const String:body[
 	strcopy(MinigameCaption[client], MINIGAME_CAPTION_LENGTH, formatted);
 #endif
 }
+
+// Credit to authors of SMLIB. Moved here due to the include file not building on newer spcomp, also converted to new syntax
+stock void ToUpperString(const char[] input, char[] output, int size)
+{
+	size--;
+
+	int x = 0;
+
+	while (input[x] != '\0' && x < size) 
+	{
+		output[x] = CharToUpper(input[x]);
+		x++;
+	}
+
+	output[x] = '\0';
+}

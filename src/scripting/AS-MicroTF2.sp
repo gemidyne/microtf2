@@ -12,8 +12,6 @@
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
-#include <smlib>
-
 
 #undef REQUIRE_PLUGIN
 //#include <Framework>
@@ -438,7 +436,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 			IsGodModeEnabled(i, true);
 			ResetHealth(i);
 
-			Client_RemoveAllDecals(i);
+			ClientCommand(i, "r_cleardecals");
 
 			SetEntityGravity(i, 1.0);
 			SetEntProp(i, Prop_Send, "m_bGlowEnabled", 0);

@@ -106,7 +106,7 @@ public SpecialRound_PrintRandomNameWhenChoosing()
 
 	if (GetRandomInt(0, 1) == 1)
 	{
-		String_ToUpper(SpecialRounds[GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1)], buffer, sizeof(buffer));
+		ToUpperString(SpecialRounds[GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1)], buffer, sizeof(buffer));
 	}
 	else
 	{
@@ -166,7 +166,7 @@ stock PrintSelectedSpecialRound()
 	EmitSoundToAll(SYSMUSIC_SPECIALROUND_SELECTED);
 
 	decl String:name[SPR_NAME_LENGTH];
-	String_ToUpper(SpecialRounds[SpecialRoundID], name, sizeof(name));
+	ToUpperString(SpecialRounds[SpecialRoundID], name, sizeof(name));
 	PrintCenterTextAll("NEW CONDITION: %s!", name);
 
 	#if defined NEW_HUD
