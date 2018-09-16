@@ -2,7 +2,7 @@
 Yet another WarioWare plugin for Team Fortress 2 servers.
 
 ## Note
-This plugin is now being maintained as of August 2018 - there are plans for a new content update, however there are currently issues with Stevu's hammer mapping environment, so this may be delayed for some time.
+This plugin is now being maintained as of August 2018. 2018 Map update is now in progress.
 
 ## Extension Dependencies
 This plugin utilises the following extensions:
