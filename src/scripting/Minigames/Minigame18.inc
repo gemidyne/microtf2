@@ -120,13 +120,13 @@ public Minigame18_OnMinigameSelected(client)
 
 		new column = client;
 		new row = 0;
-		while (column > 12)
+		while (column > 24)
 		{
-			column = column - 12;
+			column = column - 24;
 			row = row + 1;
 		}
 
-		pos[0] = 9750.0 + float(column*240); //column*55
+		pos[0] = 10406.0 + float(column*60); 
 		pos[1] = 7100.0 - float(row*100);
 		pos[2] = -260.0;
 
