@@ -99,5 +99,6 @@ new Handle:Handle_ActiveGameTimer = INVALID_HANDLE;
 
 Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
+Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
 
 int Offset_Collision;

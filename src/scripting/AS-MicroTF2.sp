@@ -309,42 +309,51 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 
 	if (MinigamesPlayed >= BossGameThreshold)
 	{
-		new i = 0;
-		do
+		int forcedBossgameID = GetConVarInt(ConVar_MTF2ForceBossgame);
+
+		if (forcedBossgameID > 0)
 		{
-			BossgameID = GetRandomInt(1, BossgamesLoaded);
-
-			if (BossgamesLoaded == 1)
+			PreviousBossgameID = 0;
+			BossgameID = forcedBossgameID;
+		}
+		else
+		{
+			new i = 0;
+			do
 			{
-				PreviousBossgameID = 0;
-			}
+				BossgameID = GetRandomInt(1, BossgamesLoaded);
 
-			decl String:funcName[64];
-			Format(funcName, sizeof(funcName), "Bossgame%i_OnCheck", BossgameID);
-			new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
-
-			if (func != INVALID_FUNCTION)
-			{
-				new bool:isPlayable = false;
-
-				Call_StartFunction(INVALID_HANDLE, func);
-				Call_Finish(isPlayable);
-
-				if (!isPlayable)
+				if (BossgamesLoaded == 1)
 				{
-					BossgameID = PreviousBossgameID;
-				}
-
-				if (i > 20)
-				{
-					// This fixes a crash.
 					PreviousBossgameID = 0;
 				}
-			}
 
-			i++;
+				decl String:funcName[64];
+				Format(funcName, sizeof(funcName), "Bossgame%i_OnCheck", BossgameID);
+				new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
+
+				if (func != INVALID_FUNCTION)
+				{
+					new bool:isPlayable = false;
+
+					Call_StartFunction(INVALID_HANDLE, func);
+					Call_Finish(isPlayable);
+
+					if (!isPlayable)
+					{
+						BossgameID = PreviousBossgameID;
+					}
+
+					if (i > 20)
+					{
+						PreviousBossgameID = 0;
+					}
+				}
+
+				i++;
+			}
+			while (BossgameID == PreviousBossgameID);
 		}
-		while (BossgameID == PreviousBossgameID);
 
 		#if defined DEBUG
 		PrintToChatAll("[DEBUG] Chose bossgame %i", BossgameID);
