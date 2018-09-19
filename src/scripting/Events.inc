@@ -64,7 +64,7 @@ public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (IsClientInGame(client) && !IsFakeClient(client))
+	if (IsClientInGame(client))
 	{
 		IsPlayerParticipant[client] = false;
 		PlayerStatus[client] = PlayerStatus_NotWon;
@@ -602,9 +602,13 @@ public void TF2_OnWaitingForPlayersEnd()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		if (IsClientInGame(i))
 		{
-			StopSound(i, SNDCHAN_AUTO, SYSMUSIC_WAITINGFORPLAYERS);
+			if (!IsFakeClient(i))
+			{
+				StopSound(i, SNDCHAN_AUTO, SYSMUSIC_WAITINGFORPLAYERS);
+			}
+
 			IsPlayerParticipant[i] = true;
 		}
 	}
@@ -653,13 +657,17 @@ public void OnClientPostAdminCheck(int client)
 		return;
 	}
 
-	if (IsClientInGame(client) && !IsFakeClient(client))
+	if (IsClientInGame(client))
 	{
-		SendConVarValue(client, FindConVar("sv_cheats"), "1");
-		if (GamemodeStatus == GameStatus_WaitingForPlayers)
+		if (!IsFakeClient(client))
 		{
-			DisplayOverlayToClient(client, OVERLAY_WELCOME);
-			EmitSoundToClient(client, SYSMUSIC_WAITINGFORPLAYERS);
+			SendConVarValue(client, FindConVar("sv_cheats"), "1");
+		
+			if (GamemodeStatus == GameStatus_WaitingForPlayers)
+			{
+				DisplayOverlayToClient(client, OVERLAY_WELCOME);
+				EmitSoundToClient(client, SYSMUSIC_WAITINGFORPLAYERS);
+			}
 		}
 
 		if (GamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)

@@ -16,11 +16,6 @@ stock bool IsClientValid(int client)
 		return false;
 	}
 
-	if (IsFakeClient(client))
-	{
-		return false;
-	}
-
 	int team = GetClientTeam(client);
 
 	return team == 2 || team == 3;
@@ -46,7 +41,7 @@ stock void DisplayOverlayToAll(const char[] path)
 
 stock void SetPlayerHealth(int client, int health)
 {
-	if (IsClientInGame(client) && !IsFakeClient(client))
+	if (IsClientInGame(client))
 	{
 		int maxHealthOffset = FindDataMapInfo(client, "m_iMaxHealth");
 		int healthOffset = FindDataMapInfo(client, "m_iHealth");
@@ -87,7 +82,7 @@ stock void IsViewModelVisible(int client, bool visible)
 
 stock void IsGodModeEnabled(int client, bool enabled)
 {
-	if (IsClientInGame(client) && !IsFakeClient(client))
+	if (IsClientInGame(client))
 	{
 		SetEntProp(client, Prop_Data, "m_takedamage", enabled ? 0 : 2, 1);
 	}
@@ -95,7 +90,7 @@ stock void IsGodModeEnabled(int client, bool enabled)
 
 stock void IsPlayerCollisionsEnabled(int client, bool enabled)
 {
-	if (IsClientInGame(client) && !IsFakeClient(client))
+	if (IsClientInGame(client))
 	{
 		SetEntData(client, Offset_Collision, enabled ? 5 : 2, 4, true);
 	}

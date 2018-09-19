@@ -140,7 +140,7 @@ stock EndBoss()
 
 		for (new i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && !IsFakeClient(i))
+			if (IsClientInGame(i))
 			{
                 for (new a = 0; a < 10; a++)
                 {
