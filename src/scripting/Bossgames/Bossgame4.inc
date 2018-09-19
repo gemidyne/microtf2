@@ -7,7 +7,7 @@
 new Float:Bossgame4_Positions[2][2][3];
 new Float:Bossgame4_Angles[2][2][3];
 
-public Bossgame4_EntryPoint()
+public void Bossgame4_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
@@ -50,7 +50,7 @@ public Bossgame4_EntryPoint()
 	Bossgame4_Angles[1][1][2] = 0.0;
 }
 
-public bool:Bossgame4_OnCheck()
+public bool Bossgame4_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -65,7 +65,7 @@ public bool:Bossgame4_OnCheck()
 	return true;
 }
 
-public Bossgame4_OnMinigameSelected(client)
+public void Bossgame4_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
 	{
@@ -116,7 +116,7 @@ public Bossgame4_OnMinigameSelected(client)
 	}
 }
 
-public Bossgame4_OnPlayerDeath(victim, attacker)
+public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(victim))
 	{
@@ -143,7 +143,7 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	return Plugin_Handled;
 }
 
-public Bossgame4_OnPlayerTakeDamage(victim, attacker, Float:damage)
+public void Bossgame4_OnPlayerTakeDamage(int victim, int attacker, float damage)
 {
 	if (IsMinigameActive && BossgameID == 4)
 	{
@@ -164,7 +164,7 @@ public Bossgame4_OnPlayerTakeDamage(victim, attacker, Float:damage)
 	}
 }
 
-public Bossgame4_OnMinigameFinish()
+public void Bossgame4_OnMinigameFinish()
 {
 	if (IsMinigameActive && BossgameID == 4)
 	{
@@ -178,7 +178,7 @@ public Bossgame4_OnMinigameFinish()
 	}
 }
 
-public Bossgame4_OnBossStopAttempt()
+public void Bossgame4_OnBossStopAttempt()
 {
 	if (IsMinigameActive && BossgameID == 4)
 	{
