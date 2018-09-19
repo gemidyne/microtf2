@@ -121,7 +121,26 @@ public Bossgame4_OnPlayerDeath(victim, attacker)
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(victim))
 	{
 		PlayerStatus[victim] = PlayerStatus_Failed;
+
+		CreateTimer(0.05, Bossgame4_OnPlayerDeathTimer, victim);
 	}
+}
+
+public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
+{
+	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
+	{
+		TF2_RespawnPlayer(client);
+
+		new Float:pos[3] = { 4372.0, -204.0, 219.0 };
+		new Float:ang[3] = { 0.0, 180.0, 0.0 };
+
+		TeleportEntity(client, pos, ang, NULL_VECTOR);
+		IsGodModeEnabled(client, true);
+		ResetHealth(client);
+	}
+
+	return Plugin_Handled;
 }
 
 public Bossgame4_OnPlayerTakeDamage(victim, attacker, Float:damage)
