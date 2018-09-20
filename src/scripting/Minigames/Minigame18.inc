@@ -93,8 +93,8 @@ public Minigame18_OnMinigameSelectedPre()
 			new Float:pos[3];
 			new Float:ang[3] = { 0.0, -90.0, 0.0 };
 
-			pos[0] = GetRandomFloat(9856.3, 12800.0);
-			pos[1] = GetRandomFloat(7835.2, 9397.2);
+			pos[0] = GetRandomFloat(10240.0, 12322.0);
+			pos[1] = GetRandomFloat(7845.0, 8969.0);
 			pos[2] = -330.0;
 
 			if (IsValidEntity(Minigame18_TargetEntIndex))

@@ -131,11 +131,24 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
 	{
 		TF2_RespawnPlayer(client);
+		new team = GetClientTeam(client);
+		new teamNumber = (team == 2 ? 0 : 1);
 
-		new Float:pos[3] = { 4372.0, -204.0, 219.0 };
-		new Float:ang[3] = { 0.0, 180.0, 0.0 };
+		if (teamNumber == 0)
+		{
+			new Float:pos[3] = { 4372.0, -204.0, 219.0 };
+			new Float:ang[3] = { 0.0, 180.0, 0.0 };
 
-		TeleportEntity(client, pos, ang, NULL_VECTOR);
+			TeleportEntity(client, pos, ang, NULL_VECTOR);
+		}
+		else 
+		{
+			new Float:pos[3] = { 2879.0, -204.0, 219.0 };
+			new Float:ang[3] = { 0.0, 0.0, 0.0 };
+
+			TeleportEntity(client, pos, ang, NULL_VECTOR);
+		}
+
 		IsGodModeEnabled(client, true);
 		ResetHealth(client);
 	}
