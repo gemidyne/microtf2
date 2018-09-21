@@ -15,7 +15,7 @@ bool Minigame6_AnswersLoaded = false;
 
 public Minigame6_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameSix_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
 
 	RegConsoleCmd("say", Command_MinigameSixSay);
 	RegConsoleCmd("say_team", Command_MinigameSixSay);
@@ -29,7 +29,7 @@ public bool:Minigame6_OnCheck()
 	return Minigame6_AnswersLoaded;
 }
 
-public MinigameSix_OnMinigameSelectedPre()
+public Minigame6_OnMinigameSelectedPre()
 {
 	if (MinigameID == 6)
 	{
