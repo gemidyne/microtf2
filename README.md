@@ -11,29 +11,36 @@ This plugin utilises the following extensions:
 - TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
 - TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
 
+## Cloning the repo
+This repository makes use of Git LFS. Install the Git LFS extension before cloning to correctly download assets.
+
+## Repository structure
+The src folder contains the plugin source-code.
+The assets folder contains data relating to the map, plugin overlays and sounds.
+
 ## Credits
 This plugin uses many code snippets from other plugins over the years. Credit where credit is due, and I do not claim ownership over said code snippets.
 
 MicroTF2 is a project by GEMINI Developments. Their homepage can be accessed at the following URL: https://gemini.software
 
-### Project Lead / Lead Developer
-
+### Project Lead
 - ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
 ### Map Development
 - ![Mario6493's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a4/a4c061830d0fad6f9dd76686caa053c50a802cc8.jpg) Mario6493
+- ![Nekky's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/d3/d3c2db267d15e4e90ef263a4dae2a21a8b4769df.jpg) Nekky
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
+- ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol 
 
+### Particle Development
 - ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
-- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu 
 
-### Particle Manifest Development
-- ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
+### Plugin Development
+- ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
-### Texture Development - Map and Particle Manifest
+### Texture Development
 - ![Mario6493's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/a4/a4c061830d0fad6f9dd76686caa053c50a802cc8.jpg) Mario6493 
 - ![Testinglol's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/2a/2a6e419f675dc7f36bd6d4c946bd1e99506bcd6b.jpg) Testinglol
-
-### Texture Development - Overlays R&D
 - ![Stevu's avatar](https://steamcdn-a.akamaihd.net/steamcommunity/public/images/avatars/4a/4a1a538fe1f12ae591d47a26e10556f32ac48844.jpg) Stevu
 
 ### Research and Development Department
