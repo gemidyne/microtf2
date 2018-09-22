@@ -4,7 +4,7 @@
  * Rocket Jump!
  */
 
-public Minigame7_EntryPoint()
+public void Minigame7_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame7_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame7_OnMinigameSelected);
@@ -12,7 +12,7 @@ public Minigame7_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame7_OnMinigameFinish);
 }
 
-public Minigame7_OnMinigameSelectedPre()
+public void Minigame7_OnMinigameSelectedPre()
 {
 	if (MinigameID == 7)
 	{
@@ -21,12 +21,12 @@ public Minigame7_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame7_OnMinigameSelected(client)
+public void Minigame7_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 7 && IsClientValid(client))
 	{
 		TF2_SetPlayerClass(client, TFClass_Soldier);
-		ResetWeapon(client, true);
+		TF2_RemoveAllWeapons(client);
 		IsGodModeEnabled(client, false);
 		SetPlayerHealth(client, 1000);
 		GiveWeapon(client, 237);
@@ -34,7 +34,7 @@ public Minigame7_OnMinigameSelected(client)
 	}
 }
 
-public Minigame7_OnRocketJump(client)
+public void Minigame7_OnRocketJump(int client)
 {
 	if (IsMinigameActive && MinigameID == 7 && IsClientValid(client) && IsPlayerParticipant[client])
 	{
@@ -43,11 +43,11 @@ public Minigame7_OnRocketJump(client)
 	}
 }
 
-public Minigame7_OnMinigameFinish()
+public void Minigame7_OnMinigameFinish()
 {
 	if (MinigameID == 7)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i] && !IsFakeClient(i))
 			{
