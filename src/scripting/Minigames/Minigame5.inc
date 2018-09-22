@@ -4,7 +4,7 @@
  * Sticky Jump!
  */
 
-public Minigame5_EntryPoint()
+public void Minigame5_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame5_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame5_OnMinigameSelected);
@@ -12,12 +12,12 @@ public Minigame5_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame5_OnMinigameFinish);
 }
 
-public bool:Minigame5_OnCheck()
+public bool Minigame5_OnCheck()
 {
 	return true;
 }
 
-public Minigame5_OnMinigameSelectedPre()
+public void Minigame5_OnMinigameSelectedPre()
 {
 	if (MinigameID == 5)
 	{
@@ -26,7 +26,7 @@ public Minigame5_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame5_OnMinigameSelected(client)
+public void Minigame5_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 5 && IsClientValid(client))
 	{
@@ -40,7 +40,7 @@ public Minigame5_OnMinigameSelected(client)
 	}
 }
 
-public Minigame5_OnStickyJump(client)
+public void Minigame5_OnStickyJump(int client)
 {
 	if (IsMinigameActive && MinigameID == 5 && IsPlayerParticipant[client])
 	{
@@ -49,11 +49,11 @@ public Minigame5_OnStickyJump(client)
 	}
 }
 
-public Minigame5_OnMinigameFinish()
+public void Minigame5_OnMinigameFinish()
 {
 	if (MinigameID == 5)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i] && !IsFakeClient(i))
 			{
