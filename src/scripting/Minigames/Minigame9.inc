@@ -4,46 +4,45 @@
  * Simon Says!
  */
 
-new MinigameNine_Mode = -1;
-new bool:MinigameNine_CanCheckConditions = false;
+int Minigame9_Mode = -1;
+bool Minigame9_CanCheckConditions = false;
 
-public Minigame9_EntryPoint()
+public void Minigame9_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameNine_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, MinigameNine_OnMinigameFinishPre);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, MinigameNine_OnGameFrame);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame9_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, Minigame9_OnMinigameFinishPre);
+	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame9_OnGameFrame);
 }
 
-public bool:Minigame9_OnCheck()
+public bool Minigame9_OnCheck()
 {
 	return true;
 }
 
-public MinigameNine_OnMinigameSelectedPre()
+public void Minigame9_OnMinigameSelectedPre()
 {
 	if (MinigameID == 9)
 	{
 		IsBlockingTaunts = false;
-		MinigameNine_Mode = GetRandomInt(1, 6);
+		Minigame9_Mode = GetRandomInt(1, 6);
+		Minigame9_CanCheckConditions = false;
 
-		MinigameNine_CanCheckConditions = false;
-		CreateTimer(1.5, Timer_MinigameNine_AllowConditions);		
+		CreateTimer(1.5, Timer_Minigame9_AllowConditions);		
 	}
 }
 
-public Action:Timer_MinigameNine_AllowConditions(Handle:timer)
+public Action Timer_Minigame9_AllowConditions(Handle timer)
 {
-	MinigameNine_CanCheckConditions = true;
+	Minigame9_CanCheckConditions = true;
 }
 
-public Minigame9_GetDynamicCaption(client)
+public void Minigame9_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
-		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		decl String:text[64];
 
-		switch (MinigameNine_Mode)
+		switch (Minigame9_Mode)
 		{
 			case 1: text = "SIMON SAYS: TAUNT!";
 			case 2: text = "SOMEONE SAYS: TAUNT!";
@@ -57,15 +56,15 @@ public Minigame9_GetDynamicCaption(client)
 	}
 }
 
-public MinigameNine_OnGameFrame()
+public void Minigame9_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 9)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && MinigameNine_CanCheckConditions)
+			if (IsClientValid(i) && IsPlayerParticipant[i] && Minigame9_CanCheckConditions)
 			{
-				switch (MinigameNine_Mode)
+				switch (Minigame9_Mode)
 				{
 					case 1:
 					{
@@ -131,33 +130,33 @@ public MinigameNine_OnGameFrame()
 	}
 }
 
-public MinigameNine_OnMinigameFinishPre()
+public Minigame9_OnMinigameFinishPre()
 {
 	if (IsMinigameActive && MinigameID == 9)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{
-				if (MinigameNine_Mode == 2)
+				if (Minigame9_Mode == 2)
 				{
 					if (!TF2_IsPlayerInCondition(i, TFCond_Taunting))
 					{
 						ClientWonMinigame(i);
 					}
 				}
-				else if (MinigameNine_Mode == 4) 
+				else if (Minigame9_Mode == 4) 
 				{
-					new button = GetClientButtons(i);
+					int button = GetClientButtons(i);
 
 					if ((button & IN_JUMP) != IN_JUMP)
 					{
 						ClientWonMinigame(i);
 					}
 				}
-				else if (MinigameNine_Mode == 6)
+				else if (Minigame9_Mode == 6)
 				{
-					new button = GetClientButtons(i);
+					int button = GetClientButtons(i);
 
 					if ((button & IN_DUCK) != IN_DUCK)
 					{
