@@ -4,16 +4,16 @@
  * Kill an Enemy
  */
 
-new Minigame2_Class = -1;
+int Minigame2_Class = -1;
 
-public Minigame2_EntryPoint()
+public void Minigame2_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameTwo_OnSelectionPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, MinigameTwo_OnSelection);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, MinigameTwo_OnPlayerDeath);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnSelectionPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame2_OnSelection);
+	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
 }
 
-public bool:Minigame2_OnCheck()
+public bool Minigame2_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -25,11 +25,10 @@ public bool:Minigame2_OnCheck()
 		return false;
 	}
 
-	// If we get here, the minigame can run! 
 	return true;
 }
 
-public MinigameTwo_OnSelectionPre()
+public void Minigame2_OnSelectionPre()
 {
 	if (MinigameID == 2)
 	{
@@ -41,12 +40,12 @@ public MinigameTwo_OnSelectionPre()
 	}
 }
 
-public MinigameTwo_OnSelection(client)
+public void Minigame2_OnSelection(int client)
 {
 	if (IsMinigameActive && MinigameID == 2 && IsClientValid(client))
 	{
-		new TFClassType:class;
-		new weapon = 0;
+		TFClassType class;
+		int weapon = 0;
 
 		switch (Minigame2_Class)
 		{
@@ -103,7 +102,7 @@ public MinigameTwo_OnSelection(client)
 	}
 }
 
-public MinigameTwo_OnPlayerDeath(victim, attacker)
+public Minigame2_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && MinigameID == 2)
 	{
