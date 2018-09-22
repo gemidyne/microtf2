@@ -4,33 +4,33 @@
  * Maths
  */
 
-new String:MinigameEight_SayTextQuestion[64];
-new bool:MinigameEight_HasBeenAnswered = false;
-new MinigameEight_SayTextAnswer = 0;
+char Minigame8_SayTextQuestion[64];
+bool Minigame8_HasBeenAnswered = false;
+int Minigame8_SayTextAnswer = 0;
 
-public Minigame8_EntryPoint()
+public void Minigame8_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameEight_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, MinigameEight_OnMinigameFinish);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
 
-	RegConsoleCmd("say", Command_MinigameEightSay);
-	RegConsoleCmd("say_team", Command_MinigameEightSay);
+	RegConsoleCmd("say", Command_Minigame8Say);
+	RegConsoleCmd("say_team", Command_Minigame8Say);
 }
 
-public bool:Minigame8_OnCheck()
+public bool Minigame8_OnCheck()
 {
 	return true;
 }
 
-public MinigameEight_OnMinigameSelectedPre()
+public void Minigame8_OnMinigameSelectedPre()
 {
 	if (MinigameID == 8)
 	{
-		MinigameEight_HasBeenAnswered = false;
+		Minigame8_HasBeenAnswered = false;
 
-		new int1 = GetRandomInt(3, 15);
-		new int2 = GetRandomInt(3, 15);
-		new String:form[12];
+		int int1 = GetRandomInt(3, 15);
+		int int2 = GetRandomInt(3, 15);
+		char form[12];
 
 		switch (GetRandomInt(1, 3))
 		{
@@ -42,7 +42,7 @@ public MinigameEight_OnMinigameSelectedPre()
 					int2 = 9001 - int1;
 				}
 
-				MinigameEight_SayTextAnswer = int1 + int2;
+				Minigame8_SayTextAnswer = int1 + int2;
 				Format(form, sizeof(form), "+");
 			}
 
@@ -54,7 +54,7 @@ public MinigameEight_OnMinigameSelectedPre()
 					int2 = 1;
 				}
 
-				MinigameEight_SayTextAnswer = int1 - int2;
+				Minigame8_SayTextAnswer = int1 - int2;
 				Format(form, sizeof(form), "-");
 			}
 
@@ -64,30 +64,31 @@ public MinigameEight_OnMinigameSelectedPre()
 
 				int1 = GetRandomInt(2, 10);
 				int2 = GetRandomInt(2, 10);
-				MinigameEight_SayTextAnswer = int1 * int2;
+				Minigame8_SayTextAnswer = int1 * int2;
 			}
 		}
-		Format(MinigameEight_SayTextQuestion, sizeof(MinigameEight_SayTextQuestion), "%d %s %d", int1, form, int2);
+
+		Format(Minigame8_SayTextQuestion, sizeof(Minigame8_SayTextQuestion), "%d %s %d", int1, form, int2);
 	}
 }
 
-public Minigame8_GetDynamicCaption(client)
+public void Minigame8_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
-		decl String:text[64];
-		Format(text, sizeof(text), "%s\n%s = ?", MinigameCaption[client], MinigameEight_SayTextQuestion);	
+		char text[64];
+		Format(text, sizeof(text), "%s\n%s = ?", MinigameCaption[client], Minigame8_SayTextQuestion);	
 		
 		MinigameCaption[client] = text;
 	}
 }
 
 
-public Action:Command_MinigameEightSay(client, args)
+public Action Command_Minigame8Say(client, args)
 {
 	if (IsMinigameActive && MinigameID == 8)
 	{
-		decl String:text[192];
+		char text[192];
 		if (GetCmdArgString(text, sizeof(text)) < 1)
 		{
 			return Plugin_Continue;
@@ -95,7 +96,7 @@ public Action:Command_MinigameEightSay(client, args)
 	
 		if (IsPlayerParticipant[client])
 		{
-			new startidx;
+			int startidx;
 			if (text[strlen(text)-1] == '"')
 			{
 				text[strlen(text)-1] = '\0';
@@ -103,29 +104,29 @@ public Action:Command_MinigameEightSay(client, args)
 
 			startidx = 1;
 
-			decl String:message[192];
+			char message[192];
 			BreakString(text[startidx], message, sizeof(message));
 
-			decl String:strArgument[64]; 
+			char strArgument[64];
 			GetCmdArg(1, strArgument, sizeof(strArgument));
 				
-			if (!Math_IsStringANumber(strArgument)) 
+			if (!IsStringInt(strArgument)) 
 			{
 				return Plugin_Continue;
 			}
 		
-			new guess = StringToInt(strArgument);
+			int guess = StringToInt(strArgument);
 		
-			if (guess == MinigameEight_SayTextAnswer)
+			if (guess == Minigame8_SayTextAnswer)
 			{
 				ClientWonMinigame(client);
 
-				if (!MinigameEight_HasBeenAnswered)
+				if (!Minigame8_HasBeenAnswered)
 				{
-					CPrintToChatAllEx(client, "{teamcolor}%N {green}got the correct answer first! (Bonus Point!)", client);
+					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}got the correct answer first! (Bonus Point!)", PLUGIN_PREFIX, client);
 
 					PlayerScore[client]++;
-					MinigameEight_HasBeenAnswered = true;
+					Minigame8_HasBeenAnswered = true;
 				}
 
 				return Plugin_Handled;
@@ -136,17 +137,10 @@ public Action:Command_MinigameEightSay(client, args)
 	return Plugin_Continue;
 }
 
-stock bool:Math_IsStringANumber(String:Arg[64])
-{
-    if (StringToInt(Arg) != 0) return true;
-    if (StrEqual(Arg, "0")) return true;
-    return false;
-}
-
-public MinigameEight_OnMinigameFinish()
+public Minigame8_OnMinigameFinish()
 {
 	if (MinigameID == 8)
 	{
-		CPrintToChatAll("{green}The correct answer was %d!", MinigameEight_SayTextAnswer);
+		CPrintToChatAll("{green}The correct answer was %d!", Minigame8_SayTextAnswer);
 	}
 }

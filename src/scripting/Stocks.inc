@@ -612,3 +612,11 @@ stock void ToUpperString(const char[] input, char[] output, int size)
 
 	output[x] = '\0';
 }
+
+stock bool IsStringInt(const char arg[64])
+{
+    if (StringToInt(arg) != 0) return true;
+    if (StrEqual(arg, "0")) return true;
+	
+    return false;
+}
