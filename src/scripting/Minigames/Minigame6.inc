@@ -13,7 +13,7 @@ char Minigame6_SayTextAnswer[64];
 bool Minigame6_HasBeenAnswered = false;
 bool Minigame6_AnswersLoaded = false;
 
-public Minigame6_EntryPoint()
+public void Minigame6_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
 
@@ -23,13 +23,13 @@ public Minigame6_EntryPoint()
 	Minigame6_AnswersLoaded = Minigame6_LoadAnswers();
 }
 
-public bool:Minigame6_OnCheck()
+public bool Minigame6_OnCheck()
 {
 	// Minigame 6 can only run if answers have been defined.
 	return Minigame6_AnswersLoaded;
 }
 
-public Minigame6_OnMinigameSelectedPre()
+public void Minigame6_OnMinigameSelectedPre()
 {
 	if (MinigameID == 6)
 	{
@@ -38,21 +38,21 @@ public Minigame6_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame6_GetDynamicCaption(client)
+public void Minigame6_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
-		decl String:text[64];	
+		char text[64];
  		Format(text, sizeof(text), "%s\n%s", MinigameCaption[client], Minigame6_SayTextAnswer);	
  		MinigameCaption[client] = text;
 	}
 }
 
-public Action:Command_MinigameSixSay(client, args)
+public Action Command_MinigameSixSay(int client, int args)
 {
 	if (IsMinigameActive && MinigameID == 6)
 	{
-		decl String:text[192];
+		char text[192];
 		if (GetCmdArgString(text, sizeof(text)) < 1)
 		{
 			return Plugin_Continue;
@@ -60,14 +60,14 @@ public Action:Command_MinigameSixSay(client, args)
 
 		if (IsPlayerParticipant[client])
 		{
-			new startidx;
+			int startidx;
 			if (text[strlen(text)-1] == '"') 
 			{
 				text[strlen(text)-1] = '\0';
 			}
 
 			startidx = 1;
-			decl String:message[192];
+			char message[192];
 			BreakString(text[startidx], message, sizeof(message));
 	
 			if (strcmp(message, Minigame6_SayTextAnswer, false) == 0)
