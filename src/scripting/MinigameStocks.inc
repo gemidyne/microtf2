@@ -4,106 +4,113 @@
  * Provides stocks for use in some minigames.
  */
 
-stock CreatePropEntity(Float:fPosition[3], String:sModel[], iHealth, Float:fDuration = 4.0, bool:bPhysic = true)
+stock int CreatePropEntity(float position[3], char[] modelPath, int health, float duration = 4.0, bool enablePhysics = true)
 {
-	new iEntity = bPhysic ? CreateEntityByName("prop_physics_override") : CreateEntityByName("prop_dynamic_override");
+	int entity = enablePhysics 
+		? CreateEntityByName("prop_physics_override") 
+		: CreateEntityByName("prop_dynamic_override");
 	
-	if (IsValidEntity(iEntity))
+	if (IsValidEntity(entity))
 	{
-		SetEntityModel(iEntity, sModel);
+		SetEntityModel(entity, modelPath);
 		
-		DispatchKeyValue(iEntity, "disableshadows", "1");
-		DispatchKeyValue(iEntity, "disablereceiveshadows", "1");
-		DispatchKeyValue(iEntity, "massScale", "70");
+		DispatchKeyValue(entity, "disableshadows", "1");
+		DispatchKeyValue(entity, "disablereceiveshadows", "1");
+		DispatchKeyValue(entity, "massScale", "70");
 		
-		DispatchSpawn(iEntity);
+		DispatchSpawn(entity);
 		
-		SetEntProp(iEntity, Prop_Data, "m_takedamage", 2); 
+		SetEntProp(entity, Prop_Data, "m_takedamage", 2); 
 		
-		DispatchKeyValue(iEntity, "Solid", "6");
+		DispatchKeyValue(entity, "Solid", "6");
 		
-		//SetEntProp(iEntity, Prop_Data, "m_nSolidType", 6);
-		SetEntProp(iEntity, Prop_Send, "m_nSolidType", 6);
-		//SetEntProp(iEntity, Prop_Data, "m_CollisionGroup", 5);
-		SetEntProp(iEntity, Prop_Send, "m_CollisionGroup", 5);
-		//SetEntProp(iEntity, Prop_Data, "m_usSolidFlags", 16);
-		SetEntProp(iEntity, Prop_Send, "m_usSolidFlags", 16);
+		//SetEntProp(entity, Prop_Data, "m_nSolidType", 6);
+		SetEntProp(entity, Prop_Send, "m_nSolidType", 6);
+		//SetEntProp(entity, Prop_Data, "m_CollisionGroup", 5);
+		SetEntProp(entity, Prop_Send, "m_CollisionGroup", 5);
+		//SetEntProp(entity, Prop_Data, "m_usSolidFlags", 16);
+		SetEntProp(entity, Prop_Send, "m_usSolidFlags", 16);
 	
-		SetEntityMoveType(iEntity, MOVETYPE_VPHYSICS);
+		SetEntityMoveType(entity, MOVETYPE_VPHYSICS);
 		
-		AcceptEntityInput(iEntity, "DisableCollision");
-		AcceptEntityInput(iEntity, "EnableCollision");
+		AcceptEntityInput(entity, "DisableCollision");
+		AcceptEntityInput(entity, "EnableCollision");
 		
-		SetEntityRenderColor(iEntity, 255, 255, 255, 255);
+		SetEntityRenderColor(entity, 255, 255, 255, 255);
 		
-		SetEntProp(iEntity, Prop_Data, "m_iMaxHealth", iHealth);
-		SetEntProp(iEntity, Prop_Data, "m_iHealth", iHealth);
+		SetEntProp(entity, Prop_Data, "m_iMaxHealth", health);
+		SetEntProp(entity, Prop_Data, "m_iHealth", health);
 		
-		TeleportEntity(iEntity, fPosition, NULL_VECTOR, NULL_VECTOR);
+		TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
 		
-		CreateTimer(fDuration, Timer_RemoveEntity, iEntity);
+		if (duration > 0.0) 
+		{
+			CreateTimer(duration, Timer_RemoveEntity, entity);
+		}
 	}
 
-	return iEntity;
+	return entity;
 }
 
-stock CreateParticle(client, const String:effect[], Float:time, bool:attachToHead = false) 
+stock void CreateParticle(int client, const char[] effect, float time, bool attachToHead = false) 
 {  
-	new iParticle = CreateEntityByName("info_particle_system");
+	new entity = CreateEntityByName("info_particle_system");
 
-	if (IsValidEntity(iParticle)) 
+	if (IsValidEntity(entity)) 
 	{
-		new Float:fPosition[3];
-		decl String:sName[128];
+		float fPosition[3];
+		char sName[128];
 
 		GetEntPropVector(client, Prop_Send, "m_vecOrigin", fPosition);
-		TeleportEntity(iParticle, fPosition, NULL_VECTOR, NULL_VECTOR);
+		TeleportEntity(entity, fPosition, NULL_VECTOR, NULL_VECTOR);
         
 		Format(sName, sizeof(sName), "target%i", client);
 		DispatchKeyValue(client, "targetname", sName);
         
-		DispatchKeyValue(iParticle, "targetname", "tf2particle");
-		DispatchKeyValue(iParticle, "parentname", sName);
-		DispatchKeyValue(iParticle, "effect_name", effect);
-		DispatchSpawn(iParticle);
+		DispatchKeyValue(entity, "targetname", "tf2particle");
+		DispatchKeyValue(entity, "parentname", sName);
+		DispatchKeyValue(entity, "effect_name", effect);
+		DispatchSpawn(entity);
 
 		SetVariantString(sName);
-		AcceptEntityInput(iParticle, "SetParent", iParticle, iParticle, 0);
+		AcceptEntityInput(entity, "SetParent", entity, entity, 0);
 
 		if (attachToHead) 
 		{
 			SetVariantString("head");
-			AcceptEntityInput(iParticle, "SetParentAttachment", iParticle, iParticle, 0);
+			AcceptEntityInput(entity, "SetParentAttachment", entity, entity, 0);
 		}
 
-		ActivateEntity(iParticle);
-		AcceptEntityInput(iParticle, "start");
+		ActivateEntity(entity);
+		AcceptEntityInput(entity, "start");
         
-		CreateTimer(time, Timer_RemoveEntity, iParticle);
+		CreateTimer(time, Timer_RemoveEntity, entity);
 	}
 }
 
-public Action:Timer_RemoveEntity(Handle:hTimer, any:iEntity) 
+public Action Timer_RemoveEntity(Handle timer, int entity) 
 {
-    if (IsValidEntity(iEntity)) 
+    if (IsValidEntity(entity)) 
 	{
-        AcceptEntityInput(iEntity, "Kill");
+        AcceptEntityInput(entity, "Kill");
     }
 
     return Plugin_Stop;
 }
 
-public Action:Timer_RemoveBossOverlay(Handle:timer)
+public Action Timer_RemoveBossOverlay(Handle timer)
 {
 	DisplayOverlayToAll(OVERLAY_BLANK);
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		MinigameCaption[i] = "";
 	}
+
+	return Plugin_Handled;
 }
 
-public Action:Timer_CheckBossEnd(Handle:timer, any:client)
+public Action Timer_CheckBossEnd(Handle timer, int client)
 { 
 	if (GamemodeStatus != GameStatus_Playing)
 	{
@@ -125,7 +132,7 @@ public Action:Timer_CheckBossEnd(Handle:timer, any:client)
 	return Plugin_Handled;
 }
 
-stock EndBoss()
+public void EndBoss()
 {
 	if (IsMinigameActive && BossgameID > 0 && MinigameID == 0)
 	{
@@ -133,12 +140,11 @@ stock EndBoss()
 
 		if (MinigamesPlayed != BossGameThreshold)
 		{
-			// That is us!
 			SpeedLevel = 1.0;
 			MinigamesPlayed = 999;
 		}
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i))
 			{
@@ -159,13 +165,14 @@ stock EndBoss()
 			KillTimer(Handle_ActiveGameTimer);
 			Handle_ActiveGameTimer = INVALID_HANDLE;
 		}
+
 		CreateTimer(0.0, Timer_GameLogic_EndMinigame);
 	}
 }
 
-stock ClearMinigameCaptionForAll()
+stock void ClearMinigameCaptionForAll()
 {
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{

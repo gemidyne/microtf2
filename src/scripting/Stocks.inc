@@ -96,7 +96,7 @@ stock void IsPlayerCollisionsEnabled(int client, bool enabled)
 	}
 }
 
-stock void RemovePlayerWearables(client)
+stock void RemovePlayerWearables(int client)
 {
 	int entity = -1;
 	while ((entity = FindEntityByClassname(entity, "tf_wearable")) != -1)
@@ -125,7 +125,7 @@ stock void RemovePlayerWearables(client)
 	int edict = (MaxClients + 1);
 	while ((edict = FindEntityByClassname2(edict, "tf_wearable")) != -1)
 	{
-		decl String:netclass[32];
+		char netclass[32];
 		if (GetEntityNetClass(edict, netclass, sizeof(netclass)) && StrEqual(netclass, "CTFWearable"))
 		{
 			int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");

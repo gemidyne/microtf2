@@ -7,24 +7,24 @@
 #define MAXIMUM_MINIGAMES 64
 #define MINIGAME_CAPTION_LENGTH 128
 
-new MinigamesLoaded = 0;
-new BossgamesLoaded = 0;
+int MinigamesLoaded = 0;
+int BossgamesLoaded = 0;
 
-new String:MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
-new String:MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
-new bool:MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
+char MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
+char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
+bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 
-new String:BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
-new String:BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
-new bool:BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
+char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
+char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
+bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 
-new String:MinigameMusic[MAXIMUM_MINIGAMES][128];
-new Float:MinigameMusicLength[MAXIMUM_MINIGAMES];
+char MinigameMusic[MAXIMUM_MINIGAMES][128];
+float MinigameMusicLength[MAXIMUM_MINIGAMES];
 
-new String:BossgameMusic[MAXIMUM_MINIGAMES][128];
-new Float:BossgameLength[MAXIMUM_MINIGAMES];
+char BossgameMusic[MAXIMUM_MINIGAMES][128];
+float BossgameLength[MAXIMUM_MINIGAMES];
 
-new String:MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
+char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 
 #include MinigameStocks.inc
 
@@ -61,11 +61,11 @@ new String:MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 #include Bossgames/Bossgame4.inc
 #include Bossgames/Bossgame5.inc
 
-public InitializeMinigames()
+public void InitializeMinigames()
 {
 	LogMessage("Initializing Minigame System...");
-	decl String:funcName[64];
-	decl String:manifestPath[128];
+	char funcName[64];
+	char manifestPath[128];
 
 	// Our method of initializing minigames is:
 	// Each minigame has a method called Minigame<NUMBER>_EntryPoint
@@ -74,12 +74,12 @@ public InitializeMinigames()
 	// Determine count of Minigames that are available.
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/minigames.txt");
 
-	new Handle:kv = CreateKeyValues("Minigames");
+	Handle kv = CreateKeyValues("Minigames");
 	FileToKeyValues(kv, manifestPath);
  
 	if (KvGotoFirstSubKey(kv))
 	{
-		new i = 0;
+		int i = 0;
 
 		do
 		{
@@ -95,7 +95,7 @@ public InitializeMinigames()
 
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
 
-			new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
+			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 			if (func != INVALID_FUNCTION)
 			{
 				MinigamesLoaded++;
@@ -131,7 +131,7 @@ public InitializeMinigames()
  
 	if (KvGotoFirstSubKey(kv))
 	{
-		new i = 0;
+		int i = 0;
 
 		do
 		{
@@ -145,7 +145,7 @@ public InitializeMinigames()
 			// Get EntryPoint first of all!
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
 
-			new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
+			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 			if (func != INVALID_FUNCTION)
 			{
 				BossgamesLoaded++;
@@ -180,11 +180,11 @@ public InitializeMinigames()
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
 }
 
-public MinigameSystem_OnMapStart()
+public void MinigameSystem_OnMapStart()
 {
-	new Handle:sndfile = INVALID_HANDLE;
+	Handle sndfile = INVALID_HANDLE;
 
-	for (new i = 1; i <= MinigamesLoaded; i++)
+	for (int i = 1; i <= MinigamesLoaded; i++)
 	{
 		if (strlen(MinigameMusic[i]) == 0)
 		{
@@ -205,13 +205,12 @@ public MinigameSystem_OnMapStart()
 		}
 	}
 
-	for (new i = 1; i <= BossgamesLoaded; i++)
+	for (int i = 1; i <= BossgamesLoaded; i++)
 	{
 		if (strlen(BossgameMusic[i]) == 0)
 		{
 			continue;
 		}
-
 
 		PreloadSound(BossgameMusic[i]);
 	}
