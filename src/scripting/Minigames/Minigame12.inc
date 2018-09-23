@@ -4,19 +4,19 @@
  * Get on a Platform!
  */
 
-public Minigame12_EntryPoint()
+public void Minigame12_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame12_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame12_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame12_OnMinigameFinish);
 }
 
-public bool:Minigame12_OnCheck()
+public bool Minigame12_OnCheck()
 {
 	return true;
 }
 
-public Minigame12_OnMinigameSelectedPre()
+public void Minigame12_OnMinigameSelectedPre()
 {
 	if (MinigameID == 12)
 	{
@@ -27,7 +27,7 @@ public Minigame12_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame12_OnMinigameSelected(client)
+public void Minigame12_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 12 && IsClientValid(client))
 	{
@@ -59,11 +59,11 @@ public Minigame12_OnMinigameSelected(client)
 	}
 }
 
-public Minigame12_OnMinigameFinish()
+public void Minigame12_OnMinigameFinish()
 {
 	if (MinigameID == 12)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i])
 			{
@@ -73,15 +73,16 @@ public Minigame12_OnMinigameFinish()
 	}
 }
 
-public Action:Timer_Minigame12_TriggerWater(Handle:hTimer) 
+public Action Timer_Minigame12_TriggerWater(Handle timer) 
 {
-	new triggerer = CreateEntityByName("prop_physics");
+	int triggerer = CreateEntityByName("prop_physics");
+
 	if (IsValidEdict(triggerer))
 	{
 		DispatchKeyValue(triggerer, "model", "models/props_farm/wooden_barrel.mdl");
 		DispatchSpawn(triggerer);
 
-		new Float:pos[3] = { -1408.0, -1328.0, 1618.0 };
+		float pos[3] = { -1408.0, -1328.0, 1618.0 };
 
 		TeleportEntity(triggerer, pos, NULL_VECTOR, NULL_VECTOR);
 		CreateTimer(0.25, Timer_RemoveEntity, triggerer);

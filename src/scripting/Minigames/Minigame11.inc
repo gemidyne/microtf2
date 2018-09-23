@@ -63,7 +63,7 @@ public void Minigame11_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 11 && Minigame11_CanCheckConditions)
 	{
-		float fVelocity[3];
+		float velocity[3];
 		float speed = 0.0;
 		float limit = 0.0;
 
@@ -72,8 +72,8 @@ public void Minigame11_OnGameFrame()
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{
 				limit = GetEntPropFloat(i, Prop_Send, "m_flMaxspeed") - 100.0;
-				GetEntPropVector(i, Prop_Data, "m_vecVelocity", fVelocity);
-				speed = GetVectorLength(fVelocity);
+				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
+				speed = GetVectorLength(velocity);
 
 				if (Minigame11_Mode == 2)
 				{
