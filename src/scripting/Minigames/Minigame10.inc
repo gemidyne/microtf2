@@ -4,41 +4,40 @@
  * Avoid the Kamikaze! / Explode a Player
  */
 
-#define DEFAULT_TIMER_FLAGS TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE
 #define SOUND_BEEP "vo/scout_award01.wav"
 #define SOUND_BEEPTWO "vo/scout_award02.wav"
 #define SOUND_BEEPTHR "vo/scout_award03.wav"
 #define SOUND_FINAL "weapons/mortar/mortar_shell_incomming1.wav"
 #define SOUND_BOOM "ambient/explosions/explode_3.wav"
 
-new MinigameTen_KillCount = 0;
+int Minigame10_KillCount = 0;
 
-new MinigameTen_BeamSprite = -1;
-new MinigameTen_HaloSprite = -1;
-new MinigameTen_Serial = 0;
-new MinigameTen_ExplosionSprite = -1;
+int Minigame10_BeamSprite = -1;
+int Minigame10_HaloSprite = -1;
+int Minigame10_Serial = 0;
+int Minigame10_ExplosionSprite = -1;
 
-new bool:MinigameTen_IsTimebomb[MAXPLAYERS+1];
-new MinigameTen_TimebombSerial[MAXPLAYERS+1] = { 0, ... };
-new MinigameTen_TimebombTime[MAXPLAYERS+1] = { 0, ... };
+bool Minigame10_IsTimebomb[MAXPLAYERS+1];
+int Minigame10_TimebombSerial[MAXPLAYERS+1] = { 0, ... };
+int Minigame10_TimebombTime[MAXPLAYERS+1] = { 0, ... };
 
-new MinigameTen_White[4] = {255, 255, 255, 255};
-new MinigameTen_Grey[4] = {128, 128, 128, 255};
+int Minigame10_White[4] = {255, 255, 255, 255};
+int Minigame10_Grey[4] = {128, 128, 128, 255};
 
-public Minigame10_EntryPoint()
+public void Minigame10_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameTen_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameTen_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, MinigameTen_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, MinigameTen_OnMinigameFinish);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, MinigameTen_OnPlayerDeath);
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame10_OnMapStart);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame10_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame10_OnMinigameSelected);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame10_OnMinigameFinish);
+	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame10_OnPlayerDeath);
 }
 
-public MinigameTen_OnMapStart()
+public void Minigame10_OnMapStart()
 {
-	MinigameTen_BeamSprite = PrecacheModel("materials/sprites/laser.vmt");
-	MinigameTen_HaloSprite = PrecacheModel("materials/sprites/halo01.vmt");
-	MinigameTen_ExplosionSprite = PrecacheModel("sprites/sprite_fire01.vmt");
+	Minigame10_BeamSprite = PrecacheModel("materials/sprites/laser.vmt");
+	Minigame10_HaloSprite = PrecacheModel("materials/sprites/halo01.vmt");
+	Minigame10_ExplosionSprite = PrecacheModel("sprites/sprite_fire01.vmt");
 	
 	PrecacheSound(SOUND_BEEP, true);
 	PrecacheSound(SOUND_BEEPTWO, true);
@@ -47,7 +46,7 @@ public MinigameTen_OnMapStart()
 	PrecacheSound(SOUND_BOOM, true);
 }
 
-public bool:Minigame10_OnCheck()
+public bool Minigame10_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -63,19 +62,19 @@ public bool:Minigame10_OnCheck()
 	return true;
 }
 
-public MinigameTen_OnMinigameSelectedPre()
+public void Minigame10_OnMinigameSelectedPre()
 {
 	if (MinigameID == 10)
 	{
-		Timebomb_Initialize();
+		Minigame10_Timebomb_Init();
 	}
 }
 
-public MinigameTen_OnMinigameSelected(client)
+public void Minigame10_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 10 && IsClientValid(client))
 	{
-		if (!MinigameTen_IsTimebomb[client])
+		if (!Minigame10_IsTimebomb[client])
 		{
 			TF2_SetPlayerClass(client, TFClass_Heavy);
 		}
@@ -92,14 +91,14 @@ public MinigameTen_OnMinigameSelected(client)
 	}
 }
 
-public Minigame10_GetDynamicCaption(client)
+public void Minigame10_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
-		decl String:text[64];
+		char text[64];
 
-		if (MinigameTen_IsTimebomb[client])
+		if (Minigame10_IsTimebomb[client])
 		{
 			text = "EXPLODE AS MANY PEOPLE AS YOU CAN!";
 		}
@@ -112,31 +111,31 @@ public Minigame10_GetDynamicCaption(client)
 	}
 }
 
-public MinigameTen_OnPlayerDeath(client)
+public void Minigame10_OnPlayerDeath(int client)
 {
 	if (IsMinigameActive && MinigameID == 10 && IsClientValid(client))
 	{
-		if (!MinigameTen_IsTimebomb[client])
+		if (!Minigame10_IsTimebomb[client])
 		{
 			PlayerStatus[client] = PlayerStatus_Failed;
-			MinigameTen_KillCount += 1;
+			Minigame10_KillCount += 1;
 		}
 	}
 }
 
-public MinigameTen_OnMinigameFinish()
+public void Minigame10_OnMinigameFinish()
 {
 	if (MinigameID == 10)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i])
 			{
-				if (MinigameTen_IsTimebomb[i] && MinigameTen_KillCount >= 1) 
+				if (Minigame10_IsTimebomb[i] && Minigame10_KillCount >= 1) 
 				{
 					PlayerStatus[i] = PlayerStatus_Winner;
 				}
-				else if (!MinigameTen_IsTimebomb[i] && IsPlayerAlive(i)) 
+				else if (!Minigame10_IsTimebomb[i] && IsPlayerAlive(i)) 
 				{
 					ClientWonMinigame(i);
 				}
@@ -145,44 +144,45 @@ public MinigameTen_OnMinigameFinish()
 	}
 }
 
-public Timebomb_Initialize()
+public void Minigame10_Timebomb_Init()
 {
 	if (MinigameID == 10)
 	{
-		new arrayPlayers[MaxClients];
-		new index = 0;
-		for (new i = 1; i <= MaxClients; i++)
+		int arrayPlayers[MAXPLAYERS+1];
+		int index = 0;
+
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i]) 
 			{
 				arrayPlayers[index] = i;
 				index++;
 
-				MinigameTen_IsTimebomb[i] = false;
+				Minigame10_IsTimebomb[i] = false;
 			}
 		}
 
 		if (index > 0)
 		{
-			new victim = arrayPlayers[GetRandomInt(0, index-1)];
-			if (ForceRandom(victim))
+			int victim = arrayPlayers[GetRandomInt(0, index-1)];
+			
+			if (Minigame10_Timebomb_CanApplyToPlayer(victim))
 			{
-				TimebombPlayer(victim);
+				Minigame10_TimebombPlayer(victim);
 
-				MinigameTen_IsTimebomb[victim] = true;
-				MinigameTen_KillCount = 0;
+				Minigame10_IsTimebomb[victim] = true;
+				Minigame10_KillCount = 0;
 			}
 			else
 			{
-				Timebomb_Initialize();
+				Minigame10_Timebomb_Init();
 			}
 		}
 	}
 }
 
-stock bool:ForceRandom(client)
+public bool Minigame10_Timebomb_CanApplyToPlayer(client)
 {
-	// Check to see if client is valid
 	if (client <= 0 || !IsClientConnected(client)) return false;
 	if (!IsClientInGame(client)) return false;
 	if (IsClientInKickQueue(client)) return false;
@@ -191,13 +191,13 @@ stock bool:ForceRandom(client)
 	return true;
 }
 
-stock TimebombPlayer(client)
+public void Minigame10_TimebombPlayer(client)
 {
-	MinigameTen_TimebombSerial[client] = ++MinigameTen_Serial;
-	CreateTimer(1.0, Timer_TimeBomb, client | (MinigameTen_Serial << 7), DEFAULT_TIMER_FLAGS);
-	MinigameTen_TimebombTime[client] = 3;
+	Minigame10_TimebombSerial[client] = ++Minigame10_Serial;
+	CreateTimer(1.0, Minigame10_Timebomb_Timer, client | (Minigame10_Serial << 7), TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+	Minigame10_TimebombTime[client] = 3;
 
-	decl String:particle[64];
+	char particle[64];
 
 	if (GetClientTeam(client) == 2)
 	{
@@ -214,29 +214,29 @@ stock TimebombPlayer(client)
 	ShowAnnotation(client, 3.0, "Kamikaze is here!");
 }
 
-public Action:Timer_TimeBomb(Handle:timer, any:value)
+public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 {
 	new client = value & 0x7f;
 	new serial = value >> 7;
 	
-	if (!IsClientInGame(client) || !IsPlayerAlive(client) || serial != MinigameTen_TimebombSerial[client])
+	if (!IsClientInGame(client) || !IsPlayerAlive(client) || serial != Minigame10_TimebombSerial[client])
 	{
-		KillTimeBomb(client);
+		Minigame10_Timebomb_Kill(client);
 		return Plugin_Stop;
 	}
 	
-	MinigameTen_TimebombTime[client]--;
+	Minigame10_TimebombTime[client]--;
 	
-	new Float:vec[3];
+	float vec[3];
 	GetClientEyePosition(client, vec);
 	
-	if (MinigameTen_TimebombTime[client] > 0)
+	if (Minigame10_TimebombTime[client] > 0)
 	{
-		new color;
+		int color;
 		
-		if (MinigameTen_TimebombTime[client] > 1)
+		if (Minigame10_TimebombTime[client] > 1)
 		{
-			color = RoundToFloor(MinigameTen_TimebombTime[client] * (128.0 / 2));
+			color = RoundToFloor(Minigame10_TimebombTime[client] * (128.0 / 2));
 			switch (GetRandomInt(0, 2))
 			{
 				case 0: EmitAmbientSound(SOUND_BEEP, vec, client, SNDLEVEL_RAIDSIREN);
@@ -244,7 +244,7 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 				case 2: EmitAmbientSound(SOUND_BEEPTHR, vec, client, SNDLEVEL_RAIDSIREN);
 			}
 
-			decl String:particle[64];
+			char particle[64];
 
 			if (GetClientTeam(client) == 2)
 			{
@@ -262,7 +262,7 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 			color = 0;
 			EmitAmbientSound(SOUND_FINAL, vec, client, SNDLEVEL_RAIDSIREN);
 
-			decl String:particle[64];
+			char particle[64];
 
 			if (GetClientTeam(client) == 2)
 			{
@@ -281,17 +281,17 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 		GetClientAbsOrigin(client, vec);
 		vec[2] += 10;
 		
-		TE_SetupBeamRingPoint(vec, 10.0, 600 / 3.0, MinigameTen_BeamSprite, MinigameTen_HaloSprite, 0, 15, 0.5, 5.0, 0.0, MinigameTen_Grey, 10, 0);
+		TE_SetupBeamRingPoint(vec, 10.0, 600 / 3.0, Minigame10_BeamSprite, Minigame10_HaloSprite, 0, 15, 0.5, 5.0, 0.0, Minigame10_Grey, 10, 0);
 		TE_SendToAll();
-		TE_SetupBeamRingPoint(vec, 10.0, 600 / 3.0, MinigameTen_BeamSprite, MinigameTen_HaloSprite, 0, 10, 0.6, 10.0, 0.5, MinigameTen_White, 10, 0);
+		TE_SetupBeamRingPoint(vec, 10.0, 600 / 3.0, Minigame10_BeamSprite, Minigame10_HaloSprite, 0, 10, 0.6, 10.0, 0.5, Minigame10_White, 10, 0);
 		TE_SendToAll();
 		return Plugin_Continue;
 	}
 	else
 	{
-		if (MinigameTen_ExplosionSprite > -1)
+		if (Minigame10_ExplosionSprite > -1)
 		{
-			TE_SetupExplosion(vec, MinigameTen_ExplosionSprite, 5.0, 1, 0, 600, 5000);
+			TE_SetupExplosion(vec, Minigame10_ExplosionSprite, 5.0, 1, 0, 600, 5000);
 			TE_SendToAll();
 		}
 
@@ -299,7 +299,7 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 		IsBlockingDamage = false;
 		
 		EmitAmbientSound(SOUND_BOOM, vec, client, SNDLEVEL_RAIDSIREN);
-		decl String:particle[64];
+		char particle[64];
 
 		if (GetClientTeam(client) == 2)
 		{
@@ -313,27 +313,34 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 		CreateParticle(client, particle, 8.0);
 		
 		ForcePlayerSuicide(client);
-		KillTimeBomb(client);
+		Minigame10_Timebomb_Kill(client);
 		SetEntityRenderColor(client, 255, 255, 255, 255);
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (!IsClientInGame(i) || !IsPlayerAlive(i) || i == client || !IsPlayerParticipant[i])	continue;
-			new Float:pos[3];
+			if (!IsClientInGame(i) || !IsPlayerAlive(i) || i == client || !IsPlayerParticipant[i])
+			{
+				continue;
+			}
+
+			float pos[3];
 			GetClientEyePosition(i, pos);
 			
-			new Float:distance = GetVectorDistance(vec, pos);
+			float distance = GetVectorDistance(vec, pos);
 			
-			if (distance > 600)	continue;
+			if (distance > 600)	
+			{
+				continue;
+			}
 			
-			new damage = 250; //220
+			int damage = 250; //220
 			damage = RoundToFloor(damage * (700 - distance) / 700); //600
 			
 			SlapPlayer(i, damage, false);
 			
-			if (MinigameTen_ExplosionSprite > -1)
+			if (Minigame10_ExplosionSprite > -1)
 			{
-				TE_SetupExplosion(pos, MinigameTen_ExplosionSprite, 0.05, 1, 0, 1, 1);
+				TE_SetupExplosion(pos, Minigame10_ExplosionSprite, 0.05, 1, 0, 1, 1);
 				TE_SendToAll();	
 			}
 		}
@@ -341,9 +348,9 @@ public Action:Timer_TimeBomb(Handle:timer, any:value)
 	return Plugin_Stop;
 }
 
-KillTimeBomb(client)
+public void Minigame10_Timebomb_Kill(client)
 {
-	MinigameTen_TimebombSerial[client] = 0;
+	Minigame10_TimebombSerial[client] = 0;
 	if (IsClientInGame(client)) 
 	{
 		SetEntityRenderColor(client, 255, 255, 255, 255);
