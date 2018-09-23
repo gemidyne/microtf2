@@ -4,9 +4,9 @@
  * Stay on the ground!
  */
 
-new bool:Minigame22_CanCheckConditions = false;
+bool Minigame22_CanCheckConditions = false;
 
-public Minigame22_EntryPoint()
+public void Minigame22_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame22_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame22_OnMinigameSelected);
@@ -14,12 +14,12 @@ public Minigame22_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame22_OnMinigameFinish);
 }
 
-public bool:Minigame22_OnCheck()
+public bool Minigame22_OnCheck()
 {
 	return true;
 }
 
-public Minigame22_OnMinigameSelectedPre()
+public void Minigame22_OnMinigameSelectedPre()
 {
 	if (MinigameID == 22)
 	{
@@ -30,12 +30,12 @@ public Minigame22_OnMinigameSelectedPre()
 	}
 }
 
-public Action:Timer_Minigame22_AllowConditions(Handle:timer)
+public Action Timer_Minigame22_AllowConditions(Handle timer)
 {
 	Minigame22_CanCheckConditions = true;
 }
 
-public Minigame22_OnMinigameSelected(client)
+public void Minigame22_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 22 && IsClientValid(client))
 	{
@@ -50,11 +50,11 @@ public Minigame22_OnMinigameSelected(client)
 	}
 }
 
-public Minigame22_OnGameFrame()
+public void Minigame22_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 22 && Minigame22_CanCheckConditions)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{
@@ -68,11 +68,11 @@ public Minigame22_OnGameFrame()
 	}
 }
 
-public Minigame22_OnMinigameFinish()
+public void Minigame22_OnMinigameFinish()
 {
 	if (MinigameID == 22)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && (GetEntityFlags(i) & FL_ONGROUND) && IsPlayerAlive(i))
 			{

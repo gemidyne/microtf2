@@ -620,3 +620,39 @@ stock bool IsStringInt(const char arg[64])
 	
     return false;
 }
+
+public int GetClientAimEntity3(int client, float &distancetoentity, float endpos[3])	//Javalia
+{
+	float cleyepos[3];
+	float cleyeangle[3];
+
+	GetClientEyePosition(client, cleyepos);
+	GetClientEyeAngles(client, cleyeangle);
+
+	Handle traceresulthandle = INVALID_HANDLE;
+	traceresulthandle = TR_TraceRayFilterEx(cleyepos, cleyeangle, MASK_SOLID, RayType_Infinite, TraceRayDontHitSelfOrPlayers, client);
+
+	if (TR_DidHit(traceresulthandle) == true)
+	{
+		TR_GetEndPosition(endpos, traceresulthandle);
+		distancetoentity = GetVectorDistance(cleyepos, endpos);
+		new entindextoreturn = TR_GetEntityIndex(traceresulthandle);
+		CloseHandle(traceresulthandle);
+		return entindextoreturn;
+	}
+
+	CloseHandle(traceresulthandle);
+	return -1;
+}
+
+public bool TraceRayDontHitSelfOrPlayers(int entity, int mask, int data)
+{
+	return (entity != data && !IsClientValid(entity));
+}
+
+public float GetSpeedMultiplier(float count)
+{
+    float divide = ((SpeedLevel-1.0)/7.5)+1.0;
+    float speed = count / divide;
+    return speed;
+}

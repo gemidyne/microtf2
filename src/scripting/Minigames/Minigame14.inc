@@ -8,28 +8,28 @@
 
 public Minigame14_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, MinigameFourteen_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, MinigameFourteen_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, MinigameFourteen_OnMinigameFinish);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
-public bool:Minigame14_OnCheck()
+public bool Minigame14_OnCheck()
 {
 	// This minigame is disabled for the time being.
 	// Needs an area.
 	return false;
 }
 
-public MinigameFourteen_OnMinigameSelected(i)
+public void Minigame14_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 14 && IsClientValid(i))
+	if (IsMinigameActive && MinigameID == 14 && IsClientValid(client))
 	{
-		TF2_SetPlayerClass(i, TFClass_Scout);
-		ResetWeapon(i, false);
+		TF2_SetPlayerClass(client, TFClass_Scout);
+		ResetWeapon(client, false);
 
-		IsGodModeEnabled(i, true);
-		IsPlayerCollisionsEnabled(i, false);
-		SetPlayerHealth(i, 1000);
+		IsGodModeEnabled(client, true);
+		IsPlayerCollisionsEnabled(client, false);
+		SetPlayerHealth(client, 1000);
 
 		/*
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };
@@ -50,15 +50,15 @@ public MinigameFourteen_OnMinigameSelected(i)
 
 		TeleportEntity(i, pos, ang, vel);*/
 
-		PrintCenterText(i, "AREA NOT FOUND\n\nUnable to teleport player - automatic win set");
+		PrintCenterText(client, "AREA NOT FOUND\n\nUnable to teleport player - automatic win set");
 	}
 }
 
-public MinigameFourteen_OnGameFrame()
+public void Minigame14_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 14)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && (GetEntityFlags(i) & FL_ISINWATER))
 			{
@@ -68,11 +68,11 @@ public MinigameFourteen_OnGameFrame()
 	}
 }
 
-public MinigameFourteen_OnMinigameFinish()
+public void Minigame14_OnMinigameFinish()
 {
 	if (MinigameID == 14)
 	{
-		for (new i = 1; i <= MaxClients; i++) 
+		for (int i = 1; i <= MaxClients; i++) 
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i]) 
 			{

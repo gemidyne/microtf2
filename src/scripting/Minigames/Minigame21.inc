@@ -4,14 +4,14 @@
  * Stun an Enemy
  */
 
-public Minigame21_EntryPoint()
+public void Minigame21_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame21_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerStunned, INVALID_HANDLE, Minigame21_OnPlayerStunned);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame21_OnMinigameFinish);
 }
 
-public bool:Minigame21_OnCheck()
+public bool Minigame21_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -26,7 +26,7 @@ public bool:Minigame21_OnCheck()
 	return true;
 }
 
-public Minigame21_OnMinigameSelected(client)
+public void Minigame21_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 21 && IsClientValid(client))
 	{
@@ -41,7 +41,7 @@ public Minigame21_OnMinigameSelected(client)
 	}
 }
 
-public Minigame21_OnPlayerStunned(stunner, victim)
+public void Minigame21_OnPlayerStunned(int stunner, int victim)
 {
 	if (IsMinigameActive && MinigameID == 21)
 	{
@@ -54,7 +54,7 @@ public Minigame21_OnPlayerStunned(stunner, victim)
 	}
 }
 
-public Minigame21_OnMinigameFinish()
+public void Minigame21_OnMinigameFinish()
 {
 	if (IsMinigameActive && MinigameID == 21)
 	{

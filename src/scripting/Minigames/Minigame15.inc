@@ -4,10 +4,10 @@
  * Build! 
  */
 
-new bool:Minigame15_AssertObject = false;
-new TFObjectType:Minigame15_ExpectedObject;
+bool Minigame15_AssertObject = false;
+TFObjectType Minigame15_ExpectedObject;
 
-public Minigame15_EntryPoint()
+public void Minigame15_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame15_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame15_OnMinigameSelected);
@@ -15,7 +15,7 @@ public Minigame15_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame15_OnMinigameFinish);
 }
 
-public bool:Minigame15_OnCheck()
+public bool Minigame15_OnCheck()
 {
 	if (GetTeamClientCount(2) > 5)
 	{
@@ -25,7 +25,7 @@ public bool:Minigame15_OnCheck()
 	return true;
 }
 
-public Minigame15_OnMinigameSelectedPre()
+public void Minigame15_OnMinigameSelectedPre()
 {
 	if (MinigameID == 15)
 	{
@@ -58,7 +58,7 @@ public Minigame15_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame15_OnMinigameSelected(client)
+public void Minigame15_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 15 && IsClientValid(client))
 	{
@@ -77,7 +77,7 @@ public Minigame15_OnMinigameSelected(client)
 	}
 }
 
-public Minigame15_GetDynamicCaption(client)
+public void Minigame15_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
@@ -111,11 +111,11 @@ public Minigame15_GetDynamicCaption(client)
 	}
 }
 
-public Minigame15_OnBuildObject(client, entity)
+public void Minigame15_OnBuildObject(int client, int entity)
 {
 	if (IsMinigameActive && MinigameID == 15 && IsClientValid(client) && IsPlayerParticipant[client]) 
 	{
-		new bool:winner = false;
+		bool winner = false;
 
 		if (!Minigame15_AssertObject)
 		{
@@ -123,7 +123,7 @@ public Minigame15_OnBuildObject(client, entity)
 		}
 		else
 		{
-			new TFObjectType:entityType = TF2_GetObjectType(entity);
+			TFObjectType entityType = TF2_GetObjectType(entity);
 
 			winner = entityType == Minigame15_ExpectedObject;
 		}
@@ -135,13 +135,13 @@ public Minigame15_OnBuildObject(client, entity)
 	}
 }
 
-public Minigame15_OnMinigameFinish()
+public void Minigame15_OnMinigameFinish()
 {
 	if (MinigameID == 15)
 	{
 		SetConVarInt(ConVar_TFCheapObjects, 0);
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{

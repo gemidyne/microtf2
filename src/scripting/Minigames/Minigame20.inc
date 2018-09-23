@@ -4,9 +4,9 @@
  * Munch / Drink
  */
 
-new Minigame20_PlayerClass;
+int Minigame20_PlayerClass;
 
-public Minigame20_EntryPoint()
+public void Minigame20_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
@@ -20,7 +20,7 @@ public bool:Minigame20_OnCheck()
 	return true;
 }
 
-public Minigame20_OnMinigameSelectedPre()
+public void Minigame20_OnMinigameSelectedPre()
 {
 	if (MinigameID == 20)
 	{
@@ -28,7 +28,7 @@ public Minigame20_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame20_OnMinigameSelected(client)
+public void Minigame20_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 20 && IsClientValid(client))
 	{
@@ -64,12 +64,12 @@ public Minigame20_OnMinigameSelected(client)
 	}
 }
 
-public Minigame20_GetDynamicCaption(client)
+public void Minigame20_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
-		decl String:text[64];
+		char text[64];
 
 		switch (Minigame20_PlayerClass)
 		{
@@ -95,26 +95,27 @@ public Minigame20_GetDynamicCaption(client)
 	}
 }
 
-public Minigame20_OnGameFrame()
+public void Minigame20_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 20)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && TF2_IsPlayerInCondition(i, TFCond_Taunting))
 			{	
 				//Credit to Tylerst & Powerlord!
-				new activeWeapon = FindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
+				int activeWeapon = FindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
 
 				if (activeWeapon <= 0)
 				{
 					SetFailState("Unable to find m_hActiveWeapon offset on CTFPlayer.");
 				}
 
-				new currentWeapon = GetEntDataEnt2(i, activeWeapon);
+				int currentWeapon = GetEntDataEnt2(i, activeWeapon);
+
 				if (IsValidEntity(currentWeapon))
 				{
-					new weaponIndex = GetEntProp(currentWeapon, Prop_Send, "m_iItemDefinitionIndex");
+					int weaponIndex = GetEntProp(currentWeapon, Prop_Send, "m_iItemDefinitionIndex");
 					switch (weaponIndex)
 					{
 						case 46, 163, 42, 311: ClientWonMinigame(i); //Drink / Munch Minigame!
@@ -125,11 +126,11 @@ public Minigame20_OnGameFrame()
 	}
 }
 
-public Minigame20_OnMinigameFinish()
+public void Minigame20_OnMinigameFinish()
 {
 	if (IsMinigameActive && MinigameID == 20)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i] && (GetClientTeam(i) == 2 || GetClientTeam(i) == 3))
 			{

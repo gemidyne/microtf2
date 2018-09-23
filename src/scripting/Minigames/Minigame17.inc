@@ -4,17 +4,17 @@
  * Hit a Heavy / Get Hit by a Medic
  */
 
-new Minigame17_Selected[MAXPLAYERS+1];
-new Minigame17_ClientTeam;
+int Minigame17_Selected[MAXPLAYERS+1];
+int Minigame17_ClientTeam;
 
-public Minigame17_EntryPoint()
+public void Minigame17_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame17_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame17_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
 }
 
-public bool:Minigame17_OnCheck()
+public bool Minigame17_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -29,13 +29,13 @@ public bool:Minigame17_OnCheck()
 	return false; // Currently disabled due to TakeDamage issues.
 }
 
-public Minigame17_OnMinigameSelectedPre()
+public void Minigame17_OnMinigameSelectedPre()
 {
 	if (MinigameID == 17)
 	{
 		Minigame17_ClientTeam = GetRandomInt(2, 3);
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i))
 			{
@@ -45,7 +45,7 @@ public Minigame17_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame17_OnMinigameSelected(client)
+public void Minigame17_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 17 && IsClientValid(client))
 	{
@@ -68,7 +68,7 @@ public Minigame17_OnMinigameSelected(client)
 	}
 }
 
-public Minigame17_GetDynamicCaption(client)
+public void Minigame17_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{

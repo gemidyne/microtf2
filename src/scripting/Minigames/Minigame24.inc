@@ -5,15 +5,15 @@
  * Requested by some. Credit to those responsible for the needlejump code.
  */
 
-new Minigame24_NeedleFireDelay[MAXPLAYERS+1];
+int Minigame24_NeedleFireDelay[MAXPLAYERS+1];
 
-public Minigame24_EntryPoint()
+public void Minigame24_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame24_OnMinigameSelected);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
 }
 
-public bool:Minigame24_OnCheck()
+public bool Minigame24_OnCheck()
 {
 	if (SpeedLevel > 1.5)
 	{
@@ -23,7 +23,7 @@ public bool:Minigame24_OnCheck()
 	return true;
 }
 
-public Minigame24_OnMinigameSelected(client)
+public void Minigame24_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 24 && IsClientValid(client))
 	{
@@ -35,17 +35,17 @@ public Minigame24_OnMinigameSelected(client)
 	}
 }
 
-public Minigame24_OnGameFrame()
+public void Minigame24_OnGameFrame()
 {
 	if (IsMinigameActive && MinigameID == 24)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerAlive(i) && IsPlayerParticipant[i] && PlayerStatus[i] == PlayerStatus_NotWon)
 			{
-				PerformNeedleJump(i);
+				Minigame24_PerformNeedlejump(i);
 
-				new Float:clientPos[3];
+				float clientPos[3];
 				GetClientAbsOrigin(i, clientPos);
 
 				if (clientPos[2] > 0.0) 
@@ -58,23 +58,23 @@ public Minigame24_OnGameFrame()
 	}
 }
 
-stock PerformNeedleJump(i)
+public void Minigame24_PerformNeedlejump(i)
 {
-	decl Float:fEyeAngle[3];
-	decl Float:fVelocity[3];
+	float fEyeAngle[3];
+	float fVelocity[3];
 
 	if (Minigame24_NeedleFireDelay[i] > 0) Minigame24_NeedleFireDelay[i] -= 1;
 
 	if (IsClientValid(i) && (GetClientButtons(i) & IN_ATTACK) && (Minigame24_NeedleFireDelay[i] <= 0))
 	{
-		new iWeapon = GetPlayerWeaponSlot(i, 0);
+		int iWeapon = GetPlayerWeaponSlot(i, 0);
 
 		if (IsValidEdict(iWeapon) && GetEntData(iWeapon, FindSendPropInfo("CTFWeaponBase", "m_iClip1")) != 0)
 		{
 			GetClientEyeAngles(i, fEyeAngle);
 			GetEntPropVector(i, Prop_Data, "m_vecVelocity", fVelocity);
 
-			new Float:multi = GetSpeedMultiplier(1.0);
+			float multi = GetSpeedMultiplier(1.0);
 			fVelocity[0] += (10.0 * Cosine(DegToRad(fEyeAngle[1])) * -1.0) / multi;
 			fVelocity[1] += (10.0 * Sine(DegToRad(fEyeAngle[1])) * -1.0) / multi;
 			fVelocity[2] -= (40.0 * Sine(DegToRad(fEyeAngle[0])) * -1.0) / multi;
@@ -102,11 +102,4 @@ stock PerformNeedleJump(i)
 			Minigame24_NeedleFireDelay[i] = 3;
         }
     }
-}
-
-stock Float:GetSpeedMultiplier(Float:count)
-{
-    new Float:divide = ((SpeedLevel-1.0)/7.5)+1.0;
-    new Float:speed = count / divide;
-    return speed;
 }

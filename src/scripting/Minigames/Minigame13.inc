@@ -4,15 +4,15 @@
  * Spycrab
  */
 
-new Float:MinigameThirteen_ClientEyePositionAngle[3];
+float Minigame13_ClientEyePositionAngle[3];
 
-public Minigame13_EntryPoint()
+public void Minigame13_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, MinigameThirteen_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, MinigameThirteen_OnMinigameFinishPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
+	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, Minigame13_OnMinigameFinishPre);
 }
 
-public MinigameThirteen_OnMinigameSelected(client)
+public void Minigame13_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 13 && IsClientValid(client))
 	{
@@ -24,26 +24,26 @@ public MinigameThirteen_OnMinigameSelected(client)
 	}
 }
 
-public MinigameThirteen_OnMinigameFinishPre()
+public void Minigame13_OnMinigameFinishPre()
 {
 	if (MinigameID == 13)
 	{
 		IsBlockingDeathCommands = false;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerParticipant[i])
 			{
-				new button = GetClientButtons(i);
-				new Float:min = 45.0 * -1;
+				int button = GetClientButtons(i);
+				float min = 45.0 * -1;
 
-				GetClientEyeAngles(i, MinigameThirteen_ClientEyePositionAngle);
-				if (MinigameThirteen_ClientEyePositionAngle[0] < min && (button & IN_DUCK) == IN_DUCK)
+				GetClientEyeAngles(i, Minigame13_ClientEyePositionAngle);
+				if (Minigame13_ClientEyePositionAngle[0] < min && (button & IN_DUCK) == IN_DUCK)
 				{
 					ClientWonMinigame(i);
 				}
 
-				if (MinigameThirteen_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
+				if (Minigame13_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
 				{
 					SlapPlayer(i, 5000, false);
 					PlayerStatus[i] = PlayerStatus_Failed;

@@ -4,7 +4,7 @@
  * Double jump!
  */
 
-new bool:Minigame23_CanCheckConditions = false;
+bool Minigame23_CanCheckConditions = false;
 
 public Minigame23_EntryPoint()
 {
@@ -13,12 +13,12 @@ public Minigame23_EntryPoint()
 	AddToForward(GlobalForward_OnPlayerRunCmd, INVALID_HANDLE, Minigame23_OnPlayerRunCmd);
 }
 
-public bool:Minigame23_OnCheck()
+public bool Minigame23_OnCheck()
 {
 	return true;
 }
 
-public Minigame23_OnMinigameSelectedPre()
+public void Minigame23_OnMinigameSelectedPre()
 {
 	if (MinigameID == 23)
 	{
@@ -27,12 +27,12 @@ public Minigame23_OnMinigameSelectedPre()
 	}
 }
 
-public Action:Timer_Minigame23_AllowConditions(Handle:timer)
+public Action Timer_Minigame23_AllowConditions(Handle timer)
 {
 	Minigame23_CanCheckConditions = true;
 }
 
-public Minigame23_OnMinigameSelected(client)
+public void Minigame23_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 23 && IsClientValid(client))
 	{
@@ -41,7 +41,7 @@ public Minigame23_OnMinigameSelected(client)
 	}
 }
 
-public Minigame23_OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:angles[3], &weapon)
+public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
 	if (!IsMinigameActive)
 	{
@@ -73,7 +73,7 @@ public Minigame23_OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float
 		return;
 	}
 
-	new flags = GetEntityFlags(client);
+	int flags = GetEntityFlags(client);
 
 	if (buttons & IN_JUMP)
 	{

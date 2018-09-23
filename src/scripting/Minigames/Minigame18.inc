@@ -4,10 +4,9 @@
  * Hit the Target!
  */
 
-new String:Minigame18_SniperTargets[4][64];
-
-new Minigame18_TargetEntIndex = -1;
-new Minigame18_TargetModel = 0;
+char Minigame18_SniperTargets[4][64];
+int Minigame18_TargetEntIndex = -1;
+int Minigame18_TargetModel = 0;
 
 public Minigame18_EntryPoint()
 {
@@ -24,14 +23,14 @@ public Minigame18_EntryPoint()
 
 public Minigame18_OnMapStart()
 {
-	for (new i = 0; i < 4; i++)
+	for (int i = 0; i < 4; i++)
 	{
 		PrecacheModel(Minigame18_SniperTargets[i], true);
 	}
 
-	decl String:buffer[32];
+	char buffer[32];
 
-	for (new i = 1; i < 9; i++)
+	for (int i = 1; i < 9; i++)
 	{
 		Format(buffer, sizeof(buffer), "vo/scout_painsharp0%d.mp3", i);
 		PrecacheSound(buffer, true);
@@ -40,19 +39,19 @@ public Minigame18_OnMapStart()
 		PrecacheSound(buffer, true);
 	}
 
-	for (new i = 1; i < 8; i++)
+	for (int i = 1; i < 8; i++)
 	{
 		Format(buffer, sizeof(buffer), "vo/demoman_painsharp0%d.mp3", i);
 		PrecacheSound(buffer, true);
 	}
 
-	for (new i = 1; i < 7; i++)
+	for (int i = 1; i < 7; i++)
 	{
 		Format(buffer, sizeof(buffer), "vo/scout_painsevere0%d.mp3", i);
 		PrecacheSound(buffer, true);
 	}
 
-	for (new i = 1; i < 5; i++)
+	for (int i = 1; i < 5; i++)
 	{
 		Format(buffer, sizeof(buffer), "vo/demoman_painsevere0%d.mp3", i);
 		PrecacheSound(buffer, true);
@@ -68,12 +67,12 @@ public Minigame18_OnMapStart()
 	}
 }
 
-public bool:Minigame18_OnCheck()
+public bool Minigame18_OnCheck()
 {
 	return true;
 }
 
-public Minigame18_OnMinigameSelectedPre()
+public void Minigame18_OnMinigameSelectedPre()
 {
 	if (MinigameID == 18)
 	{
@@ -90,8 +89,8 @@ public Minigame18_OnMinigameSelectedPre()
 
 			SDKHook(Minigame18_TargetEntIndex, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 			
-			new Float:pos[3];
-			new Float:ang[3] = { 0.0, -90.0, 0.0 };
+			float pos[3];
+			float ang[3] = { 0.0, -90.0, 0.0 };
 
 			pos[0] = GetRandomFloat(10240.0, 12322.0);
 			pos[1] = GetRandomFloat(7845.0, 8969.0);
@@ -106,7 +105,7 @@ public Minigame18_OnMinigameSelectedPre()
 	}
 }
 
-public Minigame18_OnMinigameSelected(client)
+public void Minigame18_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 18 && IsClientValid(client))
 	{
@@ -114,12 +113,13 @@ public Minigame18_OnMinigameSelected(client)
 		TF2_SetPlayerClass(client, TFClass_Sniper);
 		GiveWeapon(client, 14);
 
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3] = { 0.0, 90.0, 0.0 };
-		new Float:pos[3];
+		float vel[3] = { 0.0, 0.0, 0.0 };
+		float ang[3] = { 0.0, 90.0, 0.0 };
+		float pos[3];
 
-		new column = client;
-		new row = 0;
+		int column = client;
+		int row = 0;
+
 		while (column > 24)
 		{
 			column = column - 24;
@@ -137,7 +137,7 @@ public Minigame18_OnMinigameSelected(client)
 	}
 }
 
-public Minigame18_OnMinigameFinish()
+public void Minigame18_OnMinigameFinish()
 {
 	if (MinigameID == 18 && IsMinigameActive)
 	{
@@ -150,7 +150,7 @@ public Minigame18_OnMinigameFinish()
 
 		Minigame18_TargetEntIndex = -1;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i))
 			{
@@ -162,21 +162,21 @@ public Minigame18_OnMinigameFinish()
 }
 
 
-public Action:Minigame18_OnTakeDamage(victim, &attacker, &inflictor, &Float:damage, &damagetype)
+public Action Minigame18_OnTakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype)
 {
 	damage = 0.0;
 	Minigame18_HitTarget(attacker);
 	return Plugin_Changed;
 }
 
-public Action:Minigame18_OnTakeDamage2(victim, &attacker, &inflictor, &Float:damage, &damagetype)
+public Action Minigame18_OnTakeDamage2(int victim, int &attacker, int &inflictor, float &damage, int &damagetype)
 {
 	damage = 0.0;
 	Minigame18_HitTarget(attacker);
 	return Plugin_Changed;
 }
 
-stock Minigame18_HitTarget(attacker)
+public void Minigame18_HitTarget(int attacker)
 {
 	if (IsClientValid(attacker))
 	{
@@ -191,7 +191,7 @@ stock Minigame18_HitTarget(attacker)
 	}
 }
 
-PlayScoutHurtSound(attacker)
+public void PlayScoutHurtSound(int attacker)
 {
 	switch (GetRandomInt(0, 13))
 	{
@@ -212,7 +212,7 @@ PlayScoutHurtSound(attacker)
 	}
 }
 
-PlayDemoHurtSound(attacker)
+public void PlayDemoHurtSound(int attacker)
 {
 	switch (GetRandomInt(0, 10))
 	{
@@ -230,7 +230,7 @@ PlayDemoHurtSound(attacker)
 	}
 }
 
-PlaySniperHurtSound(attacker)
+public void PlaySniperHurtSound(int attacker)
 {
 	switch (GetRandomInt(0, 7))
 	{
@@ -245,7 +245,7 @@ PlaySniperHurtSound(attacker)
 	}
 }
 
-PlayMedicHurtSound(attacker)
+public void PlayMedicHurtSound(int attacker)
 {
 	switch (GetRandomInt(0, 11))
 	{
@@ -264,18 +264,19 @@ PlayMedicHurtSound(attacker)
 	}
 }
 
-stock DoSniperDamageCheck(client, weapon, String:weaponname[])
+public void DoSniperDamageCheck(int client, int weapon, char[] weaponname)
 {
 	if (strncmp(weaponname, "tf_weapon_sniperrifle", 21, false) != 0) return;
 
-	decl Float:pos[3], Float:dist;
+	float pos[3];
+	float dist;
 
-	new target = GetClientAimEntity3(client, dist, pos);
+	int target = GetClientAimEntity3(client, dist, pos);
 
 	if (target <= 0 || !IsValidEdict(target)) return;
 	if (dist > 8192) return;
 
-	decl String:classname[32];
+	char classname[32];
 	GetEdictClassname(target, classname, sizeof(classname));
 
 	if (StrContains(classname, "pumpkin", false) == -1 && StrContains(classname, "breakable", false) == -1 && StrContains(classname, "physics", false) == -1 && StrContains(classname, "physbox", false) == -1 && StrContains(classname, "button", false) == -1)
@@ -284,30 +285,4 @@ stock DoSniperDamageCheck(client, weapon, String:weaponname[])
 	}
 
 	Minigame18_HitTarget(client);
-}
-
-stock GetClientAimEntity3(client, &Float:distancetoentity, Float:endpos[3])	//Javalia
-{
-	decl Float:cleyepos[3], Float:cleyeangle[3];
-	GetClientEyePosition(client, cleyepos);
-	GetClientEyeAngles(client, cleyeangle);
-	new Handle:traceresulthandle = INVALID_HANDLE;
-	traceresulthandle = TR_TraceRayFilterEx(cleyepos, cleyeangle, MASK_SOLID, RayType_Infinite, TraceRayDontHitSelfOrPlayers, client);
-
-	if (TR_DidHit(traceresulthandle) == true)
-	{
-		TR_GetEndPosition(endpos, traceresulthandle);
-		distancetoentity = GetVectorDistance(cleyepos, endpos);
-		new entindextoreturn = TR_GetEntityIndex(traceresulthandle);
-		CloseHandle(traceresulthandle);
-		return entindextoreturn;
-	}
-
-	CloseHandle(traceresulthandle);
-	return -1;
-}
-
-public bool:TraceRayDontHitSelfOrPlayers(entity, mask, any:data)
-{
-	return (entity != data && !IsClientValid(entity));
 }

@@ -4,14 +4,14 @@
  * Jarate an Enemy!
  */
 
-public Minigame16_EntryPoint()
+public void Minigame16_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame16_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerJarated, INVALID_HANDLE, Minigame16_OnPlayerJarated);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
 }
 
-public bool:Minigame16_OnCheck()
+public bool Minigame16_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -26,7 +26,7 @@ public bool:Minigame16_OnCheck()
 	return true;
 }
 
-public Minigame16_OnMinigameSelected(client)
+public void Minigame16_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 16 && IsClientValid(client))
 	{
@@ -37,7 +37,7 @@ public Minigame16_OnMinigameSelected(client)
 	}
 }
 
-public Minigame16_OnPlayerJarated(client, victim)
+public void Minigame16_OnPlayerJarated(int client, int victim)
 {
 	if (IsMinigameActive && MinigameID == 16 && IsClientValid(client) && IsClientValid(victim) && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
 	{
@@ -45,7 +45,7 @@ public Minigame16_OnPlayerJarated(client, victim)
 	}
 }
 
-public Minigame16_OnMinigameFinish()
+public void Minigame16_OnMinigameFinish()
 {
 	if (IsMinigameActive && MinigameID == 16)
 	{
