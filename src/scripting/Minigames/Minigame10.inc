@@ -148,7 +148,7 @@ public void Minigame10_Timebomb_Init()
 {
 	if (MinigameID == 10)
 	{
-		int arrayPlayers[MAXPLAYERS+1];
+		int[] arrayPlayers = new int[MaxClients + 1];
 		int index = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
