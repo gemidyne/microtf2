@@ -5,33 +5,33 @@
  */
 
 
-new MinigameEleven_Mode = -1;
-new bool:MinigameEleven_CanCheckConditions = false;
+int Minigame11_Mode = -1;
+bool Minigame11_CanCheckConditions = false;
 
-public Minigame11_EntryPoint()
+public void Minigame11_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, MinigameEleven_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, MinigameEleven_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, MinigameEleven_OnGameFrame);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame11_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame11_OnMinigameSelected);
+	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame11_OnGameFrame);
 }
 
-public MinigameEleven_OnMinigameSelectedPre()
+public void Minigame11_OnMinigameSelectedPre()
 {
 	if (MinigameID == 11)
 	{
-		MinigameEleven_Mode = GetRandomInt(1, 2);
+		Minigame11_Mode = GetRandomInt(1, 2);
+		Minigame11_CanCheckConditions = false;
 
-		MinigameEleven_CanCheckConditions = false;
-		CreateTimer(2.0, Timer_MinigameEleven_AllowConditions);		
+		CreateTimer(2.0, Timer_Minigame11_AllowConditions);		
 	}
 }
 
-public Action:Timer_MinigameEleven_AllowConditions(Handle:timer)
+public Action Timer_Minigame11_AllowConditions(Handle timer)
 {
-	MinigameEleven_CanCheckConditions = true;
+	Minigame11_CanCheckConditions = true;
 }
 
-public MinigameEleven_OnMinigameSelected(client)
+public void Minigame11_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && MinigameID == 11 && IsClientValid(client))
 	{
@@ -39,14 +39,14 @@ public MinigameEleven_OnMinigameSelected(client)
 	}
 }
 
-public Minigame11_GetDynamicCaption(client)
+public void Minigame11_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
-		decl String:text[64];
+		char text[64];
 
-		if (MinigameEleven_Mode == 2)
+		if (Minigame11_Mode == 2)
 		{
 			text = "DON\'T STOP MOVING!";
 		}
@@ -59,15 +59,15 @@ public Minigame11_GetDynamicCaption(client)
 	}
 }
 
-public MinigameEleven_OnGameFrame()
+public void Minigame11_OnGameFrame()
 {
-	if (IsMinigameActive && MinigameID == 11 && MinigameEleven_CanCheckConditions)
+	if (IsMinigameActive && MinigameID == 11 && Minigame11_CanCheckConditions)
 	{
-		decl Float:fVelocity[3];
-		new Float:speed = 0.0;
-		new Float:limit = 0.0;
+		float fVelocity[3];
+		float speed = 0.0;
+		float limit = 0.0;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{
@@ -75,7 +75,7 @@ public MinigameEleven_OnGameFrame()
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", fVelocity);
 				speed = GetVectorLength(fVelocity);
 
-				if (MinigameEleven_Mode == 2)
+				if (Minigame11_Mode == 2)
 				{
 					if (speed < limit && PlayerStatus[i] == PlayerStatus_Winner) 
 					{
@@ -83,7 +83,7 @@ public MinigameEleven_OnGameFrame()
 						ForcePlayerSuicide(i);
 					}
 				}
-				else if (MinigameEleven_Mode == 1)
+				else if (Minigame11_Mode == 1)
 				{
 					if (speed > 100.0 && PlayerStatus[i] == PlayerStatus_Winner)
 					{
