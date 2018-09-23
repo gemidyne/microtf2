@@ -4,23 +4,23 @@
  * Security System aims to prevent and block various exploitable commands.
  */
 
-new Handle:AllowedCheats;
+Handle AllowedCheats;
 
 /* Entities that are not allowed to be created with ent_create or give */
-new String:ForbiddenEntities[][] = { "point_servercommand", "point_clientcommand", "logic_timer", "logic_relay"
+char ForbiddenEntities[][] = { "point_servercommand", "point_clientcommand", "logic_timer", "logic_relay"
 	,"logic_auto", "logic_autosave", "logic_branch", "logic_case", "logic_collision_pair", "logic_compareto" 
 	,"logic_lineto", "logic_measure_movement", "logic_multicompare", "logic_navigation" };
 
 /* Strings that are not allowed to be present in ent_fire commands */
-new String:ForbiddenCommands[][] = { "quit", "quti", "restart", "sm", "admin", "ma_", "rcon", "sv_", "mp_", "meta", "alias" };
+char ForbiddenCommands[][] = { "quit", "quti", "restart", "sm", "admin", "ma_", "rcon", "sv_", "mp_", "meta", "alias" };
 
 /* ConVars that clients are not permitted to have */
-new String:ForbiddenClientConVars[][] = { "sourcemod_version", "metamod_version", "mani_admin_plugin_version", "eventscripts_ver", "est_version", "bat_version", "beetlesmod_version" };
+char ForbiddenClientConVars[][] = { "sourcemod_version", "metamod_version", "mani_admin_plugin_version", "eventscripts_ver", "est_version", "bat_version", "beetlesmod_version" };
 
-new SecuritySystem_ConVarPos[MAXPLAYERS];
-new bool:SecuritySystem_IgnoreServerCmdCheckOnce = false;
+int SecuritySystem_ConVarPos[MAXPLAYERS];
+bool SecuritySystem_IgnoreServerCmdCheckOnce = false;
 
-stock InitialiseSecuritySystem()
+public void InitialiseSecuritySystem()
 {
 	AddCommandListener(Cmd_EntCreate, "ent_create");
 	AddCommandListener(Cmd_EntCreate, "give");
@@ -31,7 +31,7 @@ stock InitialiseSecuritySystem()
 	LogMessage("Security System initialised.");
 }
 
-stock SecuritySystem_HookCheatCommands()
+public void SecuritySystem_HookCheatCommands()
 {
 	AllowedCheats = CreateArray(64);
 
@@ -41,10 +41,10 @@ stock SecuritySystem_HookCheatCommands()
 	PushArrayString(AllowedCheats, "firstperson");
 	PushArrayString(AllowedCheats, "sv_cheats");
 
-	new String:cvarName[256];
-	new Handle:cvarHandle;
-	new bool:isCmd;
-	new flags;
+	char cvarName[256];
+	Handle cvarHandle;
+	bool isCmd;
+	int flags;
 
 	cvarHandle = FindFirstConCommand(cvarName, sizeof(cvarName), isCmd, flags);
 
@@ -75,7 +75,7 @@ stock SecuritySystem_HookCheatCommands()
 	CloseHandle(cvarHandle);
 }
 
-stock SecuritySystem_OnClientPutInServer(client)
+stock void SecuritySystem_OnClientPutInServer(int client)
 {
 	SecuritySystem_ConVarPos[client] = 0;
 	CreateTimer(1.0, SecuritySystem_KillServerCmds, client, TIMER_REPEAT);
@@ -83,7 +83,7 @@ stock SecuritySystem_OnClientPutInServer(client)
 	CreateTimer(5.0, SecuritySystem_CheckPlayerConVars, client, TIMER_REPEAT);
 }
 
-public Action:SecuritySystem_KillServerCmds(Handle:timer, any:value)
+public Action SecuritySystem_KillServerCmds(Handle timer, int value)
 {
 	if (SecuritySystem_IgnoreServerCmdCheckOnce)
 	{
@@ -91,7 +91,7 @@ public Action:SecuritySystem_KillServerCmds(Handle:timer, any:value)
 		return Plugin_Continue;
 	}
 
-	new entity = -1;
+	int entity = -1;
 	while ((entity = FindEntityByClassname(entity, "point_servercommand")) != -1)
 	{
 		AcceptEntityInput(entity, "kill");
@@ -100,7 +100,7 @@ public Action:SecuritySystem_KillServerCmds(Handle:timer, any:value)
 	return Plugin_Continue;
 }
 
-public Action:SecuritySystem_CheckPlayerConVars(Handle:timer, any:value)
+public Action SecuritySystem_CheckPlayerConVars(Handle timer, int value)
 {
 	if (!IsClientInGame(value) || IsFakeClient(value)) 
 	{
@@ -128,7 +128,7 @@ public Action:SecuritySystem_CheckPlayerConVars(Handle:timer, any:value)
 	return Plugin_Continue;
 }
 
-public SecuritySystem_ConVarDone(QueryCookie:cookie, client, ConVarQueryResult:result, const String:cvarName[], const String:cvarValue[], any:value)
+public void SecuritySystem_ConVarDone(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue, int value)
 {
 	if (result != ConVarQuery_Okay && result != ConVarQuery_Protected)
 	{
@@ -139,14 +139,14 @@ public SecuritySystem_ConVarDone(QueryCookie:cookie, client, ConVarQueryResult:r
 	KickClient(client, "Please remove any plugins you are running.");
 }
 
-public Action:SecuritySystem_CheckPlayerMoveType(Handle:timer, any:value)
+public Action SecuritySystem_CheckPlayerMoveType(Handle timer, int value)
 {
 	if (!IsClientInGame(value) || IsFakeClient(value)) 
 	{
 		return Plugin_Stop;
 	}
 
- 	new MoveType:move = GetEntityMoveType(value);
+ 	MoveType move = GetEntityMoveType(value);
 
  	if (move == MOVETYPE_NOCLIP)
 	{
@@ -160,12 +160,12 @@ public Action:SecuritySystem_CheckPlayerMoveType(Handle:timer, any:value)
 	return Plugin_Continue;
 }
 
-public Action:Cmd_EntCreate(client, const String:command[], argc)
+public Action Cmd_EntCreate(int client, const char[] command, int argc)
 {
-	new String:entname[128];
+	char entname[128];
 	GetCmdArg(1, entname, sizeof(entname));
 
-	for (new i = 0; i < sizeof(ForbiddenEntities); i++)
+	for (int i = 0; i < sizeof(ForbiddenEntities); i++)
 	{
 		if (StrEqual(entname, ForbiddenEntities[i], false))
 		{
@@ -173,15 +173,16 @@ public Action:Cmd_EntCreate(client, const String:command[], argc)
 			return Plugin_Handled;
 		}
 	}
+
 	return Plugin_Continue;
 }
 
-public Action:Cmd_EntFire(client, const String:command[], argc)
+public Action Cmd_EntFire(int client, const char[] command, int argc)
 {
-	new String:argstring[1024];
+	char argstring[1024];
 	GetCmdArgString(argstring, sizeof(argstring));
 
-	for (new i = 0; i < sizeof(ForbiddenCommands); i++)
+	for (int i = 0; i < sizeof(ForbiddenCommands); i++)
 	{
 		if (StrContains(argstring, ForbiddenCommands[i], false) != -1)
 		{
@@ -189,32 +190,33 @@ public Action:Cmd_EntFire(client, const String:command[], argc)
 			return Plugin_Handled;
 		}
 	}
+
 	return Plugin_Continue;
 }
 
-stock AddReplicatedFlag(const String:convar[], bool:isCommand)
+stock void AddReplicatedFlag(const char[] convar, bool isCommand)
 {
     if (!isCommand)
     {
-        new Handle:hConVar = FindConVar(convar);
-        if (hConVar != INVALID_HANDLE)
+        Handle handle = FindConVar(convar);
+        if (handle != INVALID_HANDLE)
         {
-            new flags = GetConVarFlags(hConVar);
-            SetConVarFlags(hConVar, flags & FCVAR_REPLICATED);
+            int flags = GetConVarFlags(handle);
+            SetConVarFlags(handle, flags & FCVAR_REPLICATED);
         }
     }
     else 
     {
-        new flags = GetCommandFlags(convar);
+        int flags = GetCommandFlags(convar);
         SetCommandFlags(convar, flags & FCVAR_REPLICATED);
     }
 }
 
-public Action:SecuritySystem_CheatCmdExec(client, const String:command[], args)
+public Action SecuritySystem_CheatCmdExec(int client, const char[] command, int args)
 {
-	decl String:buffer[256];
+	char buffer[256];
 
-	for (new i = 0; i < GetArraySize(AllowedCheats); i++)
+	for (int i = 0; i < GetArraySize(AllowedCheats); i++)
 	{
 		GetArrayString(AllowedCheats, i, buffer, sizeof(buffer));
 
@@ -232,10 +234,10 @@ public Action:SecuritySystem_CheatCmdExec(client, const String:command[], args)
 	return Plugin_Continue;
 }
 
-public SecuritySystem_CheatCvarChange(Handle:conVar, const String:oldValue[], const String:newValue[])
+public void SecuritySystem_CheatCvarChange(Handle conVar, const char[] oldValue, const char[] newValue)
 {
-	decl String:cvarName[128];
-	decl String:buffer[128];
+	char cvarName[128];
+	char buffer[128];
 
 	GetConVarName(conVar, cvarName, sizeof(cvarName));
 

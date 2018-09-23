@@ -4,25 +4,25 @@
  * Precache System aims to lessen the lag of models loading on the server. Thanks, Valve.
  */
 
-stock InitialisePrecacheSystem()
+stock void InitialisePrecacheSystem()
 {
 	LogMessage("Initializing Precache System...");
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, PrecacheSystem_OnMapStart);
 }
 
-public PrecacheSystem_OnMapStart()
+public void PrecacheSystem_OnMapStart()
 {
 	PrecacheAllModelsInManifest();
 	PrecacheViewModels();
 }
 
-stock PrecacheAllModelsInManifest()
+stock void PrecacheAllModelsInManifest()
 {
-	decl String:manifestPath[128];
+	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/PrecacheList.txt");
 
 	LogMessage("Precaching all models specified in precache list...");
-	new Handle:file = OpenFile(manifestPath, "r"); // Only need r for read
+	Handle file = OpenFile(manifestPath, "r"); // Only need r for read
 
 	if (file == INVALID_HANDLE)
 	{
@@ -30,7 +30,7 @@ stock PrecacheAllModelsInManifest()
 		return;
 	}
 
-	decl String:line[512];
+	char line[512];
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{
@@ -51,7 +51,7 @@ stock PrecacheAllModelsInManifest()
 	WebAPI_DownloadPrecacheManifest();
 }
 
-stock PrecacheViewModels()
+stock void PrecacheViewModels()
 {
 	PrecacheModel("models/weapons/c_models/c_demo_arms.mdl", true);
 	PrecacheModel("models/weapons/c_models/c_engineer_arms.mdl", true);
