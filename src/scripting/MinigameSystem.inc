@@ -59,7 +59,7 @@ char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 #include Bossgames/Bossgame2.inc
 #include Bossgames/Bossgame3.inc
 #include Bossgames/Bossgame4.inc
-#include Bossgames/Bossgame5.inc
+#include "Bossgames/Bossgame5.inc"
 
 public void InitializeMinigames()
 {

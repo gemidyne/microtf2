@@ -4,15 +4,23 @@
  * BeatBlock Galaxy by Mario6493
  */
 
-new bool:Bossgame5_CanCheckPosition;
+bool Bossgame5_CanCheckPosition;
+bool Bossgame5_BlockState;
+int Bossgame5_Step;
 
-public Bossgame5_EntryPoint()
+public void Bossgame5_EntryPoint()
 {
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame5_OnGameFrame);
+}
+
+public void Bossgame5_OnMapStart()
+{
+	PrecacheSound("ui/hitsound_retro1.wav", true);
 }
 
 public bool:Bossgame5_OnCheck()
@@ -34,9 +42,13 @@ public Bossgame5_OnMinigameSelectedPre()
 	if (BossgameID == 5)
 	{
 		Bossgame5_CanCheckPosition = false;
+		Bossgame5_Step = 8;
+
 		IsBlockingDamage = false;
 		IsOnlyBlockingDamageByPlayers = true;
 		IsBlockingDeathCommands = false;
+
+		CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
 
@@ -56,14 +68,14 @@ public Bossgame5_OnMinigameSelected(client)
 
 		if (team == 2) // RED
 		{
-			pos[0] = -13436.606445;
-			pos[1] = -14211.976563;
+			pos[0] = -13436.6;
+			pos[1] = -14211.9;
 			pos[2] = 490.0;
 		}
 		else // BLU
 		{
-			pos[0] = -13180.606445;
-			pos[1] = -14211.976563;
+			pos[0] = -13180.6;
+			pos[1] = -14211.9;
 			pos[2] = 490.0;
 		}
 
@@ -138,5 +150,72 @@ public Bossgame5_OnGameFrame()
 				}
 			}
 		}
+	}
+}
+
+public Action Bossgame5_SwitchTimer(Handle timer)
+{
+	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding) 
+	{
+		if (Bossgame5_Step > 4)
+		{
+			// Silent
+		}
+		else if (Bossgame5_Step > 0)
+		{
+			// TODO: Needs a sound
+			PrintToChatAll("DBG: Needs a countdown snd");
+		}
+		else 
+		{
+			PlaySoundToAll("ui/hitsound_retro1.wav");
+			PrintToChatAll("DBG: SWITCH");
+
+			Bossgame5_Step = 9;
+
+			if (Bossgame5_BlockState)
+			{
+				Bossgame5_SwitchGreen();
+			}
+			else
+			{
+				Bossgame5_SwitchYellow();
+			}
+
+			Bossgame5_BlockState = !Bossgame5_BlockState;
+		}
+
+		Bossgame5_Step--;
+		return Plugin_Continue;
+	}
+
+	return Plugin_Stop; 
+}
+
+public void Bossgame5_SwitchGreen() 
+{
+	float pos[3] = { -15000.0, -912.0, 2656.0 };
+
+	Bossgame5_DoSwitch(pos);
+}
+
+public void Bossgame5_SwitchYellow() 
+{
+	float pos[3] = { -14840.0, -912.0, 2656.0 };
+
+	Bossgame5_DoSwitch(pos);
+}
+
+public void Bossgame5_DoSwitch(float pos[3])
+{
+	int entity = CreateEntityByName("prop_physics");
+
+	if (IsValidEdict(entity))
+	{
+		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+		DispatchSpawn(entity);
+
+		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
+		CreateTimer(0.25, Timer_RemoveEntity, entity);
 	}
 }
