@@ -6,7 +6,7 @@
 
 bool Bossgame5_CanCheckPosition;
 bool Bossgame5_BlockState;
-int Bossgame5_Step;
+float Bossgame5_Step = 4.0;
 
 public void Bossgame5_EntryPoint()
 {
@@ -20,7 +20,8 @@ public void Bossgame5_EntryPoint()
 
 public void Bossgame5_OnMapStart()
 {
-	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PrefetchSound("ui/hitsound_retro1.wav");
+	PrefetchSound("ui/chime_rd_2base_pos.wav");
 }
 
 public bool:Bossgame5_OnCheck()
@@ -41,8 +42,10 @@ public Bossgame5_OnMinigameSelectedPre()
 {
 	if (BossgameID == 5)
 	{
+		Bossgame5_SwitchYellow();
+
 		Bossgame5_CanCheckPosition = false;
-		Bossgame5_Step = 8;
+		Bossgame5_Step = 4.0;
 
 		IsBlockingDamage = false;
 		IsOnlyBlockingDamageByPlayers = true;
@@ -157,21 +160,25 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 {
 	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding) 
 	{
-		if (Bossgame5_Step > 4)
+		Bossgame5_Step -= 0.5;
+		PrintToChatAll("DBG: %f", Bossgame5_Step);
+
+		if (Bossgame5_Step > 1.5)
 		{
 			// Silent
 		}
 		else if (Bossgame5_Step > 0)
 		{
 			// TODO: Needs a sound
-			PrintToChatAll("DBG: Needs a countdown snd");
+			EmitSoundToAll("ui/chime_rd_2base_pos.wav", SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, 0.5, 150);
 		}
 		else 
 		{
 			PlaySoundToAll("ui/hitsound_retro1.wav");
 			PrintToChatAll("DBG: SWITCH");
 
-			Bossgame5_Step = 9;
+			Bossgame5_Step = 4.0;
+			Bossgame5_BlockState = !Bossgame5_BlockState;
 
 			if (Bossgame5_BlockState)
 			{
@@ -181,11 +188,8 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 			{
 				Bossgame5_SwitchYellow();
 			}
-
-			Bossgame5_BlockState = !Bossgame5_BlockState;
 		}
 
-		Bossgame5_Step--;
 		return Plugin_Continue;
 	}
 
