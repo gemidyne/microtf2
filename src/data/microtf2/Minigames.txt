@@ -184,4 +184,11 @@
 		"Caption"		"NEEDLEJUMP!"
 		"EntryPoint"		"Minigame24_EntryPoint"
 	}
+	"25"
+	{
+		"Enabled"			"1"
+		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"Caption"			"JETPACK!"
+		"EntryPoint"		"Minigame25_EntryPoint"
+	}
 }

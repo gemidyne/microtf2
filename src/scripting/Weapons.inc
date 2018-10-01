@@ -1691,6 +1691,15 @@ void LoadWeaponData()
 	SetTrieString(g_hWeaponData, "528_attribs", "300 ; 1.0 ; 307 ; 1.0 ; 303 ; -1.0 ; 15 ; 0.0 ; 298 ; 35.0 ; 301 ; 1.0 ; 312 ; 1.0");
 	SetTrieValue(g_hWeaponData, "528_ammo", 200);
 
+//The Thermal Thruster
+	SetTrieString(g_hWeaponData, "1179_classname", "tf_weapon_rocketpack");
+	SetTrieValue(g_hWeaponData, "1179_index", 1179);
+	SetTrieValue(g_hWeaponData, "1179_slot", 1);
+	SetTrieValue(g_hWeaponData, "1179_quality", 6);
+	SetTrieValue(g_hWeaponData, "1179_level", 5);
+	SetTrieString(g_hWeaponData, "1179_attribs", "");
+	SetTrieValue(g_hWeaponData, "1179_ammo", 200);
+
 //valve rocket launcher
 	SetTrieString(g_hWeaponData, "9018_classname", "tf_weapon_rocketlauncher");
 	SetTrieValue(g_hWeaponData, "9018_index", 18);

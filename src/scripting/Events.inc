@@ -302,6 +302,15 @@ public Action:Hook_GameSound(clients[64], &numClients, String:sample[PLATFORM_MA
 		|| StrContains(sample, "vo/spy_", false) != -1
 		|| StrContains(sample, "stsv/soundmods/", false) != -1;
 
+	bool isBlockedSound = StrContains(sample, "rocket_pack_boosters_fire", false) != -1
+		|| StrContains(sample, "rocket_pack_boosters_loop", false) != -1
+		|| StrContains(sample, "grenade_jump", false) != -1;
+
+	if (isBlockedSound)
+	{
+		return Plugin_Stop;
+	}
+
 	if (SpecialRoundID == 14 || SpecialRoundID == 15)
 	{
 		if (isVoiceSound)

@@ -53,6 +53,7 @@ char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 #include Minigames/Minigame22.inc
 #include Minigames/Minigame23.inc
 #include Minigames/Minigame24.inc
+#include "Minigames/Minigame25.inc"
 
 // Bossgames
 #include Bossgames/Bossgame1.inc

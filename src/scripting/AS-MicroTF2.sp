@@ -1154,6 +1154,8 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 				ResetWeapon(i, false);
 			
 				IsPlayerWinner[i] = false;
+
+				DestroyPlayerBuildings(i, true);
 			}
 
 			IsGodModeEnabled(i, true);
