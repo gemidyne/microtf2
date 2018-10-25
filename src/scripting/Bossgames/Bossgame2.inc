@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 2
  * 
- * Run the Course (Heavy Ver)
+ * Escape route
  */
 
 new bool:Bossgame2_CanCheckPosition = false;
@@ -54,10 +54,10 @@ public Bossgame2_OnSelection(client)
 			row = row + 1;
 		}
 
-		new Float:pos[3];
-		pos[0] = 6380.0 + float(row*55);
-		pos[1] = 1400.0 + float(column*55);
-		pos[2] = -310.0; 
+		new Float:pos[3] = { 4680.5, 2275.0, 1.0 };
+		// pos[0] = 6380.0 + float(row*55);
+		// pos[1] = 1400.0 + float(column*55);
+		// pos[2] = -310.0; 
 
 		IsViewModelVisible(client, true);
 		IsGodModeEnabled(client, false);
@@ -85,7 +85,7 @@ public Bossgame2_OnGameFrame()
 				// Y: 1
 				// Z: 2
 
-				if (clientPos[1] > 1970.4 && clientPos[0] > 3680.0)
+				if (clientPos[0] < 3960.0)
 				{
 					ClientWonMinigame(i);
 				}
