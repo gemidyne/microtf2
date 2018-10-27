@@ -43,8 +43,8 @@ public Bossgame2_OnSelection(client)
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };
 
 		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Heavy);
-		GiveWeapon(client, 239);
+		TF2_SetPlayerClass(client, TFClass_Engineer);
+		ResetWeapon(client);
 
 		new column = client;
 		new row = 0;
