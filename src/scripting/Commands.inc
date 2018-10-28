@@ -69,6 +69,7 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
 	ResetConVar(FindConVar("tf_max_health_boost"));
 	ResetConVar(FindConVar("tf_airblast_cray_ground_minz"));
+	ResetConVar(FindConVar("tf_player_movement_restart_freeze"))
 
 	Handle conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
@@ -103,6 +104,7 @@ stock void PrepareConVars()
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
 	SetConVarInt(ConVar_TFFastBuild, 0);
 	SetConVarFloat(FindConVar("tf_airblast_cray_ground_minz"), 268.3281572999747);
+	SetConVarInt(FindConVar("tf_player_movement_restart_freeze"), 0);
 
 	// ConVars with Handles
 	SetConVarInt(ConVar_ServerGravity, 800);
