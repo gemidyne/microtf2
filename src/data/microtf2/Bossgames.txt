@@ -11,10 +11,10 @@
 	"2"
 	{
 		"Enabled"		"1"
-		"Duration"		"45.0"
+		"Duration"		"60.0"
 		"BackgroundMusic"	"stsv/microtf2/bossgame/2.mp3"
 		"EntryPoint"		"Bossgame2_EntryPoint"
-		"Caption"		"FIND THE COMPUTER ROOM!"
+		"Caption"		"ESCAPE THE FACTORY!"
 	}
 	"3"
 	{

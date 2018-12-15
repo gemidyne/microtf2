@@ -69,7 +69,7 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
 	ResetConVar(FindConVar("tf_max_health_boost"));
 	ResetConVar(FindConVar("tf_airblast_cray_ground_minz"));
-	ResetConVar(FindConVar("tf_player_movement_restart_freeze"))
+	ResetConVar(FindConVar("tf_player_movement_restart_freeze"));
 
 	Handle conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)

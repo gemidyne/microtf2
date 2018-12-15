@@ -4,17 +4,18 @@
  * Escape route
  */
 
-new bool:Bossgame2_CanCheckPosition = false;
+bool Bossgame2_CanCheckPosition = false;
 
-public Bossgame2_EntryPoint()
+public void Bossgame2_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame2_OnSelection);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame2_BossCheck);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame2_OnGameFrame);
 }
 
-public bool:Bossgame2_OnCheck()
+public bool Bossgame2_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -30,31 +31,41 @@ public bool:Bossgame2_OnCheck()
 	return true;
 }
 
-public Bossgame2_OnSelection(client)
+public void Bossgame2_OnMinigameSelectedPre()
 {
-	if (IsMinigameActive && BossgameID == 2 && IsClientValid(client))
+	if (BossgameID == 5)
 	{
-		Bossgame2_CanCheckPosition = false;
+		float pos[3] = { 5116.0, 2204.0, 503.0 };
+
+		Bossgame2_SpawnTriggerer(pos);
+
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
 		IsOnlyBlockingDamageByPlayers = true;
+		Bossgame2_CanCheckPosition = false;
+	}
+}
 
-		new Float:ang[3] = { 0.0, 180.0, 0.0 };
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
+public void Bossgame2_OnSelection(int client)
+{
+	if (IsMinigameActive && BossgameID == 2 && IsClientValid(client))
+	{
+		float ang[3] = { 0.0, 180.0, 0.0 };
+		float vel[3] = { 0.0, 0.0, 0.0 };
 
 		TF2_RemoveAllWeapons(client);
 		TF2_SetPlayerClass(client, TFClass_Engineer);
-		ResetWeapon(client);
+		ResetWeapon(client, false);
 
-		new column = client;
-		new row = 0;
+		int column = client;
+		int row = 0;
 		while (column > 8) 
 		{
 			column = column - 8;
 			row = row + 1;
 		}
 
-		new Float:pos[3] = { 4680.5, 2275.0, 1.0 };
+		float pos[3] = { 4680.5, 2275.0, 1.0 };
 		// pos[0] = 6380.0 + float(row*55);
 		// pos[1] = 1400.0 + float(column*55);
 		// pos[2] = -310.0; 
@@ -70,15 +81,15 @@ public Bossgame2_OnSelection(client)
 	}
 }
 
-public Bossgame2_OnGameFrame()
+public void Bossgame2_OnGameFrame()
 {
 	if (BossgameID == 2 && IsMinigameActive && !IsMinigameEnding && Bossgame2_CanCheckPosition) 
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
 			{
-				new Float:clientPos[3];
+				float clientPos[3];
 				GetClientAbsOrigin(i, clientPos);
 
 				// X: 0
@@ -94,7 +105,7 @@ public Bossgame2_OnGameFrame()
 	}
 }
 
-public Bossgame2_OnPlayerDeath(victim, attacker)
+public void Bossgame2_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && BossgameID == 2 && IsClientValid(victim))
 	{
@@ -102,16 +113,17 @@ public Bossgame2_OnPlayerDeath(victim, attacker)
 	}
 }
 
-public Bossgame2_BossCheck()
+public void Bossgame2_BossCheck()
 {
 	if (IsMinigameActive && BossgameID == 2)
 	{
 		Bossgame2_CanCheckPosition = true;
 
-		new alivePlayers = 0;
-		new successfulPlayers = 0;
-		new pendingPlayers = 0;
-		for (new i = 1; i <= MaxClients; i++)
+		int alivePlayers = 0;
+		int successfulPlayers = 0;
+		int pendingPlayers = 0;
+
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i) && IsPlayerParticipant[i])
 			{
@@ -138,5 +150,19 @@ public Bossgame2_BossCheck()
 		{
 			EndBoss();
 		}
+	}
+}
+
+public void Bossgame2_SpawnTriggerer(float pos[3])
+{
+	int entity = CreateEntityByName("prop_physics");
+
+	if (IsValidEdict(entity))
+	{
+		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+		DispatchSpawn(entity);
+
+		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
+		CreateTimer(0.25, Timer_RemoveEntity, entity);
 	}
 }
