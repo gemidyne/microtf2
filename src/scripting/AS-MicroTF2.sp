@@ -1,11 +1,9 @@
 /* 
- * MicroTF2 2014 Edition
+ * WarioWare for TF2 (formerly MicroTF2)
  * Copyright (C) 2010 - 2018 StSv.TF productions, in association with GEMINI Developments.
  */
 
 #pragma semicolon 1
-
-//#define NEW_HUD // Use TrainingMessage HUD messages? (Requires SendProxy and sv_parallel_packentities to be 0.)
 
 #include <sourcemod>
 #include <sdktools>
@@ -14,7 +12,6 @@
 #include <morecolors>
 
 #undef REQUIRE_PLUGIN
-//#include <Framework>
 
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
@@ -27,15 +24,10 @@
 #include <tf2items>
 #include <tf2attributes>
 
-
 #if defined UMC_MAPCHOOSER
 #include <umc-core>
 #else
 #include <mapchooser>
-#endif
-
-#if defined NEW_HUD
-#include <training>
 #endif
 
 #pragma newdecls required
@@ -44,7 +36,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "2018.8B"
+#define PLUGIN_VERSION "2019 devtest"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include Header.inc

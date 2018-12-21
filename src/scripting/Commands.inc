@@ -52,10 +52,6 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("sv_cheats"));
 	SetConVarInt(FindConVar("sv_use_steam_voice"), 0);
 
-#if defined NEW_HUD
-	ResetConVar(FindConVar("sv_parallel_packentities"));
-#endif
-
 	// Multiplayer ConVars
 	ResetConVar(FindConVar("mp_stalemate_enable"));
 	ResetConVar(ConVar_FriendlyFire);
@@ -123,10 +119,6 @@ stock void PrepareConVars()
 	{
 		SetConVarInt(conVar, 0);
 	}
-
-#if defined NEW_HUD
-	SetConVarInt(FindConVar("sv_parallel_packentities"), 0);
-#endif
 }
 
 public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
