@@ -44,12 +44,12 @@ public void Minigame9_GetDynamicCaption(int client)
 
 		switch (Minigame9_Mode)
 		{
-			case 1: text = "SIMON SAYS: TAUNT!";
-			case 2: text = "SOMEONE SAYS: TAUNT!";
-			case 3: text = "SIMON SAYS: JUMP!";	
-			case 4: text = "SOMEONE SAYS: JUMP!";
-			case 5: text = "SIMON SAYS: CROUCH!";
-			case 6: text = "SOMEONE SAYS: CROUCH!";
+			case 1: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Taunt", client);
+			case 2: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Taunt", client);
+			case 3: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Jump", client);
+			case 4: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Jump", client);
+			case 5: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Crouch", client);
+			case 6: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Crouch", client);
 		}
 
 		MinigameCaption[client] = text; 

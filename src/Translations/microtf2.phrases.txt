@@ -58,6 +58,30 @@
 	{
 		"en"		"Break time! Time to vote for the next map."
 	}
+	"Minigame9_SimonSays_Taunt"
+	{
+		"en"		"SIMON SAYS: TAUNT!"
+	}
+	"Minigame9_SimonSays_Jump"
+	{
+		"en"		"SIMON SAYS: JUMP!"
+	}
+	"Minigame9_SimonSays_Crouch"
+	{
+		"en"		"SIMON SAYS: CROUCH!"
+	}
+	"Minigame9_SomeoneSays_Taunt"
+	{
+		"en"		"SOMEONE SAYS: TAUNT!"
+	}
+	"Minigame9_SomeoneSays_Jump"
+	{
+		"en"		"SOMEONE SAYS: JUMP!"
+	}
+	"Minigame9_SomeoneSays_Crouch"
+	{
+		"en"		"SOMEONE SAYS: CROUCH!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"
