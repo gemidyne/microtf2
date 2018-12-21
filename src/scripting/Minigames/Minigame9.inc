@@ -40,7 +40,7 @@ public void Minigame9_GetDynamicCaption(int client)
 {
 	if (IsClientValid(client))
 	{
-		decl String:text[64];
+		char text[64];
 
 		switch (Minigame9_Mode)
 		{
@@ -85,7 +85,7 @@ public void Minigame9_OnGameFrame()
 
 					case 3:
 					{
-						new button = GetClientButtons(i);
+						int button = GetClientButtons(i);
 
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
 						{
@@ -95,7 +95,7 @@ public void Minigame9_OnGameFrame()
 
 					case 4:
 					{
-						new button = GetClientButtons(i);
+						int button = GetClientButtons(i);
 
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 						{
@@ -106,7 +106,7 @@ public void Minigame9_OnGameFrame()
 
 					case 5:
 					{
-						new button = GetClientButtons(i);
+						int button = GetClientButtons(i);
 
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
 						{
@@ -116,7 +116,7 @@ public void Minigame9_OnGameFrame()
 
 					case 6:
 					{
-						new button = GetClientButtons(i);
+						int button = GetClientButtons(i);
 
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
 						{
@@ -130,7 +130,7 @@ public void Minigame9_OnGameFrame()
 	}
 }
 
-public Minigame9_OnMinigameFinishPre()
+public void Minigame9_OnMinigameFinishPre()
 {
 	if (IsMinigameActive && MinigameID == 9)
 	{

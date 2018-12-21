@@ -84,7 +84,7 @@ public void Minigame8_GetDynamicCaption(int client)
 }
 
 
-public Action Command_Minigame8Say(client, args)
+public Action Command_Minigame8Say(int client, int args)
 {
 	if (IsMinigameActive && MinigameID == 8)
 	{
@@ -137,7 +137,7 @@ public Action Command_Minigame8Say(client, args)
 	return Plugin_Continue;
 }
 
-public Minigame8_OnMinigameFinish()
+public void Minigame8_OnMinigameFinish()
 {
 	if (MinigameID == 8)
 	{

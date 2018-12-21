@@ -4,7 +4,7 @@
  * Get to the top 
  */
 
-public Bossgame1_EntryPoint()
+public void Bossgame1_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame1_OnMinigameSelected);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame1_OnGameFrame);
@@ -12,20 +12,20 @@ public Bossgame1_EntryPoint()
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame1_BossCheck);
 }
 
-public bool:Bossgame1_OnCheck()
+public bool Bossgame1_OnCheck()
 {
 	return true;
 }
 
-public Bossgame1_OnMinigameSelected(client)
+public void Bossgame1_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && BossgameID == 1 && IsClientValid(client))
 	{
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
 
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3] = { 0.0, 180.0, 0.0 };
+		float vel[3] = { 0.0, 0.0, 0.0 };
+		float ang[3] = { 0.0, 180.0, 0.0 };
 
 		TF2_RemoveAllWeapons(client);
 		TF2_SetPlayerClass(client, TFClass_Soldier);
@@ -37,31 +37,33 @@ public Bossgame1_OnMinigameSelected(client)
 
 		SetPlayerHealth(client, 5000);
 
-		new column = client;
-		new row = 0;
+		int column = client;
+		int row = 0;
+
 		while (column > 12)
 		{
 			column = column - 12;
 			row = row + 1;
 		}
 
-		new Float:pos[3];
+		float pos[3];
 		pos[0] = 1800.0 - float(row*75);
 		pos[1] = 8600.0 + float(column*75);
 		pos[2] = -140.0; //setpos 1596.3 8702.3 -69.4
+
 		TeleportEntity(client, pos, ang, vel);
 	}
 }
 
-public Bossgame1_OnGameFrame()
+public void Bossgame1_OnGameFrame()
 {
 	if (IsMinigameActive && BossgameID == 1 && !IsMinigameEnding)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
 			{
-				new Float:pos[3];
+				float pos[3];
 				GetClientAbsOrigin(i, pos);
 
 				if (pos[2] > 2800.0) 
@@ -73,7 +75,7 @@ public Bossgame1_OnGameFrame()
 	}
 }
 
-public Bossgame1_OnPlayerDeath(victim, attacker)
+public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && BossgameID == 1 && IsClientValid(victim))
 	{
@@ -81,14 +83,15 @@ public Bossgame1_OnPlayerDeath(victim, attacker)
 	}
 }
 
-public Bossgame1_BossCheck()
+public void Bossgame1_BossCheck()
 {
 	if (IsMinigameActive && BossgameID == 1)
 	{
-		new alivePlayers = 0;
-		new successfulPlayers = 0;
-		new pendingPlayers = 0;
-		for (new i = 1; i <= MaxClients; i++)
+		int alivePlayers = 0;
+		int successfulPlayers = 0;
+		int pendingPlayers = 0;
+		
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i) && IsPlayerParticipant[i])
 			{

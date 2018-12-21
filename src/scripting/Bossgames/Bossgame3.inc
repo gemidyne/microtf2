@@ -4,10 +4,10 @@
  * Heavy Boxing
  */
 
-new Bossgame3_REDIdx;
-new Bossgame3_BLUIdx;
+int Bossgame3_REDIdx;
+int Bossgame3_BLUIdx;
 
-public Bossgame3_EntryPoint()
+public void Bossgame3_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame3_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame3_OnMinigameSelected);
@@ -16,7 +16,7 @@ public Bossgame3_EntryPoint()
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
 }
 
-public bool:Bossgame3_OnCheck()
+public bool Bossgame3_OnCheck()
 {
 	if (SpecialRoundID == 12)
 	{
@@ -37,7 +37,7 @@ public bool:Bossgame3_OnCheck()
 	return true;
 }
 
-public Bossgame3_OnMinigameSelectedPre()
+public void Bossgame3_OnMinigameSelectedPre()
 {
 	if (BossgameID == 3)
 	{
@@ -47,7 +47,7 @@ public Bossgame3_OnMinigameSelectedPre()
 	}
 }
 
-public Bossgame3_OnMinigameSelected(client)
+public void Bossgame3_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && BossgameID == 3 && IsClientValid(client))
 	{
@@ -59,11 +59,11 @@ public Bossgame3_OnMinigameSelected(client)
 		TF2_SetPlayerClass(client, TFClass_Heavy);
 		GiveWeapon(client, 239);
 
-		new Float:pos[3];
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3];
+		float pos[3];
+		float vel[3] = { 0.0, 0.0, 0.0 };
+		float ang[3];
 
-		new team = GetClientTeam(client);
+		int team = GetClientTeam(client);
 
 		if (team == 2)
 		{
@@ -98,7 +98,7 @@ public Bossgame3_OnMinigameSelected(client)
 	}
 }
 
-public Bossgame3_OnPlayerDeath(victim, attacker)
+public void Bossgame3_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && BossgameID == 3 && IsClientValid(victim))
 	{
@@ -111,11 +111,11 @@ public Bossgame3_OnPlayerDeath(victim, attacker)
 	}
 }
 
-public Bossgame3_OnMinigameFinish()
+public void Bossgame3_OnMinigameFinish()
 {
 	if (IsMinigameActive && BossgameID == 3)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerAlive(i) && PlayerStatus[i] != PlayerStatus_Failed)
 			{
@@ -125,18 +125,19 @@ public Bossgame3_OnMinigameFinish()
 	}
 }
 
-public Bossgame3_OnBossStopAttempt()
+public void Bossgame3_OnBossStopAttempt()
 {
 	if (IsMinigameActive && BossgameID == 3)
 	{
-		new aliveBluePlayers = 0;
-		new aliveRedPlayers = 0;
+		int aliveBluePlayers = 0;
+		int aliveRedPlayers = 0;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i))
 			{
-				new team = GetClientTeam(i);
+				int team = GetClientTeam(i);
+				
 				if (team == 2)
 				{
 					aliveRedPlayers++;

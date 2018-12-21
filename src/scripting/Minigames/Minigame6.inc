@@ -92,10 +92,10 @@ public Action Command_MinigameSixSay(int client, int args)
 
 public bool Minigame6_LoadAnswers()
 {
-	decl String:manifestPath[128];
+	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Minigame6.Answers.txt");
 
-	new Handle:file = OpenFile(manifestPath, "r"); 
+	Handle file = OpenFile(manifestPath, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -103,7 +103,7 @@ public bool Minigame6_LoadAnswers()
 		return false;
 	}
 
-	decl String:line[64];
+	char line[64];
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{

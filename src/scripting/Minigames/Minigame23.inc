@@ -6,7 +6,7 @@
 
 bool Minigame23_CanCheckConditions = false;
 
-public Minigame23_EntryPoint()
+public void Minigame23_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame23_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame23_OnMinigameSelected);

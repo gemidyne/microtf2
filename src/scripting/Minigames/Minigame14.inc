@@ -6,7 +6,7 @@
 
 #define FL_ISINWATER (FL_INWATER | FL_FLY | FL_SWIM)
 
-public Minigame14_EntryPoint()
+public void Minigame14_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);

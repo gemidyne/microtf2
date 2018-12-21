@@ -4,8 +4,8 @@
  * Don't fall off!
  */
 
-new Float:Bossgame4_Positions[2][2][3];
-new Float:Bossgame4_Angles[2][2][3];
+float Bossgame4_Positions[2][2][3];
+float Bossgame4_Angles[2][2][3];
 
 public void Bossgame4_EntryPoint()
 {
@@ -75,7 +75,9 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 		ChooseRandomClass(client);
 
-		if (TF2_GetPlayerClass(client) == TFClass_Scout || TF2_GetPlayerClass(client) == TFClass_Spy)
+		TFClassType classType = TF2_GetPlayerClass(client);
+
+		if (classType == TFClass_Scout || classType == TFClass_Spy)
 		{
 			switch (GetRandomInt(0, 2))
 			{
@@ -98,13 +100,13 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 		ResetWeapon(client, true);
 
-		new Float:pos[3];
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3];
+		float pos[3];
+		float vel[3] = { 0.0, 0.0, 0.0 };
+		float ang[3];
 
-		new index = GetRandomInt(0, 1);
-		new team = GetClientTeam(client);
-		new teamNumber = (team == 2 ? 0 : 1);
+		int index = GetRandomInt(0, 1);
+		int team = GetClientTeam(client);
+		int teamNumber = (team == 2 ? 0 : 1);
 
 		pos = Bossgame4_Positions[teamNumber][index];
 		ang = Bossgame4_Angles[teamNumber][index];
@@ -131,20 +133,20 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
 	{
 		TF2_RespawnPlayer(client);
-		new team = GetClientTeam(client);
-		new teamNumber = (team == 2 ? 0 : 1);
+		int team = GetClientTeam(client);
+		int teamNumber = (team == 2 ? 0 : 1);
 
 		if (teamNumber == 0)
 		{
-			new Float:pos[3] = { 4372.0, -204.0, 219.0 };
-			new Float:ang[3] = { 0.0, 180.0, 0.0 };
+			float pos[3] = { 4372.0, -204.0, 219.0 };
+			float ang[3] = { 0.0, 180.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
 		}
 		else 
 		{
-			new Float:pos[3] = { 2879.0, -204.0, 219.0 };
-			new Float:ang[3] = { 0.0, 0.0, 0.0 };
+			float pos[3] = { 2879.0, -204.0, 219.0 };
+			float ang[3] = { 0.0, 0.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
 		}
@@ -162,8 +164,8 @@ public void Bossgame4_OnPlayerTakeDamage(int victim, int attacker, float damage)
 	{
 		if (attacker > 0 && attacker <= MaxClients && IsClientValid(attacker) && IsClientValid(victim))
 		{
-			new Float:ang[3];
-			new Float:vel[3];
+			float ang[3];
+			float vel[3];
 
 			GetClientEyeAngles(attacker, ang);
 			GetEntPropVector(victim, Prop_Data, "m_vecVelocity", vel);
@@ -181,7 +183,7 @@ public void Bossgame4_OnMinigameFinish()
 {
 	if (IsMinigameActive && BossgameID == 4)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && PlayerStatus[i] != PlayerStatus_Failed)
 			{
@@ -195,9 +197,9 @@ public void Bossgame4_OnBossStopAttempt()
 {
 	if (IsMinigameActive && BossgameID == 4)
 	{
-		new alivePlayers = 0;
+		int alivePlayers = 0;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i) && PlayerStatus[i] != PlayerStatus_Failed)
 			{

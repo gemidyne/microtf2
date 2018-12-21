@@ -52,6 +52,7 @@ public void SecuritySystem_HookCheatCommands()
 	{
 		SetFailState("Console Variable list could not be loaded.");
 	}
+
 	do
 	{
 		if (!(flags & FCVAR_CHEAT))
@@ -241,7 +242,7 @@ public void SecuritySystem_CheatCvarChange(Handle conVar, const char[] oldValue,
 
 	GetConVarName(conVar, cvarName, sizeof(cvarName));
 
-	for (new i = 0; i < GetArraySize(AllowedCheats); i++)
+	for (int i = 0; i < GetArraySize(AllowedCheats); i++)
 	{
 		GetArrayString(AllowedCheats, i, buffer, sizeof(buffer));
 

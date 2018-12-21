@@ -58,7 +58,7 @@ public void Minigame24_OnGameFrame()
 	}
 }
 
-public void Minigame24_PerformNeedlejump(i)
+public void Minigame24_PerformNeedlejump(int i)
 {
 	float fEyeAngle[3];
 	float fVelocity[3];

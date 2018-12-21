@@ -181,7 +181,7 @@ public void Minigame10_Timebomb_Init()
 	}
 }
 
-public bool Minigame10_Timebomb_CanApplyToPlayer(client)
+public bool Minigame10_Timebomb_CanApplyToPlayer(int client)
 {
 	if (client <= 0 || !IsClientConnected(client)) return false;
 	if (!IsClientInGame(client)) return false;
@@ -191,7 +191,7 @@ public bool Minigame10_Timebomb_CanApplyToPlayer(client)
 	return true;
 }
 
-public void Minigame10_TimebombPlayer(client)
+public void Minigame10_TimebombPlayer(int client)
 {
 	Minigame10_TimebombSerial[client] = ++Minigame10_Serial;
 	CreateTimer(1.0, Minigame10_Timebomb_Timer, client | (Minigame10_Serial << 7), TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
@@ -216,8 +216,8 @@ public void Minigame10_TimebombPlayer(client)
 
 public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 {
-	new client = value & 0x7f;
-	new serial = value >> 7;
+	int client = value & 0x7f;
+	int serial = value >> 7;
 	
 	if (!IsClientInGame(client) || !IsPlayerAlive(client) || serial != Minigame10_TimebombSerial[client])
 	{
@@ -348,7 +348,7 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 	return Plugin_Stop;
 }
 
-public void Minigame10_Timebomb_Kill(client)
+public void Minigame10_Timebomb_Kill(int client)
 {
 	Minigame10_TimebombSerial[client] = 0;
 	if (IsClientInGame(client)) 

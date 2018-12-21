@@ -13,39 +13,39 @@
 #define SPR_FAKECOND_LENGTH 64
 #define SPR_FAKECOND_CAPACITY 256
 
-new SpecialRoundsLoaded = 0;
+int SpecialRoundsLoaded = 0;
 
-new Float:SpecialRound_StartEffect = 1.0;
+float SpecialRound_StartEffect = 1.0;
 
-new String:SpecialRounds[SPR_MAX+1][SPR_NAME_LENGTH];
-new String:SpecialRoundDescriptions[SPR_MAX+1][SPR_DESC_LENGTH];
-new bool:SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
-new bool:SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
-new SpecialRoundBossGameThreshold[SPR_MAX+1];
+char SpecialRounds[SPR_MAX+1][SPR_NAME_LENGTH];
+char SpecialRoundDescriptions[SPR_MAX+1][SPR_DESC_LENGTH];
+bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
+bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
+int SpecialRoundBossGameThreshold[SPR_MAX+1];
 
-new String:SpecialRoundFakeConditions[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
-new SpecialRoundFakeConditionsCount = 0;
+char SpecialRoundFakeConditions[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
+int SpecialRoundFakeConditionsCount = 0;
 
-new bool:IsChoosingSpecialRound = false;
+bool IsChoosingSpecialRound = false;
 
-new bool:ForceNextSpecialRound = false;
-new ForceSpecialRound = 0;
+bool ForceNextSpecialRound = false;
+int ForceSpecialRound = 0;
 
 #define BIRD_MODEL "models/props_forest/dove.mdl"
 
-stock InitializeSpecialRounds()
+stock void InitializeSpecialRounds()
 {
 	LogMessage("Initializing Special Rounds...");
 
-	decl String:path[128];
+	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/specialrounds.txt");
 
-	new Handle:kv = CreateKeyValues("SpecialRounds");
+	Handle kv = CreateKeyValues("SpecialRounds");
 	FileToKeyValues(kv, path);
  
 	if (KvGotoFirstSubKey(kv))
 	{
-		new i = 0;
+		int i = 0;
 
 		do
 		{
@@ -71,12 +71,12 @@ stock InitializeSpecialRounds()
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
 }
 
-public SpecialRound_OnMapStart()
+public void SpecialRound_OnMapStart()
 {
 	PrecacheModel(BIRD_MODEL);
 }
 
-public SpecialRound_OnGameFrame()
+public void SpecialRound_OnGameFrame()
 {
 	if (GamemodeStatus == GameStatus_Playing)
 	{
@@ -84,7 +84,7 @@ public SpecialRound_OnGameFrame()
 
 		if (GamemodeID == SPR_GAMEMODEID)
 		{
-			for (new i = 1; i <= MaxClients; i++)
+			for (int i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i))
 				{
@@ -95,14 +95,14 @@ public SpecialRound_OnGameFrame()
 	}
 }
 
-public SpecialRound_PrintRandomNameWhenChoosing()
+public void SpecialRound_PrintRandomNameWhenChoosing()
 {
 	if (!IsChoosingSpecialRound)
 	{
 		return;
 	}
 
-	decl String:buffer[128];
+	char buffer[128];
 
 	if (GetRandomInt(0, 1) == 1)
 	{
@@ -110,7 +110,7 @@ public SpecialRound_PrintRandomNameWhenChoosing()
 	}
 	else
 	{
-		new index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
+		int index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
 
 		strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
 	}
@@ -118,7 +118,7 @@ public SpecialRound_PrintRandomNameWhenChoosing()
 	PrintCenterTextAll("NEW CONDITION: %s!", buffer);
 }
 
-public SelectNewSpecialRound()
+public void SelectNewSpecialRound()
 {
 	IsChoosingSpecialRound = false;
 
@@ -147,7 +147,7 @@ public SelectNewSpecialRound()
 	}
 }
 
-stock bool:SpecialRound_IsAvailable()
+stock bool SpecialRound_IsAvailable()
 {
 	if (SpecialRoundMultiplePlayersOnly[SpecialRoundID])
 	{
@@ -161,23 +161,15 @@ stock bool:SpecialRound_IsAvailable()
 	return true;
 }
 
-stock PrintSelectedSpecialRound()
+stock void PrintSelectedSpecialRound()
 {
 	EmitSoundToAll(SYSMUSIC_SPECIALROUND_SELECTED);
 
-	decl String:name[SPR_NAME_LENGTH];
+	char name[SPR_NAME_LENGTH];
 	ToUpperString(SpecialRounds[SpecialRoundID], name, sizeof(name));
 	PrintCenterTextAll("NEW CONDITION: %s!", name);
 
-	#if defined NEW_HUD
-
-	decl String:objective[64];
-	Format(objective, sizeof(objective), "The next Special Round is... %s!", SpecialRounds[SpecialRoundID]);
-	DisplayHudMessage(objective, SpecialRoundDescriptions[SpecialRoundID], 5.0);
-
-	#else
-	
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i))
 		{
@@ -185,8 +177,6 @@ stock PrintSelectedSpecialRound()
 			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRoundDescriptions[SpecialRoundID]);
 		}
 	}
-
-	#endif
 
 	if (SpecialRoundID == 14)
 	{
@@ -201,11 +191,11 @@ stock PrintSelectedSpecialRound()
 }
 
 
-public Action:Timer_SpecialRoundSixteenEffect(Handle:timer, any:client)
+public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 { 
 	if (SpecialRound_StartEffect > 0.3)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i))
 			{
@@ -222,11 +212,11 @@ public Action:Timer_SpecialRoundSixteenEffect(Handle:timer, any:client)
 	}
 }
 
-public Action:Timer_SpecialRoundSeventeenEffect(Handle:timer, any:client)
+public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 {
 	if (SpecialRound_StartEffect < 2.0)
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i))
 			{
@@ -243,15 +233,15 @@ public Action:Timer_SpecialRoundSeventeenEffect(Handle:timer, any:client)
 	}
 }
 
-public Special_NoTouch(entity, other) 
+public void Special_NoTouch(int entity, int other) 
 {
     if (SpecialRoundID != 11 || MinigameID == 17) 
 	{
 		return;
 	}
 
-    decl String:classname[64];
-    decl String:classname2[64];
+    char classname[64];
+    char classname2[64];
     GetEdictClassname(entity, classname, sizeof(classname));
     GetEdictClassname(other, classname2, sizeof(classname2));
 
@@ -271,12 +261,12 @@ public Special_NoTouch(entity, other)
 	}
 }
 
-stock SpecialRound_SetupEnv()
+stock void SpecialRound_SetupEnv()
 {
 	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
 }
 
-SetupSPR(i)
+stock void SetupSPR(int i)
 {
 	if (IsClientInGame(i))
 	{
@@ -351,7 +341,7 @@ SetupSPR(i)
 	}
 }
 
-public Special_Bird(client)
+public void Special_Bird(int client)
 {
 	if (!IsValidEntity(client)) 
 	{
@@ -372,7 +362,7 @@ public Special_Bird(client)
 	}
 }
 
-stock SetSpeed_SpecialRound()
+stock void SetSpeed_SpecialRound()
 {
 	switch (SpecialRoundID)
 	{
@@ -409,7 +399,7 @@ stock SetSpeed_SpecialRound()
 	}
 }
 
-stock bool:Special_AreSpeedEventsEnabled()
+stock bool Special_AreSpeedEventsEnabled()
 {
 	if (SpecialRoundID <= 0)
 	{
@@ -424,14 +414,14 @@ stock bool:Special_AreSpeedEventsEnabled()
 	return !SpecialRoundSpeedEventsDisabled[SpecialRoundID];
 }
 
-stock Special_LoadFakeConditions()
+stock void Special_LoadFakeConditions()
 {
 	LogMessage("Initializing Special Round random non-existant conditions");
 
-	decl String:manifestPath[128];
+	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/specialroundfakeconditions.txt");
 
-	new Handle:file = OpenFile(manifestPath, "r"); // Only need r for read
+	Handle file = OpenFile(manifestPath, "r"); // Only need r for read
 
 	if (file == INVALID_HANDLE)
 	{
@@ -439,7 +429,7 @@ stock Special_LoadFakeConditions()
 		return;
 	}
 
-	decl String:line[SPR_FAKECOND_LENGTH];
+	char line[SPR_FAKECOND_LENGTH];
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{

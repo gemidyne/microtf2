@@ -54,7 +54,7 @@ stock int CreatePropEntity(float position[3], char[] modelPath, int health, floa
 
 stock void CreateParticle(int client, const char[] effect, float time, bool attachToHead = false) 
 {  
-	new entity = CreateEntityByName("info_particle_system");
+	int entity = CreateEntityByName("info_particle_system");
 
 	if (IsValidEntity(entity)) 
 	{
@@ -148,7 +148,7 @@ public void EndBoss()
 		{
 			if (IsClientInGame(i))
 			{
-                for (new a = 0; a < 10; a++)
+                for (int a = 0; a < 10; a++)
                 {
                     StopSound(i, SNDCHAN_AUTO, BossgameMusic[BossgameID]);
                 }

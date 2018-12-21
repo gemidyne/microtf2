@@ -38,12 +38,14 @@
 #include <training>
 #endif
 
+#pragma newdecls required
+
 /**
  * Defines
  */
 //#define DEBUG
 #define PLUGIN_VERSION "2018.8B"
-#define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00MicroTF2 \x0700FFFF] {default}"
+#define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include Header.inc
 #include Forwards.inc
@@ -59,33 +61,31 @@
 #include Commands.inc
 #include InternalWebAPI.inc
 
-public Plugin:myinfo = 
+public Plugin myinfo = 
 {
-	name = "MicroTF2",
-	author = "GEMINI Developments",
+	name = "WarioWare",
+	author = "",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
 	url = "http://www.gemini.software/"
 }
 
-public OnPluginStart()
+public void OnPluginStart()
 {
-	// Do our pre-requisite checks
-
 #if defined FIXED_IP
-	new hostIP = GetConVarInt(FindConVar("hostip"));
+	int hostIP = GetConVarInt(FindConVar("hostip"));
 	if (hostIP != FIXED_IP)
 	{
-		SetFailState("This server has not been authorized to run MicroTF2.");
+		SetFailState("This server has not been authorized to run WarioWare.");
 	}
 #endif
 
-	decl String:gameFolder[32];
+	char gameFolder[32];
 	GetGameFolderName(gameFolder, sizeof(gameFolder));
 
 	if (!StrEqual(gameFolder, "tf"))
 	{
-		SetFailState("MicroTF2 can only be run on Team Fortress 2.");
+		SetFailState("WarioWare can only be run on Team Fortress 2.");
 	}
 
 	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
@@ -108,13 +108,6 @@ public OnPluginStart()
 		SetFailState("The SoundLib Extension is not loaded.");
 	}
 
-#if defined NEW_HUD
-	if (GetExtensionFileStatus("sendproxy.ext") < 1)
-	{
-		SetFailState("The SendProxy Extension is not loaded.");
-	}
-#endif
-
 	LoadTranslations("microtf2.phrases.txt");
 
 	Offset_Collision = FindSendPropInfo("CBaseEntity", "m_CollisionGroup");
@@ -123,14 +116,14 @@ public OnPluginStart()
 	InitializeSystem();
 }
 
-public OnMapStart()
+public void OnMapStart()
 {
 	// Perform map check to see whether or not the plugin should do anything.
-	IsPluginEnabled = IsMicroTF2Map();
+	IsPluginEnabled = IsWarioWareMap();
 
 	if (IsPluginEnabled)
 	{
-		decl String:gameDescription[32];
+		char gameDescription[32];
 		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
 		Steam_SetGameDescription(gameDescription);
 
@@ -138,7 +131,7 @@ public OnMapStart()
 
 		PrepareConVars();
 
-		new playerManagerEntity = FindEntityByClassname(MaxClients+1, "tf_player_manager");
+		int playerManagerEntity = FindEntityByClassname(MaxClients+1, "tf_player_manager");
 		if (playerManagerEntity == -1)
 		{
 			SetFailState("Unable to find tf_player_manager entity");
@@ -162,7 +155,7 @@ public OnMapStart()
 	}
 }
 
-public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
+public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
 	IntroCountdown = 6;
 
@@ -189,14 +182,14 @@ public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
 	IsBlockingDamage = true;
 	IsOnlyBlockingDamageByPlayers = false;
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
-			decl String:header[64];
+			char header[64];
 			Format(header, sizeof(header), "%T", "Startup_Header", i);
 
-			decl String:body[64];
+			char body[64];
 			Format(body, sizeof(body), "%T", "Startup_BodyIntro", i);
 
 			DisplayHudMessageToClient(i, header, body, 3.0);
@@ -207,7 +200,7 @@ public Action:Timer_GameLogic_EngineInitialisation(Handle:timer)
 	CreateTimer(1.0, Timer_GameLogic_EngineInitialisationCountdown);
 }
 
-public Action:Timer_GameLogic_EngineInitialisationCountdown(Handle:timer)
+public Action Timer_GameLogic_EngineInitialisationCountdown(Handle timer)
 {
 	if (IntroCountdown > 0)
 	{
@@ -215,14 +208,14 @@ public Action:Timer_GameLogic_EngineInitialisationCountdown(Handle:timer)
 
 		if (IntroCountdown <= 3)
 		{
-			for (new i = 1; i <= MaxClients; i++)
+			for (int i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientValid(i))
 				{
-					decl String:header[64];
+					char header[64];
 					Format(header, sizeof(header), "%T", "Startup_Header", i);
 
-					decl String:body[64];
+					char body[64];
 					Format(body, sizeof(body), "%T", "Startup_BodyCountdown", i, IntroCountdown);
 
 					DisplayHudMessageToClient(i, header, body, 1.1);
@@ -239,7 +232,7 @@ public Action:Timer_GameLogic_EngineInitialisationCountdown(Handle:timer)
 	}
 }
 
-public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
+public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 {
 	if (GamemodeStatus != GameStatus_Playing)
 	{
@@ -257,12 +250,13 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 	{
 		SetSpeed_SpecialRound();
 	}
+	
 	SetSpeed();
 
 	ShowPlayerScores(true);
 	SpecialRound_SetupEnv();
 
-	new String:centerText[4096];
+	char centerText[4096];
 
 	if (SpecialRoundID == 16)
 	{
@@ -273,11 +267,11 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 	{
 		ScoreAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
 
-		new String:names[2048];
-		new currentPlayers = 0;
-		new maxPlayers = 0;
+		char names[2048];
+		int currentPlayers = 0;
+		int maxPlayers = 0;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i))
 			{
@@ -318,7 +312,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 		}
 		else
 		{
-			new i = 0;
+			int i = 0;
 			do
 			{
 				BossgameID = GetRandomInt(1, BossgamesLoaded);
@@ -328,13 +322,13 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 					PreviousBossgameID = 0;
 				}
 
-				decl String:funcName[64];
+				char funcName[64];
 				Format(funcName, sizeof(funcName), "Bossgame%i_OnCheck", BossgameID);
-				new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
+				Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 
 				if (func != INVALID_FUNCTION)
 				{
-					new bool:isPlayable = false;
+					bool isPlayable = false;
 
 					Call_StartFunction(INVALID_HANDLE, func);
 					Call_Finish(isPlayable);
@@ -375,7 +369,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 		}
 		else
 		{
-			new i = 0;
+			int i = 0;
 			do
 			{
 				MinigameID = GetRandomInt(1, MinigamesLoaded);
@@ -385,13 +379,13 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 					PreviousMinigameID = 0;
 				}
 
-				decl String:funcName[64];
+				char funcName[64];
 				Format(funcName, sizeof(funcName), "Minigame%i_OnCheck", MinigameID);
-				new Function:func = GetFunctionByName(INVALID_HANDLE, funcName);
+				Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 
 				if (func != INVALID_FUNCTION)
 				{
-					new bool:isPlayable = false;
+					bool isPlayable = false;
 
 					Call_StartFunction(INVALID_HANDLE, func);
 					Call_Finish(isPlayable);
@@ -418,14 +412,14 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 		}
 	}
 
-	new Float:duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME];
+	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME];
 
 	if (GamemodeID == SPR_GAMEMODEID && SpecialRoundID == 20)
 	{
 		duration = 0.05;
 	}
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
@@ -463,7 +457,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 
 				if (SpecialRoundID != 12)
 				{
-					decl String:score[32];
+					char score[32];
 					Format(score, sizeof(score), "%d POINTS", PlayerScore[i]);
 					ShowAnnotation(i, duration, score);
 				}
@@ -480,7 +474,7 @@ public Action:Timer_GameLogic_PrepareForMinigame(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_StartMinigame(Handle:timer)
+public Action Timer_GameLogic_StartMinigame(Handle timer)
 {
 	if (GamemodeStatus != GameStatus_Playing)
 	{
@@ -516,8 +510,8 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 	PrintToChatAll("[DEBUG] Preparing clients..");
 	#endif
 
-	new bool:isCaptionDynamic;
-	new Function:func = INVALID_FUNCTION;
+	bool isCaptionDynamic;
+	Function func = INVALID_FUNCTION;
 
 	if (MinigameCaptionIsDynamic[MinigameID] || BossgameCaptionIsDynamic[BossgameID])
 	{
@@ -526,7 +520,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 	if (isCaptionDynamic)
 	{
-		decl String:funcName[64];
+		char funcName[64];
 
 		if (MinigameID > 0)
 		{
@@ -545,7 +539,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 		}
 	}
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
@@ -557,7 +551,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 				if (!isCaptionDynamic)
 				{
-					decl String:objective[64];
+					char objective[64];
 					Format(objective, sizeof(objective), BossgameCaptions[BossgameID]);
 
 					strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);
@@ -573,7 +567,7 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 
 				if (!isCaptionDynamic)
 				{
-					decl String:objective[64];
+					char objective[64];
 					Format(objective, sizeof(objective), MinigameCaptions[MinigameID]);
 					DisplayHudMessageToClient(i, objective, "", 3.0);
 				}
@@ -627,14 +621,14 @@ public Action:Timer_GameLogic_StartMinigame(Handle:timer)
 	else
 	{
 		#if defined DEBUG
-		PrintToChatAll("[DEBUG] MinigameID and BossgameID are 0, what the fuck do I do?");
+		PrintToChatAll("[DEBUG] MinigameID and BossgameID are 0: Something has went wrong.");
 		#endif
 	}
 
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_EndMinigame(Handle:timer)
+public Action Timer_GameLogic_EndMinigame(Handle timer)
 {
 	IsMinigameEnding = true;
 
@@ -647,8 +641,8 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 		Call_Finish();
 	}
 
-	new bool:playAnotherBossgame = false;
-	new bool:returnedFromBoss = false;
+	bool playAnotherBossgame = false;
+	bool returnedFromBoss = false;
 
 	if (MinigameID > 0)
 	{
@@ -681,7 +675,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 	SpecialRound_SetupEnv();
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
@@ -719,7 +713,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 					if (SpecialRoundID != 12)
 					{
-						decl String:text[64];
+						char text[64];
 						Format(text, sizeof(text), "%T", "General_Loser", i);
 
 						ShowAnnotation(i, 2.0, text);
@@ -761,7 +755,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 				if (SpecialRoundID != 12)
 				{
-					decl String:text[64];
+					char text[64];
 					Format(text, sizeof(text), "%T", "General_Winner", i);
 					ShowAnnotation(i, 2.0, text);
 				}
@@ -778,8 +772,8 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 
 	if (SpecialRoundID == 17)
 	{
-		new participants = 0;
-		for (new i = 1; i <= MaxClients; i++)
+		int participants = 0;
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i])
 			{
@@ -848,7 +842,7 @@ public Action:Timer_GameLogic_EndMinigame(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_OnPreFinish(Handle:timer)
+public Action Timer_GameLogic_OnPreFinish(Handle timer)
 {
 	if (GlobalForward_OnMinigameFinishPre != INVALID_HANDLE)
 	{
@@ -859,9 +853,9 @@ public Action:Timer_GameLogic_OnPreFinish(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpeedChange(Handle:timer)
+public Action Timer_GameLogic_SpeedChange(Handle timer)
 {
-	new bool:flag = false;
+	bool flag = false;
 	if (SpecialRoundID == 1)
 	{
 		flag = true;
@@ -875,7 +869,7 @@ public Action:Timer_GameLogic_SpeedChange(Handle:timer)
 	SetSpeed();
 	ShowPlayerScores(true);
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
@@ -890,12 +884,12 @@ public Action:Timer_GameLogic_SpeedChange(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_BossTime(Handle:timer)
+public Action Timer_GameLogic_BossTime(Handle timer)
 {
 	SpeedLevel = 1.0;
 	SetSpeed();
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
@@ -910,7 +904,7 @@ public Action:Timer_GameLogic_BossTime(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_GameOverStart(Handle:timer)
+public Action Timer_GameLogic_GameOverStart(Handle timer)
 {
 	if (GamemodeStatus != GameStatus_Playing)
 	{
@@ -932,16 +926,16 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 
 	SetConVarInt(ConVar_TFFastBuild, 1);
 
-	new score = 0;
-	new winnerCount = 0;
-	new Handle:winners = CreateArray();
-	new String:prefix[128];
-	new String:names[1024];
-	new bool:isWinner = false;
+	int score = 0;
+	int winnerCount = 0;
+	Handle winners = CreateArray();
+	char prefix[128];
+	char names[1024];
+	bool isWinner = false;
 
 	score = SpecialRoundID == 9 ? GetLowestScore() : GetHighestScore();
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i))
 		{
@@ -1009,56 +1003,9 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 
 	if (winnerCount > 0)
 	{
-#if defined NEW_HUD
-		for (new i = 0; i < GetArraySize(winners); i++)
+		for (int i = 0; i < GetArraySize(winners); i++)
 		{
-			new client = GetArrayCell(winners, i);
-			
-			if (winnerCount > 1)
-			{
-				if (i >= (GetArraySize(winners)-1))
-				{
-					Format(names, sizeof(names), "%s %T %N", names, "GameOver_WinnersAnd", client);
-				}
-				else
-				{
-					Format(names, sizeof(names), "%s, %N", names, client);
-				}
-			}
-			else
-			{
-				Format(names, sizeof(names), "%N", client);
-			}
-		}
-
-		if (winnerCount > 1)
-		{
-			ReplaceStringEx(names, sizeof(names), ", ", "");
-		}
-
-		if (winnerCount == 1)
-		{
-			Format(prefix, sizeof(prefix), "%T", "GameOver_WinnerPrefixSingle", 0);
-		}
-		else
-		{
-			Format(prefix, sizeof(prefix), "%T", "GameOver_WinnerPrefixMultiple", 0);
-		}
-
-		if (SpecialRoundID == 17)
-		{
-			DisplayHudMessage(prefix, names, 8.0);
-		}
-		else
-		{
-			DisplayHudMessage(prefix, names, 8.0);
-		}
-
-#else
-
-		for (new i = 0; i < GetArraySize(winners); i++)
-		{
-			new client = GetArrayCell(winners, i);
+			int client = GetArrayCell(winners, i);
 
 			if (winnerCount > 1)
 			{
@@ -1082,7 +1029,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 			ReplaceStringEx(names, sizeof(names), ", ", "");
 		}
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && !IsFakeClient(i))
 			{
@@ -1105,11 +1052,10 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 				}
 			}
 		}
-#endif
 	}
 	else
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && !IsFakeClient(i))
 			{
@@ -1128,7 +1074,7 @@ public Action:Timer_GameLogic_GameOverStart(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
+public Action Timer_GameLogic_GameOverEnd(Handle timer)
 {
 	if (GamemodeStatus != GameStatus_Playing)
 	{
@@ -1136,7 +1082,7 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 		return Plugin_Stop;
 	}
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		// Intentionally out side of IsClientValid - to cover any possible spectators with stale data.
 		PlayerStatus[i] = PlayerStatus_NotWon;
@@ -1185,7 +1131,7 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 	if (MaxRounds == 0 || RoundsPlayed < MaxRounds)
 	{
 		ShowPlayerScores(true);
-		new bool:isWaitingForVoteToFinish = false;
+		bool isWaitingForVoteToFinish = false;
 
 		if (MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
@@ -1212,14 +1158,14 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 
 		if (isWaitingForVoteToFinish)
 		{
-			for (new i = 1; i <= MaxClients; i++)
+			for (int i = 1; i <= MaxClients; i++)
 			{
 				if (IsClientInGame(i) && !IsFakeClient(i))
 				{
-					decl String:header[64];
+					char header[64];
 					Format(header, sizeof(header), "%T", "Intermission_Header", i);
 
-					decl String:body[64];
+					char body[64];
 					Format(body, sizeof(body), "%T", "Intermission_Body", i);
 
 					EmitSoundToClient(i, SYSMUSIC_WAITINGFORPLAYERS);
@@ -1243,12 +1189,12 @@ public Action:Timer_GameLogic_GameOverEnd(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_WaitForVoteToFinishIfAny(Handle:timer)
+public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
 	#if defined UMC_MAPCHOOSER
-	new bool:voteIsInProgress = UMC_IsVoteInProgress("core");
+	bool voteIsInProgress = UMC_IsVoteInProgress("core");
 	#else
-	new bool:voteIsInProgress = IsVoteInProgress();
+	bool voteIsInProgress = IsVoteInProgress();
 	#endif
 
 	if (voteIsInProgress)
@@ -1257,7 +1203,7 @@ public Action:Timer_GameLogic_WaitForVoteToFinishIfAny(Handle:timer)
 		return Plugin_Handled;
 	}
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
@@ -1279,7 +1225,7 @@ public Action:Timer_GameLogic_WaitForVoteToFinishIfAny(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpecialRoundSelectionStart(Handle:timer)
+public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 {
 	if (SpeedLevel == 1.0)
 	{
@@ -1294,19 +1240,19 @@ public Action:Timer_GameLogic_SpecialRoundSelectionStart(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpecialRoundChoosing3(Handle:timer)
+public Action Timer_GameLogic_SpecialRoundChoosing3(Handle timer)
 {
 	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing2, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpecialRoundChoosing2(Handle:timer)
+public Action Timer_GameLogic_SpecialRoundChoosing2(Handle timer)
 {
 	CreateTimer(0.3, Timer_GameLogic_SpecialRoundChoosing1, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpecialRoundChoosing1(Handle:timer)
+public Action Timer_GameLogic_SpecialRoundChoosing1(Handle timer)
 {
 	IsChoosingSpecialRound = true;
 
@@ -1316,7 +1262,7 @@ public Action:Timer_GameLogic_SpecialRoundChoosing1(Handle:timer)
 	return Plugin_Handled;
 }
 
-public Action:Timer_GameLogic_SpecialRoundChoosing0(Handle:timer)
+public Action Timer_GameLogic_SpecialRoundChoosing0(Handle timer)
 {
 	#if defined DEBUG
 	PrintToChatAll("chose a special round, timer for PrepareForMinigame @ 5.0 from now");

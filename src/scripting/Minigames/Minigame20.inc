@@ -14,7 +14,7 @@ public void Minigame20_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
 }
 
-public bool:Minigame20_OnCheck()
+public bool Minigame20_OnCheck()
 {
 	// TODO: Fix usage of lunchbox items
 	return true;

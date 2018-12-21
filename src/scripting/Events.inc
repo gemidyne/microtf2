@@ -284,14 +284,14 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 	}
 }
 
-public Action:Hook_GameSound(clients[64], &numClients, String:sample[PLATFORM_MAX_PATH], &entity, &channel, &Float:volume, &level, &pitch, &flags, String:soundEntry[PLATFORM_MAX_PATH], &seed)
+public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATFORM_MAX_PATH], int &entity, int &channel, float &volume, int &level, int &pitch, int &flags, char soundEntry[PLATFORM_MAX_PATH], int &seed)
 {
 	if (!IsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
-	new bool:isVoiceSound = StrContains(sample, "vo/scout_", false) != -1 
+	bool isVoiceSound = StrContains(sample, "vo/scout_", false) != -1 
 		|| StrContains(sample, "vo/soldier_", false) != -1 
 		|| StrContains(sample, "vo/pyro_", false) != -1 
 		|| StrContains(sample, "vo/demoman_", false) != -1 
@@ -331,7 +331,7 @@ public Action:Hook_GameSound(clients[64], &numClients, String:sample[PLATFORM_MA
 	return Plugin_Continue;
 }
 
-public Action:TF2_CalcIsAttackCritical(client, weapon, String:weaponname[], &bool:result)
+public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname, bool &result)
 {
 	if (!IsPluginEnabled)
 	{
@@ -352,7 +352,7 @@ public Action:TF2_CalcIsAttackCritical(client, weapon, String:weaponname[], &boo
 }
 
 
-public Action:OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:angles[3], &weapon)
+public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
 	if (!IsPluginEnabled)
 	{
@@ -374,7 +374,7 @@ public Action:OnPlayerRunCmd(client, &buttons, &impulse, Float:vel[3], Float:ang
 	return Plugin_Continue;
 }
 
-public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadcast)
+public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
@@ -390,7 +390,7 @@ public Action:Event_RoundEnd(Handle:event, const String:name[], bool:dontBroadca
 	return Plugin_Continue;
 }
 
-public OnEntityCreated(entity, const String:classname[])
+public void OnEntityCreated(int entity, const char[] classname)
 {
 	if (!IsPluginEnabled)
 	{
@@ -414,7 +414,7 @@ public OnEntityCreated(entity, const String:classname[])
 	}
 }
 
-public Action:Timer_HatRemove(Handle:Timer, any:entity)
+public Action Timer_HatRemove(Handle timer, int entity)
 {
 	if (!IsPluginEnabled)
 	{
@@ -425,7 +425,7 @@ public Action:Timer_HatRemove(Handle:Timer, any:entity)
 	{
 		//Hook transmit
 		//Unless it's a The Razorback, Darwin's Danger Shield or Gunboats
-		new String:sModel[256];
+		char sModel[256];
 
 		GetEntPropString(entity, Prop_Data, "m_ModelName", sModel, sizeof(sModel));
 

@@ -139,7 +139,7 @@ stock void RemovePlayerWearables(int client)
 	edict = (MaxClients + 1);
 	while ((edict = FindEntityByClassname2(edict, "tf_wearable_demoshield")) != -1)
 	{
-		new idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
+		int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
 		if ((idx == 131 || idx == 406) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == client && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
 		{
 			RemoveEdict(edict);
@@ -253,7 +253,7 @@ stock void PlaySoundToPlayer(int client, const char[] sound)
 
 stock void PlaySoundToAll(const char[] sound)
 {
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		PlaySoundToPlayer(i, sound);
 	}
@@ -353,25 +353,25 @@ public void AddClientToBitString(int bitfield, int client)
 	bitfield |= (1 << client);
 }
 
-stock SetPlayerAmmo(client, ammoCount)
+stock void SetPlayerAmmo(int client, int ammoCount)
 {
-	new activeweapon = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
+	int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
 
-	if (activeweapon <= 0)
+	if (weaponHandleId <= 0)
 	{
 		return;
 	}
 
-	new entity = GetEntDataEnt2(client, activeweapon);
+	int entity = GetEntDataEnt2(client, weaponHandleId);
 
 	if (!IsValidEntity(entity)) 
 	{
 		return;
 	}
 
-	new ammotype = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
-	new ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
-	new clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
+	int ammoType = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
+	int ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
+	int clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
 
 	if (ammo <= 0)
 	{
@@ -384,102 +384,62 @@ stock SetPlayerAmmo(client, ammoCount)
 	}
 
 	SetEntData(entity, clip, ammoCount, 4, true);
-	SetEntData(client, ammotype+ammo, ammoCount, 4, true);
+	SetEntData(client, ammoType+ammo, ammoCount, 4, true);
 }
 
-stock DestroyPlayerSentryGun(client, bool:cleanDestroy = false)
+stock void DestroyPlayerSentryGun(int client, bool cleanDestroy = false)
 {
 	if (IsClientInGame(client))
 	{
-		new iEnt = -1;
-		while ((iEnt = FindEntityByClassname(iEnt, "obj_sentrygun")) != INVALID_ENT_REFERENCE)
+		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_sentrygun");
+	}
+}
+
+stock void DestroyPlayerDispenser(int client, bool cleanDestroy = false)
+{
+	if (IsClientInGame(client))
+	{
+		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_dispenser");
+	}
+}
+
+stock void DestroyPlayerTeleporterEntrance(int client, bool cleanDestroy = false)
+{
+	if (IsClientInGame(client))
+	{
+		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_teleporter", TFObjectMode_Entrance);
+	}
+}
+
+stock void DestroyPlayerTeleporterExit(int client, bool cleanDestroy = false)
+{
+	if (IsClientInGame(client))
+	{
+		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_teleporter", TFObjectMode_Exit);
+	}
+}
+
+stock void TryDestroyPlayerBuilding(int client, bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
+{
+	int entity = -1;
+	while ((entity = FindEntityByClassname(entity, entityClassname)) != INVALID_ENT_REFERENCE)
+	{
+		if (GetEntPropEnt(entity, Prop_Send, "m_hBuilder") == client && (objectMode == TFObjectMode_None || TF2_GetObjectMode(entity) == objectMode))
 		{
-			if (GetEntPropEnt(iEnt, Prop_Send, "m_hBuilder") == client)
+			if (cleanDestroy)
 			{
-				if (cleanDestroy)
-				{
-					AcceptEntityInput(iEnt, "Kill");
-				}
-				else
-				{
-					SetVariantInt(1000);
-					AcceptEntityInput(iEnt, "RemoveHealth");
-				}
+				AcceptEntityInput(entity, "Kill");
+			}
+			else
+			{
+				SetVariantInt(1000);
+				AcceptEntityInput(entity, "RemoveHealth");
 			}
 		}
 	}
 }
 
-stock DestroyPlayerDispenser(client, bool:cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		new iEnt = -1;
-		while ((iEnt = FindEntityByClassname(iEnt, "obj_dispenser")) != INVALID_ENT_REFERENCE)
-		{
-			if (GetEntPropEnt(iEnt, Prop_Send, "m_hBuilder") == client)
-			{
-				if (cleanDestroy)
-				{
-					AcceptEntityInput(iEnt, "Kill");
-				}
-				else
-				{
-					SetVariantInt(1000);
-					AcceptEntityInput(iEnt, "RemoveHealth");
-				}
-			}
-		}
-	}
-}
-
-stock DestroyPlayerTeleporterEntrance(client, bool:cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		new iEnt = -1;
-		while ((iEnt = FindEntityByClassname(iEnt, "obj_teleporter")) != INVALID_ENT_REFERENCE)
-		{
-			if (GetEntPropEnt(iEnt, Prop_Send, "m_hBuilder") == client && TF2_GetObjectMode(iEnt) == TFObjectMode_Entrance)
-			{
-				if (cleanDestroy)
-				{
-					AcceptEntityInput(iEnt, "Kill");
-				}
-				else
-				{
-					SetVariantInt(1000);
-					AcceptEntityInput(iEnt, "RemoveHealth");
-				}
-			}
-		}
-	}
-}
-
-stock DestroyPlayerTeleporterExit(client, bool:cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		new iEnt = -1;
-		while ((iEnt = FindEntityByClassname(iEnt, "obj_teleporter")) != INVALID_ENT_REFERENCE)
-		{
-			if (GetEntPropEnt(iEnt, Prop_Send, "m_hBuilder") == client && TF2_GetObjectMode(iEnt) == TFObjectMode_Exit)
-			{
-				if (cleanDestroy)
-				{
-					AcceptEntityInput(iEnt, "Kill");
-				}
-				else
-				{
-					SetVariantInt(1000);
-					AcceptEntityInput(iEnt, "RemoveHealth");
-				}
-			}
-		}
-	}
-}
-
-stock DestroyPlayerBuildings(client, bool:cleanDestroy = false)
+stock void DestroyPlayerBuildings(int client, bool cleanDestroy = false)
 {
 	DestroyPlayerSentryGun(client, cleanDestroy);
 	DestroyPlayerDispenser(client, cleanDestroy);
@@ -487,59 +447,26 @@ stock DestroyPlayerBuildings(client, bool:cleanDestroy = false)
 	DestroyPlayerTeleporterExit(client, cleanDestroy);
 }
 
-stock RemoveAllStunballEntities()
+stock void RemoveAllStunballEntities()
 {
-	new iEnt = -1;
-	while ((iEnt = FindEntityByClassname(iEnt, "tf_projectile_stun_ball")) != INVALID_ENT_REFERENCE)
+	int entity = -1;
+	while ((entity = FindEntityByClassname(entity, "tf_projectile_stun_ball")) != INVALID_ENT_REFERENCE)
 	{
-		AcceptEntityInput(iEnt, "Kill");
+		AcceptEntityInput(entity, "Kill");
 	}
 }
 
-stock RemoveAllJarateEntities()
+stock void RemoveAllJarateEntities()
 {
-	new iEnt = -1;
-	while ((iEnt = FindEntityByClassname(iEnt, "tf_projectile_jar")) != INVALID_ENT_REFERENCE)
+	int entity = -1;
+	while ((entity = FindEntityByClassname(entity, "tf_projectile_jar")) != INVALID_ENT_REFERENCE)
 	{
-		AcceptEntityInput(iEnt, "Kill");
+		AcceptEntityInput(entity, "Kill");
 	}
 }
 
-stock DisplayHudMessage(const String:title[], const String:body[], Float:duration)
+stock void DisplayHudMessage(const char[] title, const char[] body, float duration)
 {
-#if defined NEW_HUD
-	if (SpecialRoundID == 19)
-	{
-		new String:rewrittenTitle[MINIGAME_CAPTION_LENGTH];
-		new String:rewrittenBody[MINIGAME_CAPTION_LENGTH];
-
-		// Rewrite title
-		new rc = 0;
-		new len = strlen(title);
-
-		for (new c = len - 1; c >= 0; c--)
-		{
-			rewrittenTitle[rc] = title[c];
-			rc++;
-		}
-
-		// Rewrite body
-		rc = 0;
-		len = strlen(body);
-
-		for (new c = len - 1; c >= 0; c--)
-		{
-			rewrittenBody[rc] = body[c];
-			rc++;
-		}
-
-		TrainingMessage(rewrittenTitle, rewrittenBody, duration);
-	}
-	else
-	{
-		TrainingMessage(title, body, duration);
-	}
-#else
 	char formatted[MINIGAME_CAPTION_LENGTH];
 
 	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
@@ -551,50 +478,15 @@ stock DisplayHudMessage(const String:title[], const String:body[], Float:duratio
 			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, formatted);
 		}
 	}
-#endif
 }
 
-stock DisplayHudMessageToClient(client, const String:title[], const String:body[], Float:duration)
+stock void DisplayHudMessageToClient(int client, const char[] title, const char[] body, float duration)
 {
-#if defined NEW_HUD
-	if (SpecialRoundID == 19)
-	{
-		new String:rewrittenTitle[MINIGAME_CAPTION_LENGTH];
-		new String:rewrittenBody[MINIGAME_CAPTION_LENGTH];
-
-		// Rewrite title
-		new rc = 0;
-		new len = strlen(title);
-
-		for (new c = len - 1; c >= 0; c--)
-		{
-			rewrittenTitle[rc] = title[c];
-			rc++;
-		}
-
-		// Rewrite body
-		rc = 0;
-		len = strlen(body);
-
-		for (new c = len - 1; c >= 0; c--)
-		{
-			rewrittenBody[rc] = body[c];
-			rc++;
-		}
-
-		TrainingMessageToClient(client, rewrittenTitle, rewrittenBody, duration);
-	}
-	else
-	{
-		TrainingMessageToClient(client, title, body, duration);
-	}
-#else
 	char formatted[MINIGAME_CAPTION_LENGTH];
 
 	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
 
 	strcopy(MinigameCaption[client], MINIGAME_CAPTION_LENGTH, formatted);
-#endif
 }
 
 // Credit to authors of SMLIB. Moved here due to the include file not building on newer spcomp, also converted to new syntax
@@ -621,7 +513,7 @@ stock bool IsStringInt(const char arg[64])
     return false;
 }
 
-public int GetClientAimEntity3(int client, float &distancetoentity, float endpos[3])	//Javalia
+public int GetClientAimEntity3(int client, float &distancetoentity, float endpos[3])	//Snippet by Javalia
 {
 	float cleyepos[3];
 	float cleyeangle[3];
@@ -636,7 +528,7 @@ public int GetClientAimEntity3(int client, float &distancetoentity, float endpos
 	{
 		TR_GetEndPosition(endpos, traceresulthandle);
 		distancetoentity = GetVectorDistance(cleyepos, endpos);
-		new entindextoreturn = TR_GetEntityIndex(traceresulthandle);
+		int entindextoreturn = TR_GetEntityIndex(traceresulthandle);
 		CloseHandle(traceresulthandle);
 		return entindextoreturn;
 	}

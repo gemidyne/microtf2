@@ -40,20 +40,20 @@
 #define OVERLAY_WELCOME "stsv/microtf2/overlays/waitingforplayers"
 #define OVERLAY_SPECIALROUND "stsv/microtf2/overlays/specialround"
 
-new String:SystemNames[TOTAL_GAMEMODES+1][32];
-new String:SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXSTRINGLENGTH];
-new Float:SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
-new String:SystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSMUSIC_MAXSTRINGLENGTH];
+char SystemNames[TOTAL_GAMEMODES+1][32];
+char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXSTRINGLENGTH];
+float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
+char SystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSMUSIC_MAXSTRINGLENGTH];
 
-new GamemodeID = 0;
-new MaxGamemodesSelectable = 0;
+int GamemodeID = 0;
+int MaxGamemodesSelectable = 0;
 
-new Handle:HudSync_Score;
-new Handle:HudSync_Special;
-new Handle:HudSync_Round;
-new Handle:HudSync_Caption;
+Handle HudSync_Score;
+Handle HudSync_Special;
+Handle HudSync_Round;
+Handle HudSync_Caption;
 
-stock InitializeSystem()
+stock void InitializeSystem()
 {
 	LogMessage("Initializing System...");
 	
@@ -80,17 +80,17 @@ stock InitializeSystem()
 	HudSync_Round = CreateHudSynchronizer();
 	HudSync_Caption = CreateHudSynchronizer();
 
-	decl String:gamemodeManifestPath[128];
+	char gamemodeManifestPath[128];
 	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/gamemodes.txt");
 
-	new Handle:kv = CreateKeyValues("Gamemodes");
+	Handle kv = CreateKeyValues("Gamemodes");
 	FileToKeyValues(kv, gamemodeManifestPath);
  
 	if (KvGotoFirstSubKey(kv))
 	{
 		do
 		{
-			new gamemodeID = GetGamemodeIDFromSectionName(kv);
+			int gamemodeID = GetGamemodeIDFromSectionName(kv);
 
 			LoadSysMusicType(gamemodeID, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
 			LoadSysMusicType(gamemodeID, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
@@ -124,7 +124,7 @@ stock InitializeSystem()
 	InitialiseWeapons();
 }
 
-public System_OnMapStart()
+public void System_OnMapStart()
 {
 	MinigameID = 0;
 	BossgameID = 0;
@@ -148,11 +148,11 @@ public System_OnMapStart()
 	IsOnlyBlockingDamageByPlayers = false;
 
 	// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
-	decl String:buffer[192];
+	char buffer[192];
 
-	for (new g = 0; g < TOTAL_GAMEMODES; g++)
+	for (int g = 0; g < TOTAL_GAMEMODES; g++)
 	{
-		for (new i = 0; i < TOTAL_SYSMUSIC; i++)
+		for (int i = 0; i < TOTAL_SYSMUSIC; i++)
 		{
 			buffer = SystemMusic[g][i];
 
@@ -163,9 +163,9 @@ public System_OnMapStart()
 		}
 	}
 
-	for (new t = 0; t < TOTAL_SYSFX_VOCAL_TYPES; t++)
+	for (int t = 0; t < TOTAL_SYSFX_VOCAL_TYPES; t++)
 	{
-		for (new i = 0; i < TOTAL_SYSFX_VOCALS; i++)
+		for (int i = 0; i < TOTAL_SYSFX_VOCALS; i++)
 		{
 			buffer = SystemVocal[t][i];
 
@@ -193,18 +193,18 @@ public System_OnMapStart()
 	PrecacheSound("vo/announcer_success.wav", true);
 }
 
-stock GetGamemodeIDFromSectionName(Handle:kv)
+stock int GetGamemodeIDFromSectionName(Handle kv)
 {
-	decl String:buffer[16];
+	char buffer[16];
 
 	KvGetSectionName(kv, buffer, sizeof(buffer));
 
 	return StringToInt(buffer);
 }
 
-stock LoadSysMusicType(gamemodeID, musicType, Handle:kv, const String:key[])
+stock void LoadSysMusicType(int gamemodeID, int musicType, Handle kv, const char[] key)
 {
-	new Handle:sndfile = INVALID_HANDLE;
+	Handle sndfile = INVALID_HANDLE;
 
 	KvGetString(kv, key, SystemMusic[gamemodeID][musicType], SYSMUSIC_MAXSTRINGLENGTH);
 	sndfile = OpenSoundFile(SystemMusic[gamemodeID][musicType]);

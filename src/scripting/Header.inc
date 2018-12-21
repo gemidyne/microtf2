@@ -35,22 +35,22 @@ enum PlayerStatuses
  * Integers
  */
 
-new MinigameID = 0;
-new BossgameID = 0;
-new PreviousMinigameID = 0;
-new PreviousBossgameID = 0;
-new SpecialRoundID = 0;
-new ScoreAmount = 1;
-new MinigamesPlayed = 0;
-new BossGameThreshold = 20;
-new MaxRounds = 4;
-new RoundsPlayed = 0;
-new IntroCountdown = 0;
-new PlayerScore[MAXPLAYERS+1] = 0;
-new PlayerMinigamesLost[MAXPLAYERS+1] = 0;
-new PlayerMinigamesWon[MAXPLAYERS+1] = 0;
-new IsPlayerWinner[MAXPLAYERS+1] = 0;
-new PlayerIndex[MAXPLAYERS+1] = 0;
+int MinigameID = 0;
+int BossgameID = 0;
+int PreviousMinigameID = 0;
+int PreviousBossgameID = 0;
+int SpecialRoundID = 0;
+int ScoreAmount = 1;
+int MinigamesPlayed = 0;
+int BossGameThreshold = 20;
+int MaxRounds = 4;
+int RoundsPlayed = 0;
+int IntroCountdown = 0;
+int PlayerScore[MAXPLAYERS+1] = 0;
+int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
+int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
+int IsPlayerWinner[MAXPLAYERS+1] = 0;
+int PlayerIndex[MAXPLAYERS+1] = 0;
 
 int g_iCenterHudUpdateInterval = 33;
 int g_iCenterHudUpdateFrame = 0;
@@ -60,42 +60,42 @@ int g_iAnnotationEventId = 0;
  * Floats
  */
 
-new Float:SpeedLevel = 1.0;
+float SpeedLevel = 1.0;
 
 /**
  * Booleans
  */
 
-new bool:IsPluginEnabled = false;
-new bool:IsMinigameActive = false;
-new bool:IsMinigameEnding = false;
-new bool:IsMapEnding = false;
-new bool:IsBonusRound = false;
-new bool:IsBlockingTaunts = true;
-new bool:IsBlockingDeathCommands = true;
-new bool:IsBlockingDamage = true;
-new bool:IsOnlyBlockingDamageByPlayers = false;
-new bool:IsPlayerParticipant[MAXPLAYERS+1] = false;
+bool IsPluginEnabled = false;
+bool IsMinigameActive = false;
+bool IsMinigameEnding = false;
+bool IsMapEnding = false;
+bool IsBonusRound = false;
+bool IsBlockingTaunts = true;
+bool IsBlockingDeathCommands = true;
+bool IsBlockingDamage = true;
+bool IsOnlyBlockingDamageByPlayers = false;
+bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 
 /**
  * Enums
  */
 
-new GameStatus:GamemodeStatus = GameStatus_Unknown;
-new PlayerStatuses:PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+GameStatus GamemodeStatus = GameStatus_Unknown;
+PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
 
 /**
  * Handles
  */
 
-new Handle:ConVar_HostTimescale = INVALID_HANDLE;
-new Handle:ConVar_PhysTimescale = INVALID_HANDLE;
-new Handle:ConVar_ServerGravity = INVALID_HANDLE;
-new Handle:ConVar_TFCheapObjects = INVALID_HANDLE;
-new Handle:ConVar_TFFastBuild = INVALID_HANDLE;
-new Handle:ConVar_FriendlyFire = INVALID_HANDLE;
-new Handle:Handle_BossCheckTimer = INVALID_HANDLE;
-new Handle:Handle_ActiveGameTimer = INVALID_HANDLE;
+Handle ConVar_HostTimescale = INVALID_HANDLE;
+Handle ConVar_PhysTimescale = INVALID_HANDLE;
+Handle ConVar_ServerGravity = INVALID_HANDLE;
+Handle ConVar_TFCheapObjects = INVALID_HANDLE;
+Handle ConVar_TFFastBuild = INVALID_HANDLE;
+Handle ConVar_FriendlyFire = INVALID_HANDLE;
+Handle Handle_BossCheckTimer = INVALID_HANDLE;
+Handle Handle_ActiveGameTimer = INVALID_HANDLE;
 
 Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;

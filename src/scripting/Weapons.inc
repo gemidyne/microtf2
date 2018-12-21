@@ -1,9 +1,9 @@
-new Handle:g_hWeaponData = INVALID_HANDLE;
+Handle g_hWeaponData = INVALID_HANDLE;
 
-new Handle:g_hGameConfig = INVALID_HANDLE;
-new Handle:g_hWeaponEquip = INVALID_HANDLE;
+Handle g_hGameConfig = INVALID_HANDLE;
+Handle g_hWeaponEquip = INVALID_HANDLE;
 
-stock InitialiseWeapons() 
+stock void InitialiseWeapons() 
 {
 	g_hGameConfig = LoadGameConfigFile("microtf2");
 	
@@ -108,12 +108,12 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 		int entityID = GetPlayerWeaponSlot(iClient, weaponSlot);
 
-		new String:weaponAttribsArray[32][32];
-		new attribCount = ExplodeString(weaponAttribs, " ; ", weaponAttribsArray, 32, 32);
+		char weaponAttribsArray[32][32];
+		int attribCount = ExplodeString(weaponAttribs, " ; ", weaponAttribsArray, 32, 32);
 
 		if (attribCount > 1) 
 		{
-			for (new i = 0; i < attribCount; i+=2) 
+			for (int i = 0; i < attribCount; i+=2) 
 			{
 				TF2Attrib_SetByDefIndex(entityID, StringToInt(weaponAttribsArray[i]), StringToFloat(weaponAttribsArray[i+1]));
 			}
@@ -128,7 +128,7 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 	}
 }
 
-stock bool CreateNamedItem(int client, int itemindex, const String:classname[], int level, int quality)
+stock bool CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality)
 {
 	int weapon = CreateEntityByName(classname);
 	

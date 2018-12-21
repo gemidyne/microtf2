@@ -4,7 +4,7 @@
  * Contains methods for internal plugin use
  */
 
-stock FindEntityByClassname2(startEntityID, const String:classname[])
+stock int FindEntityByClassname2(int startEntityID, const char[] classname)
 {
 	while (startEntityID > -1 && !IsValidEntity(startEntityID)) 
 	{
@@ -14,30 +14,30 @@ stock FindEntityByClassname2(startEntityID, const String:classname[])
 	return FindEntityByClassname(startEntityID, classname);
 }
 
-stock bool:IsMicroTF2Map()
+stock bool IsWarioWareMap()
 {
-	decl String:curMap[32];
+	char curMap[32];
 	GetCurrentMap(curMap, sizeof(curMap));
-	return strncmp("MicroTF2_", curMap, 6, false) == 0;
+	return strncmp("MicroTF2_", curMap, 6, false) == 0 || strncmp("warioware_", curMap, 11, false) == 0;
 }
 
-stock UnloadPlugin()
+stock void UnloadPlugin()
 {
 	SecuritySystem_IgnoreServerCmdCheckOnce = true;
-	decl String:fileName[244];
 
+	char fileName[244];
 	GetPluginFilename(GetMyHandle(), fileName, sizeof(fileName));
 	ServerCommand("sm plugins unload %s", fileName);
 }
 
-stock PreloadSound(const String:sound[])
+stock void PreloadSound(const char[] sound)
 {
 	if (strlen(sound) == 0)
 	{
 		return;
 	}
 
-	decl String:fileName[128];
+	char fileName[128];
 	
 	PrecacheSound(sound, true);
 	Format(fileName, sizeof(fileName), "sound/%s", sound);
@@ -45,7 +45,7 @@ stock PreloadSound(const String:sound[])
 	AddFileToDownloadsTable(fileName);
 }
 
-public Action:GamemodeAdvertisement(Handle:timer)
+public Action GamemodeAdvertisement(Handle timer)
 {
 	CPrintToChatAll("%sYou're playing MicroTF2! - v%s", PLUGIN_PREFIX, PLUGIN_VERSION);
 	CPrintToChatAll("%sBy Stevu (Anarchy Steven), TestingLol & Mario6493!", PLUGIN_PREFIX);
@@ -59,12 +59,12 @@ public Action:GamemodeAdvertisement(Handle:timer)
 //	return CreateTimer(interval, func, data, flags);
 //}
 
-stock GetSoundMultiplier()
+stock int GetSoundMultiplier()
 {
 	return SNDPITCH_NORMAL + RoundToCeil(((SpeedLevel-1.0) * 10)*8.0);
 }
 
-stock SetSpeed()
+stock void SetSpeed()
 {
 	// Boundary Checks
 	if (SpeedLevel > 2.5)
@@ -81,11 +81,11 @@ stock SetSpeed()
 	SetConVarFloat(ConVar_PhysTimescale, SpeedLevel);
 }
 
-stock GetHighestScore()
+stock int GetHighestScore()
 {
-	new threshold = 0;
+	int threshold = 0;
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i) && PlayerScore[i] > threshold)
 		{
@@ -96,11 +96,11 @@ stock GetHighestScore()
 	return threshold;
 }
 
-stock GetLowestScore()
+stock int GetLowestScore()
 {
-	new threshold = 999;
+	int threshold = 999;
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i) && PlayerScore[i] < threshold)
 		{
@@ -111,9 +111,9 @@ stock GetLowestScore()
 	return threshold;
 }
 
-stock ShowPlayerScores(bool:showText)
+stock void ShowPlayerScores(bool showText)
 {
-	new String:scoreText[64];
+	char scoreText[64];
 
 	if (SpecialRoundID == 17)
 	{
@@ -126,16 +126,16 @@ stock ShowPlayerScores(bool:showText)
 
 	if (showText)
 	{
-		new Float:time = 6.0; // 4 secs with an extra 2 seconds incase of any GameLogic event
+		float time = 6.0; // 4 secs with an extra 2 seconds incase of any GameLogic event
 
 		if (BossgameID > 0)
 		{
 			// If this was called and a Bossgame is selected, it should be displayed for the maximum time
 			// that the boss will run for.
-			time = BossgameLength[BossgameID];
+			time += BossgameLength[BossgameID];
 		}
 
-		decl String:HSSpecialText[64];
+		char HSSpecialText[64];
 
 		if (GamemodeID == SPR_GAMEMODEID)
 		{
@@ -146,7 +146,7 @@ stock ShowPlayerScores(bool:showText)
 			Format(HSSpecialText, sizeof(HSSpecialText), "Theme: %s", SystemNames[GamemodeID]);
 		}
 
-		for (new i = 1; i <= MaxClients; i++) 
+		for (int i = 1; i <= MaxClients; i++) 
 		{
 			if (IsClientValid(i)) 
 			{
@@ -177,10 +177,10 @@ stock ShowPlayerScores(bool:showText)
 	}
 }
 
-public Hook_Scoreboard(entity)
+public void Hook_Scoreboard(int entity)
 {
-	static totalScoreOffset = -1;
-	new total[MAXPLAYERS+1];
+	static int totalScoreOffset = -1;
+	int total[MAXPLAYERS+1];
 
 	if (totalScoreOffset == -1) 
 	{
@@ -189,7 +189,7 @@ public Hook_Scoreboard(entity)
     
 	GetEntDataArray(entity, totalScoreOffset, total, MaxClients+1);
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i)) 
 		{
@@ -200,12 +200,12 @@ public Hook_Scoreboard(entity)
 	SetEntDataArray(entity, totalScoreOffset, total, MaxClients+1);
 }
 
-stock EndGame()
+stock void EndGame()
 {
 	SetConVarInt(FindConVar("mp_timelimit"), 1);
 	ShowPlayerScores(true);
 
-	new entity = FindEntityByClassname(-1, "game_end");
+	int entity = FindEntityByClassname(-1, "game_end");
 
 	if (entity == -1)
 	{
@@ -223,14 +223,14 @@ stock EndGame()
 	EmitSoundToAll(SYSMUSIC_MAPEND);
 }
 
-stock GetActivePlayers(team = 0, bool:mustbealive = false)
+stock int GetActivePlayers(int team = 0, bool mustbealive = false)
 {
-    new output = 0;
-    for (new i = 1; i <= MaxClients; i++) 
+    int output = 0;
+    for (int i = 1; i <= MaxClients; i++) 
 	{
         if (IsClientInGame(i)) 
 		{
-			new currentTeam = GetClientTeam(i);
+			int currentTeam = GetClientTeam(i);
 			if (((team == 0 && currentTeam >= 2) || (team > 0 && currentTeam == team)) && (!mustbealive || IsPlayerAlive(i)))
 			{
 				output += 1;
@@ -240,10 +240,10 @@ stock GetActivePlayers(team = 0, bool:mustbealive = false)
     return output;
 }
 
-stock UpdatePlayerIndexes(bool:mustbealive = false)
+stock void UpdatePlayerIndexes(bool mustbealive = false)
 {
-	new id = 0;
-	for (new i = 1; i <= MaxClients; i++)
+	int id = 0;
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		if (IsClientValid(i) && (!mustbealive || IsPlayerAlive(i)))
 		{
@@ -253,7 +253,7 @@ stock UpdatePlayerIndexes(bool:mustbealive = false)
 	}
 }
 
-stock ResetGamemode()
+stock void ResetGamemode()
 {
 	GamemodeStatus = GameStatus_WaitingForPlayers;
 
@@ -276,7 +276,7 @@ stock ResetGamemode()
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 
-	for (new i = 1; i <= MaxClients; i++)
+	for (int i = 1; i <= MaxClients; i++)
 	{
 		PlayerScore[i] = 0;
 		PlayerStatus[i] = PlayerStatus_NotWon;
@@ -285,7 +285,7 @@ stock ResetGamemode()
 	}
 }
 
-stock ReverseString(const String:input[], String:buffer[], size)
+stock void ReverseString(const char[] input, char[] buffer, int size)
 {
 	new String:rewritten[size];
 	new rc = 0;

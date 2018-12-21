@@ -1,19 +1,19 @@
 #define PRECACHEMANFIEST_URL "https://gemini.software/oss/github_warioware/mtf2/gamedata"
 
-stock WebAPI_DownloadPrecacheManifest()
+stock void WebAPI_DownloadPrecacheManifest()
 {
-	new HTTPRequestHandle:hRequest = Steam_CreateHTTPRequest(HTTPMethod_GET, PRECACHEMANFIEST_URL);
+	HTTPRequestHandle hRequest = Steam_CreateHTTPRequest(HTTPMethod_GET, PRECACHEMANFIEST_URL);
 	Steam_SetHTTPRequestHeaderValue(hRequest, "Pragma", "no-cache");
 	Steam_SetHTTPRequestHeaderValue(hRequest, "Cache-Control", "no-cache");
 	Steam_SetHTTPRequestNetworkActivityTimeout(hRequest, 60); // IWA might be updating / recompiling. Allow 60 seconds leanway - otherwise the IWA is very quick.
 	Steam_SendHTTPRequest(hRequest, PrecacheManifest_OnHttpRequestComplete);
 }
 
-public PrecacheManifest_OnHttpRequestComplete(HTTPRequestHandle:HTTPRequest, bool:requestSuccessful, HTTPStatusCode:statusCode)
+public int PrecacheManifest_OnHttpRequestComplete(HTTPRequestHandle HTTPRequest, bool requestSuccessful, HTTPStatusCode statusCode, int contextData)
 {
 	if (requestSuccessful && statusCode == HTTPStatusCode_OK)
 	{
-		decl String:manifestPath[128];
+		char manifestPath[128];
 		BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/PrecacheList.txt");
 		Steam_WriteHTTPResponseBody(HTTPRequest, manifestPath);
 
@@ -21,8 +21,8 @@ public PrecacheManifest_OnHttpRequestComplete(HTTPRequestHandle:HTTPRequest, boo
 	}
 	else
 	{
-		decl String:sError[256];
-		FormatEx(sError, sizeof(sError), "Failed to download new gamedata from update server. (status code %i, url: %s)", _:statusCode, PRECACHEMANFIEST_URL);
+		char sError[256];
+		FormatEx(sError, sizeof(sError), "Failed to download new gamedata from update server. (status code %i, url: %s)", view_as<int>(statusCode), PRECACHEMANFIEST_URL);
 		LogError(sError);
 	}
 

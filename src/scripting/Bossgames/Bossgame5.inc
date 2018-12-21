@@ -24,7 +24,7 @@ public void Bossgame5_OnMapStart()
 	PrefetchSound("ui/chime_rd_2base_pos.wav");
 }
 
-public bool:Bossgame5_OnCheck()
+public bool Bossgame5_OnCheck()
 {
 	switch (SpecialRoundID)
 	{
@@ -38,7 +38,7 @@ public bool:Bossgame5_OnCheck()
 	return true;
 }
 
-public Bossgame5_OnMinigameSelectedPre()
+public void Bossgame5_OnMinigameSelectedPre()
 {
 	if (BossgameID == 5)
 	{
@@ -55,7 +55,7 @@ public Bossgame5_OnMinigameSelectedPre()
 	}
 }
 
-public Bossgame5_OnMinigameSelected(client)
+public void Bossgame5_OnMinigameSelected(int client)
 {
 	if (IsMinigameActive && BossgameID == 5 && IsClientValid(client))
 	{
@@ -63,11 +63,11 @@ public Bossgame5_OnMinigameSelected(client)
 		TF2_SetPlayerClass(client, TFClass_Engineer);
 		ResetWeapon(client, true);
 
-		new Float:pos[3];
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3] = { 0.0, 90.0, 0.0 };
+		float pos[3];
+		float vel[3] = { 0.0, 0.0, 0.0 };
+		float ang[3] = { 0.0, 90.0, 0.0 };
 
-		new team = GetClientTeam(client);
+		int team = GetClientTeam(client);
 
 		if (team == 2) // RED
 		{
@@ -90,7 +90,7 @@ public Bossgame5_OnMinigameSelected(client)
 	}
 }
 
-public Bossgame5_OnPlayerDeath(victim, attacker)
+public void Bossgame5_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && BossgameID == 5 && IsClientValid(victim))
 	{
@@ -98,16 +98,16 @@ public Bossgame5_OnPlayerDeath(victim, attacker)
 	}
 }
 
-public Bossgame5_OnBossStopAttempt()
+public void Bossgame5_OnBossStopAttempt()
 {
 	if (IsMinigameActive && BossgameID == 5)
 	{
 		Bossgame5_CanCheckPosition = true;
-		new alivePlayers = 0;
-		new successfulPlayers = 0;
-		new pendingPlayers = 0;
+		int alivePlayers = 0;
+		int successfulPlayers = 0;
+		int pendingPlayers = 0;
 
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientInGame(i) && IsPlayerAlive(i))
 			{
@@ -136,15 +136,15 @@ public Bossgame5_OnBossStopAttempt()
 	}
 }
 
-public Bossgame5_OnGameFrame()
+public void Bossgame5_OnGameFrame()
 {
 	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding && Bossgame5_CanCheckPosition) 
 	{
-		for (new i = 1; i <= MaxClients; i++)
+		for (int i = 1; i <= MaxClients; i++)
 		{
 			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
 			{
-				new Float:clientPos[3];
+				float clientPos[3];
 				GetClientAbsOrigin(i, clientPos);
 
 				if (clientPos[1] > -1790.0)

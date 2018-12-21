@@ -102,7 +102,7 @@ public void Minigame2_OnSelection(int client)
 	}
 }
 
-public Minigame2_OnPlayerDeath(int victim, int attacker)
+public void Minigame2_OnPlayerDeath(int victim, int attacker)
 {
 	if (IsMinigameActive && MinigameID == 2)
 	{

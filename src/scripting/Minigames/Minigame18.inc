@@ -8,7 +8,7 @@ char Minigame18_SniperTargets[4][64];
 int Minigame18_TargetEntIndex = -1;
 int Minigame18_TargetModel = 0;
 
-public Minigame18_EntryPoint()
+public void Minigame18_EntryPoint()
 {
 	Minigame18_SniperTargets[0] = "models/props_training/target_scout.mdl";
 	Minigame18_SniperTargets[1] = "models/props_training/target_demoman.mdl";
@@ -21,7 +21,7 @@ public Minigame18_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame18_OnMinigameFinish);
 }
 
-public Minigame18_OnMapStart()
+public void Minigame18_OnMapStart()
 {
 	for (int i = 0; i < 4; i++)
 	{

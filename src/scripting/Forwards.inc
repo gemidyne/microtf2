@@ -10,7 +10,7 @@
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnMapStart;
+Handle GlobalForward_OnMapStart;
 
 /**
  * Forward is called when a Minigame is being preloaded.
@@ -20,7 +20,7 @@ new Handle:GlobalForward_OnMapStart;
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigamePreload;
+Handle GlobalForward_OnMinigamePreload;
 
 /**
  * Forward is called just before a Minigame is Selected
@@ -28,7 +28,7 @@ new Handle:GlobalForward_OnMinigamePreload;
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigameSelectedPre;
+Handle GlobalForward_OnMinigameSelectedPre;
 
 /**
  * Forward is called when a Minigame is Selected.
@@ -36,7 +36,7 @@ new Handle:GlobalForward_OnMinigameSelectedPre;
  * @param Client to target
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigameSelected;
+Handle GlobalForward_OnMinigameSelected;
 
 /**
  * Forward is called just after a Minigame is Selected.
@@ -44,7 +44,7 @@ new Handle:GlobalForward_OnMinigameSelected;
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigameSelectedPost;
+Handle GlobalForward_OnMinigameSelectedPost;
 
 /**
  * Forward is called just before a Minigame finishes.
@@ -52,7 +52,7 @@ new Handle:GlobalForward_OnMinigameSelectedPost;
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigameFinishPre;
+Handle GlobalForward_OnMinigameFinishPre;
 
 /**
  * Forward is called when a Minigame finishes.
@@ -60,7 +60,7 @@ new Handle:GlobalForward_OnMinigameFinishPre;
  * @param Client to target
  * @noreturn
  */
-new Handle:GlobalForward_OnMinigameFinish;
+Handle GlobalForward_OnMinigameFinish;
 
 /**
  * Forward is called on every game frame. 
@@ -69,7 +69,7 @@ new Handle:GlobalForward_OnMinigameFinish;
  * @noparams
  * @noreturn
  */
-new Handle:GlobalForward_OnGameFrame;
+Handle GlobalForward_OnGameFrame;
 
 /**
  * Forward is called when an entity is created.
@@ -78,7 +78,7 @@ new Handle:GlobalForward_OnGameFrame;
  * @param Entity Classname
  * @noreturn
  */
-new Handle:GlobalForward_OnEntityCreated;
+Handle GlobalForward_OnEntityCreated;
 
 /**
  * Forward is called when PropBroken event is fired.
@@ -86,7 +86,7 @@ new Handle:GlobalForward_OnEntityCreated;
  * @param Client who broke the prop
  * @noreturn
  */
-new Handle:GlobalForward_OnPropBroken;
+Handle GlobalForward_OnPropBroken;
 
 /**
  * Forward is called when a Player successfully performs a Sticky Jump.
@@ -94,7 +94,7 @@ new Handle:GlobalForward_OnPropBroken;
  * @param Client who performed the Sticky Jump
  * @noreturn
  */
-new Handle:GlobalForward_OnStickyJump;
+Handle GlobalForward_OnStickyJump;
 
 /**
  * Forward is called when a Player successfully performs a Rocket Jump.
@@ -102,7 +102,7 @@ new Handle:GlobalForward_OnStickyJump;
  * @param Client who performed the Rocket Jump
  * @noreturn
  */
-new Handle:GlobalForward_OnRocketJump;
+Handle GlobalForward_OnRocketJump;
 
 /**
  * Forward is called when a Player successfully builds an object (Sentry, Dispenser, Teleporter).
@@ -111,7 +111,7 @@ new Handle:GlobalForward_OnRocketJump;
  * @param Edict of entity that was built.
  * @noreturn
  */
-new Handle:GlobalForward_OnBuildObject;
+Handle GlobalForward_OnBuildObject;
 
 /**
  * Forward is called when a Player dies.
@@ -120,7 +120,7 @@ new Handle:GlobalForward_OnBuildObject;
  * @param Client who was the Attacker
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerDeath;
+Handle GlobalForward_OnPlayerDeath;
 
 /**
  * Forward is called when a Player gets hurt.
@@ -129,7 +129,7 @@ new Handle:GlobalForward_OnPlayerDeath;
  * @param Client who was the Attacker
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerHurt;
+Handle GlobalForward_OnPlayerHurt;
 
 /**
  * Forward is called when a Player takes damage (SDKHook).
@@ -139,7 +139,7 @@ new Handle:GlobalForward_OnPlayerHurt;
  * @param Damage amount
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerTakeDamage;
+Handle GlobalForward_OnPlayerTakeDamage;
 
 /**
  * Forward is called when a Player gets Jarate thrown onto them.
@@ -148,7 +148,7 @@ new Handle:GlobalForward_OnPlayerTakeDamage;
  * @param Client who was the Attacker
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerJarated;
+Handle GlobalForward_OnPlayerJarated;
 
 /**
  * Forward is called when a Player changes their class.
@@ -156,7 +156,7 @@ new Handle:GlobalForward_OnPlayerJarated;
  * @param Client who is changing class
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerClassChange;
+Handle GlobalForward_OnPlayerClassChange;
 
 /**
  * Forward is called when a Player gets stunned.
@@ -165,7 +165,7 @@ new Handle:GlobalForward_OnPlayerClassChange;
  * @param Client who hit the ball to the victim (Attacker)
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerStunned;
+Handle GlobalForward_OnPlayerStunned;
 
 /**
  * Forward is called when a Player's Critical Chance is calculated.
@@ -175,7 +175,7 @@ new Handle:GlobalForward_OnPlayerStunned;
  * @param Weapon Name 
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerCalculateCritical;
+Handle GlobalForward_OnPlayerCalculateCritical;
 
 /**
  * Forward is called when a Player runs a command.
@@ -188,7 +188,7 @@ new Handle:GlobalForward_OnPlayerCalculateCritical;
  * @param Weapon
  * @noreturn
  */
-new Handle:GlobalForward_OnPlayerRunCmd;
+Handle GlobalForward_OnPlayerRunCmd;
 
 /**
  * Forward is called when a Boss Minigame will be attempted to stop. 
@@ -196,7 +196,7 @@ new Handle:GlobalForward_OnPlayerRunCmd;
  * @noparams
  * @returns True / False depending if the Boss can be stopped now.
  */
-new Handle:GlobalForward_OnBossStopAttempt;
+Handle GlobalForward_OnBossStopAttempt;
 
 stock void InitializeForwards()
 {
