@@ -154,6 +154,7 @@ Handle GlobalForward_OnPlayerJarated;
  * Forward is called when a Player changes their class.
  *
  * @param Client who is changing class
+ * @param Class the client changed to.
  * @noreturn
  */
 Handle GlobalForward_OnPlayerClassChange;

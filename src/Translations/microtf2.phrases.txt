@@ -90,6 +90,46 @@
 	{
 		"en"		"Spycrabs must crouch and look up!"
 	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"en"		"CHANGE CLASS!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"en"		"CHANGE CLASS TO SCOUT!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"en"		"CHANGE CLASS TO SOLDIER!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"en"		"CHANGE CLASS TO PYRO!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"en"		"CHANGE CLASS TO DEMOMAN!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"en"		"CHANGE CLASS TO HEAVY!"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"en"		"CHANGE CLASS TO ENGINEER!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"en"		"CHANGE CLASS TO MEDIC!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"en"		"CHANGE CLASS TO SNIPER!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"en"		"CHANGE CLASS TO SPY!"
+	}
 	"Minigame20_Caption_Drink"
 	{
 		"en"		"DRINK!"

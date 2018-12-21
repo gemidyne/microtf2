@@ -78,7 +78,9 @@ public void Minigame9_OnGameFrame()
 					{
 						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
+							char text[64];
+							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
+							MinigameCaption[i] = text;
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}
@@ -99,7 +101,9 @@ public void Minigame9_OnGameFrame()
 
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
+							char text[64];
+							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
+							MinigameCaption[i] = text;
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}
@@ -120,7 +124,9 @@ public void Minigame9_OnGameFrame()
 
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
+							char text[64];
+							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
+							MinigameCaption[i] = text;
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}

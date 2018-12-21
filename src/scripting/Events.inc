@@ -256,11 +256,13 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	int newClass = GetEventInt(event, "class");
 
 	if (GlobalForward_OnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
 		Call_StartForward(GlobalForward_OnPlayerClassChange);
 		Call_PushCell(client);
+		Call_PushCell(newClass);
 		Call_Finish();
 	}
 }
