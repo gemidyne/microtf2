@@ -39,19 +39,19 @@
 #define PLUGIN_VERSION "2019 devtest"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
-#include Header.inc
-#include Forwards.inc
-#include Weapons.inc
-#include System.inc
-#include MinigameSystem.inc
-#include PrecacheSystem.inc
-#include SecuritySystem.inc
-#include Events.inc
-#include SpecialRounds.inc
-#include Internal.inc
-#include Stocks.inc
-#include Commands.inc
-#include InternalWebAPI.inc
+#include "Header.sp"
+#include "Forwards.sp"
+#include "Weapons.sp"
+#include "System.sp"
+#include "MinigameSystem.sp"
+#include "PrecacheSystem.sp"
+#include "SecuritySystem.sp"
+#include "Events.sp"
+#include "SpecialRounds.sp"
+#include "Internal.sp"
+#include "Stocks.sp"
+#include "Commands.sp"
+#include "InternalWebAPI.sp"
 
 public Plugin myinfo = 
 {
