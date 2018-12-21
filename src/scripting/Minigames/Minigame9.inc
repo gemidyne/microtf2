@@ -44,12 +44,12 @@ public void Minigame9_GetDynamicCaption(int client)
 
 		switch (Minigame9_Mode)
 		{
-			case 1: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Taunt", client);
-			case 2: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Taunt", client);
-			case 3: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Jump", client);
-			case 4: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Jump", client);
-			case 5: Format(text, sizeof(text), "%T", "Minigame9_SimonSays_Crouch", client);
-			case 6: Format(text, sizeof(text), "%T", "Minigame9_SomeoneSays_Crouch", client);
+			case 1: Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonSaysTaunt", client);
+			case 2: Format(text, sizeof(text), "%T", "Minigame9_Caption_SomeoneSaysTaunt", client);
+			case 3: Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonSaysJump", client);
+			case 4: Format(text, sizeof(text), "%T", "Minigame9_Caption_SomeoneSaysJump", client);
+			case 5: Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonSaysCrouch", client);
+			case 6: Format(text, sizeof(text), "%T", "Minigame9_Caption_SomeoneSaysCrouch", client);
 		}
 
 		MinigameCaption[client] = text; 
@@ -78,7 +78,7 @@ public void Minigame9_OnGameFrame()
 					{
 						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = "(Simon didn\'t say it...)";
+							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}
@@ -99,7 +99,7 @@ public void Minigame9_OnGameFrame()
 
 						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = "(Simon didn\'t say it...)";
+							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}
@@ -120,7 +120,7 @@ public void Minigame9_OnGameFrame()
 
 						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
 						{
-							MinigameCaption[i] = "(Simon didn\'t say it...)";
+							MinigameCaption[i] = Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", client);
 							PlayerStatus[i] = PlayerStatus_Failed;
 						}
 					}

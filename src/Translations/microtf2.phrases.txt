@@ -58,29 +58,33 @@
 	{
 		"en"		"Break time! Time to vote for the next map."
 	}
-	"Minigame9_SimonSays_Taunt"
+	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"en"		"SIMON SAYS: TAUNT!"
 	}
-	"Minigame9_SimonSays_Jump"
+	"Minigame9_Caption_SimonSaysJump"
 	{
 		"en"		"SIMON SAYS: JUMP!"
 	}
-	"Minigame9_SimonSays_Crouch"
+	"Minigame9_Caption_SimonSaysCrouch"
 	{
 		"en"		"SIMON SAYS: CROUCH!"
 	}
-	"Minigame9_SomeoneSays_Taunt"
+	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
 		"en"		"SOMEONE SAYS: TAUNT!"
 	}
-	"Minigame9_SomeoneSays_Jump"
+	"Minigame9_Caption_SomeoneSaysJump"
 	{
 		"en"		"SOMEONE SAYS: JUMP!"
 	}
-	"Minigame9_SomeoneSays_Crouch"
+	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
 		"en"		"SOMEONE SAYS: CROUCH!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"en"		"(Simon didn't say it..)
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
