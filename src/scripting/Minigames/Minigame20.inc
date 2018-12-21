@@ -16,7 +16,6 @@ public void Minigame20_EntryPoint()
 
 public bool Minigame20_OnCheck()
 {
-	// TODO: Fix usage of lunchbox items
 	return true;
 }
 
@@ -75,19 +74,19 @@ public void Minigame20_GetDynamicCaption(int client)
 		{
 			case 0:
 			{
-				text = "DRINK!";
+				text = Format(text, sizeof(text), "%T", "Minigame20_Caption_Drink", client);
 			}
 			case 1:
 			{
-				text = "DRINK!";
+				text = Format(text, sizeof(text), "%T", "Minigame20_Caption_Drink", client);
 			}
 			case 2:
 			{
-				text = "EAT!";
+				text = Format(text, sizeof(text), "%T", "Minigame20_Caption_Eat", client);
 			}	
 			case 3:
 			{	
-				text = "EAT!";
+				text = Format(text, sizeof(text), "%T", "Minigame20_Caption_Eat", client);
 			}
 		}
 

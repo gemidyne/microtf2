@@ -86,4 +86,12 @@
 	{
 		"en"		"Spycrabs must crouch and look up!"
 	}
+	"Minigame20_Caption_Drink"
+	{
+		"en"		"DRINK!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"en"		"EAT!"
+	}
 }
