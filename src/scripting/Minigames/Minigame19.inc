@@ -92,7 +92,7 @@ public void Minigame19_GetDynamicCaption(int client)
 
 public void Minigame19_OnPlayerClassChange(int client, int class)
 {
-	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client) && IsPlayerParticipant[client])
+	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client) && IsPlayerParticipant[client] && PlayerStatus[client] != PlayerStatus_Failed)
 	{
 		TFClassType playerClass = TF2_GetPlayerClass(class);
 
@@ -105,6 +105,10 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 		{
 			// Must match expected class.
 			ClientWonMinigame(client);
+		}
+		else
+		{
+			PlayerStatus[client] = PlayerStatus_Failed;
 		}
 	}
 }
