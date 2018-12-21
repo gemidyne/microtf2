@@ -32,3 +32,7 @@ build/
 
 # Ignore compressed files
 *.bz2
+
+# Ignore Tsukuru generated map files
+assets/map/generated/
+assets/util/utilities/
