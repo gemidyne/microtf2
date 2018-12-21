@@ -26,41 +26,41 @@ float BossgameLength[MAXIMUM_MINIGAMES];
 
 char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 
-#include MinigameStocks.inc
+#include "MinigameStocks.sp"
 
 // Minigames
-#include Minigames/Minigame1.inc
-#include Minigames/Minigame2.inc
-#include Minigames/Minigame3.inc
-#include Minigames/Minigame4.inc
-#include Minigames/Minigame5.inc
-#include Minigames/Minigame6.inc
-#include Minigames/Minigame7.inc
-#include Minigames/Minigame8.inc
-#include Minigames/Minigame9.inc
-#include Minigames/Minigame10.inc
-#include Minigames/Minigame11.inc
-#include Minigames/Minigame12.inc
-#include Minigames/Minigame13.inc
-#include Minigames/Minigame14.inc 
-#include Minigames/Minigame15.inc
-#include Minigames/Minigame16.inc
-#include Minigames/Minigame17.inc
-#include Minigames/Minigame18.inc
-#include Minigames/Minigame19.inc
-#include Minigames/Minigame20.inc
-#include Minigames/Minigame21.inc
-#include Minigames/Minigame22.inc
-#include Minigames/Minigame23.inc
-#include Minigames/Minigame24.inc
-#include "Minigames/Minigame25.inc"
+#include "Minigames/Minigame1.sp"
+#include "Minigames/Minigame2.sp"
+#include "Minigames/Minigame3.sp"
+#include "Minigames/Minigame4.sp"
+#include "Minigames/Minigame5.sp"
+#include "Minigames/Minigame6.sp"
+#include "Minigames/Minigame7.sp"
+#include "Minigames/Minigame8.sp"
+#include "Minigames/Minigame9.sp"
+#include "Minigames/Minigame10.sp"
+#include "Minigames/Minigame11.sp"
+#include "Minigames/Minigame12.sp"
+#include "Minigames/Minigame13.sp"
+#include "Minigames/Minigame14.sp" 
+#include "Minigames/Minigame15.sp"
+#include "Minigames/Minigame16.sp"
+#include "Minigames/Minigame17.sp"
+#include "Minigames/Minigame18.sp"
+#include "Minigames/Minigame19.sp"
+#include "Minigames/Minigame20.sp"
+#include "Minigames/Minigame21.sp"
+#include "Minigames/Minigame22.sp"
+#include "Minigames/Minigame23.sp"
+#include "Minigames/Minigame24.sp"
+#include "Minigames/Minigame25.sp"
 
 // Bossgames
-#include Bossgames/Bossgame1.inc
-#include Bossgames/Bossgame2.inc
-#include Bossgames/Bossgame3.inc
-#include Bossgames/Bossgame4.inc
-#include "Bossgames/Bossgame5.inc"
+#include "Bossgames/Bossgame1.sp"
+#include "Bossgames/Bossgame2.sp"
+#include "Bossgames/Bossgame3.sp"
+#include "Bossgames/Bossgame4.sp"
+#include "Bossgames/Bossgame5.sp"
 
 public void InitializeMinigames()
 {
