@@ -115,7 +115,13 @@ public void SpecialRound_PrintRandomNameWhenChoosing()
 		strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
 	}
 
-	PrintCenterTextAll("NEW CONDITION: %s!", buffer);
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		if (IsClientInGame(i) && !IsFakeClient(i))
+		{
+			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, buffer);
+		}
+	}
 }
 
 public void SelectNewSpecialRound()
@@ -167,12 +173,12 @@ stock void PrintSelectedSpecialRound()
 
 	char name[SPR_NAME_LENGTH];
 	ToUpperString(SpecialRounds[SpecialRoundID], name, sizeof(name));
-	PrintCenterTextAll("NEW CONDITION: %s!", name);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i))
+		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
+			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, name);
 			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRounds[SpecialRoundID]);
 			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRoundDescriptions[SpecialRoundID]);
 		}
@@ -266,17 +272,17 @@ stock void SpecialRound_SetupEnv()
 	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
 }
 
-stock void SetupSPR(int i)
+stock void SetupSPR(int client)
 {
-	if (IsClientInGame(i))
+	if (IsClientInGame(client))
 	{
-		Special_Bird(i);
+		Special_Bird(client);
 
-		ResizePlayer(i, (SpecialRoundID == 14) ? 0.3 : 1.0);
+		ResizePlayer(client, (SpecialRoundID == 14) ? 0.3 : 1.0);
 
 		if (SpecialRoundID != 15)
 		{
-			SetEntPropFloat(i, Prop_Send, "m_flHeadScale", 1.0);
+			SetEntPropFloat(client, Prop_Send, "m_flHeadScale", 1.0);
 		}
 
 		if (GamemodeID == SPR_GAMEMODEID)
@@ -286,56 +292,56 @@ stock void SetupSPR(int i)
 				case 0:
 				{
 					SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (~FCVAR_CHEAT));
-					ClientCommand(i, "thirdperson");
+					ClientCommand(client, "thirdperson");
 					SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (FCVAR_CHEAT));
 				}
 
 				default:
 				{
 					SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (~FCVAR_CHEAT));
-					ClientCommand(i, "firstperson");
+					ClientCommand(client, "firstperson");
 					SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (FCVAR_CHEAT));
 				}
 			}
 
-			if (SpecialRoundID == 17 && !IsPlayerParticipant[i])
+			if (SpecialRoundID == 17 && !IsPlayerParticipant[client])
 			{
-				IsPlayerCollisionsEnabled(i, false);
+				IsPlayerCollisionsEnabled(client, false);
 
-				SetEntityRenderFx(i, RENDERFX_DISTORT);
-				SetEntityRenderMode(i, RENDER_TRANSALPHA);
-				SetEntityRenderColor(i, _, _, _, 70);
+				SetEntityRenderFx(client, RENDERFX_DISTORT);
+				SetEntityRenderMode(client, RENDER_TRANSALPHA);
+				SetEntityRenderColor(client, _, _, _, 70);
 			}
 			else if (SpecialRoundID == 12 && !IsBonusRound)
 			{
-				SetEntityRenderFx(i, RENDERFX_NONE);
-				SetEntityRenderMode(i, RENDER_NONE);
-				SetEntityRenderColor(i, 255, 255, 255, 0);
+				SetEntityRenderFx(client, RENDERFX_NONE);
+				SetEntityRenderMode(client, RENDER_NONE);
+				SetEntityRenderColor(client, 255, 255, 255, 0);
 			}
 			else
 			{
-				SetEntityRenderFx(i, RENDERFX_NONE);
-				SetEntityRenderMode(i, RENDER_NORMAL);
-				SetEntityRenderColor(i, 255, 255, 255, 255);
+				SetEntityRenderFx(client, RENDERFX_NONE);
+				SetEntityRenderMode(client, RENDER_NORMAL);
+				SetEntityRenderColor(client, 255, 255, 255, 255);
 			}
 		}
 		else
 		{
-			if (IsPlayerParticipant[i])
+			if (IsPlayerParticipant[client])
 			{
-				SetEntityRenderFx(i, RENDERFX_NONE);
-				SetEntityRenderMode(i, RENDER_NORMAL);
-				SetEntityRenderColor(i, 255, 255, 255, 255);
+				SetEntityRenderFx(client, RENDERFX_NONE);
+				SetEntityRenderMode(client, RENDER_NORMAL);
+				SetEntityRenderColor(client, 255, 255, 255, 255);
 			}
 			else
 			{
-				SetEntityRenderFx(i, RENDERFX_DISTORT);
-				SetEntityRenderMode(i, RENDER_TRANSALPHA);
-				SetEntityRenderColor(i, _, _, _, 70);
+				SetEntityRenderFx(client, RENDERFX_DISTORT);
+				SetEntityRenderMode(client, RENDER_TRANSALPHA);
+				SetEntityRenderColor(client, _, _, _, 70);
 			}
 
 			SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (~FCVAR_CHEAT));
-			ClientCommand(i, "firstperson");
+			ClientCommand(client, "firstperson");
 			SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (FCVAR_CHEAT));
 		}
 	}

@@ -38,6 +38,11 @@
 		"#format"	"{1:s}"
 		"en"		"{1}'s Theme"
 	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"	"{1:s}"
+		"en"		"SPECIAL ROUND: %s!"
+	}
 	"PlayerSpawn_RespawnNotice"
 	{
 		"en"		"You will be respawned once the current minigame or boss has finished."

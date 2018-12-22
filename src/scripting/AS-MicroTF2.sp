@@ -137,8 +137,10 @@ public void OnMapStart()
 
 		if (GlobalForward_OnMapStart != INVALID_HANDLE)
 		{
+			LogMessage("Calling OnMapStart forward... ");
 			Call_StartForward(GlobalForward_OnMapStart);
 			Call_Finish();
+			LogMessage("Called OnMapStart forward.");
 		}
 		else
 		{
