@@ -47,17 +47,12 @@ stock void PreloadSound(const char[] sound)
 
 public Action GamemodeAdvertisement(Handle timer)
 {
-	CPrintToChatAll("%sYou're playing MicroTF2! - v%s", PLUGIN_PREFIX, PLUGIN_VERSION);
+	CPrintToChatAll("%sYou're playing WarioWare! - v%s", PLUGIN_PREFIX, PLUGIN_VERSION);
 	CPrintToChatAll("%sBy Stevu (Anarchy Steven), TestingLol & Mario6493!", PLUGIN_PREFIX);
 	CPrintToChatAll("%shttps://gemini.software/", PLUGIN_PREFIX);
 
 	return Plugin_Continue;
 }
-
-//stock Handle:CreateGameTimer(Float:interval, Timer:func, any:data=INVALID_HANDLE, flags=0)
-//{
-//	return CreateTimer(interval, func, data, flags);
-//}
 
 stock int GetSoundMultiplier()
 {
@@ -163,11 +158,11 @@ stock void ShowPlayerScores(bool showText)
 				if (MaxRounds == 0)
 				{
 					// If there is no max rounds, just display what round it is
-					ShowSyncHudText(i, HudSync_Round, "Round: %d", RoundsPlayed);
+					ShowSyncHudText(i, HudSync_Round, "Round %d", RoundsPlayed + 1);
 				}
 				else
 				{
-					ShowSyncHudText(i, HudSync_Round, "Round: %d of %d", RoundsPlayed, MaxRounds);
+					ShowSyncHudText(i, HudSync_Round, "Round %d of %d", RoundsPlayed + 1, MaxRounds);
 				}
 
 				SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
