@@ -228,18 +228,9 @@ stock void ChooseRandomClass(int client)
 {
 	if (IsClientInGame(client))
 	{
-		switch (GetRandomInt(0, 8))
-		{
-			case 0: TF2_SetPlayerClass(client, TFClass_Scout);
-			case 1: TF2_SetPlayerClass(client, TFClass_Soldier);
-			case 2: TF2_SetPlayerClass(client, TFClass_Pyro);
-			case 3: TF2_SetPlayerClass(client, TFClass_DemoMan);
-			case 4: TF2_SetPlayerClass(client, TFClass_Heavy);
-			case 5: TF2_SetPlayerClass(client, TFClass_Engineer);
-			case 6: TF2_SetPlayerClass(client, TFClass_Medic);
-			case 7: TF2_SetPlayerClass(client, TFClass_Sniper);
-			case 8: TF2_SetPlayerClass(client, TFClass_Spy);
-		}
+		TFClassType newClass = view_as<TFClassType>(GetRandomInt(1, 9));
+
+		TF2_SetPlayerClass(client, newClass);
 	}
 }
 

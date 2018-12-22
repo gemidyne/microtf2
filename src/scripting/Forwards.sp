@@ -220,7 +220,7 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerHurt = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerTakeDamage = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
 	GlobalForward_OnPlayerJarated = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerClassChange = CreateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnPlayerClassChange = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerStunned = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerCalculateCritical = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);

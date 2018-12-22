@@ -10,6 +10,7 @@ public void Minigame19_EntryPoint()
 {
 	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, Minigame19_OnPlayerClassChange);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame19_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame19_OnMinigameSelected);
 }
 
 public bool Minigame19_OnCheck()
@@ -24,6 +25,24 @@ public void Minigame19_OnMinigameSelectedPre()
 		Minigame19_ClassMode = view_as<TFClassType>(GetRandomInt(0, 9));
 
 		IsBlockingDeathCommands = false;
+	}
+}
+
+public void Minigame19_OnMinigameSelected(int client)
+{
+	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client))
+	{
+		TFClassType playerClass = TF2_GetPlayerClass(client);
+
+		if (Minigame19_ClassMode != TFClass_Unknown && playerClass == Minigame19_ClassMode)
+		{
+			while (playerClass == Minigame19_ClassMode)
+			{
+				ChooseRandomClass(client);
+
+				playerClass = TF2_GetPlayerClass(client);
+			}
+		}
 	}
 }
 
@@ -94,7 +113,7 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 {
 	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client) && IsPlayerParticipant[client] && PlayerStatus[client] != PlayerStatus_Failed)
 	{
-		TFClassType playerClass = TF2_GetPlayerClass(class);
+		TFClassType playerClass = view_as<TFClassType>(class);
 
 		if (Minigame19_ClassMode == TFClass_Unknown)
 		{
