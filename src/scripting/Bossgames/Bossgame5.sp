@@ -20,8 +20,8 @@ public void Bossgame5_EntryPoint()
 
 public void Bossgame5_OnMapStart()
 {
-	PrefetchSound("ui/hitsound_retro1.wav");
-	PrefetchSound("ui/chime_rd_2base_pos.wav");
+	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
 }
 
 public bool Bossgame5_OnCheck()
