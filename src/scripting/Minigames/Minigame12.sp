@@ -18,7 +18,7 @@ public bool Minigame12_OnCheck()
 		// If Low Gravity special round, do not run.
 		return false;
 	}
-	
+
 	return true;
 }
 
@@ -81,17 +81,17 @@ public void Minigame12_OnMinigameFinish()
 
 public Action Timer_Minigame12_TriggerWater(Handle timer) 
 {
-	int triggerer = CreateEntityByName("prop_physics");
+	int entity = CreateEntityByName("prop_physics");
 
-	if (IsValidEdict(triggerer))
+	if (IsValidEdict(entity))
 	{
-		DispatchKeyValue(triggerer, "model", "models/props_farm/wooden_barrel.mdl");
-		DispatchSpawn(triggerer);
+		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+		DispatchSpawn(entity);
 
 		float pos[3] = { -1408.0, -1328.0, 1618.0 };
 
-		TeleportEntity(triggerer, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, triggerer);
+		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
+		CreateTimer(0.25, Timer_RemoveEntity, entity);
 	}
 
 	return Plugin_Handled;
