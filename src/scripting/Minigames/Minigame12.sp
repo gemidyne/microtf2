@@ -13,6 +13,12 @@ public void Minigame12_EntryPoint()
 
 public bool Minigame12_OnCheck()
 {
+	if (SpecialRoundID == 3)
+	{
+		// If Low Gravity special round, do not run.
+		return false;
+	}
+	
 	return true;
 }
 
