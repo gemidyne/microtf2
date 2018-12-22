@@ -108,17 +108,6 @@ stock int GetLowestScore()
 
 stock void ShowPlayerScores(bool showText)
 {
-	char scoreText[64];
-
-	if (SpecialRoundID == 17)
-	{
-		scoreText = "Minigames";
-	}
-	else
-	{
-		scoreText = "Score";
-	}
-
 	if (showText)
 	{
 		float time = 6.0; // 4 secs with an extra 2 seconds incase of any GameLogic event
@@ -130,43 +119,58 @@ stock void ShowPlayerScores(bool showText)
 			time += BossgameLength[BossgameID];
 		}
 
-		char HSSpecialText[64];
-
-		if (GamemodeID == SPR_GAMEMODEID)
-		{
-			Format(HSSpecialText, sizeof(HSSpecialText), SpecialRounds[SpecialRoundID]);
-		}
-		else
-		{
-			Format(HSSpecialText, sizeof(HSSpecialText), "Theme: %s", SystemNames[GamemodeID]);
-		}
-
 		for (int i = 1; i <= MaxClients; i++) 
 		{
 			if (IsClientValid(i)) 
 			{
+				char roundDisplay[32];
+
+				if (MaxRounds > 0)
+				{
+					Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", i, RoundsPlayed + 1, MaxRounds);
+				}
+				else
+				{
+					Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", i, RoundsPlayed + 1);
+				}
+
+				char scoreText[32];
+
+				if (SpecialRoundID == 17)
+				{
+					Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", i, PlayerScore[i]);
+				}
+				else
+				{
+					Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", i, PlayerScore[i]);
+				}
+
+				char themeSpecialText[64];
+
+				if (GamemodeID == SPR_GAMEMODEID)
+				{
+					Format(themeSpecialText, sizeof(themeSpecialText), SpecialRounds[SpecialRoundID]);
+				}
+				else
+				{
+					Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", i, SystemNames[GamemodeID]);
+				}
+
 				ClearSyncHud(i, HudSync_Score);
 				ClearSyncHud(i, HudSync_Round);
 				ClearSyncHud(i, HudSync_Special);
 
+				// SCORE
 				SetHudTextParamsEx(-1.0, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-				ShowSyncHudText(i, HudSync_Score, "%s: %d", scoreText, PlayerScore[i]);
+				ShowSyncHudText(i, HudSync_Score, scoreText);
 
-				// Prepare Hud Params for Round
+				// ROUND INFO
 				SetHudTextParamsEx(0.01, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-
-				if (MaxRounds == 0)
-				{
-					// If there is no max rounds, just display what round it is
-					ShowSyncHudText(i, HudSync_Round, "Round %d", RoundsPlayed + 1);
-				}
-				else
-				{
-					ShowSyncHudText(i, HudSync_Round, "Round %d of %d", RoundsPlayed + 1, MaxRounds);
-				}
-
+				ShowSyncHudText(i, HudSync_Round, roundDisplay);
+			
+				// TOPRIGHT
 				SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
-				ShowSyncHudText(i, HudSync_Special, HSSpecialText);
+				ShowSyncHudText(i, HudSync_Special, themeSpecialText);
 			}
 		}
 	}

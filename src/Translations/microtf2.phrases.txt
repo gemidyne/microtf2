@@ -13,6 +13,31 @@
 		"#format"	"{1:i}"
 		"en"		"The game will start in {1}..."
 	}
+	"Hud_Score_Default"
+	{
+		"#format"	"{1:i}"
+		"en"		"Score: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"	"{1:i}"
+		"en"		"Minigames: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"	"{1:i},{2:i}"
+		"en"		"Round {1} of {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"	"{1:i}"
+		"en"		"Round {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}'s Theme"
+	}
 	"PlayerSpawn_RespawnNotice"
 	{
 		"en"		"You will be respawned once the current minigame or boss has finished."
