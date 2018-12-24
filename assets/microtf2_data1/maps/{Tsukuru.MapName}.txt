@@ -2,5 +2,5 @@ Objective:
 Win as many microgames as possible! The player with the most points, wins the round! 
 At the end of each round, there is a Boss Game. If you complete the boss, you get 5 points on your current score!
 
-Other Notes:
+Other notes:
 The round will speed up gradually during each microgame. There might be special rounds where things will be different.
