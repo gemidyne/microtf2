@@ -29,16 +29,16 @@
 
 #define SYSMUSIC_MAXSTRINGLENGTH 192
 
-#define OVERLAY_BLANK "stsv/microtf2/overlays/blank"
-#define OVERLAY_MINIGAMEBLANK "stsv/microtf2/overlays/minigameblank"
-#define OVERLAY_WON	 "stsv/microtf2/overlays/minigamewin"
-#define OVERLAY_FAIL "stsv/microtf2/overlays/minigamelose"
-#define OVERLAY_SPEEDUP "stsv/microtf2/overlays/speedchange_faster"
-#define OVERLAY_SPEEDDN	"stsv/microtf2/overlays/speedchange_slower"
-#define OVERLAY_BOSS "stsv/microtf2/overlays/bossevent"
-#define OVERLAY_GAMEOVER "stsv/microtf2/overlays/gameover"		
+#define OVERLAY_BLANK ""
+#define OVERLAY_MINIGAMEBLANK "gemidyne/warioware/overlays/minigame_blank"
+#define OVERLAY_WON	 "gemidyne/warioware/overlays/minigame_success"
+#define OVERLAY_FAIL "gemidyne/warioware/overlays/minigame_failure"
+#define OVERLAY_SPEEDUP "gemidyne/warioware/overlays/system_speedup"
+#define OVERLAY_SPEEDDN	"gemidyne/warioware/overlays/system_speeddown"
+#define OVERLAY_BOSS "gemidyne/warioware/overlays/system_bossevent"
+#define OVERLAY_GAMEOVER "gemidyne/warioware/overlays/system_gameover"
 #define OVERLAY_WELCOME "stsv/microtf2/overlays/waitingforplayers"
-#define OVERLAY_SPECIALROUND "stsv/microtf2/overlays/specialround"
+#define OVERLAY_SPECIALROUND "gemidyne/warioware/overlays/system_specialround"
 
 char SystemNames[TOTAL_GAMEMODES+1][32];
 char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXSTRINGLENGTH];
@@ -58,6 +58,7 @@ stock void InitializeSystem()
 	LogMessage("Initializing System...");
 	
 	InitializeForwards();
+	LoadOffsets();
 	InitializeCommands();
 	InitializeSpecialRounds();
 
@@ -191,6 +192,16 @@ public void System_OnMapStart()
 	PrecacheSound("vo/announcer_ends_2sec.wav", true);
 	PrecacheSound("vo/announcer_ends_1sec.wav", true);
 	PrecacheSound("vo/announcer_success.wav", true);
+
+	PrecacheMaterial(OVERLAY_MINIGAMEBLANK);
+	PrecacheMaterial(OVERLAY_WON);
+	PrecacheMaterial(OVERLAY_FAIL);
+	PrecacheMaterial(OVERLAY_SPEEDUP);
+	PrecacheMaterial(OVERLAY_SPEEDDN);
+	PrecacheMaterial(OVERLAY_BOSS);
+	PrecacheMaterial(OVERLAY_GAMEOVER);
+	PrecacheMaterial(OVERLAY_WELCOME);
+	PrecacheMaterial(OVERLAY_SPECIALROUND);
 }
 
 stock int GetGamemodeIDFromSectionName(Handle kv)
@@ -218,4 +229,37 @@ stock void LoadSysMusicType(int gamemodeID, int musicType, Handle kv, const char
 		SystemMusicLength[gamemodeID][musicType] = GetSoundLengthFloat(sndfile);
 		CloseHandle(sndfile);
 	}
+}
+
+stock void LoadOffsets()
+{
+	Offset_Collision = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
+	Offset_WeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
+	Offset_PlayerActiveWeapon = TryFindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
+	Offset_PlayerAmmo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
+}
+
+stock void PrecacheMaterial(const char[] material)
+{
+	char path[64];
+
+	Format(path, sizeof(path), "materials/%s", material);
+
+	PrecacheGeneric(path, true);
+}
+
+stock int TryFindSendPropInfo(const char[] cls, const char[] prop)
+{
+	int offset = FindSendPropInfo(cls, prop);
+
+	if (offset <= 0)
+	{
+		char message[64];
+
+		Format(message, sizeof(message), "Unable to find %s prop on %s.", prop, cls);
+
+		SetFailState(message);
+	}
+
+	return offset;
 }

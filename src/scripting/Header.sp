@@ -101,4 +101,10 @@ Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
 
+/**
+ * Offsets
+ */
 int Offset_Collision;
+int Offset_WeaponBaseClip1;
+int Offset_PlayerActiveWeapon;
+int Offset_PlayerAmmo;

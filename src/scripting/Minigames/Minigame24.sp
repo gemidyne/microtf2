@@ -69,7 +69,7 @@ public void Minigame24_PerformNeedlejump(int i)
 	{
 		int iWeapon = GetPlayerWeaponSlot(i, 0);
 
-		if (IsValidEdict(iWeapon) && GetEntData(iWeapon, FindSendPropInfo("CTFWeaponBase", "m_iClip1")) != 0)
+		if (IsValidEdict(iWeapon) && GetEntData(iWeapon, Offset_WeaponBaseClip1) != 0)
 		{
 			GetClientEyeAngles(i, fEyeAngle);
 			GetEntPropVector(i, Prop_Data, "m_vecVelocity", fVelocity);

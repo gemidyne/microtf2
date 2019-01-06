@@ -101,9 +101,6 @@ public void OnPluginStart()
 	}
 
 	LoadTranslations("microtf2.phrases.txt");
-
-	Offset_Collision = FindSendPropInfo("CBaseEntity", "m_CollisionGroup");
-
 	HookEvents();
 	InitializeSystem();
 }

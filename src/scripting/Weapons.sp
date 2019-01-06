@@ -161,9 +161,8 @@ stock void SetSpeshulAmmo(int client, int weaponEntityId, int newAmmo)
 	if (IsValidEntity(weaponEntityId))
 	{
 		int offset = GetEntProp(weaponEntityId, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
-		int ammoTable = FindSendPropInfo("CTFPlayer", "m_iAmmo");
 
-		SetEntData(client, ammoTable+offset, newAmmo, 4, true);
+		SetEntData(client, Offset_PlayerAmmo+offset, newAmmo, 4, true);
 	}
 }
 

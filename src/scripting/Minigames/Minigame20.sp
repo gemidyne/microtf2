@@ -103,14 +103,7 @@ public void Minigame20_OnGameFrame()
 			if (IsClientValid(i) && IsPlayerParticipant[i] && TF2_IsPlayerInCondition(i, TFCond_Taunting))
 			{	
 				//Credit to Tylerst & Powerlord!
-				int activeWeapon = FindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
-
-				if (activeWeapon <= 0)
-				{
-					SetFailState("Unable to find m_hActiveWeapon offset on CTFPlayer.");
-				}
-
-				int currentWeapon = GetEntDataEnt2(i, activeWeapon);
+				int currentWeapon = GetEntDataEnt2(i, Offset_PlayerActiveWeapon);
 
 				if (IsValidEntity(currentWeapon))
 				{
