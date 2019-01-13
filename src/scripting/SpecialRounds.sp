@@ -169,7 +169,7 @@ stock bool SpecialRound_IsAvailable()
 
 stock void PrintSelectedSpecialRound()
 {
-	EmitSoundToAll(SYSMUSIC_SPECIALROUND_SELECTED);
+	EmitSoundToAll(SYSFX_SELECTED);
 
 	char name[SPR_NAME_LENGTH];
 	ToUpperString(SpecialRounds[SpecialRoundID], name, sizeof(name));

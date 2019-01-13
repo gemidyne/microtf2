@@ -42,6 +42,7 @@
 #include "Header.sp"
 #include "Forwards.sp"
 #include "Weapons.sp"
+#include "Voices.sp"
 #include "System.sp"
 #include "MinigameSystem.sp"
 #include "PrecacheSystem.sp"
@@ -689,7 +690,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
 			{
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
-				PlaySoundToPlayer(i, SystemVocal[SYSFX_VOCAL_NEGATIVE][GetRandomInt(0, 4)]);
+				PlayNegativeVoice(i);
+
 				DisplayOverlayToClient(i, ((SpecialRoundID == 17 && IsPlayerParticipant[i]) || SpecialRoundID != 17) ? OVERLAY_FAIL : OVERLAY_BLANK);
 
 				if (IsPlayerParticipant[i])
@@ -735,7 +737,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				#endif
 
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
-				PlaySoundToPlayer(i, SystemVocal[SYSFX_VOCAL_POSITIVE][GetRandomInt(0, 6)]);
+				PlayPositiveVoice(i);
+
 				DisplayOverlayToClient(i, OVERLAY_WON);
 
 				ResetHealth(i);
@@ -1159,7 +1162,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 					char body[64];
 					Format(body, sizeof(body), "%T", "Intermission_Body", i);
 
-					EmitSoundToClient(i, SYSMUSIC_WAITINGFORPLAYERS);
+					EmitSoundToClient(i, SYSBGM_WAITING);
 
 					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, header);
 					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, body);
@@ -1198,7 +1201,7 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 	{
 		if (IsClientInGame(i) && !IsFakeClient(i))
 		{
-			StopSound(i, SNDCHAN_AUTO, SYSMUSIC_WAITINGFORPLAYERS);
+			StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
 		}
 	}
 
@@ -1220,11 +1223,11 @@ public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 {
 	if (SpeedLevel == 1.0)
 	{
-		EmitSoundToAll(SYSMUSIC_SPECIALROUND);
+		EmitSoundToAll(SYSBGM_SPECIAL);
 	}
 	else
 	{
-		PlaySoundToAll(SYSMUSIC_SPECIALROUND);
+		PlaySoundToAll(SYSBGM_SPECIAL);
 	}
 	
 	CreateTimer(0.2, Timer_GameLogic_SpecialRoundChoosing3, _, TIMER_FLAG_NO_MAPCHANGE);

@@ -613,7 +613,7 @@ public void TF2_OnWaitingForPlayersEnd()
 		{
 			if (!IsFakeClient(i))
 			{
-				StopSound(i, SNDCHAN_AUTO, SYSMUSIC_WAITINGFORPLAYERS);
+				StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
 			}
 
 			IsPlayerParticipant[i] = true;
@@ -673,7 +673,7 @@ public void OnClientPostAdminCheck(int client)
 			if (GamemodeStatus == GameStatus_WaitingForPlayers)
 			{
 				DisplayOverlayToClient(client, OVERLAY_WELCOME);
-				EmitSoundToClient(client, SYSMUSIC_WAITINGFORPLAYERS);
+				EmitSoundToClient(client, SYSBGM_WAITING);
 			}
 		}
 

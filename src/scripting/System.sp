@@ -6,8 +6,6 @@
 
 #define TOTAL_GAMEMODES 100
 #define TOTAL_SYSMUSIC 6
-#define TOTAL_SYSFX_VOCAL_TYPES 2
-#define TOTAL_SYSFX_VOCALS 7
 #define TOTAL_SYSOVERLAYS 10
 
 #define SYSMUSIC_PREMINIGAME 0
@@ -17,15 +15,13 @@
 #define SYSMUSIC_FAILURE 4
 #define SYSMUSIC_WINNER 5
 
-#define SYSMUSIC_WAITINGFORPLAYERS "stsv/microtf2/sys/waitingforplayers.wav"
-#define SYSMUSIC_SPECIALROUND "stsv/microtf2/sys/specialround.mp3"
-#define SYSMUSIC_SPECIALROUND_SELECTED "stsv/microtf2/sys/fx/beep.mp3"
-#define SYSMUSIC_MAPEND "stsv/microtf2/sys/mapend.mp3"
-#define SYSFX_CLOCK "stsv/microtf2/sys/fx/clock.mp3"
-#define SYSFX_WINNER "stsv/microtf2/sys/fx/bing.wav"
+#define SYSBGM_WAITING "gemidyne/warioware/system/bgm/waitingforplayers.wav"
+#define SYSBGM_SPECIAL "gemidyne/warioware/system/bgm/specialround.mp3"
+#define SYSBGM_ENDING "gemidyne/warioware/system/bgm/mapend.mp3"
 
-#define SYSFX_VOCAL_POSITIVE 0
-#define SYSFX_VOCAL_NEGATIVE 1
+#define SYSFX_CLOCK "gemidyne/warioware/system/sfx/clock.mp3"
+#define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
+#define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
 
 #define SYSMUSIC_MAXSTRINGLENGTH 192
 
@@ -43,7 +39,6 @@
 char SystemNames[TOTAL_GAMEMODES+1][32];
 char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXSTRINGLENGTH];
 float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
-char SystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSMUSIC_MAXSTRINGLENGTH];
 
 int GamemodeID = 0;
 int MaxGamemodesSelectable = 0;
@@ -62,60 +57,13 @@ stock void InitializeSystem()
 	InitializeCommands();
 	InitializeSpecialRounds();
 
-	SystemVocal[SYSFX_VOCAL_POSITIVE][0] = "microtf2/vo/mtf2_response01.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][1] = "microtf2/vo/mtf2_response07.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][2] = "microtf2/vo/mtf2_response08.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][3] = "microtf2/vo/mtf2_response09.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][4] = "microtf2/vo/mtf2_response10.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][5] = "microtf2/vo/mtf2_response11.mp3";
-	SystemVocal[SYSFX_VOCAL_POSITIVE][6] = "microtf2/vo/mtf2_response12.mp3";
-
-	SystemVocal[SYSFX_VOCAL_NEGATIVE][0] = "microtf2/vo/mtf2_response02.mp3";
-	SystemVocal[SYSFX_VOCAL_NEGATIVE][1] = "microtf2/vo/mtf2_response03.mp3";
-	SystemVocal[SYSFX_VOCAL_NEGATIVE][2] = "microtf2/vo/mtf2_response04.mp3";
-	SystemVocal[SYSFX_VOCAL_NEGATIVE][3] = "microtf2/vo/mtf2_response05.mp3";
-	SystemVocal[SYSFX_VOCAL_NEGATIVE][4] = "microtf2/vo/mtf2_response06.mp3";
-
 	HudSync_Score = CreateHudSynchronizer();
 	HudSync_Special = CreateHudSynchronizer();
 	HudSync_Round = CreateHudSynchronizer();
 	HudSync_Caption = CreateHudSynchronizer();
 
-	char gamemodeManifestPath[128];
-	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/gamemodes.txt");
-
-	Handle kv = CreateKeyValues("Gamemodes");
-	FileToKeyValues(kv, gamemodeManifestPath);
- 
-	if (KvGotoFirstSubKey(kv))
-	{
-		do
-		{
-			int gamemodeID = GetGamemodeIDFromSectionName(kv);
-
-			LoadSysMusicType(gamemodeID, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_SPEEDUP, kv, "SysMusic_SpeedUp");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_GAMEOVER, kv, "SysMusic_GameOver");
-
-			// These 2 cannot have the different lengths; they're played at the same time
-			KvGetString(kv, "SysMusic_Failure", SystemMusic[gamemodeID][SYSMUSIC_FAILURE], SYSMUSIC_MAXSTRINGLENGTH);
-			KvGetString(kv, "SysMusic_Winner", SystemMusic[gamemodeID][SYSMUSIC_WINNER], SYSMUSIC_MAXSTRINGLENGTH);
-
-			KvGetString(kv, "FriendlyName", SystemNames[gamemodeID], 32);
-
-			if (KvGetNum(kv, "Selectable", 0) == 1)
-			{
-				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
-				MaxGamemodesSelectable++;
-			}
-
-			LogMessage("Loaded gamemode %d - %s", gamemodeID, SystemNames[gamemodeID]);
-		}
-		while (KvGotoNextKey(kv));
-	}
- 
-	CloseHandle(kv);
+	LoadGamemodeInfo();
+	InitialiseVoices();
 
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
 	InitializeMinigames();
@@ -164,23 +112,10 @@ public void System_OnMapStart()
 		}
 	}
 
-	for (int t = 0; t < TOTAL_SYSFX_VOCAL_TYPES; t++)
-	{
-		for (int i = 0; i < TOTAL_SYSFX_VOCALS; i++)
-		{
-			buffer = SystemVocal[t][i];
-
-			if (strlen(buffer) > 0)
-			{
-				PreloadSound(SystemVocal[t][i]);
-			}
-		}
-	}
-
-	PreloadSound(SYSMUSIC_WAITINGFORPLAYERS);
-	PreloadSound(SYSMUSIC_SPECIALROUND);
-	PreloadSound(SYSMUSIC_SPECIALROUND_SELECTED);
-	PreloadSound(SYSMUSIC_MAPEND);
+	PreloadSound(SYSBGM_WAITING);
+	PreloadSound(SYSBGM_SPECIAL);
+	PreloadSound(SYSBGM_ENDING);
+	PreloadSound(SYSFX_SELECTED);
 	PreloadSound(SYSFX_CLOCK);
 	PreloadSound(SYSFX_WINNER);
 
@@ -202,6 +137,45 @@ public void System_OnMapStart()
 	PrecacheMaterial(OVERLAY_GAMEOVER);
 	PrecacheMaterial(OVERLAY_WELCOME);
 	PrecacheMaterial(OVERLAY_SPECIALROUND);
+}
+
+public void LoadGamemodeInfo()
+{
+	char gamemodeManifestPath[128];
+	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/gamemodes.txt");
+
+	Handle kv = CreateKeyValues("Gamemodes");
+	FileToKeyValues(kv, gamemodeManifestPath);
+ 
+	if (KvGotoFirstSubKey(kv))
+	{
+		do
+		{
+			int gamemodeID = GetGamemodeIDFromSectionName(kv);
+
+			LoadSysMusicType(gamemodeID, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
+			LoadSysMusicType(gamemodeID, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
+			LoadSysMusicType(gamemodeID, SYSMUSIC_SPEEDUP, kv, "SysMusic_SpeedUp");
+			LoadSysMusicType(gamemodeID, SYSMUSIC_GAMEOVER, kv, "SysMusic_GameOver");
+
+			// These 2 cannot have the different lengths; they're played at the same time
+			KvGetString(kv, "SysMusic_Failure", SystemMusic[gamemodeID][SYSMUSIC_FAILURE], SYSMUSIC_MAXSTRINGLENGTH);
+			KvGetString(kv, "SysMusic_Winner", SystemMusic[gamemodeID][SYSMUSIC_WINNER], SYSMUSIC_MAXSTRINGLENGTH);
+
+			KvGetString(kv, "FriendlyName", SystemNames[gamemodeID], 32);
+
+			if (KvGetNum(kv, "Selectable", 0) == 1)
+			{
+				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
+				MaxGamemodesSelectable++;
+			}
+
+			LogMessage("Loaded gamemode %d - %s", gamemodeID, SystemNames[gamemodeID]);
+		}
+		while (KvGotoNextKey(kv));
+	}
+ 
+	CloseHandle(kv);
 }
 
 stock int GetGamemodeIDFromSectionName(Handle kv)
