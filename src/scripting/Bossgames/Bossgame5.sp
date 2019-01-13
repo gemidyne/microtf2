@@ -11,11 +11,11 @@ float Bossgame5_Step = 4.0;
 public void Bossgame5_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
+	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame5_OnTfRoundStart);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame5_OnGameFrame);
 }
 
 public void Bossgame5_OnMapStart()
@@ -136,23 +136,33 @@ public void Bossgame5_OnBossStopAttempt()
 	}
 }
 
-public void Bossgame5_OnGameFrame()
+public void Bossgame5_OnTfRoundStart()
 {
-	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding && Bossgame5_CanCheckPosition) 
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "trigger_multiple")) != INVALID_ENT_REFERENCE)
 	{
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
-			{
-				float clientPos[3];
-				GetClientAbsOrigin(i, clientPos);
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
 
-				if (clientPos[1] > -1790.0)
-				{
-					ClientWonMinigame(i);
-				}
-			}
+		if (strcmp(entityName, "plugin_Bossgame5_WinArea") == 0)
+		{
+			HookSingleEntityOutput(entity, "OnTrigger", Bossgame5_OnTriggerTouched, false);
+			break;
 		}
+	}
+}
+
+public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int activator, float delay)
+{
+	if (!Bossgame5_CanCheckPosition)
+	{
+		return;
+	}
+
+	if (IsClientValid(activator) && IsPlayerParticipant[activator] && IsPlayerAlive(activator) && PlayerStatus[activator] == PlayerStatus_NotWon)
+	{
+		ClientWonMinigame(activator);
 	}
 }
 
@@ -161,7 +171,6 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding) 
 	{
 		Bossgame5_Step -= 0.5;
-		PrintToChatAll("DBG: %f", Bossgame5_Step);
 
 		if (Bossgame5_Step > 1.5)
 		{
@@ -169,13 +178,11 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 		}
 		else if (Bossgame5_Step > 0)
 		{
-			// TODO: Needs a sound
 			EmitSoundToAll("ui/chime_rd_2base_pos.wav", SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, 0.5, 150);
 		}
 		else 
 		{
 			PlaySoundToAll("ui/hitsound_retro1.wav");
-			PrintToChatAll("DBG: SWITCH");
 
 			Bossgame5_Step = 4.0;
 			Bossgame5_BlockState = !Bossgame5_BlockState;

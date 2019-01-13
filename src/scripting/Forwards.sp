@@ -199,6 +199,14 @@ Handle GlobalForward_OnPlayerRunCmd;
  */
 Handle GlobalForward_OnBossStopAttempt;
 
+/**
+ * Forward is called when a Player runs a command.
+ *
+ * @noparams
+ * @noreturn
+ */
+Handle GlobalForward_OnTfRoundStart;
+
 stock void InitializeForwards()
 {
 	LogMessage("Initializing Forwards...");
@@ -225,6 +233,7 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerCalculateCritical = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
+	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -250,6 +259,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerCalculateCritical);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerRunCmd);
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
+	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)

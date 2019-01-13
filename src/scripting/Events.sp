@@ -376,6 +376,22 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 	return Plugin_Continue;
 }
 
+public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadcast)
+{
+	if (!IsPluginEnabled)
+	{
+		return Plugin_Continue;
+	}
+
+	if (GlobalForward_OnTfRoundStart != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnTfRoundStart);
+		Call_Finish();
+	}
+
+	return Plugin_Continue;
+}
+
 public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
@@ -731,6 +747,7 @@ stock void HookEvents()
 	HookEvent("player_changeclass", Event_PlayerChangeClass);
 	HookEvent("player_stunned", Event_PlayerStunned);
 	HookEvent("break_prop", Event_PropBroken);
+	HookEvent("teamplay_round_start", Event_RoundStart, EventHookMode_PostNoCopy);
 	HookEvent("teamplay_round_stalemate", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("teamplay_round_win", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("post_inventory_application", Event_Regenerate, EventHookMode_Post);
