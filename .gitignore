@@ -36,3 +36,7 @@ build/
 # Ignore Tsukuru generated map files
 assets/map/generated/
 assets/util/utilities/
+
+# Ignore other local files
+assets/marketing
+assets/newhud
