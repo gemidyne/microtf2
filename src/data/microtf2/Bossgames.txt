@@ -40,4 +40,12 @@
 		"EntryPoint"		"Bossgame5_EntryPoint"
 		"Caption"		"REACH THE GOAL!"
 	}
+	"6"
+	{
+		"Enabled"		"0"
+		"Duration"		"60.0"
+		"BackgroundMusic"	""
+		"EntryPoint"		"Bossgame6_EntryPoint"
+		"Caption"		"SHOOT AS MANY BARRELS!"
+	}
 }
