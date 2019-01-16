@@ -33,7 +33,7 @@ public bool Bossgame2_OnCheck()
 
 public void Bossgame2_OnMinigameSelectedPre()
 {
-	if (BossgameID == 5)
+	if (BossgameID == 2)
 	{
 		float pos[3] = { 5116.0, 2204.0, 503.0 };
 
