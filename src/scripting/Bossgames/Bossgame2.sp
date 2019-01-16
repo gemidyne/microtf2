@@ -8,11 +8,11 @@ bool Bossgame2_CanCheckPosition = false;
 
 public void Bossgame2_EntryPoint()
 {
+	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame2_OnTfRoundStart);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame2_OnSelection);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame2_BossCheck);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame2_OnGameFrame);
 }
 
 public bool Bossgame2_OnCheck()
@@ -81,27 +81,33 @@ public void Bossgame2_OnSelection(int client)
 	}
 }
 
-public void Bossgame2_OnGameFrame()
+public void Bossgame2_OnTfRoundStart()
 {
-	if (BossgameID == 2 && IsMinigameActive && !IsMinigameEnding && Bossgame2_CanCheckPosition) 
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "trigger_multiple")) != INVALID_ENT_REFERENCE)
 	{
-		for (int i = 1; i <= MaxClients; i++)
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, "plugin_Bossgame2_WinArea") == 0)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
-			{
-				float clientPos[3];
-				GetClientAbsOrigin(i, clientPos);
-
-				// X: 0
-				// Y: 1
-				// Z: 2
-
-				if (clientPos[0] < 3960.0)
-				{
-					ClientWonMinigame(i);
-				}
-			}
+			HookSingleEntityOutput(entity, "OnTrigger", Bossgame2_OnTriggerTouched, false);
+			break;
 		}
+	}
+}
+
+public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int activator, float delay)
+{
+	if (!Bossgame2_CanCheckPosition)
+	{
+		return;
+	}
+
+	if (IsClientValid(activator) && IsPlayerParticipant[activator] && IsPlayerAlive(activator) && PlayerStatus[activator] == PlayerStatus_NotWon)
+	{
+		ClientWonMinigame(activator);
 	}
 }
 
