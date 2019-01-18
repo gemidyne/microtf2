@@ -652,6 +652,17 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 		returnedFromBoss = true;
 		playAnotherBossgame = (SpecialRoundID == 10 && MinigamesPlayed == BossGameThreshold);
+
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			if (IsClientInGame(i))
+			{
+                for (int a = 0; a < 10; a++)
+                {
+                    StopSound(i, SNDCHAN_AUTO, BossgameMusic[PreviousBossgameID]);
+                }
+			}
+		}
 	}
 
 	IsMinigameActive = false;
