@@ -42,17 +42,29 @@ public void Minigame4_OnMinigameSelectedPre()
 
 public void Minigame4_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 4 && IsClientValid(client))
+	if (MinigameID != 4)
 	{
-		IsGodModeEnabled(client, false);
-		SetPlayerHealth(client, 1000);
+		return;
+	}
 
-		TF2_SetPlayerClass(client, TFClass_Pyro);
-		TF2_RemoveAllWeapons(client);
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.SetGodMode(false);
+		player.SetHealth(1000);
+
+		player.Class = TFClass_Pyro;
+		player.RemoveAllWeapons();
+
+		player.Status = PlayerStatus_Winner;
 
 		GiveWeapon(client, 21);
-		IsViewModelVisible(client, true);
-		PlayerStatus[client] = PlayerStatus_Winner;
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		int posa = 360 / Minigame4_TotalPlayers * (PlayerIndex[client]-1);
@@ -74,13 +86,27 @@ public void Minigame4_OnMinigameSelected(int client)
 
 public void Minigame4_OnPlayerDeath(int client, int attacker)
 {
-	if (IsMinigameActive && MinigameID == 4 && IsClientInGame(client) && IsPlayerParticipant[client] && GetClientTeam(client) > 1)
+	if (MinigameID != 4)
 	{
-		PlayerStatus[client] = PlayerStatus_Failed;
+		return;
+	}
 
-		if (attacker > 0 && attacker <= MaxClients && IsClientInGame(attacker))
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
+	{
+		player.Status = PlayerStatus_Failed;
+
+		Player attackerPlayer = new Player(attacker);
+
+		if (attackerPlayer.IsValid)
 		{
-			PlayerStatus[attacker] = PlayerStatus_Winner;
+			attackerPlayer.Status = PlayerStatus_Winner;
 		}
 	}
 }
@@ -91,12 +117,14 @@ public void Minigame4_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i] && GetClientTeam(i) > 1)
+			Player player = new Player(client);
+
+			if (player.IsValid && player.IsParticipating)
 			{
-				PlayerStatus[i] = (IsPlayerAlive(i) ? PlayerStatus_Winner : PlayerStatus_Failed);
+				player.Status = (player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed);
 
 				SDKUnhook(i, SDKHook_PreThink, Minigame4_RemoveLeftClick);
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 			}
 		}
 	}
