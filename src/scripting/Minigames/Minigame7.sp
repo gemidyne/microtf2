@@ -23,23 +23,47 @@ public void Minigame7_OnMinigameSelectedPre()
 
 public void Minigame7_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 7 && IsClientValid(client))
+	if (MinigameID != 7)
 	{
-		TF2_SetPlayerClass(client, TFClass_Soldier);
-		TF2_RemoveAllWeapons(client);
-		IsGodModeEnabled(client, false);
-		SetPlayerHealth(client, 1000);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Soldier;
+		player.RemoveAllWeapons();
+		player.SetGodMode(false);
+		player.SetHealth(1000);
+
 		GiveWeapon(client, 237);
-		IsViewModelVisible(client, true);
 	}
 }
 
 public void Minigame7_OnRocketJump(int client)
 {
-	if (IsMinigameActive && MinigameID == 7 && IsClientValid(client) && IsPlayerParticipant[client])
+	if (MinigameID != 7)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
 	{
 		ClientWonMinigame(client);
-		SetEntityGravity(client, 0.5);
+		player.SetGravity(0.5);
 	}
 }
 
@@ -49,7 +73,9 @@ public void Minigame7_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i] && !IsFakeClient(i))
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && !player.IsBot)
 			{
 				StopSound(i, SNDCHAN_AUTO, "misc/grenade_jump_lp_01.wav");
 			}
