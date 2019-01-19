@@ -29,43 +29,55 @@ public void Minigame20_OnMinigameSelectedPre()
 
 public void Minigame20_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 20 && IsClientValid(client))
+	if (MinigameID != 20)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		switch (Minigame20_PlayerClass)
 		{
 			case 0:
 			{
-				TF2_SetPlayerClass(client, TFClass_Scout);
+				player.Class = TFClass_Scout;
 				ResetWeapon(client, true);
 				GiveWeapon(client, 163);
 			}
 			case 1:
 			{
-				TF2_SetPlayerClass(client, TFClass_Scout);
+				player.Class = TFClass_Scout;
 				ResetWeapon(client, true);
 				GiveWeapon(client, 46);
 			}
 			case 2:
 			{
-				TF2_SetPlayerClass(client, TFClass_Heavy);
+				player.Class = TFClass_Heavy;
 				ResetWeapon(client, true);
 				GiveWeapon(client, 42);
 			}	
 			case 3:
 			{	
-				TF2_SetPlayerClass(client, TFClass_Heavy);
+				player.Class = TFClass_Heavy;
 				ResetWeapon(client, true);
 				GiveWeapon(client, 311);
 			}
 		}
-		
-		IsViewModelVisible(client, true);
 	}
 }
 
 public void Minigame20_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
@@ -100,7 +112,9 @@ public void Minigame20_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && TF2_IsPlayerInCondition(i, TFCond_Taunting))
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && TF2_IsPlayerInCondition(i, TFCond_Taunting))
 			{	
 				//Credit to Tylerst & Powerlord!
 				int currentWeapon = GetEntDataEnt2(i, Offset_PlayerActiveWeapon);
@@ -124,7 +138,9 @@ public void Minigame20_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i] && (GetClientTeam(i) == 2 || GetClientTeam(i) == 3))
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				TF2_RemoveCondition(i, TFCond_Taunting);
 				TF2_RemoveCondition(i, TFCond_CritCola);
