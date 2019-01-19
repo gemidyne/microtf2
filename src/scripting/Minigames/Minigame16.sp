@@ -28,18 +28,42 @@ public bool Minigame16_OnCheck()
 
 public void Minigame16_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 16 && IsClientValid(client))
+	if (MinigameID != 16)
 	{
-		TF2_SetPlayerClass(client, TFClass_Sniper);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Sniper;
 		ResetWeapon(client, true);
 		GiveWeapon(client, 58);
-		IsViewModelVisible(client, true);
 	}
 }
 
-public void Minigame16_OnPlayerJarated(int client, int victim)
+public void Minigame16_OnPlayerJarated(int client, int victimId)
 {
-	if (IsMinigameActive && MinigameID == 16 && IsClientValid(client) && IsClientValid(victim) && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
+	if (MinigameID != 16)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+	Player victim = new Player(victimId);
+
+	if (player.IsValid && player.IsParticipating && victim.IsValid && victim.IsParticipating)
 	{
 		ClientWonMinigame(client);
 	}
