@@ -143,9 +143,11 @@ public void Minigame15_OnMinigameFinish()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && IsPlayerParticipant[i])
 			{
-				DestroyPlayerBuildings(i, true);
+				player.DestroyPlayerBuildings(true);
 			}
 		}
 	}

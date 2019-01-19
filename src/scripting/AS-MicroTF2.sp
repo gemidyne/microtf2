@@ -1096,7 +1096,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		PlayerMinigamesWon[i] = 0;
 		PlayerMinigamesLost[i] = 0;
 
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsValid)
 		{
 			IsPlayerParticipant[i] = true;
 			
@@ -1107,10 +1109,10 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			
 				IsPlayerWinner[i] = false;
 
-				DestroyPlayerBuildings(i, true);
+				player.DestroyPlayerBuildings(true);
 			}
 
-			IsGodModeEnabled(i, true);
+			player.SetGodMode(true);
 		}
 	}
 

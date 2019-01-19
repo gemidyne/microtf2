@@ -125,4 +125,52 @@ methodmap Player __nullable__
 		
 		this.SetHealth(health);
     }
+
+    public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
+    {
+        int entity = -1;
+        while ((entity = FindEntityByClassname(entity, entityClassname)) != INVALID_ENT_REFERENCE)
+        {
+            if (GetEntPropEnt(entity, Prop_Send, "m_hBuilder") == this.ClientId && (objectMode == TFObjectMode_None || TF2_GetObjectMode(entity) == objectMode))
+            {
+                if (cleanDestroy)
+                {
+                    AcceptEntityInput(entity, "Kill");
+                }
+                else
+                {
+                    SetVariantInt(1000);
+                    AcceptEntityInput(entity, "RemoveHealth");
+                }
+            }
+        }
+    }
+
+    public void DestroyPlayerSentryGun(bool cleanDestroy = false)
+    {
+        this.TryDestroyPlayerBuilding(cleanDestroy, "obj_sentrygun");
+    }
+
+    public void DestroyPlayerDispenser(bool cleanDestroy = false)
+    {
+        this.TryDestroyPlayerBuilding(cleanDestroy, "obj_dispenser");
+    }
+
+    public void DestroyPlayerTeleporterEntrance(bool cleanDestroy = false)
+    {
+        this.TryDestroyPlayerBuilding(cleanDestroy, "obj_teleporter", TFObjectMode_Entrance);
+    }
+
+    public void DestroyPlayerTeleporterExit(bool cleanDestroy = false)
+    {
+        this.TryDestroyPlayerBuilding(cleanDestroy, "obj_teleporter", TFObjectMode_Exit);
+    }
+
+    public void DestroyPlayerBuildings(bool cleanDestroy = false)
+    {
+        this.DestroyPlayerSentryGun(cleanDestroy);
+        this.DestroyPlayerDispenser(cleanDestroy);
+        this.DestroyPlayerTeleporterEntrance(cleanDestroy);
+        this.DestroyPlayerTeleporterExit(cleanDestroy);
+    }
 }

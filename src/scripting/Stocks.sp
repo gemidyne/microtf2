@@ -378,66 +378,6 @@ stock void SetPlayerAmmo(int client, int ammoCount)
 	SetEntData(client, ammoType+ammo, ammoCount, 4, true);
 }
 
-stock void DestroyPlayerSentryGun(int client, bool cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_sentrygun");
-	}
-}
-
-stock void DestroyPlayerDispenser(int client, bool cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_dispenser");
-	}
-}
-
-stock void DestroyPlayerTeleporterEntrance(int client, bool cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_teleporter", TFObjectMode_Entrance);
-	}
-}
-
-stock void DestroyPlayerTeleporterExit(int client, bool cleanDestroy = false)
-{
-	if (IsClientInGame(client))
-	{
-		TryDestroyPlayerBuilding(client, cleanDestroy, "obj_teleporter", TFObjectMode_Exit);
-	}
-}
-
-stock void TryDestroyPlayerBuilding(int client, bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
-{
-	int entity = -1;
-	while ((entity = FindEntityByClassname(entity, entityClassname)) != INVALID_ENT_REFERENCE)
-	{
-		if (GetEntPropEnt(entity, Prop_Send, "m_hBuilder") == client && (objectMode == TFObjectMode_None || TF2_GetObjectMode(entity) == objectMode))
-		{
-			if (cleanDestroy)
-			{
-				AcceptEntityInput(entity, "Kill");
-			}
-			else
-			{
-				SetVariantInt(1000);
-				AcceptEntityInput(entity, "RemoveHealth");
-			}
-		}
-	}
-}
-
-stock void DestroyPlayerBuildings(int client, bool cleanDestroy = false)
-{
-	DestroyPlayerSentryGun(client, cleanDestroy);
-	DestroyPlayerDispenser(client, cleanDestroy);
-	DestroyPlayerTeleporterEntrance(client, cleanDestroy);
-	DestroyPlayerTeleporterExit(client, cleanDestroy);
-}
-
 stock void RemoveAllStunballEntities()
 {
 	int entity = -1;
