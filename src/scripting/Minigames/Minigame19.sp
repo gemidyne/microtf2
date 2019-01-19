@@ -30,7 +30,19 @@ public void Minigame19_OnMinigameSelectedPre()
 
 public void Minigame19_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client))
+	if (MinigameID != 19)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		TFClassType playerClass = TF2_GetPlayerClass(client);
 
@@ -48,7 +60,9 @@ public void Minigame19_OnMinigameSelected(int client)
 
 public void Minigame19_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		char text[64];
 
@@ -111,7 +125,19 @@ public void Minigame19_GetDynamicCaption(int client)
 
 public void Minigame19_OnPlayerClassChange(int client, int class)
 {
-	if (IsMinigameActive && MinigameID == 19 && IsClientValid(client) && IsPlayerParticipant[client] && PlayerStatus[client] != PlayerStatus_Failed)
+	if (MinigameID != 19)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating && player.Status != PlayerStatus_Failed)
 	{
 		TFClassType playerClass = view_as<TFClassType>(class);
 
@@ -127,7 +153,7 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 		}
 		else
 		{
-			PlayerStatus[client] = PlayerStatus_Failed;
+			player.Status = PlayerStatus_Failed;
 		}
 	}
 }
