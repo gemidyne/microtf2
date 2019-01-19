@@ -72,28 +72,42 @@ public void Minigame10_OnMinigameSelectedPre()
 
 public void Minigame10_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 10 && IsClientValid(client))
+	if (MinigameID != 10)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		if (!Minigame10_IsTimebomb[client])
 		{
-			TF2_SetPlayerClass(client, TFClass_Heavy);
+			player.Class = TFClass_Heavy;
 		}
 		else
 		{
-			TF2_SetPlayerClass(client, TFClass_Scout);
+			player.Class = TFClass_Scout;
 		}
 
-		TF2_RemoveAllWeapons(client);
+		player.RemoveAllWeapons();
+		player.Status = PlayerStatus_NotWon;
+		player.SetHealth(100);
+
 		ResetWeapon(client, false);
-					
-		PlayerStatus[client] = PlayerStatus_NotWon;
-		SetPlayerHealth(client, 100);
 	}
 }
 
 public void Minigame10_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
@@ -113,13 +127,22 @@ public void Minigame10_GetDynamicCaption(int client)
 
 public void Minigame10_OnPlayerDeath(int client)
 {
-	if (IsMinigameActive && MinigameID == 10 && IsClientValid(client))
+	if (MinigameID != 10)
 	{
-		if (!Minigame10_IsTimebomb[client])
-		{
-			PlayerStatus[client] = PlayerStatus_Failed;
-			Minigame10_KillCount += 1;
-		}
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && !Minigame10_IsTimebomb[client])
+	{
+		player.Status = PlayerStatus_Failed;
+		Minigame10_KillCount += 1;
 	}
 }
 
@@ -129,13 +152,15 @@ public void Minigame10_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				if (Minigame10_IsTimebomb[i] && Minigame10_KillCount >= 1) 
 				{
-					PlayerStatus[i] = PlayerStatus_Winner;
+					player.Status = PlayerStatus_Winner;
 				}
-				else if (!Minigame10_IsTimebomb[i] && IsPlayerAlive(i)) 
+				else if (!Minigame10_IsTimebomb[i] && player.IsAlive) 
 				{
 					ClientWonMinigame(i);
 				}
@@ -153,7 +178,9 @@ public void Minigame10_Timebomb_Init()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i]) 
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating) 
 			{
 				arrayPlayers[index] = i;
 				index++;

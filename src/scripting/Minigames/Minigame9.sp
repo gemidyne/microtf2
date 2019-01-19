@@ -27,7 +27,7 @@ public void Minigame9_OnMinigameSelectedPre()
 		Minigame9_Mode = GetRandomInt(1, 6);
 		Minigame9_CanCheckConditions = false;
 
-		CreateTimer(1.5, Timer_Minigame9_AllowConditions);		
+		CreateTimer(1.5, Timer_Minigame9_AllowConditions);
 	}
 }
 
