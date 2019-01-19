@@ -42,12 +42,19 @@ public void Minigame2_OnSelectionPre()
 
 public void Minigame2_OnSelection(int client)
 {
-	if (!IsMinigameActive || MinigameID != 2)
+	if (MinigameID != 2)
 	{
 		return;
 	}
 
-	if (IsMinigameActive && MinigameID == 2 && IsClientValid(client))
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+	
+	if (player.IsValid)
 	{
 		TFClassType class;
 		int weapon = 0;
@@ -96,29 +103,37 @@ public void Minigame2_OnSelection(int client)
 			}
 		}
 
-		TF2_SetPlayerClass(client, class);
+		player.Class = class;
+		player.SetHealth(1);
+		player.SetGodMode(false);
 
 		ResetWeapon(client, true);
 		GiveWeapon(client, weapon);
-
-		SetPlayerHealth(client, 1);
-		IsGodModeEnabled(client, false);
-		IsViewModelVisible(client, true);
 	}
 }
 
-public void Minigame2_OnPlayerDeath(int victim, int attacker)
+public void Minigame2_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (IsMinigameActive && MinigameID == 2)
+	if (MinigameID != 2)
 	{
-		if (IsClientValid(victim) && IsPlayerParticipant[victim] && IsClientValid(attacker) && IsPlayerParticipant[attacker])
-		{
-			if (PlayerStatus[victim] == PlayerStatus_NotWon)
-			{
-				PlayerStatus[victim] = PlayerStatus_Failed;
-			}
+		return;
+	}
 
-			ClientWonMinigame(attacker);
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player victim = new Player(victimId);
+	Player attacker = new Player(attackerId);
+
+	if (victim.IsValid && victim.IsParticipating && attacker.IsValid && attacker.IsParticipating)
+	{
+		if (victim.Status == PlayerStatus_NotWon)
+		{
+			victim.Status = PlayerStatus_Failed;
 		}
+
+		ClientWonMinigame(attackerId);
 	}
 }
