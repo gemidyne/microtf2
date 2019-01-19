@@ -107,10 +107,23 @@ public void Minigame18_OnMinigameSelectedPre()
 
 public void Minigame18_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 18 && IsClientValid(client))
+	if (MinigameID != 18)
 	{
-		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Sniper);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.RemoveAllWeapons();
+		player.Class = TFClass_Sniper;
+
 		GiveWeapon(client, 14);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
@@ -131,8 +144,6 @@ public void Minigame18_OnMinigameSelected(int client)
 		pos[2] = -260.0;
 
 		TeleportEntity(client, pos, ang, vel);
-		IsViewModelVisible(client, true);
-
 		SDKHook(client, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage);
 	}
 }
@@ -152,9 +163,11 @@ public void Minigame18_OnMinigameFinish()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i))
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 				SDKUnhook(i, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage);
 			}
 		}
@@ -178,9 +191,12 @@ public Action Minigame18_OnTakeDamage2(int victim, int &attacker, int &inflictor
 
 public void Minigame18_HitTarget(int attacker)
 {
-	if (IsClientValid(attacker))
+	Player player = new Player(attacker);
+
+	if (player.IsValid)
 	{
 		ClientWonMinigame(attacker);
+
 		switch (Minigame18_TargetModel)
 		{
 			case 0: PlayScoutHurtSound(attacker);
