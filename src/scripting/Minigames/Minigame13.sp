@@ -14,13 +14,24 @@ public void Minigame13_EntryPoint()
 
 public void Minigame13_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 13 && IsClientValid(client))
+	if (MinigameID != 13)
 	{
-		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Spy);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.RemoveAllWeapons();
+		player.Class = TFClass_Spy;
 
 		GiveWeapon(client, 27);
-		IsViewModelVisible(client, true);
 	}
 }
 
@@ -32,7 +43,9 @@ public void Minigame13_OnMinigameFinishPre()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				int button = GetClientButtons(i);
 				float min = 45.0 * -1;
@@ -46,7 +59,7 @@ public void Minigame13_OnMinigameFinishPre()
 				if (Minigame13_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
 				{
 					SlapPlayer(i, 5000, false);
-					PlayerStatus[i] = PlayerStatus_Failed;
+					player.Status = PlayerStatus_Failed;
 					CPrintToChat(i, "%s%T", PLUGIN_PREFIX, "Minigame13_SpycrabsMustCrouchAndLookup", i);
 				}
 			}
