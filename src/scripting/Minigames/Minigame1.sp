@@ -28,17 +28,25 @@ public void Minigame1_OnSelectionPre()
 
 public void Minigame1_OnSelection(int client)
 {
-	if (IsMinigameActive && MinigameID == 1 && IsClientValid(client))
+	if (!IsMinigameActive || MinigameID != 1)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		float ang[3] = { 0.0, 90.0, 0.0 };
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		float pos[3];
 
-		TF2_SetPlayerClass(client, TFClass_Scout);
-		IsGodModeEnabled(client, false);
-		IsPlayerCollisionsEnabled(client, false);
+		player.Class = TFClass_Scout;
+		player.SetGodMode(false);
+		player.SetCollisionsEnabled(false);
+		player.SetHealth(1000);
+
 		ResetWeapon(client, false);
-		SetPlayerHealth(client, 1000);
 
 		int column = client;
 		int row = 0;
@@ -50,7 +58,7 @@ public void Minigame1_OnSelection(int client)
 
 		pos[0] = -4730.0 + float(column*55);
 		pos[1] = 2951.0 - float(row*55);
-		pos[2] = -1373.0;  //setpos -4690 2951 -1373
+		pos[2] = -1373.0;
 
 		TeleportEntity(client, pos, ang, vel);
 	}
@@ -62,7 +70,9 @@ public void Minigame1_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && PlayerStatus[i] == PlayerStatus_NotWon)
+			Player player = new Player(i);
+			
+			if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 			{
 				float pos[3];
 				GetClientAbsOrigin(i, pos);
@@ -82,9 +92,11 @@ public void Minigame1_OnFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++) 
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i]) 
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating) 
 			{
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 			}
 		}
 	}
