@@ -56,46 +56,6 @@ stock void SetPlayerHealth(int client, int health)
 	}
 }
 
-stock void IsViewModelVisible(int client, bool visible)
-{
-	return;
-
-	// if (IsClientInGame(client) && !IsFakeClient(client))
-	// {
-	// 	int weaponOffset = FindSendPropOffs("CTFPlayer", "m_hActiveWeapon");
-
-	// 	if (weaponOffset <= 0)
-	// 	{
-	// 		SetFailState("Unable to find m_hActiveWeapon offset on CTFPlayer.");
-	// 	}
-
-	// 	int weapon = GetEntDataEnt2(client, weaponOffset);
-
-	// 	if (IsValidEntity(weapon))
-	// 	{
-	// 		SetEntityRenderColor(weapon, 255, 255, 255, (visible ? 255 : 0));
-	// 		SetEntityRenderMode(weapon, (visible ? RENDER_NORMAL : RENDER_TRANSCOLOR));
-	// 		SetEntProp(client, Prop_Send, "m_bDrawViewmodel", (visible ? 1 : 0));
-	// 	}
-	// }
-}
-
-stock void IsGodModeEnabled(int client, bool enabled)
-{
-	if (IsClientInGame(client))
-	{
-		SetEntProp(client, Prop_Data, "m_takedamage", enabled ? 0 : 2, 1);
-	}
-}
-
-stock void IsPlayerCollisionsEnabled(int client, bool enabled)
-{
-	if (IsClientInGame(client))
-	{
-		SetEntData(client, Offset_Collision, enabled ? 5 : 2, 4, true);
-	}
-}
-
 stock void RemovePlayerWearables(int client)
 {
 	int entity = -1;
@@ -342,40 +302,6 @@ public int BuildBitStringExcludingClient(int client)
 public void AddClientToBitString(int bitfield, int client)
 {
 	bitfield |= (1 << client);
-}
-
-stock void SetPlayerAmmo(int client, int ammoCount)
-{
-	int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
-
-	if (weaponHandleId <= 0)
-	{
-		return;
-	}
-
-	int entity = GetEntDataEnt2(client, weaponHandleId);
-
-	if (!IsValidEntity(entity)) 
-	{
-		return;
-	}
-
-	int ammoType = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
-	int ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
-	int clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
-
-	if (ammo <= 0)
-	{
-		return;
-	}
-
-	if (clip <= 0)
-	{
-		return;
-	}
-
-	SetEntData(entity, clip, ammoCount, 4, true);
-	SetEntData(client, ammoType+ammo, ammoCount, 4, true);
 }
 
 stock void RemoveAllStunballEntities()

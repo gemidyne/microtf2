@@ -79,7 +79,7 @@ public void Minigame18_OnMinigameSelectedPre()
 		Minigame18_TargetEntIndex = CreateEntityByName("prop_physics");
 
 		if (IsValidEntity(Minigame18_TargetEntIndex))
-		{                      
+		{
 			Minigame18_TargetModel = GetRandomInt(0,3);
 
 			DispatchKeyValue(Minigame18_TargetEntIndex, "model", Minigame18_SniperTargets[Minigame18_TargetModel]);

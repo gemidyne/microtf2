@@ -51,6 +51,10 @@ methodmap Player __nullable__
         {
             return TF2_GetPlayerClass(this.ClientId);
         }
+        public set(TFClassType value)
+        {
+            TF2_SetPlayerClass(this.ClientId, value);
+        }
     }
 
     property bool IsValid
@@ -73,6 +77,30 @@ methodmap Player __nullable__
         }
     }
 
+    property bool IsParticipating
+    {
+        public get()
+        {
+            return IsPlayerParticipant[this.ClientId];
+        }
+        public set(bool value)
+        {
+            IsPlayerParticipant[this.ClientId] = value;
+        }
+    }
+
+    property PlayerStatuses Status
+    {
+        public get()
+        {
+            return PlayerStatus[this.ClientId];
+        }
+        public set(PlayerStatuses value)
+        {
+            PlayerStatus[this.ClientId] = value;
+        }
+    }
+
     public void RemoveAllWeapons()
     {
         TF2_RemoveAllWeapons(this.ClientId);
@@ -83,16 +111,9 @@ methodmap Player __nullable__
         TF2_RespawnPlayer(this.ClientId);
     }
 
-    public void SetClass(TFClassType class)
-    {
-        TF2_SetPlayerClass(this.ClientId, class);
-    }
-
     public void SetRandomClass()
     {
-        TFClassType newClass = view_as<TFClassType>(GetRandomInt(1, 9));
-
-        this.SetClass(newClass);
+        this.Class = view_as<TFClassType>(GetRandomInt(1, 9));
     }
 
     public void SetGodMode(bool enabled)
@@ -103,6 +124,11 @@ methodmap Player __nullable__
     public void SetCollisionsEnabled(bool enabled)
     {
         SetEntData(this.ClientId, Offset_Collision, enabled ? 5 : 2, 4, true);
+    }
+
+    public void SetGravity(float gravity)
+    {
+        SetEntityGravity(this.ClientId, gravity);
     }
 
     public void SetHealth(int health)
@@ -124,6 +150,11 @@ methodmap Player __nullable__
 		}
 		
 		this.SetHealth(health);
+    }
+
+    public void SetGlow(bool enabled)
+    {
+        SetEntProp(this.ClientId, Prop_Send, "m_bGlowEnabled", enabled ? 1 : 0);
     }
 
     public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
@@ -172,5 +203,39 @@ methodmap Player __nullable__
         this.DestroyPlayerDispenser(cleanDestroy);
         this.DestroyPlayerTeleporterEntrance(cleanDestroy);
         this.DestroyPlayerTeleporterExit(cleanDestroy);
+    }
+
+    public void SetAmmo(int ammoCount)
+    {
+        int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
+
+        if (weaponHandleId <= 0)
+        {
+            return;
+        }
+
+        int entity = GetEntDataEnt2(this.ClientId, weaponHandleId);
+
+        if (!IsValidEntity(entity)) 
+        {
+            return;
+        }
+
+        int ammoType = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
+        int ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
+        int clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
+
+        if (ammo <= 0)
+        {
+            return;
+        }
+
+        if (clip <= 0)
+        {
+            return;
+        }
+
+        SetEntData(entity, clip, ammoCount, 4, true);
+        SetEntData(this.ClientId, ammoType+ammo, ammoCount, 4, true);
     }
 }

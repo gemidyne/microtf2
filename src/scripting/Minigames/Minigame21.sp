@@ -28,29 +28,40 @@ public bool Minigame21_OnCheck()
 
 public void Minigame21_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 21 && IsClientValid(client))
+	if (!IsMinigameActive || MinigameID != 21)
 	{
-		TF2_SetPlayerClass(client, TFClass_Scout);
-
-		GiveWeapon(client, 44);
-		IsViewModelVisible(client, true);
-		IsGodModeEnabled(client, false);
-
-		SetPlayerHealth(client, 1000);
-		SetPlayerAmmo(client, 5);
+		return;
 	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	player.Class = TFClass_Scout;
+
+	GiveWeapon(client, 44);
+
+	player.SetGodMode(false);
+	player.SetHealth(1000);
+	player.SetAmmo(5);
 }
 
 public void Minigame21_OnPlayerStunned(int stunner, int victim)
 {
-	if (IsMinigameActive && MinigameID == 21)
+	if (!IsMinigameActive || MinigameID != 21)
 	{
-		if (IsClientValid(stunner) && IsPlayerParticipant[stunner])
-		{
-			ClientWonMinigame(stunner);
-			GiveWeapon(stunner, 0);
-			IsViewModelVisible(stunner, false);
-		}
+		return;
+	}
+
+	Player player = new Player(stunner);
+
+	if (player.IsValid && player.IsParticipating)
+	{
+		ClientWonMinigame(stunner);
+		GiveWeapon(stunner, 0);
 	}
 }
 

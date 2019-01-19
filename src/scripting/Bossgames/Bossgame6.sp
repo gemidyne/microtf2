@@ -81,7 +81,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 	}
 
 	player.RemoveAllWeapons();
-	player.SetClass(TFClass_Engineer);
+	player.Class = TFClass_Engineer;
 	player.SetGodMode(true);
 	player.SetCollisionsEnabled(false);
 	player.ResetHealth();

@@ -67,7 +67,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 	}
 
 	player.RemoveAllWeapons();
-	player.SetClass(TFClass_Heavy);
+	player.Class = TFClass_Heavy;
 	player.SetGodMode(false);
 	player.ResetHealth();
 

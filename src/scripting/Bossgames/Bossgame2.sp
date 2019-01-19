@@ -61,7 +61,7 @@ public void Bossgame2_OnSelection(int client)
 	}
 
 	player.RemoveAllWeapons();
-	player.SetClass(TFClass_Engineer);
+	player.Class = TFClass_Engineer;
 	player.SetGodMode(false);
 	player.SetCollisionsEnabled(false);
 	player.SetHealth(5000);

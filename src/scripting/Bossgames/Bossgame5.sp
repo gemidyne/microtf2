@@ -69,7 +69,7 @@ public void Bossgame5_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.RemoveAllWeapons();
-		player.SetClass(TFClass_Engineer);
+		player.Class = TFClass_Engineer;
 		player.SetGodMode(false);
 		player.SetCollisionsEnabled(false);
 		player.ResetHealth();

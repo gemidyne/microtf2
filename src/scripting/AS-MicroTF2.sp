@@ -266,7 +266,9 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i))
+			Player player = new Player(i);
+
+			if (player.IsValid)
 			{
 				maxPlayers++;
 
@@ -414,30 +416,32 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsValid)
 		{
-			if (!IsPlayerAlive(i))
+			if (!player.IsAlive)
 			{
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 			}
 
-			if (!IsPlayerParticipant[i] && SpecialRoundID != 17)
+			if (!player.IsParticipating && SpecialRoundID != 17)
 			{
 				// If not a participant, and not Sudden Death, then they should now be a participant.
-				IsPlayerParticipant[i] = true;
+				player.IsParticipating = true;
 			}
 
 			ResetWeapon(i, false);
-			IsPlayerCollisionsEnabled(i, true);
-			IsGodModeEnabled(i, true);
-			ResetHealth(i);
+
+			player.SetCollisionsEnabled(true);
+			player.SetGodMode(true);
+			player.ResetHealth();
+			player.SetGlow(false);
+			player.SetGravity(1.0);
 
 			ClientCommand(i, "r_cleardecals");
 
-			SetEntityGravity(i, 1.0);
-			SetEntProp(i, Prop_Send, "m_bGlowEnabled", 0);
-
-			PlayerStatus[i] = PlayerStatus_NotWon;
+			player.Status = PlayerStatus_NotWon;
 			SetupSPR(i);
 
 			PrintCenterText(i, centerText);
