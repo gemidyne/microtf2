@@ -8,6 +8,7 @@
 
 public void Minigame14_EntryPoint()
 {
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
@@ -20,16 +21,33 @@ public bool Minigame14_OnCheck()
 	return false;
 }
 
+public void Minigame14_OnMinigameSelectedPre()
+{
+	IsBlockingDamage = false;
+	IsBlockingDamageOnlyByOtherPlayers = true;
+}
+
 public void Minigame14_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 14 && IsClientValid(client))
+	if (MinigameID != 14)
 	{
-		TF2_SetPlayerClass(client, TFClass_Scout);
-		ResetWeapon(client, false);
+		return;
+	}
 
-		IsGodModeEnabled(client, true);
-		IsPlayerCollisionsEnabled(client, false);
-		SetPlayerHealth(client, 1000);
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Scout;
+		player.SetGodMode(false);
+		player.SetCollisionsEnabled(false);
+
+		ResetWeapon(client, false);
 
 		/*
 		new Float:vel[3] = { 0.0, 0.0, 0.0 };
@@ -60,7 +78,9 @@ public void Minigame14_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && (GetEntityFlags(i) & FL_ISINWATER))
+			Player player = new Player(client);
+
+			if (player.IsValid && player.IsParticipating && (GetEntityFlags(i) & FL_ISINWATER))
 			{
 				ClientWonMinigame(i);
 			}
@@ -74,10 +94,11 @@ public void Minigame14_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++) 
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i]) 
+			Player player = new Player(client);
+
+			if (player.IsValid && player.IsParticipating) 
 			{
-				ClientWonMinigame(i);
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 			}
 		}
 	}
