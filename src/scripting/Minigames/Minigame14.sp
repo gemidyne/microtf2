@@ -24,7 +24,7 @@ public bool Minigame14_OnCheck()
 public void Minigame14_OnMinigameSelectedPre()
 {
 	IsBlockingDamage = false;
-	IsBlockingDamageOnlyByOtherPlayers = true;
+	IsOnlyBlockingDamageByPlayers = true;
 }
 
 public void Minigame14_OnMinigameSelected(int client)
@@ -78,7 +78,7 @@ public void Minigame14_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			Player player = new Player(client);
+			Player player = new Player(i);
 
 			if (player.IsValid && player.IsParticipating && (GetEntityFlags(i) & FL_ISINWATER))
 			{
@@ -94,7 +94,7 @@ public void Minigame14_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++) 
 		{
-			Player player = new Player(client);
+			Player player = new Player(i);
 
 			if (player.IsValid && player.IsParticipating) 
 			{
