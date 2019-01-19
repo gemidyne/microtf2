@@ -78,20 +78,41 @@ public void Minigame3_OnSelectionPre()
 
 public void Minigame3_OnSelection(int client)
 {
-	if (IsMinigameActive && MinigameID == 3 && IsClientValid(client))
+	if (MinigameID != 3)
 	{
-		TF2_SetPlayerClass(client, TFClass_Scout);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Scout;
 		ResetWeapon(client, true);
 	}
 }
 
 public void Minigame3_OnPropBroken(int client)
 {
-	if (IsMinigameActive && MinigameID == 3)
+	if (MinigameID != 3)
 	{
-		if (IsClientValid(client) && IsPlayerParticipant[client])
-		{
-			ClientWonMinigame(client);
-		}
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
+	{
+		ClientWonMinigame(client);
 	}
 }
