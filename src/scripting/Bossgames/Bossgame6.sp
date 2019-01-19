@@ -4,202 +4,271 @@
  * Target Practice
  */
 
+/*
+ * HORIZONTAL MIN: -5631, -5101, -469
+ * HORIZONTAL MAX: -3262, -5153, -469
+ * VERTICAL MAX: -4279, -4929, -469
+ * VERTICAL MIN: -4391, -6305, -469
+ * (3) -469 is the floor coord / Z
+ * (2) is the Y - forward and back from view 
+ * (1) is the X - left and right from view
+ */
+
+int Bossgame6_EntityIndexes[32];
+int Bossgame6_Timer;
+
 public void Bossgame6_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame5_OnGameFrame);
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame6_OnMapStart);
+	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame6_OnTfRoundStart);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
+	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame6_OnBossStopAttempt);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
 }
 
 public void Bossgame6_OnMapStart()
 {
 }
 
-public bool:Bossgame6_OnCheck()
+public bool Bossgame6_OnCheck()
 {
+	if (GetTeamClientCount(2) < 1 || GetTeamClientCount(3) < 1)
+	{
+		return false;
+	}
+
 	return true;
 }
 
-public Bossgame6_OnMinigameSelectedPre()
+public void Bossgame6_OnTfRoundStart()
+{
+	Bossgame6_SendDoorInput("Close");
+}
+
+public void Bossgame6_OnMinigameSelectedPre()
 {
 	if (BossgameID == 6)
 	{
+		for (int i = 0; i < 32; i++)
+		{
+			Bossgame6_EntityIndexes[i] = 0;
+		}
+
 		IsBlockingDamage = true;
 		IsOnlyBlockingDamageByPlayers = true;
 		IsBlockingDeathCommands = true;
 
-		//CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+		Bossgame6_SendDoorInput("Close");
+
+		Bossgame6_Timer = 9;
+		CreateTimer(0.5, Bossgame6_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
 
-public Bossgame6_OnMinigameSelected(client)
+public void Bossgame6_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && BossgameID == 6 && IsClientValid(client))
+	if (!IsMinigameActive || BossgameID != 6)
 	{
-		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Engineer);
-		ResetWeapon(client, true);
-
-		new Float:pos[3];
-		new Float:vel[3] = { 0.0, 0.0, 0.0 };
-		new Float:ang[3] = { 0.0, 90.0, 0.0 };
-
-		new team = GetClientTeam(client);
-
-		if (team == 2) // RED
-		{
-			pos[0] = -13436.6;
-			pos[1] = -14211.9;
-			pos[2] = 490.0;
-		}
-		else // BLU
-		{
-			pos[0] = -13180.6;
-			pos[1] = -14211.9;
-			pos[2] = 490.0;
-		}
-
-		TeleportEntity(client, pos, ang, vel);
-
-		IsGodModeEnabled(client, false);
-		IsPlayerCollisionsEnabled(client, false);
-		ResetHealth(client);
+		return;
 	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	player.RemoveAllWeapons();
+	player.SetClass(TFClass_Engineer);
+	player.SetGodMode(true);
+	player.SetCollisionsEnabled(false);
+	player.ResetHealth();
+
+	ResetWeapon(client, true);
+
+	float vel[3] = { 0.0, 0.0, 0.0 };
+	float ang[3] = { 0.0, 90.0, 0.0 };
+	float pos[3];
+
+	int column = client;
+	int row = 0;
+
+	while (column > 24)
+	{
+		column = column - 24;
+		row = row + 1;
+	}
+
+	pos[0] = -5550.0 + float(column*60); 
+	pos[1] = -6625.0 - float(row*100);
+	pos[2] = -213.0;
+
+	TeleportEntity(client, pos, ang, vel);
 }
 
-public Bossgame5_OnPlayerDeath(victim, attacker)
+public void Bossgame6_OnBossStopAttempt()
 {
-	if (IsMinigameActive && BossgameID == 5 && IsClientValid(victim))
+	if (!IsMinigameActive || BossgameID != 6)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		return;
 	}
-}
 
-public Bossgame5_OnBossStopAttempt()
-{
-	if (IsMinigameActive && BossgameID == 5)
+	int alivePlayers = 0;
+	int successfulPlayers = 0;
+	int pendingPlayers = 0;
+
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		Bossgame5_CanCheckPosition = true;
-		new alivePlayers = 0;
-		new successfulPlayers = 0;
-		new pendingPlayers = 0;
+		Player player = new Player(i);
 
-		for (new i = 1; i <= MaxClients; i++)
+		if (player.IsValid && player.IsAlive)
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i))
+			alivePlayers++;
+
+			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
 			{
-				alivePlayers++;
-
-				if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
-				{
-					pendingPlayers++;
-				}
-				else
-				{
-					successfulPlayers++;
-				}
-			}
-		}
-
-		if (alivePlayers < 1)
-		{
-			EndBoss();
-		}
-
-		if (successfulPlayers > 0 && pendingPlayers == 0)
-		{
-			EndBoss();
-		}
-	}
-}
-
-public Bossgame5_OnGameFrame()
-{
-	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding && Bossgame5_CanCheckPosition) 
-	{
-		for (new i = 1; i <= MaxClients; i++)
-		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i) && PlayerStatus[i] == PlayerStatus_NotWon)
-			{
-				new Float:clientPos[3];
-				GetClientAbsOrigin(i, clientPos);
-
-				if (clientPos[1] > -1790.0)
-				{
-					ClientWonMinigame(i);
-				}
-			}
-		}
-	}
-}
-
-public Action Bossgame5_SwitchTimer(Handle timer)
-{
-	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding) 
-	{
-		Bossgame5_Step -= 0.5;
-		PrintToChatAll("DBG: %f", Bossgame5_Step);
-
-		if (Bossgame5_Step > 1.5)
-		{
-			// Silent
-		}
-		else if (Bossgame5_Step > 0)
-		{
-			// TODO: Needs a sound
-			EmitSoundToAll("ui/chime_rd_2base_pos.wav", SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, 0.5, 150);
-		}
-		else 
-		{
-			PlaySoundToAll("ui/hitsound_retro1.wav");
-			PrintToChatAll("DBG: SWITCH");
-
-			Bossgame5_Step = 4.0;
-			Bossgame5_BlockState = !Bossgame5_BlockState;
-
-			if (Bossgame5_BlockState)
-			{
-				Bossgame5_SwitchGreen();
+				pendingPlayers++;
 			}
 			else
 			{
-				Bossgame5_SwitchYellow();
+				successfulPlayers++;
 			}
 		}
+	}
 
+	if (alivePlayers < 1)
+	{
+		EndBoss();
+	}
+
+	if (successfulPlayers > 0 && pendingPlayers == 0)
+	{
+		EndBoss();
+	}
+}
+
+public void Bossgame6_OnMinigameFinish()
+{
+	if (BossgameID == 6 && IsMinigameActive) 
+	{
+		Bossgame6_SendDoorInput("Close");
+		Bossgame6_CleanupEntities();
+	}
+}
+
+public Action Bossgame6_SwitchTimer(Handle timer)
+{
+	if (BossgameID == 6 && IsMinigameActive && !IsMinigameEnding) 
+	{
+		switch (Bossgame6_Timer)
+		{
+			case 8: 
+				Bossgame6_SendDoorInput("Close");
+				
+			case 7: 
+				Bossgame6_CleanupEntities();
+
+			case 6: 
+				Bossgame6_DoEntitySpawns();
+
+			case 5: 
+				Bossgame6_SendDoorInput("Open");
+
+			case 0:
+				Bossgame6_Timer = 9;
+		}
+
+		Bossgame6_Timer--;
 		return Plugin_Continue;
 	}
 
+	Bossgame6_Timer = 9;
 	return Plugin_Stop; 
 }
 
-public void Bossgame5_SwitchGreen() 
+public void Bossgame6_DoEntitySpawns()
 {
-	float pos[3] = { -15000.0, -912.0, 2656.0 };
+	float Bossgame6_SpawnedEntityPositions[32][3];
 
-	Bossgame5_DoSwitch(pos);
-}
-
-public void Bossgame5_SwitchYellow() 
-{
-	float pos[3] = { -14840.0, -912.0, 2656.0 };
-
-	Bossgame5_DoSwitch(pos);
-}
-
-public void Bossgame5_DoSwitch(float pos[3])
-{
-	int entity = CreateEntityByName("prop_physics");
-
-	if (IsValidEdict(entity))
+	for (int i = 0; i < 32; i++)
 	{
-		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
-		DispatchSpawn(entity);
+		bool validPosition = false;
+		float position[3];
+		int calculationAttempts = 0;
 
-		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, entity);
+		while (!validPosition)
+		{
+			validPosition = true;
+			calculationAttempts++;
+
+			if (calculationAttempts > 32)
+			{
+				return;
+			}
+
+			position[0] = GetRandomFloat(-5631.0, -3262.0);
+			position[1] = GetRandomFloat(-6305.0, -4929.0);
+			position[2] = -469.0;
+
+			for (int j = 0; j < 32; j++)
+			{
+				if (j == i)
+				{
+					continue;
+				}
+
+				float distance = GetVectorDistance(position, Bossgame6_SpawnedEntityPositions[j]);
+
+				if (distance <= 100)
+				{
+					validPosition = false;
+				}
+			}
+		}
+
+		int entity = CreateEntityByName("prop_physics");
+
+		if (IsValidEdict(entity))
+		{
+			// TODO: Random model here
+			DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+			DispatchSpawn(entity);
+
+			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
+		}
+
+		Bossgame6_EntityIndexes[i] = entity;
+	}
+}
+
+public void Bossgame6_CleanupEntities()
+{
+	for (int i = 0; i < 32; i++)
+	{
+		int entity = Bossgame6_EntityIndexes[i];
+
+		if (IsValidEdict(entity) && entity > MaxClients)
+		{
+			CreateTimer(0.0, Timer_RemoveEntity, entity);
+		}
+	}
+}
+
+public void Bossgame6_SendDoorInput(const char[] input)
+{
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "func_door")) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, "plugin_TPBoss_Door") == 0)
+		{
+			AcceptEntityInput(entity, input, -1, -1, -1);
+			break;
+		}
 	}
 }
