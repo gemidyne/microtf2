@@ -48,37 +48,39 @@ public void Bossgame2_OnMinigameSelectedPre()
 
 public void Bossgame2_OnSelection(int client)
 {
-	if (IsMinigameActive && BossgameID == 2 && IsClientValid(client))
+	if (!IsMinigameActive || BossgameID != 2)
 	{
-		float ang[3] = { 0.0, 180.0, 0.0 };
-		float vel[3] = { 0.0, 0.0, 0.0 };
-
-		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Engineer);
-		ResetWeapon(client, false);
-
-		int column = client;
-		int row = 0;
-		while (column > 8) 
-		{
-			column = column - 8;
-			row = row + 1;
-		}
-
-		float pos[3] = { 4680.5, 2275.0, 1.0 };
-		// pos[0] = 6380.0 + float(row*55);
-		// pos[1] = 1400.0 + float(column*55);
-		// pos[2] = -310.0; 
-
-		IsViewModelVisible(client, true);
-		IsGodModeEnabled(client, false);
-		IsPlayerCollisionsEnabled(client, false);
-
-		SetPlayerHealth(client, 5000);
-		//SetEntProp(client, Prop_Send, "m_iHideHUD", 0);
-
-		TeleportEntity(client, pos, ang, vel);
+		return;
 	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	player.RemoveAllWeapons();
+	player.SetClass(TFClass_Engineer);
+	player.SetGodMode(false);
+	player.SetCollisionsEnabled(false);
+	player.SetHealth(5000);
+
+	ResetWeapon(client, false);
+
+	int column = client;
+	int row = 0;
+	while (column > 8) 
+	{
+		column = column - 8;
+		row = row + 1;
+	}
+
+	float pos[3] = { 4680.5, 2275.0, 1.0 };
+	float ang[3] = { 0.0, 180.0, 0.0 };
+	float vel[3] = { 0.0, 0.0, 0.0 };
+
+	TeleportEntity(client, pos, ang, vel);
 }
 
 public void Bossgame2_OnTfRoundStart()
@@ -98,64 +100,77 @@ public void Bossgame2_OnTfRoundStart()
 	}
 }
 
-public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int activator, float delay)
+public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int activatorId, float delay)
 {
 	if (!Bossgame2_CanCheckPosition)
 	{
 		return;
 	}
 
-	if (IsClientValid(activator) && IsPlayerParticipant[activator] && IsPlayerAlive(activator) && PlayerStatus[activator] == PlayerStatus_NotWon)
+	Player activator = new Player(activatorId);
+
+	if (activator.IsValid && activator.IsAlive && IsPlayerParticipant[activatorId] && PlayerStatus[activatorId] == PlayerStatus_NotWon)
 	{
-		ClientWonMinigame(activator);
+		ClientWonMinigame(activatorId);
 	}
 }
 
-public void Bossgame2_OnPlayerDeath(int victim, int attacker)
+public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 {
-	if (IsMinigameActive && BossgameID == 2 && IsClientValid(victim))
+	if (!IsMinigameActive || BossgameID != 2)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		return;
+	}
+
+	Player victim = new Player(victimId);
+
+	if (victim.IsValid)
+	{
+		PlayerStatus[victimId] = PlayerStatus_Failed;
 	}
 }
 
 public void Bossgame2_BossCheck()
 {
-	if (IsMinigameActive && BossgameID == 2)
+	if (!IsMinigameActive || BossgameID != 2)
 	{
-		Bossgame2_CanCheckPosition = true;
+		return;
+	}
 
-		int alivePlayers = 0;
-		int successfulPlayers = 0;
-		int pendingPlayers = 0;
+	Bossgame2_CanCheckPosition = true;
 
-		for (int i = 1; i <= MaxClients; i++)
+	int alivePlayers = 0;
+	int successfulPlayers = 0;
+	int pendingPlayers = 0;
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsAlive && IsPlayerParticipant[i])
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i) && IsPlayerParticipant[i])
-			{
-				alivePlayers++;
+			alivePlayers++;
 
-				if (PlayerStatus[i] == PlayerStatus_NotWon)
-				{
-					pendingPlayers++;
-				}
-				else if (PlayerStatus[i] == PlayerStatus_Winner)
-				{
-					successfulPlayers++;
-				}
+			if (PlayerStatus[i] == PlayerStatus_NotWon)
+			{
+				pendingPlayers++;
+			}
+			else if (PlayerStatus[i] == PlayerStatus_Winner)
+			{
+				successfulPlayers++;
 			}
 		}
+	}
 
-		if (alivePlayers == 0)
-		{
-			// If no one's alive - just end it.
-			EndBoss();
-		}
+	if (alivePlayers == 0)
+	{
+		// If no one's alive - just end it.
+		EndBoss();
+	}
 
-		if (successfulPlayers > 0 && pendingPlayers == 0)
-		{
-			EndBoss();
-		}
+	if (successfulPlayers > 0 && pendingPlayers == 0)
+	{
+		EndBoss();
 	}
 }
 
