@@ -5,7 +5,7 @@
  */
 
 int Minigame17_Selected[MAXPLAYERS+1];
-int Minigame17_ClientTeam;
+TFTeam Minigame17_ClientTeam;
 
 public void Minigame17_EntryPoint()
 {
@@ -33,7 +33,7 @@ public void Minigame17_OnMinigameSelectedPre()
 {
 	if (MinigameID == 17)
 	{
-		Minigame17_ClientTeam = GetRandomInt(2, 3);
+		Minigame17_ClientTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -47,22 +47,33 @@ public void Minigame17_OnMinigameSelectedPre()
 
 public void Minigame17_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 17 && IsClientValid(client))
+	if (MinigameID != 17)
 	{
-		if (GetClientTeam(client) == Minigame17_ClientTeam)	//Selected Team Has to Hit 
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		if (player.Team == Minigame17_ClientTeam)	//Selected Team Has to Hit 
 		{
-			TF2_SetPlayerClass(client, TFClass_Medic);
-			IsGodModeEnabled(client, true);
+			player.Class = TFClass_Medic;
+			player.SetGodMode(true);
 			ResetWeapon(client, true);
 			Minigame17_Selected[client] = 1;
 		}
 		else
 		{
-			TF2_SetPlayerClass(client, TFClass_Heavy);
-			IsGodModeEnabled(client, false);
+			player.Class = TFClass_Heavy;
+			player.SetGodMode(false);
+			player.SetHealth(1000);
 			ResetWeapon(client, false);
-			//Don't need to show an overlay, its already default
-			SetPlayerHealth(client, 1000);
 			Minigame17_Selected[client] = 0;
 		}
 	}
@@ -70,9 +81,11 @@ public void Minigame17_OnMinigameSelected(int client)
 
 public void Minigame17_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
-		if (GetClientTeam(client) == Minigame17_ClientTeam)
+		if (player.Team == Minigame17_ClientTeam)
 		{
 			MinigameCaption[client] = "HIT A HEAVY!";
 		}
@@ -83,16 +96,19 @@ public void Minigame17_GetDynamicCaption(int client)
 	}
 }
 
-public void Minigame17_OnPlayerTakeDamage(int victim, int attacker, float damage)
+public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
 	if (IsMinigameActive && MinigameID == 17)
 	{
-		if (IsClientValid(attacker) && IsClientValid(victim) && IsPlayerParticipant[attacker] && IsPlayerParticipant[victim])
+		Player victim = new Player(victimId);
+		Player attacker = new Player(attackerId);
+
+		if (attacker.IsValid && attacker.IsParticipating && victim.IsValid && victim.IsParticipating)
 		{
-			if (Minigame17_Selected[attacker] == 1 && Minigame17_Selected[victim] == 0)
+			if (Minigame17_Selected[attackerId] == 1 && Minigame17_Selected[victimId] == 0)
 			{
-				ClientWonMinigame(attacker);
-				ClientWonMinigame(victim);
+				ClientWonMinigame(attackerId);
+				ClientWonMinigame(victimId);
 			}
 		}
 	}
