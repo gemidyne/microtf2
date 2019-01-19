@@ -9,6 +9,7 @@ float Bossgame4_Angles[2][2][3];
 
 public void Bossgame4_EntryPoint()
 {
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
@@ -65,61 +66,64 @@ public bool Bossgame4_OnCheck()
 	return true;
 }
 
+public void Bossgame4_OnMinigameSelectedPre()
+{
+	if (BossgameID != 4)
+	{
+		return;
+	}
+
+	IsBlockingDamage = false;
+	IsBlockingDeathCommands = true;
+	IsOnlyBlockingDamageByPlayers = true;
+}
+
 public void Bossgame4_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
+	if (!IsMinigameActive || BossgameID != 4)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = true;
-		IsOnlyBlockingDamageByPlayers = true;
-
-		ChooseRandomClass(client);
-
-		TFClassType classType = TF2_GetPlayerClass(client);
-
-		if (classType == TFClass_Scout || classType == TFClass_Spy)
-		{
-			switch (GetRandomInt(0, 2))
-			{
-				case 0:
-				{
-					TF2_SetPlayerClass(client, TFClass_Pyro);
-				}
-
-				case 1:
-				{
-					TF2_SetPlayerClass(client, TFClass_Engineer);
-				}
-
-				default:
-				{
-					TF2_SetPlayerClass(client, TFClass_Soldier);
-				}
-			}
-		}
-
-		ResetWeapon(client, true);
-
-		float pos[3];
-		float vel[3] = { 0.0, 0.0, 0.0 };
-		float ang[3];
-
-		int index = GetRandomInt(0, 1);
-		int team = GetClientTeam(client);
-		int teamNumber = (team == 2 ? 0 : 1);
-
-		pos = Bossgame4_Positions[teamNumber][index];
-		ang = Bossgame4_Angles[teamNumber][index];
-
-		TeleportEntity(client, pos, ang, vel);
-
-		IsGodModeEnabled(client, false);
-		ResetHealth(client);
+		return;
 	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	player.SetRandomClass();
+
+	while (player.Class == TFClass_Scout || player.Class == TFClass_Spy)
+	{
+		player.SetRandomClass();
+	}
+
+	player.SetGodMode(false);
+	player.ResetHealth();
+
+	ResetWeapon(client, true);
+
+	float pos[3];
+	float vel[3] = { 0.0, 0.0, 0.0 };
+	float ang[3];
+
+	int index = GetRandomInt(0, 1);
+	int teamNumber = (player.Team == TFTeam_Red ? 0 : 1);
+
+	pos = Bossgame4_Positions[teamNumber][index];
+	ang = Bossgame4_Angles[teamNumber][index];
+
+	TeleportEntity(client, pos, ang, vel);
 }
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 {
+	if (!IsMinigameActive || BossgameID != 4)
+	{
+		return;
+	}
+
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(victim))
 	{
 		PlayerStatus[victim] = PlayerStatus_Failed;
@@ -130,13 +134,20 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 
 public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 {
-	if (IsMinigameActive && BossgameID == 4 && IsClientValid(client))
+	if (!IsMinigameActive || BossgameID != 4)
 	{
-		TF2_RespawnPlayer(client);
-		int team = GetClientTeam(client);
-		int teamNumber = (team == 2 ? 0 : 1);
+		return Plugin_Handled;
+	}
 
-		if (teamNumber == 0)
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Respawn();
+		player.SetGodMode(true);
+		player.ResetHealth();
+
+		if (player.Team == TFTeam_Red)
 		{
 			float pos[3] = { 4372.0, -204.0, 219.0 };
 			float ang[3] = { 0.0, 180.0, 0.0 };
@@ -150,9 +161,6 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
 		}
-
-		IsGodModeEnabled(client, true);
-		ResetHealth(client);
 	}
 
 	return Plugin_Handled;
@@ -185,7 +193,9 @@ public void Bossgame4_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && PlayerStatus[i] != PlayerStatus_Failed)
+			Player player = new Player(i);
+
+			if (player.IsValid && PlayerStatus[i] != PlayerStatus_Failed)
 			{
 				PlayerStatus[i] = PlayerStatus_Winner;
 			}
@@ -201,7 +211,9 @@ public void Bossgame4_OnBossStopAttempt()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i) && PlayerStatus[i] != PlayerStatus_Failed)
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsAlive && PlayerStatus[i] != PlayerStatus_Failed)
 			{
 				alivePlayers++;
 			}

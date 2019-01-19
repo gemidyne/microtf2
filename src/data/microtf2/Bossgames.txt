@@ -42,10 +42,10 @@
 	}
 	"6"
 	{
-		"Enabled"		"0"
+		"Enabled"		"1"
 		"Duration"		"60.0"
-		"BackgroundMusic"	""
+		"BackgroundMusic"	"stsv/microtf2/bossgame/5.mp3"
 		"EntryPoint"		"Bossgame6_EntryPoint"
-		"Caption"		"SHOOT AS MANY BARRELS!"
+		"Caption"		"SHOOT THE MOST BARRELS!"
 	}
 }

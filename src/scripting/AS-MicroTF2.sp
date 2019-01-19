@@ -41,6 +41,7 @@
 
 #include "Header.sp"
 #include "Forwards.sp"
+#include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
 #include "System.sp"

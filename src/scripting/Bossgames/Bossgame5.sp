@@ -40,36 +40,47 @@ public bool Bossgame5_OnCheck()
 
 public void Bossgame5_OnMinigameSelectedPre()
 {
-	if (BossgameID == 5)
+	if (BossgameID != 5)
 	{
-		Bossgame5_SwitchYellow();
-
-		Bossgame5_CanCheckPosition = false;
-		Bossgame5_Step = 4.0;
-
-		IsBlockingDamage = false;
-		IsOnlyBlockingDamageByPlayers = true;
-		IsBlockingDeathCommands = false;
-
-		CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+		return;
 	}
+
+	Bossgame5_SwitchYellow();
+
+	Bossgame5_CanCheckPosition = false;
+	Bossgame5_Step = 4.0;
+
+	IsBlockingDamage = false;
+	IsOnlyBlockingDamageByPlayers = true;
+	IsBlockingDeathCommands = false;
+
+	CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 }
 
 public void Bossgame5_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && BossgameID == 5 && IsClientValid(client))
+	if (!IsMinigameActive || BossgameID != 5)
 	{
-		TF2_RemoveAllWeapons(client);
-		TF2_SetPlayerClass(client, TFClass_Engineer);
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.RemoveAllWeapons();
+		player.SetClass(TFClass_Engineer);
+		player.SetGodMode(false);
+		player.SetCollisionsEnabled(false);
+		player.ResetHealth();
+
 		ResetWeapon(client, true);
 
 		float pos[3];
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		float ang[3] = { 0.0, 90.0, 0.0 };
 
-		int team = GetClientTeam(client);
-
-		if (team == 2) // RED
+		if (player.Team == TFTeam_Red) // RED
 		{
 			pos[0] = -13436.6;
 			pos[1] = -14211.9;
@@ -83,16 +94,19 @@ public void Bossgame5_OnMinigameSelected(int client)
 		}
 
 		TeleportEntity(client, pos, ang, vel);
-
-		IsGodModeEnabled(client, false);
-		IsPlayerCollisionsEnabled(client, false);
-		ResetHealth(client);
 	}
 }
 
-public void Bossgame5_OnPlayerDeath(int victim, int attacker)
+public void Bossgame5_OnPlayerDeath(int victimId, int attacker)
 {
-	if (IsMinigameActive && BossgameID == 5 && IsClientValid(victim))
+	if (!IsMinigameActive || BossgameID == 5)
+	{
+		return;
+	}
+
+	Player victim = new Player(victimId);
+
+	if (victim.IsValid)
 	{
 		PlayerStatus[victim] = PlayerStatus_Failed;
 	}
@@ -100,39 +114,43 @@ public void Bossgame5_OnPlayerDeath(int victim, int attacker)
 
 public void Bossgame5_OnBossStopAttempt()
 {
-	if (IsMinigameActive && BossgameID == 5)
+	if (!IsMinigameActive || BossgameID != 5)
 	{
-		Bossgame5_CanCheckPosition = true;
-		int alivePlayers = 0;
-		int successfulPlayers = 0;
-		int pendingPlayers = 0;
+		return;
+	}
 
-		for (int i = 1; i <= MaxClients; i++)
+	Bossgame5_CanCheckPosition = true;
+	int alivePlayers = 0;
+	int successfulPlayers = 0;
+	int pendingPlayers = 0;
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsInGame && player.IsAlive)
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i))
-			{
-				alivePlayers++;
+			alivePlayers++;
 
-				if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
-				{
-					pendingPlayers++;
-				}
-				else
-				{
-					successfulPlayers++;
-				}
+			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
+			{
+				pendingPlayers++;
+			}
+			else
+			{
+				successfulPlayers++;
 			}
 		}
+	}
 
-		if (alivePlayers < 1)
-		{
-			EndBoss();
-		}
+	if (alivePlayers < 1)
+	{
+		EndBoss();
+	}
 
-		if (successfulPlayers > 0 && pendingPlayers == 0)
-		{
-			EndBoss();
-		}
+	if (successfulPlayers > 0 && pendingPlayers == 0)
+	{
+		EndBoss();
 	}
 }
 
@@ -160,7 +178,9 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 		return;
 	}
 
-	if (IsClientValid(activator) && IsPlayerParticipant[activator] && IsPlayerAlive(activator) && PlayerStatus[activator] == PlayerStatus_NotWon)
+	Player player = new Player(activator);
+
+	if (player.IsValid && player.IsAlive && IsPlayerParticipant[activator] && PlayerStatus[activator] == PlayerStatus_NotWon)
 	{
 		ClientWonMinigame(activator);
 	}
