@@ -1213,7 +1213,9 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
 			StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
 		}
