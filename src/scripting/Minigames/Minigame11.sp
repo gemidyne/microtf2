@@ -22,7 +22,7 @@ public void Minigame11_OnMinigameSelectedPre()
 		Minigame11_Mode = GetRandomInt(1, 2);
 		Minigame11_CanCheckConditions = false;
 
-		CreateTimer(2.0, Timer_Minigame11_AllowConditions);		
+		CreateTimer(2.0, Timer_Minigame11_AllowConditions);
 	}
 }
 
@@ -33,15 +33,29 @@ public Action Timer_Minigame11_AllowConditions(Handle timer)
 
 public void Minigame11_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 11 && IsClientValid(client))
+	if (MinigameID != 11)
 	{
-		PlayerStatus[client] = PlayerStatus_Winner;
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Status = PlayerStatus_Winner;
 	}
 }
 
 public void Minigame11_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
@@ -61,7 +75,17 @@ public void Minigame11_GetDynamicCaption(int client)
 
 public void Minigame11_OnGameFrame()
 {
-	if (IsMinigameActive && MinigameID == 11 && Minigame11_CanCheckConditions)
+	if (MinigameID != 11)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	if (Minigame11_CanCheckConditions)
 	{
 		float velocity[3];
 		float speed = 0.0;
@@ -69,7 +93,9 @@ public void Minigame11_OnGameFrame()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				limit = GetEntPropFloat(i, Prop_Send, "m_flMaxspeed") - 100.0;
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
@@ -77,18 +103,18 @@ public void Minigame11_OnGameFrame()
 
 				if (Minigame11_Mode == 2)
 				{
-					if (speed < limit && PlayerStatus[i] == PlayerStatus_Winner) 
+					if (speed < limit && player.Status == PlayerStatus_Winner) 
 					{
-						PlayerStatus[i] = PlayerStatus_Failed;
-						ForcePlayerSuicide(i);
+						player.Status = PlayerStatus_Failed;
+						player.Kill();
 					}
 				}
 				else if (Minigame11_Mode == 1)
 				{
-					if (speed > 100.0 && PlayerStatus[i] == PlayerStatus_Winner)
+					if (speed > 100.0 && player.Status == PlayerStatus_Winner)
 					{
-						PlayerStatus[i] = PlayerStatus_Failed;
-						ForcePlayerSuicide(i);
+						player.Status = PlayerStatus_Failed;
+						player.Kill();
 					}
 				}
 			}

@@ -152,6 +152,11 @@ methodmap Player __nullable__
 		this.SetHealth(health);
     }
 
+    public void Kill()
+    {
+        ForcePlayerSuicide(this.ClientId);
+    }
+
     public void SetGlow(bool enabled)
     {
         SetEntProp(this.ClientId, Prop_Send, "m_bGlowEnabled", enabled ? 1 : 0);
