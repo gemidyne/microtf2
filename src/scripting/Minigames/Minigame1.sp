@@ -28,11 +28,16 @@ public void Minigame1_OnSelectionPre()
 
 public void Minigame1_OnSelection(int client)
 {
-	if (!IsMinigameActive || MinigameID != 1)
+	if (MinigameID != 1)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(client);
 
 	if (player.IsValid)
@@ -66,21 +71,28 @@ public void Minigame1_OnSelection(int client)
 
 public void Minigame1_OnGameFrame()
 {
-	if (IsMinigameActive && MinigameID == 1)
+	if (MinigameID != 1)
 	{
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-			
-			if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
-			{
-				float pos[3];
-				GetClientAbsOrigin(i, pos);
+		return;
+	}
 
-				if (pos[1] > 3755.0)
-				{
-					ClientWonMinigame(i);
-				}
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+		
+		if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
+		{
+			float pos[3];
+			GetClientAbsOrigin(i, pos);
+
+			if (pos[1] > 3755.0)
+			{
+				ClientWonMinigame(i);
 			}
 		}
 	}
@@ -88,16 +100,23 @@ public void Minigame1_OnGameFrame()
 
 public void Minigame1_OnFinish()
 {
-	if (IsMinigameActive && MinigameID == 1)
+	if (MinigameID != 1)
 	{
-		for (int i = 1; i <= MaxClients; i++) 
-		{
-			Player player = new Player(i);
+		return;
+	}
 
-			if (player.IsValid && player.IsParticipating) 
-			{
-				player.Respawn();
-			}
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
+	for (int i = 1; i <= MaxClients; i++) 
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating) 
+		{
+			player.Respawn();
 		}
 	}
 }
