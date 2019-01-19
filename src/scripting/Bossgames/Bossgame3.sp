@@ -54,11 +54,16 @@ public void Bossgame3_OnMinigameSelectedPre()
 
 public void Bossgame3_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || BossgameID != 3)
+	if (BossgameID != 3)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(client);
 
 	if (!player.IsValid)
@@ -107,11 +112,16 @@ public void Bossgame3_OnMinigameSelected(int client)
 
 public void Bossgame3_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (!IsMinigameActive || BossgameID != 3)
+	if (BossgameID != 3)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player victim = new Player(victimId);
 
 	if (!victim.IsValid)
@@ -131,11 +141,16 @@ public void Bossgame3_OnPlayerDeath(int victimId, int attackerId)
 
 public void Bossgame3_OnMinigameFinish()
 {
-	if (!IsMinigameActive || BossgameID != 3)
+	if (BossgameID != 3)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -149,11 +164,16 @@ public void Bossgame3_OnMinigameFinish()
 
 public void Bossgame3_OnBossStopAttempt()
 {
-	if (!IsMinigameActive || BossgameID != 3)
+	if (BossgameID != 3)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	int aliveBluePlayers = 0;
 	int aliveRedPlayers = 0;
 

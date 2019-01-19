@@ -26,11 +26,16 @@ public void Bossgame1_OnMinigameSelectedPre()
 
 public void Bossgame1_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || BossgameID != 1)
+	if (BossgameID != 1)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(client);
 
 	if (player.IsValid)
@@ -88,11 +93,16 @@ public void Bossgame1_OnGameFrame()
 
 public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 {
-	if (!IsMinigameActive || BossgameID != 1)
+	if (BossgameID != 1)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(victim);
 
 	if (player.IsValid)

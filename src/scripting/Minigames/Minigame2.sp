@@ -42,6 +42,11 @@ public void Minigame2_OnSelectionPre()
 
 public void Minigame2_OnSelection(int client)
 {
+	if (!IsMinigameActive || MinigameID != 2)
+	{
+		return;
+	}
+
 	if (IsMinigameActive && MinigameID == 2 && IsClientValid(client))
 	{
 		TFClassType class;

@@ -48,11 +48,16 @@ public void Bossgame2_OnMinigameSelectedPre()
 
 public void Bossgame2_OnSelection(int client)
 {
-	if (!IsMinigameActive || BossgameID != 2)
+	if (BossgameID != 2)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(client);
 
 	if (!player.IsValid)
@@ -117,11 +122,16 @@ public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int acti
 
 public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 {
-	if (!IsMinigameActive || BossgameID != 2)
+	if (BossgameID != 2)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player victim = new Player(victimId);
 
 	if (victim.IsValid)
@@ -132,11 +142,16 @@ public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 
 public void Bossgame2_BossCheck()
 {
-	if (!IsMinigameActive || BossgameID != 2)
+	if (BossgameID != 2)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Bossgame2_CanCheckPosition = true;
 
 	int alivePlayers = 0;

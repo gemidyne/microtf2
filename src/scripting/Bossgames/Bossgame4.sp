@@ -80,11 +80,16 @@ public void Bossgame4_OnMinigameSelectedPre()
 
 public void Bossgame4_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || BossgameID != 4)
+	if (BossgameID != 4)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Player player = new Player(client);
 
 	if (!player.IsValid)
@@ -119,11 +124,16 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 {
-	if (!IsMinigameActive || BossgameID != 4)
+	if (BossgameID != 4)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	if (IsMinigameActive && BossgameID == 4 && IsClientValid(victim))
 	{
 		PlayerStatus[victim] = PlayerStatus_Failed;

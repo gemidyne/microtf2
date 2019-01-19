@@ -59,7 +59,12 @@ public void Bossgame5_OnMinigameSelectedPre()
 
 public void Bossgame5_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || BossgameID != 5)
+	if (BossgameID != 5)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return;
 	}
@@ -99,7 +104,12 @@ public void Bossgame5_OnMinigameSelected(int client)
 
 public void Bossgame5_OnPlayerDeath(int victimId, int attacker)
 {
-	if (!IsMinigameActive || BossgameID == 5)
+	if (BossgameID != 5)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return;
 	}
@@ -114,11 +124,16 @@ public void Bossgame5_OnPlayerDeath(int victimId, int attacker)
 
 public void Bossgame5_OnBossStopAttempt()
 {
-	if (!IsMinigameActive || BossgameID != 5)
+	if (BossgameID != 5)
 	{
 		return;
 	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+	
 	Bossgame5_CanCheckPosition = true;
 	int alivePlayers = 0;
 	int successfulPlayers = 0;

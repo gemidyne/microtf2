@@ -68,7 +68,12 @@ public void Bossgame6_OnMinigameSelectedPre()
 
 public void Bossgame6_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || BossgameID != 6)
+	if (BossgameID != 6)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return;
 	}
@@ -110,7 +115,12 @@ public void Bossgame6_OnMinigameSelected(int client)
 
 public void Bossgame6_OnBossStopAttempt()
 {
-	if (!IsMinigameActive || BossgameID != 6)
+	if (BossgameID != 6)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return;
 	}
