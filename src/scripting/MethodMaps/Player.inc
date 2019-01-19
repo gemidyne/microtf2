@@ -111,6 +111,11 @@ methodmap Player __nullable__
         TF2_RespawnPlayer(this.ClientId);
     }
 
+    public void Regenerate()
+    {
+        TF2_RegeneratePlayer(this.ClientId);
+    }
+
     public void SetRandomClass()
     {
         this.Class = view_as<TFClassType>(GetRandomInt(1, 9));

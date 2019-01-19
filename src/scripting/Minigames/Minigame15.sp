@@ -60,12 +60,23 @@ public void Minigame15_OnMinigameSelectedPre()
 
 public void Minigame15_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 15 && IsClientValid(client))
+	if (MinigameID != 15)
 	{
-		TF2_SetPlayerClass(client, TFClass_Engineer);
-		TF2_RegeneratePlayer(client);
-		IsViewModelVisible(client, true);
+		return;
+	}
 
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Engineer;
+		player.Regenerate();
+		
 		int ammoOffset = FindDataMapInfo(client, "m_iAmmo");
 
 		if (ammoOffset == -1)
@@ -79,7 +90,9 @@ public void Minigame15_OnMinigameSelected(int client)
 
 public void Minigame15_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
@@ -113,7 +126,19 @@ public void Minigame15_GetDynamicCaption(int client)
 
 public void Minigame15_OnBuildObject(int client, int entity)
 {
-	if (IsMinigameActive && MinigameID == 15 && IsClientValid(client) && IsPlayerParticipant[client]) 
+	if (MinigameID != 15)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
 	{
 		bool winner = false;
 
