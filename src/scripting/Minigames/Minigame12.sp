@@ -35,9 +35,21 @@ public void Minigame12_OnMinigameSelectedPre()
 
 public void Minigame12_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 12 && IsClientValid(client))
+	if (MinigameID != 12)
 	{
-		switch (TF2_GetPlayerClass(client))
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		switch (player.Class)
 		{
 			case TFClass_Scout:
 			{
@@ -57,9 +69,8 @@ public void Minigame12_OnMinigameSelected(int client)
 
 		ResetWeapon(client, false);
 
-		IsGodModeEnabled(client, false);
-		SetPlayerHealth(client, 3000);
-		IsViewModelVisible(client, true);
+		player.SetGodMode(false);
+		player.SetHealth(3000);
 
 		TF2_AddCondition(client, TFCond_Kritzkrieged, 4.0);
 	}
@@ -71,9 +82,11 @@ public void Minigame12_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
-				PlayerStatus[i] = IsPlayerAlive(i) ? PlayerStatus_Winner : PlayerStatus_Failed;
+				player.Status = player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed;
 			}
 		}
 	}
