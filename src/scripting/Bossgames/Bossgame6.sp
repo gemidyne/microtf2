@@ -169,7 +169,7 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 
 					if (player.IsValid && player.IsParticipating)
 					{
-						player.SetAmmo(2);
+						player.SetAmmo(2, true, false);
 					}
 				}
 			}

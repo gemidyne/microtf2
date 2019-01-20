@@ -243,7 +243,7 @@ methodmap Player __nullable__
         this.DestroyPlayerTeleporterExit(cleanDestroy);
     }
 
-    public void SetAmmo(int ammoCount)
+    public void SetAmmo(int ammoCount, bool primaryAmmo = true, bool clipAmmo = true)
     {
         int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
 
@@ -273,8 +273,15 @@ methodmap Player __nullable__
             return;
         }
 
-        SetEntData(entity, clip, ammoCount, 4, true);
-        SetEntData(this.ClientId, ammoType+ammo, ammoCount, 4, true);
+        if (clipAmmo)
+        {
+            SetEntData(entity, clip, ammoCount, 4, true);
+        }
+
+        if (primaryAmmo)
+        {
+            SetEntData(this.ClientId, ammoType+ammo, ammoCount, 4, true);
+        }
     }
 
     public void RemoveWearables()
