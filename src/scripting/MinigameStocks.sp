@@ -146,16 +146,18 @@ public void EndBoss()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i))
+			Player player = new Player(i);
+
+			if (player.IsInGame)
 			{
                 for (int a = 0; a < 10; a++)
                 {
                     StopSound(i, SNDCHAN_AUTO, BossgameMusic[BossgameID]);
                 }
 
-                if (IsPlayerParticipant[i])
+                if (player.IsParticipating)
                 {
-					TF2_RespawnPlayer(i);
+					player.Respawn();
 				}
 			}
 		}
@@ -174,7 +176,9 @@ stock void ClearMinigameCaptionForAll()
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame)
 		{
 			DisplayOverlayToClient(i, OVERLAY_BLANK);
 			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");

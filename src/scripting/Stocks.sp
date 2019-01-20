@@ -194,7 +194,9 @@ stock void ChooseRandomClass(int client)
 
 stock void PlaySoundToPlayer(int client, const char[] sound)
 {
-	if (IsClientInGame(client) && !IsFakeClient(client) && !IsMapEnding)
+	Player player = new Player(client);
+
+	if (player.IsInGame && !player.IsBot && !IsMapEnding)
 	{
 		EmitSoundToClient(client, sound, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 	}
@@ -210,17 +212,21 @@ stock void PlaySoundToAll(const char[] sound)
 
 public Action Timer_Respawn(Handle timer, int client)
 {
-	if (IsClientValid(client) && IsPlayerParticipant[client])
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
 	{
-		TF2_RespawnPlayer(client);
+		player.Respawn();
 	}
 }
 
 stock void ClientWonMinigame(int client)
 {
-	if (IsClientValid(client) && PlayerStatus[client] == PlayerStatus_NotWon && IsPlayerParticipant[client])
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 	{
-		PlayerStatus[client] = PlayerStatus_Winner;
+		player.Status = PlayerStatus_Winner;
 		EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 
 		int i = GetRandomInt(0, 5);
@@ -322,21 +328,20 @@ stock void RemoveAllJarateEntities()
 
 stock void DisplayHudMessage(const char[] title, const char[] body, float duration)
 {
-	char formatted[MINIGAME_CAPTION_LENGTH];
-
-	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
-
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
-			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, formatted);
+			DisplayHudMessageToClient(i, title, body, duration);
 		}
 	}
 }
 
 stock void DisplayHudMessageToClient(int client, const char[] title, const char[] body, float duration)
 {
+	// TODO: This should use translations only.
 	char formatted[MINIGAME_CAPTION_LENGTH];
 
 	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
