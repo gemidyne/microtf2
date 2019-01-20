@@ -69,6 +69,11 @@ public void Minigame18_OnMapStart()
 
 public bool Minigame18_OnCheck()
 {
+	if (SpecialRoundID == 11)
+	{
+		return false;
+	}
+	
 	return true;
 }
 
