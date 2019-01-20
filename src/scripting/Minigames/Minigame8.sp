@@ -74,7 +74,9 @@ public void Minigame8_OnMinigameSelectedPre()
 
 public void Minigame8_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsInGame)
 	{
 		char text[64];
 		Format(text, sizeof(text), "%s\n%s = ?", MinigameCaption[client], Minigame8_SayTextQuestion);	

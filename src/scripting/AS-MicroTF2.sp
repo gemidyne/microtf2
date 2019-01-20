@@ -1139,7 +1139,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 		if (player.IsValid)
 		{
-			IsPlayerParticipant[i] = true;
+			player.IsParticipating = true;
 			
 			if (IsPlayerWinner[i])
 			{

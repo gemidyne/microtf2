@@ -38,7 +38,9 @@ public Action Timer_Minigame9_AllowConditions(Handle timer)
 
 public void Minigame9_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsInGame)
 	{
 		char text[64];
 
@@ -62,7 +64,9 @@ public void Minigame9_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && Minigame9_CanCheckConditions)
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && Minigame9_CanCheckConditions)
 			{
 				switch (Minigame9_Mode)
 				{
@@ -142,7 +146,9 @@ public void Minigame9_OnMinigameFinishPre()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				if (Minigame9_Mode == 2)
 				{

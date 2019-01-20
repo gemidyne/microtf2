@@ -82,9 +82,11 @@ stock int GetHighestScore()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i) && PlayerScore[i] > threshold)
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating && player.Score > threshold)
 		{
-			threshold = PlayerScore[i];
+			threshold = player.Score;
 		}
 	}
 
@@ -97,9 +99,11 @@ stock int GetLowestScore()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i) && PlayerScore[i] < threshold)
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating && player.Score < threshold)
 		{
-			threshold = PlayerScore[i];
+			threshold = player.Score;
 		}
 	}
 
@@ -121,8 +125,14 @@ stock void ShowPlayerScores(bool showText)
 
 		for (int i = 1; i <= MaxClients; i++) 
 		{
-			if (IsClientValid(i)) 
+			Player player = new Player(i);
+
+			if (player.IsInGame)
 			{
+				ClearSyncHud(i, HudSync_Score);
+				ClearSyncHud(i, HudSync_Round);
+				ClearSyncHud(i, HudSync_Special);
+
 				char roundDisplay[32];
 
 				if (MaxRounds > 0)
@@ -132,17 +142,6 @@ stock void ShowPlayerScores(bool showText)
 				else
 				{
 					Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", i, RoundsPlayed + 1);
-				}
-
-				char scoreText[32];
-
-				if (SpecialRoundID == 17)
-				{
-					Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", i, PlayerScore[i]);
-				}
-				else
-				{
-					Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", i, PlayerScore[i]);
 				}
 
 				char themeSpecialText[64];
@@ -156,21 +155,31 @@ stock void ShowPlayerScores(bool showText)
 					Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", i, SystemNames[GamemodeID]);
 				}
 
-				ClearSyncHud(i, HudSync_Score);
-				ClearSyncHud(i, HudSync_Round);
-				ClearSyncHud(i, HudSync_Special);
-
-				// SCORE
-				SetHudTextParamsEx(-1.0, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-				ShowSyncHudText(i, HudSync_Score, scoreText);
-
 				// ROUND INFO
 				SetHudTextParamsEx(0.01, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
 				ShowSyncHudText(i, HudSync_Round, roundDisplay);
-			
-				// TOPRIGHT
+				
+				// THEME/SPECIAL ROUND INFO
 				SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
 				ShowSyncHudText(i, HudSync_Special, themeSpecialText);
+
+				if (player.IsValid)
+				{
+					char scoreText[32];
+
+					if (SpecialRoundID == 17)
+					{
+						Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", i, PlayerScore[i]);
+					}
+					else
+					{
+						Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", i, PlayerScore[i]);
+					}
+
+					// SCORE
+					SetHudTextParamsEx(-1.0, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
+					ShowSyncHudText(i, HudSync_Score, scoreText);
+				}
 			}
 		}
 	}
@@ -190,9 +199,11 @@ public void Hook_Scoreboard(int entity)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i)) 
+		Player player = new Player(i);
+
+		if (player.IsValid)
 		{
-			total[i] = PlayerScore[i];
+			total[i] = player.Score;
 		}
 	}
 
@@ -227,10 +238,12 @@ stock int GetActivePlayers(int team = 0, bool mustbealive = false)
     int output = 0;
     for (int i = 1; i <= MaxClients; i++) 
 	{
-        if (IsClientInGame(i)) 
+		Player player = new Player(i);
+
+		if (player.IsInGame) 
 		{
-			int currentTeam = GetClientTeam(i);
-			if (((team == 0 && currentTeam >= 2) || (team > 0 && currentTeam == team)) && (!mustbealive || IsPlayerAlive(i)))
+			int currentTeam = view_as<int>(player.Team);
+			if (((team == 0 && currentTeam >= 2) || (team > 0 && currentTeam == team)) && (!mustbealive || player.IsAlive))
 			{
 				output += 1;
 			}
@@ -244,7 +257,9 @@ stock void UpdatePlayerIndexes(bool mustbealive = false)
 	int id = 0;
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i) && (!mustbealive || IsPlayerAlive(i)))
+		Player player = new Player(i);
+
+		if (player.IsValid && (!mustbealive || player.IsAlive))
 		{
 			id += 1;
 			PlayerIndex[i] = id;

@@ -40,7 +40,9 @@ public void Minigame6_OnMinigameSelectedPre()
 
 public void Minigame6_GetDynamicCaption(int client)
 {
-	if (IsClientValid(client))
+	Player player = new Player(client);
+	
+	if (player.IsInGame)
 	{
 		char text[64];
  		Format(text, sizeof(text), "%s\n%s", MinigameCaption[client], Minigame6_SayTextAnswer);	

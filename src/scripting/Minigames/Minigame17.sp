@@ -37,7 +37,9 @@ public void Minigame17_OnMinigameSelectedPre()
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i))
+			Player player = new Player(i);
+
+			if (player.IsValid)
 			{
 				Minigame17_Selected[i] = 0;
 			}

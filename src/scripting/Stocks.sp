@@ -4,23 +4,6 @@
  * Contains alot of Stocks for use in Minigames / Other stuff
  */
 
-stock bool IsClientValid(int client)
-{
-	if (client <= 0 || client > MaxClients)
-	{
-		return false;
-	}
-
-	if (!IsClientInGame(client))
-	{
-		return false;
-	}
-
-	int team = GetClientTeam(client);
-
-	return team == 2 || team == 3;
-}
-
 stock void DisplayOverlayToAll(const char[] path)
 {
 	for (int i = 1; i <= MaxClients; i++)
@@ -296,7 +279,9 @@ public int GetClientAimEntity3(int client, float &distancetoentity, float endpos
 
 public bool TraceRayDontHitSelfOrPlayers(int entity, int mask, int data)
 {
-	return (entity != data && !IsClientValid(entity));
+	Player player = new Player(entity);
+
+	return (entity != data && !player.IsValid);
 }
 
 public float GetSpeedMultiplier(float count)

@@ -86,7 +86,9 @@ public void SpecialRound_OnGameFrame()
 		{
 			for (int i = 1; i <= MaxClients; i++)
 			{
-				if (IsClientValid(i) && IsPlayerParticipant[i] && IsPlayerAlive(i))
+				Player player = new Player(i);
+
+				if (player.IsValid && player.IsParticipating && player.IsAlive)
 				{
 					SetEntPropFloat(i, Prop_Send, "m_flHeadScale", (SpecialRoundID == 15) ? 2.0 : 1.0);
 				}
@@ -241,17 +243,25 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 public void Special_NoTouch(int entity, int other) 
 {
-    if (SpecialRoundID != 11 || MinigameID == 17) 
+	if (SpecialRoundID != 11 || MinigameID == 17) 
 	{
 		return;
 	}
 
-    char classname[64];
-    char classname2[64];
-    GetEdictClassname(entity, classname, sizeof(classname));
-    GetEdictClassname(other, classname2, sizeof(classname2));
+	if (!IsMinigameActive)
+	{
+		return;
+	}
 
-    if (StrEqual(classname, "player") && StrEqual(classname2, "player") && IsClientValid(entity) && IsClientValid(other) && IsMinigameActive && IsPlayerAlive(entity) && IsPlayerAlive(other) && GetClientTeam(entity) != GetClientTeam(other)) 
+	char classname[64];
+	char classname2[64];
+	GetEdictClassname(entity, classname, sizeof(classname));
+	GetEdictClassname(other, classname2, sizeof(classname2));
+
+	Player player1 = new Player(entity);
+	Player player2 = new Player(other);
+
+	if (StrEqual(classname, "player") && StrEqual(classname2, "player") && player1.IsValid && player2.IsValid && player1.IsAlive && player2.IsAlive && player1.Team != player2.Team) 
 	{
 		PlayerStatus[entity] = PlayerStatus_Failed;
 		PlayerStatus[other] = PlayerStatus_Failed;

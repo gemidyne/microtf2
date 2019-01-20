@@ -14,8 +14,10 @@ public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcas
 	if (event != INVALID_HANDLE)
 	{
 		int client = GetClientOfUserId(GetEventInt(event, "userid"));
+
+		Player player = new Player(client);
 		
-		if (IsClientValid(client))
+		if (player.IsValid)
 		{
 			CreateTimer(0.2, Timer_PlayerSpawn, client);
 		}
@@ -467,7 +469,7 @@ public Action Transmit_HatRemove(int entity, int client)
 	return Plugin_Handled;
 }
 
-public Action Client_TakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype)
+public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
 {
 	if (!IsPluginEnabled)
 	{
@@ -478,12 +480,14 @@ public Action Client_TakeDamage(int victim, int &attacker, int &inflictor, float
 	{
 		Call_StartForward(GlobalForward_OnPlayerTakeDamage);
 		Call_PushCell(victim);
-		Call_PushCell(attacker);
+		Call_PushCell(attackerId);
 		Call_PushFloat(damage);
 		Call_Finish();
 	}
 
-	if (IsOnlyBlockingDamageByPlayers && IsClientValid(attacker) && IsPlayerParticipant[attacker])
+	Player attacker = new Player(attackerId);
+
+	if (IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
 	{
 		damage = 0.0;
 		
@@ -495,7 +499,7 @@ public Action Client_TakeDamage(int victim, int &attacker, int &inflictor, float
 		return Plugin_Changed;
 	}
 
-	if (IsBlockingDamage || (IsBonusRound && IsPlayerWinner[attacker] == 0))
+	if (IsBlockingDamage || (IsBonusRound && IsPlayerWinner[attackerId] == 0))
 	{
 		damage = 0.0;
 

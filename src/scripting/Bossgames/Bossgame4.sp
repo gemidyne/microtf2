@@ -133,8 +133,10 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 	{
 		return;
 	}
+
+	Player player = new Player(victim);
 	
-	if (IsMinigameActive && BossgameID == 4 && IsClientValid(victim))
+	if (player.IsValid)
 	{
 		PlayerStatus[victim] = PlayerStatus_Failed;
 
@@ -144,7 +146,12 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 
 public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 {
-	if (!IsMinigameActive || BossgameID != 4)
+	if (BossgameID != 4)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -176,24 +183,34 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	return Plugin_Handled;
 }
 
-public void Bossgame4_OnPlayerTakeDamage(int victim, int attacker, float damage)
+public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (IsMinigameActive && BossgameID == 4)
+	if (BossgameID != 4)
 	{
-		if (attacker > 0 && attacker <= MaxClients && IsClientValid(attacker) && IsClientValid(victim))
-		{
-			float ang[3];
-			float vel[3];
+		return;
+	}
 
-			GetClientEyeAngles(attacker, ang);
-			GetEntPropVector(victim, Prop_Data, "m_vecVelocity", vel);
+	if (!IsMinigameActive)
+	{
+		return;
+	}
 
-			vel[0] -= 300.0 * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-			vel[1] -= 300.0 * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-			vel[2] += 450.0;
+	Player attacker = new Player(attackerId);
+	Player victim = new Player(victimId);
 
-			TeleportEntity(victim, NULL_VECTOR, ang, vel);
-		}
+	if (attacker.IsValid && victim.IsValid)
+	{
+		float ang[3];
+		float vel[3];
+
+		GetClientEyeAngles(attackerId, ang);
+		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
+
+		vel[0] -= 300.0 * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[1] -= 300.0 * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[2] += 450.0;
+
+		TeleportEntity(victimId, NULL_VECTOR, ang, vel);
 	}
 }
 
