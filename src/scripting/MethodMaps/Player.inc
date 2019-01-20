@@ -138,7 +138,16 @@ methodmap Player __nullable__
 
     public void SetHealth(int health)
     {
-		SetPlayerHealth(this.ClientId, health);
+		int maxHealthOffset = FindDataMapInfo(this.ClientId, "m_iMaxHealth");
+		int healthOffset = FindDataMapInfo(this.ClientId, "m_iHealth");
+
+		if (maxHealthOffset == -1 || healthOffset == -1)
+		{
+			SetFailState("Failed to find m_iMaxHealth / m_iHealth on CTFPlayer.");
+		}
+
+		SetEntData(this.ClientId, maxHealthOffset, health, 4, true);
+		SetEntData(this.ClientId, healthOffset, health, 4, true);
     }
 
     public void ResetHealth()

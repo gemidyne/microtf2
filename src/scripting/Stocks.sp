@@ -39,23 +39,6 @@ stock void DisplayOverlayToAll(const char[] path)
 	}
 }
 
-stock void SetPlayerHealth(int client, int health)
-{
-	if (IsClientInGame(client))
-	{
-		int maxHealthOffset = FindDataMapInfo(client, "m_iMaxHealth");
-		int healthOffset = FindDataMapInfo(client, "m_iHealth");
-
-		if (maxHealthOffset == -1 || healthOffset == -1)
-		{
-			SetFailState("Failed to find m_iMaxHealth / m_iHealth on CTFPlayer.");
-		}
-
-		SetEntData(client, maxHealthOffset, health, 4, true);
-		SetEntData(client, healthOffset, health, 4, true);
-	}
-}
-
 stock void ResetWeapon(int client, bool viewModel)
 {
 	if (IsClientInGame(client))
