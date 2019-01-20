@@ -33,7 +33,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 
 	if (player.IsValid)
 	{
-		RemovePlayerWearables(client);
+		player.RemoveWearables();
 
 		if (!IsBonusRound)
 		{
@@ -94,9 +94,11 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	}
 
 	int client = GetClientOfUserId(userid);
-	if (IsClientValid(client) && !IsMinigameActive && !IsBonusRound)
+	Player player = new Player(client);
+
+	if (player.IsValid && !IsMinigameActive && !IsBonusRound)
 	{
-		RemovePlayerWearables(client);
+		player.RemoveWearables();
 		ResetWeapon(client, false);
 	}
 

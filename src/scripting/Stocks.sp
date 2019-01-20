@@ -56,57 +56,6 @@ stock void SetPlayerHealth(int client, int health)
 	}
 }
 
-stock void RemovePlayerWearables(int client)
-{
-	int entity = -1;
-	while ((entity = FindEntityByClassname(entity, "tf_wearable")) != -1)
-	{
-		AcceptEntityInput(entity, "kill");
-	}
-
-	entity = -1;
-	while ((entity = FindEntityByClassname(entity, "tf_wearable_demoshield")) != -1)
-	{
-		AcceptEntityInput(entity, "kill");
-	}
-
-	entity = -1;
-	while ((entity = FindEntityByClassname(entity, "tf_powerup_bottle")) != -1)
-	{
-		AcceptEntityInput(entity, "kill");
-	}
-	
-	entity = -1;
-	while ((entity = FindEntityByClassname(entity, "tf_weapon_spellbook")) != -1)
-	{
-		AcceptEntityInput(entity, "kill");
-	}
-
-	int edict = (MaxClients + 1);
-	while ((edict = FindEntityByClassname2(edict, "tf_wearable")) != -1)
-	{
-		char netclass[32];
-		if (GetEntityNetClass(edict, netclass, sizeof(netclass)) && StrEqual(netclass, "CTFWearable"))
-		{
-			int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
-			if ((idx == 57 || idx == 133 || idx == 231 || idx == 444 || idx == 405) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == client && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
-			{
-				RemoveEdict(edict);
-			}
-		}
-	}
-
-	edict = (MaxClients + 1);
-	while ((edict = FindEntityByClassname2(edict, "tf_wearable_demoshield")) != -1)
-	{
-		int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
-		if ((idx == 131 || idx == 406) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == client && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
-		{
-			RemoveEdict(edict);
-		}
-	}
-}
-
 stock void ResetWeapon(int client, bool viewModel)
 {
 	if (IsClientInGame(client))
