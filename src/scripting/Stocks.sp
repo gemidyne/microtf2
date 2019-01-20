@@ -162,26 +162,6 @@ stock void ResetWeapon(int client, bool viewModel)
 	}
 }
 
-stock void ResetHealth(int client)
-{
-	if (IsClientInGame(client))
-	{
-		TFClassType class = TF2_GetPlayerClass(client);
-		int health = 125;
-
-		switch (class)
-		{
-			case TFClass_Soldier: health = 200;
-			case TFClass_Pyro: health = 175;
-			case TFClass_DemoMan: health = 175;
-			case TFClass_Heavy: health = 300;
-			case TFClass_Medic: health = 150;
-		}
-
-		SetPlayerHealth(client, health);
-	}
-}
-
 stock void PlaySoundToPlayer(int client, const char[] sound)
 {
 	Player player = new Player(client);
