@@ -69,7 +69,7 @@ public void Bossgame2_OnSelection(int client)
 	player.Class = TFClass_Engineer;
 	player.SetGodMode(false);
 	player.SetCollisionsEnabled(false);
-	player.SetHealth(5000);
+	player.ResetHealth();
 
 	ResetWeapon(client, false);
 
