@@ -182,16 +182,6 @@ stock void ResetHealth(int client)
 	}
 }
 
-stock void ChooseRandomClass(int client)
-{
-	if (IsClientInGame(client))
-	{
-		TFClassType newClass = view_as<TFClassType>(GetRandomInt(1, 9));
-
-		TF2_SetPlayerClass(client, newClass);
-	}
-}
-
 stock void PlaySoundToPlayer(int client, const char[] sound)
 {
 	Player player = new Player(client);

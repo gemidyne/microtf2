@@ -44,15 +44,14 @@ public void Minigame19_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		TFClassType playerClass = TF2_GetPlayerClass(client);
+		TFClassType playerClass = player.Class;
 
 		if (Minigame19_ClassMode != TFClass_Unknown && playerClass == Minigame19_ClassMode)
 		{
 			while (playerClass == Minigame19_ClassMode)
 			{
-				ChooseRandomClass(client);
-
-				playerClass = TF2_GetPlayerClass(client);
+				player.SetRandomClass();
+				playerClass = player.Class;
 			}
 		}
 	}
