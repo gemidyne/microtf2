@@ -16,6 +16,7 @@
 
 int Bossgame6_EntityIndexes[32];
 int Bossgame6_Timer;
+int Bossgame6_PlayerScore[MAXPLAYERS+1] = 0;
 
 public void Bossgame6_EntryPoint()
 {
@@ -23,7 +24,6 @@ public void Bossgame6_EntryPoint()
 	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame6_OnTfRoundStart);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame6_OnBossStopAttempt);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
 }
 
@@ -53,6 +53,11 @@ public void Bossgame6_OnMinigameSelectedPre()
 		for (int i = 0; i < 32; i++)
 		{
 			Bossgame6_EntityIndexes[i] = 0;
+		}
+
+		for (int i = 0; i < MAXPLAYERS; i++)
+		{
+			Bossgame6_PlayerScore[i] = 0;
 		}
 
 		IsBlockingDamage = true;
@@ -86,12 +91,12 @@ public void Bossgame6_OnMinigameSelected(int client)
 	}
 
 	player.RemoveAllWeapons();
-	player.Class = TFClass_Engineer;
+	player.Class = TFClass_Spy;
 	player.SetGodMode(true);
 	player.SetCollisionsEnabled(false);
 	player.ResetHealth();
-
-	ResetWeapon(client, true);
+	GiveWeapon(client, 24);
+	player.SetAmmo(2);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float ang[3] = { 0.0, 90.0, 0.0 };
@@ -113,58 +118,29 @@ public void Bossgame6_OnMinigameSelected(int client)
 	TeleportEntity(client, pos, ang, vel);
 }
 
-public void Bossgame6_OnBossStopAttempt()
-{
-	if (BossgameID != 6)
-	{
-		return;
-	}
-
-	if (!IsMinigameActive)
-	{
-		return;
-	}
-
-	int alivePlayers = 0;
-	int successfulPlayers = 0;
-	int pendingPlayers = 0;
-
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsValid && player.IsAlive)
-		{
-			alivePlayers++;
-
-			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
-			{
-				pendingPlayers++;
-			}
-			else
-			{
-				successfulPlayers++;
-			}
-		}
-	}
-
-	if (alivePlayers < 1)
-	{
-		EndBoss();
-	}
-
-	if (successfulPlayers > 0 && pendingPlayers == 0)
-	{
-		EndBoss();
-	}
-}
-
 public void Bossgame6_OnMinigameFinish()
 {
 	if (BossgameID == 6 && IsMinigameActive) 
 	{
 		Bossgame6_SendDoorInput("Close");
 		Bossgame6_CleanupEntities();
+
+		int threshold = 0;
+		int winningClient = 0;
+
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && Bossgame6_PlayerScore[player.ClientId] > threshold)
+			{
+				threshold = Bossgame6_PlayerScore[player.ClientId];
+				winningClient = player.ClientId;
+			}
+		}
+
+		Player winner = new Player(winningClient);
+		winner.Status = PlayerStatus_Winner;
 	}
 }
 
@@ -184,7 +160,19 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 				Bossgame6_DoEntitySpawns();
 
 			case 5: 
+			{
 				Bossgame6_SendDoorInput("Open");
+
+				for (int i = 1; i <= MaxClients; i++)
+				{
+					Player player = new Player(i);
+
+					if (player.IsValid && player.IsParticipating)
+					{
+						player.SetAmmo(2);
+					}
+				}
+			}
 
 			case 0:
 				Bossgame6_Timer = 9;
@@ -201,8 +189,9 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 public void Bossgame6_DoEntitySpawns()
 {
 	float Bossgame6_SpawnedEntityPositions[32][3];
+	int count = GetRandomInt(1, 32);
 
-	for (int i = 0; i < 32; i++)
+	for (int i = 0; i < count; i++)
 	{
 		bool validPosition = false;
 		float position[3];
@@ -247,9 +236,26 @@ public void Bossgame6_DoEntitySpawns()
 			DispatchSpawn(entity);
 
 			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
+			SDKHook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
 		}
 
 		Bossgame6_EntityIndexes[i] = entity;
+	}
+}
+
+public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &inflictor, float &damage, int &damagetype)
+{
+	Player player = new Player(attacker);
+
+	if (player.IsValid)
+	{
+		Bossgame6_PlayerScore[player.ClientId]++;
+		return Plugin_Continue;
+	}
+	else
+	{
+		damage = 0.0;
+		return Plugin_Changed;
 	}
 }
 
