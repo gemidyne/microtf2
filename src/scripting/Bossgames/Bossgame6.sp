@@ -154,25 +154,25 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 				Bossgame6_SendDoorInput("Close");
 				
 			case 7: 
-				Bossgame6_CleanupEntities();
-
-			case 6: 
-				Bossgame6_DoEntitySpawns();
-
-			case 5: 
 			{
-				Bossgame6_SendDoorInput("Open");
-
+				Bossgame6_CleanupEntities();
 				for (int i = 1; i <= MaxClients; i++)
 				{
 					Player player = new Player(i);
 
 					if (player.IsValid && player.IsParticipating)
 					{
+						player.SetAmmo(0, false, true);
 						player.SetAmmo(2, true, false);
 					}
 				}
 			}
+
+			case 6: 
+				Bossgame6_DoEntitySpawns();
+
+			case 5: 
+				Bossgame6_SendDoorInput("Open");
 
 			case 0:
 				Bossgame6_Timer = 9;
