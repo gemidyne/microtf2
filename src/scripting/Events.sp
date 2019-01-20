@@ -561,7 +561,9 @@ public void OnGameFrame()
 			
 			for (int i = 1; i <= MaxClients; i++)
 			{
-				if (IsClientValid(i))
+				Player player = new Player(i);
+
+				if (player.IsInGame && !player.IsBot)
 				{
 					char buffer[MINIGAME_CAPTION_LENGTH];
 					Format(buffer, sizeof(buffer), MinigameCaption[i]);
@@ -684,28 +686,30 @@ public void OnClientPostAdminCheck(int client)
 		return;
 	}
 
-	if (IsClientInGame(client))
+	Player player = new Player(client);
+
+	if (player.IsInGame)
 	{
-		if (!IsFakeClient(client))
+		if (!player.IsBot)
 		{
 			SendConVarValue(client, FindConVar("sv_cheats"), "1");
 		
 			if (GamemodeStatus == GameStatus_WaitingForPlayers)
 			{
-				DisplayOverlayToClient(client, OVERLAY_WELCOME);
+				player.DisplayOverlay(OVERLAY_WELCOME);
 				EmitSoundToClient(client, SYSBGM_WAITING);
 			}
 		}
 
 		if (GamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)
 		{
-			PlayerScore[client] = 4;
-			PlayerStatus[client] = PlayerStatus_NotWon;
+			player.Score = 4;
+			player.Status = PlayerStatus_NotWon;
 		}
 
 		if (SpecialRoundID != 17)
 		{
-			IsPlayerParticipant[client] = true;
+			player.IsParticipating = true;
 		}
 	}
 }

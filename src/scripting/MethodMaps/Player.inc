@@ -89,6 +89,18 @@ methodmap Player __nullable__
         }
     }
 
+    property int Score
+    {
+        public get()
+        {
+            return PlayerScore[this.ClientId];
+        }
+        public set(int value)
+        {
+            PlayerScore[this.ClientId] = value;
+        }
+    }
+
     property PlayerStatuses Status
     {
         public get()
@@ -99,6 +111,13 @@ methodmap Player __nullable__
         {
             PlayerStatus[this.ClientId] = value;
         }
+    }
+
+    public void DisplayOverlay(const char[] path)
+    {
+        SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (~FCVAR_CHEAT));
+        ClientCommand(this.ClientId, "r_screenoverlay \"%s\"", path);
+        SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (FCVAR_CHEAT));
     }
 
     public void RemoveAllWeapons()

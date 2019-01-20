@@ -177,7 +177,9 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
 			char header[64];
 			Format(header, sizeof(header), "%T", "Startup_Header", i);
@@ -186,7 +188,8 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 			Format(body, sizeof(body), "%T", "Startup_BodyIntro", i);
 
 			DisplayHudMessageToClient(i, header, body, 3.0);
-			DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
+
+			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 		}
 	}
 
@@ -203,7 +206,9 @@ public Action Timer_GameLogic_EngineInitialisationCountdown(Handle timer)
 		{
 			for (int i = 1; i <= MaxClients; i++)
 			{
-				if (IsClientValid(i))
+				Player player = new Player(i);
+
+				if (player.IsInGame && !player.IsBot)
 				{
 					char header[64];
 					Format(header, sizeof(header), "%T", "Startup_Header", i);
@@ -212,7 +217,7 @@ public Action Timer_GameLogic_EngineInitialisationCountdown(Handle timer)
 					Format(body, sizeof(body), "%T", "Startup_BodyCountdown", i, IntroCountdown);
 
 					DisplayHudMessageToClient(i, header, body, 1.1);
-					DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
+					player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 				}
 			}
 		}
@@ -448,7 +453,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 			if (duration >= 1.0)
 			{
-				DisplayOverlayToClient(i, OVERLAY_BLANK);
+				player.DisplayOverlay(OVERLAY_BLANK);
 				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
 
@@ -459,6 +464,14 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 					ShowAnnotation(i, duration, score);
 				}
 			}
+		}
+		else if (player.IsInGame && player.Team == TFTeam_Spectator)
+		{
+			player.Status = PlayerStatus_NotWon;
+			player.DisplayOverlay(OVERLAY_BLANK);
+
+			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
 		}
 	}
 
@@ -538,10 +551,10 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
-		{
-			SetupSPR(i);
+		Player player = new Player(i);
 
+		if (player.IsInGame && !player.IsBot)
+		{
 			if (BossgameID > 0) 
 			{
 				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);	
@@ -573,9 +586,11 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 				PlaySoundToPlayer(i, SYSFX_CLOCK);
 			}
 
-			if (IsPlayerParticipant[i])
+			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
+
+			if (player.IsValid && player.IsParticipating)
 			{
-				DisplayOverlayToClient(i, OVERLAY_MINIGAMEBLANK);
+				SetupSPR(i); 
 
 				if (isCaptionDynamic)
 				{
@@ -590,10 +605,6 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Call_PushCell(i);
 					Call_Finish();
 				}
-			}
-			else
-			{
-				DisplayOverlayToClient(i, OVERLAY_BLANK);
 			}
 		}
 	}
@@ -710,7 +721,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
 				PlayNegativeVoice(i);
 
-				DisplayOverlayToClient(i, ((SpecialRoundID == 17 && IsPlayerParticipant[i]) || SpecialRoundID != 17) ? OVERLAY_FAIL : OVERLAY_BLANK);
+				player.DisplayOverlay(((SpecialRoundID == 17 && IsPlayerParticipant[i]) || SpecialRoundID != 17) ? OVERLAY_FAIL : OVERLAY_BLANK);
 
 				if (player.IsParticipating)
 				{
@@ -758,8 +769,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
 				PlayPositiveVoice(i);
 
-				DisplayOverlayToClient(i, OVERLAY_WON);
-
+				player.DisplayOverlay(OVERLAY_WON);
 				player.ResetHealth();
 				player.SetGlow(true);
 
@@ -780,6 +790,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			ResetWeapon(i, false);
 			SetupSPR(i);
+		}
+		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
+		{
+			ClearSyncHud(i, HudSync_Caption);
+
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
+			PlayNegativeVoice(i);
+
+			player.DisplayOverlay(OVERLAY_BLANK);
 		}
 	}
 
@@ -886,11 +905,16 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
-			SetEntProp(i, Prop_Send, "m_bGlowEnabled", 0);
+			if (player.IsValid)
+			{
+				player.SetGlow(false);
+			}
 			
-			DisplayOverlayToClient(i, (flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+			player.DisplayOverlay((flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP]);
 		}
 	}
@@ -906,11 +930,16 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
-		{
-			SetEntProp(i, Prop_Send, "m_bGlowEnabled", 0);
+		Player player = new Player(i);
 
-			DisplayOverlayToClient(i, OVERLAY_BOSS);
+		if (player.IsInGame && !player.IsBot)
+		{
+			if (player.IsValid)
+			{
+				player.SetGlow(false);
+			}
+
+			player.DisplayOverlay(OVERLAY_BOSS);
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_BOSSTIME]);
 		}
 	}
@@ -961,7 +990,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				PrintCenterText(i, "%T", "GameOver_SpecialRoundHasFinished", i);
 			}
 
-			DisplayOverlayToClient(i, OVERLAY_GAMEOVER);
+			player.DisplayOverlay(OVERLAY_GAMEOVER);
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_GAMEOVER]);
 
 			SetEntityRenderColor(i, 255, 255, 255, 255);

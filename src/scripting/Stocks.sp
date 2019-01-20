@@ -21,21 +21,16 @@ stock bool IsClientValid(int client)
 	return team == 2 || team == 3;
 }
 
-stock void DisplayOverlayToClient(int client, const char[] path)
-{
-	if (IsClientInGame(client) && !IsFakeClient(client))
-	{
-		SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (~FCVAR_CHEAT));
-		ClientCommand(client, "r_screenoverlay \"%s\"", path);
-		SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (FCVAR_CHEAT));
-	}
-}
-
 stock void DisplayOverlayToAll(const char[] path)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		DisplayOverlayToClient(i, path);
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			player.DisplayOverlay(path);
+		}
 	}
 }
 

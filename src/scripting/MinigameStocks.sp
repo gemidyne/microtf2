@@ -180,7 +180,7 @@ stock void ClearMinigameCaptionForAll()
 
 		if (player.IsInGame)
 		{
-			DisplayOverlayToClient(i, OVERLAY_BLANK);
+			player.DisplayOverlay(OVERLAY_BLANK);
 			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
 		}
 	}
