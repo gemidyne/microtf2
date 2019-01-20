@@ -25,11 +25,22 @@ public bool Minigame24_OnCheck()
 
 public void Minigame24_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 24 && IsClientValid(client))
+	if (MinigameID != 24)
 	{
-		TF2_SetPlayerClass(client, TFClass_Medic);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Medic;
 		GiveWeapon(client, 17);
-		IsViewModelVisible(client, true);
 
 		Minigame24_NeedleFireDelay[client] = 50;
 	}
@@ -41,7 +52,9 @@ public void Minigame24_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerAlive(i) && IsPlayerParticipant[i] && PlayerStatus[i] == PlayerStatus_NotWon)
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && player.IsAlive && player.Status == PlayerStatus_NotWon)
 			{
 				Minigame24_PerformNeedlejump(i);
 
@@ -63,9 +76,12 @@ public void Minigame24_PerformNeedlejump(int i)
 	float fEyeAngle[3];
 	float fVelocity[3];
 
-	if (Minigame24_NeedleFireDelay[i] > 0) Minigame24_NeedleFireDelay[i] -= 1;
+	if (Minigame24_NeedleFireDelay[i] > 0) 
+	{
+		Minigame24_NeedleFireDelay[i] -= 1;
+	}
 
-	if (IsClientValid(i) && (GetClientButtons(i) & IN_ATTACK) && (Minigame24_NeedleFireDelay[i] <= 0))
+	if ((GetClientButtons(i) & IN_ATTACK) && (Minigame24_NeedleFireDelay[i] <= 0))
 	{
 		int iWeapon = GetPlayerWeaponSlot(i, 0);
 
@@ -87,7 +103,7 @@ public void Minigame24_PerformNeedlejump(int i)
 					fVelocity[0] = -400.0;
 			}
 
-			if(FloatAbs(fVelocity[1]) > 400.0)
+			if (FloatAbs(fVelocity[1]) > 400.0)
 			{
 				if (fVelocity[1] > 0.0) 
 					fVelocity[1] = 400.0;

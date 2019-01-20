@@ -34,9 +34,21 @@ public Action Timer_Minigame23_AllowConditions(Handle timer)
 
 public void Minigame23_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 23 && IsClientValid(client))
+	if (MinigameID != 23)
 	{
-		TF2_SetPlayerClass(client, TFClass_Scout);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Scout;
 		ResetWeapon(client, false);
 	}
 }
@@ -58,17 +70,19 @@ public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, fl
 		return;
 	}
 
-	if (!IsClientValid(client))
+	Player player = new Player(client);
+
+	if (!player.IsValid)
 	{
 		return;
 	}
 
-	if (!IsPlayerParticipant[client])
+	if (!player.IsParticipating)
 	{
 		return;
 	}
 
-	if (PlayerStatus[client] != PlayerStatus_NotWon)
+	if (player.Status != PlayerStatus_NotWon)
 	{
 		return;
 	}

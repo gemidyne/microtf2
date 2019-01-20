@@ -274,6 +274,8 @@ stock void SpecialRound_SetupEnv()
 
 stock void SetupSPR(int client)
 {
+	Player player = new Player(client);
+
 	if (IsClientInGame(client))
 	{
 		Special_Bird(client);
@@ -304,9 +306,9 @@ stock void SetupSPR(int client)
 				}
 			}
 
-			if (SpecialRoundID == 17 && !IsPlayerParticipant[client])
+			if (SpecialRoundID == 17 && !player.IsParticipating)
 			{
-				IsPlayerCollisionsEnabled(client, false);
+				player.SetCollisionsEnabled(false);
 
 				SetEntityRenderFx(client, RENDERFX_DISTORT);
 				SetEntityRenderMode(client, RENDER_TRANSALPHA);
@@ -327,7 +329,7 @@ stock void SetupSPR(int client)
 		}
 		else
 		{
-			if (IsPlayerParticipant[client])
+			if (player.IsParticipating)
 			{
 				SetEntityRenderFx(client, RENDERFX_NONE);
 				SetEntityRenderMode(client, RENDER_NORMAL);

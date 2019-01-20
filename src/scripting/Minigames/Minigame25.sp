@@ -29,16 +29,26 @@ public void Minigame25_OnMinigameSelectedPre()
 
 public void Minigame25_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 25 && IsClientValid(client))
+	if (MinigameID != 25)
 	{
-		TF2_SetPlayerClass(client, TFClass_Pyro);
-		TF2_RemoveAllWeapons(client);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Pyro;
+		player.RemoveAllWeapons();
+		player.SetGodMode(false);
+		player.SetHealth(3000);
 
 		GiveWeapon(client, 1179);
-
-		IsGodModeEnabled(client, false);
-		SetPlayerHealth(client, 3000);
-		IsViewModelVisible(client, true);
 	}
 }
 
@@ -48,9 +58,11 @@ public void Minigame25_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
-				PlayerStatus[i] = IsPlayerAlive(i) ? PlayerStatus_Winner : PlayerStatus_Failed;
+				player.Status = player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed;
 				StopSound(i, SNDCHAN_AUTO, "misc/grenade_jump_lp_01.wav");
 			}
 		}

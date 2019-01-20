@@ -685,14 +685,16 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsValid)
 		{
-			if (!IsPlayerAlive(i) || returnedFromBoss)
+			if (!player.IsAlive || returnedFromBoss)
 			{
-				TF2_RespawnPlayer(i);
+				player.Respawn();
 			}
 
-			SetEntityGravity(i, 1.0);
+			player.SetGravity(1.0);
 
 			TF2_RemoveCondition(i, TFCond_Disguised);
 			TF2_RemoveCondition(i, TFCond_Disguising);
@@ -703,21 +705,22 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			ClearSyncHud(i, HudSync_Caption);
 
-			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
+			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
 				PlayNegativeVoice(i);
 
 				DisplayOverlayToClient(i, ((SpecialRoundID == 17 && IsPlayerParticipant[i]) || SpecialRoundID != 17) ? OVERLAY_FAIL : OVERLAY_BLANK);
 
-				if (IsPlayerParticipant[i])
+				if (player.IsParticipating)
 				{
 					#if defined DEBUG
 					PrintToChatAll("[DEBUG] %N: Participant, NotWon/Failed", i);
 					#endif
 
-					SetEntProp(i, Prop_Send, "m_bGlowEnabled", 1);
-					SetPlayerHealth(i, 1);
+					player.SetHealth(1);
+					player.SetGlow(true);
+
 					PlayerMinigamesLost[i]++;
 
 					if (SpecialRoundID != 12)
@@ -757,8 +760,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 				DisplayOverlayToClient(i, OVERLAY_WON);
 
-				ResetHealth(i);
-				SetEntProp(i, Prop_Send, "m_bGlowEnabled", 1);
+				player.ResetHealth();
+				player.SetGlow(true);
 
 				PlayerScore[i] += ScoreAmount;
 				PlayerMinigamesWon[i]++;
@@ -771,11 +774,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				}
 			}
 
-			PlayerStatus[i] = PlayerStatus_NotWon;
+			player.Status = PlayerStatus_NotWon;
+			player.SetCollisionsEnabled(true);
+			player.SetGodMode(true);
 
 			ResetWeapon(i, false);
-			IsPlayerCollisionsEnabled(i, true);
-			IsGodModeEnabled(i , true);
 			SetupSPR(i);
 		}
 	}
@@ -785,7 +788,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		int participants = 0;
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				participants++;
 			}
@@ -947,7 +952,9 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientValid(i))
+		Player player = new Player(i);
+
+		if (player.IsValid)
 		{
 			if (GamemodeID == SPR_GAMEMODEID)
 			{
@@ -979,17 +986,16 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			}
 
 			IsPlayerWinner[i] = isWinner;
-			IsGodModeEnabled(i, isWinner);
-			IsViewModelVisible(i, isWinner);
-			IsPlayerCollisionsEnabled(i, true);
-			IsPlayerParticipant[i] = true;
+			player.SetGodMode(isWinner);
+			player.SetCollisionsEnabled(true);
+			player.IsParticipating = true;
 
 			if (isWinner)
 			{
 				winnerCount++;
 
-				ChooseRandomClass(i);
-				TF2_RegeneratePlayer(i);
+				player.SetRandomClass();
+				player.Regenerate();
 
 				CreateParticle(i, "Micro_Win_Sparkle", 10.0);
 				CreateParticle(i, "Micro_Cheer_Winner", 10.0, true);
@@ -1006,7 +1012,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (FCVAR_CHEAT));
 						
 				TF2_StunPlayer(i, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
-				SetPlayerHealth(i, 1);
+				player.SetHealth(1);
 			}
 		}
 	}

@@ -37,15 +37,25 @@ public Action Timer_Minigame22_AllowConditions(Handle timer)
 
 public void Minigame22_OnMinigameSelected(int client)
 {
-	if (IsMinigameActive && MinigameID == 22 && IsClientValid(client))
+	if (MinigameID != 22)
 	{
-		TF2_SetPlayerClass(client, TFClass_Soldier);
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Class = TFClass_Soldier;
+		player.SetGodMode(false);
+		player.SetHealth(3000);
+
 		GiveWeapon(client, 18);
-
-		IsViewModelVisible(client, true);
-		IsGodModeEnabled(client, false);
-
-		SetPlayerHealth(client, 3000);
 		TF2_AddCondition(client, TFCond_Kritzkrieged, 4.0);
 	}
 }
@@ -56,12 +66,14 @@ public void Minigame22_OnGameFrame()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
 			{
 				if (!(GetEntityFlags(i) & FL_ONGROUND))
 				{
-					PlayerStatus[i] = PlayerStatus_Failed;
-					ForcePlayerSuicide(i);
+					player.Status = PlayerStatus_Failed;
+					player.Kill();
 				}
 			}
 		}
@@ -74,7 +86,9 @@ public void Minigame22_OnMinigameFinish()
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientValid(i) && IsPlayerParticipant[i] && (GetEntityFlags(i) & FL_ONGROUND) && IsPlayerAlive(i))
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating && player.IsAlive && (GetEntityFlags(i) & FL_ONGROUND))
 			{
 				ClientWonMinigame(i);
 			}

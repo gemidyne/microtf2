@@ -159,8 +159,6 @@ stock void ResetWeapon(int client, bool viewModel)
 		}
 
 		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(client, 2));
-
-		IsViewModelVisible(client, viewModel);
 	}
 }
 

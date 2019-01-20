@@ -29,23 +29,25 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		return Plugin_Handled;
 	}
 
-	if (IsClientValid(client))
+	Player player = new Player(client);
+
+	if (player.IsValid)
 	{
 		RemovePlayerWearables(client);
 
 		if (!IsBonusRound)
 		{
-			IsGodModeEnabled(client, true);
+			player.SetGodMode(true);
 		}
 		else if (MinigamesPlayed == 999 || !IsPlayerParticipant[client])
 		{
-			IsGodModeEnabled(client, false);
+			player.SetGodMode(false);
 		}
 
 		ResetWeapon(client, false);
 		SetupSPR(client);
 
-		if (IsMinigameActive && !IsPlayerParticipant[client] && SpecialRoundID != 17)
+		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
 			CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "PlayerSpawn_RespawnNotice", client);

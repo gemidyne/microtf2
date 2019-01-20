@@ -28,7 +28,12 @@ public bool Minigame21_OnCheck()
 
 public void Minigame21_OnMinigameSelected(int client)
 {
-	if (!IsMinigameActive || MinigameID != 21)
+	if (MinigameID != 21)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
 	{
 		return;
 	}
