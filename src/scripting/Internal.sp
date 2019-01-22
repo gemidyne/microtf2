@@ -129,57 +129,9 @@ stock void ShowPlayerScores(bool showText)
 
 			if (player.IsInGame)
 			{
-				ClearSyncHud(i, HudSync_Score);
-				ClearSyncHud(i, HudSync_Round);
-				ClearSyncHud(i, HudSync_Special);
-
-				char roundDisplay[32];
-
-				if (MaxRounds > 0)
-				{
-					Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", i, RoundsPlayed + 1, MaxRounds);
-				}
-				else
-				{
-					Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", i, RoundsPlayed + 1);
-				}
-
-				char themeSpecialText[64];
-
-				if (GamemodeID == SPR_GAMEMODEID)
-				{
-					Format(themeSpecialText, sizeof(themeSpecialText), SpecialRounds[SpecialRoundID]);
-				}
-				else
-				{
-					Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", i, SystemNames[GamemodeID]);
-				}
-
-				// ROUND INFO
-				SetHudTextParamsEx(0.01, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-				ShowSyncHudText(i, HudSync_Round, roundDisplay);
-				
-				// THEME/SPECIAL ROUND INFO
-				SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
-				ShowSyncHudText(i, HudSync_Special, themeSpecialText);
-
-				if (player.IsValid)
-				{
-					char scoreText[32];
-
-					if (SpecialRoundID == 17)
-					{
-						Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", i, PlayerScore[i]);
-					}
-					else
-					{
-						Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", i, PlayerScore[i]);
-					}
-
-					// SCORE
-					SetHudTextParamsEx(-1.0, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-					ShowSyncHudText(i, HudSync_Score, scoreText);
-				}
+				DisplayScoreHud(player, time);
+				DisplayRoundHud(player, time);
+				DisplaySpecialHud(player, time);
 			}
 		}
 	}

@@ -50,6 +50,7 @@
 #include "SecuritySystem.sp"
 #include "Events.sp"
 #include "SpecialRounds.sp"
+#include "HudText.sp"
 #include "Internal.sp"
 #include "Stocks.sp"
 #include "Commands.sp"
