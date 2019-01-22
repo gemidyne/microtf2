@@ -635,14 +635,16 @@ public void TF2_OnWaitingForPlayersEnd()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame)
 		{
-			if (!IsFakeClient(i))
+			if (!player.IsBot)
 			{
 				StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
 			}
 
-			IsPlayerParticipant[i] = true;
+			player.IsParticipating = true;
 		}
 	}
 
@@ -737,10 +739,12 @@ public void OnClientDisconnect(int client)
 		return;
 	}
 
-	if (IsClientInGame(client))
+	Player player = new Player(client);
+
+	if (player.IsInGame)
 	{
-		PlayerScore[client] = 0;
-		PlayerStatus[client] = PlayerStatus_NotWon;
+		player.Score = 0;
+		player.Status = PlayerStatus_NotWon;
 
 		SDKUnhook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
 		SDKUnhook(client, SDKHook_Touch, Special_NoTouch);

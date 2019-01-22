@@ -736,7 +736,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 					if (SpecialRoundID != 12)
 					{
-						char text[64];
+						char text[32];
 						Format(text, sizeof(text), "%T", "General_Loser", i);
 
 						ShowAnnotation(i, 2.0, text);
@@ -744,13 +744,13 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 					if (SpecialRoundID == 17)
 					{
-						IsPlayerParticipant[i] = false;
+						player.IsParticipating = false;
 						PrintCenterText(i, "%T", "SuddenDeath_YouHaveBeenKnockedOut", i);
 					}
 
 					if (SpecialRoundID == 18)
 					{
-						PlayerScore[i] = 0;
+						player.Score = 0;
 					}
 				}
 				else
@@ -773,12 +773,12 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.ResetHealth();
 				player.SetGlow(true);
 
-				PlayerScore[i] += ScoreAmount;
+				player.Score += ScoreAmount;
 				PlayerMinigamesWon[i]++;
 
 				if (SpecialRoundID != 12)
 				{
-					char text[64];
+					char text[32];
 					Format(text, sizeof(text), "%T", "General_Winner", i);
 					ShowAnnotation(i, 2.0, text);
 				}

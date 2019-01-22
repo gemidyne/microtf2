@@ -131,14 +131,14 @@ stock void ResizePlayer(int client, float fScale = 1.0)
 	SetEntPropFloat(client, Prop_Send, "m_flModelScale", fScale);
 }
 
-stock void ShowAnnotation(int client, float lifetime, const char[] text)
+stock void ShowAnnotation(int client, float lifetime, char text[32])
 {
 	int bitfield = BuildBitStringExcludingClient(client);
 
 	ShowAnnotationWithBitfield(client, lifetime, text, bitfield);
 }
 
-stock void ShowAnnotationWithBitfield(int client, float lifetime, const char[] text, int bitfield)
+stock void ShowAnnotationWithBitfield(int client, float lifetime, char text[32], int bitfield)
 {
 	Handle event = CreateEvent("show_annotation");
 
@@ -151,6 +151,21 @@ stock void ShowAnnotationWithBitfield(int client, float lifetime, const char[] t
 	{
 		// This shouldn't really happen...
 		g_iAnnotationEventId = 0;
+	}
+
+	if (SpecialRoundID == 19)
+	{
+		char rewritten[32];
+		int rc = 0;
+		int len = strlen(text);
+
+		for (int c = len - 1; c >= 0; c--)
+		{
+			rewritten[rc] = text[c];
+			rc++;
+		}
+
+		strcopy(text, sizeof(text), rewritten);
 	}
 
 	//https://forums.alliedmods.net/showpost.php?p=1996379&postcount=14
