@@ -253,11 +253,11 @@ stock void ResetGamemode()
 
 stock void ReverseString(const char[] input, char[] buffer, int size)
 {
-	new String:rewritten[size];
-	new rc = 0;
-	new len = strlen(input);
+	char rewritten[size];
+	int rc = 0;
+	int len = strlen(input);
 
-	for (new c = len - 1; c >= 0; c--)
+	for (int c = len - 1; c >= 0; c--)
 	{
 		rewritten[rc] = input[c];
 		rc++;
