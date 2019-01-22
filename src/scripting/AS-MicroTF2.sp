@@ -46,6 +46,7 @@
 #include "Voices.sp"
 #include "System.sp"
 #include "MinigameSystem.sp"
+#include "MethodMaps/Minigame.inc"
 #include "PrecacheSystem.sp"
 #include "SecuritySystem.sp"
 #include "Events.sp"
