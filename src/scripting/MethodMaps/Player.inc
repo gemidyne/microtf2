@@ -113,6 +113,42 @@ methodmap Player __nullable__
         }
     }
 
+    property int MinigamesWon
+    {
+        public get()
+        {
+            return PlayerMinigamesWon[this.ClientId];
+        }
+        public set(int value)
+        {
+            PlayerMinigamesWon[this.ClientId] = value;
+        }
+    }
+
+    property int MinigamesLost
+    {
+        public get()
+        {
+            return PlayerMinigamesLost[this.ClientId];
+        }
+        public set(int value)
+        {
+            PlayerMinigamesLost[this.ClientId] = value;
+        }
+    }
+
+    property bool IsWinner
+    {
+        public get()
+        {
+            return IsPlayerWinner[this.ClientId];
+        }
+        public set(bool value)
+        {
+            IsPlayerWinner[this.ClientId] = value;
+        }
+    }
+
     public void DisplayOverlay(const char[] path)
     {
         SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (~FCVAR_CHEAT));

@@ -49,7 +49,6 @@ int IntroCountdown = 0;
 int PlayerScore[MAXPLAYERS+1] = 0;
 int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
-int IsPlayerWinner[MAXPLAYERS+1] = 0;
 int PlayerIndex[MAXPLAYERS+1] = 0;
 
 int g_iCenterHudUpdateInterval = 33;
@@ -76,6 +75,7 @@ bool IsBlockingDeathCommands = true;
 bool IsBlockingDamage = true;
 bool IsOnlyBlockingDamageByPlayers = false;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
+bool IsPlayerWinner[MAXPLAYERS+1] = false;
 
 /**
  * Enums

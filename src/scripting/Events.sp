@@ -499,7 +499,7 @@ public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, flo
 		return Plugin_Changed;
 	}
 
-	if (IsBlockingDamage || (IsBonusRound && IsPlayerWinner[attackerId] == 0))
+	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]))
 	{
 		damage = 0.0;
 

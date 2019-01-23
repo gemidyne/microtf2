@@ -1132,25 +1132,23 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		// Intentionally out side of IsClientValid - to cover any possible spectators with stale data.
-		PlayerStatus[i] = PlayerStatus_NotWon;
-		PlayerScore[i] = 0;
-		PlayerMinigamesWon[i] = 0;
-		PlayerMinigamesLost[i] = 0;
-
 		Player player = new Player(i);
+
+		player.Status = PlayerStatus_NotWon;
+		player.Score = 0;
+		player.MinigamesWon = 0;
+		player.MinigamesLost = 0;
 
 		if (player.IsValid)
 		{
 			player.IsParticipating = true;
 			
-			if (IsPlayerWinner[i])
+			if (player.IsWinner)
 			{
 				TF2_SetPlayerPowerPlay(i, false);
 				ResetWeapon(i, false);
 			
-				IsPlayerWinner[i] = false;
-
+				player.IsWinner = false;
 				player.DestroyPlayerBuildings(true);
 			}
 
@@ -1210,7 +1208,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		{
 			for (int i = 1; i <= MaxClients; i++)
 			{
-				if (IsClientInGame(i) && !IsFakeClient(i))
+				Player player = new Player(i);
+
+				if (player.IsInGame && !player.IsBot)
 				{
 					char header[64];
 					Format(header, sizeof(header), "%T", "Intermission_Header", i);
