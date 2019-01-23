@@ -1,8 +1,8 @@
-methodmap Minigame __nullable__
+methodmap Bossgame __nullable__
 {
-    public Minigame(int minigameId)
+    public Bossgame(int id)
     {
-        return view_as<Minigame>(minigameId);
+        return view_as<Bossgame>(id);
     }
 
     property int Id
@@ -17,7 +17,7 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameCaptionIsDynamic[this.Id];
+            return BossgameCaptionIsDynamic[this.Id];
         }
     }
 
@@ -25,22 +25,22 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameMusicLength[this.Id];
+            return BossgameLength[this.Id];
         }
     }
 
     public void GetCaptionLookupString(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameCaptions[this.Id]);
+        strcopy(buffer, size, BossgameCaptions[this.Id]);
     }
 
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameDynamicCaptionFunctions[this.Id]);
+        strcopy(buffer, size, BossgameDynamicCaptionFunctions[this.Id]);
     }
 
     public void GetBgmPath(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameMusic[this.Id]);
+        strcopy(buffer, size, BossgameMusic[this.Id]);
     }
 }

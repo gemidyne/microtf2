@@ -47,6 +47,7 @@
 #include "System.sp"
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
+#include "MethodMaps/Bossgame.inc"
 #include "PrecacheSystem.sp"
 #include "SecuritySystem.sp"
 #include "Events.sp"
@@ -525,7 +526,10 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	bool isCaptionDynamic;
 	Function func = INVALID_FUNCTION;
 
-	if (MinigameCaptionIsDynamic[MinigameID] || BossgameCaptionIsDynamic[BossgameID])
+	Minigame minigame = new Minigame(MinigameID);
+	Bossgame bossgame = new Bossgame(BossgameID);
+
+	if (minigame.HasDynamicCaption || bossgame.HasDynamicCaption)
 	{
 		isCaptionDynamic = true;
 	}
@@ -536,11 +540,11 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 		if (MinigameID > 0)
 		{
-			funcName = MinigameDynamicCaptionFunctions[MinigameID];
+			minigame.GetDynamicCaptionFunctionName(funcName, sizeof(funcName));
 		}
 		else if (BossgameID > 0)
 		{
-			funcName = BossgameDynamicCaptionFunctions[MinigameID];
+			bossgame.GetDynamicCaptionFunctionName(funcName, sizeof(funcName));
 		}
 
 		func = GetFunctionByName(INVALID_HANDLE, funcName);
@@ -559,7 +563,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		{
 			if (BossgameID > 0) 
 			{
-				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);	
+				bossgame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
 
 				if (!isCaptionDynamic)
 				{
@@ -575,7 +579,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			}
 			else if (MinigameID > 0)
 			{
-				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, MinigameCaptions[MinigameID]);
+				minigame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
 
 				if (!isCaptionDynamic)
 				{
@@ -619,20 +623,18 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 	if (MinigameID > 0)
 	{
-		CreateTimer(MinigameMusicLength[MinigameID], Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
-		CreateTimer((MinigameMusicLength[MinigameID] - 0.5), Timer_GameLogic_OnPreFinish, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(minigame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer((minigame.Duration - 0.5), Timer_GameLogic_OnPreFinish, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else if (BossgameID > 0)
 	{
-		Handle_ActiveGameTimer = CreateTimer(BossgameLength[BossgameID], Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		Handle_ActiveGameTimer = CreateTimer(bossgame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 		CreateTimer(10.0, Timer_RemoveBossOverlay, _, TIMER_FLAG_NO_MAPCHANGE);
 		Handle_BossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
-		#if defined DEBUG
-		PrintToChatAll("[DEBUG] MinigameID and BossgameID are 0: Something has went wrong.");
-		#endif
+		ThrowError("MinigameID and BossgameID are both 0: this should never happen.");
 	}
 
 	return Plugin_Handled;
@@ -673,12 +675,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i))
+			Player player = new Player(i);
+
+			if (player.IsInGame)
 			{
-                for (int a = 0; a < 10; a++)
-                {
-                    StopSound(i, SNDCHAN_AUTO, BossgameMusic[PreviousBossgameID]);
-                }
+				StopSound(i, SNDCHAN_AUTO, BossgameMusic[PreviousBossgameID]);
 			}
 		}
 	}
@@ -1002,17 +1003,17 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			{
 				case 17:
 				{
-					isWinner = IsPlayerParticipant[i];
+					isWinner = player.IsParticipating;
 				}
 
 				case 9:
 				{
-					isWinner = (PlayerScore[i] == score);
+					isWinner = (player.Score == score);
 				}
 
 				default:
 				{
-					isWinner = (PlayerScore[i] >= score);
+					isWinner = (player.Score >= score);
 				}
 			}
 
