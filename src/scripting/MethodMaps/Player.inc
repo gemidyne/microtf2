@@ -370,4 +370,14 @@ methodmap Player __nullable__
             }
         }
     }
+
+    public void PrintCenterTextLocalised(const char[] translationKey)
+    {
+        PrintCenterText(this.ClientId, "%T", translationKey, this.ClientId);
+    }
+
+    public void PrintChatText(const char[] text)
+    {
+        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, text);
+    }
 }

@@ -973,14 +973,15 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 	SetConVarInt(ConVar_TFFastBuild, 1);
 
-	int score = 0;
+	int score = SpecialRoundID == 9 
+		? GetLowestScore() 
+		: GetHighestScore();
+
 	int winnerCount = 0;
 	Handle winners = CreateArray();
 	char prefix[128];
 	char names[1024];
 	bool isWinner = false;
-
-	score = SpecialRoundID == 9 ? GetLowestScore() : GetHighestScore();
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -990,7 +991,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 		{
 			if (GamemodeID == SPR_GAMEMODEID)
 			{
-				PrintCenterText(i, "%T", "GameOver_SpecialRoundHasFinished", i);
+				player.PrintCenterTextLocalised("GameOver_SpecialRoundHasFinished");
 			}
 
 			player.DisplayOverlay(OVERLAY_GAMEOVER);
@@ -1017,7 +1018,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				}
 			}
 
-			IsPlayerWinner[i] = isWinner;
+			player.IsWinner = isWinner;
 			player.SetGodMode(isWinner);
 			player.SetCollisionsEnabled(true);
 			player.IsParticipating = true;
@@ -1105,11 +1106,13 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && !IsFakeClient(i))
+			Player player = new Player(i);
+
+			if (player.IsInGame && !player.IsBot)
 			{
 				Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixNoOne", i);
 
-				CPrintToChat(i, "%s%s", PLUGIN_PREFIX, prefix);
+				player.PrintChatText(prefix);
 			}
 		}
 	}
@@ -1218,10 +1221,11 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 					char body[64];
 					Format(body, sizeof(body), "%T", "Intermission_Body", i);
 
-					EmitSoundToClient(i, SYSBGM_WAITING);
+					char combined[128];
+					Format(combined, sizeof(combined), "%s\n%s", header, body);
 
-					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, header);
-					CPrintToChat(i, "%s%s", PLUGIN_PREFIX, body);
+					player.PrintChatText(combined);
+					EmitSoundToClient(i, SYSBGM_WAITING);
 				}
 			}
 		}
