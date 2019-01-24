@@ -1,3 +1,25 @@
+stock void InitialiseHud()
+{
+	LogMessage("Initializing HUD...");
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
+}
+
+public void Hud_OnMapStart()
+{
+    int playerManagerEntity = FindEntityByClassname(MaxClients+1, "tf_player_manager");
+
+    if (playerManagerEntity == -1)
+    {
+        SetFailState("Unable to find tf_player_manager entity");
+    }
+    else
+    {
+        SDKHook(playerManagerEntity, SDKHook_ThinkPost, Hook_Scoreboard);
+    }
+
+    CreateTimer(120.0, Timer_Advertise, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
+}
+
 public void DisplayScoreHud(Player player, float time)
 {
     if (!player.IsValid)
@@ -104,22 +126,6 @@ public void DisplaySpecialHud(Player player, float time)
     // THEME/SPECIAL ROUND INFO
     SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
     ShowSyncHudText(player.ClientId, HudSync_Special, themeSpecialText);
-}
-
-public void InitialiseHud()
-{
-    int playerManagerEntity = FindEntityByClassname(MaxClients+1, "tf_player_manager");
-
-    if (playerManagerEntity == -1)
-    {
-        SetFailState("Unable to find tf_player_manager entity");
-    }
-    else
-    {
-        SDKHook(playerManagerEntity, SDKHook_ThinkPost, Hook_Scoreboard);
-    }
-
-    CreateTimer(120.0, Timer_Advertise, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
 }
 
 public void Hook_Scoreboard(int entity)

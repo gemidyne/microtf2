@@ -110,6 +110,7 @@ public void OnPluginStart()
 	LoadTranslations("microtf2.phrases.txt");
 	HookEvents();
 	InitializeSystem();
+	InitialiseHud();
 }
 
 public void OnMapStart()
@@ -123,7 +124,6 @@ public void OnMapStart()
 		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
 		Steam_SetGameDescription(gameDescription);
 
-		InitialiseHud();
 		PrepareConVars();
 
 		AddNormalSoundHook(Hook_GameSound);
