@@ -45,7 +45,6 @@ int MinigamesPlayed = 0;
 int BossGameThreshold = 20;
 int MaxRounds = 4;
 int RoundsPlayed = 0;
-int IntroCountdown = 0;
 int PlayerScore[MAXPLAYERS+1] = 0;
 int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;

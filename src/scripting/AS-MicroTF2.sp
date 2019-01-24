@@ -1,6 +1,8 @@
 /* 
  * WarioWare for TF2 (formerly MicroTF2)
- * Copyright (C) 2010 - 2018 StSv.TF productions, in association with GEMINI Developments.
+ * Copyright (C) 2010 - 2019 Gemidyne Softworks.
+ *
+ * https://www.gemidyne.com/
  */
 
 #pragma semicolon 1
@@ -140,8 +142,6 @@ public void OnMapStart()
 
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
-	IntroCountdown = 6;
-
 	GamemodeStatus = GameStatus_Playing;
 
 	MinigameID = 0;
@@ -183,41 +183,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 		}
 	}
 
-	CreateTimer(1.0, Timer_GameLogic_EngineInitialisationCountdown);
-}
-
-public Action Timer_GameLogic_EngineInitialisationCountdown(Handle timer)
-{
-	if (IntroCountdown > 0)
-	{
-		IntroCountdown--;
-
-		if (IntroCountdown <= 3)
-		{
-			for (int i = 1; i <= MaxClients; i++)
-			{
-				Player player = new Player(i);
-
-				if (player.IsInGame && !player.IsBot)
-				{
-					char header[64];
-					Format(header, sizeof(header), "%T", "Startup_Header", i);
-
-					char body[64];
-					Format(body, sizeof(body), "%T", "Startup_BodyCountdown", i, IntroCountdown);
-
-					DisplayHudMessageToClient(i, header, body, 1.1);
-					player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
-				}
-			}
-		}
-
-		CreateTimer(1.0, Timer_GameLogic_EngineInitialisationCountdown);
-	}
-	else
-	{
-		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame);
-	}
+	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
 }
 
 public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
