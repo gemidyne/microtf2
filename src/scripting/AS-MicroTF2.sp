@@ -677,7 +677,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
 				PlayNegativeVoice(i);
 
-				player.DisplayOverlay(((SpecialRoundID == 17 && IsPlayerParticipant[i]) || SpecialRoundID != 17) ? OVERLAY_FAIL : OVERLAY_BLANK);
+				player.DisplayOverlay(((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17) 
+					? OVERLAY_FAIL 
+					: OVERLAY_BLANK);
 
 				if (player.IsParticipating)
 				{
@@ -688,7 +690,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					player.SetHealth(1);
 					player.SetGlow(true);
 
-					PlayerMinigamesLost[i]++;
+					player.MinigamesLost++;
 
 					if (SpecialRoundID != 12)
 					{
@@ -730,7 +732,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.SetGlow(true);
 
 				player.Score += ScoreAmount;
-				PlayerMinigamesWon[i]++;
+				player.MinigamesWon++;
 
 				if (SpecialRoundID != 12)
 				{
@@ -859,23 +861,42 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	SetSpeed();
 	ShowPlayerScores(true);
 
-	for (int i = 1; i <= MaxClients; i++)
+	if (SpecialRoundID == 20)
 	{
-		Player player = new Player(i);
-
-		if (player.IsInGame && !player.IsBot)
+		// In Non-stop, speed events should not be announced!
+		for (int i = 1; i <= MaxClients; i++)
 		{
+			Player player = new Player(i);
+
 			if (player.IsValid)
 			{
 				player.SetGlow(false);
 			}
-			
-			player.DisplayOverlay((flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP]);
 		}
+
+		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	}
+	else
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsInGame && !player.IsBot)
+			{
+				if (player.IsValid)
+				{
+					player.SetGlow(false);
+				}
+				
+				player.DisplayOverlay((flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP]);
+			}
+		}
+
+		CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 
-	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
