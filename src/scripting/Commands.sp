@@ -22,10 +22,10 @@ stock void InitializeCommands()
 	ConVar_TFFastBuild = FindConVar("tf_fastbuild");
 	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
-	RegAdminCmd("mtf2_setnextspr", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Force a Special Round after this round!");
-	RegAdminCmd("mtf2_changespr", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If less than 0, or not found, Normal Gamemode is run. Otherwise, Special Round.");
-
-	RegAdminCmd("mtf2_setgamemode", CmdSetGamemode, ADMFLAG_VOTE, "Sets the current gamemode.");
+	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Force a Special Round after this round!");
+	
+	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If less than 0, or not found, Normal Gamemode is run. Otherwise, Special Round.");
+	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Sets the current gamemode.");
 
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	ConVar_MTF2ForceMinigame = CreateConVar("mtf2_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);

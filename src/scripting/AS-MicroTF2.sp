@@ -52,7 +52,7 @@
 #include "SecuritySystem.sp"
 #include "Events.sp"
 #include "SpecialRounds.sp"
-#include "HudText.sp"
+#include "Hud.sp"
 #include "Internal.sp"
 #include "Stocks.sp"
 #include "Commands.sp"
@@ -61,10 +61,10 @@
 public Plugin myinfo = 
 {
 	name = "WarioWare",
-	author = "",
+	author = "Gemidyne Softworks",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
-	url = "http://www.gemini.software/"
+	url = "https://www.gemidyne.com/"
 }
 
 public void OnPluginStart()
@@ -121,28 +121,15 @@ public void OnMapStart()
 		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
 		Steam_SetGameDescription(gameDescription);
 
-		CreateTimer(120.0, GamemodeAdvertisement, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
-
+		InitialiseHud();
 		PrepareConVars();
-
-		int playerManagerEntity = FindEntityByClassname(MaxClients+1, "tf_player_manager");
-		if (playerManagerEntity == -1)
-		{
-			SetFailState("Unable to find tf_player_manager entity");
-		}
-		else
-		{
-			SDKHook(playerManagerEntity, SDKHook_ThinkPost, Hook_Scoreboard);
-		}
 
 		AddNormalSoundHook(Hook_GameSound);
 
 		if (GlobalForward_OnMapStart != INVALID_HANDLE)
 		{
-			LogMessage("Calling OnMapStart forward... ");
 			Call_StartForward(GlobalForward_OnMapStart);
 			Call_Finish();
-			LogMessage("Called OnMapStart forward.");
 		}
 		else
 		{

@@ -45,15 +45,6 @@ stock void PreloadSound(const char[] sound)
 	AddFileToDownloadsTable(fileName);
 }
 
-public Action GamemodeAdvertisement(Handle timer)
-{
-	CPrintToChatAll("%sYou're playing WarioWare! - v%s", PLUGIN_PREFIX, PLUGIN_VERSION);
-	CPrintToChatAll("%sBy Stevu (Anarchy Steven), TestingLol & Mario6493!", PLUGIN_PREFIX);
-	CPrintToChatAll("%shttps://gemini.software/", PLUGIN_PREFIX);
-
-	return Plugin_Continue;
-}
-
 stock int GetSoundMultiplier()
 {
 	return SNDPITCH_NORMAL + RoundToCeil(((SpeedLevel-1.0) * 10)*8.0);
@@ -135,31 +126,6 @@ stock void ShowPlayerScores(bool showText)
 			}
 		}
 	}
-}
-
-public void Hook_Scoreboard(int entity)
-{
-	static int totalScoreOffset = -1;
-	int total[MAXPLAYERS+1];
-
-	if (totalScoreOffset == -1) 
-	{
-		totalScoreOffset = FindSendPropInfo("CTFPlayerResource", "m_iTotalScore");
-	}
-    
-	GetEntDataArray(entity, totalScoreOffset, total, MaxClients+1);
-
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsValid)
-		{
-			total[i] = player.Score;
-		}
-	}
-
-	SetEntDataArray(entity, totalScoreOffset, total, MaxClients+1);
 }
 
 stock void EndGame()
