@@ -470,3 +470,37 @@ stock void Special_LoadFakeConditions()
 
 	CloseHandle(file);
 }
+
+public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
+{
+	if (SpeedLevel == 1.0)
+	{
+		EmitSoundToAll(SYSBGM_SPECIAL);
+	}
+	else
+	{
+		PlaySoundToAll(SYSBGM_SPECIAL);
+	}
+	
+	CreateTimer(0.8, Timer_GameLogic_SpecialRoundChoosingStartSelection, _, TIMER_FLAG_NO_MAPCHANGE);
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_SpecialRoundChoosingStartSelection(Handle timer)
+{
+	IsChoosingSpecialRound = true;
+
+	DisplayOverlayToAll(OVERLAY_SPECIALROUND);
+
+	CreateTimer(6.8, Timer_GameLogic_SpecialRoundChoosingDoSelect, _, TIMER_FLAG_NO_MAPCHANGE);
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_SpecialRoundChoosingDoSelect(Handle timer)
+{
+	SelectNewSpecialRound();
+	PrintSelectedSpecialRound();
+
+	CreateTimer(5.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	return Plugin_Handled;
+}
