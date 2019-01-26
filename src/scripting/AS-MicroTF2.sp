@@ -233,7 +233,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			{
 				maxPlayers++;
 
-				if (IsPlayerParticipant[i])
+				if (player.IsParticipating)
 				{
 					if (currentPlayers < 7)
 					{
@@ -241,7 +241,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 					}
 					else if (currentPlayers == 7)
 					{
-						Format(names, sizeof(names), "%s - Plus %d More - ", names, (maxPlayers - 7));
+						Format(names, sizeof(names), "%s (and %d more) ", names, (maxPlayers - 7));
 					}
 
 					currentPlayers++;
@@ -249,7 +249,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			}
 		}
 
-		Format(centerText, sizeof(centerText), "Current Players (%d of %d)\n%s", currentPlayers, maxPlayers, names);
+		Format(centerText, sizeof(centerText), "Current players (%d of %d)\n%s", currentPlayers, maxPlayers, names);
 	}
 	else
 	{
@@ -259,113 +259,11 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	if (MinigamesPlayed >= BossGameThreshold)
 	{
-		int forcedBossgameID = GetConVarInt(ConVar_MTF2ForceBossgame);
-
-		if (forcedBossgameID > 0)
-		{
-			PreviousBossgameID = 0;
-			BossgameID = forcedBossgameID;
-		}
-		else
-		{
-			int i = 0;
-			do
-			{
-				BossgameID = GetRandomInt(1, BossgamesLoaded);
-
-				if (BossgamesLoaded == 1)
-				{
-					PreviousBossgameID = 0;
-				}
-
-				char funcName[64];
-				Format(funcName, sizeof(funcName), "Bossgame%i_OnCheck", BossgameID);
-				Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-
-				if (func != INVALID_FUNCTION)
-				{
-					bool isPlayable = false;
-
-					Call_StartFunction(INVALID_HANDLE, func);
-					Call_Finish(isPlayable);
-
-					if (!isPlayable)
-					{
-						BossgameID = PreviousBossgameID;
-					}
-
-					if (i > 20)
-					{
-						PreviousBossgameID = 0;
-					}
-				}
-
-				i++;
-			}
-			while (BossgameID == PreviousBossgameID);
-		}
-
-		#if defined DEBUG
-		PrintToChatAll("[DEBUG] Chose bossgame %i", BossgameID);
-		#endif
+		DoSelectBossgame();
 	}
 	else
 	{
-		int forcedMinigameID = GetConVarInt(ConVar_MTF2ForceMinigame);
-
-		if (SpecialRoundID == 8)
-		{
-			PreviousMinigameID = 0;
-			MinigameID = 8;
-		}
-		else if (forcedMinigameID > 0 && forcedMinigameID <= MinigamesLoaded)
-		{
-			PreviousMinigameID = 0;
-			MinigameID = forcedMinigameID;
-		}
-		else
-		{
-			int i = 0;
-			do
-			{
-				MinigameID = GetRandomInt(1, MinigamesLoaded);
-
-				if (MinigamesLoaded == 1)
-				{
-					PreviousMinigameID = 0;
-				}
-
-				char funcName[64];
-				Format(funcName, sizeof(funcName), "Minigame%i_OnCheck", MinigameID);
-				Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-
-				if (func != INVALID_FUNCTION)
-				{
-					bool isPlayable = false;
-
-					Call_StartFunction(INVALID_HANDLE, func);
-					Call_Finish(isPlayable);
-
-					if (!isPlayable)
-					{
-						MinigameID = PreviousMinigameID;
-					}
-
-					if (i > 20)
-					{
-						// This fixes a crash.
-						PreviousMinigameID = 1;
-					}
-				}
-
-				i++;
-			}
-			while (MinigameID == PreviousMinigameID);
-
-			#if defined DEBUG
-			PrintToChatAll("[DEBUG] Chose minigame %i", MinigameID);
-			#endif
-		}
+		DoSelectMinigame();
 	}
 
 	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME];
