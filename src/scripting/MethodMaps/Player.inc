@@ -82,6 +82,30 @@ methodmap Player __nullable__
         }
     }
 
+    property float TorsoScale
+    {
+        public get()
+        {
+            return GetEntPropFloat(this.ClientId, Prop_Send, "m_flTorsoScale");
+        }
+        public set(float value)
+        {
+            SetEntPropFloat(this.ClientId, Prop_Send, "m_flTorsoScale", value);
+        }
+    }
+
+    property float HandScale
+    {
+        public get()
+        {
+            return GetEntPropFloat(this.ClientId, Prop_Send, "m_flHandScale");
+        }
+        public set(float value)
+        {
+            SetEntPropFloat(this.ClientId, Prop_Send, "m_flHandScale", value);
+        }
+    }
+
     property bool IsValid
     {
         public get()
