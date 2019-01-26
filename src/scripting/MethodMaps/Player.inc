@@ -255,6 +255,51 @@ methodmap Player __nullable__
         SetEntProp(this.ClientId, Prop_Send, "m_bGlowEnabled", enabled ? 1 : 0);
     }
 
+    public void SetVisible(bool visible)
+    {
+        SetEntityRenderMode(this.ClientId, visible
+            ? RENDER_NORMAL 
+            : RENDER_NONE);
+
+        int entity = -1;
+        while ((entity = FindEntityByClassname(entity, "tf_*")) != -1)
+        {
+            if (!HasEntProp(entity, Prop_Send, "m_hOwnerEntity"))
+            {
+                continue;
+            }
+
+            if (GetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity") != this.ClientId)
+            {
+                continue;
+            }
+
+            SetEntityRenderMode(entity, visible 
+                ? RENDER_NORMAL 
+                : RENDER_NONE);
+        }
+    }
+
+    public void SetThirdPersonMode(bool enabled)
+    {
+        if (enabled)
+        {
+            int flags = GetCommandFlags("thirdperson");
+
+            SetCommandFlags("thirdperson", flags & (~FCVAR_CHEAT));
+            ClientCommand(this.ClientId, "thirdperson");
+            SetCommandFlags("thirdperson", flags);
+        }
+        else
+        {
+            int flags = GetCommandFlags("firstperson");
+
+            SetCommandFlags("firstperson", flags & (~FCVAR_CHEAT));
+            ClientCommand(this.ClientId, "firstperson");
+            SetCommandFlags("firstperson", flags);
+        }
+    }
+
     public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
     {
         int entity = -1;

@@ -912,9 +912,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			}
 			else
 			{
-				SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (~FCVAR_CHEAT));
-				ClientCommand(i, "thirdperson");
-				SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (FCVAR_CHEAT));
+				player.SetThirdPersonMode(true);
 						
 				TF2_StunPlayer(i, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
 				player.SetHealth(1);

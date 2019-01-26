@@ -308,62 +308,26 @@ stock void SetupSPR(int client)
 
 		if (GamemodeID == SPR_GAMEMODEID)
 		{
-			switch (SpecialRoundID)
-			{	
-				case 0:
-				{
-					SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (~FCVAR_CHEAT));
-					ClientCommand(client, "thirdperson");
-					SetCommandFlags("thirdperson", GetCommandFlags("thirdperson") & (FCVAR_CHEAT));
-				}
-
-				default:
-				{
-					SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (~FCVAR_CHEAT));
-					ClientCommand(client, "firstperson");
-					SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (FCVAR_CHEAT));
-				}
-			}
+			player.SetThirdPersonMode(SpecialRoundID == 0);
 
 			if (SpecialRoundID == 17 && !player.IsParticipating)
 			{
 				player.SetCollisionsEnabled(false);
-
-				SetEntityRenderFx(client, RENDERFX_DISTORT);
-				SetEntityRenderMode(client, RENDER_TRANSALPHA);
-				SetEntityRenderColor(client, _, _, _, 70);
+				player.SetVisible(false);
 			}
 			else if (SpecialRoundID == 12 && !IsBonusRound)
 			{
-				SetEntityRenderFx(client, RENDERFX_NONE);
-				SetEntityRenderMode(client, RENDER_NONE);
-				SetEntityRenderColor(client, 255, 255, 255, 0);
+				player.SetVisible(false);
 			}
 			else
 			{
-				SetEntityRenderFx(client, RENDERFX_NONE);
-				SetEntityRenderMode(client, RENDER_NORMAL);
-				SetEntityRenderColor(client, 255, 255, 255, 255);
+				player.SetVisible(true);
 			}
 		}
 		else
 		{
-			if (player.IsParticipating)
-			{
-				SetEntityRenderFx(client, RENDERFX_NONE);
-				SetEntityRenderMode(client, RENDER_NORMAL);
-				SetEntityRenderColor(client, 255, 255, 255, 255);
-			}
-			else
-			{
-				SetEntityRenderFx(client, RENDERFX_DISTORT);
-				SetEntityRenderMode(client, RENDER_TRANSALPHA);
-				SetEntityRenderColor(client, _, _, _, 70);
-			}
-
-			SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (~FCVAR_CHEAT));
-			ClientCommand(client, "firstperson");
-			SetCommandFlags("firstperson", GetCommandFlags("firstperson") & (FCVAR_CHEAT));
+			player.SetVisible(player.IsParticipating);
+			player.SetThirdPersonMode(false);
 		}
 	}
 }
