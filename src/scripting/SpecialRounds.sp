@@ -90,7 +90,9 @@ public void SpecialRound_OnGameFrame()
 
 				if (player.IsValid && player.IsParticipating && player.IsAlive)
 				{
-					SetEntPropFloat(i, Prop_Send, "m_flHeadScale", (SpecialRoundID == 15) ? 2.0 : 1.0);
+					player.HeadScale = SpecialRoundID == 15 
+						? 2.0 
+						: 1.0;
 				}
 			}
 		}
@@ -119,9 +121,11 @@ public void SpecialRound_PrintRandomNameWhenChoosing()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
-			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, buffer);
+			PrintCenterText(player.ClientId, "%T", "Hud_SpecialRound_CenterDisplay", player.ClientId, buffer);
 		}
 	}
 }
@@ -178,7 +182,9 @@ stock void PrintSelectedSpecialRound()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		if (IsClientInGame(i) && !IsFakeClient(i))
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
 		{
 			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, name);
 			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRounds[SpecialRoundID]);
@@ -198,16 +204,17 @@ stock void PrintSelectedSpecialRound()
 	}
 }
 
-
 public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 { 
 	if (SpecialRound_StartEffect > 0.3)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i))
+			Player player = new Player(i);
+
+			if (player.IsInGame && player.IsAlive)
 			{
-				ResizePlayer(i, SpecialRound_StartEffect);
+				player.Scale = SpecialRound_StartEffect;
 			}
 		}
 
@@ -226,9 +233,11 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (IsClientInGame(i) && IsPlayerAlive(i))
+			Player player = new Player(i);
+
+			if (player.IsInGame && player.IsAlive)
 			{
-				SetEntPropFloat(i, Prop_Send, "m_flHeadScale", SpecialRound_StartEffect);
+				player.HeadScale = SpecialRound_StartEffect;
 			}
 		}
 
@@ -286,15 +295,17 @@ stock void SetupSPR(int client)
 {
 	Player player = new Player(client);
 
-	if (IsClientInGame(client))
+	if (player.IsValid)
 	{
 		Special_Bird(client);
 
-		ResizePlayer(client, (SpecialRoundID == 14) ? 0.3 : 1.0);
+		player.Scale = SpecialRoundID == 14 
+			? 0.3 
+			: 1.0;
 
 		if (SpecialRoundID != 15)
 		{
-			SetEntPropFloat(client, Prop_Send, "m_flHeadScale", 1.0);
+			player.HeadScale = 1.0;
 		}
 
 		if (GamemodeID == SPR_GAMEMODEID)

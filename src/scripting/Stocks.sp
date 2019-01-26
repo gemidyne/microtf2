@@ -119,18 +119,6 @@ stock void ClientWonMinigame(int client)
 	}
 }
 
-stock void ResizePlayer(int client, float fScale = 1.0)
-{
-	float fCurrent = GetEntPropFloat(client, Prop_Send, "m_flModelScale");
-
-	if (fCurrent == fScale || fScale == 0.0) 
-	{
-		return;
-	}
-
-	SetEntPropFloat(client, Prop_Send, "m_flModelScale", fScale);
-}
-
 stock void ShowAnnotation(int client, float lifetime, char text[32])
 {
 	int bitfield = BuildBitStringExcludingClient(client);
