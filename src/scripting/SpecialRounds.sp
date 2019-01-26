@@ -80,7 +80,10 @@ public void SpecialRound_OnGameFrame()
 {
 	if (GamemodeStatus == GameStatus_Playing)
 	{
-		SpecialRound_PrintRandomNameWhenChoosing();
+		if (IsChoosingSpecialRound)
+		{
+			SpecialRound_PrintRandomNameWhenChoosing();
+		}
 
 		if (GamemodeID == SPR_GAMEMODEID)
 		{
@@ -101,11 +104,6 @@ public void SpecialRound_OnGameFrame()
 
 public void SpecialRound_PrintRandomNameWhenChoosing()
 {
-	if (!IsChoosingSpecialRound)
-	{
-		return;
-	}
-
 	char buffer[128];
 
 	if (GetRandomInt(0, 1) == 1)
