@@ -17,11 +17,6 @@ public void Minigame15_EntryPoint()
 
 public bool Minigame15_OnCheck()
 {
-	if (GetTeamClientCount(2) > 5)
-	{
-		return false;
-	}
-
 	return true;
 }
 
