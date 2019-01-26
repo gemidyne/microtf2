@@ -66,6 +66,7 @@ methodmap Player __nullable__
         public set(float value)
         {
             SetEntPropFloat(this.ClientId, Prop_Send, "m_flModelScale", value);
+            SetEntPropFloat(this.ClientId, Prop_Send, "m_flStepSize", 18.0 * value);
         }
     }
 
@@ -392,13 +393,7 @@ methodmap Player __nullable__
     public void RemoveWearables()
     {
         int entity = -1;
-        while ((entity = FindEntityByClassname(entity, "tf_wearable")) != -1)
-        {
-            AcceptEntityInput(entity, "kill");
-        }
-
-        entity = -1;
-        while ((entity = FindEntityByClassname(entity, "tf_wearable_demoshield")) != -1)
+        while ((entity = FindEntityByClassname(entity, "tf_wearable*")) != -1)
         {
             AcceptEntityInput(entity, "kill");
         }
@@ -413,30 +408,6 @@ methodmap Player __nullable__
         while ((entity = FindEntityByClassname(entity, "tf_weapon_spellbook")) != -1)
         {
             AcceptEntityInput(entity, "kill");
-        }
-
-        int edict = (MaxClients + 1);
-        while ((edict = FindEntityByClassname2(edict, "tf_wearable")) != -1)
-        {
-            char netclass[32];
-            if (GetEntityNetClass(edict, netclass, sizeof(netclass)) && StrEqual(netclass, "CTFWearable"))
-            {
-                int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
-                if ((idx == 57 || idx == 133 || idx == 231 || idx == 444 || idx == 405) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == this.ClientId && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
-                {
-                    RemoveEdict(edict);
-                }
-            }
-        }
-
-        edict = (MaxClients + 1);
-        while ((edict = FindEntityByClassname2(edict, "tf_wearable_demoshield")) != -1)
-        {
-            int idx = GetEntProp(edict, Prop_Send, "m_iItemDefinitionIndex");
-            if ((idx == 131 || idx == 406) && GetEntPropEnt(edict, Prop_Send, "m_hOwnerEntity") == this.ClientId && !GetEntProp(edict, Prop_Send, "m_bDisguiseWearable"))
-            {
-                RemoveEdict(edict);
-            }
         }
     }
 
