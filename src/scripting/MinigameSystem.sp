@@ -66,6 +66,53 @@ char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 public void InitializeMinigames()
 {
 	LogMessage("Initializing Minigame System...");
+
+	LoadMinigameData();
+	LoadBossgameData();
+
+	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", MinigamesLoaded, BossgamesLoaded);
+
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
+}
+
+public void MinigameSystem_OnMapStart()
+{
+	Handle sndfile = INVALID_HANDLE;
+
+	for (int i = 1; i <= MinigamesLoaded; i++)
+	{
+		if (strlen(MinigameMusic[i]) == 0)
+		{
+			continue;
+		}
+
+		PreloadSound(MinigameMusic[i]);
+		sndfile = OpenSoundFile(MinigameMusic[i]);
+
+		if (sndfile == INVALID_HANDLE)
+		{
+			LogError("Failed to get sound length for Minigame %d - %s", i, MinigameMusic[i]);
+		}
+		else
+		{
+			MinigameMusicLength[i] = GetSoundLengthFloat(sndfile);
+			CloseHandle(sndfile);
+		}
+	}
+
+	for (int i = 1; i <= BossgamesLoaded; i++)
+	{
+		if (strlen(BossgameMusic[i]) == 0)
+		{
+			continue;
+		}
+
+		PreloadSound(BossgameMusic[i]);
+	}
+}
+
+public void LoadMinigameData()
+{
 	char funcName[64];
 	char manifestPath[128];
 
@@ -125,10 +172,15 @@ public void InitializeMinigames()
 	}
  
 	CloseHandle(kv);
+}
 
+public void LoadBossgameData()
+{
+	char funcName[64];
+	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/bossgames.txt");
 
-	kv = CreateKeyValues("Bossgames");
+	Handle kv = CreateKeyValues("Bossgames");
 	FileToKeyValues(kv, manifestPath);
  
 	if (KvGotoFirstSubKey(kv))
@@ -176,46 +228,6 @@ public void InitializeMinigames()
 	}
  
 	CloseHandle(kv);
-
-	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", MinigamesLoaded, BossgamesLoaded);
-
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
-}
-
-public void MinigameSystem_OnMapStart()
-{
-	Handle sndfile = INVALID_HANDLE;
-
-	for (int i = 1; i <= MinigamesLoaded; i++)
-	{
-		if (strlen(MinigameMusic[i]) == 0)
-		{
-			continue;
-		}
-
-		PreloadSound(MinigameMusic[i]);
-		sndfile = OpenSoundFile(MinigameMusic[i]);
-
-		if (sndfile == INVALID_HANDLE)
-		{
-			LogError("Failed to get sound length for Minigame %d - %s", i, MinigameMusic[i]);
-		}
-		else
-		{
-			MinigameMusicLength[i] = GetSoundLengthFloat(sndfile);
-			CloseHandle(sndfile);
-		}
-	}
-
-	for (int i = 1; i <= BossgamesLoaded; i++)
-	{
-		if (strlen(BossgameMusic[i]) == 0)
-		{
-			continue;
-		}
-
-		PreloadSound(BossgameMusic[i]);
-	}
 }
 
 public void DoSelectMinigame()
