@@ -18,12 +18,14 @@ char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 
 char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool BossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+float BossgameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 
 char MinigameMusic[MAXIMUM_MINIGAMES][128];
 float MinigameMusicLength[MAXIMUM_MINIGAMES];
@@ -186,6 +188,7 @@ public void LoadMinigameData()
 			}
 
 			MinigameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
+			MinigameBlockedSpeedsHigherThan[i] = KvGetFloat(kv, "BlockedOnSpeedsHigherThan", 0.0);
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -260,6 +263,7 @@ public void LoadBossgameData()
 			}
 
 			BossgameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
+			BossgameBlockedSpeedsHigherThan[i] = KvGetFloat(kv, "BlockedOnSpeedsHigherThan", 0.0);
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -326,6 +330,10 @@ public void DoSelectMinigame()
 					MinigameID = PreviousMinigameID;
 				}
 			}
+			else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && SpeedLevel > MinigameBlockedSpeedsHigherThan[MinigameID])
+			{
+				MinigameID = PreviousMinigameID;
+			}
 
 			char funcName[64];
 			Format(funcName, sizeof(funcName), "Minigame%i_OnCheck", MinigameID);
@@ -384,6 +392,38 @@ public void DoSelectBossgame()
 			if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
 			{
 				// If bossgame is blocked on this special round, re-roll
+				BossgameID = PreviousBossgameID;
+			}
+			else if (BossgameRequiresMultiplePlayers[BossgameID])
+			{
+				int redParticipants = 0;
+				int blueParticipants = 0;
+
+				for (int j = 1; j <= MaxClients; j++)
+				{
+					Player player = new Player(j);
+
+					if (player.IsValid && player.IsParticipating)
+					{
+						switch (player.Team)
+						{
+							case TFTeam_Red:
+								redParticipants++;
+
+							case TFTeam_Blue:
+								blueParticipants++;
+						}
+					}
+				}
+
+				if (redParticipants == 0 || blueParticipants == 0)
+				{
+					// Bossgame requires players on both teams
+					BossgameID = PreviousBossgameID;
+				}
+			}
+			else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && SpeedLevel > BossgameBlockedSpeedsHigherThan[BossgameID])
+			{
 				BossgameID = PreviousBossgameID;
 			}
 
