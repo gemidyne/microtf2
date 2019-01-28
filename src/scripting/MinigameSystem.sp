@@ -16,11 +16,13 @@ char MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
+bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 
 char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
+bool BossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 
 char MinigameMusic[MAXIMUM_MINIGAMES][128];
 float MinigameMusicLength[MAXIMUM_MINIGAMES];
@@ -185,10 +187,10 @@ public void LoadMinigameData()
 					int id = StringToInt(specialRoundIds[j]);
 
 					MinigameBlockedSpecialRounds[i][id] = true;
-
-					LogMessage("MinigameBlockedSpecialRounds[Minigame: %i][Special Round: %i] = true", i, id);
 				}
 			}
+
+			MinigameRequiresMultiplePlayers[i] = KvGetNum(kv, "MultiplePlayersOnly", 0) == 1;
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -259,10 +261,10 @@ public void LoadBossgameData()
 					int id = StringToInt(specialRoundIds[j]);
 
 					BossgameBlockedSpecialRounds[i][id] = true;
-
-					LogMessage("BossgameBlockedSpecialRounds[Bossgame: %i][Special Round: %i] = true", i, id);
 				}
 			}
+
+			BossgameRequiresMultiplePlayers[i] = KvGetNum(kv, "MultiplePlayersOnly", 0) == 1;
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -300,6 +302,34 @@ public void DoSelectMinigame()
 			{
 				// If minigame is blocked on this special round, re-roll
 				MinigameID = PreviousMinigameID;
+			}
+			else if (MinigameRequiresMultiplePlayers[MinigameID])
+			{
+				int redParticipants = 0;
+				int bluParticipants = 0;
+
+				for (int j = 1; j <= MaxClients; j++)
+				{
+					Player player = new Player(j);
+
+					if (player.IsValid && player.IsParticipating)
+					{
+						switch (player.Team)
+						{
+							case TFTeam_Red:
+								redParticipants++;
+
+							case TFTeam_Blue:
+								bluParticipants++;
+						}
+					}
+				}
+
+				if (redParticipants == 0 || bluParticipants == 0)
+				{
+					// Minigame requires players on both teams
+					MinigameID = PreviousMinigameID;
+				}
 			}
 
 			char funcName[64];
