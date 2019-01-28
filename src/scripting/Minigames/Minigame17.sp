@@ -14,21 +14,6 @@ public void Minigame17_EntryPoint()
 	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
 }
 
-public bool Minigame17_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-
-	if (GetTeamClientCount(2) < 1 || GetTeamClientCount(3) < 1)
-	{
-		return false;
-	}
-
-	return false; // Currently disabled due to TakeDamage issues.
-}
-
 public void Minigame17_OnMinigameSelectedPre()
 {
 	if (MinigameID == 17)

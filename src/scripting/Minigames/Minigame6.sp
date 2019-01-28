@@ -11,7 +11,6 @@ int Minigame6_SayTextAnswerCount;
 
 char Minigame6_SayTextAnswer[64];
 bool Minigame6_HasBeenAnswered = false;
-bool Minigame6_AnswersLoaded = false;
 
 public void Minigame6_EntryPoint()
 {
@@ -20,13 +19,7 @@ public void Minigame6_EntryPoint()
 	RegConsoleCmd("say", Command_MinigameSixSay);
 	RegConsoleCmd("say_team", Command_MinigameSixSay);
 
-	Minigame6_AnswersLoaded = Minigame6_LoadAnswers();
-}
-
-public bool Minigame6_OnCheck()
-{
-	// Minigame 6 can only run if answers have been defined.
-	return Minigame6_AnswersLoaded;
+	Minigame6_LoadAnswers();
 }
 
 public void Minigame6_OnMinigameSelectedPre()

@@ -12,6 +12,7 @@
 int MinigamesLoaded = 0;
 int BossgamesLoaded = 0;
 
+bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
 char MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
@@ -140,13 +141,7 @@ public void LoadMinigameData()
 		{
 			i++;
 
-			if (KvGetNum(kv, "Enabled", 0) == 0)
-			{
-				// The Enabled/Disabled system needs reworking.
-				// MinigamesLoaded might be lower and this means some minigames 
-				// cant run...
-				continue;
-			}
+			MinigameIsEnabled[i] = KvGetNum(kv, "Enabled", 0) == 1;
 
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
 
@@ -190,7 +185,7 @@ public void LoadMinigameData()
 				}
 			}
 
-			MinigameRequiresMultiplePlayers[i] = KvGetNum(kv, "MultiplePlayersOnly", 0) == 1;
+			MinigameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -264,7 +259,7 @@ public void LoadBossgameData()
 				}
 			}
 
-			BossgameRequiresMultiplePlayers[i] = KvGetNum(kv, "MultiplePlayersOnly", 0) == 1;
+			BossgameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -306,7 +301,7 @@ public void DoSelectMinigame()
 			else if (MinigameRequiresMultiplePlayers[MinigameID])
 			{
 				int redParticipants = 0;
-				int bluParticipants = 0;
+				int blueParticipants = 0;
 
 				for (int j = 1; j <= MaxClients; j++)
 				{
@@ -320,12 +315,12 @@ public void DoSelectMinigame()
 								redParticipants++;
 
 							case TFTeam_Blue:
-								bluParticipants++;
+								blueParticipants++;
 						}
 					}
 				}
 
-				if (redParticipants == 0 || bluParticipants == 0)
+				if (redParticipants == 0 || blueParticipants == 0)
 				{
 					// Minigame requires players on both teams
 					MinigameID = PreviousMinigameID;

@@ -48,16 +48,6 @@ public void Minigame3_MapStart()
 	PrecacheModel(MINIGAME3_BARRELMDL, true);
 }
 
-public bool Minigame3_OnCheck()
-{
-	if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
-	{
-		return false;
-	}
-
-	return true;
-}
-
 public void Minigame3_OnSelectionPre()
 {
 	if (MinigameID == 3)

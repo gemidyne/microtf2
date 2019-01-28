@@ -14,13 +14,6 @@ public void Minigame14_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
-public bool Minigame14_OnCheck()
-{
-	// This minigame is disabled for the time being.
-	// Needs an area.
-	return false;
-}
-
 public void Minigame14_OnMinigameSelectedPre()
 {
 	IsBlockingDamage = false;

@@ -14,22 +14,6 @@ public void Minigame4_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame4_OnMinigameFinish);
 }
 
-public bool Minigame4_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-
-	if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
-	{
-		return false;
-	}
-
-	// If we get here, the minigame can run! 
-	return true;
-}
-
 public void Minigame4_OnMinigameSelectedPre()
 {
 	if (MinigameID == 4)

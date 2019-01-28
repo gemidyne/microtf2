@@ -14,11 +14,6 @@ public void Minigame22_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame22_OnMinigameFinish);
 }
 
-public bool Minigame22_OnCheck()
-{
-	return true;
-}
-
 public void Minigame22_OnMinigameSelectedPre()
 {
 	if (MinigameID == 22)

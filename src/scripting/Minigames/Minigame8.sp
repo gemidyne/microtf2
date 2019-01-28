@@ -17,11 +17,6 @@ public void Minigame8_EntryPoint()
 	RegConsoleCmd("say_team", Command_Minigame8Say);
 }
 
-public bool Minigame8_OnCheck()
-{
-	return true;
-}
-
 public void Minigame8_OnMinigameSelectedPre()
 {
 	if (MinigameID == 8)

@@ -11,21 +11,6 @@ public void Minigame16_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
 }
 
-public bool Minigame16_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-
-	if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
-	{
-		return false;
-	}
-
-	return true;
-}
-
 public void Minigame16_OnMinigameSelected(int client)
 {
 	if (MinigameID != 16)

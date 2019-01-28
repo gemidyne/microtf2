@@ -13,21 +13,6 @@ public void Minigame2_EntryPoint()
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
 }
 
-public bool Minigame2_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-
-	if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
-	{
-		return false;
-	}
-
-	return true;
-}
-
 public void Minigame2_OnSelectionPre()
 {
 	if (MinigameID == 2)

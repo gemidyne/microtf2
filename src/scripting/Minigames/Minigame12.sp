@@ -11,17 +11,6 @@ public void Minigame12_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame12_OnMinigameFinish);
 }
 
-public bool Minigame12_OnCheck()
-{
-	if (SpecialRoundID == 3)
-	{
-		// If Low Gravity special round, do not run.
-		return false;
-	}
-
-	return true;
-}
-
 public void Minigame12_OnMinigameSelectedPre()
 {
 	if (MinigameID == 12)

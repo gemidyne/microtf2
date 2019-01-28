@@ -46,22 +46,6 @@ public void Minigame10_OnMapStart()
 	PrecacheSound(SOUND_BOOM, true);
 }
 
-public bool Minigame10_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-
-	if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
-	{
-		return false;
-	}
-
-	// If we get here, the minigame can run! 
-	return true;
-}
-
 public void Minigame10_OnMinigameSelectedPre()
 {
 	if (MinigameID == 10)
