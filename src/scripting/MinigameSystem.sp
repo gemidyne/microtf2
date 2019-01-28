@@ -4,6 +4,8 @@
  * Implements a System for Minigames.
  */
 
+#include <sourcemod>
+
 #define MAXIMUM_MINIGAMES 64
 #define MINIGAME_CAPTION_LENGTH 128
 
@@ -13,10 +15,12 @@ int BossgamesLoaded = 0;
 char MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
+bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 
 char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
+bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 
 char MinigameMusic[MAXIMUM_MINIGAMES][128];
 float MinigameMusicLength[MAXIMUM_MINIGAMES];
@@ -167,6 +171,24 @@ public void LoadMinigameData()
 			{
 				KvGetString(kv, "DynamicCaptionMethod", MinigameDynamicCaptionFunctions[i], 64);
 			}
+
+			char blockedSpecialRounds[64];
+			KvGetString(kv, "BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
+
+			if (strlen(blockedSpecialRounds) > 0)
+			{
+				char specialRoundIds[32][6];
+				int count = ExplodeString(blockedSpecialRounds, ",", specialRoundIds, 32, 6, false);
+
+				for (int j = 0; j < count; j++)
+				{
+					int id = StringToInt(specialRoundIds[j]);
+
+					MinigameBlockedSpecialRounds[i][id] = true;
+
+					LogMessage("MinigameBlockedSpecialRounds[Minigame: %i][Special Round: %i] = true", i, id);
+				}
+			}
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -223,6 +245,24 @@ public void LoadBossgameData()
 			{
 				KvGetString(kv, "DynamicCaptionMethod", BossgameDynamicCaptionFunctions[i], 64);
 			}
+
+			char blockedSpecialRounds[64];
+			KvGetString(kv, "BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
+
+			if (strlen(blockedSpecialRounds) > 0)
+			{
+				char specialRoundIds[32][6];
+				int count = ExplodeString(blockedSpecialRounds, ",", specialRoundIds, 32, 6, false);
+
+				for (int j = 0; j < count; j++)
+				{
+					int id = StringToInt(specialRoundIds[j]);
+
+					BossgameBlockedSpecialRounds[i][id] = true;
+
+					LogMessage("BossgameBlockedSpecialRounds[Bossgame: %i][Special Round: %i] = true", i, id);
+				}
+			}
 		}
 		while (KvGotoNextKey(kv));
 	}
@@ -254,6 +294,12 @@ public void DoSelectMinigame()
 			if (MinigamesLoaded == 1)
 			{
 				PreviousMinigameID = 0;
+			}
+
+			if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
+			{
+				// If minigame is blocked on this special round, re-roll
+				MinigameID = PreviousMinigameID;
 			}
 
 			char funcName[64];
@@ -308,6 +354,12 @@ public void DoSelectBossgame()
 			if (BossgamesLoaded == 1)
 			{
 				PreviousBossgameID = 0;
+			}
+
+			if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
+			{
+				// If bossgame is blocked on this special round, re-roll
+				BossgameID = PreviousBossgameID;
 			}
 
 			char funcName[64];
