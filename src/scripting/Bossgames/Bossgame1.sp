@@ -13,11 +13,6 @@ public void Bossgame1_EntryPoint()
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame1_BossCheck);
 }
 
-public bool Bossgame1_OnCheck()
-{
-	return true;
-}
-
 public void Bossgame1_OnMinigameSelectedPre()
 {
 	IsBlockingDamage = false;

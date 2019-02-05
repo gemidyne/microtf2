@@ -16,27 +16,6 @@ public void Bossgame3_EntryPoint()
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
 }
 
-public bool Bossgame3_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-	
-	if (GetTeamClientCount(2) < 1 || GetTeamClientCount(3) < 1)
-	{
-		return false;
-	}
-
-	if (SpecialRoundID == 14)
-	{
-		// Due to knockback from GRU, cannot run on this SPR.
-		return false;
-	}
-
-	return true;
-}
-
 public void Bossgame3_OnMinigameSelectedPre()
 {
 	if (BossgameID == 3)

@@ -287,7 +287,6 @@ public void DoSelectMinigame()
 	}
 	else
 	{
-		int i = 0;
 		do
 		{
 			MinigameID = GetRandomInt(1, MinigamesLoaded);
@@ -334,31 +333,6 @@ public void DoSelectMinigame()
 			{
 				MinigameID = PreviousMinigameID;
 			}
-
-			char funcName[64];
-			Format(funcName, sizeof(funcName), "Minigame%i_OnCheck", MinigameID);
-			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-
-			if (func != INVALID_FUNCTION)
-			{
-				bool isPlayable = false;
-
-				Call_StartFunction(INVALID_HANDLE, func);
-				Call_Finish(isPlayable);
-
-				if (!isPlayable)
-				{
-					MinigameID = PreviousMinigameID;
-				}
-
-				if (i > 20)
-				{
-					// This fixes a crash.
-					PreviousMinigameID = 1;
-				}
-			}
-
-			i++;
 		}
 		while (MinigameID == PreviousMinigameID);
 
@@ -379,7 +353,6 @@ public void DoSelectBossgame()
 	}
 	else
 	{
-		int i = 0;
 		do
 		{
 			BossgameID = GetRandomInt(1, BossgamesLoaded);
@@ -426,30 +399,6 @@ public void DoSelectBossgame()
 			{
 				BossgameID = PreviousBossgameID;
 			}
-
-			char funcName[64];
-			Format(funcName, sizeof(funcName), "Bossgame%i_OnCheck", BossgameID);
-			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-
-			if (func != INVALID_FUNCTION)
-			{
-				bool isPlayable = false;
-
-				Call_StartFunction(INVALID_HANDLE, func);
-				Call_Finish(isPlayable);
-
-				if (!isPlayable)
-				{
-					BossgameID = PreviousBossgameID;
-				}
-
-				if (i > 20)
-				{
-					PreviousBossgameID = 0;
-				}
-			}
-
-			i++;
 		}
 		while (BossgameID == PreviousBossgameID);
 	}

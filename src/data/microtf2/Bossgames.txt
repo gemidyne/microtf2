@@ -15,6 +15,7 @@
 		"BackgroundMusic"	"stsv/microtf2/bossgame/2.mp3"
 		"EntryPoint"		"Bossgame2_EntryPoint"
 		"Caption"		"ESCAPE THE FACTORY!"
+		"BlockedSpecialRounds" "12,14"
 	}
 	"3"
 	{
@@ -23,6 +24,8 @@
 		"BackgroundMusic"	"stsv/microtf2/bossgame/3.mp3"
 		"EntryPoint"		"Bossgame3_EntryPoint"
 		"Caption"		"DEFEAT THE ENEMY TEAM!"
+		"BlockedSpecialRounds" "12,14"
+		"RequiresMultiplePlayers"	"1"
 	}
 	"4"
 	{
@@ -31,6 +34,8 @@
 		"BackgroundMusic"	"stsv/microtf2/bossgame/4.mp3"
 		"EntryPoint"		"Bossgame4_EntryPoint"
 		"Caption"		"DON'T FALL INTO THE WATER!"
+		"BlockedSpecialRounds" "12"
+		"RequiresMultiplePlayers"	"1"
 	}
 	"5"
 	{
@@ -39,6 +44,7 @@
 		"BackgroundMusic"	"stsv/microtf2/bossgame/5.mp3"
 		"EntryPoint"		"Bossgame5_EntryPoint"
 		"Caption"		"REACH THE GOAL!"
+		"BlockedSpecialRounds" "1,5,6,7"
 	}
 	"6"
 	{
@@ -47,5 +53,6 @@
 		"BackgroundMusic"	"stsv/microtf2/bossgame/5.mp3"
 		"EntryPoint"		"Bossgame6_EntryPoint"
 		"Caption"		"SHOOT THE MOST BARRELS!"
+		"RequiresMultiplePlayers"	"1"
 	}
 }

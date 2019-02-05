@@ -51,21 +51,6 @@ public void Bossgame4_EntryPoint()
 	Bossgame4_Angles[1][1][2] = 0.0;
 }
 
-public bool Bossgame4_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-	
-	if (GetTeamClientCount(2) < 1 || GetTeamClientCount(3) < 1)
-	{
-		return false;
-	}
-	
-	return true;
-}
-
 public void Bossgame4_OnMinigameSelectedPre()
 {
 	if (BossgameID != 4)

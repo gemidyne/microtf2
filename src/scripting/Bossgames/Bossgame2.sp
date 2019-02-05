@@ -15,22 +15,6 @@ public void Bossgame2_EntryPoint()
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
 }
 
-public bool Bossgame2_OnCheck()
-{
-	if (SpecialRoundID == 12)
-	{
-		return false;
-	}
-	
-	if (SpecialRoundID == 14)
-	{
-		// Due to knockback from GRU, cannot run on this SPR.
-		return false;
-	}
-	
-	return true;
-}
-
 public void Bossgame2_OnMinigameSelectedPre()
 {
 	if (BossgameID == 2)

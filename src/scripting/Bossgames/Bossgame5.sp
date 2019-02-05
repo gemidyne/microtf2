@@ -24,20 +24,6 @@ public void Bossgame5_OnMapStart()
 	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
 }
 
-public bool Bossgame5_OnCheck()
-{
-	switch (SpecialRoundID)
-	{
-		case 1, 5, 6, 7:
-		{
-			// Due to BGM syncing issues, this boss cannot be run on the above special rounds.
-			return false;
-		}
-	}
-
-	return true;
-}
-
 public void Bossgame5_OnMinigameSelectedPre()
 {
 	if (BossgameID != 5)

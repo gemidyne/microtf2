@@ -31,16 +31,6 @@ public void Bossgame6_OnMapStart()
 {
 }
 
-public bool Bossgame6_OnCheck()
-{
-	if (GetTeamClientCount(2) < 1 || GetTeamClientCount(3) < 1)
-	{
-		return false;
-	}
-
-	return true;
-}
-
 public void Bossgame6_OnTfRoundStart()
 {
 	Bossgame6_SendDoorInput("Close");

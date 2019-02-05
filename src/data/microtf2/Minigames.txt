@@ -200,6 +200,7 @@
 		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
 		"Caption"		"NEEDLEJUMP!"
 		"EntryPoint"		"Minigame24_EntryPoint"
+		"BlockedOnSpeedsHigherThan"	"1.5"
 	}
 	"25"
 	{

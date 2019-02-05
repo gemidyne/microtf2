@@ -13,16 +13,6 @@ public void Minigame24_EntryPoint()
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
 }
 
-public bool Minigame24_OnCheck()
-{
-	if (SpeedLevel > 1.5)
-	{
-		return false;
-	}
-	
-	return true;
-}
-
 public void Minigame24_OnMinigameSelected(int client)
 {
 	if (MinigameID != 24)
