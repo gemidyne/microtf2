@@ -7,15 +7,51 @@
 Handle AllowedCheats;
 
 /* Entities that are not allowed to be created with ent_create or give */
-char ForbiddenEntities[][] = { "point_servercommand", "point_clientcommand", "logic_timer", "logic_relay"
-	,"logic_auto", "logic_autosave", "logic_branch", "logic_case", "logic_collision_pair", "logic_compareto" 
-	,"logic_lineto", "logic_measure_movement", "logic_multicompare", "logic_navigation" };
+char ForbiddenEntities[][] = 
+{ 
+	"point_servercommand",
+	"point_clientcommand",
+	"logic_timer",
+	"logic_relay",
+	"logic_auto",
+	"logic_autosave",
+	"logic_branch",
+	"logic_case",
+	"logic_collision_pair", 
+	"logic_compareto",
+	"logic_lineto",
+	"logic_measure_movement",
+	"logic_multicompare",
+	"logic_navigation" 
+};
 
 /* Strings that are not allowed to be present in ent_fire commands */
-char ForbiddenCommands[][] = { "quit", "quti", "restart", "sm", "admin", "ma_", "rcon", "sv_", "mp_", "meta", "alias" };
+char ForbiddenCommands[][] = 
+{
+	"quit",
+	"quti",
+	"restart",
+	"sm",
+	"admin",
+	"ma_",
+	"rcon",
+	"sv_",
+	"mp_",
+	"meta",
+	"alias"
+};
 
 /* ConVars that clients are not permitted to have */
-char ForbiddenClientConVars[][] = { "sourcemod_version", "metamod_version", "mani_admin_plugin_version", "eventscripts_ver", "est_version", "bat_version", "beetlesmod_version" };
+char ForbiddenClientConVars[][] = 
+{
+	"sourcemod_version",
+	"metamod_version",
+	"mani_admin_plugin_version",
+	"eventscripts_ver",
+	"est_version",
+	"bat_version",
+	"beetlesmod_version"
+};
 
 int SecuritySystem_ConVarPos[MAXPLAYERS];
 bool SecuritySystem_IgnoreServerCmdCheckOnce = false;

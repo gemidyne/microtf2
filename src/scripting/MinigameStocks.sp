@@ -24,11 +24,8 @@ stock int CreatePropEntity(float position[3], char[] modelPath, int health, floa
 		
 		DispatchKeyValue(entity, "Solid", "6");
 		
-		//SetEntProp(entity, Prop_Data, "m_nSolidType", 6);
 		SetEntProp(entity, Prop_Send, "m_nSolidType", 6);
-		//SetEntProp(entity, Prop_Data, "m_CollisionGroup", 5);
 		SetEntProp(entity, Prop_Send, "m_CollisionGroup", 5);
-		//SetEntProp(entity, Prop_Data, "m_usSolidFlags", 16);
 		SetEntProp(entity, Prop_Send, "m_usSolidFlags", 16);
 	
 		SetEntityMoveType(entity, MOVETYPE_VPHYSICS);
