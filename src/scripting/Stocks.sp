@@ -109,13 +109,14 @@ stock void ClientWonMinigame(int client)
 		player.Status = PlayerStatus_Winner;
 		EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 
-		int i = GetRandomInt(0, 5);
-		char colours[6][32] = { "Micro_Win_Blue", "Micro_Win_Green", "Micro_Win_Purple", "Micro_Win_Rainbow", "Micro_Win_Red", "Micro_Win_Yellow" };
-		char particle[128];
-
-		particle = colours[i];
-
-		CreateParticle(client, particle, 4.0);
+		if (player.Team == TFTeam_Blue)
+		{
+			CreateParticle(client, "Micro_Win_Blue", 6.0);
+		}
+		else if (player.Team == TFTeam_Red)
+		{
+			CreateParticle(client, "Micro_Win_Red", 6.0);
+		}
 	}
 }
 

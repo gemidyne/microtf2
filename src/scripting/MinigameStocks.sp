@@ -58,21 +58,21 @@ stock void CreateParticle(int client, const char[] effect, float time, bool atta
 
 	if (IsValidEntity(entity)) 
 	{
-		float fPosition[3];
-		char sName[128];
+		float position[3];
+		char name[128];
 
-		GetEntPropVector(client, Prop_Send, "m_vecOrigin", fPosition);
-		TeleportEntity(entity, fPosition, NULL_VECTOR, NULL_VECTOR);
+		GetEntPropVector(client, Prop_Send, "m_vecOrigin", position);
+		TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
         
-		Format(sName, sizeof(sName), "target%i", client);
-		DispatchKeyValue(client, "targetname", sName);
+		Format(name, sizeof(name), "target%i", client);
+		DispatchKeyValue(client, "targetname", name);
         
 		DispatchKeyValue(entity, "targetname", "tf2particle");
-		DispatchKeyValue(entity, "parentname", sName);
+		DispatchKeyValue(entity, "parentname", name);
 		DispatchKeyValue(entity, "effect_name", effect);
 		DispatchSpawn(entity);
 
-		SetVariantString(sName);
+		SetVariantString(name);
 		AcceptEntityInput(entity, "SetParent", entity, entity, 0);
 
 		if (attachToHead) 
