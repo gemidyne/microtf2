@@ -104,7 +104,7 @@ public Action Timer_RemoveBossOverlay(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		MinigameCaption[i] = "";
+		strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
 	}
 
 	return Plugin_Handled;
