@@ -536,15 +536,7 @@ public void OnGameFrame()
 		return;
 	}
 
-	bool isCurrentlyPlaying = (IsMinigameActive && GamemodeStatus == GameStatus_Playing && (MinigameID > 0 || BossgameID > 0));
-	bool isCurrentlyInTutorial = (GamemodeStatus == GameStatus_Tutorial);
-	bool isCurrentlyInGameOver = (GamemodeStatus == GameStatus_Playing && !IsMinigameActive && MinigamesPlayed == 0);
-	bool canUpdateHudText = (isCurrentlyPlaying || isCurrentlyInTutorial || isCurrentlyInGameOver);
-
-	if (canUpdateHudText)
-	{
-		g_iCenterHudUpdateFrame++;
-	}
+	g_iCenterHudUpdateFrame++;
 
 	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
 	{
