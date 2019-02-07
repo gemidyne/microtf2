@@ -165,24 +165,6 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsBlockingDamage = true;
 	IsOnlyBlockingDamageByPlayers = false;
 
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsInGame && !player.IsBot)
-		{
-			char header[64];
-			Format(header, sizeof(header), "%T", "Startup_Header", i);
-
-			char body[64];
-			Format(body, sizeof(body), "%T", "Startup_BodyIntro", i);
-
-			DisplayHudMessageToClient(i, header, body, 3.0);
-
-			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
-		}
-	}
-
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
 }
 
