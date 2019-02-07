@@ -485,7 +485,7 @@ public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, flo
 		Call_Finish();
 	}
 
-	Player attacker = new Player(attackerId);
+	Player attacker = new Player(inflictor);
 
 	if (IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
 	{
@@ -587,14 +587,7 @@ public void OnGameFrame()
 						strcopy(buffer, sizeof(buffer), rewritten);
 					}
 
-					if (strlen(buffer) > 0)	
-					{	
-						ShowSyncHudText(i, HudSync_Caption, buffer);	
-					}	
-					else	
-					{	
-						ClearSyncHud(i, HudSync_Caption);	
-					}
+					ShowSyncHudText(i, HudSync_Caption, buffer);	
 				}
 			}
 

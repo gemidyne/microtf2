@@ -367,7 +367,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	ShowPlayerScores(true);
 	SpecialRound_SetupEnv();
 
-	g_iCenterHudUpdateFrame = g_iCenterHudUpdateInterval + 1;
+	g_iCenterHudUpdateFrame = 999;
 	IsMinigameActive = true;
 
 	#if defined DEBUG
@@ -568,8 +568,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			TF2_RemoveCondition(i, TFCond_Bonked);
 			TF2_RemoveCondition(i, TFCond_Dazed);
 
-			ClearSyncHud(i, HudSync_Caption);
-
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
@@ -649,8 +647,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
-			ClearSyncHud(i, HudSync_Caption);
-
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
 			PlayNegativeVoice(i);
 

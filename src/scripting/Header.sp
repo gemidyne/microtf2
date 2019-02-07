@@ -56,7 +56,7 @@ int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
 int PlayerIndex[MAXPLAYERS+1] = 0;
 
-int g_iCenterHudUpdateInterval = 33;
+int g_iCenterHudUpdateInterval = 10;
 int g_iCenterHudUpdateFrame = 0;
 int g_iAnnotationEventId = 0;
 
