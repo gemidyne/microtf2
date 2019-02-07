@@ -59,6 +59,8 @@ public void Minigame25_OnMinigameFinish()
 			{
 				player.Status = player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed;
 				StopSound(i, SNDCHAN_AUTO, "misc/grenade_jump_lp_01.wav");
+
+				player.Respawn();
 			}
 		}
 	}
