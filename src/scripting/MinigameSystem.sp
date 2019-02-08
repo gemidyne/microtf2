@@ -20,6 +20,7 @@ bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 
+bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
 char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
@@ -213,10 +214,7 @@ public void LoadBossgameData()
 		{
 			i++;
 
-			if (KvGetNum(kv, "Enabled", 0) == 0)
-			{
-				continue;
-			}
+			BossgameIsEnabled[i] = KvGetNum(kv, "Enabled", 0) == 1;
 
 			// Get EntryPoint first of all!
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
@@ -296,6 +294,11 @@ public void DoSelectMinigame()
 				PreviousMinigameID = 0;
 			}
 
+			if (!MinigameIsEnabled[MinigameID])
+			{
+				MinigameID = PreviousMinigameID;
+			}
+
 			if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
 			{
 				// If minigame is blocked on this special round, re-roll
@@ -360,6 +363,11 @@ public void DoSelectBossgame()
 			if (BossgamesLoaded == 1)
 			{
 				PreviousBossgameID = 0;
+			}
+
+			if (!BossgameIsEnabled[BossgameID])
+			{
+				BossgameID = PreviousBossgameID;
 			}
 
 			if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
