@@ -551,40 +551,37 @@ public void OnGameFrame()
 
 	if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
 	{
-		if (canUpdateHudText)
+		SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
+		
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
-			
-			for (int i = 1; i <= MaxClients; i++)
+			Player player = new Player(i);
+
+			if (player.IsInGame && !player.IsBot)
 			{
-				Player player = new Player(i);
+				char buffer[MINIGAME_CAPTION_LENGTH];
+				Format(buffer, sizeof(buffer), MinigameCaption[i]);
 
-				if (player.IsInGame && !player.IsBot)
+				if (SpecialRoundID == 19)
 				{
-					char buffer[MINIGAME_CAPTION_LENGTH];
-					Format(buffer, sizeof(buffer), MinigameCaption[i]);
+					char rewritten[MINIGAME_CAPTION_LENGTH];
+					int rc = 0;
+					int len = strlen(buffer);
 
-					if (SpecialRoundID == 19)
+					for (int c = len - 1; c >= 0; c--)
 					{
-						char rewritten[MINIGAME_CAPTION_LENGTH];
-						int rc = 0;
-						int len = strlen(buffer);
-
-						for (int c = len - 1; c >= 0; c--)
-						{
-							rewritten[rc] = buffer[c];
-							rc++;
-						}
-
-						strcopy(buffer, sizeof(buffer), rewritten);
+						rewritten[rc] = buffer[c];
+						rc++;
 					}
 
-					ShowSyncHudText(i, HudSync_Caption, buffer);	
+					strcopy(buffer, sizeof(buffer), rewritten);
 				}
-			}
 
-			g_iCenterHudUpdateFrame = 0;
+				ShowSyncHudText(i, HudSync_Caption, buffer);	
+			}
 		}
+
+		g_iCenterHudUpdateFrame = 0;
 	}
 
 	#if defined DEBUG
