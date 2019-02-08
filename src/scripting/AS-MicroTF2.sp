@@ -534,6 +534,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	{
 		Player player = new Player(i);
 
+		strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
+
 		if (player.IsValid)
 		{
 			if (!player.IsAlive || returnedFromBoss)
