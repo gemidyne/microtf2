@@ -1029,7 +1029,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	SetSpeed();
 	SetConVarInt(ConVar_TFFastBuild, 0);
 
-	if (MaxRounds == 0 || RoundsPlayed < MaxRounds)
+	if (MaxRounds == 0 || RoundsPlayed <= MaxRounds)
 	{
 		ShowPlayerScores(true);
 		bool isWaitingForVoteToFinish = false;
