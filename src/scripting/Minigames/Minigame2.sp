@@ -21,6 +21,7 @@ public void Minigame2_OnSelectionPre()
 
 		Minigame2_Class = GetRandomInt(0, 7);
 		IsBlockingDamage = false;
+		IsOnlyBlockingDamageByPlayers = false;
 		IsBlockingDeathCommands = true;
 	}
 }

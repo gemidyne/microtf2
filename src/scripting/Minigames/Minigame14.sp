@@ -16,6 +16,11 @@ public void Minigame14_EntryPoint()
 
 public void Minigame14_OnMinigameSelectedPre()
 {
+	if (MinigameID != 14)
+	{
+		return;
+	}
+	
 	IsBlockingDamage = false;
 	IsOnlyBlockingDamageByPlayers = true;
 }
