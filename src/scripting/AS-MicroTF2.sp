@@ -392,7 +392,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	{
 		Player player = new Player(i);
 
-		if (player.IsInGame && !player.IsBot)
+		if (player.IsInGame)
 		{
 			if (BossgameID > 0) 
 			{
