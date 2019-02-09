@@ -149,7 +149,7 @@ public void LoadMinigameData()
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
 
 			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-			if (func != INVALID_FUNCTION && MinigameIsEnabled[i])
+			if (func != INVALID_FUNCTION)
 			{
 				MinigamesLoaded++;
 
@@ -220,7 +220,7 @@ public void LoadBossgameData()
 			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
 
 			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
-			if (func != INVALID_FUNCTION && BossgameIsEnabled[i])
+			if (func != INVALID_FUNCTION)
 			{
 				BossgamesLoaded++;
 
