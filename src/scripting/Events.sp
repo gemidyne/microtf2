@@ -536,7 +536,6 @@ public void OnGameFrame()
 		return;
 	}
 
-	g_iCenterHudUpdateFrame++;
 
 	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
 	{
@@ -549,32 +548,7 @@ public void OnGameFrame()
 		GamemodeStatus = GameStatus_WaitingForPlayers;
 	}
 
-	if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
-	{
-		SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
-		
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
 
-			if (player.IsInGame && !player.IsBot)
-			{
-				char buffer[MINIGAME_CAPTION_LENGTH];
-				Format(buffer, sizeof(buffer), MinigameCaption[i]);
-
-				if (SpecialRoundID == 19)
-				{
-					char rewritten[MINIGAME_CAPTION_LENGTH];
-
-					ToUpperString(buffer, rewritten, MINIGAME_CAPTION_LENGTH);
-				}
-
-				ShowSyncHudText(i, HudSync_Caption, buffer);	
-			}
-		}
-
-		g_iCenterHudUpdateFrame = 0;
-	}
 
 	#if defined DEBUG
 	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)

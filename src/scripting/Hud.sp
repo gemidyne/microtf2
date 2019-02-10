@@ -1,7 +1,8 @@
 stock void InitialiseHud()
 {
-	LogMessage("Initializing HUD...");
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
+    LogMessage("Initializing HUD...");
+    AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
+    AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
 }
 
 public void Hud_OnMapStart()
@@ -20,14 +21,49 @@ public void Hud_OnMapStart()
     CreateTimer(120.0, Timer_Advertise, _, TIMER_FLAG_NO_MAPCHANGE|TIMER_REPEAT);
 }
 
-public void DisplayScoreHud(Player player, float time)
+public void Hud_OnGameFrame()
+{
+    g_iCenterHudUpdateFrame++;
+	
+    if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
+    {
+        SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
+		
+        for (int i = 1; i <= MaxClients; i++)
+        {
+            Player player = new Player(i);
+
+            if (player.IsInGame && !player.IsBot)
+            {
+                char buffer[MINIGAME_CAPTION_LENGTH];
+                Format(buffer, sizeof(buffer), MinigameCaption[i]);
+
+                if (SpecialRoundID == 19)
+                {
+                    char rewritten[MINIGAME_CAPTION_LENGTH];
+
+                    ToUpperString(buffer, rewritten, MINIGAME_CAPTION_LENGTH);
+                    strcopy(buffer, sizeof(buffer), rewritten);
+                }
+
+                ShowSyncHudText(i, HudSync_Caption, buffer);
+
+                DisplayScoreHud(player);
+                DisplayRoundHud(player);
+                DisplaySpecialHud(player);
+            }
+        }
+
+        g_iCenterHudUpdateFrame = 0;
+    }
+}
+
+public void DisplayScoreHud(Player player)
 {
     if (!player.IsValid)
     {
         return;
     }
-
-    ClearSyncHud(player.ClientId, HudSync_Score);
 
     char scoreText[32];
 
@@ -43,26 +79,16 @@ public void DisplayScoreHud(Player player, float time)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(scoreText);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            rewritten[rc] = scoreText[c];
-            rc++;
-        }
-
+        ToUpperString(scoreText, rewritten, sizeof(rewritten));
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
 
-    SetHudTextParamsEx(-1.0, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
+    SetHudTextParamsEx(-1.0, 0.02, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
     ShowSyncHudText(player.ClientId, HudSync_Score, scoreText);
 }
 
-public void DisplayRoundHud(Player player, float time)
+public void DisplayRoundHud(Player player)
 {
-    ClearSyncHud(player.ClientId, HudSync_Round);
-
     char roundDisplay[32];
 
     if (MaxRounds > 0)
@@ -77,26 +103,16 @@ public void DisplayRoundHud(Player player, float time)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(roundDisplay);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            rewritten[rc] = roundDisplay[c];
-            rc++;
-        }
-
+        ToUpperString(roundDisplay, rewritten, sizeof(rewritten));
         strcopy(roundDisplay, sizeof(roundDisplay), rewritten);
     }
 
-    SetHudTextParamsEx(0.01, 0.02, time, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
+    SetHudTextParamsEx(0.01, 0.02, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
     ShowSyncHudText(player.ClientId, HudSync_Round, roundDisplay);
 }
 
-public void DisplaySpecialHud(Player player, float time)
+public void DisplaySpecialHud(Player player)
 {
-    ClearSyncHud(player.ClientId, HudSync_Special);
-
     char themeSpecialText[32];
 
     if (GamemodeID == SPR_GAMEMODEID)
@@ -111,20 +127,12 @@ public void DisplaySpecialHud(Player player, float time)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(themeSpecialText);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            rewritten[rc] = themeSpecialText[c];
-            rc++;
-        }
-
+        ToUpperString(themeSpecialText, rewritten, sizeof(rewritten));
         strcopy(themeSpecialText, sizeof(themeSpecialText), rewritten);
     }
 
     // THEME/SPECIAL ROUND INFO
-    SetHudTextParamsEx(0.79, 0.02, time, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
+    SetHudTextParamsEx(0.79, 0.02, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
     ShowSyncHudText(player.ClientId, HudSync_Special, themeSpecialText);
 }
 

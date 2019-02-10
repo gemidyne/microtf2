@@ -101,37 +101,9 @@ stock int GetLowestScore()
 	return threshold;
 }
 
-stock void ShowPlayerScores(bool showText)
-{
-	if (showText)
-	{
-		float time = 6.0; // 4 secs with an extra 2 seconds incase of any GameLogic event
-
-		if (BossgameID > 0)
-		{
-			// If this was called and a Bossgame is selected, it should be displayed for the maximum time
-			// that the boss will run for.
-			time += BossgameLength[BossgameID];
-		}
-
-		for (int i = 1; i <= MaxClients; i++) 
-		{
-			Player player = new Player(i);
-
-			if (player.IsInGame)
-			{
-				DisplayScoreHud(player, time);
-				DisplayRoundHud(player, time);
-				DisplaySpecialHud(player, time);
-			}
-		}
-	}
-}
-
 stock void EndGame()
 {
 	SetConVarInt(FindConVar("mp_timelimit"), 1);
-	ShowPlayerScores(true);
 
 	int entity = FindEntityByClassname(-1, "game_end");
 

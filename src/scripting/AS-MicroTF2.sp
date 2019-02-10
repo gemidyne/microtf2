@@ -189,7 +189,6 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 	
 	SetSpeed();
 
-	ShowPlayerScores(true);
 	SpecialRound_SetupEnv();
 
 	char centerText[4096];
@@ -346,7 +345,6 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	UpdatePlayerIndexes();
 
 	SetSpeed();
-	ShowPlayerScores(true);
 	SpecialRound_SetupEnv();
 
 	g_iCenterHudUpdateFrame = 999;
@@ -478,7 +476,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	IsMinigameEnding = true;
 
 	SetSpeed();
-	ShowPlayerScores(true);
 
 	if (GlobalForward_OnMinigameFinish != INVALID_HANDLE)
 	{
@@ -737,7 +734,6 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	}
 
 	SetSpeed();
-	ShowPlayerScores(true);
 
 	if (SpecialRoundID == 20)
 	{
@@ -1031,7 +1027,6 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	if (MaxRounds == 0 || RoundsPlayed <= MaxRounds)
 	{
-		ShowPlayerScores(true);
 		bool isWaitingForVoteToFinish = false;
 
 		if (MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
