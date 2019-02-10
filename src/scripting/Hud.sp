@@ -1,3 +1,6 @@
+int g_iCenterHudUpdateInterval = 10;
+int g_iCenterHudUpdateFrame = 0;
+
 stock void InitialiseHud()
 {
     LogMessage("Initializing HUD...");
