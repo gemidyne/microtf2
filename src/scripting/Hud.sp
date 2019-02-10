@@ -27,8 +27,6 @@ public void Hud_OnGameFrame()
 	
     if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
     {
-        SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
-		
         for (int i = 1; i <= MaxClients; i++)
         {
             Player player = new Player(i);
@@ -46,6 +44,7 @@ public void Hud_OnGameFrame()
                     strcopy(buffer, sizeof(buffer), rewritten);
                 }
 
+                SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
                 ShowSyncHudText(i, HudSync_Caption, buffer);
 
                 DisplayScoreHud(player);
