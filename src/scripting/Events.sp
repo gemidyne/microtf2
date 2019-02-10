@@ -565,16 +565,8 @@ public void OnGameFrame()
 				if (SpecialRoundID == 19)
 				{
 					char rewritten[MINIGAME_CAPTION_LENGTH];
-					int rc = 0;
-					int len = strlen(buffer);
 
-					for (int c = len - 1; c >= 0; c--)
-					{
-						rewritten[rc] = buffer[c];
-						rc++;
-					}
-
-					strcopy(buffer, sizeof(buffer), rewritten);
+					ToUpperString(buffer, rewritten, MINIGAME_CAPTION_LENGTH);
 				}
 
 				ShowSyncHudText(i, HudSync_Caption, buffer);	
