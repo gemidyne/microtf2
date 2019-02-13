@@ -244,7 +244,7 @@ public void Bossgame5_DoSwitch(float pos[3])
 
 	if (IsValidEdict(entity))
 	{
-		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+		DispatchKeyValue(entity, "model", "models/props_farm/gibs/wooden_barrel_break01.mdl");
 		DispatchSpawn(entity);
 
 		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
