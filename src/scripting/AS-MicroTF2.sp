@@ -668,21 +668,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		BossGameThreshold = MinigamesPlayed;
 	}
 
-	if (MinigamesPlayed > 2 && Special_AreSpeedEventsEnabled() && SpeedLevel < 2.5 && MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
-	{
-		if (GetRandomInt(0, 2) == 1)
-		{
-			NextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
-
-			#if defined DEBUG
-			PrintToChatAll("[DEBUG] Decided to do a speed change!");
-			#endif
-
-			CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
-			return Plugin_Handled;
-		}
-	}
-
 	if (TrySpeedChangeEvent())
 	{
 		CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
