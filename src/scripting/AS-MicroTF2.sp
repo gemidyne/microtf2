@@ -674,16 +674,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (GamemodeID != SPR_GAMEMODEID && MinigamesPlayed < BossGameThreshold && GetRandomInt(0, 50) == 1)
-	{
-		GamemodeID = SPR_GAMEMODEID;
-
-		SpecialRoundID = GetRandomInt(SPR_MIN, SPR_MAX);
-
-		CreateTimer(2.0, Timer_GameLogic_SpecialRoundSelectionStart, _, TIMER_FLAG_NO_MAPCHANGE);
-		return Plugin_Handled;
-	}
-
 	if ((SpecialRoundID != 10 && MinigamesPlayed == BossGameThreshold && !playAnotherBossgame) || (SpecialRoundID == 10 && (MinigamesPlayed == BossGameThreshold || playAnotherBossgame)))
 	{
 		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
