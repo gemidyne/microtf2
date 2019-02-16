@@ -171,6 +171,7 @@ stock void ResetGamemode()
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
 	MinigamesPlayed = 0;
+	NextMinigamePlayedSpeedTestThreshold = 0;
 	
 	IsMinigameActive = false;
 	IsBonusRound = false;

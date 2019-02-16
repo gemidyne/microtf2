@@ -82,6 +82,7 @@ public void System_OnMapStart()
 	SpecialRoundID = 0;
 	ScoreAmount = 1;
 	MinigamesPlayed = 0;
+	NextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
 	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
 	RoundsPlayed = 0;

@@ -415,3 +415,23 @@ public void DoSelectBossgame()
 	PrintToChatAll("[DEBUG] Chose bossgame %i", BossgameID);
 	#endif
 }
+
+public bool TrySpeedChangeEvent()
+{
+	if (!Special_AreSpeedEventsEnabled())
+	{
+		return false;
+	}
+
+	if (MinigamesPlayed > 2 && SpeedLevel < 2.3 && MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
+	{
+		if (GetRandomInt(0, 2) == 1)
+		{
+			NextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
+
+			return true;
+		}
+	}
+
+	return false;
+}

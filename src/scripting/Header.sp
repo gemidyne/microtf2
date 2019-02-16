@@ -48,6 +48,7 @@ int PreviousBossgameID = 0;
 int SpecialRoundID = 0;
 int ScoreAmount = 1;
 int MinigamesPlayed = 0;
+int NextMinigamePlayedSpeedTestThreshold = 0;
 int BossGameThreshold = 20;
 int MaxRounds = 4;
 int RoundsPlayed = 0;

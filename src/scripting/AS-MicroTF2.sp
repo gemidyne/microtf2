@@ -151,6 +151,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	SpecialRoundID = 0;
 	ScoreAmount = 1;
 	MinigamesPlayed = 0;
+	NextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
 	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
 	RoundsPlayed = 0;
@@ -667,10 +668,12 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		BossGameThreshold = MinigamesPlayed;
 	}
 
-	if (MinigamesPlayed > 2 && Special_AreSpeedEventsEnabled() && SpeedLevel < 2.5 && MinigamesPlayed < BossGameThreshold)
+	if (MinigamesPlayed > 2 && Special_AreSpeedEventsEnabled() && SpeedLevel < 2.5 && MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
 	{
-		if (GetRandomInt(0, 1) == 1)
+		if (GetRandomInt(0, 2) == 1)
 		{
+			NextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
+
 			#if defined DEBUG
 			PrintToChatAll("[DEBUG] Decided to do a speed change!");
 			#endif
@@ -678,6 +681,12 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
 			return Plugin_Handled;
 		}
+	}
+
+	if (TrySpeedChangeEvent())
+	{
+		CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
+		return Plugin_Handled;
 	}
 
 	if (GamemodeID != SPR_GAMEMODEID && MinigamesPlayed < BossGameThreshold && GetRandomInt(0, 50) == 1)
@@ -1011,6 +1020,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
 	MinigamesPlayed = 0;
+	NextMinigamePlayedSpeedTestThreshold = 0;
 	
 	IsMinigameActive = false;
 	IsBonusRound = false;
