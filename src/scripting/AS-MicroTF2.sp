@@ -1064,8 +1064,6 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	}
 	else
 	{
-		// If any commands are put after this call, they will not be called;
-		// The plugin will have already unloaded.
 		EndGame();
 	}
 
