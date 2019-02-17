@@ -56,6 +56,7 @@ stock void InitializeSystem()
 	LoadOffsets();
 	InitializeCommands();
 	InitializeSpecialRounds();
+	InitialiseSounds();
 
 	HudSync_Score = CreateHudSynchronizer();
 	HudSync_Special = CreateHudSynchronizer();
@@ -75,6 +76,10 @@ stock void InitializeSystem()
 
 public void System_OnMapStart()
 {
+	char gameDescription[32];
+	Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
+	Steam_SetGameDescription(gameDescription);
+
 	MinigameID = 0;
 	BossgameID = 0;
 	PreviousMinigameID = 0;

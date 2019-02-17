@@ -6,6 +6,8 @@
 
 stock void InitializeCommands()
 {
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Commands_OnMapStart);
+
 	// Command Listeners
 	AddCommandListener(CmdOnPlayerTaunt, "taunt");
 	AddCommandListener(CmdOnPlayerTaunt, "+taunt");
@@ -35,6 +37,11 @@ stock void InitializeCommands()
 	{
 		HookConVarChange(ConVar_MTF2MaxRounds, OnMaxRoundsChanged);
 	}
+}
+
+public void Commands_OnMapStart()
+{
+	PrepareConVars();
 }
 
 stock void ResetConVars()

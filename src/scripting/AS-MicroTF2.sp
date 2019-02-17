@@ -46,6 +46,7 @@
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
+#include "Sounds.sp"
 #include "System.sp"
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
@@ -115,19 +116,10 @@ public void OnPluginStart()
 
 public void OnMapStart()
 {
-	// Perform map check to see whether or not the plugin should do anything.
 	IsPluginEnabled = IsWarioWareMap();
 
 	if (IsPluginEnabled)
 	{
-		char gameDescription[32];
-		Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
-		Steam_SetGameDescription(gameDescription);
-
-		PrepareConVars();
-
-		AddNormalSoundHook(Hook_GameSound);
-
 		if (GlobalForward_OnMapStart != INVALID_HANDLE)
 		{
 			Call_StartForward(GlobalForward_OnMapStart);
@@ -135,7 +127,7 @@ public void OnMapStart()
 		}
 		else
 		{
-			SetFailState("MicroTF2 failed to initialise: ForwardSystem failed to start.");
+			SetFailState("WarioWare failed to initialise: ForwardSystem failed to start.");
 		}
 	}
 }
