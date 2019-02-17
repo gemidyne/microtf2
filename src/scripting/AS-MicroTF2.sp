@@ -136,14 +136,13 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 	PrintToChatAll("[DEBUG] Timer_GameLogic_PrepareForMinigame");
 	#endif
 
-	if (!IsBonusRound)
+	if (GlobalForward_OnMinigamePreparePre != INVALID_HANDLE)
 	{
-		SetSpeed_SpecialRound();
+		Call_StartForward(GlobalForward_OnMinigamePreparePre);
+		Call_Finish();
 	}
-	
-	SetSpeed();
 
-	SpecialRound_SetupEnv();
+	SetSpeed();
 
 	char centerText[4096];
 
@@ -236,7 +235,13 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			ClientCommand(i, "r_cleardecals");
 
 			player.Status = PlayerStatus_NotWon;
-			SetupSPR(i);
+
+			if (GlobalForward_OnMinigamePrepare != INVALID_HANDLE)
+			{
+				Call_StartForward(GlobalForward_OnMinigamePrepare);
+				Call_PushCell(i);
+				Call_Finish();
+			}
 
 			PrintCenterText(i, centerText);
 
@@ -299,7 +304,6 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	UpdatePlayerIndexes();
 
 	SetSpeed();
-	SpecialRound_SetupEnv();
 
 	g_iCenterHudUpdateFrame = 999;
 	IsMinigameActive = true;
@@ -381,8 +385,6 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				SetupSPR(i); 
-
 				if (isCaptionDynamic)
 				{
 					Call_StartFunction(INVALID_HANDLE, func);
@@ -478,8 +480,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
-
-	SpecialRound_SetupEnv();
 
 	for (int i = 1; i <= MaxClients; i++)
 	{

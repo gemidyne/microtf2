@@ -23,7 +23,23 @@ Handle GlobalForward_OnMapStart;
 Handle GlobalForward_OnMinigamePreload;
 
 /**
- * Forward is called just before a Minigame is Selected
+ * Forward is called before preparing for a minigame
+ *
+ * @noparams
+ * @noreturn
+ */
+Handle GlobalForward_OnMinigamePreparePre;
+
+/**
+ * Forward is called before preparing for a minigame
+ *
+ * @param Client to target
+ * @noreturn
+ */
+Handle GlobalForward_OnMinigamePrepare;
+
+/**
+ * Forward is called just before a Minigame is started
  *
  * @noparams
  * @noreturn
@@ -31,7 +47,7 @@ Handle GlobalForward_OnMinigamePreload;
 Handle GlobalForward_OnMinigameSelectedPre;
 
 /**
- * Forward is called when a Minigame is Selected.
+ * Forward is called when a Minigame is started.
  *
  * @param Client to target
  * @noreturn
@@ -39,7 +55,7 @@ Handle GlobalForward_OnMinigameSelectedPre;
 Handle GlobalForward_OnMinigameSelected;
 
 /**
- * Forward is called just after a Minigame is Selected.
+ * Forward is called just after a Minigame is started.
  *
  * @noparams
  * @noreturn
@@ -213,6 +229,8 @@ stock void InitializeForwards()
 
 	GlobalForward_OnMapStart = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePreload = CreateForward(ET_Ignore);
+	GlobalForward_OnMinigamePreparePre = CreateForward(ET_Ignore);
+	GlobalForward_OnMinigamePrepare = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnMinigameSelectedPre = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigameSelected = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnMinigameSelectedPost = CreateForward(ET_Ignore);
@@ -240,6 +258,8 @@ stock void RemoveForwardsFromMemory()
 {
 	SafelyRemoveAllFromForward(GlobalForward_OnMapStart);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreload);
+	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreparePre);
+	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePrepare);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameSelectedPre);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameSelected);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameSelectedPost);

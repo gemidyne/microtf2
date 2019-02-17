@@ -65,6 +65,13 @@ stock void InitializeSpecialRounds()
 
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+
+	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+
+	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
 }
 
 public void SpecialRound_OnMapStart()
@@ -96,6 +103,16 @@ public void SpecialRound_OnGameFrame()
 			}
 		}
 	}
+}
+
+public void SpecialRound_OnMinigamePreparePre()
+{
+	if (!IsBonusRound)
+	{
+		SetSpeed_SpecialRound();
+	}
+
+	SpecialRound_SetupEnv();
 }
 
 public void SpecialRound_PrintRandomNameWhenChoosing()
@@ -285,7 +302,7 @@ stock void SpecialRound_SetupEnv()
 	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
 }
 
-stock void SetupSPR(int client)
+public void SpecialRound_ApplyPlayerEffects(int client)
 {
 	Player player = new Player(client);
 
