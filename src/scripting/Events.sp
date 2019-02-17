@@ -47,7 +47,13 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		}
 
 		ResetWeapon(client, false);
-		SetupSPR(client);
+
+		if (GlobalForward_OnPlayerSpawn != INVALID_HANDLE)
+		{
+			Call_StartForward(GlobalForward_OnPlayerSpawn);
+			Call_PushCell(client);
+			Call_Finish();
+		}
 
 		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
 		{

@@ -73,10 +73,18 @@ Handle GlobalForward_OnMinigameFinishPre;
 /**
  * Forward is called when a Minigame finishes.
  *
- * @param Client to target
+ * @noparams
  * @noreturn
  */
 Handle GlobalForward_OnMinigameFinish;
+
+/**
+ * Forward is called when a Minigame finishes.
+ *
+ * @param Client to target
+ * @noreturn
+ */
+Handle GlobalForward_OnMinigameFinishPost;
 
 /**
  * Forward is called on every game frame. 
@@ -128,6 +136,14 @@ Handle GlobalForward_OnRocketJump;
  * @noreturn
  */
 Handle GlobalForward_OnBuildObject;
+
+/**
+ * Forward is called when a Player spawns.
+ *
+ * @param Client who spawned
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerSpawn;
 
 /**
  * Forward is called when a Player dies.
@@ -235,13 +251,15 @@ stock void InitializeForwards()
 	GlobalForward_OnMinigameSelected = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnMinigameSelectedPost = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigameFinishPre = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigameFinish = CreateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnMinigameFinish = CreateForward(ET_Ignore);
+	GlobalForward_OnMinigameFinishPost = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnGameFrame = CreateForward(ET_Ignore);
 	GlobalForward_OnEntityCreated = CreateForward(ET_Ignore, Param_Any, Param_String);
 	GlobalForward_OnPropBroken = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnStickyJump = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnRocketJump = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnBuildObject = CreateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerSpawn = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnPlayerDeath = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerHurt = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerTakeDamage = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
@@ -265,12 +283,14 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameSelectedPost);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameFinishPre);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigameFinish);
+	SafelyRemoveAllFromForward(GlobalForward_OnMinigameFinishPost);
 	SafelyRemoveAllFromForward(GlobalForward_OnGameFrame);
 	SafelyRemoveAllFromForward(GlobalForward_OnEntityCreated);
 	SafelyRemoveAllFromForward(GlobalForward_OnPropBroken);
 	SafelyRemoveAllFromForward(GlobalForward_OnStickyJump);
 	SafelyRemoveAllFromForward(GlobalForward_OnRocketJump);
 	SafelyRemoveAllFromForward(GlobalForward_OnBuildObject);
+	SafelyRemoveAllFromForward(GlobalForward_OnPlayerSpawn);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerDeath);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerHurt);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerJarated);

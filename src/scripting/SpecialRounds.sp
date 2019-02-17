@@ -68,6 +68,8 @@ stock void InitializeSpecialRounds()
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 
 	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(GlobalForward_OnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(GlobalForward_OnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 
 	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);

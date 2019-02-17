@@ -578,7 +578,13 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			player.SetGodMode(true);
 
 			ResetWeapon(i, false);
-			SetupSPR(i);
+
+			if (GlobalForward_OnMinigameFinishPost != INVALID_HANDLE)
+			{
+				Call_StartForward(GlobalForward_OnMinigameFinishPost);
+				Call_PushCell(i);
+				Call_Finish();
+			}
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
