@@ -72,46 +72,7 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-#if defined FIXED_IP
-	int hostIP = GetConVarInt(FindConVar("hostip"));
-	if (hostIP != FIXED_IP)
-	{
-		SetFailState("This server has not been authorized to run WarioWare.");
-	}
-#endif
-
-	char gameFolder[32];
-	GetGameFolderName(gameFolder, sizeof(gameFolder));
-
-	if (!StrEqual(gameFolder, "tf"))
-	{
-		SetFailState("WarioWare can only be run on Team Fortress 2.");
-	}
-
-	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
-	{
-		SetFailState("The SDKHooks Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("tf2items.ext") < 1)
-	{
-		SetFailState("The TF2Items Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("steamtools.ext") < 1)
-	{
-		SetFailState("The SteamTools Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("soundlib.ext") < 1)
-	{
-		SetFailState("The SoundLib Extension is not loaded.");
-	}
-
-	LoadTranslations("microtf2.phrases.txt");
-	HookEvents();
 	InitializeSystem();
-	InitialiseHud();
 }
 
 public void OnMapStart()

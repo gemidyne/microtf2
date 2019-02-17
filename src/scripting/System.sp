@@ -50,8 +50,40 @@ Handle HudSync_Caption;
 
 stock void InitializeSystem()
 {
+	char gameFolder[32];
+	GetGameFolderName(gameFolder, sizeof(gameFolder));
+
+	if (!StrEqual(gameFolder, "tf"))
+	{
+		SetFailState("WarioWare can only be run on Team Fortress 2.");
+	}
+
+	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
+	{
+		SetFailState("The SDKHooks Extension is not loaded.");
+	}
+
+	if (GetExtensionFileStatus("tf2items.ext") < 1)
+	{
+		SetFailState("The TF2Items Extension is not loaded.");
+	}
+
+	if (GetExtensionFileStatus("steamtools.ext") < 1)
+	{
+		SetFailState("The SteamTools Extension is not loaded.");
+	}
+
+	if (GetExtensionFileStatus("soundlib.ext") < 1)
+	{
+		SetFailState("The SoundLib Extension is not loaded.");
+	}
+
+	LoadTranslations("microtf2.phrases.txt");
+
 	LogMessage("Initializing System...");
 	
+	HookEvents();
+	InitialiseHud();
 	InitializeForwards();
 	LoadOffsets();
 	InitializeCommands();
