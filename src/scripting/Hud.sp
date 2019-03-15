@@ -43,7 +43,8 @@ public void Hud_OnGameFrame()
                 {
                     char rewritten[MINIGAME_CAPTION_LENGTH];
 
-                    ToUpperString(buffer, rewritten, MINIGAME_CAPTION_LENGTH);
+                    ReverseString(buffer, rewritten, MINIGAME_CAPTION_LENGTH);
+
                     strcopy(buffer, sizeof(buffer), rewritten);
                 }
 

@@ -198,6 +198,11 @@ stock void ReverseString(const char[] input, char[] buffer, int size)
 
 	for (int c = len - 1; c >= 0; c--)
 	{
+		if (input[c] == '\0')
+		{
+			continue;
+		}
+
 		rewritten[rc] = input[c];
 		rc++;
 	}
