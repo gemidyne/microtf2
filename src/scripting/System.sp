@@ -33,7 +33,7 @@
 #define OVERLAY_SPEEDDN	"gemidyne/warioware/overlays/system_speeddown"
 #define OVERLAY_BOSS "gemidyne/warioware/overlays/system_bossevent"
 #define OVERLAY_GAMEOVER "gemidyne/warioware/overlays/system_gameover"
-#define OVERLAY_WELCOME "stsv/microtf2/overlays/waitingforplayers"
+#define OVERLAY_WELCOME "gemidyne/warioware/overlays/system_waitingforplayers"
 #define OVERLAY_SPECIALROUND "gemidyne/warioware/overlays/system_specialround"
 
 char SystemNames[TOTAL_GAMEMODES+1][32];

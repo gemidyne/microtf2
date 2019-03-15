@@ -1,0 +1,6 @@
+"Unlitgeneric"
+{
+	"$basetexture" "gemidyne/warioware/overlays/system_waitingforplayers"
+	"$translucent" 1
+	"%keywords" "warioware"
+}
