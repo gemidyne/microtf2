@@ -4,11 +4,11 @@
 	{
 		"Offsets"
 		{
-			"WeaponEquip"
+			"CBasePlayer::Weapon_Equip"
 			{
-				"windows"	"264"
-				"linux"		"265"
-				"mac"		"265"
+				"windows"	"250"
+				"linux"		"251"
+				"mac"		"251"
 			}
 		}
 	}
