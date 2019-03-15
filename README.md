@@ -1,3 +1,5 @@
+![Small WarioWare logo](https://cdn.jsdelivr.net/gh/gemidyne/microtf2@master/assets/square-logo.png)
+
 # microtf2
 Yet another WarioWare plugin for Team Fortress 2 servers.
 
