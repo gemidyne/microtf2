@@ -253,11 +253,10 @@ stock void LoadOffsets()
 
 stock void PrecacheMaterial(const char[] material)
 {
-	char path[64];
+	char path[128];
 
-	Format(path, sizeof(path), "materials/%s", material);
-
-	PrecacheGeneric(path, true);
+    Format(path, sizeof(path), "materials/%s", material);
+    PrecacheGeneric(path, true);
 }
 
 stock int TryFindSendPropInfo(const char[] cls, const char[] prop)
