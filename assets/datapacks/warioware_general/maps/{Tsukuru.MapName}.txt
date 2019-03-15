@@ -8,3 +8,7 @@ The player with the highest score wins the round.
 
 But watch out, the round may speed up!
 There may also be special rounds where things may be different!
+
+
+Gamemode developed by Gemidyne Softworks
+www.gemidyne.com
