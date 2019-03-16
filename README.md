@@ -6,10 +6,11 @@ Yet another WarioWare plugin for Team Fortress 2 servers.
 ## Extension Dependencies
 
 This plugin utilises the following extensions:
--Sound Info Library extension - https://forums.alliedmods.net/showthread.php?t=105816 / https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
--SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
--TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
--TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
+
+- Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
+- SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
+- TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
+- TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
 
 ## Cloning the repo
 
@@ -30,7 +31,7 @@ We currently are looking for translators to help improve the multilingual aspect
 
 ## Languages
 
--French: Available
--Russian: Taken
--Italian: Taken
--Spanish: Taken
+- French: Available
+- Russian: Taken
+- Italian: Taken
+- Spanish: Taken
