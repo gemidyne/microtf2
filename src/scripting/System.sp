@@ -83,8 +83,8 @@ stock void InitializeSystem()
 	LogMessage("Initializing System...");
 	
 	HookEvents();
-	InitialiseHud();
 	InitializeForwards();
+	InitialiseHud();
 	LoadOffsets();
 	InitializeCommands();
 	InitializeSpecialRounds();
