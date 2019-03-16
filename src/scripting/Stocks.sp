@@ -150,6 +150,11 @@ stock void ShowAnnotationWithBitfield(int client, float lifetime, char text[32],
 
 		for (int c = len - 1; c >= 0; c--)
 		{
+			if (text[c] == '\0')
+			{
+				continue;
+			}
+
 			rewritten[rc] = text[c];
 			rc++;
 		}
