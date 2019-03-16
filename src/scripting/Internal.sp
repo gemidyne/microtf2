@@ -189,23 +189,3 @@ stock void ResetGamemode()
 		PlayerMinigamesLost[i] = 0;
 	}
 }
-
-stock void ReverseString(const char[] input, char[] buffer, int size)
-{
-	char rewritten[size];
-	int rc = 0;
-	int len = strlen(input);
-
-	for (int c = len - 1; c >= 0; c--)
-	{
-		if (input[c] == '\0')
-		{
-			continue;
-		}
-
-		rewritten[rc] = input[c];
-		rc++;
-	}
-
-	strcopy(buffer, size, rewritten);
-}
