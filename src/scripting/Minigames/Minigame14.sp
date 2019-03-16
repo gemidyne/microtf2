@@ -8,10 +8,10 @@
 
 public void Minigame14_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
+	// AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
+	// AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	// AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);
+	// AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
 public void Minigame14_OnMinigameSelectedPre()
