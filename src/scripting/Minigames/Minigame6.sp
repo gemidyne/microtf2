@@ -26,7 +26,7 @@ public void Minigame6_OnMinigameSelectedPre()
 {
 	if (MinigameID == 6)
 	{
-		Format(Minigame6_SayTextAnswer, sizeof(Minigame6_SayTextAnswer), Minigame6_SayTextAnswers[GetRandomInt(0, Minigame6_SayTextAnswerCount)]);
+		Format(Minigame6_SayTextAnswer, sizeof(Minigame6_SayTextAnswer), Minigame6_SayTextAnswers[GetRandomInt(0, Minigame6_SayTextAnswerCount - 1)]);
 		Minigame6_HasBeenAnswered = false;
 	}
 }
