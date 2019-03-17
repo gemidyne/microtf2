@@ -169,18 +169,19 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 				if (player.IsParticipating)
 				{
-					if (currentPlayers < 7)
+					currentPlayers++;
+
+					if (currentPlayers <= 7)
 					{
 						Format(names, sizeof(names), "%s%N\n", names, i);
 					}
-					else if (currentPlayers == 7)
-					{
-						Format(names, sizeof(names), "%s (and %d more) ", names, (maxPlayers - 7));
-					}
-
-					currentPlayers++;
 				}
 			}
+		}
+
+		if (currentPlayers > 7)
+		{
+			Format(names, sizeof(names), "%s (and %d more) ", names, (currentPlayers  - 7));
 		}
 
 		Format(centerText, sizeof(centerText), "Current players (%d of %d)\n%s", currentPlayers, maxPlayers, names);
