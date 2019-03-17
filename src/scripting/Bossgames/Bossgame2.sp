@@ -83,7 +83,7 @@ public void Bossgame2_OnTfRoundStart()
 
 		if (strcmp(entityName, "plugin_Bossgame2_WinArea") == 0)
 		{
-			HookSingleEntityOutput(entity, "OnTrigger", Bossgame2_OnTriggerTouched, false);
+			HookSingleEntityOutput(entity, "OnStartTouch", Bossgame2_OnTriggerTouched, false);
 			break;
 		}
 	}
@@ -98,7 +98,7 @@ public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int acti
 
 	Player activator = new Player(activatorId);
 
-	if (activator.IsValid && activator.IsAlive && IsPlayerParticipant[activatorId] && PlayerStatus[activatorId] == PlayerStatus_NotWon)
+	if (activator.IsValid && activator.IsAlive && activator.IsParticipating && activator.Status == PlayerStatus_NotWon)
 	{
 		ClientWonMinigame(activatorId);
 	}
@@ -120,7 +120,7 @@ public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 
 	if (victim.IsValid)
 	{
-		PlayerStatus[victimId] = PlayerStatus_Failed;
+		victim.Status = PlayerStatus_Failed;
 	}
 }
 
@@ -146,15 +146,15 @@ public void Bossgame2_BossCheck()
 	{
 		Player player = new Player(i);
 
-		if (player.IsValid && player.IsAlive && IsPlayerParticipant[i])
+		if (player.IsValid && player.IsAlive && player.IsParticipating)
 		{
 			alivePlayers++;
 
-			if (PlayerStatus[i] == PlayerStatus_NotWon)
+			if (player.Status == PlayerStatus_NotWon)
 			{
 				pendingPlayers++;
 			}
-			else if (PlayerStatus[i] == PlayerStatus_Winner)
+			else if (player.Status == PlayerStatus_Winner)
 			{
 				successfulPlayers++;
 			}
