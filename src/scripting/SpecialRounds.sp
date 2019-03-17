@@ -329,10 +329,12 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 			{
 				player.SetCollisionsEnabled(false);
 				player.SetVisible(false);
+				player.SetWeaponVisible(false);
 			}
 			else if (SpecialRoundID == 12 && !IsBonusRound)
 			{
 				player.SetVisible(false);
+				player.SetWeaponVisible(false);
 			}
 			else
 			{

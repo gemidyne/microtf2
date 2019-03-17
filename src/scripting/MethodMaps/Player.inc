@@ -325,6 +325,22 @@ methodmap Player __nullable__
         }
     }
 
+    public void SetViewModelVisible(bool visible)
+    {
+        SetEntProp(this.ClientId, Prop_Send, "m_bDrawViewmodel", (visible ? 1 : 0));
+    }
+
+    public void SetWeaponVisible(bool visible)
+    {
+        int weapon = GetEntPropEnt(this.ClientId, Prop_Send, "m_hActiveWeapon");
+
+        if (IsValidEntity(weapon))
+        {
+            SetEntityRenderColor(weapon, 255, 255, 255, (visible ? 255 : 0));
+            SetEntityRenderMode(weapon, (visible ? RENDER_NORMAL : RENDER_TRANSCOLOR));
+        }
+    }
+
     public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
     {
         int entity = -1;

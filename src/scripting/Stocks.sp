@@ -19,7 +19,9 @@ stock void DisplayOverlayToAll(const char[] path)
 
 stock void ResetWeapon(int client, bool viewModel)
 {
-	if (IsClientInGame(client))
+	Player player = new Player(client);
+
+	if (player.IsInGame)
 	{
 		if (TF2_IsPlayerInCondition(client, TFCond_Taunting))
 		{
@@ -69,6 +71,12 @@ stock void ResetWeapon(int client, bool viewModel)
 		}
 
 		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(client, 2));
+
+		if (SpecialRoundID != 12)
+		{
+			player.SetWeaponVisible(viewModel);
+			player.SetViewModelVisible(viewModel);
+		}
 	}
 }
 
