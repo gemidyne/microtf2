@@ -6,6 +6,8 @@ stock void InitialiseHud()
     LogMessage("Initializing HUD...");
     AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
     AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
+
+    RegConsoleCmd("sm_credits", Command_ViewGamemodeCredits);
 }
 
 public void Hud_OnMapStart()
@@ -178,6 +180,18 @@ public void Hook_Scoreboard(int entity)
 
 public Action Timer_Advertise(Handle timer)
 {
-	CPrintToChatAll("%sYou're playing WarioWare! v%s\nPresented by Gemidyne Softworks.\nhttps://www.gemidyne.com/", PLUGIN_PREFIX, PLUGIN_VERSION);
+	CPrintToChatAll("%sYou're playing WarioWare! v%s\nPresented by Gemidyne Softworks.\nSay !credits to view gamemode credits.", PLUGIN_PREFIX, PLUGIN_VERSION);
 	return Plugin_Continue;
+}
+
+public Action Command_ViewGamemodeCredits(int client, int args)
+{
+    if (!IsPluginEnabled)
+    {
+        return Plugin_Handled;
+    }
+
+    ShowMOTDPanel(client, "WarioWare Credits", "https://www.gemidyne.com/projects/warioware/credits", MOTDPANEL_TYPE_URL);
+
+    return Plugin_Handled;
 }
