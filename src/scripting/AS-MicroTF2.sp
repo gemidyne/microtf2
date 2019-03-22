@@ -219,7 +219,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				player.Respawn();
 			}
 
-			if (!player.IsParticipating && SpecialRoundID != 17)
+			if (!player.IsParticipating && SpecialRoundID != 9 && SpecialRoundID != 17)
 			{
 				// If not a participant, and not Sudden Death, then they should now be a participant.
 				player.IsParticipating = true;
