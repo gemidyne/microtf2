@@ -28,6 +28,11 @@ public void Hud_OnMapStart()
 
 public void Hud_OnGameFrame()
 {
+    if (MaxRounds > 0 && RoundsPlayed >= MaxRounds)
+    {
+        return;
+    }
+
     g_iCenterHudUpdateFrame++;
 	
     if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)

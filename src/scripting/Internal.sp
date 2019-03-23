@@ -163,7 +163,7 @@ stock void ResetGamemode()
 
 	PrepareConVars();
 
-	RoundsPlayed = 1;
+	RoundsPlayed = 0;
 
 	BossgameID = 0;
 	MinigameID = 0;

@@ -956,6 +956,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	PreviousBossgameID = 0;
 	MinigamesPlayed = 0;
 	NextMinigamePlayedSpeedTestThreshold = 0;
+
+	RoundsPlayed++;
 	
 	IsMinigameActive = false;
 	IsBonusRound = false;
@@ -965,12 +967,14 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
 
-	BossGameThreshold = GetRandomInt(15, 26);
+	BossGameThreshold = GetConVarInt(ConVar_MTF2ForceBossgameThreshold) > 0 
+		? GetConVarInt(ConVar_MTF2ForceBossgameThreshold)
+		: GetRandomInt(15, 26);
 
 	SetSpeed();
 	SetConVarInt(ConVar_TFFastBuild, 0);
 
-	if (MaxRounds == 0 || RoundsPlayed <= MaxRounds)
+	if (MaxRounds == 0 || RoundsPlayed < MaxRounds)
 	{
 		bool isWaitingForVoteToFinish = false;
 
@@ -1027,7 +1031,6 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		EndGame();
 	}
 
-	RoundsPlayed++;
 	return Plugin_Handled;
 }
 
