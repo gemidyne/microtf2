@@ -183,7 +183,7 @@
 	"22"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/22.mp3"
+		"BackgroundMusic"	"stsv/microtf2/minigame/7.mp3"
 		"Caption"		"STAY ON THE GROUND!"
 		"EntryPoint"		"Minigame22_EntryPoint"
 	}
