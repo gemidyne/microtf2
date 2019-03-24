@@ -47,6 +47,7 @@ public void Minigame22_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
+		player.RemoveAllWeapons();
 		player.Class = TFClass_Soldier;
 		player.SetGodMode(false);
 		player.SetHealth(3000);
