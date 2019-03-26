@@ -5,12 +5,20 @@
  */
 
 /**
- * Forward is called when Map Starts.
+ * Forward is called when the map is starting.
  *
  * @noparams
  * @noreturn
  */
 Handle GlobalForward_OnMapStart;
+
+/**
+ * Forward is called when the map is ending.
+ *
+ * @noparams
+ * @noreturn
+ */
+Handle GlobalForward_OnMapEnd;
 
 /**
  * Forward is called when a Minigame is being preloaded.
@@ -244,6 +252,7 @@ stock void InitializeForwards()
 	LogMessage("Initializing Forwards...");
 
 	GlobalForward_OnMapStart = CreateForward(ET_Ignore);
+	GlobalForward_OnMapEnd = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePreload = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePreparePre = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePrepare = CreateForward(ET_Ignore, Param_Any);
@@ -275,6 +284,7 @@ stock void InitializeForwards()
 stock void RemoveForwardsFromMemory()
 {
 	SafelyRemoveAllFromForward(GlobalForward_OnMapStart);
+	SafelyRemoveAllFromForward(GlobalForward_OnMapEnd);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreload);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreparePre);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePrepare);

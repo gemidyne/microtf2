@@ -93,6 +93,15 @@ public void OnMapStart()
 	}
 }
 
+public void OnMapEnd()
+{
+	if (IsPluginEnabled && GlobalForward_OnMapEnd != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnMapEnd);
+		Call_Finish();
+	}
+}
+
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
 	GamemodeStatus = GameStatus_Playing;
