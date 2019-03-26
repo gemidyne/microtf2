@@ -66,6 +66,8 @@ public void Minigame15_OnMinigameSelected(int client)
 	{
 		player.Class = TFClass_Engineer;
 		player.Regenerate();
+		player.SetViewModelVisible(true);
+		player.SetWeaponVisible(true);
 		
 		int ammoOffset = FindDataMapInfo(client, "m_iAmmo");
 
