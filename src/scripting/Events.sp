@@ -495,7 +495,6 @@ public void OnGameFrame()
 		return;
 	}
 
-
 	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnGameFrame);
@@ -506,17 +505,6 @@ public void OnGameFrame()
 	{
 		GamemodeStatus = GameStatus_WaitingForPlayers;
 	}
-
-
-
-	#if defined DEBUG
-	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
-	{
-		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
-
-		g_iCenterHudUpdateFrame = 0;
-	}
-	#endif
 }
 
 public void TF2_OnWaitingForPlayersStart()

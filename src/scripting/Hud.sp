@@ -33,6 +33,13 @@ public void Hud_OnGameFrame()
         return;
     }
 
+    #if defined DEBUG
+	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
+	{
+		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
+	}
+	#endif
+
     g_iCenterHudUpdateFrame++;
 	
     if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
