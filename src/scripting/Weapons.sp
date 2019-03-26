@@ -125,6 +125,11 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 		}
 
 		SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", entityID);
+
+		Player player = new Player(iClient);
+
+		player.SetWeaponVisible(true);
+		player.SetViewModelVisible(true);
 	}
 }
 
