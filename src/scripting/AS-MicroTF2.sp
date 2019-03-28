@@ -971,6 +971,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsMinigameActive = false;
 	IsBonusRound = false;
 
+	PlayedMinigamePool.Clear();
+	PlayedBossgamePool.Clear();
+
 	IsBlockingDamage = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;

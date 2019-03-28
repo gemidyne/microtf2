@@ -36,6 +36,9 @@ float BossgameLength[MAXIMUM_MINIGAMES];
 
 char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
 
+ArrayList PlayedMinigamePool;
+ArrayList PlayedBossgamePool;
+
 #include "MinigameStocks.sp"
 
 // Minigames
@@ -83,10 +86,14 @@ public void InitializeMinigames()
 	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", MinigamesLoaded, BossgamesLoaded);
 
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
+	AddToForward(GlobalForward_OnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
 }
 
 public void MinigameSystem_OnMapStart()
 {
+	PlayedMinigamePool = new ArrayList();
+	PlayedBossgamePool = new ArrayList();
+
 	Handle sndfile = INVALID_HANDLE;
 
 	for (int i = 1; i <= MinigamesLoaded; i++)
@@ -119,6 +126,12 @@ public void MinigameSystem_OnMapStart()
 
 		PreloadSound(BossgameMusic[i]);
 	}
+}
+
+public void MinigameSystem_OnMapEnd()
+{
+	PlayedMinigamePool.Close();
+	PlayedBossgamePool.Close();
 }
 
 public void LoadMinigameData()
@@ -272,6 +285,7 @@ public void LoadBossgameData()
 public void DoSelectMinigame()
 {
 	int forcedMinigameID = GetConVarInt(ConVar_MTF2ForceMinigame);
+	int rollCount = 0;
 
 	if (SpecialRoundID == 8)
 	{
@@ -288,59 +302,76 @@ public void DoSelectMinigame()
 		do
 		{
 			MinigameID = GetRandomInt(1, MinigamesLoaded);
+			rollCount++;
 
 			if (MinigamesLoaded == 1)
 			{
 				PreviousMinigameID = 0;
 			}
 
-			if (!MinigameIsEnabled[MinigameID])
+			bool recentlyPlayed = PlayedMinigamePool.FindValue(MinigameID) >= 0;
+
+			if (recentlyPlayed)
 			{
 				MinigameID = PreviousMinigameID;
-			}
 
-			if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
-			{
-				// If minigame is blocked on this special round, re-roll
-				MinigameID = PreviousMinigameID;
-			}
-			else if (MinigameRequiresMultiplePlayers[MinigameID])
-			{
-				int redParticipants = 0;
-				int blueParticipants = 0;
-
-				for (int j = 1; j <= MaxClients; j++)
+				if (rollCount >= MinigamesLoaded)
 				{
-					Player player = new Player(j);
-
-					if (player.IsValid && player.IsParticipating)
-					{
-						switch (player.Team)
-						{
-							case TFTeam_Red:
-								redParticipants++;
-
-							case TFTeam_Blue:
-								blueParticipants++;
-						}
-					}
+					PlayedMinigamePool.Clear();
 				}
-
-				if (redParticipants == 0 || blueParticipants == 0)
+			}
+			else
+			{
+				if (!MinigameIsEnabled[MinigameID])
 				{
-					// Minigame requires players on both teams
 					MinigameID = PreviousMinigameID;
 				}
-			}
-			else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && SpeedLevel > MinigameBlockedSpeedsHigherThan[MinigameID])
-			{
-				MinigameID = PreviousMinigameID;
+
+				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
+				{
+					// If minigame is blocked on this special round, re-roll
+					MinigameID = PreviousMinigameID;
+				}
+				else if (MinigameRequiresMultiplePlayers[MinigameID])
+				{
+					int redParticipants = 0;
+					int blueParticipants = 0;
+
+					for (int j = 1; j <= MaxClients; j++)
+					{
+						Player player = new Player(j);
+
+						if (player.IsValid && player.IsParticipating)
+						{
+							switch (player.Team)
+							{
+								case TFTeam_Red:
+									redParticipants++;
+
+								case TFTeam_Blue:
+									blueParticipants++;
+							}
+						}
+					}
+
+					if (redParticipants == 0 || blueParticipants == 0)
+					{
+						// Minigame requires players on both teams
+						MinigameID = PreviousMinigameID;
+					}
+				}
+				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && SpeedLevel > MinigameBlockedSpeedsHigherThan[MinigameID])
+				{
+					MinigameID = PreviousMinigameID;
+				}
 			}
 		}
 		while (MinigameID == PreviousMinigameID);
 
+		PlayedMinigamePool.Push(MinigameID);
+
 		#if defined DEBUG
-		PrintToChatAll("[DEBUG] Chose minigame %i", MinigameID);
+		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", MinigameID, PlayedMinigamePool.Length);
 		#endif
 	}
 }
@@ -348,6 +379,7 @@ public void DoSelectMinigame()
 public void DoSelectBossgame()
 {
 	int forcedBossgameID = GetConVarInt(ConVar_MTF2ForceBossgame);
+	int rollCount = 0;
 
 	if (forcedBossgameID > 0)
 	{
@@ -359,60 +391,77 @@ public void DoSelectBossgame()
 		do
 		{
 			BossgameID = GetRandomInt(1, BossgamesLoaded);
+			rollCount++;
 
 			if (BossgamesLoaded == 1)
 			{
 				PreviousBossgameID = 0;
 			}
 
-			if (!BossgameIsEnabled[BossgameID])
+			bool recentlyPlayed = PlayedBossgamePool.FindValue(BossgameID) >= 0;
+
+			if (recentlyPlayed)
 			{
 				BossgameID = PreviousBossgameID;
-			}
 
-			if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
-			{
-				// If bossgame is blocked on this special round, re-roll
-				BossgameID = PreviousBossgameID;
-			}
-			else if (BossgameRequiresMultiplePlayers[BossgameID])
-			{
-				int redParticipants = 0;
-				int blueParticipants = 0;
-
-				for (int j = 1; j <= MaxClients; j++)
+				if (rollCount >= BossgamesLoaded)
 				{
-					Player player = new Player(j);
-
-					if (player.IsValid && player.IsParticipating)
-					{
-						switch (player.Team)
-						{
-							case TFTeam_Red:
-								redParticipants++;
-
-							case TFTeam_Blue:
-								blueParticipants++;
-						}
-					}
+					PlayedBossgamePool.Clear();
+				}
+			}
+			else
+			{
+				if (!BossgameIsEnabled[BossgameID])
+				{
+					BossgameID = PreviousBossgameID;
 				}
 
-				if (redParticipants == 0 || blueParticipants == 0)
+				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
 				{
-					// Bossgame requires players on both teams
+					// If bossgame is blocked on this special round, re-roll
+					BossgameID = PreviousBossgameID;
+				}
+				else if (BossgameRequiresMultiplePlayers[BossgameID])
+				{
+					int redParticipants = 0;
+					int blueParticipants = 0;
+
+					for (int j = 1; j <= MaxClients; j++)
+					{
+						Player player = new Player(j);
+
+						if (player.IsValid && player.IsParticipating)
+						{
+							switch (player.Team)
+							{
+								case TFTeam_Red:
+									redParticipants++;
+
+								case TFTeam_Blue:
+									blueParticipants++;
+							}
+						}
+					}
+
+					if (redParticipants == 0 || blueParticipants == 0)
+					{
+						// Bossgame requires players on both teams
+						BossgameID = PreviousBossgameID;
+					}
+				}
+				else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && SpeedLevel > BossgameBlockedSpeedsHigherThan[BossgameID])
+				{
 					BossgameID = PreviousBossgameID;
 				}
 			}
-			else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && SpeedLevel > BossgameBlockedSpeedsHigherThan[BossgameID])
-			{
-				BossgameID = PreviousBossgameID;
-			}
 		}
 		while (BossgameID == PreviousBossgameID);
+
+		PlayedBossgamePool.Push(BossgameID);
 	}
 
 	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Chose bossgame %i", BossgameID);
+	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", BossgameID, PlayedBossgamePool.Length);
 	#endif
 }
 
