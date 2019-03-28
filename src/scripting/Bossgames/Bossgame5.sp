@@ -166,7 +166,7 @@ public void Bossgame5_OnTfRoundStart()
 
 		if (strcmp(entityName, "plugin_Bossgame5_WinArea") == 0)
 		{
-			HookSingleEntityOutput(entity, "OnTrigger", Bossgame5_OnTriggerTouched, false);
+			HookSingleEntityOutput(entity, "OnStartTouch", Bossgame5_OnTriggerTouched, false);
 			break;
 		}
 	}
