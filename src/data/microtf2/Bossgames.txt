@@ -30,7 +30,7 @@
 	"4"
 	{
 		"Enabled"		"1"
-		"Duration"		"60.0"
+		"Duration"		"81.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/fallingfloor.mp3"
 		"EntryPoint"		"Bossgame4_EntryPoint"
 		"Caption"		"DON'T FALL INTO THE WATER!"
