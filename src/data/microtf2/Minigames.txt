@@ -161,6 +161,7 @@
 		"CaptionIsDynamic"	"1"
 		"DynamicCaptionMethod"	"Minigame19_GetDynamicCaption"
 		"EntryPoint"		"Minigame19_EntryPoint"
+		"BlockedSpecialRounds" "9"
 	}
 	"20"
 	{

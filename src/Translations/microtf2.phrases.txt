@@ -39,6 +39,11 @@
 	{
 		"en"		"YOU HAVE BEEN KNOCKED OUT!"
 	}
+
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"en"		"Changing class is not allowed during this special round! 1 point has been added to your score."
+	}
 	"General_Loser"
 	{
 		"en"		"Loser!"

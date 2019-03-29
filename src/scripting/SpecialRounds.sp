@@ -70,6 +70,7 @@ stock void InitializeSpecialRounds()
 	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 	AddToForward(GlobalForward_OnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 	AddToForward(GlobalForward_OnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
 
 	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
@@ -493,4 +494,25 @@ public Action Timer_GameLogic_SpecialRoundChoosingDoSelect(Handle timer)
 
 	CreateTimer(5.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
+}
+
+public void SpecialRound_OnPlayerClassChange(int client, int class)
+{
+	if (SpecialRoundID != 9)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		player.Score++;
+		CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "LowestScoreWins_ExploitBlocked", client);
+	}
 }
