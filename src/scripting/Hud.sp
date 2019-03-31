@@ -108,11 +108,24 @@ public void DisplayScoreHud(Player player)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        ToUpperString(scoreText, rewritten, sizeof(rewritten));
+        int rc = 0;
+        int len = strlen(scoreText);
+
+        for (int c = len - 1; c >= 0; c--)
+        {
+            if (scoreText[c] == '\0')
+            {
+                continue;
+            }
+
+            rewritten[rc] = scoreText[c];
+            rc++;
+        }
+
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
 
-    SetHudTextParamsEx(-1.0, 0.02, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
+    SetHudTextParamsEx(0.25, 0.94, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
     ShowSyncHudText(player.ClientId, HudSync_Score, scoreText);
 }
 
@@ -132,7 +145,20 @@ public void DisplayRoundHud(Player player)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        ToUpperString(roundDisplay, rewritten, sizeof(rewritten));
+        int rc = 0;
+        int len = strlen(roundDisplay);
+
+        for (int c = len - 1; c >= 0; c--)
+        {
+            if (roundDisplay[c] == '\0')
+            {
+                continue;
+            }
+
+            rewritten[rc] = roundDisplay[c];
+            rc++;
+        }
+
         strcopy(roundDisplay, sizeof(roundDisplay), rewritten);
     }
 
@@ -156,7 +182,19 @@ public void DisplaySpecialHud(Player player)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        ToUpperString(themeSpecialText, rewritten, sizeof(rewritten));
+        int rc = 0;
+        int len = strlen(themeSpecialText);
+
+        for (int c = len - 1; c >= 0; c--)
+        {
+            if (themeSpecialText[c] == '\0')
+            {
+                continue;
+            }
+
+            rewritten[rc] = themeSpecialText[c];
+            rc++;
+        }
         strcopy(themeSpecialText, sizeof(themeSpecialText), rewritten);
     }
 
