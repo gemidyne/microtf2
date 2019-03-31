@@ -142,7 +142,7 @@ public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
 	}
 
 	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Client num #%d CmdOnPlayerTaunt. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
+	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerTaunt. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
 	#endif
 
 	return (IsBlockingTaunts ? Plugin_Handled : Plugin_Continue);
@@ -156,7 +156,7 @@ public Action CmdOnPlayerKill(int client, const char[] command, int args)
 	}
 
 	#if defined DEBUG
-	PrintToChatAll("[DEBUG] Client num #%d CmdOnPlayerKill. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
+	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerKill. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
 	#endif
 
 	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);
@@ -174,11 +174,11 @@ public Action CmdSetNextSpecialRound(int client, int args)
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "Next Special Round set.");
+		ReplyToCommand(client, "%sThe next special round has been set as #%i.", PLUGIN_PREFIX, id);
 	}
 	else
 	{
-		ReplyToCommand(client, "Unable to set Next Special Round.");
+		ReplyToCommand(client, "%sError: special round number is outside of min and max range. Specified ID: %i", PLUGIN_PREFIX, id);
 	}
 }
 
@@ -211,11 +211,11 @@ public Action CmdSetGamemode(int client, int args)
 	{
 		GamemodeID = id;
 
-		ReplyToCommand(client, "Gamemode set to %s.", SystemNames[GamemodeID]);
+		ReplyToCommand(client, "%sGamemode set to %s.", PLUGIN_PREFIX, SystemNames[GamemodeID]);
 	}
 	else
 	{
-		ReplyToCommand(client, "Unable to set gamemode.");
+		ReplyToCommand(client, "%sUnable to set gamemode, invalid value specified.", PLUGIN_PREFIX);
 	}
 }
 
