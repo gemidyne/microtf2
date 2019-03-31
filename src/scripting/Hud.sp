@@ -230,8 +230,21 @@ public void Hook_Scoreboard(int entity)
 
 public Action Timer_Advertise(Handle timer)
 {
-	CPrintToChatAll("%sYou're playing WarioWare! Version %s. Say !credits in chat to view gamemode credits.", PLUGIN_PREFIX, PLUGIN_VERSION);
-	return Plugin_Continue;
+    for (int i = 1; i <= MaxClients; i++)
+    {
+        Player player = new Player(i);
+
+        if (player.IsInGame && !player.IsBot)
+        {
+            char text[128];
+
+            Format(text, sizeof(text), "%T", "System_Advertisement", player.ClientId, PLUGIN_VERSION);
+
+            CPrintToChat(player.ClientId, "%s%s", PLUGIN_PREFIX, text);
+        }
+    }
+
+    return Plugin_Continue;
 }
 
 public Action Command_ViewGamemodeCredits(int client, int args)

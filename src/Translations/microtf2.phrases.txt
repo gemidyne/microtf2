@@ -1,5 +1,10 @@
 "Phrases"
 {
+	"System_Advertisement"
+	{
+		"#format"	"{1:s}"
+		"en" 		"You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits."
+	}
 	"Hud_Score_Default"
 	{
 		"#format"	"{1:i}"
