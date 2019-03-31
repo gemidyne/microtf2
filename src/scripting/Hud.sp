@@ -230,7 +230,7 @@ public void Hook_Scoreboard(int entity)
 
 public Action Timer_Advertise(Handle timer)
 {
-	CPrintToChatAll("%sYou're playing WarioWare! v%s\nPresented by Gemidyne Softworks.\nSay !credits to view gamemode credits.", PLUGIN_PREFIX, PLUGIN_VERSION);
+	CPrintToChatAll("%sYou're playing WarioWare! Version %s. Say !credits in chat to view gamemode credits.", PLUGIN_PREFIX, PLUGIN_VERSION);
 	return Plugin_Continue;
 }
 
