@@ -990,7 +990,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	{
 		bool isWaitingForVoteToFinish = false;
 
-		if (MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
+		if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
 			#if defined UMC_MAPCHOOSER
 			// This should be using UMC_StartVote native, but that requires too many parameters... TODO: update this later on 

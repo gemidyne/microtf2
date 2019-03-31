@@ -102,6 +102,7 @@ Handle Handle_BossCheckTimer = INVALID_HANDLE;
 Handle Handle_ActiveGameTimer = INVALID_HANDLE;
 
 Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
+Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;
