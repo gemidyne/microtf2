@@ -261,10 +261,10 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
 
-				if (player.IsParticipating && SpecialRoundID != 12)
+				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
 				{
 					char score[32];
-					Format(score, sizeof(score), "%d POINTS", player.Score);
+					Format(score, sizeof(score), "%T", "Hud_Score_Default", i, player.Score);
 					ShowAnnotation(i, duration, score);
 				}
 			}
