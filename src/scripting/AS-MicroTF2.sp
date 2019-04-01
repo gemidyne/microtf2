@@ -579,7 +579,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				{
 					char text[32];
 					Format(text, sizeof(text), "%T", "General_Winner", i);
-					ShowAnnotation(i, 2.0, text);
+					player.ShowAnnotation(2.0, text);
 				}
 			}
 

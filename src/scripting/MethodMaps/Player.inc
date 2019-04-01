@@ -460,4 +460,9 @@ methodmap Player __nullable__
     {
         CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, text);
     }
+
+    public void ShowAnnotation(float lifetime, char text[32])
+    {
+        ShowAnnotation(this.ClientId, lifetime, text);
+    }
 }
