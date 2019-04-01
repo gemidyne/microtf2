@@ -204,6 +204,8 @@ public bool Minigame10_Timebomb_CanApplyToPlayer(int client)
 
 public void Minigame10_TimebombPlayer(int client)
 {
+	Player player = new Player(client);
+
 	Minigame10_TimebombSerial[client] = ++Minigame10_Serial;
 	CreateTimer(1.0, Minigame10_Timebomb_Timer, client | (Minigame10_Serial << 7), TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	Minigame10_TimebombTime[client] = 3;
@@ -222,7 +224,9 @@ public void Minigame10_TimebombPlayer(int client)
 	CreateParticle(client, particle, 4.0);
 	CreateParticle(client, "rockettrail", 4.0);
 
-	ShowAnnotation(client, 3.0, "Kamikaze is here!");
+	char buffer[32];
+	Format(buffer, sizeof(buffer), "%T", "Minigame10_KamikazeIsHere", player.ClientId);
+	player.ShowAnnotation(3.0, buffer);
 }
 
 public Action Minigame10_Timebomb_Timer(Handle timer, int value)

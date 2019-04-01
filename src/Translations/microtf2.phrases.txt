@@ -113,6 +113,10 @@
 	{
 		"en"		"(Simon didn't say it..)"
 	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"en"		"Kamikaze is over here!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"

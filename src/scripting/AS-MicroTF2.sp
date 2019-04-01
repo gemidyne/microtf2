@@ -265,7 +265,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				{
 					char score[32];
 					Format(score, sizeof(score), "%T", "Hud_Score_Default", i, player.Score);
-					ShowAnnotation(i, duration, score);
+					player.ShowAnnotation(duration, score);
 				}
 			}
 		}
@@ -538,7 +538,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						char text[32];
 						Format(text, sizeof(text), "%T", "General_Loser", i);
 
-						ShowAnnotation(i, 2.0, text);
+						player.ShowAnnotation(2.0, text);
 					}
 
 					if (SpecialRoundID == 17)
