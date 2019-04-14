@@ -307,3 +307,8 @@ public float GetSpeedMultiplier(float count)
     float speed = count / divide;
     return speed;
 }
+
+public void GetEntityPosition(int entity, float position[3])
+{
+	GetEntPropVector(entity, Prop_Send, "m_vecOrigin", position);
+}
