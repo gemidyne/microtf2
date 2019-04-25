@@ -44,6 +44,8 @@ public void Minigame25_OnMinigameSelected(int client)
 		player.SetHealth(3000);
 
 		GiveWeapon(client, 1179);
+
+		SetEntPropFloat(player.ClientId, Prop_Send, "m_flItemChargeMeter", 100.0, 1);
 	}
 }
 
