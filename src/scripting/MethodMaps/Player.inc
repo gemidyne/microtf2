@@ -280,6 +280,11 @@ methodmap Player __nullable__
         SetEntProp(this.ClientId, Prop_Send, "m_bGlowEnabled", enabled ? 1 : 0);
     }
 
+    public void SetItemChargeMeter(float value)
+    {
+        SetEntPropFloat(this.ClientId, Prop_Send, "m_flItemChargeMeter", value, 1);
+    }
+
     public void SetVisible(bool visible)
     {
         SetEntityRenderMode(this.ClientId, visible
