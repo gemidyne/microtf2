@@ -5,11 +5,11 @@
  */
 
 /*
- * HORIZONTAL MIN: -5631, -5101, -469
- * HORIZONTAL MAX: -3262, -5153, -469
- * VERTICAL MAX: -4279, -4929, -469
- * VERTICAL MIN: -4391, -6305, -469
- * (3) -469 is the floor coord / Z
+ * HORIZONTAL MIN: -1807 
+ * HORIZONTAL MAX: -4063
+ * VERTICAL MAX: 2495
+ * VERTICAL MIN: 1199
+ * (3) -1350  is the floor coord / Z
  * (2) is the Y - forward and back from view 
  * (1) is the X - left and right from view
  */
@@ -101,9 +101,9 @@ public void Bossgame6_OnMinigameSelected(int client)
 		row = row + 1;
 	}
 
-	pos[0] = -5550.0 + float(column*60); 
-	pos[1] = -6625.0 - float(row*100);
-	pos[2] = -213.0;
+	pos[0] = -4015.0 + float(column*60); 
+	pos[1] = 959.0 - float(row*100);
+	pos[2] = -1093.0;
 
 	TeleportEntity(client, pos, ang, vel);
 }
@@ -197,9 +197,9 @@ public void Bossgame6_DoEntitySpawns()
 				return;
 			}
 
-			position[0] = GetRandomFloat(-5631.0, -3262.0);
-			position[1] = GetRandomFloat(-6305.0, -4929.0);
-			position[2] = -469.0;
+			position[0] = GetRandomFloat(-1807.0, -4063.0);
+			position[1] = GetRandomFloat(-2495.0, -1199.0);
+			position[2] = -1350.0;
 
 			for (int j = 0; j < 32; j++)
 			{
