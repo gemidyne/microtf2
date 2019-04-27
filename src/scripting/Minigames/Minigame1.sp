@@ -56,9 +56,9 @@ public void Minigame1_OnSelection(int client)
 			row = row + 1;
 		}
 
-		pos[0] = -4730.0 + float(column*55);
-		pos[1] = 2951.0 - float(row*55);
-		pos[2] = -1373.0;
+		pos[0] = -4728.0 + float(column*55);
+		pos[1] = 2950.0 - float(row*55);
+		pos[2] = -1380.0;
 
 		TeleportEntity(client, pos, ang, vel);
 	}
