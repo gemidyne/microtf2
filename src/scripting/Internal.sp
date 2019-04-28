@@ -18,7 +18,7 @@ stock bool IsWarioWareMap()
 {
 	char curMap[32];
 	GetCurrentMap(curMap, sizeof(curMap));
-	return strncmp("MicroTF2_", curMap, 6, false) == 0 || strncmp("warioware_", curMap, 11, false) == 0;
+	return strncmp("MicroTF2_", curMap, 9, false) == 0 || strncmp("warioware_", curMap, 10, false) == 0;
 }
 
 stock void UnloadPlugin()
