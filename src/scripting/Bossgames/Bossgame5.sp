@@ -226,28 +226,32 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 
 public void Bossgame5_SwitchGreen() 
 {
-	float pos[3] = { -15000.0, -912.0, 2656.0 };
-
-	Bossgame5_DoSwitch(pos);
+	Bossgame5_SendEntityInput("beatblock_yellow", true);
+	Bossgame5_SendEntityInput("beatblock_green", false);
 }
 
 public void Bossgame5_SwitchYellow() 
 {
-	float pos[3] = { -14840.0, -912.0, 2656.0 };
-
-	Bossgame5_DoSwitch(pos);
+	Bossgame5_SendEntityInput("beatblock_yellow", false);
+	Bossgame5_SendEntityInput("beatblock_green", true);
 }
 
-public void Bossgame5_DoSwitch(float pos[3])
+public void Bossgame5_SendEntityInput(const char[] relayName, bool state)
 {
-	int entity = CreateEntityByName("prop_physics");
+	int entity = -1;
+	char entityName[32];
+	char input[16];
 
-	if (IsValidEdict(entity))
+	input = state ? "Enable" : "Disable";
+
+	while ((entity = FindEntityByClassname(entity, "func_brush")) != INVALID_ENT_REFERENCE)
 	{
-		DispatchKeyValue(entity, "model", "models/props_farm/gibs/wooden_barrel_break01.mdl");
-		DispatchSpawn(entity);
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
 
-		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, entity);
+		if (strcmp(entityName, relayName) == 0)
+		{
+			AcceptEntityInput(entity, input, -1, -1, -1);
+			break;
+		}
 	}
 }
