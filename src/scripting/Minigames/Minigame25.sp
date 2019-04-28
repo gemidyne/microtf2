@@ -70,17 +70,18 @@ public void Minigame25_OnMinigameFinish()
 
 public Action Timer_Minigame25_TriggerWater(Handle timer) 
 {
-	int triggerer = CreateEntityByName("prop_physics");
-
-	if (IsValidEdict(triggerer))
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "logic_relay")) != INVALID_ENT_REFERENCE)
 	{
-		DispatchKeyValue(triggerer, "model", "models/props_farm/wooden_barrel.mdl");
-		DispatchSpawn(triggerer);
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
 
-		float pos[3] = { -1248.0, -1328.0, 1584.0 };
-
-		TeleportEntity(triggerer, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, triggerer);
+		if (strcmp(entityName, "MainRoom_JetpackMinigameStart") == 0)
+		{
+			AcceptEntityInput(entity, "Trigger", -1, -1, -1);
+			break;
+		}
 	}
 
 	return Plugin_Handled;

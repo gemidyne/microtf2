@@ -113,17 +113,18 @@ public void Minigame12_OnMinigameFinish()
 
 public Action Timer_Minigame12_TriggerWater(Handle timer) 
 {
-	int entity = CreateEntityByName("prop_physics");
-
-	if (IsValidEdict(entity))
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "logic_relay")) != INVALID_ENT_REFERENCE)
 	{
-		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
-		DispatchSpawn(entity);
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
 
-		float pos[3] = { -1408.0, -1328.0, 1618.0 };
-
-		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, entity);
+		if (strcmp(entityName, "MainRoom_WaterMinigameStart") == 0)
+		{
+			AcceptEntityInput(entity, "Trigger", -1, -1, -1);
+			break;
+		}
 	}
 
 	return Plugin_Handled;
