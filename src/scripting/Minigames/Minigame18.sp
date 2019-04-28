@@ -128,12 +128,6 @@ public void Minigame18_OnMinigameSelected(int client)
 		int column = client;
 		int row = 0;
 
-		while (column > 24)
-		{
-			column = column - 24;
-			row = row + 1;
-		}
-
 		pos[0] = 10406.0 + float(column*60); 
 		pos[1] = 7100.0 - float(row*100);
 		pos[2] = -260.0;
