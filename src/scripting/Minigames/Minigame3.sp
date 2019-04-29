@@ -29,7 +29,7 @@ public void Minigame3_OnSelectionPre()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid)
+			if (player.IsValid && player.IsParticipating)
 			{
 				count++;
 			}

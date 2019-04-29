@@ -5,6 +5,7 @@
  */
 
 int Minigame4_TotalPlayers;
+int Minigame4_PlayerIndex;
 
 public void Minigame4_EntryPoint()
 {
@@ -20,7 +21,17 @@ public void Minigame4_OnMinigameSelectedPre()
 	{
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = false;
-		Minigame4_TotalPlayers = GetActivePlayers();
+		Minigame4_TotalPlayers = 0;
+
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
+			{
+				Minigame4_TotalPlayers++;
+			}
+		}
 	}
 }
 
@@ -42,21 +53,24 @@ public void Minigame4_OnMinigameSelected(int client)
 	{
 		player.SetGodMode(false);
 		player.SetHealth(1000);
+		player.SetCollisionsEnabled(false);
 
 		player.Class = TFClass_Pyro;
 		player.RemoveAllWeapons();
 
 		player.Status = PlayerStatus_Winner;
 
+		Minigame4_PlayerIndex++;
+
 		GiveWeapon(client, 21);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		int posa = 360 / Minigame4_TotalPlayers * (PlayerIndex[client]-1);
+		int posa = 360 / Minigame4_TotalPlayers * (Minigame4_PlayerIndex-1);
 		float pos[3];
 		float ang[3];
 
-		pos[0] = -7567.6 + (Cosine(DegToRad(float(posa)))*220.0);
-		pos[1] = 3168.0 - (Sine(DegToRad(float(posa)))*220.0);
+		pos[0] = -7567.6 + (Cosine(DegToRad(float(posa)))*300.0);
+		pos[1] = 3183.0 - (Sine(DegToRad(float(posa)))*300.0);
 		pos[2] = -282.0;
 
 		ang[0] = 0.0;
