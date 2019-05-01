@@ -234,7 +234,9 @@ public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &infl
 	if (player.IsValid)
 	{
 		Bossgame6_PlayerScore[player.ClientId]++;
-		return Plugin_Continue;
+
+		damage = 500.0;
+		return Plugin_Changed;
 	}
 	else
 	{
