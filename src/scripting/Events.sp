@@ -37,7 +37,14 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 	{
 		player.RemoveWearables();
 
-		if (!IsBonusRound)
+		if (IsBonusRound)
+		{
+			player.SetThirdPersonMode(true);
+							
+			TF2_StunPlayer(player.ClientId, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
+			player.SetHealth(1);
+		}
+		else if (!IsBonusRound)
 		{
 			player.SetGodMode(true);
 		}
