@@ -192,7 +192,7 @@ public void Bossgame6_DoEntitySpawns()
 			}
 
 			position[0] = GetRandomFloat(-1807.0, -4063.0);
-			position[1] = GetRandomFloat(-2495.0, -1199.0);
+			position[1] = GetRandomFloat(2495.0, 1199.0);
 			position[2] = -1350.0;
 
 			for (int j = 0; j < 32; j++)
