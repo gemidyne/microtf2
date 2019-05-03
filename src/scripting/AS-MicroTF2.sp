@@ -830,6 +830,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 				player.SetRandomClass();
 				player.Regenerate();
+				player.SetViewModelVisible(true);
 
 				CreateParticle(i, "Micro_Win_Sparkle", 10.0);
 				//CreateParticle(i, "Micro_Cheer_Winner", 10.0, true);
