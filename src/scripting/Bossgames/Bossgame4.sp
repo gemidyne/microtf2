@@ -4,9 +4,6 @@
  * Don't fall off!
  */
 
-float Bossgame4_Positions[2][2][3];
-float Bossgame4_Angles[2][2][3];
-
 public void Bossgame4_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
@@ -15,40 +12,6 @@ public void Bossgame4_EntryPoint()
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
 	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
-
-	// RED Spawnpoints
-	Bossgame4_Positions[0][0][0] = 3470.5;
-	Bossgame4_Positions[0][0][1] = -62.1;
-	Bossgame4_Positions[0][0][2] = -68.9;
-
-	Bossgame4_Angles[0][0][0] = 0.9;
-	Bossgame4_Angles[0][0][1] = -44.8;
-	Bossgame4_Angles[0][0][2] = 0.0;
-
-	Bossgame4_Positions[0][1][0] = 3762.5;
-	Bossgame4_Positions[0][1][1] = -58.0;
-	Bossgame4_Positions[0][1][2] = -68.9;
-
-	Bossgame4_Angles[0][1][0] = 0.7;
-	Bossgame4_Angles[0][1][1] = -134.9;
-	Bossgame4_Angles[0][1][2] = 0.0;
-
-	// BLU Spawnpoints
-	Bossgame4_Positions[1][0][0] = 3766.1;
-	Bossgame4_Positions[1][0][1] = -354.7;
-	Bossgame4_Positions[1][0][2] = -68.9;
-
-	Bossgame4_Angles[1][0][0] = 0.1;
-	Bossgame4_Angles[1][0][1] = 134.8;
-	Bossgame4_Angles[1][0][2] = 0.0;
-
-	Bossgame4_Positions[1][1][0] = 3472.9;
-	Bossgame4_Positions[1][1][1] = -348.2;
-	Bossgame4_Positions[1][1][2] = -68.9;
-
-	Bossgame4_Angles[1][1][0] = -0.3;
-	Bossgame4_Angles[1][1][1] = 44.9;
-	Bossgame4_Angles[1][1][2] = 0.0;
 }
 
 public void Bossgame4_OnMinigameSelectedPre()
@@ -94,15 +57,21 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 	ResetWeapon(client, true);
 
-	float pos[3];
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3];
+	float ang[3] = { 0.0, 0.0, 0.0 };
+	float pos[3];
 
-	int index = GetRandomInt(0, 1);
-	int teamNumber = (player.Team == TFTeam_Red ? 0 : 1);
+	int column = i;
+	int row = 0;
+	while (column > 6)
+	{
+		column = column - 6;
+		row = row + 1;
+	}
 
-	pos = Bossgame4_Positions[teamNumber][index];
-	ang = Bossgame4_Angles[teamNumber][index];
+	pos[0] = -863.0 + float(row*80);
+	pos[1] = 190.0 + float(column*80);
+	pos[2] = -1345.0;
 
 	TeleportEntity(client, pos, ang, vel);
 }
