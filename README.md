@@ -31,7 +31,7 @@ We currently are looking for translators to help improve the multilingual aspect
 
 ## Languages
 
-- French: Available
+- French: Taken
 - Russian: Taken
 - Italian: Taken
 - Spanish: Taken
