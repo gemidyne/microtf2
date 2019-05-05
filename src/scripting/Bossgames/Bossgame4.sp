@@ -58,7 +58,6 @@ public void Bossgame4_OnMinigameSelected(int client)
 	ResetWeapon(client, true);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
 
 	int column = i;
@@ -73,7 +72,22 @@ public void Bossgame4_OnMinigameSelected(int client)
 	pos[1] = 190.0 + float(column*80);
 	pos[2] = -1345.0;
 
-	TeleportEntity(client, pos, ang, vel);
+	TeleportEntity(client, pos, NULL_VECTOR, vel);
+
+	float center[3] = { -699.0, 440.0, -1275.0 };
+	float angle[3];
+	float direction[3];
+
+	GetClientEyePosition(client, pos);
+	GetClientEyeAngles(client, angle);
+
+	MakeVectorFromPoints(pos, center, direction);
+	GetVectorAngles(direction, direction);
+
+	angle[0] += AngleNormalize(direction[0] - angle[0]);
+	angle[1] += AngleNormalize(direction[1] - angle[1]);
+
+	TeleportEntity(client, NULL_VECTOR, angle, NULL_VECTOR);
 }
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
