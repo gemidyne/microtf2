@@ -308,7 +308,24 @@ public float GetSpeedMultiplier(float count)
     return speed;
 }
 
-public void GetEntityPosition(int entity, float position[3])
+stock void GetEntityPosition(int entity, float position[3])
 {
 	GetEntPropVector(entity, Prop_Send, "m_vecOrigin", position);
+}
+
+stock float NormalizeAngle(float angle)
+{
+	angle -= RoundToFloor(angle / 360.0) * 360.0;
+	
+	if (angle > 180)
+	{
+		angle -= 360;
+	}
+    
+	if (angle < -180)
+	{
+		angle += 360;
+	}
+
+	return angle;
 }

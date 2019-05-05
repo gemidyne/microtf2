@@ -60,7 +60,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
 
-	int column = i;
+	int column = client;
 	int row = 0;
 	while (column > 6)
 	{
@@ -84,8 +84,8 @@ public void Bossgame4_OnMinigameSelected(int client)
 	MakeVectorFromPoints(pos, center, direction);
 	GetVectorAngles(direction, direction);
 
-	angle[0] += AngleNormalize(direction[0] - angle[0]);
-	angle[1] += AngleNormalize(direction[1] - angle[1]);
+	angle[0] += NormalizeAngle(direction[0] - angle[0]);
+	angle[1] += NormalizeAngle(direction[1] - angle[1]);
 
 	TeleportEntity(client, NULL_VECTOR, angle, NULL_VECTOR);
 }
@@ -134,14 +134,14 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 
 		if (player.Team == TFTeam_Red)
 		{
-			float pos[3] = { 4372.0, -204.0, 219.0 };
+			float pos[3] = { -1291.0, 479.0, -860.0 };
 			float ang[3] = { 0.0, 180.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
 		}
 		else 
 		{
-			float pos[3] = { 2879.0, -204.0, 219.0 };
+			float pos[3] = { 22.0, -462.0, -860.0 };
 			float ang[3] = { 0.0, 0.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
