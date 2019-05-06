@@ -134,14 +134,14 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 
 		if (player.Team == TFTeam_Red)
 		{
-			float pos[3] = { -1291.0, 479.0, -860.0 };
+			float pos[3] = { -1354.0, 464.0, -860.0 };
 			float ang[3] = { 0.0, 180.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
 		}
 		else 
 		{
-			float pos[3] = { 22.0, -462.0, -860.0 };
+			float pos[3] = { 10.0, 464.0, -860.0 };
 			float ang[3] = { 0.0, 0.0, 0.0 };
 
 			TeleportEntity(client, pos, ang, NULL_VECTOR);
