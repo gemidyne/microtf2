@@ -38,7 +38,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "2019 devtest"
+#define PLUGIN_VERSION "2019.1"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
