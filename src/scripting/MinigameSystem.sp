@@ -143,7 +143,7 @@ public void LoadMinigameData()
 	// This method is invoked and allows the minigame to add itself to the Minigame-cycle and add itself to forwards.
 
 	// Determine count of Minigames that are available.
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/minigames.txt");
+	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Minigames.txt");
 
 	Handle kv = CreateKeyValues("Minigames");
 	FileToKeyValues(kv, manifestPath);
@@ -213,7 +213,7 @@ public void LoadBossgameData()
 {
 	char funcName[64];
 	char manifestPath[128];
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/bossgames.txt");
+	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Bossgames.txt");
 
 	Handle kv = CreateKeyValues("Bossgames");
 	FileToKeyValues(kv, manifestPath);

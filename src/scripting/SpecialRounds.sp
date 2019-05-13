@@ -34,7 +34,7 @@ stock void InitializeSpecialRounds()
 	LogMessage("Initializing Special Rounds...");
 
 	char path[128];
-	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/specialrounds.txt");
+	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/SpecialRounds.txt");
 
 	Handle kv = CreateKeyValues("SpecialRounds");
 	FileToKeyValues(kv, path);

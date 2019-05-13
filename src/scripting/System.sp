@@ -180,7 +180,7 @@ public void System_OnMapStart()
 public void LoadGamemodeInfo()
 {
 	char gamemodeManifestPath[128];
-	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/gamemodes.txt");
+	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/Gamemodes.txt");
 
 	Handle kv = CreateKeyValues("Gamemodes");
 	FileToKeyValues(kv, gamemodeManifestPath);
