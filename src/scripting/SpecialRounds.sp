@@ -34,7 +34,7 @@ stock void InitializeSpecialRounds()
 	LogMessage("Initializing Special Rounds...");
 
 	char path[128];
-	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/specialrounds.txt");
+	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/SpecialRounds.txt");
 
 	Handle kv = CreateKeyValues("SpecialRounds");
 	FileToKeyValues(kv, path);
@@ -428,7 +428,7 @@ stock void Special_LoadFakeConditions()
 	LogMessage("Initializing Special Round random non-existant conditions");
 
 	char manifestPath[128];
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/specialroundfakeconditions.txt");
+	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/SpecialRoundFakeConditions.txt");
 
 	Handle file = OpenFile(manifestPath, "r"); // Only need r for read
 
