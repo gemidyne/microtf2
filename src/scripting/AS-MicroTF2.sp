@@ -75,6 +75,11 @@ public void OnPluginStart()
 	InitializeSystem();
 }
 
+public void OnPluginEnd()
+{
+	ResetConVars();
+}
+
 public void OnMapStart()
 {
 	IsPluginEnabled = IsWarioWareMap();
@@ -100,6 +105,8 @@ public void OnMapEnd()
 		Call_StartForward(GlobalForward_OnMapEnd);
 		Call_Finish();
 	}
+	
+	ResetConVars();
 }
 
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
