@@ -77,7 +77,10 @@ public void OnPluginStart()
 
 public void OnPluginEnd()
 {
-	ResetConVars();
+	if (IsPluginEnabled)
+	{
+		ResetConVars();
+	}
 }
 
 public void OnMapStart()
@@ -104,9 +107,9 @@ public void OnMapEnd()
 	{
 		Call_StartForward(GlobalForward_OnMapEnd);
 		Call_Finish();
+		
+		ResetConVars();
 	}
-	
-	ResetConVars();
 }
 
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
