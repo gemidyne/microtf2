@@ -75,6 +75,14 @@ public void OnPluginStart()
 	InitializeSystem();
 }
 
+public void OnPluginEnd()
+{
+	if (IsPluginEnabled)
+	{
+		ResetConVars();
+	}
+}
+
 public void OnMapStart()
 {
 	IsPluginEnabled = IsWarioWareMap();
@@ -99,6 +107,8 @@ public void OnMapEnd()
 	{
 		Call_StartForward(GlobalForward_OnMapEnd);
 		Call_Finish();
+		
+		ResetConVars();
 	}
 }
 
