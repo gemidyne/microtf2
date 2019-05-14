@@ -1,7 +1,7 @@
 Handle g_hWeaponData = INVALID_HANDLE;
 
 Handle g_hGameConfig = INVALID_HANDLE;
-Handle g_hWeaponEquip = INVALID_HANDLE;
+Handle g_hWearableEquip = INVALID_HANDLE;
 
 stock void InitialiseWeapons() 
 {
@@ -13,13 +13,13 @@ stock void InitialiseWeapons()
 	}	
 
 	StartPrepSDKCall(SDKCall_Player);
-	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Virtual, "CBasePlayer::Weapon_Equip");
+	PrepSDKCall_SetFromConf(g_hGameConfig, SDKConf_Virtual, "CBasePlayer::EquipWearable");
 	PrepSDKCall_AddParameter(SDKType_CBaseEntity, SDKPass_Pointer);
-	g_hWeaponEquip = EndPrepSDKCall();
+	g_hWearableEquip = EndPrepSDKCall();
 
-	if (!g_hWeaponEquip)
+	if (!g_hWearableEquip)
 	{
-		SetFailState("Failed to prepare the SDKCall for weapon equipment. Try updating gamedata or restarting your server.");
+		SetFailState("Failed to prepare the SDKCall for wearable equipment. Try updating gamedata or restarting your server.");
 	}
 
 	LoadWeaponData();
@@ -155,8 +155,16 @@ stock bool CreateNamedItem(int client, int itemindex, const char[] classname, in
 	}
 	
 	DispatchSpawn(weapon);
-	SDKCall(g_hWeaponEquip, client, weapon);
-
+	
+	if (StrContains(classname, "tf_wearable") == 0)
+	{
+		SDKCall(g_hWearableEquip, client, weapon);
+	}
+	else
+	{
+		EquipPlayerWeapon(client, weapon);
+	}
+	
 	return true;
 } 
 

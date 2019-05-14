@@ -4,11 +4,11 @@
 	{
 		"Offsets"
 		{
-			"CBasePlayer::Weapon_Equip"
+			"CBasePlayer::EquipWearable"
 			{
-				"windows"	"250"
-				"linux"		"251"
-				"mac"		"251"
+				"windows"	"430"
+				"linux"		"431"
+				"mac"		"431"
 			}
 		}
 	}
