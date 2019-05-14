@@ -1,0 +1,171 @@
+"Phrases"
+{
+	"Startup_Header"
+	{
+		"ru"		"Добро пожаловать в WarioWare!"
+	}
+	"Startup_BodyIntro"
+	{
+		"ru"		"Приготовьтесь, игра скора начнется!"
+	}
+	"Startup_BodyCountdown"
+	{
+		"#format"	"{1:i}"
+		"ru"		"Игра начнется через {1}..."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"	"{1:i}"
+		"ru"		"Счет: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"	"{1:i}"
+		"ru"		"Минигры: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"	"{1:i},{2:i}"
+		"ru"		"Раунд {1} из {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"	"{1:i}"
+		"ru"		"Раунд {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"	"{1:s}"
+		"ru"		"{1}'s Тема"
+	}
+	"Hud_SpecialRound_CruterDisplay"
+	{
+		"#format"	"{1:s}"
+		"ru"		"ОСОБЫЙ РАУНД: {1}!"
+	}
+	"PlayerSpawn_RespawnNotice"
+	{
+		"ru"		"Вы вернетесь в игру после окончания мини-игры или босса."
+	}
+
+	"SuddruDeath_YouHaveBeruKnockedOut"
+	{
+		"ru"		"ВАС ВЫБИЛИ ИЗ ИГРЫ!"
+	}
+	"Grueral_Loser"
+	{
+		"ru"		"Вы Проиграли!"
+	}
+	"Grueral_Winner"
+	{
+		"ru"		"Вы Выйграли!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"ru"		"== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"ru"		"И Победителем стал..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"ru"		"И Победителями стали..."
+	}
+	"GameOver_WinnersAnd"
+	{
+		"ru"		"и"
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"ru"		"Победителей нету!"
+	}
+	"Intermission_Header"
+	{
+		"ru"		"Перерыв!"
+	}
+	"Intermission_Body"
+	{
+		"ru"		"Время отдыхать! Проголосуйте за след. карту."
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"ru"		"САЙМОН ГОВОРИТ: НАСМЕШКА!"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"ru"		"САЙМОН ГОВОРИТ: ПРЫЖОК!"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"ru"		"САЙМОН ГОВОРИТ: ПРИСЕСТЬ!"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"ru"		"САМУОН ГОВОРИТ: НАСМЕШКА"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"ru"		"САМУОН ГОВОРИТ: ПРЫЖОК!"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"ru"		"САМУОН ГОВОРИТ: ПРИСЕСТЬ!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"ru"		"(Саймон этого не говорил..)
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"ru"		"Все спайкрабы должны присесть и смотреть вверх!"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!"
+	}
+	"Minigame19_Caption_ChangeClassrugineer"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"ru"		"ВЫПЕЙТЕ!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"ru"		"СЬЕШЬТЕ!"
+	}
+}

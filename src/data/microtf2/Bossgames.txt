@@ -46,4 +46,13 @@
 		"Caption"		"REACH THE GOAL!"
 		"BlockedSpecialRounds" "1,5,6,7"
 	}
+	"6"
+	{
+		"Enabled"		"1"
+		"Duration"		"60.0"
+		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/targetpractice.mp3"
+		"EntryPoint"		"Bossgame6_EntryPoint"
+		"Caption"		"SHOOT THE MOST BARRELS!"
+		"RequiresMultiplePlayers"	"1"
+	}
 }
