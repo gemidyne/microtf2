@@ -38,7 +38,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "2019.1"
+#define PLUGIN_VERSION "2019.1B"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
@@ -64,7 +64,7 @@
 public Plugin myinfo = 
 {
 	name = "WarioWare",
-	author = "Gemidyne Softworks",
+	author = "Gemidyne Softworks / Team WarioWare",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
 	url = "https://www.gemidyne.com/"
