@@ -23,7 +23,11 @@ The assets folder contains data relating to the map, plugin overlays and sounds.
 
 ## Credits
 
-View the gamemode credits here: https://www.gemidyne.com/projects/warioware/credits
+View the full gamemode credits here: https://www.gemidyne.com/projects/warioware/credits
+
+![Team WarioWare](https://cdn.jsdelivr.net/gh/gemidyne/microtf2@master/assets/team_warioware.png)
+
+By Team WarioWare / Gemidyne Softworks
 
 ### Localisation
 
