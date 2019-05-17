@@ -59,7 +59,7 @@
 #include "Internal.sp"
 #include "Stocks.sp"
 #include "Commands.sp"
-#include "InternalWebAPI.sp"
+#include "PrecacheManifest.sp"
 
 public Plugin myinfo = 
 {
