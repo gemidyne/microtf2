@@ -1,4 +1,4 @@
-#define PRECACHEMANFIEST_URL "https://gemini.software/oss/github_warioware/mtf2/gamedata"
+#define PRECACHEMANFIEST_URL "https://raw.githubusercontent.com/gemidyne/microtf2-precache/master/PrecacheList.txt"
 
 stock void WebAPI_DownloadPrecacheManifest()
 {
