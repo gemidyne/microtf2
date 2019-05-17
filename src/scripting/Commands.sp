@@ -31,6 +31,8 @@ stock void InitializeCommands()
 	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If less than 0, or not found, Normal Gamemode is run. Otherwise, Special Round.");
 	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Sets the current gamemode.");
 
+	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers the boss round.");
+
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count.", 0, true, 0.0, true, 1.0);
 
@@ -211,14 +213,20 @@ public Action CmdSetGamemode(int client, int args)
 	{
 		GamemodeID = id;
 
-		ReplyToCommand(client, "%sGamemode set to %s.", PLUGIN_PREFIX, SystemNames[GamemodeID]);
+		ReplyToCommand(client, "[ WarioWare ] Gamemode set to %s.", SystemNames[GamemodeID]);
 	}
 	else
 	{
-		ReplyToCommand(client, "%sUnable to set gamemode, invalid value specified.", PLUGIN_PREFIX);
+		ReplyToCommand(client, "[ WarioWare ] Unable to set gamemode, invalid value specified.");
 	}
 }
 
+public Action CmdTriggerBoss(int client, int args)
+{
+	BossGameThreshold = MinigamesPlayed;
+
+	ReplyToCommand(client, "[ WarioWare ] Triggering boss...");
+}
 
 public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
 {
