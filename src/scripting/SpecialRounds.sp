@@ -357,6 +357,11 @@ public void Special_Bird(int client)
 		return;
 	}
 
+	if (MinigameID == 10)
+	{
+		return;
+	}
+
 	if (SpecialRoundID != 13) 
 	{
 		SetVariantString("");

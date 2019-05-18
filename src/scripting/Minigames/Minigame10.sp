@@ -38,7 +38,7 @@ public void Minigame10_OnMapStart()
 	Minigame10_BeamSprite = PrecacheModel("materials/sprites/laser.vmt");
 	Minigame10_HaloSprite = PrecacheModel("materials/sprites/halo01.vmt");
 	Minigame10_ExplosionSprite = PrecacheModel("sprites/sprite_fire01.vmt");
-	
+
 	PrecacheSound(SOUND_BEEP, true);
 	PrecacheSound(SOUND_BEEPTWO, true);
 	PrecacheSound(SOUND_BEEPTHR, true);
@@ -227,6 +227,10 @@ public void Minigame10_TimebombPlayer(int client)
 	char buffer[32];
 	Format(buffer, sizeof(buffer), "%T", "Minigame10_KamikazeIsHere", player.ClientId);
 	player.ShowAnnotation(3.0, buffer);
+
+	SetVariantString("models/bots/demo/bot_sentry_buster.mdl");
+	AcceptEntityInput(player.ClientId, "SetCustomModel");
+	SetEntProp(player.ClientId, Prop_Send, "m_bUseClassAnimations", 1);
 }
 
 public Action Minigame10_Timebomb_Timer(Handle timer, int value)
