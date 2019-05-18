@@ -333,6 +333,18 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		return Plugin_Continue;
 	}
 
+	if (impulse != 0)
+	{
+		bool isSpray = impulse == 201;
+		bool isCustomSnd = impulse == 202;
+		bool isSpyDisguise = impulse >= 221 && impulse <= 239;
+
+		if (!isSpray && !isCustomSnd && !isSpyDisguise)
+		{
+			impulse = 0;
+		}
+	}
+
 	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnPlayerRunCmd);
