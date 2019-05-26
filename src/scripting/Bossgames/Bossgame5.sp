@@ -20,7 +20,7 @@ public void Bossgame5_EntryPoint()
 
 public void Bossgame5_OnMapStart()
 {
-	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/beatblock_count.mp3", true);
 	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
 }
 
@@ -199,7 +199,7 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 		}
 		else if (Bossgame5_Step > 0)
 		{
-			EmitSoundToAll("ui/chime_rd_2base_pos.wav", SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, 0.5, 150);
+			EmitSoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
 		}
 		else 
 		{
