@@ -252,6 +252,8 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.SetGlow(false);
 			player.SetGravity(1.0);
 
+			SetClientViewEntity(i, i);
+
 			ClientCommand(i, "r_cleardecals");
 
 			player.Status = PlayerStatus_NotWon;

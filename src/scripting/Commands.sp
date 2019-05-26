@@ -223,7 +223,7 @@ public Action CmdSetGamemode(int client, int args)
 
 public Action CmdTriggerBoss(int client, int args)
 {
-	BossGameThreshold = MinigamesPlayed;
+	MinigamesPlayed = BossGameThreshold-1;
 
 	ReplyToCommand(client, "[ WarioWare ] Triggering boss...");
 }

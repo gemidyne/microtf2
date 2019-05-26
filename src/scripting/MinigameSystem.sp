@@ -75,6 +75,7 @@ ArrayList PlayedBossgamePool;
 #include "Bossgames/Bossgame4.sp"
 #include "Bossgames/Bossgame5.sp"
 #include "Bossgames/Bossgame6.sp"
+#include "Bossgames/Bossgame7.sp"
 
 public void InitializeMinigames()
 {

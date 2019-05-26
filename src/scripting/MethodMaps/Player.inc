@@ -470,4 +470,18 @@ methodmap Player __nullable__
     {
         ShowAnnotation(this.ClientId, lifetime, text);
     }
+
+    public void PrintHintBox(const char[] text)
+    {       
+        int params[] = {0x76, 0x6F, 0x69, 0x63, 0x65, 0x5F, 0x73, 0x65, 0x6C, 0x66, 0x00, 0x00};
+        Handle msg = StartMessageOne("HudNotifyCustom", this.ClientId);
+        BfWriteString(msg, text);
+        
+        for (int i = 0; i < sizeof(params); i++)
+        {
+            BfWriteByte(msg, params[i]);
+        }
+
+        EndMessage();
+    }
 }

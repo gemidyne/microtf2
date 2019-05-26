@@ -169,4 +169,12 @@
 	{
 		"en"		"EAT!"
 	}
+	"Bossgame7_Caption_Explain"
+	{
+		"en"		"Say each word in chat as quick as you can to survive!"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"en"		"START!"
+	}
 }

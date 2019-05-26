@@ -55,4 +55,13 @@
 		"Caption"		"SHOOT THE MOST BARRELS!"
 		"RequiresMultiplePlayers"	"1"
 	}
+	"6"
+	{
+		"Enabled"		"1"
+		"Duration"		"180.0"
+		"BackgroundMusic"	""
+		"EntryPoint"		"Bossgame7_EntryPoint"
+		"Caption"		"DRBOSS"
+		"RequiresMultiplePlayers"	"1"
+	}
 }
