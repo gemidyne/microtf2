@@ -210,6 +210,16 @@ public void Bossgame7_OnMinigameFinish()
 
 public Action Bossgame7_DoDescentSequence(Handle timer)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	int camera = GetCameraEntity("DRBoss_DescentCamera_Point");
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -232,6 +242,16 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 
 public Action Bossgame7_DoSpinSequence(Handle timer)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	int camera = GetCameraEntity("DRBoss_SpiralCamera_Point");
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -257,6 +277,16 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 
 public Action Bossgame7_DoCloseupSequence(Handle timer)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	int camera = GetCameraEntity("DRBoss_CloseupCamera_Point");
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -306,6 +336,16 @@ public void Bossgame7_DoTypingSequence()
 
 public Action Bossgame7_DoTypingTick(Handle timer)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -332,6 +372,16 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 
 public Action Bossgame7_DoReviewSequence(Handle timer)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	TriggerRelay("DRBoss_OverviewSequence_Start");
 
 	int camera = GetCameraEntity("DRBoss_DescentCamera_Point");
