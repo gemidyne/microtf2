@@ -181,6 +181,9 @@ public void Bossgame7_OnMinigameSelected(int client)
 	}
 
 	player.SetGodMode(true);
+	player.SetRandomClass();
+	player.RemoveAllWeapons();
+	ResetWeapon(client, false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	int posa = 360 / Bossgame7_ParticipatingPlayerCount * client;
@@ -516,20 +519,47 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 	int medianNbWordsTyped = 0;
 	int maxNbWordsTyped = 0;
 
-	SortIntegers(Bossgame7_PlayerActiveAnswerCount, nbPlayersActive, Sort_Ascending);
+	PrintToChatAll(" ==== BEFORE SORTING ==== ");
 
-	maxNbWordsTyped = Bossgame7_PlayerActiveAnswerCount[nbPlayersActive];
+	for (int i = 0; i <= MaxClients; i++)
+	{
+		PrintToChatAll("Bossgame7_PlayerActiveAnswerCount[%i]: %i", i, Bossgame7_PlayerActiveAnswerCount[i]);
+	}
+
+	PrintToChatAll(" ==== END BEFORE SORTING ==== ");
+
+	int sortedAnswers[MAXPLAYERS+1];
+
+	for (int i = 0; i <= MaxClients; i++)
+	{
+		sortedAnswers[i] = Bossgame7_PlayerActiveAnswerCount[i];
+	}
+
+	// NOTE: SortIntegers modifies the input array and does not return a separate sorted array!!
+	SortIntegers(sortedAnswers, MAXPLAYERS+1, Sort_Descending);
+
+	maxNbWordsTyped = sortedAnswers[0];
 	if (nbPlayersActive % 2 == 0)
 	{
-		medianNbWordsTyped = (Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2] + Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2 - 1]) / 2;
+		medianNbWordsTyped = (sortedAnswers[nbPlayersActive/2] + sortedAnswers[nbPlayersActive/2 - 1]) / 2;
 	}
 	else
 	{
-		medianNbWordsTyped = Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2];
+		medianNbWordsTyped = sortedAnswers[nbPlayersActive/2];
 	}
 
+	PrintToChatAll("nbPlayersActive: %i", nbPlayersActive);
 	PrintToChatAll("medianNbWordsTyped: %i", medianNbWordsTyped);
 	PrintToChatAll("maxNbWordsTyped: %i", maxNbWordsTyped);
+
+	PrintToChatAll(" ==== AFTER SORTING ==== ");
+
+	for (int i = 0; i <= MaxClients; i++)
+	{
+		PrintToChatAll("sortedAnswers[%i]: %i", i, sortedAnswers[i]);
+	}
+
+	PrintToChatAll(" ==== END AFTER SORTING ==== ");
 
 	// if (maxNbWordsTyped == medianNbWordsTyped)
 	// {
@@ -609,7 +639,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 
 		if (player.IsValid && player.IsParticipating && player.Status != PlayerStatus_Failed)
 		{
-			if (Bossgame7_PlayerActiveAnswerCount[i] == data)
+			if (Bossgame7_PlayerActiveAnswerCount[i] <= data)
 			{
 				player.Status = PlayerStatus_Failed;
 				ForcePlayerSuicide(i);
