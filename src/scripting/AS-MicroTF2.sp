@@ -386,7 +386,10 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					DisplayHudMessageToClient(i, objective, "", 5.0);
 				}
 
-				PlaySoundToPlayer(i, BossgameMusic[BossgameID]);
+				if (strlen(BossgameMusic[BossgameID]) > 0)
+				{
+					PlaySoundToPlayer(i, BossgameMusic[BossgameID]);
+				}
 			}
 			else if (MinigameID > 0)
 			{
