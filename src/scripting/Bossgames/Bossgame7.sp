@@ -6,6 +6,39 @@
 
 #define BOSSGAME7_SAYTEXTANSWERS_CAPACITY 128
 
+char Bossgame7_BgmFiles[][] = 
+{ 
+	"gemidyne/warioware/bosses/bgm/danganronpa_hga.mp3",
+	"gemidyne/warioware/bosses/bgm/danganronpa_hvd.mp3",
+	"gemidyne/warioware/bosses/bgm/danganronpa_lod.mp3",
+	"gemidyne/warioware/bosses/bgm/danganronpa_pta.mp3",
+	"gemidyne/warioware/bosses/bgm/danganronpa_spc.mp3",
+	"gemidyne/warioware/bosses/bgm/danganronpa_tuh.mp3",
+};
+
+#define BOSSGAME7_SFX_BOSS_START "gemidyne/warioware/bosses/sfx/drpa_bossstart.mp3"
+#define BOSSGAME7_SFX_DESCENT_BEGIN "gemidyne/warioware/bosses/sfx/drpa_descentbegin.mp3"
+#define BOSSGAME7_SFX_OVERVIEW "gemidyne/warioware/bosses/sfx/drpa_overviewstart.mp3"
+#define BOSSGAME7_SFX_OVERVIEW_SURVIVE "gemidyne/warioware/bosses/sfx/drpa_overviewsurvive.mp3"
+#define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/bosses/sfx/drpa_spiralinward.mp3"
+#define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/bosses/sfx/drpa_typingstart.mp3"
+
+char Bossgame7_Sfx_WordFail[][] = 
+{ 
+	"gemidyne/warioware/bosses/sfx/drpa_wordfail_1.mp3",
+	"gemidyne/warioware/bosses/sfx/drpa_wordfail_2.mp3",
+};
+
+#define BOSSGAME7_SFX_WORDSUCCESS_RELAX "gemidyne/warioware/bosses/sfx/drpa_wordsuccess_relax.mp3"
+
+char Bossgame7_Sfx_WordSuccessPinch[][] = 
+{ 
+	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch1.mp3",
+	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch2.mp3",
+	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch3.mp3",
+	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch4.mp3",
+};
+
 char Bossgame7_SayTextAnswers[BOSSGAME7_SAYTEXTANSWERS_CAPACITY][64];
 int Bossgame7_SayTextAnswerCount;
 
@@ -16,6 +49,7 @@ int Bossgame7_ParticipatingPlayerCount;
 int Bossgame7_PlayerActiveAnswerIndex[MAXPLAYERS+1] = 0;
 int Bossgame7_PlayerActiveAnswerCount[MAXPLAYERS+1];
 int Bossgame7_RemainingTime = 20;
+int Bossgame7_ActiveCameraEntityId = 0;
 
 public void Bossgame7_EntryPoint()
 {
@@ -33,7 +67,28 @@ public void Bossgame7_EntryPoint()
 
 public void Bossgame7_OnMapStart()
 {
-	PrecacheSound("gemidyne/warioware/bosses/bgm/danganronpa_hvd.mp3", true);
+	for (int i = 0; i < sizeof(Bossgame7_BgmFiles); i++)
+	{
+		PrecacheSound(Bossgame7_BgmFiles[i], true);
+	}
+
+	for (int i = 0; i < sizeof(Bossgame7_Sfx_WordFail); i++)
+	{
+		PrecacheSound(Bossgame7_Sfx_WordFail[i], true);
+	}
+
+	for (int i = 0; i < sizeof(Bossgame7_Sfx_WordSuccessPinch); i++)
+	{
+		PrecacheSound(Bossgame7_Sfx_WordSuccessPinch[i], true);
+	}
+
+	PrecacheSound(BOSSGAME7_SFX_BOSS_START, true);
+	PrecacheSound(BOSSGAME7_SFX_DESCENT_BEGIN, true);
+	PrecacheSound(BOSSGAME7_SFX_OVERVIEW, true);
+	PrecacheSound(BOSSGAME7_SFX_OVERVIEW_SURVIVE, true);
+	PrecacheSound(BOSSGAME7_SFX_SPIRAL, true);
+	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
+	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
 }
 
 public void Bossgame7_OnMapEnd()
@@ -142,6 +197,8 @@ public void Bossgame7_OnMinigameSelected(int client)
 
 	TeleportEntity(client, pos, ang, vel);
 	SetEntityMoveType(client, MOVETYPE_NONE);
+
+	Bossgame7_PlaySnd(client, BOSSGAME7_SFX_BOSS_START);
 }
 
 public Action Bossgame7_SayCommand(int client, int args)
@@ -156,7 +213,7 @@ public Action Bossgame7_SayCommand(int client, int args)
 
 		Player player = new Player(client);
 
-		if (player.IsParticipating)
+		if (player.IsParticipating && Bossgame7_RemainingTime >= 0)
 		{
 			int startidx;
 			if (text[strlen(text)-1] == '"') 
@@ -173,13 +230,26 @@ public Action Bossgame7_SayCommand(int client, int args)
 				Bossgame7_PlayerActiveAnswerIndex[client]++;
 				PrintAnswerDisplay(player);
 
-				char sfx[128];
-				Format(sfx, sizeof(sfx), "play %s", SYSFX_WINNER);
-				ClientCommand(client, sfx);
+				if (Bossgame7_PlayerActiveAnswerIndex[client] >= 5)
+				{
+					int soundIdx = GetRandomInt(0, sizeof(Bossgame7_Sfx_WordSuccessPinch)-1);
+
+					EmitSoundToClient(client, Bossgame7_Sfx_WordSuccessPinch[soundIdx], Bossgame7_ActiveCameraEntityId);
+				}
+				else
+				{
+					EmitSoundToClient(client, BOSSGAME7_SFX_WORDSUCCESS_RELAX, Bossgame7_ActiveCameraEntityId);
+				}
 
 				Bossgame7_PlayerActiveAnswerCount[client]++;
 
 				return Plugin_Handled;
+			}
+			else
+			{
+				int soundIdx = GetRandomInt(0, sizeof(Bossgame7_Sfx_WordFail)-1);
+
+				EmitSoundToClient(client, Bossgame7_Sfx_WordFail[soundIdx], Bossgame7_ActiveCameraEntityId);
 			}
 		}
 	}
@@ -222,6 +292,10 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 
 	int camera = GetCameraEntity("DRBoss_DescentCamera_Point");
 
+	Bossgame7_ActiveCameraEntityId = camera;
+
+	int randomBgmIdx = GetRandomInt(0, sizeof(Bossgame7_BgmFiles)-1);
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -230,7 +304,9 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 		{
 			MinigameCaption[player.ClientId] = "";
 			SetClientViewEntity(i, camera);
-			ClientCommand(i, "play gemidyne/warioware/bosses/bgm/danganronpa_hvd.mp3");
+
+			Bossgame7_PlaySnd(i, Bossgame7_BgmFiles[randomBgmIdx]);
+			EmitSoundToClient(i, BOSSGAME7_SFX_DESCENT_BEGIN, Bossgame7_ActiveCameraEntityId);
 		}
 	}
 
@@ -254,6 +330,8 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 
 	int camera = GetCameraEntity("DRBoss_SpiralCamera_Point");
 
+	Bossgame7_ActiveCameraEntityId = camera;
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -266,11 +344,13 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Explain", i);
 
 			player.PrintHintBox(text);
+
+			EmitSoundToClient(i, BOSSGAME7_SFX_SPIRAL, Bossgame7_ActiveCameraEntityId);
 		}
 	}
 
 	TriggerRelay("DRBoss_SpinInCamera_Start");
-	CreateTimer(5.0, Bossgame7_DoCloseupSequence);
+	CreateTimer(4.5, Bossgame7_DoCloseupSequence);
 
 	return Plugin_Handled;
 }
@@ -289,6 +369,8 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 
 	int camera = GetCameraEntity("DRBoss_CloseupCamera_Point");
 
+	Bossgame7_ActiveCameraEntityId = camera;
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -301,6 +383,8 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Start", i);
 
 			player.PrintHintBox(text);
+
+			EmitSoundToClient(i, BOSSGAME7_SFX_TYPING_START, Bossgame7_ActiveCameraEntityId);
 		}
 	}
 
@@ -386,6 +470,8 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 	int camera = GetCameraEntity("DRBoss_DescentCamera_Point");
 
+	Bossgame7_ActiveCameraEntityId = camera;
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -393,12 +479,18 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		if (player.IsInGame)
 		{
 			SetClientViewEntity(i, camera);
+			MinigameCaption[i] = "";
+
+			EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW, Bossgame7_ActiveCameraEntityId);
 		}
 	}
+
+
 
 	// Get answer count range
 	int minThreshold = 999;
 	int maxThreshold = 0;
+	int nbPlayersActive; //I hope you have it
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -406,6 +498,8 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 		if (player.IsValid && player.IsParticipating && player.Status != PlayerStatus_Failed)
 		{
+			nbPlayersActive++;
+
 			if (Bossgame7_PlayerActiveAnswerCount[i] < minThreshold)
 			{
 				minThreshold = Bossgame7_PlayerActiveAnswerCount[i];
@@ -418,7 +512,39 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		}
 	}
 
-	bool allWordsAnsweredByAll = minThreshold == maxThreshold;
+	//TODO: HAVE TO TEST THIS
+	int medianNbWordsTyped = 0;
+	int maxNbWordsTyped = 0;
+
+	SortIntegers(Bossgame7_PlayerActiveAnswerCount, nbPlayersActive, Sort_Ascending);
+
+	maxNbWordsTyped = Bossgame7_PlayerActiveAnswerCount[nbPlayersActive];
+	if (nbPlayersActive % 2 == 0)
+	{
+		medianNbWordsTyped = (Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2] + Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2 - 1]) / 2;
+	}
+	else
+	{
+		medianNbWordsTyped = Bossgame7_PlayerActiveAnswerCount[nbPlayersActive/2];
+	}
+
+	PrintToChatAll("medianNbWordsTyped: %i", medianNbWordsTyped);
+	PrintToChatAll("maxNbWordsTyped: %i", maxNbWordsTyped);
+
+	// if (maxNbWordsTyped == medianNbWordsTyped)
+	// {
+	// 	//Kill no one
+	// }
+	// else
+	// {
+	// 	for (int i = 1; i <= nbPlayersActive; ++i)
+	// 	{
+	// 		if (Bossgame7_PlayerActiveAnswerCount[i] < medianNbWordsTyped) //Or <=
+	// 			//KILL HIM
+	// 	}
+	// }
+
+	bool allWordsAnsweredByAll = maxNbWordsTyped == medianNbWordsTyped;
 
 	if (allWordsAnsweredByAll)
 	{
@@ -444,7 +570,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 				{
 					Player p = new Player(j);
 
-					if (p.IsValid && p.IsParticipating && p.Status != PlayerStatus_Failed && Bossgame7_PlayerActiveAnswerCount[j] == minThreshold)
+					if (p.IsValid && p.IsParticipating && p.Status != PlayerStatus_Failed && Bossgame7_PlayerActiveAnswerCount[j] <= medianNbWordsTyped)
 					{
 						if (namesDisplayed < 6)
 						{
@@ -492,6 +618,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 			{
 				activePlayers++;
 				player.Status = PlayerStatus_Winner;
+				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, Bossgame7_ActiveCameraEntityId);
 			}
 		}
 	}
@@ -579,4 +706,13 @@ public int GetEntityId(const char[] entityType, const char[] name)
 	}
 
 	return entity;
+}
+
+public void Bossgame7_PlaySnd(int client, const char[] file)
+{
+	char path[128];
+
+	Format(path, sizeof(path), "play %s", file);
+
+	ClientCommand(client, path);
 }
