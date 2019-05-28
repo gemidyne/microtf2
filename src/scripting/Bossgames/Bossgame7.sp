@@ -491,8 +491,6 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 
 	// Get answer count range
-	int minThreshold = 999;
-	int maxThreshold = 0;
 	int nbPlayersActive; //I hope you have it
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -502,31 +500,12 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		if (player.IsValid && player.IsParticipating && player.Status != PlayerStatus_Failed)
 		{
 			nbPlayersActive++;
-
-			if (Bossgame7_PlayerActiveAnswerCount[i] < minThreshold)
-			{
-				minThreshold = Bossgame7_PlayerActiveAnswerCount[i];
-			}
-
-			if (Bossgame7_PlayerActiveAnswerCount[i] > maxThreshold)
-			{
-				maxThreshold = Bossgame7_PlayerActiveAnswerCount[i];
-			}
 		}
 	}
 
 	//TODO: HAVE TO TEST THIS
 	int medianNbWordsTyped = 0;
 	int maxNbWordsTyped = 0;
-
-	PrintToChatAll(" ==== BEFORE SORTING ==== ");
-
-	for (int i = 0; i <= MaxClients; i++)
-	{
-		PrintToChatAll("Bossgame7_PlayerActiveAnswerCount[%i]: %i", i, Bossgame7_PlayerActiveAnswerCount[i]);
-	}
-
-	PrintToChatAll(" ==== END BEFORE SORTING ==== ");
 
 	int sortedAnswers[MAXPLAYERS+1];
 
@@ -548,37 +527,11 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		medianNbWordsTyped = sortedAnswers[nbPlayersActive/2];
 	}
 
-	PrintToChatAll("nbPlayersActive: %i", nbPlayersActive);
-	PrintToChatAll("medianNbWordsTyped: %i", medianNbWordsTyped);
-	PrintToChatAll("maxNbWordsTyped: %i", maxNbWordsTyped);
-
-	PrintToChatAll(" ==== AFTER SORTING ==== ");
-
-	for (int i = 0; i <= MaxClients; i++)
-	{
-		PrintToChatAll("sortedAnswers[%i]: %i", i, sortedAnswers[i]);
-	}
-
-	PrintToChatAll(" ==== END AFTER SORTING ==== ");
-
-	// if (maxNbWordsTyped == medianNbWordsTyped)
-	// {
-	// 	//Kill no one
-	// }
-	// else
-	// {
-	// 	for (int i = 1; i <= nbPlayersActive; ++i)
-	// 	{
-	// 		if (Bossgame7_PlayerActiveAnswerCount[i] < medianNbWordsTyped) //Or <=
-	// 			//KILL HIM
-	// 	}
-	// }
-
 	bool allWordsAnsweredByAll = maxNbWordsTyped == medianNbWordsTyped;
 
 	if (allWordsAnsweredByAll)
 	{
-		minThreshold = -999;
+		medianNbWordsTyped = -999;
 	}
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -625,7 +578,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		}
 	}
 
-	CreateTimer(3.0, Bossgame7_DoReviewSequencePost, minThreshold);
+	CreateTimer(3.0, Bossgame7_DoReviewSequencePost, medianNbWordsTyped);
 	return Plugin_Handled;
 }
 
@@ -641,14 +594,11 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 		{
 			if (Bossgame7_PlayerActiveAnswerCount[i] <= data)
 			{
-				PrintToChatAll("%N is BELOW OR EQ TO %i: KILLED", i, data);
-
 				player.Status = PlayerStatus_Failed;
 				ForcePlayerSuicide(i);
 			}
 			else
 			{
-				PrintToChatAll("%N is ABOVE %i: SRUVIVES", i, data);
 				activePlayers++;
 				player.Status = PlayerStatus_Winner;
 				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, Bossgame7_ActiveCameraEntityId);
