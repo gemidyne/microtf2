@@ -4,7 +4,7 @@
  * Say the Words
  */
 
-#define BOSSGAME7_SAYTEXTANSWERS_CAPACITY 128
+#define BOSSGAME7_SAYTEXTANSWERS_CAPACITY 512
 
 char Bossgame7_BgmFiles[][] = 
 { 
@@ -411,7 +411,7 @@ public void Bossgame7_DoTypingSequence()
 	// TODO: The upperlength has to change depending on the situation of the boss
 	for (int i = 0; i <= 64; i++)
 	{
-		int answerIdx = GetRandomInt(0, Bossgame7_SayTextAnswerCount);
+		int answerIdx = GetRandomInt(0, Bossgame7_SayTextAnswerCount-1);
 
 		strcopy(Bossgame7_ActiveAnswerSet[Bossgame7_ActiveAnswerCount], 64, Bossgame7_SayTextAnswers[answerIdx]);
 
@@ -641,11 +641,14 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 		{
 			if (Bossgame7_PlayerActiveAnswerCount[i] <= data)
 			{
+				PrintToChatAll("%N is BELOW OR EQ TO %i: KILLED", i, data);
+
 				player.Status = PlayerStatus_Failed;
 				ForcePlayerSuicide(i);
 			}
 			else
 			{
+				PrintToChatAll("%N is ABOVE %i: SRUVIVES", i, data);
 				activePlayers++;
 				player.Status = PlayerStatus_Winner;
 				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, Bossgame7_ActiveCameraEntityId);
