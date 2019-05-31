@@ -38,7 +38,7 @@
  * Defines
  */
 //#define DEBUG
-#define PLUGIN_VERSION "2019.1E"
+#define PLUGIN_VERSION "DEV"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
@@ -376,7 +376,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			{
 				bossgame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
 
-				if (!isCaptionDynamic)
+				if (!isCaptionDynamic && strlen(BossgameCaptions[BossgameID]) > 0)
 				{
 					char objective[64];
 					Format(objective, sizeof(objective), BossgameCaptions[BossgameID]);
@@ -395,7 +395,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			{
 				minigame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
 
-				if (!isCaptionDynamic)
+				if (!isCaptionDynamic && strlen(MinigameCaptions[MinigameID]) > 0)
 				{
 					char objective[64];
 					Format(objective, sizeof(objective), MinigameCaptions[MinigameID]);
@@ -405,9 +405,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
 				PlaySoundToPlayer(i, SYSFX_CLOCK);
 			}
-
-			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
-
+			
 			if (player.IsValid && player.IsParticipating)
 			{
 				if (isCaptionDynamic)
@@ -423,6 +421,11 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Call_PushCell(i);
 					Call_Finish();
 				}
+			}
+
+			if (strlen(MinigameCaption[player.ClientId]) > 0)
+			{
+				player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 			}
 		}
 	}

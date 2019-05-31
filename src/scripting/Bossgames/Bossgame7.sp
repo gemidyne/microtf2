@@ -16,10 +16,14 @@ char Bossgame7_BgmFiles[][] =
 	"gemidyne/warioware/bosses/bgm/danganronpa_tuh.mp3",
 };
 
+#define BOSSGAME7_BGM_FINALOVERVIEW_GOOD "gemidyne/warioware/bosses/bgm/danganronpa_goodend.mp3"
+#define BOSSGAME7_BGM_FINALOVERVIEW_BAD "gemidyne/warioware/bosses/bgm/danganronpa_badend.mp3"
+
 #define BOSSGAME7_SFX_BOSS_START "gemidyne/warioware/bosses/sfx/drpa_bossstart.mp3"
 #define BOSSGAME7_SFX_DESCENT_BEGIN "gemidyne/warioware/bosses/sfx/drpa_descentbegin.mp3"
 #define BOSSGAME7_SFX_OVERVIEW "gemidyne/warioware/bosses/sfx/drpa_overviewstart.mp3"
 #define BOSSGAME7_SFX_OVERVIEW_SURVIVE "gemidyne/warioware/bosses/sfx/drpa_overviewsurvive.mp3"
+#define BOSSGAME7_SFX_OVERVIEW_DEFEAT "gemidyne/warioware/bosses/sfx/drpa_gameover.mp3"
 #define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/bosses/sfx/drpa_spiralinward.mp3"
 #define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/bosses/sfx/drpa_typingstart.mp3"
 
@@ -71,6 +75,9 @@ public void Bossgame7_OnMapStart()
 	{
 		PrecacheSound(Bossgame7_BgmFiles[i], true);
 	}
+
+	PrecacheSound(BOSSGAME7_BGM_FINALOVERVIEW_GOOD, true);
+	PrecacheSound(BOSSGAME7_BGM_FINALOVERVIEW_BAD, true);
 
 	for (int i = 0; i < sizeof(Bossgame7_Sfx_WordFail); i++)
 	{
@@ -347,6 +354,7 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Explain", i);
 
 			player.PrintHintBox(text);
+			player.DisplayOverlay("gemidyne/warioware/overlays/bossgame_typethewords");
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_SPIRAL, Bossgame7_ActiveCameraEntityId);
 		}
@@ -386,6 +394,7 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Start", i);
 
 			player.PrintHintBox(text);
+			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_TYPING_START, Bossgame7_ActiveCameraEntityId);
 		}
@@ -484,6 +493,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 			SetClientViewEntity(i, camera);
 			MinigameCaption[i] = "";
 
+			player.DisplayOverlay(OVERLAY_BLANK);
 			EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW, Bossgame7_ActiveCameraEntityId);
 		}
 	}
@@ -564,9 +574,9 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 					}
 				}
 
-				if (namesDisplayed >= 6)
+				if (namesDisplayed > 5)
 				{
-					Format(text, sizeof(text), "%sand %d more...", text, namesDisplayed-6);
+					Format(text, sizeof(text), "%sand %d more...", text, namesDisplayed-11);
 				}
 			}
 			else
@@ -584,7 +594,18 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 {
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
 	int activePlayers = 0;
+	int lastWinnerId = 0;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -596,12 +617,14 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 			{
 				player.Status = PlayerStatus_Failed;
 				ForcePlayerSuicide(i);
+				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_DEFEAT, Bossgame7_ActiveCameraEntityId);
 			}
 			else
 			{
 				activePlayers++;
 				player.Status = PlayerStatus_Winner;
 				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, Bossgame7_ActiveCameraEntityId);
+				lastWinnerId = i;
 			}
 		}
 	}
@@ -612,9 +635,67 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 	}
 	else
 	{
-		EndBoss();
+		CreateTimer(2.0, Bossgame7_DoFinalReview, lastWinnerId);
 	}
 
+	return Plugin_Handled;
+}
+
+public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
+{
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating)
+		{
+			char text[128];
+
+			Format(text, sizeof(text), "ROUND REVIEW\n\n");
+			Format(text, sizeof(text), "%sThe winner is...\n", text);
+
+			Format(text, sizeof(text), "%s%N\n", text, winnerId);
+
+			MinigameCaption[player.ClientId] = text;
+
+			if (i == winnerId)
+			{
+				EmitSoundToClient(i, BOSSGAME7_BGM_FINALOVERVIEW_GOOD, Bossgame7_ActiveCameraEntityId);
+			}
+			else
+			{
+				EmitSoundToClient(i, BOSSGAME7_BGM_FINALOVERVIEW_BAD, Bossgame7_ActiveCameraEntityId);
+			}
+		}
+	}
+
+	CreateTimer(3.0, Bossgame7_DoFinalReviewPost);
+	return Plugin_Handled;
+}
+
+public Action Bossgame7_DoFinalReviewPost(Handle timer)
+{
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
+	EndBoss();
 	return Plugin_Handled;
 }
 

@@ -1,5 +1,3 @@
-
-
 distinct
 squash
 huge
@@ -422,7 +420,6 @@ biscuit
 fever
 pioneer
 establish
-rape
 sodium
 return
 swim

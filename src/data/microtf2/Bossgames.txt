@@ -61,7 +61,7 @@
 		"Duration"		"180.0"
 		"BackgroundMusic"	""
 		"EntryPoint"		"Bossgame7_EntryPoint"
-		"Caption"		"DRBOSS"
+		"Caption"		""
 		"RequiresMultiplePlayers"	"1"
 	}
 }
