@@ -975,6 +975,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 			player.SetGodMode(true);
 			player.SetViewModelVisible(false);
+
+			TF2_RemoveCondition(i, TFCond_Dazed);
 		}
 	}
 
