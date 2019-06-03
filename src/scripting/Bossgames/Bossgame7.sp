@@ -43,11 +43,19 @@ char Bossgame7_Sfx_WordSuccessPinch[][] =
 	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch4.mp3",
 };
 
-char Bossgame7_SayTextAnswers[BOSSGAME7_SAYTEXTANSWERS_CAPACITY][64];
-int Bossgame7_SayTextAnswerCount;
+#define BOSSGAME7_SAYTEXTINDICE_EASY 0
+#define BOSSGAME7_SAYTEXTINDICE_MEDIUM 1
+#define BOSSGAME7_SAYTEXTINDICE_HARD 2
+#define BOSSGAME7_SAYTEXTINDICE_MAX 3
 
+char Bossgame7_SayTextAnswers[BOSSGAME7_SAYTEXTINDICE_MAX][BOSSGAME7_SAYTEXTANSWERS_CAPACITY][64];
+int Bossgame7_SayTextAnswerCount[BOSSGAME7_SAYTEXTINDICE_MAX];
+
+// Active boss session
 char Bossgame7_ActiveAnswerSet[BOSSGAME7_SAYTEXTANSWERS_CAPACITY][64];
 int Bossgame7_ActiveAnswerCount;
+int Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_EASY;
+int Bossgame7_ActiveRound = 0;
 
 int Bossgame7_ParticipatingPlayerCount;
 int Bossgame7_PlayerActiveAnswerIndex[MAXPLAYERS+1] = 0;
@@ -66,7 +74,9 @@ public void Bossgame7_EntryPoint()
 	RegConsoleCmd("say", Bossgame7_SayCommand);
 	RegConsoleCmd("say_team", Bossgame7_SayCommand);
 
-	Bossgame7_LoadDictionary();
+	Bossgame7_LoadDictionary(BOSSGAME7_SAYTEXTINDICE_EASY, "data/microtf2/Bossgame7.Dictionary.Easy.txt");
+	Bossgame7_LoadDictionary(BOSSGAME7_SAYTEXTINDICE_MEDIUM, "data/microtf2/Bossgame7.Dictionary.Medium.txt");
+	Bossgame7_LoadDictionary(BOSSGAME7_SAYTEXTINDICE_HARD, "data/microtf2/Bossgame7.Dictionary.Hard.txt");
 }
 
 public void Bossgame7_OnMapStart()
@@ -102,16 +112,16 @@ public void Bossgame7_OnMapEnd()
 {
 }
 
-public bool Bossgame7_LoadDictionary()
+public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 {
 	char manifestPath[128];
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Bossgame7.Dictionary.txt");
+	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), path);
 
 	Handle file = OpenFile(manifestPath, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
-		LogError("Failed to open Bossgame7.Dictionary.txt in data/microtf2. This minigame has been disabled.");
+		LogError("Failed to load dictionary: \"%s\"", path);
 		return false;
 	}
 
@@ -119,7 +129,7 @@ public bool Bossgame7_LoadDictionary()
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{
-		if (Bossgame7_SayTextAnswerCount >= BOSSGAME7_SAYTEXTANSWERS_CAPACITY)
+		if (Bossgame7_SayTextAnswerCount[indice] >= BOSSGAME7_SAYTEXTANSWERS_CAPACITY)
 		{
 			LogError("Hit the hardcoded limit of answers for Bossgame7. If you really want to add more, recompile the plugin with the limit changed.");
 			break;
@@ -132,13 +142,13 @@ public bool Bossgame7_LoadDictionary()
 			continue;
 		}
 
-		Bossgame7_SayTextAnswers[Bossgame7_SayTextAnswerCount] = line;
-		Bossgame7_SayTextAnswerCount++;
+		strcopy(Bossgame7_SayTextAnswers[indice][Bossgame7_SayTextAnswerCount[indice]], 64, line);
+		Bossgame7_SayTextAnswerCount[indice]++;
 	}
 
 	CloseHandle(file);
 
-	LogMessage("Bossgame7: Loaded %i items from dictionary", Bossgame7_SayTextAnswerCount);
+	LogMessage("Bossgame7: Loaded %i items from dictionary \"%s\".", Bossgame7_SayTextAnswerCount[indice], path);
 
 	return true;
 }
@@ -153,6 +163,8 @@ public void Bossgame7_OnMinigameSelectedPre()
 
 		Bossgame7_ParticipatingPlayerCount = 0;
 		Bossgame7_ActiveAnswerCount = 0;
+		Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_EASY;
+		Bossgame7_ActiveRound = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -417,17 +429,32 @@ public void Bossgame7_DoTypingSequence()
 	Bossgame7_ActiveAnswerCount = 0;
 	Bossgame7_RemainingTime = 20;
 
+	Bossgame7_ActiveRound++;
+
+	if (Bossgame7_ActiveRound >= 0 && Bossgame7_ActiveRound <= 1)
+	{
+		Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_EASY;
+	}
+	else if (Bossgame7_ActiveRound >= 2 && Bossgame7_ActiveRound < 3)
+	{
+		Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_MEDIUM;
+	}
+	else
+	{
+		Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_HARD;
+	}
+
 	// TODO: The upperlength has to change depending on the situation of the boss
 	for (int i = 0; i <= 64; i++)
 	{
-		int answerIdx = GetRandomInt(0, Bossgame7_SayTextAnswerCount-1);
+		int answerIdx = GetRandomInt(0, Bossgame7_SayTextAnswerCount[Bossgame7_ActiveSayIndice]-1);
 
-		strcopy(Bossgame7_ActiveAnswerSet[Bossgame7_ActiveAnswerCount], 64, Bossgame7_SayTextAnswers[answerIdx]);
+		strcopy(Bossgame7_ActiveAnswerSet[Bossgame7_ActiveAnswerCount], 64, Bossgame7_SayTextAnswers[Bossgame7_ActiveSayIndice][answerIdx]);
 
 		Bossgame7_ActiveAnswerCount++;
 	}
 
-	CreateTimer(1.0, Bossgame7_DoTypingTick);
+	CreateTimer(0.0, Bossgame7_DoTypingTick);
 }
 
 public Action Bossgame7_DoTypingTick(Handle timer)
@@ -574,9 +601,9 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 					}
 				}
 
-				if (namesDisplayed > 5)
+				if (namesDisplayed >= 6)
 				{
-					Format(text, sizeof(text), "%sand %d more...", text, namesDisplayed-11);
+					Format(text, sizeof(text), "%sand %d more...", text, namesDisplayed-6);
 				}
 			}
 			else

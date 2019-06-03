@@ -58,7 +58,7 @@
 	"6"
 	{
 		"Enabled"		"1"
-		"Duration"		"180.0"
+		"Duration"		"300.0"
 		"BackgroundMusic"	""
 		"EntryPoint"		"Bossgame7_EntryPoint"
 		"Caption"		""
