@@ -77,9 +77,7 @@ public void Hud_OnGameFrame()
                 SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
                 ShowSyncHudText(i, HudSync_Caption, buffer);
 
-                DisplayScoreHud(player);
-                DisplayRoundHud(player);
-                DisplaySpecialHud(player);
+                DisplayStatsHud(player);
             }
         }
 
@@ -87,7 +85,19 @@ public void Hud_OnGameFrame()
     }
 }
 
-public void DisplayScoreHud(Player player)
+public void DisplayStatsHud(Player player)
+{
+    char buffer[128];
+
+    DisplayScoreHud(player, buffer);
+    DisplayRoundHud(player, buffer);
+    DisplaySpecialHud(player, buffer);
+    
+    SetHudTextParamsEx(0.2, 0.9, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.01, 0.01);
+    ShowSyncHudText(player.ClientId, HudSync_Stats, buffer);
+}
+
+public void DisplayScoreHud(Player player, char buffer[128])
 {
     if (!player.IsValid)
     {
@@ -125,11 +135,10 @@ public void DisplayScoreHud(Player player)
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
 
-    SetHudTextParamsEx(0.25, 0.94, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-    ShowSyncHudText(player.ClientId, HudSync_Score, scoreText);
+    Format(buffer, sizeof(buffer), "%s%s\n", buffer, scoreText);
 }
 
-public void DisplayRoundHud(Player player)
+public void DisplayRoundHud(Player player, char buffer[128])
 {
     char roundDisplay[32];
 
@@ -162,11 +171,10 @@ public void DisplayRoundHud(Player player)
         strcopy(roundDisplay, sizeof(roundDisplay), rewritten);
     }
 
-    SetHudTextParamsEx(0.01, 0.02, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.05, 0.5);
-    ShowSyncHudText(player.ClientId, HudSync_Round, roundDisplay);
+    Format(buffer, sizeof(buffer), "%s%s\n", buffer, roundDisplay);
 }
 
-public void DisplaySpecialHud(Player player)
+public void DisplaySpecialHud(Player player, char buffer[128])
 {
     char themeSpecialText[32];
 
@@ -198,9 +206,7 @@ public void DisplaySpecialHud(Player player)
         strcopy(themeSpecialText, sizeof(themeSpecialText), rewritten);
     }
 
-    // THEME/SPECIAL ROUND INFO
-    SetHudTextParamsEx(0.79, 0.02, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.01, 0.05, 0.5);
-    ShowSyncHudText(player.ClientId, HudSync_Special, themeSpecialText);
+    Format(buffer, sizeof(buffer), "%s%s\n", buffer, themeSpecialText);
 }
 
 public void Hook_Scoreboard(int entity)

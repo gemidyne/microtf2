@@ -43,9 +43,7 @@ float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
 int GamemodeID = 0;
 int MaxGamemodesSelectable = 0;
 
-Handle HudSync_Score;
-Handle HudSync_Special;
-Handle HudSync_Round;
+Handle HudSync_Stats;
 Handle HudSync_Caption;
 
 stock void InitializeSystem()
@@ -90,9 +88,7 @@ stock void InitializeSystem()
 	InitializeSpecialRounds();
 	InitialiseSounds();
 
-	HudSync_Score = CreateHudSynchronizer();
-	HudSync_Special = CreateHudSynchronizer();
-	HudSync_Round = CreateHudSynchronizer();
+	HudSync_Stats = CreateHudSynchronizer();
 	HudSync_Caption = CreateHudSynchronizer();
 
 	LoadGamemodeInfo();
