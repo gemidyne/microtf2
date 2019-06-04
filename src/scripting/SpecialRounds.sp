@@ -31,7 +31,9 @@ int ForceSpecialRound = 0;
 
 stock void InitializeSpecialRounds()
 {
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Special Rounds...");
+	#endif
 
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/SpecialRounds.txt");
@@ -430,7 +432,9 @@ stock bool Special_AreSpeedEventsEnabled()
 
 stock void Special_LoadFakeConditions()
 {
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Special Round random non-existant conditions");
+	#endif
 
 	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/SpecialRoundFakeConditions.txt");

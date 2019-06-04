@@ -38,6 +38,7 @@
  * Defines
  */
 //#define DEBUG
+//#define LOGGING_STARTUP
 #define PLUGIN_VERSION "DEV"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 

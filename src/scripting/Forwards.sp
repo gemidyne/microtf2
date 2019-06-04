@@ -249,7 +249,9 @@ Handle GlobalForward_OnTfRoundStart;
 
 stock void InitializeForwards()
 {
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Forwards...");
+	#endif
 
 	GlobalForward_OnMapStart = CreateForward(ET_Ignore);
 	GlobalForward_OnMapEnd = CreateForward(ET_Ignore);

@@ -52,7 +52,9 @@ public void LoadPositiveVoices()
 
 	CloseHandle(file);
 
+	#if defined LOGGING_STARTUP
 	LogMessage("System Voices: Loaded %i positive vocals", SystemVoicesPositiveCount);
+	#endif
 
 	return;
 }
@@ -91,7 +93,9 @@ public void LoadNegativeVoices()
 
 	CloseHandle(file);
 
+	#if defined LOGGING_STARTUP
 	LogMessage("System Voices: Loaded %i negative vocals", SystemVoicesNegativeCount);
+	#endif
 
 	return;
 }

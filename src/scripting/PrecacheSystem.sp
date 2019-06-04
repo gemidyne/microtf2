@@ -6,7 +6,10 @@
 
 stock void InitialisePrecacheSystem()
 {
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Precache System...");
+	#endif
+	
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, PrecacheSystem_OnMapStart);
 }
 

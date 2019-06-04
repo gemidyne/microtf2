@@ -78,7 +78,9 @@ stock void InitializeSystem()
 
 	LoadTranslations("microtf2.phrases.txt");
 
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing System...");
+	#endif
 	
 	HookEvents();
 	InitializeForwards();
@@ -204,7 +206,9 @@ public void LoadGamemodeInfo()
 				MaxGamemodesSelectable++;
 			}
 
+			#if defined LOGGING_STARTUP
 			LogMessage("Loaded gamemode %d - %s", gamemodeID, SystemNames[gamemodeID]);
+			#endif
 		}
 		while (KvGotoNextKey(kv));
 	}

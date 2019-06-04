@@ -148,7 +148,9 @@ public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 
 	CloseHandle(file);
 
+	#if defined LOGGING_STARTUP
 	LogMessage("Bossgame7: Loaded %i items from dictionary \"%s\".", Bossgame7_SayTextAnswerCount[indice], path);
+	#endif
 
 	return true;
 }

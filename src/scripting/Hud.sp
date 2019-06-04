@@ -3,7 +3,10 @@ int g_iCenterHudUpdateFrame = 0;
 
 stock void InitialiseHud()
 {
+    #if defined LOGGING_STARTUP
     LogMessage("Initializing HUD...");
+    #endif
+
     AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
     AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
 

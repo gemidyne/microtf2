@@ -64,7 +64,9 @@ public void InitialiseSecuritySystem()
 
 	SecuritySystem_HookCheatCommands();
 
+	#if defined LOGGING_STARTUP
 	LogMessage("Security System initialised.");
+	#endif
 }
 
 public void SecuritySystem_HookCheatCommands()

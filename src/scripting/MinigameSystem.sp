@@ -79,7 +79,9 @@ ArrayList PlayedBossgamePool;
 
 public void InitializeMinigames()
 {
+	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Minigame System...");
+	#endif
 
 	LoadMinigameData();
 	LoadBossgameData();
