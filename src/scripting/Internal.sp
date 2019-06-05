@@ -37,12 +37,11 @@ stock void PreloadSound(const char[] sound)
 		return;
 	}
 
-	char fileName[128];
-	
 	PrecacheSound(sound, true);
-	Format(fileName, sizeof(fileName), "sound/%s", sound);
-	
-	AddFileToDownloadsTable(fileName);
+
+	// This call intentionally does not add sounds to the files download table.
+	// This is because the correct approach to distributing the gamemode is to pack 
+	// the resources into the BSP so your players only require one download.
 }
 
 stock int GetSoundMultiplier()
