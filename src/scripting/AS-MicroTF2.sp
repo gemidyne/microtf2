@@ -854,10 +854,13 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				player.Regenerate();
 				player.SetViewModelVisible(true);
 
-				CreateParticle(i, "Micro_Win_Sparkle", 10.0);
-				//CreateParticle(i, "Micro_Cheer_Winner", 10.0, true);
-				CreateParticle(i, "unusual_aaa_aaa", 10.0, true);
-
+				if (winnerCount <= 5)
+				{
+					CreateParticle(i, "Micro_Win_Sparkle", 10.0);
+					//CreateParticle(i, "Micro_Cheer_Winner", 10.0, true);
+					CreateParticle(i, "unusual_aaa_aaa", 10.0, true);
+				}
+				
 				TF2_AddCondition(i, TFCond_Kritzkrieged, 10.0);
 
 				PushArrayCell(winners, i);
