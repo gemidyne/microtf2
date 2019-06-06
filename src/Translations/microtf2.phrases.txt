@@ -177,4 +177,19 @@
 	{
 		"en"		"START!"
 	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"	"{1:i}"
+		"en"		"If you win this minigame, you will be awarded {1} points!"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"	"{1:i},{2:i},{3:s}"
+		"en"		"Current players ({1} of {2})\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1} (and {2} more)"
+	}
 }

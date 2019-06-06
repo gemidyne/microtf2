@@ -164,52 +164,13 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	SetSpeed();
 
-	char centerText[4096];
-
 	if (SpecialRoundID == 16)
 	{
 		ScoreAmount = GetRandomInt(2, 14);
-		Format(centerText, sizeof(centerText), "If you win this minigame, you will be awarded \"%d\" points!", ScoreAmount);
-	}
-	else if (SpecialRoundID == 17)
-	{
-		ScoreAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
-
-		char names[2048];
-		int currentPlayers = 0;
-		int maxPlayers = 0;
-
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid)
-			{
-				maxPlayers++;
-
-				if (player.IsParticipating)
-				{
-					currentPlayers++;
-
-					if (currentPlayers <= 7)
-					{
-						Format(names, sizeof(names), "%s%N\n", names, i);
-					}
-				}
-			}
-		}
-
-		if (currentPlayers > 7)
-		{
-			Format(names, sizeof(names), "%s (and %d more) ", names, (currentPlayers  - 7));
-		}
-
-		Format(centerText, sizeof(centerText), "Current players (%d of %d)\n%s", currentPlayers, maxPlayers, names);
 	}
 	else
 	{
 		ScoreAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
-		centerText = "";
 	}
 
 	if (MinigamesPlayed >= BossGameThreshold)
@@ -266,7 +227,49 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				Call_Finish();
 			}
 
-			PrintCenterText(i, centerText);
+			if (SpecialRoundID == 16)
+			{
+				char buffer[128];
+				Format(buffer, sizeof(buffer), "%T", "SpecialRound16_Caption_Points", i, ScoreAmount);
+
+				PrintCenterText(i, buffer);
+			}
+			else if (SpecialRoundID == 17)
+			{
+				char buffer[4096];
+
+				char names[2048];
+				int currentPlayers = 0;
+				int maxPlayers = 0;
+
+				for (int j = 1; j <= MaxClients; j++)
+				{
+					Player p = new Player(j);
+
+					if (p.IsValid)
+					{
+						maxPlayers++;
+
+						if (p.IsParticipating)
+						{
+							currentPlayers++;
+
+							if (currentPlayers <= 7)
+							{
+								Format(names, sizeof(names), "%s%N\n", names, j);
+							}
+						}
+					}
+				}
+
+				if (currentPlayers > 7)
+				{
+					Format(names, sizeof(names), "%T", "SpecialRound17_Caption_AndMore", i, names, (currentPlayers  - 7));
+				}
+
+				Format(buffer, sizeof(buffer), "%T", "SpecialRound17_Caption_Full", i, currentPlayers, maxPlayers, names);
+				PrintCenterText(i, buffer);
+			}
 
 			if (duration >= 1.0)
 			{

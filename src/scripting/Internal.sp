@@ -4,14 +4,14 @@
  * Contains methods for internal plugin use
  */
 
-stock int FindEntityByClassname2(int startEntityID, const char[] classname)
+stock int FindEntityByClassname2(int startEntityId, const char[] classname)
 {
-	while (startEntityID > -1 && !IsValidEntity(startEntityID)) 
+	while (startEntityID > -1 && !IsValidEntity(startEntityId)) 
 	{
-		startEntityID--;
+		startEntityId--;
 	}
 
-	return FindEntityByClassname(startEntityID, classname);
+	return FindEntityByClassname(startEntityId, classname);
 }
 
 stock bool IsWarioWareMap()
