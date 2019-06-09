@@ -408,7 +408,7 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Start", i);
 
 			player.PrintHintBox(text);
-			player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
+			player.DisplayOverlay(OVERLAY_BLANK);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_TYPING_START, Bossgame7_ActiveCameraEntityId);
 		}
