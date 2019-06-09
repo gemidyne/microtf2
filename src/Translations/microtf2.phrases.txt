@@ -77,6 +77,11 @@
 	{
 		"en"		"There were no winners!"
 	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"en"		"{1}{2} {3} {green}with {4} points!"
+	}
 	"Intermission_Header"
 	{
 		"en"		"Intermission!"

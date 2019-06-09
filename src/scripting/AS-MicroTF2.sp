@@ -922,7 +922,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				}
 				else
 				{
-					CPrintToChat(i, "%s%s %s {green}with %i points!", PLUGIN_PREFIX, prefix, names, score);
+					CPrintToChat(i, "%T", "GameOver_WinnerSuffix", i, PLUGIN_PREFIX, prefix, names, score);
 				}
 			}
 		}
