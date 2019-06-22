@@ -7,7 +7,7 @@
 #include <sourcemod>
 
 #define MAXIMUM_MINIGAMES 64
-#define MINIGAME_CAPTION_LENGTH 128
+#define MINIGAME_CAPTION_LENGTH 256
 
 int MinigamesLoaded = 0;
 int BossgamesLoaded = 0;

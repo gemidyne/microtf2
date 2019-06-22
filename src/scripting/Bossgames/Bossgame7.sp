@@ -26,6 +26,7 @@ char Bossgame7_BgmFiles[][] =
 #define BOSSGAME7_SFX_OVERVIEW_DEFEAT "gemidyne/warioware/bosses/sfx/drpa_gameover.mp3"
 #define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/bosses/sfx/drpa_spiralinward.mp3"
 #define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/bosses/sfx/drpa_typingstart.mp3"
+#define BOSSGAME7_SFX_LEVEL_UP "gemidyne/warioware/bosses/sfx/drpa_levelup.mp3"
 
 char Bossgame7_Sfx_WordFail[][] = 
 { 
@@ -103,9 +104,11 @@ public void Bossgame7_OnMapStart()
 	PrecacheSound(BOSSGAME7_SFX_DESCENT_BEGIN, true);
 	PrecacheSound(BOSSGAME7_SFX_OVERVIEW, true);
 	PrecacheSound(BOSSGAME7_SFX_OVERVIEW_SURVIVE, true);
+	PrecacheSound(BOSSGAME7_SFX_OVERVIEW_DEFEAT, true);
 	PrecacheSound(BOSSGAME7_SFX_SPIRAL, true);
 	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
 	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
+	PrecacheSound(BOSSGAME7_SFX_LEVEL_UP, true);
 }
 
 public void Bossgame7_OnMapEnd()
@@ -527,10 +530,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		}
 	}
 
-
-
-	// Get answer count range
-	int nbPlayersActive; //I hope you have it
+	int nbPlayersActive; 
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -579,9 +579,9 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 		if (player.IsValid && player.IsParticipating)
 		{
-			char text[128];
+			char text[256];
 
-			Format(text, sizeof(text), "ROUND REVIEW\n\n");
+			Format(text, sizeof(text), "== ROUND REVIEW ==\n\n");
 			Format(text, sizeof(text), "%sThe players with the lowest number of words typed were...\n", text);
 
 			if (!allWordsAnsweredByAll)
@@ -605,12 +605,12 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 				if (namesDisplayed >= 6)
 				{
-					Format(text, sizeof(text), "%sand %d more...", text, namesDisplayed-6);
+					Format(text, sizeof(text), "%s\nand %d more...", text, namesDisplayed-6);
 				}
 			}
 			else
 			{
-				Format(text, sizeof(text), "%sOh! Everyone typed the same amount of words!", text);
+				Format(text, sizeof(text), "%sno one!\n\nEveryone survives another round!", text);
 			}
 
 			MinigameCaption[player.ClientId] = text;
@@ -658,15 +658,52 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 		}
 	}
 
-	if (activePlayers > 1)
+	if (activePlayers <= 1)
 	{
-		CreateTimer(2.0, Bossgame7_DoDescentSequence);
+		CreateTimer(2.0, Bossgame7_DoFinalReview, lastWinnerId);
+		return Plugin_Handled;
+	}
+
+	if (Bossgame7_ActiveRound == 1 || Bossgame7_ActiveRound == 3)
+	{
+		CreateTimer(2.0, Bossgame7_DoLevelChange);
 	}
 	else
 	{
-		CreateTimer(2.0, Bossgame7_DoFinalReview, lastWinnerId);
+		CreateTimer(2.0, Bossgame7_DoDescentSequence);
 	}
 
+	return Plugin_Handled;
+}
+
+public Action Bossgame7_DoLevelChange(Handle timer)
+{
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating)
+		{
+			char text[256];
+
+			Format(text, sizeof(text), "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!");
+
+			EmitSoundToClient(i, BOSSGAME7_SFX_LEVEL_UP, Bossgame7_ActiveCameraEntityId);
+			MinigameCaption[player.ClientId] = text;
+		}
+	}
+
+	CreateTimer(3.0, Bossgame7_DoDescentSequence);
 	return Plugin_Handled;
 }
 
@@ -690,7 +727,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		{
 			char text[128];
 
-			Format(text, sizeof(text), "ROUND REVIEW\n\n");
+			Format(text, sizeof(text), "== ANNOUNCEMENT ==\n\n");
 			Format(text, sizeof(text), "%sThe winner is...\n", text);
 
 			Format(text, sizeof(text), "%s%N\n", text, winnerId);
@@ -708,7 +745,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		}
 	}
 
-	CreateTimer(3.0, Bossgame7_DoFinalReviewPost);
+	CreateTimer(5.0, Bossgame7_DoFinalReviewPost);
 	return Plugin_Handled;
 }
 
@@ -736,9 +773,9 @@ public void PrintAnswerDisplay(Player player)
 
 	if (answerIdx < Bossgame7_ActiveAnswerCount)
 	{
-		Format(text, sizeof(text), "Say the words!\n");
-		Format(text, sizeof(text), "%s%s\n", text, Bossgame7_ActiveAnswerSet[answerIdx]);
-		Format(text, sizeof(text), "\n%sTime remaining: %i seconds", text, Bossgame7_RemainingTime);
+		Format(text, sizeof(text), "== TYPE THE WORD! ==");
+		Format(text, sizeof(text), "%s\n\n%s", text, Bossgame7_ActiveAnswerSet[answerIdx]);
+		Format(text, sizeof(text), "%s\n\nTime remaining: %i seconds", text, Bossgame7_RemainingTime);
 	}
 	else
 	{
