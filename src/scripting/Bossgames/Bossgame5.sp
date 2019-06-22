@@ -22,6 +22,7 @@ public void Bossgame5_OnMapStart()
 {
 	PrecacheSound("gemidyne/warioware/bosses/sfx/beatblock_count.mp3", true);
 	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
+	PrecacheSound("ui/hitsound_retro1.wav", true);
 }
 
 public void Bossgame5_OnMinigameSelectedPre()
