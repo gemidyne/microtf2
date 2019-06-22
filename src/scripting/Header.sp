@@ -80,6 +80,7 @@ bool IsBlockingDamage = true;
 bool IsOnlyBlockingDamageByPlayers = false;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 bool IsPlayerWinner[MAXPLAYERS+1] = false;
+bool HideHudGamemodeText = false;
 
 /**
  * Enums

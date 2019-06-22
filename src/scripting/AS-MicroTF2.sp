@@ -1031,6 +1031,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			isWaitingForVoteToFinish = true;
 		}
 
+		HideHudGamemodeText = true;
+
 		if (GetRandomInt(0, 2) == 1 || ForceNextSpecialRound)
 		{
 			// Special Round
@@ -1107,6 +1109,7 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 	}
 	else
 	{
+		HideHudGamemodeText = false;
 		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 

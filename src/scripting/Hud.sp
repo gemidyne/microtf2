@@ -179,6 +179,12 @@ public void DisplayRoundHud(Player player, char buffer[128])
 
 public void DisplaySpecialHud(Player player, char buffer[128])
 {
+    if (HideHudGamemodeText)
+    {
+        Format(buffer, sizeof(buffer), "%s??????\n", buffer);
+        return;
+    }
+
     char themeSpecialText[32];
 
     if (GamemodeID == SPR_GAMEMODEID)
