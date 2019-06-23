@@ -182,6 +182,16 @@
 	{
 		"en"		"START!"
 	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"	"{1:i}"
+		"en"		"Time remaining: {1} seconds"
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nTime remaining: {2} seconds"
+	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"

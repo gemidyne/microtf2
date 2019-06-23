@@ -773,13 +773,11 @@ public void PrintAnswerDisplay(Player player)
 
 	if (answerIdx < Bossgame7_ActiveAnswerCount)
 	{
-		Format(text, sizeof(text), "== TYPE THE WORD! ==");
-		Format(text, sizeof(text), "%s\n\n%s", text, Bossgame7_ActiveAnswerSet[answerIdx]);
-		Format(text, sizeof(text), "%s\n\nTime remaining: %i seconds", text, Bossgame7_RemainingTime);
+		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", i, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
 	}
 	else
 	{
-		Format(text, sizeof(text), "Time remaining: %i seconds", Bossgame7_RemainingTime);
+		Format(text, sizeof(text), "%T", "Bossgame7_Caption_TimeRemaining", i, Bossgame7_RemainingTime);
 	}
 
 	MinigameCaption[player.ClientId] = text;
