@@ -719,6 +719,9 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		return Plugin_Handled;
 	}
 
+	char winnerName[64];
+	GetClientName(winnerId, winnerName, sizeof(winnerName));
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -726,11 +729,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		if (player.IsValid && player.IsParticipating)
 		{
 			char text[128];
-
-			Format(text, sizeof(text), "== ANNOUNCEMENT ==\n\n");
-			Format(text, sizeof(text), "%sThe winner is...\n", text);
-
-			Format(text, sizeof(text), "%s%N\n", text, winnerId);
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_WinnerAnnouncement", i, winnerName);
 
 			MinigameCaption[player.ClientId] = text;
 

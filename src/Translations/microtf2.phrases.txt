@@ -192,6 +192,11 @@
 		"#format"	"{1:s},{2:i}"
 		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nTime remaining: {2} seconds"
 	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"	"{1:s}"
+		"en"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
+	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
