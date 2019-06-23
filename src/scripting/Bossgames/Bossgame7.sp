@@ -695,8 +695,7 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 		if (player.IsValid && player.IsParticipating)
 		{
 			char text[256];
-
-			Format(text, sizeof(text), "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!");
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_LevelUpAnnouncement", player.ClientId);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_LEVEL_UP, Bossgame7_ActiveCameraEntityId);
 			MinigameCaption[player.ClientId] = text;
@@ -729,7 +728,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		if (player.IsValid && player.IsParticipating)
 		{
 			char text[128];
-			Format(text, sizeof(text), "%T", "Bossgame7_Caption_WinnerAnnouncement", i, winnerName);
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_WinnerAnnouncement", player.ClientId, winnerName);
 
 			MinigameCaption[player.ClientId] = text;
 
@@ -772,11 +771,11 @@ public void PrintAnswerDisplay(Player player)
 
 	if (answerIdx < Bossgame7_ActiveAnswerCount)
 	{
-		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", i, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
+		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
 	}
 	else
 	{
-		Format(text, sizeof(text), "%T", "Bossgame7_Caption_TimeRemaining", i, Bossgame7_RemainingTime);
+		Format(text, sizeof(text), "%T", "Bossgame7_Caption_TimeRemaining", player.ClientId, Bossgame7_RemainingTime);
 	}
 
 	MinigameCaption[player.ClientId] = text;

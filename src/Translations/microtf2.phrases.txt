@@ -197,6 +197,10 @@
 		"#format"	"{1:s}"
 		"en"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
 	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"en"		"== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!"
+	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
