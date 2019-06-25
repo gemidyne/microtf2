@@ -581,9 +581,6 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		{
 			char text[256];
 
-			Format(text, sizeof(text), "== ROUND REVIEW ==\n\n");
-			Format(text, sizeof(text), "%sThe players with the lowest number of words typed were...\n", text);
-
 			if (!allWordsAnsweredByAll)
 			{
 				int namesDisplayed = 0;
@@ -605,13 +602,15 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 				if (namesDisplayed >= 6)
 				{
-					Format(text, sizeof(text), "%s\nand %d more...", text, namesDisplayed-6);
+					Format(text, sizeof(text), "%T", "Bossgame7_Caption_RoundReview_AndMore", player.ClientId, text, namesDisplayed-6);
 				}
 			}
 			else
 			{
-				Format(text, sizeof(text), "%sno one!\n\nEveryone survives another round!", text);
+				Format(text, sizeof(text), "%T", "Bossgame7_Caption_RoundReview_EveryoneSurvives", player.ClientId, text);
 			}
+
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_RoundReview", player.ClientId, text);
 
 			MinigameCaption[player.ClientId] = text;
 		}

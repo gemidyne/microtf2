@@ -201,6 +201,21 @@
 	{
 		"en"		"== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!"
 	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"	"{1:s}"
+		"en"		"== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format" 	"{1:s},{2:i}"
+		"en"		"{1}\nand {2} more..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format" 	"{1:s}"
+		"en"		"{1}no one!\n\nEveryone survives another round!"
+	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
