@@ -67,7 +67,7 @@ int Bossgame7_ActiveCameraEntityId = 0;
 public void Bossgame7_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame7_OnMapStart);
-	AddToForward(GlobalForward_OnMapEnd, INVALID_HANDLE, Bossgame7_OnMapEnd);
+	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame7_OnGameFrame);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame7_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame7_OnMinigameFinish);
@@ -109,10 +109,10 @@ public void Bossgame7_OnMapStart()
 	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
 	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
 	PrecacheSound(BOSSGAME7_SFX_LEVEL_UP, true);
-}
 
-public void Bossgame7_OnMapEnd()
-{
+	SetCameraEnablement("DRBoss_SpiralCamera_Point", false);
+	SetCameraEnablement("DRBoss_DescentCamera_Point", false);
+	SetCameraEnablement("DRBoss_CloseupCamera_Point", false);
 }
 
 public bool Bossgame7_LoadDictionary(int indice, const char[] path)
@@ -182,6 +182,11 @@ public void Bossgame7_OnMinigameSelectedPre()
 		}
 
 		CreateTimer(3.5, Bossgame7_DoDescentSequence);
+
+		SetCameraEnablement("DRBoss_SpiralCamera_Point", true);
+		SetCameraEnablement("DRBoss_DescentCamera_Point", true);
+		SetCameraEnablement("DRBoss_CloseupCamera_Point", true);
+		SetCameraEnablement("MainRoom_Camera", false);
 	}
 }
 
@@ -296,10 +301,27 @@ public void Bossgame7_OnMinigameFinish()
 			{
 				SetClientViewEntity(i, i);
 			}
+		}
 
-			if (player.IsValid && player.IsParticipating)
+		SetCameraEnablement("DRBoss_SpiralCamera_Point", false);
+		SetCameraEnablement("DRBoss_DescentCamera_Point", false);
+		SetCameraEnablement("DRBoss_CloseupCamera_Point", false);
+		SetCameraEnablement("MainRoom_Camera", true);
+	}
+}
+
+public void Bossgame7_OnGameFrame()
+{
+	if (BossgameID == 7 && IsMinigameActive) 
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsInGame)
 			{
-				// TODO win logic
+				SetClientViewEntity(i, i);
+				SetEntityMoveType(i, MOVETYPE_NONE);
 			}
 		}
 	}
@@ -814,6 +836,24 @@ public void TriggerRelay(const char[] name)
 		}
 	}
 }
+
+public void SetCameraEnablement(const char[] name, bool state)
+{
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "info_observer_point")) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, name) == 0)
+		{
+			AcceptEntityInput(entity, state ? "Enable" : "Disable", -1, -1, -1);
+			break;
+		}
+	}
+}
+
 
 public int GetEntityId(const char[] entityType, const char[] name)
 {
