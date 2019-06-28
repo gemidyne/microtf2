@@ -57,6 +57,7 @@ char Bossgame7_ActiveAnswerSet[BOSSGAME7_SAYTEXTANSWERS_CAPACITY][64];
 int Bossgame7_ActiveAnswerCount;
 int Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_EASY;
 int Bossgame7_ActiveRound = 0;
+int Bossgame7_HighestScore = 0;
 
 int Bossgame7_ParticipatingPlayerCount;
 int Bossgame7_PlayerActiveAnswerIndex[MAXPLAYERS+1] = 0;
@@ -71,6 +72,7 @@ public void Bossgame7_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame7_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame7_OnMinigameFinish);
+	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, Bossgame7_OnPlayerClassChange);
 
 	RegConsoleCmd("say", Bossgame7_SayCommand);
 	RegConsoleCmd("say_team", Bossgame7_SayCommand);
@@ -109,10 +111,6 @@ public void Bossgame7_OnMapStart()
 	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
 	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
 	PrecacheSound(BOSSGAME7_SFX_LEVEL_UP, true);
-
-	SetCameraEnablement("DRBoss_SpiralCamera_Point", false);
-	SetCameraEnablement("DRBoss_DescentCamera_Point", false);
-	SetCameraEnablement("DRBoss_CloseupCamera_Point", false);
 }
 
 public bool Bossgame7_LoadDictionary(int indice, const char[] path)
@@ -170,6 +168,7 @@ public void Bossgame7_OnMinigameSelectedPre()
 		Bossgame7_ActiveAnswerCount = 0;
 		Bossgame7_ActiveSayIndice = BOSSGAME7_SAYTEXTINDICE_EASY;
 		Bossgame7_ActiveRound = 0;
+		Bossgame7_HighestScore = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -182,11 +181,6 @@ public void Bossgame7_OnMinigameSelectedPre()
 		}
 
 		CreateTimer(3.5, Bossgame7_DoDescentSequence);
-
-		SetCameraEnablement("DRBoss_SpiralCamera_Point", true);
-		SetCameraEnablement("DRBoss_DescentCamera_Point", true);
-		SetCameraEnablement("DRBoss_CloseupCamera_Point", true);
-		SetCameraEnablement("MainRoom_Camera", false);
 	}
 }
 
@@ -245,7 +239,7 @@ public Action Bossgame7_SayCommand(int client, int args)
 
 		Player player = new Player(client);
 
-		if (player.IsParticipating && Bossgame7_RemainingTime >= 0)
+		if (player.IsParticipating && Bossgame7_RemainingTime >= 0 && player.Status != PlayerStatus_Failed)
 		{
 			int startidx;
 			if (text[strlen(text)-1] == '"') 
@@ -262,8 +256,12 @@ public Action Bossgame7_SayCommand(int client, int args)
 				Bossgame7_PlayerActiveAnswerIndex[client]++;
 				PrintAnswerDisplay(player);
 
-				if (Bossgame7_PlayerActiveAnswerIndex[client] >= 5)
+				bool playPinchSfx = Bossgame7_PlayerActiveAnswerIndex[client] > Bossgame7_HighestScore;
+
+				if (playPinchSfx)
 				{
+					Bossgame7_HighestScore++;
+					
 					int soundIdx = GetRandomInt(0, sizeof(Bossgame7_Sfx_WordSuccessPinch)-1);
 
 					EmitSoundToClient(client, Bossgame7_Sfx_WordSuccessPinch[soundIdx], Bossgame7_ActiveCameraEntityId);
@@ -302,11 +300,6 @@ public void Bossgame7_OnMinigameFinish()
 				SetClientViewEntity(i, i);
 			}
 		}
-
-		SetCameraEnablement("DRBoss_SpiralCamera_Point", false);
-		SetCameraEnablement("DRBoss_DescentCamera_Point", false);
-		SetCameraEnablement("DRBoss_CloseupCamera_Point", false);
-		SetCameraEnablement("MainRoom_Camera", true);
 	}
 }
 
@@ -320,11 +313,30 @@ public void Bossgame7_OnGameFrame()
 
 			if (player.IsInGame)
 			{
-				SetClientViewEntity(i, i);
 				SetEntityMoveType(i, MOVETYPE_NONE);
 			}
 		}
 	}
+}
+
+public void Bossgame7_OnPlayerClassChange(int client, int class)
+{
+	if (BossgameID != 7)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	player.Status = PlayerStatus_Failed;
+	EmitSoundToClient(client, BOSSGAME7_SFX_OVERVIEW_DEFEAT, Bossgame7_ActiveCameraEntityId);
+
+	CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "Bossgame7_ClassChangeWarning", client);
 }
 
 public Action Bossgame7_DoDescentSequence(Handle timer)
@@ -454,6 +466,7 @@ public void Bossgame7_DoTypingSequence()
 	}
 
 	Bossgame7_ActiveAnswerCount = 0;
+	Bossgame7_HighestScore = 0;
 	Bossgame7_RemainingTime = 20;
 
 	Bossgame7_ActiveRound++;
@@ -500,7 +513,7 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 	{
 		Player player = new Player(i);
 
-		if (player.IsValid && player.IsParticipating && player.Status != PlayerStatus_Failed)
+		if (player.IsValid && player.IsParticipating)
 		{
 			PrintAnswerDisplay(player);
 		}
@@ -790,7 +803,7 @@ public void PrintAnswerDisplay(Player player)
 
 	int answerIdx = Bossgame7_PlayerActiveAnswerIndex[player.ClientId];
 
-	if (answerIdx < Bossgame7_ActiveAnswerCount)
+	if (answerIdx < Bossgame7_ActiveAnswerCount || player.Status != PlayerStatus_Failed)
 	{
 		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
 	}

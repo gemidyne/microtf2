@@ -185,7 +185,7 @@
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"	"{1:i}"
-		"en"		"Time remaining: {1} seconds"
+		"en"		"== SPECTATING ==\n\nTime remaining: {1} seconds"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
@@ -215,6 +215,10 @@
 	{
 		"#format" 	"{1:s}"
 		"en"		"{1}no one!\n\nEveryone survives another round!"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"en"		"Changing class is not allowed during bosses!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
