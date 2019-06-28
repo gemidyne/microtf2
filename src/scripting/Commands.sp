@@ -75,6 +75,7 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("mp_respawnwavetime"));
 	ResetConVar(FindConVar("mp_timelimit"));
 	ResetConVar(FindConVar("mp_forcecamera"));
+	ResetConVar(FindConVar("mp_idlemaxtime"));
 
 	// TeamFortress ConVars
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
@@ -109,6 +110,7 @@ stock void PrepareConVars()
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
 	SetConVarInt(FindConVar("mp_timelimit"), 0);
 	SetConVarInt(FindConVar("mp_forcecamera"), 0);
+	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 
 	// TeamFortress ConVars
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
