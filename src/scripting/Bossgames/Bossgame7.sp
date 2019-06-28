@@ -261,7 +261,7 @@ public Action Bossgame7_SayCommand(int client, int args)
 				if (playPinchSfx)
 				{
 					Bossgame7_HighestScore++;
-					
+
 					int soundIdx = GetRandomInt(0, sizeof(Bossgame7_Sfx_WordSuccessPinch)-1);
 
 					EmitSoundToClient(client, Bossgame7_Sfx_WordSuccessPinch[soundIdx], Bossgame7_ActiveCameraEntityId);
@@ -332,6 +332,11 @@ public void Bossgame7_OnPlayerClassChange(int client, int class)
 	}
 
 	Player player = new Player(client);
+
+	if (player.Status == PlayerStatus_Failed)
+	{
+		return;
+	}
 
 	player.Status = PlayerStatus_Failed;
 	EmitSoundToClient(client, BOSSGAME7_SFX_OVERVIEW_DEFEAT, Bossgame7_ActiveCameraEntityId);
@@ -803,7 +808,7 @@ public void PrintAnswerDisplay(Player player)
 
 	int answerIdx = Bossgame7_PlayerActiveAnswerIndex[player.ClientId];
 
-	if (answerIdx < Bossgame7_ActiveAnswerCount || player.Status != PlayerStatus_Failed)
+	if (player.Status != PlayerStatus_Failed && answerIdx < Bossgame7_ActiveAnswerCount)
 	{
 		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
 	}

@@ -39,12 +39,10 @@
 	{
 		"en"		"You will be respawned once the current minigame or boss has finished."
 	}
-
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{
 		"en"		"YOU HAVE BEEN KNOCKED OUT!"
 	}
-
 	"LowestScoreWins_ExploitBlocked"
 	{
 		"en"		"Changing class is not allowed during this special round! 1 point has been added to your score."
