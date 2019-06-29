@@ -12,6 +12,7 @@
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
+#include <warioware>
 
 #undef REQUIRE_PLUGIN
 
@@ -39,7 +40,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "2019.2"
+#define PLUGIN_VERSION "2019.2A"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
@@ -64,7 +65,7 @@
 
 public Plugin myinfo = 
 {
-	name = "WarioWare",
+	name = "WarioWare REDUX",
 	author = "Gemidyne Softworks / Team WarioWare",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
@@ -74,6 +75,11 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	InitializeSystem();
+}
+
+public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max)
+{
+   RegPluginLibrary("warioware");
 }
 
 public void OnPluginEnd()
@@ -1021,12 +1027,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 		if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
-			#if defined UMC_MAPCHOOSER
-			// This should be using UMC_StartVote native, but that requires too many parameters... TODO: update this later on 
-			ServerCommand("sm_umc_mapvote 2");
-			#else
-			InitiateMapChooserVote(MapChange_MapEnd);
-			#endif
+			Call_StartForward(PluginForward_IntermissionStartMapVote);
+   			Call_Finish();
 			
 			isWaitingForVoteToFinish = true;
 		}
@@ -1079,11 +1081,10 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	#if defined UMC_MAPCHOOSER
-	bool voteIsInProgress = UMC_IsVoteInProgress("core");
-	#else
-	bool voteIsInProgress = IsVoteInProgress();
-	#endif
+	bool voteIsInProgress = false;
+
+	Call_StartForward(PluginForward_IntermissionHasMapVoteEnded);
+	Call_Finish(voteIsInProgress);
 
 	if (voteIsInProgress)
 	{

@@ -247,6 +247,11 @@ Handle GlobalForward_OnBossStopAttempt;
  */
 Handle GlobalForward_OnTfRoundStart;
 
+
+// Plugin Forwards
+Handle PluginForward_IntermissionStartMapVote;
+Handle PluginForward_IntermissionHasMapVoteEnded;
+
 stock void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
@@ -281,6 +286,9 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
+
+	PluginForward_IntermissionStartMapVote = CreateGlobalForward("Intermission_StartMapVote", ET_Ignore);
+	PluginForward_IntermissionHasMapVoteEnded = CreateGlobalForward("Intermission_HasMapVoteEnded", ET_Single);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -312,6 +320,9 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerRunCmd);
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
 	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);
+
+	SafelyRemoveAllFromForward(PluginForward_IntermissionStartMapVote);
+	SafelyRemoveAllFromForward(PluginForward_IntermissionHasMapVoteEnded);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)
