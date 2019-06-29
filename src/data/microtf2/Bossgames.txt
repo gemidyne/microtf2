@@ -55,7 +55,7 @@
 		"Caption"		"SHOOT THE MOST BARRELS!"
 		"RequiresMultiplePlayers"	"1"
 	}
-	"6"
+	"7"
 	{
 		"Enabled"		"1"
 		"Duration"		"300.0"
