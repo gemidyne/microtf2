@@ -20,3 +20,45 @@ forward void Intermission_StartMapVote();
  *  Return true if the vote has ended, or false if it is ongoing.
  */
 forward bool Intermission_HasMapVoteEnded();
+
+/**
+ * Called when a player has won a minigame.
+ *
+ * @param client - player who won.
+ */
+forward void Event_OnPlayerWinMinigame(int client);
+
+/**
+ * Called when a player has failed a minigame.
+ *
+ * @param client - player who failed.
+ */
+forward void Event_OnPlayerFailedMinigame(int client);
+
+/**
+ * Called when a player has won a bossgame.
+ *
+ * @param client - player who won.
+ */
+forward void Event_OnPlayerWinBossgame(int client);
+
+/**
+ * Called when a player has failed a bossgame.
+ *
+ * @param client - player who failed.
+ */
+forward void Event_OnPlayerFailedBossgame(int client);
+
+/**
+ * Called when a player has won a round.
+ *
+ * @param client - player who won.
+ */
+forward void Event_OnPlayerWinRound(int client);
+
+/**
+ * Called when a player has lost a round.
+ *
+ * @param client - player who failed.
+ */
+forward void Event_OnPlayerLoseRound(int client);
