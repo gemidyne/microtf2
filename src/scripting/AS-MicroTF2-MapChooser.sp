@@ -17,12 +17,12 @@ public Plugin myinfo =
 	url = "https://www.gemidyne.com/"
 }
 
-public void Intermission_StartMapVote()
+public void WarioWare_Intermission_StartMapVote()
 {
 	InitiateMapChooserVote(MapChange_MapEnd);
 }
 
-public bool Intermission_HasMapVoteEnded()
+public bool WarioWare_Intermission_HasMapVoteEnded()
 {
 	return IsVoteInProgress();
 }

@@ -45,6 +45,7 @@
 
 #include "Header.sp"
 #include "Forwards.sp"
+#include "PluginForwards.sp"
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
@@ -1027,9 +1028,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 		if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
-			Call_StartForward(PluginForward_IntermissionStartMapVote);
-   			Call_Finish();
-			
+			PluginForward_StartMapVote();
 			isWaitingForVoteToFinish = true;
 		}
 
@@ -1081,10 +1080,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	bool voteIsInProgress = false;
-
-	Call_StartForward(PluginForward_IntermissionHasMapVoteEnded);
-	Call_Finish(voteIsInProgress);
+	bool voteIsInProgress = PluginForward_HasMapVoteEnded();
 
 	if (voteIsInProgress)
 	{

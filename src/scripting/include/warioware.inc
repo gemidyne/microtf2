@@ -6,59 +6,77 @@
 /**
  * This forward is called when Intermission begins. 
  * 
- * Developers: 
+ * @noparams
+ * @noreturn
+ *
+ * Comments:
  *  You should implement this forward and call your respective map voting plugin to begin the voting process.
  *  WarioWare REDUX will call a separate forward to check if the vote has ended.
  */
-forward void Intermission_StartMapVote();
+forward void WarioWare_Intermission_StartMapVote();
 
 /**
  * This forward is called multiple times during the intermission. 
  * 
- * Developers: 
+ * @noparams
+ * @returns True if vote has ended, false if vote ongoing.
+ *
+ * Comments:
  *  You should implement this forward and return a boolean in regards to if the voting has ended.
  *  Return true if the vote has ended, or false if it is ongoing.
  */
-forward bool Intermission_HasMapVoteEnded();
+forward bool WarioWare_Intermission_HasMapVoteEnded();
 
 /**
- * Called when a player has won a minigame.
+ * This forward will be called on every participating player who wins the minigame.
  *
- * @param client - player who won.
+ * @param client: player who won.
+ * @param minigameId: the minigame id that was won.
+ * @noreturn
  */
-forward void Event_OnPlayerWinMinigame(int client);
+forward void WarioWare_Event_OnPlayerWinMinigame(int client, int minigameId);
 
 /**
- * Called when a player has failed a minigame.
- *
- * @param client - player who failed.
- */
-forward void Event_OnPlayerFailedMinigame(int client);
-
-/**
- * Called when a player has won a bossgame.
- *
- * @param client - player who won.
- */
-forward void Event_OnPlayerWinBossgame(int client);
-
-/**
- * Called when a player has failed a bossgame.
+ * This forward will be called on every participating player who fails the minigame.
  *
  * @param client - player who failed.
+ * @param minigameId: the minigame id that was won.
+ * @noreturn
  */
-forward void Event_OnPlayerFailedBossgame(int client);
+forward void WarioWare_Event_OnPlayerFailedMinigame(int client, int minigameId);
 
 /**
- * Called when a player has won a round.
+ * This forward will be called on every participating player who wins the bossgame.
  *
  * @param client - player who won.
+ * @param bossgameId: the bossgame id that was won.
+ * @noreturn
  */
-forward void Event_OnPlayerWinRound(int client);
+forward void WarioWare_Event_OnPlayerWinBossgame(int client, int bossgameId);
 
 /**
- * Called when a player has lost a round.
+ * This forward will be called on every participating player who fails the bossgame.
  *
  * @param client - player who failed.
+ * @param bossgameId: the bossgame id that was won.
+ * @noreturn
  */
-forward void Event_OnPlayerLoseRound(int client);
+forward void WarioWare_Event_OnPlayerFailedBossgame(int client, int bossgameId);
+
+/**
+ * This forward will be called on every participating player who wins the round.
+ *
+ * @param client: player who won.
+ * @param score: the score the player had.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnPlayerWinRound(int client, int score);
+
+/**
+ * This forward will be called on every participating player who loses the round.
+ *
+ * @param client - player who failed.
+ * @param score: the score the player had.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnPlayerLoseRound(int client, int score);
