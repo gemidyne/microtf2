@@ -557,6 +557,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PrintToChatAll("[DEBUG] %N: Participant, NotWon/Failed", i);
 					#endif
 
+					if (returnedFromBoss)
+					{
+						PluginForward_SendPlayerFailedBossgame(player.ClientId, PreviousBossgameID);
+					}
+					else
+					{
+						PluginForward_SendPlayerFailedMinigame(player.ClientId, PreviousMinigameID);
+					}
+
 					player.SetHealth(1);
 					player.SetGlow(true);
 
@@ -593,6 +602,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				#if defined DEBUG
 				PrintToChatAll("[DEBUG] %N: Participant, Winner", i);
 				#endif
+
+				if (returnedFromBoss)
+				{
+					PluginForward_SendPlayerWinBossgame(player.ClientId, PreviousBossgameID);
+				}
+				else
+				{
+					PluginForward_SendPlayerWinMinigame(player.ClientId, PreviousMinigameID);
+				}
 
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
 				PlayPositiveVoice(i);
@@ -857,6 +875,8 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			{
 				winnerCount++;
 
+				PluginForward_SendPlayerWinRound(i, player.Score);
+
 				player.SetRandomClass();
 				player.Regenerate();
 				player.SetViewModelVisible(true);
@@ -874,6 +894,8 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			}
 			else
 			{
+				PluginForward_SendPlayerLoseRound(i, player.Score);
+
 				player.SetThirdPersonMode(true);
 						
 				TF2_StunPlayer(i, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
