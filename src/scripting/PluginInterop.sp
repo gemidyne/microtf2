@@ -7,6 +7,8 @@
 
 Handle PluginForward_IntermissionStartMapVote;
 Handle PluginForward_IntermissionHasMapVoteEnded;
+Handle PluginForward_EventOnMinigameSelected;
+Handle PluginForward_EventOnBossgameSelected;
 Handle PluginForward_EventOnPlayerWinMinigame;
 Handle PluginForward_EventOnPlayerFailedMinigame;
 Handle PluginForward_EventOnPlayerWinBossgame;
@@ -21,6 +23,8 @@ stock void InitializePluginForwards()
 {
 	PluginForward_IntermissionStartMapVote = CreateGlobalForward("WarioWare_Intermission_StartMapVote", ET_Ignore);
 	PluginForward_IntermissionHasMapVoteEnded = CreateGlobalForward("WarioWare_Intermission_HasMapVoteEnded", ET_Single);
+	PluginForward_EventOnMinigameSelected = CreateGlobalForward("WarioWare_Event_OnMinigameSelected", ET_Ignore, Param_Any);
+	PluginForward_EventOnBossgameSelected = CreateGlobalForward("WarioWare_Event_OnBossgameSelected", ET_Ignore, Param_Any);
 	PluginForward_EventOnPlayerWinMinigame = CreateGlobalForward("WarioWare_Event_OnPlayerWinMinigame", ET_Ignore, Param_Any, Param_Any);
 	PluginForward_EventOnPlayerFailedMinigame = CreateGlobalForward("WarioWare_Event_OnPlayerFailedMinigame", ET_Ignore, Param_Any, Param_Any);
 	PluginForward_EventOnPlayerWinBossgame = CreateGlobalForward("WarioWare_Event_OnPlayerWinBossgame", ET_Ignore, Param_Any, Param_Any);
@@ -58,6 +62,20 @@ public bool PluginForward_HasMapVoteEnded()
 	Call_Finish(voteIsInProgress);
 
 	return voteIsInProgress;
+}
+
+public void PluginForward_SendMinigameSelected(int minigameId)
+{
+	Call_StartForward(PluginForward_EventOnMinigameSelected);
+	Call_PushCell(minigameId);
+	Call_Finish();
+}
+
+public void PluginForward_SendBossgameSelected(int bossgameId)
+{
+	Call_StartForward(PluginForward_EventOnBossgameSelected);
+	Call_PushCell(bossgameId);
+	Call_Finish();
 }
 
 public void PluginForward_SendPlayerWinMinigame(int client, int minigameId)

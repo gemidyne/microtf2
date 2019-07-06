@@ -377,6 +377,8 @@ public void DoSelectMinigame()
 		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", MinigameID, PlayedMinigamePool.Length);
 		#endif
 	}
+
+	PluginForward_SendMinigameSelected(MinigameID);
 }
 
 public void DoSelectBossgame()
@@ -466,6 +468,8 @@ public void DoSelectBossgame()
 	#if defined DEBUG
 	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", BossgameID, PlayedBossgamePool.Length);
 	#endif
+
+	PluginForward_SendBossgameSelected(BossgameID);
 }
 
 public bool TrySpeedChangeEvent()

@@ -43,6 +43,22 @@ forward void WarioWare_Intermission_StartMapVote();
 forward bool WarioWare_Intermission_HasMapVoteEnded();
 
 /**
+ * This forward will be called before a minigame runs, when it is selected.
+ *
+ * @param minigameId: the minigame ID that has been selected.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnMinigameSelected(int minigameId);
+
+/**
+ * This forward will be called before a bossgame runs, when it is selected.
+ *
+ * @param bossgameId: the bossgame ID that has been selected.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnBossgameSelected(int bossgameId);
+
+/**
  * This forward will be called on every participating player who wins the minigame.
  *
  * @param client: player who won.
