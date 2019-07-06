@@ -111,3 +111,11 @@ forward void WarioWare_Event_OnGamemodeChanged(int id);
  * @noreturn
  */
 forward void WarioWare_Event_OnSpeedChange(float speed);
+
+/**
+ * This forward will be called when a new special round is selected.
+ *
+ * @param id: the ID of the special round
+ * @noreturn
+ */
+forward void WarioWare_Event_OnSpecialRoundSelected(int id);
