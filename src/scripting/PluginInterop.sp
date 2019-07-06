@@ -15,6 +15,7 @@ Handle PluginForward_EventOnPlayerWinRound;
 Handle PluginForward_EventOnPlayerLoseRound;
 Handle PluginForward_EventOnGamemodeChanged;
 Handle PluginForward_EventOnSpeedChange;
+Handle PluginForward_EventOnSpecialRoundSelected;
 
 stock void InitializePluginForwards()
 {
@@ -28,6 +29,7 @@ stock void InitializePluginForwards()
 	PluginForward_EventOnPlayerLoseRound = CreateGlobalForward("WarioWare_Event_OnPlayerLoseRound", ET_Ignore, Param_Any, Param_Any);
 	PluginForward_EventOnGamemodeChanged = CreateGlobalForward("WarioWare_Event_OnGamemodeChanged", ET_Ignore, Param_Any);
 	PluginForward_EventOnSpeedChange = CreateGlobalForward("WarioWare_Event_OnSpeedChange", ET_Ignore, Param_Float);
+	PluginForward_EventOnSpecialRoundSelected = CreateGlobalForward("WarioWare_Event_OnSpecialRoundSelected", ET_Ignore, Param_Any);
 }
 
 stock void InitializePluginNatives()
@@ -116,7 +118,14 @@ public void PluginForward_SendGamemodeChanged(int gamemodeId)
 public void PluginForward_SendSpeedChange(float speed)
 {
 	Call_StartForward(PluginForward_EventOnSpeedChange);
-	Call_PushCell(speed);
+	Call_PushFloat(speed);
+	Call_Finish();
+}
+
+public void PluginForward_SendSpecialRoundSelected(int id)
+{
+	Call_StartForward(PluginForward_EventOnSpecialRoundSelected);
+	Call_PushCell(id);
 	Call_Finish();
 }
 

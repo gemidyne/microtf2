@@ -165,6 +165,8 @@ public void SelectNewSpecialRound()
 		ForceNextSpecialRound = false;
 	}
 
+	PluginForward_SendSpecialRoundSelected(SpecialRoundID);
+
 	// Setup the Boss game threshold.
 	if (SpecialRoundBossGameThreshold[SpecialRoundID] > 0)
 	{
