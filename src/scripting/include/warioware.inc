@@ -103,3 +103,11 @@ forward void WarioWare_Event_OnPlayerLoseRound(int client, int score);
  * @noreturn
  */
 forward void WarioWare_Event_OnGamemodeChanged(int id);
+
+/**
+ * This forward will be called when the speed is changing.
+ *
+ * @param speed: new speed of the round.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnSpeedChange(float speed);

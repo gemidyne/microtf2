@@ -737,6 +737,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	}
 
 	SetSpeed();
+	PluginForward_SendSpeedChange(SpeedLevel);
 
 	if (SpecialRoundID == 20)
 	{
