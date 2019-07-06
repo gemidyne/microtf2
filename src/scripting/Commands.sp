@@ -173,12 +173,12 @@ public Action CmdSetNextSpecialRound(int client, int args)
 
 	int id = StringToInt(text);
 
-	if (id >= SPR_MIN && id <= SPR_MAX)
+	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
 	{
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "%sThe next special round has been set as #%i.", PLUGIN_PREFIX, id);
+		ReplyToCommand(client, "%sThe next special round has been set to #%s.", PLUGIN_PREFIX, SpecialRounds[id]);
 	}
 	else
 	{
