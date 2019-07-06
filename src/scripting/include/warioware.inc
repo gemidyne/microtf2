@@ -4,6 +4,21 @@
 #define _warioware_included_
 
 /**
+ * Gets the current maximum rounds to be played before the WarioWare map ends.
+ *
+ * @return maximum number of rounds to be played.
+ */
+native int WarioWare_GetMaxRounds();
+
+/**
+ * Set the maximum rounds to be played before the WarioWare map ends.
+ *
+ * @param maxRounds: new maximum rounds to play
+ * @noreturn
+ */
+native void WarioWare_SetMaxRounds(int maxRounds);
+
+/**
  * This forward is called when Intermission begins. 
  * 
  * @noparams
@@ -80,3 +95,11 @@ forward void WarioWare_Event_OnPlayerWinRound(int client, int score);
  * @noreturn
  */
 forward void WarioWare_Event_OnPlayerLoseRound(int client, int score);
+
+/**
+ * This forward will be called when the active WarioWare gamemode has changed.
+ *
+ * @param id: new gamemode id. if id is 99, then this indicates the special round gamemode.
+ * @noreturn
+ */
+forward void WarioWare_Event_OnGamemodeChanged(int id);

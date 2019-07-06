@@ -216,6 +216,8 @@ public Action CmdSetGamemode(int client, int args)
 		GamemodeID = id;
 
 		ReplyToCommand(client, "[ WarioWare ] Gamemode set to %s.", SystemNames[GamemodeID]);
+
+		PluginForward_SendGamemodeChanged(id);
 	}
 	else
 	{

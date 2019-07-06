@@ -45,7 +45,7 @@
 
 #include "Header.sp"
 #include "Forwards.sp"
-#include "PluginForwards.sp"
+#include "PluginInterop.sp"
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
@@ -80,7 +80,10 @@ public void OnPluginStart()
 
 public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max)
 {
-   RegPluginLibrary("warioware");
+	RegPluginLibrary("warioware");
+	InitializePluginNatives();
+
+	return APLRes_Success;
 }
 
 public void OnPluginEnd()
@@ -1054,8 +1057,6 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			isWaitingForVoteToFinish = true;
 		}
 
-		HideHudGamemodeText = true;
-
 		if (GetRandomInt(0, 2) == 1 || ForceNextSpecialRound)
 		{
 			// Special Round
@@ -1066,6 +1067,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			// Back to normal - use themes.
 			GamemodeID = GetRandomInt(0, MaxGamemodesSelectable - 1);
 		}
+
+		PluginForward_SendGamemodeChanged(GamemodeID);
+		HideHudGamemodeText = true;
 
 		if (isWaitingForVoteToFinish)
 		{

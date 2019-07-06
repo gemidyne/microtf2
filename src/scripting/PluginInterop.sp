@@ -1,5 +1,5 @@
 /**
- * MicroTF2 - PluginForwards.sp
+ * MicroTF2 - PluginInterop.sp
  * 
  * Implements functionality for other SourceMod plugins to interact
  * with the gamemode.
@@ -13,13 +13,10 @@ Handle PluginForward_EventOnPlayerWinBossgame;
 Handle PluginForward_EventOnPlayerFailedBossgame;
 Handle PluginForward_EventOnPlayerWinRound;
 Handle PluginForward_EventOnPlayerLoseRound;
+Handle PluginForward_EventOnGamemodeChanged;
 
 stock void InitializePluginForwards()
 {
-	#if defined LOGGING_STARTUP
-	LogMessage("Initializing Plugin Forwards...");
-	#endif
-
 	PluginForward_IntermissionStartMapVote = CreateGlobalForward("WarioWare_Intermission_StartMapVote", ET_Ignore);
 	PluginForward_IntermissionHasMapVoteEnded = CreateGlobalForward("WarioWare_Intermission_HasMapVoteEnded", ET_Single);
 	PluginForward_EventOnPlayerWinMinigame = CreateGlobalForward("WarioWare_Event_OnPlayerWinMinigame", ET_Ignore, Param_Any, Param_Any);
@@ -28,6 +25,13 @@ stock void InitializePluginForwards()
 	PluginForward_EventOnPlayerFailedBossgame = CreateGlobalForward("WarioWare_Event_OnPlayerFailedBossgame", ET_Ignore, Param_Any, Param_Any);
 	PluginForward_EventOnPlayerWinRound = CreateGlobalForward("WarioWare_Event_OnPlayerWinRound", ET_Ignore, Param_Any, Param_Any);
 	PluginForward_EventOnPlayerLoseRound = CreateGlobalForward("WarioWare_Event_OnPlayerLoseRound", ET_Ignore, Param_Any, Param_Any);
+	PluginForward_EventOnGamemodeChanged = CreateGlobalForward("WarioWare_Event_OnGamemodeChanged", ET_Ignore, Param_Any);
+}
+
+stock void InitializePluginNatives()
+{
+	CreateNative("WarioWare_GetMaxRounds", Native_WarioWare_GetMaxRounds);
+	CreateNative("WarioWare_SetMaxRounds", Native_WarioWare_SetMaxRounds);
 }
 
 stock void RemovePluginForwardsFromMemory()
@@ -98,4 +102,25 @@ public void PluginForward_SendPlayerLoseRound(int client, int score)
 	Call_PushCell(client);
 	Call_PushCell(score);
 	Call_Finish();
+}
+
+public void PluginForward_SendGamemodeChanged(int gamemodeId)
+{
+	Call_StartForward(PluginForward_EventOnGamemodeChanged);
+	Call_PushCell(gamemodeId);
+	Call_Finish();
+}
+
+public int Native_WarioWare_GetMaxRounds(Handle plugin, int numParams)
+{
+	return MaxRounds;
+}
+
+public int Native_WarioWare_SetMaxRounds(Handle plugin, int numParams)
+{
+	int value = GetNativeCell(1);
+
+	SetConVarInt(ConVar_MTF2MaxRounds, value);
+
+	return 0;
 }
