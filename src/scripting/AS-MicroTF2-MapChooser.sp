@@ -24,5 +24,5 @@ public void WarioWare_Intermission_StartMapVote()
 
 public bool WarioWare_Intermission_HasMapVoteEnded()
 {
-	return IsVoteInProgress();
+	return !IsVoteInProgress();
 }

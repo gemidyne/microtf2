@@ -1107,9 +1107,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	bool voteIsInProgress = PluginForward_HasMapVoteEnded();
+	bool voteHasEnded = PluginForward_HasMapVoteEnded();
 
-	if (voteIsInProgress)
+	if (!voteHasEnded)
 	{
 		CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
