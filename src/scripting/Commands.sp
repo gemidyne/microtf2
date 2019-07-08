@@ -34,7 +34,7 @@ stock void InitializeCommands()
 	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers the boss round.");
 
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
-	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count.", 0, true, 0.0, true, 1.0);
+	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
 
 	// Debug cvars/cmds
 	ConVar_MTF2ForceMinigame = CreateConVar("mtf2_debug_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
@@ -173,12 +173,12 @@ public Action CmdSetNextSpecialRound(int client, int args)
 
 	int id = StringToInt(text);
 
-	if (id >= SPR_MIN && id <= SPR_MAX)
+	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
 	{
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "%sThe next special round has been set as #%i.", PLUGIN_PREFIX, id);
+		ReplyToCommand(client, "%sThe next special round has been set to #%s.", PLUGIN_PREFIX, SpecialRounds[id]);
 	}
 	else
 	{
@@ -216,6 +216,8 @@ public Action CmdSetGamemode(int client, int args)
 		GamemodeID = id;
 
 		ReplyToCommand(client, "[ WarioWare ] Gamemode set to %s.", SystemNames[GamemodeID]);
+
+		PluginForward_SendGamemodeChanged(id);
 	}
 	else
 	{

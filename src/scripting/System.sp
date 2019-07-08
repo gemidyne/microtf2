@@ -84,6 +84,7 @@ stock void InitializeSystem()
 	
 	HookEvents();
 	InitializeForwards();
+	InitializePluginForwards();
 	InitialiseHud();
 	LoadOffsets();
 	InitializeCommands();

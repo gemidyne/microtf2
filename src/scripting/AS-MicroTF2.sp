@@ -12,6 +12,7 @@
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
+#include <warioware>
 
 #undef REQUIRE_PLUGIN
 
@@ -39,11 +40,12 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "2019.2"
+#define PLUGIN_VERSION "2019.2.1.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
 #include "Forwards.sp"
+#include "PluginInterop.sp"
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
@@ -64,7 +66,7 @@
 
 public Plugin myinfo = 
 {
-	name = "WarioWare",
+	name = "WarioWare REDUX",
 	author = "Gemidyne Softworks / Team WarioWare",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
@@ -74,6 +76,14 @@ public Plugin myinfo =
 public void OnPluginStart()
 {
 	InitializeSystem();
+}
+
+public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max)
+{
+	RegPluginLibrary("warioware");
+	InitializePluginNatives();
+
+	return APLRes_Success;
 }
 
 public void OnPluginEnd()
@@ -550,6 +560,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PrintToChatAll("[DEBUG] %N: Participant, NotWon/Failed", i);
 					#endif
 
+					if (returnedFromBoss)
+					{
+						PluginForward_SendPlayerFailedBossgame(player.ClientId, PreviousBossgameID);
+					}
+					else
+					{
+						PluginForward_SendPlayerFailedMinigame(player.ClientId, PreviousMinigameID);
+					}
+
 					player.SetHealth(1);
 					player.SetGlow(true);
 
@@ -586,6 +605,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				#if defined DEBUG
 				PrintToChatAll("[DEBUG] %N: Participant, Winner", i);
 				#endif
+
+				if (returnedFromBoss)
+				{
+					PluginForward_SendPlayerWinBossgame(player.ClientId, PreviousBossgameID);
+				}
+				else
+				{
+					PluginForward_SendPlayerWinMinigame(player.ClientId, PreviousMinigameID);
+				}
 
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
 				PlayPositiveVoice(i);
@@ -709,6 +737,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	}
 
 	SetSpeed();
+	PluginForward_SendSpeedChange(SpeedLevel);
 
 	if (SpecialRoundID == 20)
 	{
@@ -850,6 +879,8 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			{
 				winnerCount++;
 
+				PluginForward_SendPlayerWinRound(i, player.Score);
+
 				player.SetRandomClass();
 				player.Regenerate();
 				player.SetViewModelVisible(true);
@@ -867,6 +898,8 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			}
 			else
 			{
+				PluginForward_SendPlayerLoseRound(i, player.Score);
+
 				player.SetThirdPersonMode(true);
 						
 				TF2_StunPlayer(i, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
@@ -1021,17 +1054,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 		if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
-			#if defined UMC_MAPCHOOSER
-			// This should be using UMC_StartVote native, but that requires too many parameters... TODO: update this later on 
-			ServerCommand("sm_umc_mapvote 2");
-			#else
-			InitiateMapChooserVote(MapChange_MapEnd);
-			#endif
-			
+			PluginForward_StartMapVote();
 			isWaitingForVoteToFinish = true;
 		}
-
-		HideHudGamemodeText = true;
 
 		if (GetRandomInt(0, 2) == 1 || ForceNextSpecialRound)
 		{
@@ -1043,6 +1068,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			// Back to normal - use themes.
 			GamemodeID = GetRandomInt(0, MaxGamemodesSelectable - 1);
 		}
+
+		PluginForward_SendGamemodeChanged(GamemodeID);
+		HideHudGamemodeText = true;
 
 		if (isWaitingForVoteToFinish)
 		{
@@ -1079,13 +1107,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	#if defined UMC_MAPCHOOSER
-	bool voteIsInProgress = UMC_IsVoteInProgress("core");
-	#else
-	bool voteIsInProgress = IsVoteInProgress();
-	#endif
+	bool voteHasEnded = PluginForward_HasMapVoteEnded();
 
-	if (voteIsInProgress)
+	if (!voteHasEnded)
 	{
 		CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
