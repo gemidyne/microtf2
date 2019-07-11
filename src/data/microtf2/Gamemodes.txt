@@ -6,12 +6,12 @@
 		"FriendlyName"			"Wario"
 		"Selectable"			"1"
 
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/wario/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/wario/boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/wario/speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/wario/gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/wario/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/wario/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/wario/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/wario/boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/wario/speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/wario/gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/wario/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/wario/winner.mp3"
 	}
 	"1"
 	{
@@ -19,12 +19,12 @@
 		"FriendlyName"			"Mona"
 		"Selectable"			"1"
 
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/mona/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/special/boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/special/speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/special/gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/mona/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/mona/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/mona/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/mona/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/mona/winner.mp3"
 	}
 	"2"
 	{
@@ -32,12 +32,12 @@
 		"FriendlyName"			"Orbulon"
 		"Selectable"			"1"
 		
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/orbulon/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/orbulon/boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/orbulon/speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/orbulon/gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/orbulon/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/orbulon/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/orbulon/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/orbulon/boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/orbulon/speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/orbulon/gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/orbulon/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/orbulon/winner.mp3"
 	}
 	"3"
 	{
@@ -45,12 +45,12 @@
 		"FriendlyName"			"Jimmy T"
 		"Selectable"			"1"
 		
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/jimmyt/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/t-boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/t-speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/t-gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/jimmyt/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/jimmyt/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/jimmyt/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/jimmyt/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/jimmyt/winner.mp3"
 	}
 	"4"
 	{
@@ -58,12 +58,12 @@
 		"FriendlyName"			"Wario"
 		"Selectable"			"1"
 		
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/twario/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/t-boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/t-speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/t-gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/twario/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/twario/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/twario/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twario/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twario/winner.mp3"
 	}
 	"5"
 	{
@@ -71,22 +71,22 @@
 		"FriendlyName"			"WarioMan"
 		"Selectable"			"1"
 		
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/twarioman/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/t-boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/t-speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/t-gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/twarioman/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/twarioman/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/twarioman/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twarioman/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twarioman/winner.mp3"
 	}
 	"99"
 	{
 		// Special Rounds - Elephant Buildings (WW SmoothMoves)
 		"FriendlyName"			"Special Round"
-		"SysMusic_PreMinigame"		"stsv/microtf2/sys/themes/special/preminigame.mp3"
-		"SysMusic_BossTime"		"stsv/microtf2/sys/themes/special/boss.mp3"
-		"SysMusic_SpeedUp"		"stsv/microtf2/sys/themes/special/speed.mp3"
-		"SysMusic_GameOver"		"stsv/microtf2/sys/themes/special/gameover.mp3"
-		"SysMusic_Failure"		"stsv/microtf2/sys/themes/special/failure.mp3"
-		"SysMusic_Winner"		"stsv/microtf2/sys/themes/special/winner.mp3"
+		"SysMusic_PreMinigame"		"gemidyne/warioware/system/bgm/themes/special/preminigame.mp3"
+		"SysMusic_BossTime"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+		"SysMusic_SpeedUp"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+		"SysMusic_GameOver"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/special/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/special/winner.mp3"
 	}
 }
