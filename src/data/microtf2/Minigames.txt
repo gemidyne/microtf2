@@ -3,14 +3,14 @@
 	"1"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/1.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/1.mp3"
 		"Caption"		"GET TO THE END!"
 		"EntryPoint"		"Minigame1_EntryPoint"
 	}
 	"2"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/2.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/2.mp3"
 		"Caption"		"KILL AN ENEMY!"
 		"EntryPoint"		"Minigame2_EntryPoint"
 		"BlockedSpecialRounds" "12"
@@ -19,7 +19,7 @@
 	"3"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/3.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/3.mp3"
 		"Caption"		"BREAK THE BARRELS!"
 		"EntryPoint"		"Minigame3_EntryPoint"
 		"RequiresMultiplePlayers" "1"
@@ -27,7 +27,7 @@
 	"4"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/4.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/4.mp3"
 		"Caption"		"AIRBLAST AND STAY ALIVE!"
 		"EntryPoint"		"Minigame4_EntryPoint"
 		"BlockedSpecialRounds" "12"
@@ -36,14 +36,14 @@
 	"5"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/5.mp3"
 		"Caption"		"STICKY JUMP!"
 		"EntryPoint"		"Minigame5_EntryPoint"
 	}
 	"6"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/6.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/6.mp3"
 		"Caption"		"SAY THE WORD!"
 		"CaptionIsDynamic"	"1"
 		"EntryPoint"		"Minigame6_EntryPoint"
@@ -52,14 +52,14 @@
 	"7"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/7.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/7.mp3"
 		"Caption"		"ROCKET JUMP!"
 		"EntryPoint"		"Minigame7_EntryPoint"
 	}
 	"8"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/8.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/8.mp3"
 		"Caption"		"ANSWER THE QUESTION!"
 		"CaptionIsDynamic"	"1"
 		"EntryPoint"		"Minigame8_EntryPoint"
@@ -68,7 +68,7 @@
 	"9"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/9.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/9.mp3"
 		"CaptionIsDynamic"	"1"
 		"Caption"		"SIMON SAYS!" // This will be changed at runtime.
 		"DynamicCaptionMethod"	"Minigame9_GetDynamicCaption"
@@ -77,7 +77,7 @@
 	"10"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/10.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/10.mp3"
 		"CaptionIsDynamic"	"1"
 		"Caption"		"AVOID THE KAMIKAZE / KILL AS MANY AS YOU CAN!" // This will be changed at runtime
 		"DynamicCaptionMethod"	"Minigame10_GetDynamicCaption"
@@ -88,7 +88,7 @@
 	"11"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/11.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/11.mp3"
 		"CaptionIsDynamic"	"1"
 		"Caption"		"KEEP MOVING! / DON'T STOP MOVING!" // This will be changed.
 		"DynamicCaptionMethod"	"Minigame11_GetDynamicCaption"
@@ -97,7 +97,7 @@
 	"12"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/12.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/platforms.mp3"
 		"Caption"		"GET ON A PLATFORM!"
 		"EntryPoint"		"Minigame12_EntryPoint"
 		"BlockedSpecialRounds" "3"
@@ -105,21 +105,21 @@
 	"13"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/15.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/spycrab.mp3"
 		"Caption"		"SPYCRAB!"
 		"EntryPoint"		"Minigame13_EntryPoint"
 	}
 	"14"
 	{
 		"Enabled"		"0"
-		"BackgroundMusic"	"stsv/microtf2/minigame/14.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/jetpack.mp3"
 		"Caption"		"GET INTO THE WATER!"
 		"EntryPoint"		"Minigame14_EntryPoint"
 	}
 	"15"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/15.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/spycrab.mp3"
 		"Caption"		"BUILD SOMETHING!" // This will be changed.
 		"CaptionIsDynamic"	"1"
 		"DynamicCaptionMethod"	"Minigame15_GetDynamicCaption"
@@ -128,7 +128,7 @@
 	"16"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/16.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/jarate.mp3"
 		"Caption"		"JARATE AN ENEMY!"
 		"EntryPoint"		"Minigame16_EntryPoint"
 		"BlockedSpecialRounds" "12"
@@ -137,7 +137,7 @@
 	"17"
 	{
 		"Enabled"		"0"
-		"BackgroundMusic"	"stsv/microtf2/minigame/17.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/hitorgethit.mp3"
 		"CaptionIsDynamic"	"1"
 		"Caption"		"HIT A HEAVY / GET HIT BY A MEDIC!" // Changed at runtime
 		"DynamicCaptionMethod"	"Minigame17_GetDynamicCaption"
@@ -148,7 +148,7 @@
 	"18"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/18.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/hitthetarget.mp3"
 		"Caption"		"HIT THE TARGET!"
 		"EntryPoint"		"Minigame18_EntryPoint"
 		"BlockedSpecialRounds" "11"
@@ -156,7 +156,7 @@
 	"19"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/19.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/changeclass.mp3"
 		"Caption"		"CHANGE CLASS!"
 		"CaptionIsDynamic"	"1"
 		"DynamicCaptionMethod"	"Minigame19_GetDynamicCaption"
@@ -166,7 +166,7 @@
 	"20"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/20.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/20.mp3"
 		"CaptionIsDynamic"	"1"
 		"Caption"		"MUNCH / DRINK!" // Changed at runtime
 		"DynamicCaptionMethod"	"Minigame20_GetDynamicCaption"
@@ -175,7 +175,7 @@
 	"21"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/21.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/stunanenemy.mp3"
 		"Caption"		"STUN AN ENEMY!"
 		"EntryPoint"		"Minigame21_EntryPoint"
 		"BlockedSpecialRounds" "12"
@@ -184,21 +184,21 @@
 	"22"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/7.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/7.mp3"
 		"Caption"		"STAY ON THE GROUND!"
 		"EntryPoint"		"Minigame22_EntryPoint"
 	}
 	"23"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/23.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/23.mp3"
 		"Caption"		"DOUBLE JUMP!"
 		"EntryPoint"		"Minigame23_EntryPoint"
 	}
 	"24"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/5.mp3"
 		"Caption"		"NEEDLEJUMP!"
 		"EntryPoint"		"Minigame24_EntryPoint"
 		"BlockedOnSpeedsHigherThan"	"1.5"
@@ -206,7 +206,7 @@
 	"25"
 	{
 		"Enabled"			"1"
-		"BackgroundMusic"	"stsv/microtf2/minigame/5.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/jetpack.mp3"
 		"Caption"			"JETPACK!"
 		"EntryPoint"		"Minigame25_EntryPoint"
 	}
