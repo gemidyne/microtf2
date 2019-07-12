@@ -118,7 +118,7 @@ public void Bossgame1_BossCheck()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsAlive && IsPlayerParticipant[i])
+			if (player.IsValid && player.IsAlive && player.IsParticipating)
 			{
 				alivePlayers++;
 
