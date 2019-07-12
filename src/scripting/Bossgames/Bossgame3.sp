@@ -160,7 +160,7 @@ public void Bossgame3_OnBossStopAttempt()
 	{
 		Player player = new Player(i);
 
-		if (player.IsValid && player.IsAlive)
+		if (player.IsValid && player.IsAlive && player.IsParticipating)
 		{
 			TFTeam team = player.Team;
 

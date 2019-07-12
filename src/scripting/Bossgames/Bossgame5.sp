@@ -130,7 +130,7 @@ public void Bossgame5_OnBossStopAttempt()
 	{
 		Player player = new Player(i);
 
-		if (player.IsInGame && player.IsAlive)
+		if (player.IsInGame && player.IsAlive && player.IsParticipating)
 		{
 			alivePlayers++;
 
