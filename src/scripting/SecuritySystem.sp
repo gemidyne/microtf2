@@ -32,6 +32,7 @@ public void InitialiseSecuritySystem()
 	AddCommandListener(Cmd_BlockCompletely, "noclip");
 	AddCommandListener(Cmd_BlockCompletely, "currency_give");
 	AddCommandListener(Cmd_BlockCompletely, "ent_remove");
+	AddCommandListener(Cmd_BlockCompletely, "ent_remove_all");
 
 	SecuritySystem_HookCheatCommands();
 
