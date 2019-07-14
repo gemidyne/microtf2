@@ -69,7 +69,7 @@ public Action Command_MinigameSixSay(int client, int args)
 			{
 				ClientWonMinigame(client);
 
-				if (!Minigame6_HasBeenAnswered)
+				if (!Minigame6_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
 				{
 					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}answered first! (Bonus Point!)", PLUGIN_PREFIX, client);
 
