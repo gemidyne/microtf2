@@ -6,42 +6,6 @@
 
 Handle AllowedCheats;
 
-/* Entities that are not allowed to be created with ent_create or give */
-char ForbiddenEntities[][] = 
-{ 
-	"point_servercommand",
-	"point_clientcommand",
-	"logic_timer",
-	"logic_relay",
-	"logic_auto",
-	"logic_autosave",
-	"logic_branch",
-	"logic_case",
-	"logic_collision_pair", 
-	"logic_compareto",
-	"logic_lineto",
-	"logic_measure_movement",
-	"logic_multicompare",
-	"logic_navigation" 
-};
-
-/* Strings that are not allowed to be present in ent_fire commands */
-char ForbiddenCommands[][] = 
-{
-	"quit",
-	"quti",
-	"restart",
-	"sm",
-	"admin",
-	"ma_",
-	"rcon",
-	"sv_",
-	"mp_",
-	"meta",
-	"alias"
-};
-
-/* ConVars that clients are not permitted to have */
 char ForbiddenClientConVars[][] = 
 {
 	"sourcemod_version",
@@ -58,9 +22,17 @@ bool SecuritySystem_IgnoreServerCmdCheckOnce = false;
 
 public void InitialiseSecuritySystem()
 {
-	AddCommandListener(Cmd_EntCreate, "ent_create");
-	AddCommandListener(Cmd_EntCreate, "give");
-	AddCommandListener(Cmd_EntFire, "ent_fire");
+	AddCommandListener(Cmd_BlockCompletely, "ent_create");
+	AddCommandListener(Cmd_BlockCompletely, "give");
+	AddCommandListener(Cmd_BlockCompletely, "ent_fire");
+	AddCommandListener(Cmd_BlockCompletely, "addcond");
+	AddCommandListener(Cmd_BlockCompletely, "buddha");
+	AddCommandListener(Cmd_BlockCompletely, "bot");
+	AddCommandListener(Cmd_BlockCompletely, "hurtme");
+	AddCommandListener(Cmd_BlockCompletely, "noclip");
+	AddCommandListener(Cmd_BlockCompletely, "currency_give");
+	AddCommandListener(Cmd_BlockCompletely, "ent_remove");
+	AddCommandListener(Cmd_BlockCompletely, "ent_remove_all");
 
 	SecuritySystem_HookCheatCommands();
 
@@ -199,38 +171,10 @@ public Action SecuritySystem_CheckPlayerMoveType(Handle timer, int value)
 	return Plugin_Continue;
 }
 
-public Action Cmd_EntCreate(int client, const char[] command, int argc)
+public Action Cmd_BlockCompletely(int client, const char[] command, int argc)
 {
-	char entname[128];
-	GetCmdArg(1, entname, sizeof(entname));
-
-	for (int i = 0; i < sizeof(ForbiddenEntities); i++)
-	{
-		if (StrEqual(entname, ForbiddenEntities[i], false))
-		{
-			LogMessage("Blocking ent_create from '%L', for containing %s", client, ForbiddenEntities[i]);
-			return Plugin_Handled;
-		}
-	}
-
-	return Plugin_Continue;
-}
-
-public Action Cmd_EntFire(int client, const char[] command, int argc)
-{
-	char argstring[1024];
-	GetCmdArgString(argstring, sizeof(argstring));
-
-	for (int i = 0; i < sizeof(ForbiddenCommands); i++)
-	{
-		if (StrContains(argstring, ForbiddenCommands[i], false) != -1)
-		{
-			LogMessage("Blocking ent_fire from '%L': %s", client, argstring);
-			return Plugin_Handled;
-		}
-	}
-
-	return Plugin_Continue;
+	LogMessage("Blocking cheat command from %N: %s", client, command);
+	return Plugin_Handled;
 }
 
 stock void AddReplicatedFlag(const char[] convar, bool isCommand)
@@ -265,7 +209,7 @@ public Action SecuritySystem_CheatCmdExec(int client, const char[] command, int 
 		}
 		else
 		{
-			KickClient(client, "Attempted to use a Cheat Command.");
+			KickClient(client, "Attempted to use a Cheat Command");
 			return Plugin_Handled;
 		}
 	}

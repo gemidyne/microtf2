@@ -118,7 +118,7 @@ public Action Command_Minigame8Say(int client, int args)
 			{
 				ClientWonMinigame(client);
 
-				if (!Minigame8_HasBeenAnswered)
+				if (!Minigame8_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
 				{
 					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}got the correct answer first! (Bonus Point!)", PLUGIN_PREFIX, client);
 

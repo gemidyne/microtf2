@@ -115,6 +115,8 @@ forward void WarioWare_Event_OnPlayerLoseRound(int client, int score);
 /**
  * This forward will be called when the active WarioWare gamemode has changed.
  *
+ * Refer to data/microtf2/Gamemodes.txt for IDs.
+ *
  * @param id: new gamemode id. if id is 99, then this indicates the special round gamemode.
  * @noreturn
  */
@@ -123,6 +125,9 @@ forward void WarioWare_Event_OnGamemodeChanged(int id);
 /**
  * This forward will be called when the speed is changing.
  *
+ * The maximum speed possible is 2.5
+ * The minimum speed possible is 0.4
+ *
  * @param speed: new speed of the round.
  * @noreturn
  */
@@ -130,6 +135,9 @@ forward void WarioWare_Event_OnSpeedChange(float speed);
 
 /**
  * This forward will be called when a new special round is selected.
+ *
+ * Refer to the data/microtf2/SpecialRounds.txt file for IDs. 
+ * NOTE: these are currently zero-based unlike minigame and bossgame IDs.
  *
  * @param id: the ID of the special round
  * @noreturn
