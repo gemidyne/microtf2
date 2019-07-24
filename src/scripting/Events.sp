@@ -642,7 +642,6 @@ public void OnClientPutInServer(int client)
 	}
 
 	SDKHook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
-	SDKHook(client, SDKHook_Touch, Special_NoTouch);
 	SecuritySystem_OnClientPutInServer(client);
 }
 
@@ -661,7 +660,6 @@ public void OnClientDisconnect(int client)
 		player.Status = PlayerStatus_NotWon;
 
 		SDKUnhook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
-		SDKUnhook(client, SDKHook_Touch, Special_NoTouch);
 	}
 }
 

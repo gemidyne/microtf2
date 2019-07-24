@@ -15,6 +15,11 @@
 		"#format"	"{1:i}"
 		"en"		"Minigames: {1}"
 	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"	"{1:i}"
+		"en"		"Team Score: {1}"
+	}
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"
@@ -79,6 +84,21 @@
 	{
 		"#format"	"{1:s},{2:s},{3:s},{4:i}"
 		"en"		"{1}{2} {3} {green}with {4} points!"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1}The winning team is the RED team with {2} points!"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1}The winning team is the BLU team with {2} points!"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"	"{1:s}"
+		"en"		"{1}Stalemate! Both teams have the same points!"
 	}
 	"Intermission_Header"
 	{

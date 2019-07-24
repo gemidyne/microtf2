@@ -100,6 +100,23 @@ stock int GetLowestScore()
 	return threshold;
 }
 
+stock int CalculateTeamScore(TFTeam team)
+{
+	int threshold = 0;
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating && player.Team == team)
+		{
+			threshold += player.Score;
+		}
+	}
+
+	return threshold;
+}
+
 stock void EndGame()
 {
 	SetConVarInt(FindConVar("mp_timelimit"), 1);
@@ -179,6 +196,9 @@ stock void ResetGamemode()
 	IsOnlyBlockingDamageByPlayers = false;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
+
+	SetTeamScore(view_as<int>(TFTeam_Red), 0);
+	SetTeamScore(view_as<int>(TFTeam_Blue), 0);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{

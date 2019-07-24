@@ -109,13 +109,24 @@ public void DisplayScoreHud(Player player, char buffer[128])
 
     char scoreText[32];
 
-    if (SpecialRoundID == 17)
+    switch (SpecialRoundID)
     {
-        Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", player.ClientId, player.Score);
-    }
-    else
-    {
-        Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", player.ClientId, player.Score);
+        case 11:
+        {
+            int score = GetTeamScore(view_as<int>(player.Team));
+
+            Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_TeamScore", player.ClientId, score);
+        }
+
+        case 17: 
+        {
+            Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Minigames", player.ClientId, player.Score);
+        }
+
+        default: 
+        {
+            Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Default", player.ClientId, player.Score);
+        }
     }
 
     if (SpecialRoundID == 19)

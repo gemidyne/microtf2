@@ -30,7 +30,7 @@
 	"5"
 	{
 		"Name"		"Game Time Attack"
-		"Description"	"The round keeps speeding up after every minigame!"
+		"Description"	"The round keeps speeding up after every microgame!"
 		"DisableSpeedEvents"	"1"
 	}
 	"6"
@@ -49,7 +49,7 @@
 	"8"
 	{
 		"Name"		"Maths Only"
-		"Description"	"Hope you're good with maths - because that's the only minigame that will be played this round!"
+		"Description"	"Hope you're good with maths - because that's the only microgame that will be played this round!"
 		"BossGameThreshold"	"10"
 		"DisableSpeedEvents"	"1"
 	}
@@ -66,8 +66,8 @@
 	}
 	"11"
 	{
-		"Name"		"Don't Touch"
-		"Description"	"Don't touch enemy players or you will fail!"
+		"Name"		"Team Battle"
+		"Description"	"If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"12"
@@ -95,29 +95,29 @@
 	"16"
 	{
 		"Name"		"Score Randomizer"
-		"Description"	"If you win a minigame, you will be rewarded a random amount of points!"
+		"Description"	"If you win a microgames, you will be rewarded a random amount of points!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"17"
 	{
 		"Name"		"Sudden Death"
-		"Description"	"If you lose a minigame, you will be knocked out! Last player who hasn't failed wins the round!"
+		"Description"	"If you lose a microgames, you will be knocked out! Last player who hasn't failed wins the round!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"18"
 	{
 		"Name"		"All In"
-		"Description"	"If you lose a minigame, you will lose ALL your points!"
+		"Description"	"If you lose a microgames, you will lose ALL your points!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"19"
 	{
 		"Name"		"Reversed Text"
-		"Description"	"!sdrawkcab era snoitcurtsni emaginiM"
+		"Description"	"!sdrawkcab era snoitcurtsni emagorciM"
 	}
 	"20"
 	{
 		"Name"		"Non Stop"
-		"Description"	"There's no break in between minigames - be ready!"
+		"Description"	"There's no break in between microgames - be ready!"
 	}
 }

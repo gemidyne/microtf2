@@ -655,6 +655,17 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 	}
 
+	if (SpecialRoundID == 11)
+	{
+		SetTeamScore(view_as<int>(TFTeam_Red), CalculateTeamScore(TFTeam_Red));
+		SetTeamScore(view_as<int>(TFTeam_Blue), CalculateTeamScore(TFTeam_Blue));
+	}
+	else
+	{
+		SetTeamScore(view_as<int>(TFTeam_Red), 0);
+		SetTeamScore(view_as<int>(TFTeam_Blue), 0);
+	}
+
 	if (SpecialRoundID == 17)
 	{
 		int participants = 0;
@@ -835,6 +846,18 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	char names[1024];
 	bool isWinner = false;
 
+	int redTeamScore = CalculateTeamScore(TFTeam_Red);
+	int blueTeamScore = CalculateTeamScore(TFTeam_Blue);
+	TFTeam overallWinningTeam;
+	bool teamsHaveSameScore = redTeamScore == blueTeamScore;
+
+	if (SpecialRoundID == 11 && !teamsHaveSameScore)
+	{
+		overallWinningTeam = redTeamScore > blueTeamScore
+			? TFTeam_Red
+			: TFTeam_Blue;
+	}
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -854,19 +877,24 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	
 			switch (SpecialRoundID)
 			{
+				case 9:
+				{
+					isWinner = player.Score == score;
+				}
+
+				case 11:
+				{
+					isWinner = player.Team == overallWinningTeam;
+				}
+
 				case 17:
 				{
 					isWinner = player.IsParticipating;
 				}
 
-				case 9:
-				{
-					isWinner = (player.Score == score);
-				}
-
 				default:
 				{
-					isWinner = (player.Score >= score);
+					isWinner = player.Score >= score;
 				}
 			}
 
@@ -940,6 +968,24 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 		{
 			if (IsClientInGame(i) && !IsFakeClient(i))
 			{
+				if (SpecialRoundID == 11)
+				{
+					if (teamsHaveSameScore)
+					{
+						CPrintToChat(i, "%T", "GameOver_WinningTeam_Stalemate", i, PLUGIN_PREFIX);
+					}
+					else if (overallWinningTeam == TFTeam_Red)
+					{
+						CPrintToChat(i, "%T", "GameOver_WinningTeam_Red", i, PLUGIN_PREFIX, redTeamScore);
+					}
+					else if (overallWinningTeam == TFTeam_Blue)
+					{
+						CPrintToChat(i, "%T", "GameOver_WinningTeam_Blue", i, PLUGIN_PREFIX, blueTeamScore);
+					}
+
+					continue;
+				}
+
 				if (winnerCount == 1)
 				{
 					Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixSingle", i);
@@ -1019,6 +1065,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			TF2_RemoveCondition(i, TFCond_Dazed);
 		}
 	}
+
+	SetTeamScore(view_as<int>(TFTeam_Red), 0);
+	SetTeamScore(view_as<int>(TFTeam_Blue), 0);
 
 	BossgameID = 0;
 	MinigameID = 0;
