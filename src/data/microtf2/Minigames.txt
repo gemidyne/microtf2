@@ -82,7 +82,7 @@
 		"Caption"		"AVOID THE KAMIKAZE / KILL AS MANY AS YOU CAN!" // This will be changed at runtime
 		"DynamicCaptionMethod"	"Minigame10_GetDynamicCaption"
 		"EntryPoint"		"Minigame10_EntryPoint"
-		"BlockedSpecialRounds" "12"
+		"BlockedSpecialRounds" "11,12"
 		"RequiresMultiplePlayers" "1"
 	}
 	"11"
@@ -142,7 +142,7 @@
 		"Caption"		"HIT A HEAVY / GET HIT BY A MEDIC!" // Changed at runtime
 		"DynamicCaptionMethod"	"Minigame17_GetDynamicCaption"
 		"EntryPoint"		"Minigame17_EntryPoint"
-		"BlockedSpecialRounds" "12"
+		"BlockedSpecialRounds" "11,12"
 		"RequiresMultiplePlayers" "1"
 	}
 	"18"
