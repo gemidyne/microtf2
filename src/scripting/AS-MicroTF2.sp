@@ -884,7 +884,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 				case 11:
 				{
-					isWinner = player.Team == overallWinningTeam;
+					isWinner = teamsHaveSameScore || player.Team == overallWinningTeam;
 				}
 
 				case 17:
