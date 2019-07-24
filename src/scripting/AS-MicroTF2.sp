@@ -218,7 +218,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 			ResetWeapon(i, false);
 
-			player.SetCollisionsEnabled(true);
+			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
 			player.SetGlow(false);
@@ -634,7 +634,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			}
 
 			player.Status = PlayerStatus_NotWon;
-			player.SetCollisionsEnabled(true);
+			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 
 			ResetWeapon(i, false);
@@ -872,7 +872,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 			player.IsWinner = isWinner;
 			player.SetGodMode(isWinner);
-			player.SetCollisionsEnabled(true);
+			player.SetCollisionsEnabled(false);
 			player.IsParticipating = true;
 
 			if (isWinner)
