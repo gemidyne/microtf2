@@ -38,9 +38,11 @@ assets/map/generated/
 assets/util/utilities/
 
 # Ignore other local files
+.vscode/
 assets/marketing
 assets/newhud
 assets/newsysbgm
+assets/map/prototyping
 src/scripting/version
 lore.txt
 rel/
