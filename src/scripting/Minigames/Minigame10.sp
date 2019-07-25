@@ -51,6 +51,8 @@ public void Minigame10_OnMinigameSelectedPre()
 	if (MinigameID == 10)
 	{
 		Minigame10_Timebomb_Init();
+
+		IsBlockingDeathCommands = true;
 	}
 }
 
