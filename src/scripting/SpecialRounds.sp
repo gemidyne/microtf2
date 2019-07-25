@@ -206,8 +206,7 @@ stock void PrintSelectedSpecialRound()
 		if (player.IsInGame && !player.IsBot)
 		{
 			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, name);
-			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRounds[SpecialRoundID]);
-			CPrintToChat(i, "%s%s", PLUGIN_PREFIX, SpecialRoundDescriptions[SpecialRoundID]);
+			CPrintToChat(i, "%s%s\n%s", PLUGIN_PREFIX, SpecialRounds[SpecialRoundID], SpecialRoundDescriptions[SpecialRoundID]);
 		}
 	}
 
