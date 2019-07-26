@@ -33,12 +33,17 @@
 	"Hud_ThemeDisplay"
 	{
 		"#format"	"{1:s}"
-		"en"		"{1}'s Theme"
+		"en"		"{1}'s theme"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
 		"#format"	"{1:s}"
 		"en"		"SPECIAL ROUND: {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"	"{1:s},{2:s},{3:s}"
+		"en"		"{1}The special round condition is... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
 	{
