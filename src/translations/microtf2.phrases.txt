@@ -113,6 +113,11 @@
 	{
 		"en"		"Break time! Time to vote for the next map."
 	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"	"{1:s},{2:i}"
+		"en"		"{1}The correct answer was {2}!"
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"en"		"SIMON SAYS: TAUNT!"

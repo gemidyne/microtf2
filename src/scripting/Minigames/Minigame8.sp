@@ -138,6 +138,14 @@ public void Minigame8_OnMinigameFinish()
 {
 	if (MinigameID == 8)
 	{
-		CPrintToChatAll("{green}The correct answer was %d!", Minigame8_SayTextAnswer);
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid)
+			{
+				CPrintToChat(i, "%T", "Minigame8_CorrectAnswerWas", i, PLUGIN_PREFIX, Minigame8_SayTextAnswer);
+			}
+		}
 	}
 }
