@@ -207,8 +207,8 @@
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:i}"
-		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nTime remaining: {2} seconds"
+		"#format"	"{1:s},{2:s},{3:i}"
+		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{

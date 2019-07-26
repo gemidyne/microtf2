@@ -810,7 +810,15 @@ public void PrintAnswerDisplay(Player player)
 
 	if (player.Status != PlayerStatus_Failed && answerIdx < Bossgame7_ActiveAnswerCount)
 	{
-		Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_RemainingTime);
+		if ((answerIdx+1) >= Bossgame7_ActiveAnswerCount)
+		{
+			// This should humanely not be possible...?
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], "?????", Bossgame7_RemainingTime);
+		}
+		else
+		{
+			Format(text, sizeof(text), "%T", "Bossgame7_Caption_SayTheWord", player.ClientId, Bossgame7_ActiveAnswerSet[answerIdx], Bossgame7_ActiveAnswerSet[answerIdx+1], Bossgame7_RemainingTime);
+		}
 	}
 	else
 	{

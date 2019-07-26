@@ -27,10 +27,10 @@
 
 #define OVERLAY_BLANK ""
 #define OVERLAY_MINIGAMEBLANK "gemidyne/warioware/overlays/minigame_blank"
-#define OVERLAY_WON	 "gemidyne/warioware/overlays/minigame_success"
+#define OVERLAY_WON "gemidyne/warioware/overlays/minigame_success"
 #define OVERLAY_FAIL "gemidyne/warioware/overlays/minigame_failure"
 #define OVERLAY_SPEEDUP "gemidyne/warioware/overlays/system_speedup"
-#define OVERLAY_SPEEDDN	"gemidyne/warioware/overlays/system_speeddown"
+#define OVERLAY_SPEEDDN "gemidyne/warioware/overlays/system_speeddown"
 #define OVERLAY_BOSS "gemidyne/warioware/overlays/system_bossevent"
 #define OVERLAY_GAMEOVER "gemidyne/warioware/overlays/system_gameover"
 #define OVERLAY_WELCOME "gemidyne/warioware/overlays/system_waitingforplayers"
