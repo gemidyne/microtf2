@@ -179,11 +179,11 @@ public Action CmdSetNextSpecialRound(int client, int args)
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "%sThe next special round has been set to #%s.", PLUGIN_PREFIX, SpecialRounds[id]);
+		ReplyToCommand(client, "[ WarioWare ] The next special round has been set to %s.", SpecialRounds[id]);
 	}
 	else
 	{
-		ReplyToCommand(client, "%sError: special round number is outside of min and max range. Specified ID: %i", PLUGIN_PREFIX, id);
+		ReplyToCommand(client, "[ WarioWare ] Error: special round number is outside of min and max range. Specified ID: %i", id);
 	}
 }
 
