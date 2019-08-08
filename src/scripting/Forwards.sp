@@ -209,6 +209,15 @@ Handle GlobalForward_OnPlayerClassChange;
 Handle GlobalForward_OnPlayerStunned;
 
 /**
+ * Forward is called when a Spy has sapped an Engineer's building.
+ *
+ * @param Client who placed the sapper.
+ * @param Client who owns the building the was sapped.
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerSappedObject;
+
+/**
  * Forward is called when a Player's Critical Chance is calculated.
  *
  * @param Client that this is being calculated for
@@ -277,6 +286,7 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerJarated = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerClassChange = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerStunned = CreateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerSappedObject = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerCalculateCritical = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
@@ -308,6 +318,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerJarated);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerClassChange);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerStunned);
+	SafelyRemoveAllFromForward(GlobalForward_OnPlayerSappedObject);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerCalculateCritical);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerRunCmd);
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);

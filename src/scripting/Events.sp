@@ -305,6 +305,25 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 	}
 }
 
+public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontBroadcast)
+{
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
+	Player attacker = new Player(GetClientOfUserId(GetEventInt(event, "userid")));
+	Player buildingOwner = new Player(GetClientOfUserId(GetEventInt(event, "ownerid")));
+
+	if (GlobalForward_OnPlayerSappedObject != INVALID_HANDLE && attacker.IsParticipating && buildingOwner.IsParticipating)
+	{
+		Call_StartForward(GlobalForward_OnPlayerSappedObject);
+		Call_PushCell(attacker.ClientId);
+		Call_PushCell(buildingOwner.ClientId);
+		Call_Finish();
+	}
+}
+
 public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname, bool &result)
 {
 	if (!IsPluginEnabled)
@@ -679,5 +698,6 @@ stock void HookEvents()
 	HookEvent("teamplay_round_stalemate", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("teamplay_round_win", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("post_inventory_application", Event_Regenerate, EventHookMode_Post);
+	HookEvent("player_sapped_object", Event_PlayerSappedObject);
 	HookUserMessage(GetUserMessageId("PlayerJarated"), Event_PlayerJarated);
 }
