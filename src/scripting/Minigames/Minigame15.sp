@@ -162,7 +162,7 @@ public void Minigame15_OnMinigameFinish()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && IsPlayerParticipant[i])
+			if (player.IsValid && player.IsParticipating)
 			{
 				player.DestroyPlayerBuildings(true);
 			}
