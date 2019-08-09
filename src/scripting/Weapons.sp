@@ -104,9 +104,29 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 		TF2_RemoveWeaponSlot(iClient, weaponSlot);
 
-		CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
+		int entityID = CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
 
-		int entityID = GetPlayerWeaponSlot(iClient, weaponSlot);
+		if (StrEqual(weaponClassname, "tf_weapon_builder", false) || StrEqual(weaponClassname, "tf_weapon_sapper", false))
+		{
+			if (weaponSlot == TFWeaponSlot_Secondary)
+			{
+				SetEntProp(entityID, Prop_Send, "m_iObjectType", 3);
+				SetEntProp(entityID, Prop_Data, "m_iSubType", 3);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 0);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 1);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 2);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 3);
+			}
+			else
+			{
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 0);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 1);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 2);
+				SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 3);
+			}
+		}
+
+		// int entityID = GetPlayerWeaponSlot(iClient, weaponSlot);
 
 		char weaponAttribsArray[32][32];
 		int attribCount = ExplodeString(weaponAttribs, " ; ", weaponAttribsArray, 32, 32);
@@ -133,13 +153,13 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 	}
 }
 
-stock bool CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality)
+stock int CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality)
 {
 	int weapon = CreateEntityByName(classname);
 	
 	if (!IsValidEntity(weapon))
 	{
-		return false;
+		return -1;
 	}
 	
 	char entclass[64];
@@ -165,7 +185,7 @@ stock bool CreateNamedItem(int client, int itemindex, const char[] classname, in
 		EquipPlayerWeapon(client, weapon);
 	}
 	
-	return true;
+	return weapon;
 } 
 
 //DarthNinja..
@@ -1988,4 +2008,12 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "5142_ammo", -1);
 	SetTrieString(g_hWeaponData, "5142_model", "models/custom/weapons/goldslinger/engineer_v2.mdl");
 	SetTrieString(g_hWeaponData, "5142_viewmodel", "models/custom/weapons/goldslinger/c_engineer_arms.mdl");
+
+	SetTrieString(g_hWeaponData, "735_classname", "tf_weapon_builder", false);
+	SetTrieValue(g_hWeaponData, "735_index", 735, false);
+	SetTrieValue(g_hWeaponData, "735_slot", 1, false);
+	SetTrieValue(g_hWeaponData, "735_quality", 0, false);
+	SetTrieValue(g_hWeaponData, "735_level", 1, false);
+	SetTrieString(g_hWeaponData, "735_attribs", "", false);
+	SetTrieValue(g_hWeaponData, "735_ammo", -1, false);
 }

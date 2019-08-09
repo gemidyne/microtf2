@@ -154,6 +154,14 @@
 	{
 		"en"		"Spycrabs must crouch and look up!"
 	}
+	"Minigame14_Caption_Spies"
+	{
+		"en"		"SAP A BUILDING!"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"en"		"GET A BUILDING SAPPED!"
+	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
 		"en"		"CHANGE CLASS!"

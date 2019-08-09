@@ -8,10 +8,10 @@ TFTeam Minigame14_SpyTeam;
 
 public void Minigame14_EntryPoint()
 {
-	// AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
-	// AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
-	// AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame14_OnGameFrame);
-	// AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	AddToForward(GlobalForward_OnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
+	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
 public void Minigame14_OnMinigameSelectedPre()
@@ -25,6 +25,23 @@ public void Minigame14_OnMinigameSelectedPre()
 	IsOnlyBlockingDamageByPlayers = true;
 
 	Minigame14_SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
+}
+
+public void Minigame14_GetDynamicCaption(int client)
+{
+	Player player = new Player(client);
+
+	if (player.IsValid)
+	{
+		if (player.Team == Minigame14_SpyTeam)
+		{
+			Format(MinigameCaption[client], sizeof(MINIGAME_CAPTION_LENGTH), "%T", "Minigame14_Caption_SapSomething", client);
+		}
+		else
+		{
+			MinigameCaption[client] = "GET HIT BY A MEDIC!";
+		}
+	}
 }
 
 public void Minigame14_OnMinigameSelected(int client)
@@ -46,12 +63,18 @@ public void Minigame14_OnMinigameSelected(int client)
 		if (player.Team == Minigame14_SpyTeam)
 		{
 			player.Class = TFClass_Spy;
-			ResetWeapon(client, false);
+			player.RemoveAllWeapons();
+			GiveWeapon(player.ClientId, 735);
+			player.SetViewModelVisible(true);
+			player.SetWeaponVisible(true);
 		}
 		else
 		{
 			player.Class = TFClass_Engineer;
-			player.Regenerate();
+			player.RemoveAllWeapons();
+			GiveWeapon(player.ClientId, 28);
+			GiveWeapon(player.ClientId, 25);
+			GiveWeapon(player.ClientId, 7);
 			player.SetViewModelVisible(true);
 			player.SetWeaponVisible(true);
 			
@@ -63,6 +86,38 @@ public void Minigame14_OnMinigameSelected(int client)
 			}
 
 			SetEntData(client, ammoOffset + (3 * 4), 200, 4);
+		}
+	}
+}
+
+public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
+{
+	if (MinigameID != 14)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	ClientWonMinigame(attackerId);
+	ClientWonMinigame(buildingOwnerId);
+}
+
+public void Minigame14_OnMinigameFinish()
+{
+	if (MinigameID == 14)
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
+			{
+				player.DestroyPlayerBuildings(true);
+			}
 		}
 	}
 }

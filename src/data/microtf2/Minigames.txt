@@ -111,9 +111,11 @@
 	}
 	"14"
 	{
-		"Enabled"		"0"
+		"Enabled"		"1"
 		"BackgroundMusic"	"gemidyne/warioware/minigames/bgm/jetpack.mp3"
-		"Caption"		"GET INTO THE WATER!"
+		"Caption"		"GET A BUILDING SAPPED / SAP A BUILDING" // Changed at runtime
+		"CaptionIsDynamic"	"1"
+		"DynamicCaptionMethod"	"Minigame14_GetDynamicCaption"
 		"EntryPoint"		"Minigame14_EntryPoint"
 	}
 	"15"
