@@ -10,6 +10,7 @@ public void Minigame14_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	AddToForward(GlobalForward_OnBuildObject, INVALID_HANDLE, Minigame14_OnBuildObject);
 	AddToForward(GlobalForward_OnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
@@ -33,14 +34,18 @@ public void Minigame14_GetDynamicCaption(int client)
 
 	if (player.IsValid)
 	{
+		char text[64];
+
 		if (player.Team == Minigame14_SpyTeam)
 		{
-			Format(MinigameCaption[client], sizeof(MINIGAME_CAPTION_LENGTH), "%T", "Minigame14_Caption_SapSomething", client);
+			Format(text, sizeof(text), "%T", "Minigame14_Caption_Spies", client);
 		}
 		else
 		{
-			MinigameCaption[client] = "GET HIT BY A MEDIC!";
+			Format(text, sizeof(text), "%T", "Minigame14_Caption_Engineers", client);
 		}
+
+		MinigameCaption[client] = text;
 	}
 }
 
@@ -87,6 +92,26 @@ public void Minigame14_OnMinigameSelected(int client)
 
 			SetEntData(client, ammoOffset + (3 * 4), 200, 4);
 		}
+	}
+}
+
+public void Minigame14_OnBuildObject(int client, int entity)
+{
+	if (MinigameID != 14)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (player.IsValid && player.IsParticipating)
+	{
+		SetEntData(entity, Offset_Collision, 2, 4, true);
 	}
 }
 
