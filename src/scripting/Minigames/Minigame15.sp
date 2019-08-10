@@ -65,7 +65,10 @@ public void Minigame15_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.Class = TFClass_Engineer;
-		player.Regenerate();
+		player.RemoveAllWeapons();
+		GiveWeapon(player.ClientId, 28);
+		GiveWeapon(player.ClientId, 25);
+		GiveWeapon(player.ClientId, 7);
 		player.SetViewModelVisible(true);
 		player.SetWeaponVisible(true);
 		
