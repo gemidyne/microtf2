@@ -113,10 +113,62 @@
 	{
 		"en"		"Break time! Time to vote for the next map."
 	}
+	"Bossgame1_Caption"
+	{
+		"en"		"ROCKET JUMP TO THE END!"
+	}
+	"Bossgame2_Caption"
+	{
+		"en"		"ESCAPE THE FACTORY!"
+	}
+	"Bossgame3_Caption"
+	{
+		"en"		"DEFEAT THE ENEMY TEAM!"
+	}
+	"Bossgame4_Caption"
+	{
+		"en"		"DON'T FALL INTO THE WATER"
+	}
+	"Bossgame5_Caption"
+	{
+		"en"		"REACH THE GOAL!"
+	}
+	"Bossgame6_Caption"
+	{
+		"en"		"SHOOT THE MOST BARRELS!"
+	}
+	"Bossgame7_Caption"
+	{
+		"en"		"" // Leave this as empty.
+	}
+	"Minigame1_Caption"
+	{
+		"en"		"GET TO THE END!"
+	}
+	"Minigame2_Caption"
+	{
+		"en"		"KILL AN ENEMY!"
+	}
+	"Minigame3_Caption"
+	{
+		"en"		"BREAK THE BARRELS!"
+	}
+	"Minigame4_Caption"
+	{
+		"en"		"AIRBLAST AND STAY ALIVE!"
+	}
+	"Minigame5_Caption"
+	{
+		"en"		"STICKY JUMP!"
+	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
 		"#format"	"{1:s}"
 		"en"		"SAY THE WORD!\n{1}"
+	}
+	"Minigame7_Caption"
+	{
+		"en"		"ROCKET JUMP!"
 	}
 	"Minigame8_CaptionFormatted"
 	{
@@ -176,6 +228,10 @@
 	{
 		"en"		"DON'T MOVE!"
 	}
+	"Minigame12_Caption"
+	{
+		"en"		"GET ON A PLATFORM!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"
@@ -204,6 +260,10 @@
 	{
 		"en"		"BUILD A SENTRY!"
 	}
+	"Minigame16_Caption"
+	{
+		"en"		"JARATE AN ENEMY!"
+	}
 	"Minigame17_Caption_HitAHeavy"
 	{
 		"en"		"HIT A HEAVY!"
@@ -211,6 +271,10 @@
 	"Minigame17_Caption_GetHitByMedic"
 	{
 		"en"		"GET HIT BY A MEDIC!"
+	}
+	"Minigame18_Caption"
+	{
+		"en"		"HIT THE TARGET!"
 	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
@@ -259,6 +323,26 @@
 	"Minigame20_Caption_Eat"
 	{
 		"en"		"EAT!"
+	}
+	"Minigame21_Caption"
+	{
+		"en"		"STUN AN ENEMY!"
+	}
+	"Minigame22_Caption"
+	{
+		"en"		"STAY ON THE GROUND!"
+	}
+	"Minigame23_Caption"
+	{
+		"en"		"DOUBLE JUMP!"
+	}
+	"Minigame24_Caption"
+	{
+		"en"		"NEEDLEJUMP!"
+	}
+	"Minigame25_Caption"
+	{
+		"en"		"JETPACK!"
 	}
 	"Bossgame7_Caption_Explain"
 	{

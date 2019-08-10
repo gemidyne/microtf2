@@ -388,16 +388,15 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		{
 			if (BossgameID > 0) 
 			{
-				bossgame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
-
-				if (!isCaptionDynamic && strlen(BossgameCaptions[BossgameID]) > 0)
+				if (!isCaptionDynamic)
 				{
-					char objective[64];
-					Format(objective, sizeof(objective), BossgameCaptions[BossgameID]);
+					char text[64];
+					char translationKey[32];
 
-					strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, BossgameCaptions[BossgameID]);
+					Format(translationKey, sizeof(translationKey), "Bossgame%d_Caption", BossgameID);
+					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
-					DisplayHudMessageToClient(i, objective, "", 5.0);
+					strcopy(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH, text);
 				}
 
 				if (strlen(BossgameMusic[BossgameID]) > 0)
@@ -407,13 +406,15 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			}
 			else if (MinigameID > 0)
 			{
-				minigame.GetCaptionLookupString(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH);
-
-				if (!isCaptionDynamic && strlen(MinigameCaptions[MinigameID]) > 0)
+				if (!isCaptionDynamic)
 				{
-					char objective[64];
-					Format(objective, sizeof(objective), MinigameCaptions[MinigameID]);
-					DisplayHudMessageToClient(i, objective, "", 3.0);
+					char text[64];
+					char translationKey[32];
+
+					Format(translationKey, sizeof(translationKey), "Minigame%d_Caption", MinigameID);
+					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
+
+					strcopy(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH, text);
 				}
 
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
