@@ -150,6 +150,14 @@
 	{
 		"en"		"Kamikaze is over here!"
 	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"en"		"EXPLODE AS MANY PEOPLE AS YOU CAN!"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"en"		"RUN FROM THE KAMIKAZE!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"

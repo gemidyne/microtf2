@@ -100,11 +100,11 @@ public void Minigame10_GetDynamicCaption(int client)
 
 		if (Minigame10_IsTimebomb[client])
 		{
-			text = "EXPLODE AS MANY PEOPLE AS YOU CAN!";
+			Format(text, sizeof(text), "%T", "Minigame10_Caption_ExplodeAsMany", client);
 		}
 		else
 		{
-			text = "RUN FROM THE KAMIKAZE!";
+			Format(text, sizeof(text), "%T", "Minigame10_Caption_RunFromKamikaze", client);
 		}
 
 		MinigameCaption[client]	 = text;
