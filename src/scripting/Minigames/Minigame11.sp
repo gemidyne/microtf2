@@ -62,11 +62,11 @@ public void Minigame11_GetDynamicCaption(int client)
 
 		if (Minigame11_Mode == 2)
 		{
-			text = "DON\'T STOP MOVING!";
+			Format(text, sizeof(text), "%T", "Minigame11_Caption_DontStopMoving", client);
 		}
 		else
 		{
-			text = "DON\'T MOVE!";
+			Format(text, sizeof(text), "%T", "Minigame11_Caption_DontMove", client);
 		}
 
 		MinigameCaption[client]	= text;

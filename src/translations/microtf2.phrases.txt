@@ -158,6 +158,14 @@
 	{
 		"en"		"RUN FROM THE KAMIKAZE!"
 	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"en"		"DON'T STOP MOVING!"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"en"		"DON'T MOVE!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"
