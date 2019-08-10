@@ -178,6 +178,14 @@
 	{
 		"en"		"BUILD A SENTRY!"
 	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"en"		"HIT A HEAVY!"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"en"		"GET HIT BY A MEDIC!"
+	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
 		"en"		"CHANGE CLASS!"

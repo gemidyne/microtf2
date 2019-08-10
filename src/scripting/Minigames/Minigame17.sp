@@ -72,14 +72,18 @@ public void Minigame17_GetDynamicCaption(int client)
 
 	if (player.IsValid)
 	{
+		char text[64];
+
 		if (player.Team == Minigame17_ClientTeam)
 		{
-			MinigameCaption[client] = "HIT A HEAVY!";
+			Format(text, sizeof(text), "%T", "Minigame17_Caption_HitAHeavy", client);
 		}
 		else
 		{
-			MinigameCaption[client] = "GET HIT BY A MEDIC!";
+			Format(text, sizeof(text), "%T", "Minigame17_Caption_GetHitByMedic", client);
 		}
+
+		MinigameCaption[client] = text;
 	}
 }
 
