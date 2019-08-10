@@ -29,11 +29,6 @@ methodmap Minigame __nullable__
         }
     }
 
-    public void GetCaptionLookupString(char[] buffer, int size)
-    {
-        strcopy(buffer, size, MinigameCaptions[this.Id]);
-    }
-
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
         strcopy(buffer, size, MinigameDynamicCaptionFunctions[this.Id]);

@@ -223,29 +223,6 @@ stock void RemoveAllJarateEntities()
 	}
 }
 
-stock void DisplayHudMessage(const char[] title, const char[] body, float duration)
-{
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsInGame && !player.IsBot)
-		{
-			DisplayHudMessageToClient(i, title, body, duration);
-		}
-	}
-}
-
-stock void DisplayHudMessageToClient(int client, const char[] title, const char[] body, float duration)
-{
-	// TODO: This should use translations only.
-	char formatted[MINIGAME_CAPTION_LENGTH];
-
-	Format(formatted, sizeof(formatted), "%s\n%s", title, body);
-
-	strcopy(MinigameCaption[client], MINIGAME_CAPTION_LENGTH, formatted);
-}
-
 // Credit to authors of SMLIB. Moved here due to the include file not building on newer spcomp, also converted to new syntax
 stock void ToUpperString(const char[] input, char[] output, int size)
 {
