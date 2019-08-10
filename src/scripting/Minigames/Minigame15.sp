@@ -95,21 +95,21 @@ public void Minigame15_GetDynamicCaption(int client)
 			{
 				case TFObject_Dispenser:
 				{
-					text = "BUILD A DISPENSER!";
+					Format(text, sizeof(text), "%T", "Minigame15_Caption_Dispenser", client);
 				}
 				case TFObject_Teleporter:
 				{
-					text = "BUILD A TELEPORTER!";
+					Format(text, sizeof(text), "%T", "Minigame15_Caption_Teleporter", client);
 				}
 				case TFObject_Sentry:
 				{
-					text = "BUILD A SENTRY!";
+					Format(text, sizeof(text), "%T", "Minigame15_Caption_Sentry", client);
 				}
 			}
 		}
 		else
 		{
-			text = "BUILD SOMETHING!";
+			Format(text, sizeof(text), "%T", "Minigame15_Caption_Any", client);
 		}
 
 		MinigameCaption[client] = text;

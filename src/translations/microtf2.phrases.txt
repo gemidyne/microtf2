@@ -162,6 +162,22 @@
 	{
 		"en"		"GET A BUILDING SAPPED!"
 	}
+	"Minigame15_Caption_Any"
+	{
+		"en"		"BUILD SOMETHING!"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"en"		"BUILD A DISPENSER!"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"en"		"BUILD A TELEPORTER!"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"en"		"BUILD A SENTRY!"
+	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
 		"en"		"CHANGE CLASS!"
