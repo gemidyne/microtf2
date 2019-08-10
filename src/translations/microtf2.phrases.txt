@@ -118,6 +118,11 @@
 		"#format"	"{1:s}"
 		"en"		"SAY THE WORD!\n{1}"
 	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"en"		"ANSWER THE QUESTION!\n{1} = ?"
+	}
 	"Minigame8_CorrectAnswerWas"
 	{
 		"#format"	"{1:s},{2:i}"
