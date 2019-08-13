@@ -232,6 +232,10 @@
 	{
 		"en"		"GET ON A PLATFORM!"
 	}
+	"Minigame13_Caption"
+	{
+		"en"		"SPYCRAB!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
 		"en"		"Spycrabs must crouch and look up!"
@@ -390,10 +394,154 @@
 	{
 		"en"		"Changing class is not allowed during bosses!"
 	}
+	"SpecialRound0_Name"
+	{
+		"en"		"Thirdperson"
+	}
+	"SpecialRound0_Description"
+	{
+		"en"		"All players play the round in a whole new perspective!"
+	}
+	"SpecialRound1_Name"
+	{
+		"en"		"Adrenaline Shot"
+	}
+	"SpecialRound1_Description"
+	{
+		"en"		"The round starts fast! Then slows down!"
+	}
+	"SpecialRound2_Name"
+	{
+		"en"		"Extended Round"
+	}
+	"SpecialRound2_Description"
+	{
+		"en"		"30 microgames will be played before the bossgame!"
+	}
+	"SpecialRound3_Name"
+	{
+		"en"		"Low Gravity"
+	}
+	"SpecialRound3_Description"
+	{
+		"en"		"Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!"
+	}
+	"SpecialRound4_Name"
+	{
+		"en"		"Chill Pill"
+	}
+	"SpecialRound4_Description"
+	{
+		"en"		"No speed changes will happen in this round!"
+	}
+	"SpecialRound5_Name"
+	{
+		"en"		"Game Time Attack"
+	}
+	"SpecialRound5_Description"
+	{
+		"en"		"The round will speed up after every microgame!"
+	}
+	"SpecialRound6_Name"
+	{
+		"en"		"Up and Down"
+	}
+	"SpecialRound6_Description"
+	{
+		"en"		"After every microgame, a random speed will be chosen!"
+	}
+	"SpecialRound7_Name"
+	{
+		"en"		"Slow-mo"
+	}
+	"SpecialRound7_Description"
+	{
+		"en"		"The round will slow down after every microgame!"
+	}
+	"SpecialRound8_Name"
+	{
+		"en"		"Maths Only"
+	}
+	"SpecialRound8_Description"
+	{
+		"en"		"Time to test your maths skills!"
+	}
+	"SpecialRound9_Name"
+	{
+		"en"		"Opposite Day"
+	}
+	"SpecialRound9_Description"
+	{
+		"en"		"The player with the lowest score wins the round!"
+	}
+	"SpecialRound10_Name"
+	{
+		"en"		"Two Boss Battles"
+	}
+	"SpecialRound10_Description"
+	{
+		"en"		"Two bossgames will be played before game over!"
+	}
+	"SpecialRound11_Name"
+	{
+		"en"		"Team Battle"
+	}
+	"SpecialRound11_Description"
+	{
+		"en"		"If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!"
+	}
+	"SpecialRound12_Name"
+	{
+		"en"		"Single Player"
+	}
+	"SpecialRound12_Description"
+	{
+		"en"		"Hey... where did everyone go?"
+	}
+	"SpecialRound13_Name"
+	{
+		"en"		"Birds only"
+	}
+	"SpecialRound13_Description"
+	{
+		"en"		"Archimedes! No!"
+	}
+	"SpecialRound14_Name"
+	{
+		"en"		"Tiny"
+	}
+	"SpecialRound14_Description"
+	{
+		"en"		"Everyone becomes teeny tiny men!"
+	}
+	"SpecialRound15_Name"
+	{
+		"en"		"Bobbleheads"
+	}
+	"SpecialRound15_Description"
+	{
+		"en"		"Everyone becomes a bunch of airheads!"
+	}
+	"SpecialRound16_Name"
+	{
+		"en"		"Score Randomizer"
+	}
+	"SpecialRound16_Description"
+	{
+		"en"		"If you win a microgame, you will be given a random amount of points!"
+	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
 		"en"		"If you win this minigame, you will be awarded {1} points!"
+	}
+	"SpecialRound17_Name"
+	{
+		"en"		"Sudden Death"
+	}
+	"SpecialRound17_Description"
+	{
+		"en"		"If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
@@ -404,5 +552,29 @@
 	{
 		"#format"	"{1:s},{2:i}"
 		"en"		"{1} (and {2} more)"
+	}
+	"SpecialRound18_Name"
+	{
+		"en"		"All In"
+	}
+	"SpecialRound18_Description"
+	{
+		"en"		"If you lose a microgame, you will lose ALL your points!"
+	}
+	"SpecialRound19_Name"
+	{
+		"en"		"Reversed Text"
+	}
+	"SpecialRound19_Description"
+	{
+		"en"		"!sdrawkcab era snoitcurtsni emagorciM"
+	}
+	"SpecialRound20_Name"
+	{
+		"en"		"Non-stop"
+	}
+	"SpecialRound20_Description"
+	{
+		"en"		"There's no break in between microgames this round!"
 	}
 }

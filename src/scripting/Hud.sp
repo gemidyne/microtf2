@@ -200,7 +200,10 @@ public void DisplaySpecialHud(Player player, char buffer[128])
 
     if (GamemodeID == SPR_GAMEMODEID)
     {
-        Format(themeSpecialText, sizeof(themeSpecialText), SpecialRounds[SpecialRoundID]);
+        char key[32];
+        
+        Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+        Format(themeSpecialText, sizeof(themeSpecialText), "%T", key, player.ClientId);
     }
     else
     {

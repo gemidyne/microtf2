@@ -13,8 +13,6 @@ int SpecialRoundsLoaded = 0;
 
 float SpecialRound_StartEffect = 1.0;
 
-char SpecialRounds[SPR_MAX+1][SPR_NAME_LENGTH];
-char SpecialRoundDescriptions[SPR_MAX+1][SPR_DESC_LENGTH];
 bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
 bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
 int SpecialRoundBossGameThreshold[SPR_MAX+1];
@@ -47,9 +45,6 @@ stock void InitializeSpecialRounds()
 
 		do
 		{
-			KvGetString(kv, "Name", SpecialRounds[i], SPR_NAME_LENGTH);
-			KvGetString(kv, "Description", SpecialRoundDescriptions[i], SPR_DESC_LENGTH);
-
 			SpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
 			SpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
 			SpecialRoundBossGameThreshold[i] = KvGetNum(kv, "BossGameThreshold", 0);
@@ -123,17 +118,9 @@ public void SpecialRound_OnMinigamePreparePre()
 public void SpecialRound_PrintRandomNameWhenChoosing()
 {
 	char buffer[128];
+	int index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
 
-	if (GetRandomInt(0, 1) == 1)
-	{
-		ToUpperString(SpecialRounds[GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1)], buffer, sizeof(buffer));
-	}
-	else
-	{
-		int index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
-
-		strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
-	}
+	strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -196,17 +183,27 @@ stock void PrintSelectedSpecialRound()
 {
 	EmitSoundToAll(SYSFX_SELECTED);
 
-	char name[SPR_NAME_LENGTH];
-	ToUpperString(SpecialRounds[SpecialRoundID], name, sizeof(name));
-
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
 
 		if (player.IsInGame && !player.IsBot)
 		{
+			char key[32];
+			Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+
+			char name[SPR_NAME_LENGTH];
+			Format(name, sizeof(name), "%T", key, i);
+
+			ToUpperString(name, name, sizeof(name));
 			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, name);
-			CPrintToChat(i, "%T", "Hud_SpecialRound_ChatDisplay", i, PLUGIN_PREFIX, SpecialRounds[SpecialRoundID], SpecialRoundDescriptions[SpecialRoundID]);
+
+			char description[128];
+
+			Format(key, sizeof(key), "SpecialRound%i_Description", SpecialRoundID);
+			Format(name, sizeof(name), "%T", key, i);
+
+			CPrintToChat(i, "%T", "Hud_SpecialRound_ChatDisplay", i, PLUGIN_PREFIX, name, description);
 		}
 	}
 

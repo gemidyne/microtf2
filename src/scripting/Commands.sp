@@ -179,7 +179,7 @@ public Action CmdSetNextSpecialRound(int client, int args)
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "[ WarioWare ] The next special round has been set to %s.", SpecialRounds[id]);
+		ReplyToCommand(client, "[ WarioWare ] The next special round has been set.");
 	}
 	else
 	{
