@@ -1,16 +1,49 @@
 "Phrases"
 {
-	"Startup_Header"
+	"System_Advertisement"
 	{
-		"it"		"Benvenuto a WarioWare!"
+		"#format"	"{1:s}"
+		"it" 		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti."
 	}
-	"Startup_BodyIntro"
+	"Hud_Score_Default"
 	{
-		"it"		"Il gioco comincerà a breve, sii pronto!"
+		"#format"	"{1:i}"
+		"it"		"Punti: {1}"
 	}
-	"Startup_BodyCountdown"
+	"Hud_Score_Minigames"
 	{
-		"it"		"Il gioco comincerà in {1}..."
+		"#format"	"{1:i}"
+		"it"		"Minigiochi: {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"	"{1:i}"
+		"it"		"Punti Squadra: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"	"{1:i},{2:i}"
+		"it"		"Round {1} di {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"	"{1:i}"
+		"it"		"Round {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"	"{1:s}"
+		"it"		"Tema di {1}"
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"	"{1:s}"
+		"it"		"ROUND SPECIALE: {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"	"{1:s},{2:s},{3:s}"
+		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
 	{
@@ -19,6 +52,10 @@
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{
 		"it"		"SEI STATO ELIMINATO!"
+	}
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"it"		"Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale."
 	}
 	"General_Loser"
 	{
@@ -48,6 +85,26 @@
 	{
 		"it"		"Nessuno ha vinto!"
 	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"it"		"{1}{2} {3} {green}con {4} punti!"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"	"{1:s},{2:i}"
+		"it"		"{1}Vince la squadra RED, con {2} punti!"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"	"{1:s},{2:i}"
+		"it"		"{1}Vince la squadra BLU, con {2} punti!"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"	"{1:s}"
+		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
+	}
 	"Intermission_Header"
 	{
 		"it"		"Intervallo!"
@@ -56,9 +113,468 @@
 	{
 		"it"		"Pausa! È ora di votare per la prossima mappa."
 	}
+	"Bossgame1_Caption"
+	{
+		"it"		"ARRIVA IN CIMA CON I SALTI RAZZO!"
+	}
+	"Bossgame2_Caption"
+	{
+		"it"		"FUGGI DALLA FABBRICA!"
+	}
+	"Bossgame3_Caption"
+	{
+		"it"		"SCONFIGGI LA SQUADRA NEMICA!"
+	}
+	"Bossgame4_Caption"
+	{
+		"it"		"NON FINIRE NELL'ACQUA!"
+	}
+	"Bossgame5_Caption"
+	{
+		"it"		"RAGGIUNGI L'ARRIVO!"
+	}
+	"Bossgame6_Caption"
+	{
+		"it"		"SPARA A PIU' BARILI CHE PUOI!"
+	}
+	"Bossgame7_Caption"
+	{
+		"it"		"" // Leave this as empty.
+	}
+	"Minigame1_Caption"
+	{
+		"it"		"RAGGIUNGI LA META!"
+	}
+	"Minigame2_Caption"
+	{
+		"it"		"UCCIDI UN NEMICO!"
+	}
+	"Minigame3_Caption"
+	{
+		"it"		"ROMPI I BARILI!"
+	}
+	"Minigame4_Caption"
+	{
+		"it"		"SPINGI COL COMPRESSORE!"
+	}
+	"Minigame5_Caption"
+	{
+		"it"		"SALTO ADESIVO!"
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"it"		"SCRIVI LA PAROLA!\n{1}"
+	}
+	"Minigame7_Caption"
+	{
+		"it"		"SALTO RAZZO!"
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"it"		"RISPONDI ALLA DOMANDA!\n{1} = ?"
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"	"{1:s},{2:i}"
+		"it"		"{1}La risposta corretta era {2}!"
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"it"		"SIMONE DICE: PROVOCA!"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"it"		"SIMONE DICE: SALTA!"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"it"		"SIMONE DICE: ABBASSATI!"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"it"		"SALMONE DICE: PROVOCA!"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"it"		"SALMONE DICE: SALTA!"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"it"		"SALMONE DICE: ABBASSATI!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"it"		"(Non lo ha detto Simone..)"
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"it"		"Il kamikaze è qui!"
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"it"		"FAI ESPLODERE PIU' GIOCATORI CHE PUOI!"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"it"		"SCAPPA DAL KAMIKAZE!"
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"it"		"CONTINUA A MUOVERTI!"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"it"		"NON MUOVERTI!"
+	}
+	"Minigame12_Caption"
+	{
+		"it"		"SALI SU UNA PIATTAFORMA!"
+	}
+	"Minigame13_Caption"
+	{
+		"it"		"FAI LO SPYCRAB!"
+	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
-		
 		"it"		"Gli Spycrab devono abbassarsi e guardare in alto!"
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"it"		"SABOTA UNA COSTRUZIONE!"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"it"		"FATTI SABOTARE UNA COSTRUZIONE!"
+	}
+	"Minigame15_Caption_Any"
+	{
+		"it"		"COSTRUISCI QUALCOSA!"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"it"		"COSTRUISCI UN DISPENSER!"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"it"		"COSTRUISCI UN TELETRASPORTO!"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"it"		"COSTRUSICI UNA TORRETTA!"
+	}
+	"Minigame16_Caption"
+	{
+		"it"		"COPRI UN NEMICO DI GIARATE!"
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"it"		"COLPISCI UN GROSSO!"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"it"		"FATTI COLPIRE DA UN MEDICO!"
+	}
+	"Minigame18_Caption"
+	{
+		"it"		"COLPISCI IL BERSAGLIO!"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"it"		"CAMBIA CLASSE!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"it"		"CAMBIA CLASSE IN ESPLORATORE!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"it"		"CAMBIA CLASSE IN SOLDATO!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"it"		"CAMBIA CLASSE IN PIRO!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"it"		"CAMBIA CLASSE IN DEMOLITORE!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"it"		"CAMBIA CLASSE IN GROSSO!"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"it"		"CAMBIA CLASSE IN INGEGNERE!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"it"		"CAMBIA CLASSE IN MEDICO!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"it"		"CAMBIA CLASSE IN CECCHINO!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"it"		"CAMBIA CLASSE IN SPIA!"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"it"		"BEVI!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"it"		"MANGIA!"
+	}
+	"Minigame21_Caption"
+	{
+		"it"		"STORDISCI UN NEMICO!"
+	}
+	"Minigame22_Caption"
+	{
+		"it"		"RIMANI A TERRA!"
+	}
+	"Minigame23_Caption"
+	{
+		"it"		"DOPPIO SALTO!"
+	}
+	"Minigame24_Caption"
+	{
+		"it"		"SALTO AGO!"
+	}
+	"Minigame25_Caption"
+	{
+		"it"		"PROPULSORE!"
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"it"		"Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"it"		"VIA!"
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"	"{1:i}"
+		"it"		"== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)"
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"	"{1:s},{2:s},{3:i}"
+		"it"		"== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds"
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"	"{1:s}"
+		"it"		"== ANNUNCIO ==\n\nThe winner is...\n{1}!"
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"it"		"== ANNUNCIO == \n\nLIVELLO SUCCESSIVO! LE PAROLE SARANNO PIU' DIFFICILI!"
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"	"{1:s}"
+		"it"		"== INTERVALLO == \n\nI giocatori che hanno scritto il minor numero di parole sono...\n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format" 	"{1:s},{2:i}"
+		"it"		"{1}\ne altri {2}..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format" 	"{1:s}"
+		"it"		"{1}Nessuno!\n\nTutti sopravvivono per un altro round!"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"it"		"Non è permesso cambiare classe durante i giochi boss!"
+	}
+	"SpecialRound0_Name"
+	{
+		"it"		"Terza Persona"
+	}
+	"SpecialRound0_Description"
+	{
+		"it"		"Guarda il mondo da un'altra prospettiva!"
+	}
+	"SpecialRound1_Name"
+	{
+		"it"		"Sprint"
+	}
+	"SpecialRound1_Description"
+	{
+		"it"		"Il round comincia veloce e poi va a rallentare!"
+	}
+	"SpecialRound2_Name"
+	{
+		"it"		"Round Esteso"
+	}
+	"SpecialRound2_Description"
+	{
+		"it"		"Ben 30 minigiochi saranno giocati prima del gioco boss!"
+	}
+	"SpecialRound3_Name"
+	{
+		"it"		"Bassa Gravità"
+	}
+	"SpecialRound3_Description"
+	{
+		"it"		"Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!"
+	}
+	"SpecialRound4_Name"
+	{
+		"it"		"Camomilla"
+	}
+	"SpecialRound4_Description"
+	{
+		"it"		"La velocità dei minigiochi non aumenterà in questo round!"
+	}
+	"SpecialRound5_Name"
+	{
+		"it"		"Adrenalina Pura!"
+	}
+	"SpecialRound5_Description"
+	{
+		"it"		"Il round si farà più veloce dopo ogni minigioco!"
+	}
+	"SpecialRound6_Name"
+	{
+		"it"		"Alti e Bassi"
+	}
+	"SpecialRound6_Description"
+	{
+		"it"		"La velocità cambierà casualmente dopo ogni minigioco!"
+	}
+	"SpecialRound7_Name"
+	{
+		"it"		"Moviola"
+	}
+	"SpecialRound7_Description"
+	{
+		"it"		"Il round si farà più lento dopo ogni minigioco!"
+	}
+	"SpecialRound8_Name"
+	{
+		"it"		"Incubo Matematico"
+	}
+	"SpecialRound8_Description"
+	{
+		"it"		"Ci sai fare con i numeri?"
+	}
+	"SpecialRound9_Name"
+	{
+		"it"		"Potere ai Poveri"
+	}
+	"SpecialRound9_Description"
+	{
+		"it"		"Vince il giocatore con il punteggio più basso!"
+	}
+	"SpecialRound10_Name"
+	{
+		"it"		"Bis di Boss"
+	}
+	"SpecialRound10_Description"
+	{
+		"it"		"Il round avrà due giochi boss!"
+	}
+	"SpecialRound11_Name"
+	{
+		"it"		"Gioco di Squadra"
+	}
+	"SpecialRound11_Description"
+	{
+		"it"		"Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!"
+	}
+	"SpecialRound12_Name"
+	{
+		"it"		"Giocatore Singolo"
+	}
+	"SpecialRound12_Description"
+	{
+		"it"		"Ehi... Dove sono finiti tutti?"
+	}
+	"SpecialRound13_Name"
+	{
+		"it"		"Volare, oh oh!"
+	}
+	"SpecialRound13_Description"
+	{
+		"it"		"Archimedes! No!"
+	}
+	"SpecialRound14_Name"
+	{
+		"it"		"Noi Puffi siam così"
+	}
+	"SpecialRound14_Description"
+	{
+		"it"		"Tutti i giocatori diventano alti due mele o poco più!"
+	}
+	"SpecialRound15_Name"
+	{
+		"it"		"Testone"
+	}
+	"SpecialRound15_Description"
+	{
+		"it"		"Tutti i giocatori sviluppano un intelletto superiore!"
+	}
+	"SpecialRound16_Name"
+	{
+		"it"		"Punteggi casuali"
+	}
+	"SpecialRound16_Description"
+	{
+		"it"		"I minigiochi vinti danno un numero di punti casuale!!"
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"	"{1:i}"
+		"it"		"Vinci questo minigioco per ottenere {1} punti!"
+	}
+	"SpecialRound17_Name"
+	{
+		"it"		"Scontro Finale!"
+	}
+	"SpecialRound17_Description"
+	{
+		"it"		"Un errore e sei fuori! Vince l'ultimo giocatore rimasto!"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"	"{1:i},{2:i},{3:s}"
+		"it"		"Ancora in gioco:" ({1} di {2})\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"	"{1:s},{2:i}"
+		"it"		"{1} (E altri {2})"
+	}
+	"SpecialRound18_Name"
+	{
+		"it"		"All In"
+	}
+	"SpecialRound18_Description"
+	{
+		"it"		"Perdi un minigioco e dì addio a TUTTI i tuoi punti!"
+	}
+	"SpecialRound19_Name"
+	{
+		"it"		"Testo Rovesciato"
+	}
+	"SpecialRound19_Description"
+	{
+		"it"		"!oirartnoc la onos ihcoiginim ied inoizircsed eL
+	}
+	"SpecialRound20_Name"
+	{
+		"it"		"Senza Tragua"
+	}
+	"SpecialRound20_Description"
+	{
+		"it"		"Nessuna pausa fra i minigiochi!"
 	}
 }
