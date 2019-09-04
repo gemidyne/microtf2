@@ -1,0 +1,580 @@
+"Phrases"
+{
+	"System_Advertisement"
+	{
+		"#format"	"{1:s}"
+		"fr"		"Vous jouez à WarioWare ! Version {1}. Tapez !credits dans le chat pour voir les crédits."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Score : {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Mini-jeu : {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Score de l'équipe : {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"	"{1:i},{2:i}"
+		"fr"		"Manche {1} sur {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Manche {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"	"{1:s}"
+		"fr"		"Thème de {1}"
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"	"{1:s}"
+		"fr"		"MANCHE SPÉCIALE : {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"	"{1:s},{2:s},{3:s}"
+		"fr"		"{1}La manche spéciale est... {2} !\n{3}"
+	}
+	"PlayerSpawn_RespawnNotice"
+	{
+		"fr"		"Vous serez respawn quand le mini-jeu ou le boss aura fini."
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"fr"		"VOUS AVEZ ÉTÉ ÉLIMINÉ !"
+	}
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"fr"		"Changer de classe n'est pas autorisé durant cette manche spéciale ! 1 point a été rajouté à votre score."
+	}
+	"General_Loser"
+	{
+		"fr"		"Perdu !"
+	}
+	"General_Winner"
+	{
+		"fr"		"Gagné !"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"fr"		"== LA MANCHE SPÉCIALE EST TERMINÉE ! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"fr"		"Le vainqueur est..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"fr"		"Les vainqueurs sont..."
+	}
+	"GameOver_WinnersAnd"
+	{
+		"fr"		"et"
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"fr"		"Il n'y a aucun gagnant !"
+	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"fr"		"{1}{2} {3} {green}avec {4} points !"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"	"{1:s},{2:i}"
+		"fr"		"{1}L'équipe gagnante est RED avec {2} points !"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"	"{1:s},{2:i}"
+		"fr"		"{1}L'équipe gagnante est BLU avec {2} points !"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"	"{1:s}"
+		"fr"		"{1}Égalité ! Les deux équipes ont le même nombre de points !"
+	}
+	"Intermission_Header"
+	{
+		"fr"		"Entracte !"
+	}
+	"Intermission_Body"
+	{
+		"fr"		"Pause ! Il est temps de voter pour la prochaine carte."
+	}
+	"Bossgame1_Caption"
+	{
+		"fr"		"ROCKET JUMP JUSQU'À LA FIN !"
+	}
+	"Bossgame2_Caption"
+	{
+		"fr"		"SORTEZ DE L'USINE !"
+	}
+	"Bossgame3_Caption"
+	{
+		"fr"		"BATTEZ L'AUTRE ÉQUIPE !"
+	}
+	"Bossgame4_Caption"
+	{
+		"fr"		"NE TOMBEZ PAS DANS L'EAU !"
+	}
+	"Bossgame5_Caption"
+	{
+		"fr"		"ATTEIGNEZ L'OBJECTIF !"
+	}
+	"Bossgame6_Caption"
+	{
+		"fr"		"DÉTRUISEZ LE PLUS DE TONNEAUX !"
+	}
+	"Bossgame7_Caption"
+	{
+		"fr"		""
+	}
+	"Minigame1_Caption"
+	{
+		"fr"		"REJOIGNEZ L'AUTRE BOUT !"
+	}
+	"Minigame2_Caption"
+	{
+		"fr"		"TUEZ UN ENNEMI !"
+	}
+	"Minigame3_Caption"
+	{
+		"fr"		"DÉTRUISEZ LES TONNEAUX !"
+	}
+	"Minigame4_Caption"
+	{
+		"fr"		"REPOUSSEZ LES ENNEMIS ET RESTEZ EN VIE !"
+	}
+	"Minigame5_Caption"
+	{
+		"fr"		"STICKY JUMP !"
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"fr"		"DITES LE MOT !\n{1}"
+	}
+	"Minigame7_Caption"
+	{
+		"fr"		"ROCKET JUMP !"
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"fr"		"RÉPONDEZ À LA QUESTION !\n{1} = ?"
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"	"{1:s},{2:i}"
+		"fr"		"{1}La bonne réponse était {2} !"
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"fr"		"JACQUES A DIT : MOQUEZ-VOUS !"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"fr"		"JACQUES A DIT : SAUTEZ !"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"fr"		"JACQUES A DIT : ACCROUPISSEZ-VOUS !"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"fr"		"JACADI A DIT : MOQUEZ-VOUS !"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"fr"		"JACADI A DIT : SAUTEZ !"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"fr"		"JACADI A DIT : ACCROUPISSEZ-VOUS !"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"fr"		"(Jacques n'a rien dit..)"
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"fr"		"Un kamikaze est dans les parages !"
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"fr"		"EXPLOSEZ LE PLUS DE PERSONNES POSSIBLE !"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"fr"		"ÉCHAPPEZ AU KAMIKAZE !"
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"fr"		"N'ARRÊTEZ PAS DE BOUGER !"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"fr"		"NE BOUGEZ PAS !"
+	}
+	"Minigame12_Caption"
+	{
+		"fr"		"REJOIGNEZ UNE PLATE-FORME !"
+	}
+	"Minigame13_Caption"
+	{
+		"fr"		"SPYCRAB !"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"fr"		"Les spycrabs doivent s'accroupir et regarder en haut !"
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"fr"		"SABOTEZ UN BÂTIMENT !"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"fr"		"FAITES-VOUS SABOTER UN BÂTIMENT !"
+	}
+	"Minigame15_Caption_Any"
+	{
+		"fr"		"CONSTRUISEZ QUELQUE CHOSE !"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"fr"		"CONTRUISEZ UN DISTRIBUTEUR !"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"fr"		"CONTRUISEZ UN TÉLÉPORTEUR !"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"fr"		"CONTRUISEZ UNE MITRAILLEUSE !"
+	}
+	"Minigame16_Caption"
+	{
+		"fr"		"JARATEZ UN ENNEMI !"
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"fr"		"FRAPPEZ UN HEAVY !"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"fr"		"SOYEZ FRAPPÉ PAR UN MEDIC! "
+	}
+	"Minigame18_Caption"
+	{
+		"fr"		"TIREZ SUR LA CIBLE !"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"fr"		"CHANGEZ DE CLASSE !"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE SCOUT !"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE SOLDIER !"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE PYRO !"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE DEMOMAN !"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE HEAVY !"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE ENGINEER !"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE MEDIC !"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE SNIPER !"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"fr"		"CHANGEZ DE CLASSE POUR LE SPY !"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"fr"		"BUVEZ !"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"fr"		"MANGEZ !"
+	}
+	"Minigame21_Caption"
+	{
+		"fr"		"ÉTOURDISSEZ UN ENNEMI !"
+	}
+	"Minigame22_Caption"
+	{
+		"fr"		"RESTEZ SUR LE SOL !"
+	}
+	"Minigame23_Caption"
+	{
+		"fr"		"DOUBLE SAUT !"
+	}
+	"Minigame24_Caption"
+	{
+		"fr"		"NEEDLEJUMP !"
+	}
+	"Minigame25_Caption"
+	{
+		"fr"		"JETPACK !"
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"fr"		"Dites chaque mot dans le chat aussi vite que possible pour survivre !"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"fr"		"C'EST PARTI !"
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"	"{1:i}"
+		"fr"		"== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes."
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"	"{1:s},{2:s},{3:i}"
+		"fr"		"== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes."
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"	"{1:s}"
+		"fr"		"== ANNONCE ==\n\nLe gagnant est...\n{1} !"
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"fr"		"== ANNONCE == \n\nNIVEAU SUIVANT ! LES MOTS SONT PLUS DIFFICILES !"
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"	"{1:s}"
+		"fr"		"== REVUE DE LA MANCHE == \n\nLes joueurs ayant tapé le moins de mots sont...\n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format" 	"{1:s},{2:i}"
+		"fr"		"{1}\net {2} plus..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format" 	"{1:s}"
+		"fr"		"{1}personne !\n\nTout le monde reste vivant !"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"fr"		"Changer de classe n'est pas autorisé durant les boss !"
+	}
+	"SpecialRound0_Name"
+	{
+		"fr"		"Troisième personne"
+	}
+	"SpecialRound0_Description"
+	{
+		"fr"		"Tous le monde joue dans une nouvelle perspective !"
+	}
+	"SpecialRound1_Name"
+	{
+		"fr"		"Coup d'adrénaline"
+	}
+	"SpecialRound1_Description"
+	{
+		"fr"		"La manche commence rapidement, puis ralentie !"
+	}
+	"SpecialRound2_Name"
+	{
+		"fr"		"Manche allongée"
+	}
+	"SpecialRound2_Description"
+	{
+		"fr"		"30 mini-jeux vont être joués avant le boss !"
+	}
+	"SpecialRound3_Name"
+	{
+		"fr"		"Gravité faible"
+	}
+	"SpecialRound3_Description"
+	{
+		"fr"		"L'espace ? L'ESPACE ! L'ESPAAAAAAAAAAAAAAACEEEEEEE !"
+	}
+	"SpecialRound4_Name"
+	{
+		"fr"		"Tranquillisant"
+	}
+	"SpecialRound4_Description"
+	{
+		"fr"		"Aucun changement de vitesse n'aura lieu dans cette manche !"
+	}
+	"SpecialRound5_Name"
+	{
+		"fr"		"Time Attack"
+	}
+	"SpecialRound5_Description"
+	{
+		"fr"		"La manche accéléra après chaque mini-jeu !"
+	}
+	"SpecialRound6_Name"
+	{
+		"fr"		"Vitesse aléatoire"
+	}
+	"SpecialRound6_Description"
+	{
+		"fr"		"Après chaque mini-jeu, la vitesse change aléatoirement !"
+	}
+	"SpecialRound7_Name"
+	{
+		"fr"		"Slow-mo"
+	}
+	"SpecialRound7_Description"
+	{
+		"fr"		"La manche ralentira après chaque mini-jeu !"
+	}
+	"SpecialRound8_Name"
+	{
+		"fr"		"Maths uniquement"
+	}
+	"SpecialRound8_Description"
+	{
+		"fr"		"Testez vos performances mathématiques !"
+	}
+	"SpecialRound9_Name"
+	{
+		"fr"		"Inversement des rôles"
+	}
+	"SpecialRound9_Description"
+	{
+		"fr"		"Le joueur avec le plus faible score gagne la manche !"
+	}
+	"SpecialRound10_Name"
+	{
+		"fr"		"Double bataille de boss"
+	}
+	"SpecialRound10_Description"
+	{
+		"fr"		"Deux boss auront lieu avant la fin de la manche !"
+	}
+	"SpecialRound11_Name"
+	{
+		"fr"		"Bataille en équipe"
+	}
+	"SpecialRound11_Description"
+	{
+		"fr"		"Si vous gagnez un mini-jeu, un point sera rajouté au score de l'équipe. L'équipe avec le plus de points à la fin gagne !"
+	}
+	"SpecialRound12_Name"
+	{
+		"fr"		"Jeu en solo"
+	}
+	"SpecialRound12_Description"
+	{
+		"fr"		"Mais... Où sont les autres ?"
+	}
+	"SpecialRound13_Name"
+	{
+		"fr"		"Oiseaux uniquement"
+	}
+	"SpecialRound13_Description"
+	{
+		"fr"		"Archimède ! Non !"
+	}
+	"SpecialRound14_Name"
+	{
+		"fr"		"Minuscule"
+	}
+	"SpecialRound14_Description"
+	{
+		"fr"		"Tout le monde devient des tout-petits-mini-minus !"
+	}
+	"SpecialRound15_Name"
+	{
+		"fr"		"Bobbleheads"
+	}
+	"SpecialRound15_Description"
+	{
+		"fr"		"Tout le monde devient des têtes en l'air !"
+	}
+	"SpecialRound16_Name"
+	{
+		"fr"		"Score aléatoire"
+	}
+	"SpecialRound16_Description"
+	{
+		"fr"		"Si vous gagnez un mini-jeu, le score est attribué aléatoirement !"
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Si vous gagnez le mini-jeu, vous obtiendrez {1} points !"
+	}
+	"SpecialRound17_Name"
+	{
+		"fr"		"Mort subite"
+	}
+	"SpecialRound17_Description"
+	{
+		"fr"		"Si vous perdez un mini-jeu, vous serez eliminé ! Le dernier joueur toujours en vie gagne la manche !"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"	"{1:i},{2:i},{3:s}"
+		"fr"		"Joueurs en jeu ({1} sur {2})\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"	"{1:s},{2:i}"
+		"fr"		"{1} (et {2} plus)"
+	}
+	"SpecialRound18_Name"
+	{
+		"fr"		"All In"
+	}
+	"SpecialRound18_Description"
+	{
+		"fr"		"Si vous perdez un mini-jeu, vous perdez TOUS vos points !"
+	}
+	"SpecialRound19_Name"
+	{
+		"fr"		"Texte inversé"
+	}
+	"SpecialRound19_Description"
+	{
+		"fr"		"! sésrevni tnos xuej-inim sed snoitcurtsni seL"
+	}
+	"SpecialRound20_Name"
+	{
+		"fr"		"Non-stop"
+	}
+	"SpecialRound20_Description"
+	{
+		"fr"		"Il n'y aura pour cette manche aucun arrêt entre les mini-jeux !"
+	}
+}
