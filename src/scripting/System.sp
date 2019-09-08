@@ -178,59 +178,65 @@ public void System_OnMapStart()
 
 public void LoadGamemodeInfo()
 {
-	char gamemodeManifestPath[128];
-	BuildPath(Path_SM, gamemodeManifestPath, sizeof(gamemodeManifestPath), "data/microtf2/Gamemodes.txt");
+	char file[128];
+	BuildPath(Path_SM, file, sizeof(file), "data/microtf2/Gamemodes.txt");
 
-	Handle kv = CreateKeyValues("Gamemodes");
-	FileToKeyValues(kv, gamemodeManifestPath);
+	KeyValues kv = new KeyValues("Gamemodes");
+
+	if (!kv.ImportFromFile(file))
+	{
+		SetFailState("Unable to read gamemodes.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
  
-	if (KvGotoFirstSubKey(kv))
+	if (kv.GotoFirstSubKey())
 	{
 		do
 		{
-			int gamemodeID = GetGamemodeIDFromSectionName(kv);
+			int gamemodeId = GetGamemodeIdFromSectionName(kv);
 
-			LoadSysMusicType(gamemodeID, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_SPEEDUP, kv, "SysMusic_SpeedUp");
-			LoadSysMusicType(gamemodeID, SYSMUSIC_GAMEOVER, kv, "SysMusic_GameOver");
+			LoadSysMusicType(gamemodeId, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
+			LoadSysMusicType(gamemodeId, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
+			LoadSysMusicType(gamemodeId, SYSMUSIC_SPEEDUP, kv, "SysMusic_SpeedUp");
+			LoadSysMusicType(gamemodeId, SYSMUSIC_GAMEOVER, kv, "SysMusic_GameOver");
 
 			// These 2 cannot have the different lengths; they're played at the same time
-			KvGetString(kv, "SysMusic_Failure", SystemMusic[gamemodeID][SYSMUSIC_FAILURE], SYSMUSIC_MAXSTRINGLENGTH);
-			KvGetString(kv, "SysMusic_Winner", SystemMusic[gamemodeID][SYSMUSIC_WINNER], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER], SYSMUSIC_MAXSTRINGLENGTH);
 
-			KvGetString(kv, "FriendlyName", SystemNames[gamemodeID], 32);
+			kv.GetString("FriendlyName", SystemNames[gamemodeId], 32);
 
-			if (KvGetNum(kv, "Selectable", 0) == 1)
+			if (kv.GetNum("Selectable", 0) == 1)
 			{
 				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
 				MaxGamemodesSelectable++;
 			}
 
 			#if defined LOGGING_STARTUP
-			LogMessage("Loaded gamemode %d - %s", gamemodeID, SystemNames[gamemodeID]);
+			LogMessage("Loaded gamemode %d - %s", gamemodeId, SystemNames[gamemodeId]);
 			#endif
 		}
-		while (KvGotoNextKey(kv));
+		while (kv.GotoNextKey());
 	}
  
-	CloseHandle(kv);
+	kv.Close();
 }
 
-stock int GetGamemodeIDFromSectionName(Handle kv)
+stock int GetGamemodeIdFromSectionName(KeyValues kv)
 {
 	char buffer[16];
 
-	KvGetSectionName(kv, buffer, sizeof(buffer));
+	kv.GetSectionName(buffer, sizeof(buffer));
 
 	return StringToInt(buffer);
 }
 
-stock void LoadSysMusicType(int gamemodeID, int musicType, Handle kv, const char[] key)
+stock void LoadSysMusicType(int gamemodeID, int musicType, KeyValues kv, const char[] key)
 {
 	Handle sndfile = INVALID_HANDLE;
 
-	KvGetString(kv, key, SystemMusic[gamemodeID][musicType], SYSMUSIC_MAXSTRINGLENGTH);
+	kv.GetString(key, SystemMusic[gamemodeID][musicType], SYSMUSIC_MAXSTRINGLENGTH);
 	sndfile = OpenSoundFile(SystemMusic[gamemodeID][musicType]);
 
 	if (sndfile == INVALID_HANDLE)
