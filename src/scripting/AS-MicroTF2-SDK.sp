@@ -2,7 +2,6 @@
 #define REQUIRE_PLUGIN
 
 #include <sourcemod>
-#include <console>
 #include <sdktools>
 #include <soundlib>
 

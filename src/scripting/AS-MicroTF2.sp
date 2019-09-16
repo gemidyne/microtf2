@@ -192,7 +192,10 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 		DoSelectMinigame();
 	}
 
-	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME];
+	int count = SystemMusicCount[GamemodeID][SYSMUSIC_PREMINIGAME];
+	int selectedBgmIdx = GetRandomInt(0, count-1);
+
+	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx];
 
 	if (GamemodeID == SPR_GAMEMODEID && SpecialRoundID == 20)
 	{
@@ -285,7 +288,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			{
 				player.DisplayOverlay(OVERLAY_BLANK);
 				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
+				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
 				{
@@ -301,7 +304,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.DisplayOverlay(OVERLAY_BLANK);
 
 			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME]);
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 		}
 	}
 
@@ -548,7 +551,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
+				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
 				PlayNegativeVoice(i);
 
 				player.DisplayOverlay(((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17) 
@@ -616,7 +619,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PluginForward_SendPlayerWinMinigame(player.ClientId, PreviousMinigameID);
 				}
 
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER]);
+				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER][0]);
 				PlayPositiveVoice(i);
 
 				player.DisplayOverlay(OVERLAY_WON);

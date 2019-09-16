@@ -23,6 +23,7 @@
 #define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
 #define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
 
+#define SYSMUSIC_MAXFILES 32
 #define SYSMUSIC_MAXSTRINGLENGTH 192
 
 #define OVERLAY_BLANK ""
@@ -37,8 +38,9 @@
 #define OVERLAY_SPECIALROUND "gemidyne/warioware/overlays/system_specialround"
 
 char SystemNames[TOTAL_GAMEMODES+1][32];
-char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXSTRINGLENGTH];
-float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
+char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
+int SystemMusicCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
+float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
 
 int GamemodeID = 0;
 int MaxGamemodesSelectable = 0;
@@ -133,18 +135,21 @@ public void System_OnMapStart()
 	IsBlockingDamage = true;
 	IsOnlyBlockingDamageByPlayers = false;
 
-	// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
-	char buffer[192];
-
 	for (int g = 0; g < TOTAL_GAMEMODES; g++)
 	{
 		for (int i = 0; i < TOTAL_SYSMUSIC; i++)
 		{
-			buffer = SystemMusic[g][i];
-
-			if (strlen(buffer) > 0)
+			for (int k = 0; i < SystemMusicCount[g][i]; k++)
 			{
-				PreloadSound(SystemMusic[g][i]);
+				// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
+				char buffer[SYSMUSIC_MAXSTRINGLENGTH];
+
+				buffer = SystemMusic[g][i][k];
+
+				if (strlen(buffer) > 0)
+				{
+					PreloadSound(SystemMusic[g][i][k]);
+				}
 			}
 		}
 	}
@@ -194,16 +199,14 @@ public void LoadGamemodeInfo()
 	{
 		do
 		{
-			int gamemodeId = GetGamemodeIdFromSectionName(kv);
-
-			LoadSysMusicType(gamemodeId, SYSMUSIC_PREMINIGAME, kv, "SysMusic_PreMinigame");
-			LoadSysMusicType(gamemodeId, SYSMUSIC_BOSSTIME, kv, "SysMusic_BossTime");
-			LoadSysMusicType(gamemodeId, SYSMUSIC_SPEEDUP, kv, "SysMusic_SpeedUp");
-			LoadSysMusicType(gamemodeId, SYSMUSIC_GAMEOVER, kv, "SysMusic_GameOver");
+			int gamemodeId = GetIdFromSectionName(kv);
 
 			// These 2 cannot have the different lengths; they're played at the same time
-			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE], SYSMUSIC_MAXSTRINGLENGTH);
-			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Failure_Length", SystemMusicLength[gamemodeId][SYSMUSIC_FAILURE][0]);
+
+			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Winner_Length", SystemMusicLength[gamemodeId][SYSMUSIC_WINNER][0]);
 
 			kv.GetString("FriendlyName", SystemNames[gamemodeId], 32);
 
@@ -212,6 +215,9 @@ public void LoadGamemodeInfo()
 				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
 				MaxGamemodesSelectable++;
 			}
+
+			// Get sections
+			LoadSysMusicSection(kv, gamemodeId);
 
 			#if defined LOGGING_STARTUP
 			LogMessage("Loaded gamemode %d - %s", gamemodeId, SystemNames[gamemodeId]);
@@ -223,7 +229,7 @@ public void LoadGamemodeInfo()
 	kv.Close();
 }
 
-stock int GetGamemodeIdFromSectionName(KeyValues kv)
+stock int GetIdFromSectionName(KeyValues kv)
 {
 	char buffer[16];
 
@@ -232,22 +238,56 @@ stock int GetGamemodeIdFromSectionName(KeyValues kv)
 	return StringToInt(buffer);
 }
 
-stock void LoadSysMusicType(int gamemodeID, int musicType, KeyValues kv, const char[] key)
+stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 {
-	Handle sndfile = INVALID_HANDLE;
-
-	kv.GetString(key, SystemMusic[gamemodeID][musicType], SYSMUSIC_MAXSTRINGLENGTH);
-	sndfile = OpenSoundFile(SystemMusic[gamemodeID][musicType]);
-
-	if (sndfile == INVALID_HANDLE)
+	if (!kv.GotoFirstSubKey())
 	{
-		LogError("Failed to get sound length for \"%s\" - %s", key, SystemMusic[gamemodeID][musicType]);
+		return;
 	}
-	else
+
+	do
 	{
-		SystemMusicLength[gamemodeID][musicType] = GetSoundLengthFloat(sndfile);
-		CloseHandle(sndfile);
+		char section[32];
+		kv.GetSectionName(section, sizeof(section));
+
+		int bgmType = 0;
+
+		if (StrEqual(section, "SysMusic_PreMinigame", false))
+		{
+			bgmType = SYSMUSIC_PREMINIGAME;
+		}
+		else if (StrEqual(section, "SysMusic_BossTime", false))
+		{
+			bgmType = SYSMUSIC_BOSSTIME;
+		}
+		else if (StrEqual(section, "SysMusic_SpeedUp", false))
+		{
+			bgmType = SYSMUSIC_SPEEDUP;
+		}
+		else if (StrEqual(section, "SysMusic_GameOver", false))
+		{
+			bgmType = SYSMUSIC_GAMEOVER;
+		}
+
+		if (kv.GotoFirstSubKey())
+		{
+			int idx = 0;
+
+			do
+			{
+				kv.GetString("File", SystemMusic[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
+				kv.GetFloat("Length", SystemMusicLength[gamemodeId][bgmType][idx]);
+
+				SystemMusicCount[gamemodeId][bgmType]++;
+			}
+			while (kv.GotoNextKey());
+
+			kv.GoBack();
+		}
 	}
+	while (kv.GotoNextKey());
+
+	kv.GoBack();
 }
 
 stock void LoadOffsets()
