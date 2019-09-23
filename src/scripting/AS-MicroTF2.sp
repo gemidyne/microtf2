@@ -652,7 +652,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE]); 
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
 			PlayNegativeVoice(i);
 
 			player.DisplayOverlay(OVERLAY_BLANK);
@@ -771,6 +771,11 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	}
 	else
 	{
+		int count = SystemMusicCount[GamemodeID][SYSMUSIC_SPEEDUP];
+		int selectedBgmIdx = GetRandomInt(0, count-1);
+
+		float duration = SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx];
+
 		for (int i = 1; i <= MaxClients; i++)
 		{
 			Player player = new Player(i);
@@ -783,11 +788,11 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 				}
 				
 				player.DisplayOverlay((flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP]);
+				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
 
-		CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 
 	return Plugin_Handled;
@@ -797,6 +802,11 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 {
 	SpeedLevel = 1.0;
 	SetSpeed();
+
+	int count = SystemMusicCount[GamemodeID][SYSMUSIC_BOSSTIME];
+	int selectedBgmIdx = GetRandomInt(0, count-1);
+
+	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_BOSSTIME][selectedBgmIdx];
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -810,11 +820,11 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 			}
 
 			player.DisplayOverlay(OVERLAY_BOSS);
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_BOSSTIME]);
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
 		}
 	}
 
-	CreateTimer(SystemMusicLength[GamemodeID][SYSMUSIC_BOSSTIME], Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -862,6 +872,11 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			: TFTeam_Blue;
 	}
 
+	int selectedBgmCount = SystemMusicCount[GamemodeID][SYSMUSIC_GAMEOVER];
+	int selectedBgmIdx = GetRandomInt(0, selectedBgmCount-1);
+
+	float bgmDuration = SystemMusicLength[GamemodeID][SYSMUSIC_GAMEOVER][selectedBgmIdx];
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -874,7 +889,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			}
 
 			player.DisplayOverlay(OVERLAY_GAMEOVER);
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_GAMEOVER]);
+			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
 
 			SetEntityRenderColor(i, 255, 255, 255, 255);
 			SetEntityRenderMode(i, RENDER_NORMAL);
@@ -1029,7 +1044,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	CloseHandle(winners);
 	winners = INVALID_HANDLE;
 
-	CreateTimer(8.0, Timer_GameLogic_GameOverEnd, _, TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(bgmDuration, Timer_GameLogic_GameOverEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
