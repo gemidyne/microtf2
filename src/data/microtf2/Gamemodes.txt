@@ -2,292 +2,288 @@
 {
 	"0"
 	{
-		// Normal - WarioTV (WW DIY)
-		"FriendlyName"			"Wario"
-		"Selectable"			"1"
-
+		"FriendlyName"		"Wario"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/wario/preminigame.mp3"
-				"Length" 	"0.1234"
+				"file"		"gemidyne/warioware/system/bgm/themes/wario/preminigame.mp3"
+				"Length"		"2.073550"
 			}
 		}
-
-		
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/wario/boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/wario/boss.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/wario/speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/wario/speed.mp3"
+				"Length"		"3.735500"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/wario/gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/wario/gameover.mp3"
+				"Length"		"4.022812"
 			}
 		}
-
-		// These sounds must have the same length, otherwise you may encounter overlapping BGM.
-		"SysMusic_Failure"	"gemidyne/warioware/system/bgm/themes/wario/failure.mp3"
-		"SysMusic_Winner"	"gemidyne/warioware/system/bgm/themes/wario/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/wario/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/wario/winner.mp3"
+		"SysMusic_Failure_Length"		"1.814388"
+		"SysMusic_Winner_Length"		"2.021705"
 	}
-
 	"1"
 	{
-		// Normal - Mona (WW SmoothMoves)
-		"FriendlyName"			"Mona"
-		"Selectable"			"1"
-
+		"FriendlyName"		"Mona"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/mona/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/mona/preminigame.mp3"
+				"Length"		"3.997863"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"Length"		"3.813878"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"Length"		"3.787755"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"Length"		"8.359125"
 			}
 		}
-
-		"SysMusic_Failure"	"gemidyne/warioware/system/bgm/themes/mona/failure.mp3"
-		"SysMusic_Winner"	"gemidyne/warioware/system/bgm/themes/mona/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/mona/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/mona/winner.mp3"
+		"SysMusic_Failure_Length"		"2.012395"
+		"SysMusic_Winner_Length"		"2.012395"
 	}
 	"2"
 	{
-		// Normal - Orbulon (WW DIY)
-		"FriendlyName"			"Orbulon"
-		"Selectable"			"1"
-		
+		"FriendlyName"		"Orbulon"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/orbulon/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/preminigame.mp3"
+				"Length"		"2.073550"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/orbulon/boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/boss.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/orbulon/speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/speed.mp3"
+				"Length"		"3.761625"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/orbulon/gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/gameover.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/orbulon/failure.mp3"
 		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/orbulon/winner.mp3"
+		"SysMusic_Failure_Length"		"2.047628"
+		"SysMusic_Winner_Length"		"2.021705"
 	}
 	"3"
 	{
-		// Normal - Jimmy T (WW Touched)
-		"FriendlyName"			"Jimmy T"
-		"Selectable"			"1"
-		
+		"FriendlyName"		"Jimmy T"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/jimmyt/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/jimmyt/preminigame.mp3"
+				"Length"		"2.021705"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"Length"		"3.735500"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"Length"		"3.970562"
 			}
 		}
-
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/jimmyt/failure.mp3"
 		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/jimmyt/winner.mp3"
+		"SysMusic_Failure_Length"		"2.047628"
+		"SysMusic_Winner_Length"		"2.021705"
 	}
 	"4"
 	{
-		// Normal - Wario (WW Touched)
-		"FriendlyName"			"Wario"
-		"Selectable"			"1"
-		
+		"FriendlyName"		"Wario"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/twario/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/twario/preminigame.mp3"
+				"Length"		"2.021705"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"Length"		"3.735500"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"Length"		"3.970562"
 			}
 		}
-
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twario/failure.mp3"
 		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twario/winner.mp3"
+		"SysMusic_Failure_Length"		"2.021705"
+		"SysMusic_Winner_Length"		"2.073550"
 	}
 	"5"
 	{
-		// Normal - WarioMan (WW Touched)
-		"FriendlyName"			"WarioMan"
-		"Selectable"			"1"
-		
+		"FriendlyName"		"WarioMan"
+		"selectable"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/twarioman/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/twarioman/preminigame.mp3"
+				"Length"		"2.021705"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"Length"		"4.048937"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"Length"		"3.735500"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"Length"		"3.970562"
 			}
 		}
-
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twarioman/failure.mp3"
 		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twarioman/winner.mp3"
+		"SysMusic_Failure_Length"		"2.021705"
+		"SysMusic_Winner_Length"		"2.021705"
 	}
 	"99"
 	{
-		// Special Rounds - Elephant Buildings (WW SmoothMoves)
-		"FriendlyName"			"Special Round"
-
+		"FriendlyName"		"Special Round"
 		"SysMusic_PreMinigame"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/preminigame.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/preminigame.mp3"
+				"Length"		"4.205688"
 			}
 		}
-
 		"SysMusic_BossTime"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"Length"		"3.813878"
 			}
 		}
-
 		"SysMusic_SpeedUp"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"Length"		"3.787755"
 			}
 		}
-
 		"SysMusic_GameOver"
 		{
 			"0"
 			{
-				"File"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"file"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"Length"		"8.359125"
 			}
 		}
-		
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/special/failure.mp3"
 		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/special/winner.mp3"
+		"SysMusic_Failure_Length"		"2.099473"
+		"SysMusic_Winner_Length"		"2.099473"
 	}
 }
