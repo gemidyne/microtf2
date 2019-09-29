@@ -54,10 +54,10 @@ public void ProcessSystemMusic()
 			int gamemodeId = GetGamemodeIdFromSectionName(kv);
 
 			PrintToServer("Processing gamemode sounds #%i", gamemodeId);
-			ProcessMusicKey(kv, "SysMusic_PreMinigame");
-			ProcessMusicKey(kv, "SysMusic_BossTime");
-			ProcessMusicKey(kv, "SysMusic_SpeedUp");
-			ProcessMusicKey(kv, "SysMusic_GameOver");
+			ProcessMusicKeySingular(kv, "SysMusic_Failure");
+			ProcessMusicKeySingular(kv, "SysMusic_Winner");
+
+			ProcessSysMusicSection(kv);
 		}
 		while (kv.GotoNextKey());
 	}
@@ -82,7 +82,43 @@ stock int GetGamemodeIdFromSectionName(KeyValues kv)
 	return StringToInt(buffer);
 }
 
-stock void ProcessMusicKey(KeyValues kv, const char[] key)
+stock void ProcessSysMusicSection(KeyValues kv)
+{
+	if (!kv.GotoFirstSubKey())
+	{
+		return;
+	}
+
+	do
+	{
+		char section[32];
+		kv.GetSectionName(section, sizeof(section));
+
+		if (kv.GotoFirstSubKey())
+		{
+			bool isSubsection = StrEqual(section, "SysMusic_PreMinigame", false)
+				|| StrEqual(section, "SysMusic_BossTime", false)
+				|| StrEqual(section, "SysMusic_SpeedUp", false)
+				|| StrEqual(section, "SysMusic_GameOver", false);
+
+			if (isSubsection)
+			{
+				do
+				{
+					ProcessMusicKeySectionItem(kv, "File");
+				}
+				while (kv.GotoNextKey());
+			}
+
+			kv.GoBack();
+		}
+	}
+	while (kv.GotoNextKey());
+
+	kv.GoBack();
+}
+
+stock void ProcessMusicKeySingular(KeyValues kv, const char[] key)
 {
 	float length = GetMusicLengthFromKey(kv, key);
 
@@ -91,6 +127,13 @@ stock void ProcessMusicKey(KeyValues kv, const char[] key)
 	Format(lengthKey, sizeof(lengthKey), "%s_Length", key);
 
 	kv.SetFloat(lengthKey, length);
+}
+
+stock void ProcessMusicKeySectionItem(KeyValues kv, const char[] key)
+{
+	float length = GetMusicLengthFromKey(kv, key);
+
+	kv.SetFloat("Length", length);
 }
 
 stock float GetMusicLengthFromKey(KeyValues kv, const char[] key)
