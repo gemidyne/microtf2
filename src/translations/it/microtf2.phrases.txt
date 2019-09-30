@@ -546,7 +546,7 @@
 	"SpecialRound17_Caption_Full"
 	{
 		"#format"	"{1:i},{2:i},{3:s}"
-		"it"		"Ancora in gioco:" ({1} di {2})\n{3}"
+		"it"		"Ancora in gioco: ({1} di {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
