@@ -75,8 +75,6 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	SetFailState("This dev build is untested and probably does not work. Use the latest stable build instead for now.");
-
 	InitializeSystem();
 }
 

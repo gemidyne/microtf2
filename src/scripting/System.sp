@@ -139,16 +139,16 @@ public void System_OnMapStart()
 	{
 		for (int i = 0; i < TOTAL_SYSMUSIC; i++)
 		{
-			for (int k = 0; i < SystemMusicCount[g][i]; k++)
+			for (int k = 0; k < SystemMusicCount[g][i]; k++)
 			{
 				// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
 				char buffer[SYSMUSIC_MAXSTRINGLENGTH];
 
-				buffer = SystemMusic[g][i][k];
+				strcopy(buffer, sizeof(buffer), SystemMusic[g][i][k]);
 
 				if (strlen(buffer) > 0)
 				{
-					PreloadSound(SystemMusic[g][i][k]);
+					PreloadSound(buffer);
 				}
 			}
 		}
@@ -205,8 +205,12 @@ public void LoadGamemodeInfo()
 			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
 			kv.GetFloat("SysMusic_Failure_Length", SystemMusicLength[gamemodeId][SYSMUSIC_FAILURE][0]);
 
+			SystemMusicCount[gamemodeId][SYSMUSIC_FAILURE]++;
+
 			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
 			kv.GetFloat("SysMusic_Winner_Length", SystemMusicLength[gamemodeId][SYSMUSIC_WINNER][0]);
+
+			SystemMusicCount[gamemodeId][SYSMUSIC_WINNER]++;
 
 			kv.GetString("FriendlyName", SystemNames[gamemodeId], 32);
 
@@ -276,8 +280,8 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 			do
 			{
 				kv.GetString("File", SystemMusic[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
-				kv.GetFloat("Length", SystemMusicLength[gamemodeId][bgmType][idx]);
 
+				SystemMusicLength[gamemodeId][bgmType][idx] = kv.GetFloat("Length");
 				SystemMusicCount[gamemodeId][bgmType]++;
 			}
 			while (kv.GotoNextKey());
