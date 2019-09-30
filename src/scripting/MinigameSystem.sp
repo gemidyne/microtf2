@@ -140,56 +140,61 @@ public void MinigameSystem_OnMapEnd()
 public void LoadMinigameData()
 {
 	char funcName[64];
-	char manifestPath[128];
+	char file[128];
 
 	// Our method of initializing minigames is:
 	// Each minigame has a method called Minigame<NUMBER>_EntryPoint
 	// This method is invoked and allows the minigame to add itself to the Minigame-cycle and add itself to forwards.
 
 	// Determine count of Minigames that are available.
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Minigames.txt");
+	BuildPath(Path_SM, file, sizeof(file), "data/microtf2/Minigames.txt");
 
-	Handle kv = CreateKeyValues("Minigames");
-	FileToKeyValues(kv, manifestPath);
- 
-	if (KvGotoFirstSubKey(kv))
+	KeyValues kv = new KeyValues("Minigames");
+
+	if (!kv.ImportFromFile(file))
 	{
-		int i = 0;
+		SetFailState("Unable to read Minigames.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
 
+	if (kv.GotoFirstSubKey())
+	{
 		do
 		{
-			i++;
+			int i = GetIdFromSectionName(kv);
 
-			MinigameIsEnabled[i] = KvGetNum(kv, "Enabled", 0) == 1;
+			MinigamesLoaded++;
 
-			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
+			MinigameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
+
+			kv.GetString("EntryPoint", funcName, sizeof(funcName));
 
 			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 			if (func != INVALID_FUNCTION)
 			{
-				MinigamesLoaded++;
-
 				Call_StartFunction(INVALID_HANDLE, func);
 				Call_Finish();
 			}
 			else
 			{
-				LogError("Unable to find EntryPoint for Minigame #%i with name: \"%s\"", i, funcName);
+				MinigameIsEnabled[i] = false;
+				LogError("Unable to find EntryPoint for Minigame #%i with name: \"%s\". This minigame will not be run.", i, funcName);
 				continue;
 			}
 
-			KvGetString(kv, "BackgroundMusic", MinigameMusic[i], 128);
-			KvGetString(kv, "Caption", MinigameCaptions[i], 64);
+			kv.GetString("BackgroundMusic", MinigameMusic[i], 128);
+			kv.GetString("Caption", MinigameCaptions[i], 64);
 
-			MinigameCaptionIsDynamic[i] = (KvGetNum(kv, "CaptionIsDynamic", 0) == 1);
+			MinigameCaptionIsDynamic[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
 
 			if (MinigameCaptionIsDynamic[i])
 			{
-				KvGetString(kv, "DynamicCaptionMethod", MinigameDynamicCaptionFunctions[i], 64);
+				kv.GetString("DynamicCaptionMethod", MinigameDynamicCaptionFunctions[i], 64);
 			}
 
 			char blockedSpecialRounds[64];
-			KvGetString(kv, "BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
+			kv.GetString("BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
 
 			if (strlen(blockedSpecialRounds) > 0)
 			{
@@ -204,13 +209,13 @@ public void LoadMinigameData()
 				}
 			}
 
-			MinigameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
-			MinigameBlockedSpeedsHigherThan[i] = KvGetFloat(kv, "BlockedOnSpeedsHigherThan", 0.0);
+			MinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
+			MinigameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 		}
-		while (KvGotoNextKey(kv));
+		while (kv.GotoNextKey());
 	}
  
-	CloseHandle(kv);
+	kv.Close();
 }
 
 public void LoadBossgameData()
