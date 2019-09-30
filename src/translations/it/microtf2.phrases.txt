@@ -369,7 +369,7 @@
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"	"{1:s}"
-		"it"		"== ANNUNCIO ==\n\nThe winner is...\n{1}!"
+		"it"		"== ANNUNCIO ==\n\nIl vincitore è...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
@@ -571,7 +571,7 @@
 	}
 	"SpecialRound20_Name"
 	{
-		"it"		"Senza Tragua"
+		"it"		"Senza Tregua"
 	}
 	"SpecialRound20_Description"
 	{
