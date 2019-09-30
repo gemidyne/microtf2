@@ -97,8 +97,6 @@ public void MinigameSystem_OnMapStart()
 	PlayedMinigamePool = new ArrayList();
 	PlayedBossgamePool = new ArrayList();
 
-	Handle sndfile = INVALID_HANDLE;
-
 	for (int i = 1; i <= MinigamesLoaded; i++)
 	{
 		if (strlen(MinigameMusic[i]) == 0)
@@ -107,17 +105,6 @@ public void MinigameSystem_OnMapStart()
 		}
 
 		PreloadSound(MinigameMusic[i]);
-		sndfile = OpenSoundFile(MinigameMusic[i]);
-
-		if (sndfile == INVALID_HANDLE)
-		{
-			LogError("Failed to get sound length for Minigame %d - %s", i, MinigameMusic[i]);
-		}
-		else
-		{
-			MinigameMusicLength[i] = GetSoundLengthFloat(sndfile);
-			CloseHandle(sndfile);
-		}
 	}
 
 	for (int i = 1; i <= BossgamesLoaded; i++)
@@ -184,6 +171,8 @@ public void LoadMinigameData()
 			}
 
 			kv.GetString("BackgroundMusic", MinigameMusic[i], 128);
+			MinigameMusicLength[i] = kv.GetFloat("BackgroundMusic_Length");
+
 			kv.GetString("Caption", MinigameCaptions[i], 64);
 
 			MinigameCaptionIsDynamic[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
