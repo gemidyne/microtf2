@@ -31,6 +31,9 @@ public Action Cmd_ProcessSounds(int client, int args)
 {
 	PrintToServer("Processing system music");
 	ProcessSystemMusic();
+
+	PrintToServer("Processing minigame music");
+	ProcessMinigameMusic();
 }
 
 public void ProcessSystemMusic()
@@ -42,7 +45,7 @@ public void ProcessSystemMusic()
 
 	if (!kv.ImportFromFile(file))
 	{
-		LogError("Unable to read gamemodes.txt from data/microtf2/");
+		LogError("Unable to read Gamemodes.txt from data/microtf2/");
 		kv.Close();
 		return;
 	}
@@ -51,7 +54,7 @@ public void ProcessSystemMusic()
 	{
 		do
 		{
-			int gamemodeId = GetGamemodeIdFromSectionName(kv);
+			int gamemodeId = GetIdFromSectionName(kv);
 
 			PrintToServer("Processing gamemode sounds #%i", gamemodeId);
 			ProcessMusicKeySingular(kv, "SysMusic_Failure");
@@ -73,7 +76,41 @@ public void ProcessSystemMusic()
 	PrintToServer("System Music processing complete");
 }
 
-stock int GetGamemodeIdFromSectionName(KeyValues kv)
+public void ProcessMinigameMusic()
+{
+	char file[128];
+	BuildPath(Path_SM, file, sizeof(file), "data/microtf2/Minigames.txt");
+
+	KeyValues kv = new KeyValues("Minigames");
+
+	if (!kv.ImportFromFile(file))
+	{
+		SetFailState("Unable to read Minigames.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
+
+	if (kv.GotoFirstSubKey())
+	{
+		do
+		{
+			ProcessMusicKeySingular(kv, "BackgroundMusic");
+		}
+		while (kv.GotoNextKey());
+	}
+
+	kv.Rewind();
+
+	if (!kv.ExportToFile(file))
+	{
+		LogError("Unable to write Minigames.txt in data/microtf2/ directory");
+	}
+ 
+	kv.Close();
+	PrintToServer("Minigame Music processing complete");
+}
+
+stock int GetIdFromSectionName(KeyValues kv)
 {
 	char buffer[16];
 
