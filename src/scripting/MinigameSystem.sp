@@ -221,52 +221,56 @@ public void LoadMinigameData()
 public void LoadBossgameData()
 {
 	char funcName[64];
-	char manifestPath[128];
-	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Bossgames.txt");
+	char file[128];
+	BuildPath(Path_SM, file, sizeof(file), "data/microtf2/Bossgames.txt");
 
-	Handle kv = CreateKeyValues("Bossgames");
-	FileToKeyValues(kv, manifestPath);
- 
-	if (KvGotoFirstSubKey(kv))
+	KeyValues kv = new KeyValues("Bossgames");
+
+	if (!kv.ImportFromFile(file))
 	{
-		int i = 0;
-
+		SetFailState("Unable to read Bossgames.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
+ 
+	if (kv.GotoFirstSubKey())
+	{
 		do
 		{
-			i++;
+			int i = GetIdFromSectionName(kv);
 
-			BossgameIsEnabled[i] = KvGetNum(kv, "Enabled", 0) == 1;
+			BossgameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
+			BossgamesLoaded++;
 
 			// Get EntryPoint first of all!
-			KvGetString(kv, "EntryPoint", funcName, sizeof(funcName));
+			kv.GetString("EntryPoint", funcName, sizeof(funcName));
 
 			Function func = GetFunctionByName(INVALID_HANDLE, funcName);
 			if (func != INVALID_FUNCTION)
 			{
-				BossgamesLoaded++;
-
 				Call_StartFunction(INVALID_HANDLE, func);
 				Call_Finish();
 			}
 			else
 			{
-				LogError("Unable to find EntryPoint for Bossgame #%i with name: \"%s\"", i, funcName);
+				BossgameIsEnabled[i] = false;
+				LogError("Unable to find EntryPoint for Bossgame #%i with name: \"%s\". This bossgame will not be run.", i, funcName);
 				continue;
 			}
 
-			KvGetString(kv, "BackgroundMusic", BossgameMusic[i], 128);
-			KvGetString(kv, "Caption", BossgameCaptions[i], 64);
+			kv.GetString("BackgroundMusic", BossgameMusic[i], 128);
+			kv.GetString("Caption", BossgameCaptions[i], 64);
 
-			BossgameLength[i] = KvGetFloat(kv, "Duration", 30.0);
-			BossgameCaptionIsDynamic[i] = (KvGetNum(kv, "CaptionIsDynamic", 0) == 1);
+			BossgameLength[i] = kv.GetFloat("Duration", 30.0);
+			BossgameCaptionIsDynamic[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
 
 			if (BossgameCaptionIsDynamic[i])
 			{
-				KvGetString(kv, "DynamicCaptionMethod", BossgameDynamicCaptionFunctions[i], 64);
+				kv.GetString("DynamicCaptionMethod", BossgameDynamicCaptionFunctions[i], 64);
 			}
 
 			char blockedSpecialRounds[64];
-			KvGetString(kv, "BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
+			kv.GetString("BlockedSpecialRounds", blockedSpecialRounds, sizeof(blockedSpecialRounds));
 
 			if (strlen(blockedSpecialRounds) > 0)
 			{
@@ -281,13 +285,13 @@ public void LoadBossgameData()
 				}
 			}
 
-			BossgameRequiresMultiplePlayers[i] = KvGetNum(kv, "RequiresMultiplePlayers", 0) == 1;
-			BossgameBlockedSpeedsHigherThan[i] = KvGetFloat(kv, "BlockedOnSpeedsHigherThan", 0.0);
+			BossgameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
+			BossgameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 		}
-		while (KvGotoNextKey(kv));
+		while (kv.GotoNextKey());
 	}
  
-	CloseHandle(kv);
+	kv.Close();
 }
 
 public void DoSelectMinigame()
