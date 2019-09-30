@@ -190,7 +190,7 @@ public void LoadGamemodeInfo()
 
 	if (!kv.ImportFromFile(file))
 	{
-		SetFailState("Unable to read gamemodes.txt from data/microtf2/");
+		SetFailState("Unable to read Gamemodes.txt from data/microtf2/");
 		kv.Close();
 		return;
 	}
