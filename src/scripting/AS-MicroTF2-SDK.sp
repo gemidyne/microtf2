@@ -148,7 +148,7 @@ stock float GetMusicLengthFromKey(KeyValues kv, const char[] key)
 
 	if (sndfile == INVALID_HANDLE)
 	{
-		PrintToServer("Failed to get sound length for \"%s\" - %s", key, fileName);
+		PrintToServer("Failed to get sound length for %s.", key, fileName);
 		return 0.00;
 	}
 	else
