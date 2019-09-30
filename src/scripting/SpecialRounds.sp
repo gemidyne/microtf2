@@ -193,15 +193,18 @@ stock void PrintSelectedSpecialRound()
 			Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
 
 			char name[SPR_NAME_LENGTH];
+			char description[256];
+
 			Format(name, sizeof(name), "%T", key, i);
 
 			ToUpperString(name, name, sizeof(name));
 			PrintCenterText(i, "%T", "Hud_SpecialRound_CenterDisplay", i, name);
 
-			char description[128];
+			// Restore name to normal casing
+			Format(name, sizeof(name), "%T", key, i);
 
 			Format(key, sizeof(key), "SpecialRound%i_Description", SpecialRoundID);
-			Format(name, sizeof(name), "%T", key, i);
+			Format(description, sizeof(description), "%T", key, i);
 
 			CPrintToChat(i, "%T", "Hud_SpecialRound_ChatDisplay", i, PLUGIN_PREFIX, name, description);
 		}
