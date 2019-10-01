@@ -567,7 +567,7 @@
 	}
 	"SpecialRound19_Description"
 	{
-		"it"		"!oirartnoc la onos ihcoiginim ied inoizircsed eL
+		"it"		"!oirartnoc la onos ihcoiginim ied inoizircsed eL"
 	}
 	"SpecialRound20_Name"
 	{
