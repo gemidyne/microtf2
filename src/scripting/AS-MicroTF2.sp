@@ -292,9 +292,18 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
 				{
-					char score[32];
-					Format(score, sizeof(score), "%T", "Hud_Score_Default", i, player.Score);
-					player.ShowAnnotation(duration, score);
+					// Print localised annotations
+					for (int j = 1; j <= MaxClients; j++)
+					{
+						Player annotationViewer = new Player(j);
+
+						if (annotationViewer.IsInGame && !annotationViewer.IsBot)
+						{
+							char score[32];
+							Format(score, sizeof(score), "%T", "Hud_Score_Default", j, player.Score);
+							annotationViewer.ShowAnnotation(player.ClientId, 3.0, score);
+						}
+					}
 				}
 			}
 		}
@@ -580,10 +589,18 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 					if (SpecialRoundID != 12)
 					{
-						char text[32];
-						Format(text, sizeof(text), "%T", "General_Loser", i);
+						// Print localised annotations
+						for (int j = 1; j <= MaxClients; j++)
+						{
+							Player annotationViewer = new Player(j);
 
-						player.ShowAnnotation(2.0, text);
+							if (annotationViewer.IsInGame && !annotationViewer.IsBot)
+							{
+								char text[32];
+								Format(text, sizeof(text), "%T", "General_Loser", j);
+								annotationViewer.ShowAnnotation(player.ClientId, 2.0, text);
+							}
+						}
 					}
 
 					if (SpecialRoundID == 17)
@@ -631,9 +648,18 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 				if (SpecialRoundID != 12)
 				{
-					char text[32];
-					Format(text, sizeof(text), "%T", "General_Winner", i);
-					player.ShowAnnotation(2.0, text);
+					// Print localised annotations
+					for (int j = 1; j <= MaxClients; j++)
+					{
+						Player annotationViewer = new Player(j);
+
+						if (annotationViewer.IsInGame && !annotationViewer.IsBot)
+						{
+							char text[32];
+							Format(text, sizeof(text), "%T", "General_Winner", j);
+							annotationViewer.ShowAnnotation(player.ClientId, 2.0, text);
+						}
+					}
 				}
 			}
 

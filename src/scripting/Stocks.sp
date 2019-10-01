@@ -128,25 +128,24 @@ stock void ClientWonMinigame(int client)
 	}
 }
 
-stock void ShowAnnotation(int client, float lifetime, char text[32])
+stock void ShowAnnotation(int client, int attachToEntity, float lifetime, char text[32])
 {
-	int bitfield = BuildBitStringExcludingClient(client);
+	int bitfield = BuildBitStringExcludingClient(attachToEntity);
 
-	ShowAnnotationWithBitfield(client, lifetime, text, bitfield);
+	ShowAnnotationWithBitfield(client, attachToEntity, lifetime, text, bitfield);
 }
 
-stock void ShowAnnotationWithBitfield(int client, float lifetime, char text[32], int bitfield)
+stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float lifetime, char text[32], int bitfield)
 {
-	Handle event = CreateEvent("show_annotation");
+	Event event = CreateEvent("show_annotation");
 
 	if (event == INVALID_HANDLE)
 	{
 		return;
 	}
 
-	if (g_iAnnotationEventId > 100000)
+	if (g_iAnnotationEventId > 9999)
 	{
-		// This shouldn't really happen...
 		g_iAnnotationEventId = 0;
 	}
 
@@ -171,14 +170,14 @@ stock void ShowAnnotationWithBitfield(int client, float lifetime, char text[32],
 	}
 
 	//https://forums.alliedmods.net/showpost.php?p=1996379&postcount=14
-	SetEventInt(event, "id", g_iAnnotationEventId);
-	SetEventInt(event, "follow_entindex", client);
-	SetEventFloat(event, "lifetime", lifetime);
-	SetEventString(event, "text", text);
-	SetEventString(event, "play_sound", "misc/null.wav");
-	SetEventBool(event, "show_effect", true);
-	SetEventInt(event, "visibilityBitfield", bitfield);
-	FireEvent(event);
+	event.SetInt("id", g_iAnnotationEventId);
+	event.SetInt("follow_entindex", attachToEntity);
+	event.SetFloat("lifetime", lifetime);
+	event.SetString("text", text);
+	event.SetString("play_sound", "misc/null.wav");
+	event.SetBool("show_effect", false);
+	event.SetInt("visibilityBitfield", bitfield);
+	event.FireToClient(client);
 	
 	g_iAnnotationEventId++;
 }
@@ -190,6 +189,11 @@ public int BuildBitStringExcludingClient(int client)
 	// Iterating through all clients to build a visibility bitfield of all alive players
 	for (int i = 1; i <= MaxClients; i++)
 	{
+		if (client == i) 
+		{
+			continue;
+		}
+
 		if (IsClientInGame(i) && i != client)
 		{
 			// 1-based

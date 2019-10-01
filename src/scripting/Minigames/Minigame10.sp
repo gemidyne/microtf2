@@ -206,7 +206,7 @@ public bool Minigame10_Timebomb_CanApplyToPlayer(int client)
 
 public void Minigame10_TimebombPlayer(int client)
 {
-	Player player = new Player(client);
+	Player timebomb = new Player(client);
 
 	Minigame10_TimebombSerial[client] = ++Minigame10_Serial;
 	CreateTimer(1.0, Minigame10_Timebomb_Timer, client | (Minigame10_Serial << 7), TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
@@ -226,13 +226,21 @@ public void Minigame10_TimebombPlayer(int client)
 	CreateParticle(client, particle, 4.0);
 	CreateParticle(client, "rockettrail", 4.0);
 
-	char buffer[32];
-	Format(buffer, sizeof(buffer), "%T", "Minigame10_KamikazeIsHere", player.ClientId);
-	player.ShowAnnotation(3.0, buffer);
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
+		{
+			char buffer[32];
+			Format(buffer, sizeof(buffer), "%T", "Minigame10_KamikazeIsHere", player.ClientId);
+			player.ShowAnnotation(timebomb.ClientId, 3.0, buffer);
+		}
+	}
 
 	SetVariantString("models/bots/demo/bot_sentry_buster.mdl");
-	AcceptEntityInput(player.ClientId, "SetCustomModel");
-	SetEntProp(player.ClientId, Prop_Send, "m_bUseClassAnimations", 1);
+	AcceptEntityInput(timebomb.ClientId, "SetCustomModel");
+	SetEntProp(timebomb.ClientId, Prop_Send, "m_bUseClassAnimations", 1);
 }
 
 public Action Minigame10_Timebomb_Timer(Handle timer, int value)

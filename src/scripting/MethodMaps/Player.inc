@@ -466,9 +466,9 @@ methodmap Player __nullable__
         CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, text);
     }
 
-    public void ShowAnnotation(float lifetime, char text[32])
+    public void ShowAnnotation(int attachToEntity, float lifetime, char text[32])
     {
-        ShowAnnotation(this.ClientId, lifetime, text);
+        ShowAnnotation(this.ClientId, attachToEntity, lifetime, text);
     }
 
     public void PrintHintBox(const char[] text)
