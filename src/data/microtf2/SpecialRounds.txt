@@ -95,19 +95,19 @@
 	"16"
 	{
 		"Name"		"Score Randomizer"
-		"Description"	"If you win a microgames, you will be rewarded a random amount of points!"
+		"Description"	"If you win a microgame, you will be rewarded a random amount of points!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"17"
 	{
 		"Name"		"Sudden Death"
-		"Description"	"If you lose a microgames, you will be knocked out! Last player who hasn't failed wins the round!"
+		"Description"	"If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"18"
 	{
 		"Name"		"All In"
-		"Description"	"If you lose a microgames, you will lose ALL your points!"
+		"Description"	"If you lose a microgame, you will lose ALL your points!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"19"
