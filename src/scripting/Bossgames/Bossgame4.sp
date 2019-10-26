@@ -190,7 +190,7 @@ public void Bossgame4_OnMinigameFinish()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && PlayerStatus[i] != PlayerStatus_Failed)
+			if (player.IsValid && player.IsAlive && player.IsParticipating && PlayerStatus[i] != PlayerStatus_Failed)
 			{
 				PlayerStatus[i] = PlayerStatus_Winner;
 			}
