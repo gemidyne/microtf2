@@ -125,12 +125,12 @@
 	"14"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jetpack.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/sapabuilding.mp3"
 		"Caption"		"GET A BUILDING SAPPED / SAP A BUILDING"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame14_GetDynamicCaption"
 		"EntryPoint"		"Minigame14_EntryPoint"
-		"BackgroundMusic_Length"		"4.153470"
+		"BackgroundMusic_Length"		"3.982109"
 	}
 	"15"
 	{
