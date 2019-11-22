@@ -19,19 +19,11 @@
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
 
-//#define UMC_MAPCHOOSER
-
 #include <sdkhooks>
 #include <soundlib>
 #include <steamtools>
 #include <tf2items>
 #include <tf2attributes>
-
-#if defined UMC_MAPCHOOSER
-#include <umc-core>
-#else
-#include <mapchooser>
-#endif
 
 #pragma newdecls required
 
@@ -40,7 +32,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "2019.2.1.2"
+#define PLUGIN_VERSION "2019.3.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 
 #include "Header.sp"
