@@ -19,9 +19,8 @@ public void Bossgame2_OnMinigameSelectedPre()
 {
 	if (BossgameID == 2)
 	{
-		float pos[3] = { 5116.0, 2204.0, 503.0 };
-
-		Bossgame2_SpawnTriggerer(pos);
+		Bossgame2_SendInput("logic_relay", "ERBoss_ConveyorRelay", "Trigger");
+		Bossgame2_SendInput("logic_case", "erboss_rooms_case", "PickRandom");
 
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
@@ -177,16 +176,19 @@ public void Bossgame2_BossCheck()
 	}
 }
 
-public void Bossgame2_SpawnTriggerer(float pos[3])
+public void Bossgame2_SendInput(const char[] entityClass, const char[] name, const char[] input)
 {
-	int entity = CreateEntityByName("prop_physics");
-
-	if (IsValidEdict(entity))
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, entityClass)) != INVALID_ENT_REFERENCE)
 	{
-		DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
-		DispatchSpawn(entity);
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
 
-		TeleportEntity(entity, pos, NULL_VECTOR, NULL_VECTOR);
-		CreateTimer(0.25, Timer_RemoveEntity, entity);
+		if (strcmp(entityName, name) == 0)
+		{
+			AcceptEntityInput(entity, input, -1, -1, -1);
+			//break;
+		}
 	}
 }
