@@ -290,7 +290,7 @@ public void Bossgame6_SendDoorInput(const char[] input)
 		if (strcmp(entityName, "plugin_TPBoss_Door") == 0)
 		{
 			AcceptEntityInput(entity, input, -1, -1, -1);
-			break;
+			//break;
 		}
 	}
 }
