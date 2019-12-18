@@ -1179,7 +1179,7 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "239_slot", 2);
 	SetTrieValue(g_hWeaponData, "239_quality", 6);
 	SetTrieValue(g_hWeaponData, "239_level", 10);
-	SetTrieString(g_hWeaponData, "239_attribs", "128 ; 1.0 ; 107 ; 1.3 ; 1 ; 0.5 ; 191 ; -6.0 ; 144 ; 2.0");
+	SetTrieString(g_hWeaponData, "239_attribs", "128 ; 1.0 ; 107 ; 1.1 ; 1 ; 0.5 ; 191 ; -6.0 ; 144 ; 2.0 ; 414 ; 1.0");
 	SetTrieValue(g_hWeaponData, "239_ammo", -1);
 
 //Frying Pan (Now if only it had augment slots)
