@@ -54,6 +54,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 	player.Class = TFClass_Heavy;
 	player.SetGodMode(false);
 	player.ResetHealth();
+	player.SetCollisionsEnabled(true);
 
 	GiveWeapon(client, 239);
 
