@@ -11,7 +11,7 @@
 	"2"
 	{
 		"Enabled"		"1"
-		"Duration"		"60.0"
+		"Duration"		"80.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/escape.mp3"
 		"EntryPoint"		"Bossgame2_EntryPoint"
 		"Caption"		"ESCAPE THE FACTORY!"
