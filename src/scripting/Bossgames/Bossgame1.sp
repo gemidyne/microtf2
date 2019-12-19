@@ -53,9 +53,9 @@ public void Bossgame1_OnMinigameSelected(int client)
 		}
 
 		float pos[3];
-		pos[0] = 1800.0 - float(row*75);
-		pos[1] = 8600.0 + float(column*75);
-		pos[2] = -140.0;
+		pos[0] = 1821.0 - float(row*75);
+		pos[1] = 4397.0 + float(column*75);
+		pos[2] = -308.0;
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		float ang[3] = { 0.0, 180.0, 0.0 };
@@ -77,7 +77,7 @@ public void Bossgame1_OnGameFrame()
 				float pos[3];
 				GetClientAbsOrigin(i, pos);
 
-				if (pos[2] > 2800.0) 
+				if (pos[2] > 2656.0) 
 				{
 					ClientWonMinigame(i);
 				}
