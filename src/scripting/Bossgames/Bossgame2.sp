@@ -57,7 +57,7 @@ public void Bossgame2_OnSelection(int client)
 	ResetWeapon(client, false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 0.0, 0.0 };
+	float ang[3] = { 0.0, 180.0, 0.0 };
 	float pos[3];
 
 	int column = client;
