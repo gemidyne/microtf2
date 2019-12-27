@@ -33,7 +33,7 @@
 			"0"
 			{
 				"file"		"gemidyne/warioware/system/bgm/themes/wario/gameover.mp3"
-				"Length"		"4.022812"
+				"Length"		"8.422667"
 			}
 		}
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/wario/failure.mp3"
@@ -115,7 +115,7 @@
 			"0"
 			{
 				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/gameover.mp3"
-				"Length"		"4.048937"
+				"Length"		"8.432053"
 			}
 		}
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/orbulon/failure.mp3"
@@ -156,7 +156,7 @@
 			"0"
 			{
 				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
-				"Length"		"3.970562"
+				"Length"		"8.412416"
 			}
 		}
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/jimmyt/failure.mp3"
@@ -197,7 +197,7 @@
 			"0"
 			{
 				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
-				"Length"		"3.970562"
+				"Length"		"8.412416"
 			}
 		}
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twario/failure.mp3"
@@ -238,7 +238,7 @@
 			"0"
 			{
 				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
-				"Length"		"3.970562"
+				"Length"		"8.412416"
 			}
 		}
 		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twarioman/failure.mp3"
