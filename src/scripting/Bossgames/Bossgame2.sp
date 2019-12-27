@@ -26,6 +26,8 @@ public void Bossgame2_OnMinigameSelectedPre()
 		IsBlockingDeathCommands = true;
 		IsOnlyBlockingDamageByPlayers = true;
 		Bossgame2_CanCheckPosition = false;
+
+		CreateTimer(0.75, Bossgame2_HurtTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
 
@@ -191,4 +193,24 @@ public void Bossgame2_SendInput(const char[] entityClass, const char[] name, con
 			//break;
 		}
 	}
+}
+
+public Action Bossgame2_HurtTimer(Handle timer)
+{
+	if (BossgameID == 2 && IsMinigameActive && !IsMinigameEnding) 
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsAlive && player.IsParticipating && player.Health > 0)
+			{
+				player.Health--;
+			}
+		}
+
+		return Plugin_Continue;
+	}
+
+	return Plugin_Stop; 
 }

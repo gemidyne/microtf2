@@ -254,6 +254,18 @@ methodmap Player __nullable__
 		SetEntData(this.ClientId, healthOffset, health, 4, true);
     }
 
+    property int Health 
+    {
+        public get()
+        {
+            return GetClientHealth(this.ClientId);
+        }
+        public set(int value)
+        {
+            this.SetHealth(value);
+        }
+    }
+
     public void ResetHealth()
     {
 		int health = 125;
