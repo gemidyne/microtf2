@@ -19,8 +19,7 @@ public void Bossgame2_OnMinigameSelectedPre()
 {
 	if (BossgameID == 2)
 	{
-		Bossgame2_SendInput("logic_relay", "ERBoss_ConveyorRelay", "Trigger");
-		Bossgame2_SendInput("logic_case", "erboss_rooms_case", "PickRandom");
+		Bossgame2_SendInput("logic_relay", "ERBoss_InitRelay", "Trigger");
 
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
