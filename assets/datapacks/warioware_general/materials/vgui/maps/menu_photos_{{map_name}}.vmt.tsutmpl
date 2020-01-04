@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui\maps\menu_photos_{Tsukuru.MapName}"
+	"$basetexture" "vgui\maps\menu_photos_{{map_name}}"
 	"$translucent" 1
 	"$ignorez" 1
 	"$vertexcolor" 1
