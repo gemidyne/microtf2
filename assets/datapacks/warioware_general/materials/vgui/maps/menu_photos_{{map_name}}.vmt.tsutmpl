@@ -1,6 +1,6 @@
 "UnlitGeneric"
 {
-	"$basetexture" "vgui\maps\menu_photos_{{map_name}}"
+	"$basetexture" "vgui\maps\menu_photo_warioware_redux"
 	"$translucent" 1
 	"$ignorez" 1
 	"$vertexcolor" 1
