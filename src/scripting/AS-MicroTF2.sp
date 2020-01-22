@@ -1,6 +1,6 @@
 /* 
  * WarioWare for TF2 (formerly MicroTF2)
- * Copyright (C) 2010 - 2019 Gemidyne Softworks.
+ * Copyright (C) 2010 - 2020 Gemidyne Softworks.
  *
  * https://www.gemidyne.com/
  */

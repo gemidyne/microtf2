@@ -213,3 +213,4 @@ public Action Bossgame2_HurtTimer(Handle timer)
 
 	return Plugin_Stop; 
 }
+
