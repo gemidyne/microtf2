@@ -131,6 +131,7 @@
 		"DynamicCaptionMethod"		"Minigame14_GetDynamicCaption"
 		"EntryPoint"		"Minigame14_EntryPoint"
 		"BackgroundMusic_Length"		"4.034536"
+		"RequiresMultiplePlayers"		"1"
 	}
 	"15"
 	{
