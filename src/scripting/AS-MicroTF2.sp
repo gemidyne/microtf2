@@ -983,7 +983,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			{
 				if (i >= (GetArraySize(winners)-1))
 				{
-					Format(names, sizeof(names), "%s and {olive}%N{green}", names, client); // "AND" here needs to be fixed!!!
+					Format(names, sizeof(names), "%s & {olive}%N{green}", names, client); // "AND" here needs to be fixed!!!
 				}
 				else
 				{
