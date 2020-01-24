@@ -1,0 +1,580 @@
+"Phrases"
+{
+	"System_Advertisement"
+	{
+		"#format"	"{1:s}"
+		"pt_p" 		"Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"Pontuação: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"Minigames: {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"Pontuação do Time: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"	"{1:i},{2:i}"
+		"pt_p"		"Rodada {1} de {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"Rodada {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"Tema Atual: {1}"
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"RODADA ESPECIAL: {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"	"{1:s},{2:s},{3:s}"
+		"pt_p"		"{1}A rodada especial é... {2}!\n{3}"
+	}
+	"PlayerSpawn_RespawnNotice"
+	{
+		"pt_p"		"Você renascerá assim que o minigame ou boss tiverem sido finalizados."
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"pt_p"		"VOCÊ FOI DESCLASSIFICADO"
+	}
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"pt_p"		"Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar."
+	}
+	"General_Loser"
+	{
+		"pt_p"		"Perdeu!"
+	}
+	"General_Winner"
+	{
+		"pt_p"		"Ganhou!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"pt_p"		"== A RODADA ESPECIAL ACABOU ! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"pt_p"		"O vencedor é..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"pt_p"		"Os vencedores são..."
+	}
+	"GameOver_WinnersAnd"
+	{
+		"pt_p"		"e"
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"pt_p"		"Não houveram vencedores!"
+	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"pt_p"		"{1}{2} {3} {green}com {4} pontos!"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"	"{1:s},{2:i}"
+		"pt_p"		"{1}O time vencedor foi o TIME VERMELHO com {2} pontos!"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"	"{1:s},{2:i}"
+		"pt_p"		"{1}O time vencedor foi o TIME AZUL com {2} pontos!"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos."
+	}
+	"Intermission_Header"
+	{
+		"pt_p"		"Intervalo!"
+	}
+	"Intermission_Body"
+	{
+		"pt_p"		"Intervalo! Hora de votar para o próximo mapa."
+	}
+	"Bossgame1_Caption"
+	{
+		"pt_p"		"FAÇA ROCKET JUMP ATÉ O FINAL!"
+	}
+	"Bossgame2_Caption"
+	{
+		"pt_p"		"ESCAPE DA FÁBRICA!"
+	}
+	"Bossgame3_Caption"
+	{
+		"pt_p"		"ELIMINE O TIME INIMIGO!"
+	}
+	"Bossgame4_Caption"
+	{
+		"pt_p"		"NÃO CAIA NA ÁGUA!"
+	}
+	"Bossgame5_Caption"
+	{
+		"pt_p"		"ALCANCE O OBJETIVO!"
+	}
+	"Bossgame6_Caption"
+	{
+		"pt_p"		"ACERTE O MÁXIMO DE BARRIS!"
+	}
+	"Bossgame7_Caption"
+	{
+		"pt_p"		"" // Leave this as empty.
+	}
+	"Minigame1_Caption"
+	{
+		"pt_p"		"CHEGUE ATÉ O FINAL!"
+	}
+	"Minigame2_Caption"
+	{
+		"pt_p"		"MATE UM INIMIGO!"
+	}
+	"Minigame3_Caption"
+	{
+		"pt_p"		"QUEBRE O BARRIL!"
+	}
+	"Minigame4_Caption"
+	{
+		"pt_p"		"AIRBLAST E CONTINUE VIVO!"
+	}
+	"Minigame5_Caption"
+	{
+		"pt_p"		"STICKY JUMP!"
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"DIGITE A PALAVRA!\n{1}"
+	}
+	"Minigame7_Caption"
+	{
+		"pt_p"		"ROCKET JUMP!"
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"RESPONDA A QUESTÃO!\n{1} = ?"
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"	"{1:s},{2:i}"
+		"pt_p"		"{1}A resposta certa é: {2}!"
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"pt_p"		"O MESMTRE MANDOU: DÊ TAUNT!"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"pt_p"		"O MESTRE MANDOU: PULE!"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"pt_p"		"O MESTRE MANDAU: ABAIXE!"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"pt_p"		"ALGUÉM MANDOU: DÊ TAUNT!"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"pt_p"		"ALGUÉM MANDOU: PULE!"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"pt_p"		"ALGUÉM MANDOU: ABAIXE!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"pt_p"		"(O mestre não mandou você fazer isso..)"
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"pt_p"		"o homem bomba está aqui!"
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"pt_p"		"EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"pt_p"		"CORRA DO HOMEM BOMBA!"
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"pt_p"		"NÃO PARE DE SE MOVER!"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"pt_p"		"NÃO SE MOVA!"
+	}
+	"Minigame12_Caption"
+	{
+		"pt_p"		"SUBA NA PLATAFORMA!"
+	}
+	"Minigame13_Caption"
+	{
+		"pt_p"		"SPYCRAB!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"pt_p"		"Spycrabs precisam abaixar e olhar para cima!"
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"pt_p"		"SOBOTE UMA CONSTRUÇÃO!"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"pt_p"		"VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!"
+	}
+	"Minigame15_Caption_Any"
+	{
+		"pt_p"		"CONSTRUA QUALQUER COISA!"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"pt_p"		"CONSTRUA UMA DISPENSER!"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"pt_p"		"CONSTRUA UM TELEPORTE!"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"pt_p"		"CONSTRUA UMA SENTINELA!"
+	}
+	"Minigame16_Caption"
+	{
+		"pt_p"		"JOGUE O JARATE NO INIMIGO!"
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"pt_p"		"BATA NO HEAVY!"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"pt_p"		"SEJA ATINGIDO POR UM MÉDICO"
+	}
+	"Minigame18_Caption"
+	{
+		"pt_p"		"ACERTE O ALVO!"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"pt_p"		"MUDE DE CLASSE!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: SCOUT!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: SOLDIER!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: PYRO!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: DEMOMAN!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: HEAVY!"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: ENGENHEIRO!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: MÉDICO!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: SNIPER!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"pt_p"		"MUDE PARA A CLASSE: SPY!"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"pt_p"		"BEBA!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"pt_p"		"COMA!"
+	}
+	"Minigame21_Caption"
+	{
+		"pt_p"		"ATORDOE UM INIMIGO!"
+	}
+	"Minigame22_Caption"
+	{
+		"pt_p"		"FIQUE NO CHÃO!"
+	}
+	"Minigame23_Caption"
+	{
+		"pt_p"		"PULO DUPLO!"
+	}
+	"Minigame24_Caption"
+	{
+		"pt_p"		"PULE ATIRANDO NO CHÃO!"
+	}
+	"Minigame25_Caption"
+	{
+		"pt_p"		"JETPACK!"
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"pt_p"		"Digite mais rápido que puder cada palavra no cha para permanecer vivo!"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"pt_p"		"COMEÇOU!"
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"== OBSERVANDO ==\n\nTempo restante: {1} segundos"
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"	"{1:s},{2:s},{3:i}"
+		"pt_p"		"== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos"
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"== ANÚNCIO ==\n\nO vencedor é...\n{1}!"
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"pt_p"		"== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!"
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"	"{1:s}"
+		"pt_p"		"== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format" 	"{1:s},{2:i}"
+		"pt_p"		"{1}\ne {2} mais..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format" 	"{1:s}"
+		"pt_p"		"{1}ninguém!\n\nTodos sobreviveram!"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"pt_p"		"Não é permitido a troca de classes durante os boss!"
+	}
+	"SpecialRound0_Name"
+	{
+		"pt_p"		"Terceira Pessoa"
+	}
+	"SpecialRound0_Description"
+	{
+		"pt_p"		"Todos os jogadores jogam esta rodada em modo terceira pessoa!"
+	}
+	"SpecialRound1_Name"
+	{
+		"pt_p"		"Injeção de Adrenalina!"
+	}
+	"SpecialRound1_Description"
+	{
+		"pt_p"		"O round inicia rápido e termina lento."
+	}
+	"SpecialRound2_Name"
+	{
+		"pt_p"		"Rodada Extendida!"
+	}
+	"SpecialRound2_Description"
+	{
+		"pt_p"		"30 microgames serão jogados antes do evento do boss!"
+	}
+	"SpecialRound3_Name"
+	{
+		"pt_p"		"Baixa Gravidade"
+	}
+	"SpecialRound3_Description"
+	{
+		"pt_p"		"Onde foi parar a gravidade?!"
+	}
+	"SpecialRound4_Name"
+	{
+		"pt_p"		"Não se preocupe! Tudo calmo..."
+	}
+	"SpecialRound4_Description"
+	{
+		"pt_p"		"Nenhuma mudança de velocidade será feita nesta rodada!"
+	}
+	"SpecialRound5_Name"
+	{
+		"pt_p"		"Cada vez mais rápido!"
+	}
+	"SpecialRound5_Description"
+	{
+		"pt_p"		"Nesta rodada, a cada microgame a velocidade aumenta!"
+	}
+	"SpecialRound6_Name"
+	{
+		"pt_p"		"Sobe e Desce !"
+	}
+	"SpecialRound6_Description"
+	{
+		"pt_p"		"Nesta rodada, cada microgame terá velocidade aleatória."
+	}
+	"SpecialRound7_Name"
+	{
+		"pt_p"		"Câmera Lenta"
+	}
+	"SpecialRound7_Description"
+	{
+		"pt_p"		"Nesta rodada, cada microgame ficará mais lento!"
+	}
+	"SpecialRound8_Name"
+	{
+		"pt_p"		"Matemática"
+	}
+	"SpecialRound8_Description"
+	{
+		"pt_p"		"Testaremos suas habilidades com as operações matemáticas!"
+	}
+	"SpecialRound9_Name"
+	{
+		"pt_p"		"O último será o primeiro"
+	}
+	"SpecialRound9_Description"
+	{
+		"pt_p"		"O jogador com menor placar será o vencedor!"
+	}
+	"SpecialRound10_Name"
+	{
+		"pt_p"		"Batalha dos Boss"
+	}
+	"SpecialRound10_Description"
+	{
+		"pt_p"		"Dois bossgames serão jogados antes desta rodada acabar!"
+	}
+	"SpecialRound11_Name"
+	{
+		"pt_p"		"Batalha de Times"
+	}
+	"SpecialRound11_Description"
+	{
+		"pt_p"		"Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!"
+	}
+	"SpecialRound12_Name"
+	{
+		"pt_p"		"Sozinho"
+	}
+	"SpecialRound12_Description"
+	{
+		"pt_p"		"Ué? Para onde foi todo mundo?"
+	}
+	"SpecialRound13_Name"
+	{
+		"pt_p"		"Somente Pássaros"
+	}
+	"SpecialRound13_Description"
+	{
+		"pt_p"		"Archimedes! Nãããõ!"
+	}
+	"SpecialRound14_Name"
+	{
+		"pt_p"		"Minúsculos"
+	}
+	"SpecialRound14_Description"
+	{
+		"pt_p"		"Todos viraram formiguinhas!"
+	}
+	"SpecialRound15_Name"
+	{
+		"pt_p"		"Herp Derp"
+	}
+	"SpecialRound15_Description"
+	{
+		"pt_p"		"Todos foram tranformados em bobalhões!"
+	}
+	"SpecialRound16_Name"
+	{
+		"pt_p"		"Placar Maluco"
+	}
+	"SpecialRound16_Description"
+	{
+		"pt_p"		"Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!"
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"	"{1:i}"
+		"pt_p"		"Se você ganhar este microgame, sua recompensa será de {1} pontos!"
+	}
+	"SpecialRound17_Name"
+	{
+		"pt_p"		"Morte Súbita"
+	}
+	"SpecialRound17_Description"
+	{
+		"pt_p"		"Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"	"{1:i},{2:i},{3:s}"
+		"pt_p"		"Atualmente ({1} de {2} jogadores)\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"	"{1:s},{2:i}"
+		"pt_p"		"{1} (e {2} mais)"
+	}
+	"SpecialRound18_Name"
+	{
+		"pt_p"		"Vale Tudo"
+	}
+	"SpecialRound18_Description"
+	{
+		"pt_p"		"Se você perder um microgame, você PERDE TODOS pontos!"
+	}
+	"SpecialRound19_Name"
+	{
+		"pt_p"		"Texto Espelhado"
+	}
+	"SpecialRound19_Description"
+	{
+		"pt_p"		"!oirártnoc oa oãtse seõçurtsni sA"
+	}
+	"SpecialRound20_Name"
+	{
+		"pt_p"		"Sem Parar"
+	}
+	"SpecialRound20_Description"
+	{
+		"pt_p"		"Não haverá intervalos entre os microgames nesta rodada."
+	}
+}
