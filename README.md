@@ -6,19 +6,22 @@ Yet another WarioWare plugin for Team Fortress 2 servers.
 ## Repository info
 
 The /src folder contains the plugin source-code. 
-The /assets folder contains data relating to the map, plugin overlays and sounds. It is strongly recommended that you use gemidyne/tsukuru to build the map and pack in the necessary assets.
+The /assets folder contains data relating to the map, plugin overlays and sounds. It is strongly recommended that you use https://www.gemidyne.com/projects/tsukuru/ to build the map and pack in the necessary assets.
 
-The "master" branch is the latest available stable version of the gamemode. We recommend you use this branch on your game servers.
-The "dev" branch is used for the latest available development version of the gamemode. This branch contains work in progress projects so will frequently be uncompilable, untested and not be the best experience for your players. We recommend you use the master branch over the dev branch.
+The "master" branch is the latest stable version of the gamemode. We recommend you use this branch on your game servers.
+The "dev" branch is used for the latest development version of the gamemode. This branch contains work in progress projects so may be uncompilable, untested and not be the best experience for your players. We recommend you use the master branch over the dev branch.
 
-## Extension Dependencies
+## SourceMod Extension Dependencies
 
-This plugin utilises the following extensions:
+The gamemode utilises the following extensions:
 
-- Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 - SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
 - TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
 - TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
+
+If you intend to use the SDK plugin for developing your own gamemodes or minigames, you will need:
+
+- Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 
 ## Credits
 
