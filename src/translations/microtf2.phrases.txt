@@ -3,578 +3,578 @@
 	"System_Advertisement"
 	{
 		"#format"	"{1:s}"
-		"en" 		"You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits."
+		"pt" 		"Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores."
 	}
 	"Hud_Score_Default"
 	{
 		"#format"	"{1:i}"
-		"en"		"Score: {1}"
+		"pt"		"Pontuação: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
 		"#format"	"{1:i}"
-		"en"		"Minigames: {1}"
+		"pt"		"Minigames: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
 		"#format"	"{1:i}"
-		"en"		"Team Score: {1}"
+		"pt"		"Pontuação do Time: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"
-		"en"		"Round {1} of {2}"
+		"pt"		"Rodada {1} de {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
 		"#format"	"{1:i}"
-		"en"		"Round {1}"
+		"pt"		"Rodada {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
 		"#format"	"{1:s}"
-		"en"		"{1}'s theme"
+		"pt"		"Tema Atual: {1}"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
 		"#format"	"{1:s}"
-		"en"		"SPECIAL ROUND: {1}!"
+		"pt"		"RODADA ESPECIAL: {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
 		"#format"	"{1:s},{2:s},{3:s}"
-		"en"		"{1}The special round condition is... {2}!\n{3}"
+		"pt"		"{1}A rodada especial é... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
 	{
-		"en"		"You will be respawned once the current minigame or boss has finished."
+		"pt"		"Você renascerá assim que o minigame ou boss tiverem sido finalizados."
 	}
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{
-		"en"		"YOU HAVE BEEN KNOCKED OUT!"
+		"pt"		"VOCÊ FOI DESCLASSIFICADO"
 	}
 	"LowestScoreWins_ExploitBlocked"
 	{
-		"en"		"Changing class is not allowed during this special round! 1 point has been added to your score."
+		"pt"		"Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar."
 	}
 	"General_Loser"
 	{
-		"en"		"Loser!"
+		"pt"		"Perdeu!"
 	}
 	"General_Winner"
 	{
-		"en"		"Winner!"
+		"pt"		"Ganhou!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
-		"en"		"== THE SPECIAL ROUND HAS FINISHED! =="
+		"pt"		"== A RODADA ESPECIAL ACABOU ! =="
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"en"		"The winner is..."
+		"pt"		"O vencedor é..."
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
-		"en"		"The winners are..."
+		"pt"		"Os vencedores são..."
 	}
 	"GameOver_WinnersAnd"
 	{
-		"en"		"and"
+		"pt"		"e"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
-		"en"		"There were no winners!"
+		"pt"		"Não houveram vencedores!"
 	}
 	"GameOver_WinnerSuffix"
 	{
 		"#format"	"{1:s},{2:s},{3:s},{4:i}"
-		"en"		"{1}{2} {3} {green}with {4} points!"
+		"pt"		"{1}{2} {3} {green}com {4} pontos!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"	"{1:s},{2:i}"
-		"en"		"{1}The winning team is the RED team with {2} points!"
+		"pt"		"{1}O time vencedor foi o TIME VERMELHO com {2} pontos!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"	"{1:s},{2:i}"
-		"en"		"{1}The winning team is the BLU team with {2} points!"
+		"pt"		"{1}O time vencedor foi o TIME AZUL com {2} pontos!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
 		"#format"	"{1:s}"
-		"en"		"{1}Stalemate! Both teams have the same points!"
+		"pt"		"{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos."
 	}
 	"Intermission_Header"
 	{
-		"en"		"Intermission!"
+		"pt"		"Intervalo!"
 	}
 	"Intermission_Body"
 	{
-		"en"		"Break time! Time to vote for the next map."
+		"pt"		"Intervalo! Hora de votar para o próximo mapa."
 	}
 	"Bossgame1_Caption"
 	{
-		"en"		"ROCKET JUMP TO THE END!"
+		"pt"		"FAÇA ROCKET JUMP ATÉ O FINAL!"
 	}
 	"Bossgame2_Caption"
 	{
-		"en"		"ESCAPE THE FACTORY!"
+		"pt"		"ESCAPE DA FÁBRICA!"
 	}
 	"Bossgame3_Caption"
 	{
-		"en"		"DEFEAT THE ENEMY TEAM!"
+		"pt"		"ELIMINE O TIME INIMIGO!"
 	}
 	"Bossgame4_Caption"
 	{
-		"en"		"DON'T FALL INTO THE WATER"
+		"pt"		"NÃO CAIA NA ÁGUA!"
 	}
 	"Bossgame5_Caption"
 	{
-		"en"		"REACH THE GOAL!"
+		"pt"		"ALCANCE O OBJETIVO!"
 	}
 	"Bossgame6_Caption"
 	{
-		"en"		"SHOOT THE MOST BARRELS!"
+		"pt"		"ACERTE O MÁXIMO DE BARRIS!"
 	}
 	"Bossgame7_Caption"
 	{
-		"en"		"" // Leave this as empty.
+		"pt"		"" // Leave this as empty.
 	}
 	"Minigame1_Caption"
 	{
-		"en"		"GET TO THE END!"
+		"pt"		"CHEGUE ATÉ O FINAL!"
 	}
 	"Minigame2_Caption"
 	{
-		"en"		"KILL AN ENEMY!"
+		"pt"		"MATE UM INIMIGO!"
 	}
 	"Minigame3_Caption"
 	{
-		"en"		"BREAK THE BARRELS!"
+		"pt"		"QUEBRE O BARRIL!"
 	}
 	"Minigame4_Caption"
 	{
-		"en"		"AIRBLAST AND STAY ALIVE!"
+		"pt"		"AIRBLAST E CONTINUE VIVO!"
 	}
 	"Minigame5_Caption"
 	{
-		"en"		"STICKY JUMP!"
+		"pt"		"STICKY JUMP!"
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
 		"#format"	"{1:s}"
-		"en"		"SAY THE WORD!\n{1}"
+		"pt"		"DIGITE A PALAVRA!\n{1}"
 	}
 	"Minigame7_Caption"
 	{
-		"en"		"ROCKET JUMP!"
+		"pt"		"ROCKET JUMP!"
 	}
 	"Minigame8_CaptionFormatted"
 	{
 		"#format"	"{1:s}"
-		"en"		"ANSWER THE QUESTION!\n{1} = ?"
+		"pt"		"RESPONDA A QUESTÃO!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
 		"#format"	"{1:s},{2:i}"
-		"en"		"{1}The correct answer was {2}!"
+		"pt"		"{1}A resposta certa é: {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
-		"en"		"SIMON SAYS: TAUNT!"
+		"pt"		"O MESMTRE MANDOU: DÊ TAUNT!"
 	}
 	"Minigame9_Caption_SimonSaysJump"
 	{
-		"en"		"SIMON SAYS: JUMP!"
+		"pt"		"O MESTRE MANDOU: PULE!"
 	}
 	"Minigame9_Caption_SimonSaysCrouch"
 	{
-		"en"		"SIMON SAYS: CROUCH!"
+		"pt"		"O MESTRE MANDAU: ABAIXE!"
 	}
 	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
-		"en"		"SOMEONE SAYS: TAUNT!"
+		"pt"		"ALGUÉM MANDOU: DÊ TAUNT!"
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"en"		"SOMEONE SAYS: JUMP!"
+		"pt"		"ALGUÉM MANDOU: PULE!"
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
-		"en"		"SOMEONE SAYS: CROUCH!"
+		"pt"		"ALGUÉM MANDOU: ABAIXE!"
 	}
 	"Minigame9_Caption_SimonDidntSayIt"
 	{
-		"en"		"(Simon didn't say it..)"
+		"pt"		"(O mestre não mandou você fazer isso..)"
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"en"		"Kamikaze is over here!"
+		"pt"		"o homem bomba está aqui!"
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
-		"en"		"EXPLODE AS MANY PEOPLE AS YOU CAN!"
+		"pt"		"EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!"
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"en"		"RUN FROM THE KAMIKAZE!"
+		"pt"		"CORRA DO HOMEM BOMBA!"
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
-		"en"		"DON'T STOP MOVING!"
+		"pt"		"NÃO PARE DE SE MOVER!"
 	}
 	"Minigame11_Caption_DontMove"
 	{
-		"en"		"DON'T MOVE!"
+		"pt"		"NÃO SE MOVA!"
 	}
 	"Minigame12_Caption"
 	{
-		"en"		"GET ON A PLATFORM!"
+		"pt"		"SUBA NA PLATAFORMA!"
 	}
 	"Minigame13_Caption"
 	{
-		"en"		"SPYCRAB!"
+		"pt"		"SPYCRAB!"
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
-		"en"		"Spycrabs must crouch and look up!"
+		"pt"		"Spycrabs precisam abaixar e olhar para cima!"
 	}
 	"Minigame14_Caption_Spies"
 	{
-		"en"		"SAP A BUILDING!"
+		"pt"		"SOBOTE UMA CONSTRUÇÃO!"
 	}
 	"Minigame14_Caption_Engineers"
 	{
-		"en"		"GET A BUILDING SAPPED!"
+		"pt"		"VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!"
 	}
 	"Minigame15_Caption_Any"
 	{
-		"en"		"BUILD SOMETHING!"
+		"pt"		"CONSTRUA QUALQUER COISA!"
 	}
 	"Minigame15_Caption_Dispenser"
 	{
-		"en"		"BUILD A DISPENSER!"
+		"pt"		"CONSTRUA UMA DISPENSER!"
 	}
 	"Minigame15_Caption_Teleporter"
 	{
-		"en"		"BUILD A TELEPORTER!"
+		"pt"		"CONSTRUA UM TELEPORTE!"
 	}
 	"Minigame15_Caption_Sentry"
 	{
-		"en"		"BUILD A SENTRY!"
+		"pt"		"CONSTRUA UMA SENTINELA!"
 	}
 	"Minigame16_Caption"
 	{
-		"en"		"JARATE AN ENEMY!"
+		"pt"		"JOGUE O JARATE NO INIMIGO!"
 	}
 	"Minigame17_Caption_HitAHeavy"
 	{
-		"en"		"HIT A HEAVY!"
+		"pt"		"BATA NO HEAVY!"
 	}
 	"Minigame17_Caption_GetHitByMedic"
 	{
-		"en"		"GET HIT BY A MEDIC!"
+		"pt"		"SEJA ATINGIDO POR UM MÉDICO"
 	}
 	"Minigame18_Caption"
 	{
-		"en"		"HIT THE TARGET!"
+		"pt"		"ACERTE O ALVO!"
 	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
-		"en"		"CHANGE CLASS!"
+		"pt"		"MUDE DE CLASSE!"
 	}
 	"Minigame19_Caption_ChangeClassScout"
 	{
-		"en"		"CHANGE CLASS TO SCOUT!"
+		"pt"		"MUDE PARA A CLASSE: SCOUT!"
 	}
 	"Minigame19_Caption_ChangeClassSoldier"
 	{
-		"en"		"CHANGE CLASS TO SOLDIER!"
+		"pt"		"MUDE PARA A CLASSE: SOLDIER!"
 	}
 	"Minigame19_Caption_ChangeClassPyro"
 	{
-		"en"		"CHANGE CLASS TO PYRO!"
+		"pt"		"MUDE PARA A CLASSE: PYRO!"
 	}
 	"Minigame19_Caption_ChangeClassDemoman"
 	{
-		"en"		"CHANGE CLASS TO DEMOMAN!"
+		"pt"		"MUDE PARA A CLASSE: DEMOMAN!"
 	}
 	"Minigame19_Caption_ChangeClassHeavy"
 	{
-		"en"		"CHANGE CLASS TO HEAVY!"
+		"pt"		"MUDE PARA A CLASSE: HEAVY!"
 	}
 	"Minigame19_Caption_ChangeClassEngineer"
 	{
-		"en"		"CHANGE CLASS TO ENGINEER!"
+		"pt"		"MUDE PARA A CLASSE: ENGENHEIRO!"
 	}
 	"Minigame19_Caption_ChangeClassMedic"
 	{
-		"en"		"CHANGE CLASS TO MEDIC!"
+		"pt"		"MUDE PARA A CLASSE: MÉDICO!"
 	}
 	"Minigame19_Caption_ChangeClassSniper"
 	{
-		"en"		"CHANGE CLASS TO SNIPER!"
+		"pt"		"MUDE PARA A CLASSE: SNIPER!"
 	}
 	"Minigame19_Caption_ChangeClassSpy"
 	{
-		"en"		"CHANGE CLASS TO SPY!"
+		"pt"		"MUDE PARA A CLASSE: SPY!"
 	}
 	"Minigame20_Caption_Drink"
 	{
-		"en"		"DRINK!"
+		"pt"		"BEBA!"
 	}
 	"Minigame20_Caption_Eat"
 	{
-		"en"		"EAT!"
+		"pt"		"COMA!"
 	}
 	"Minigame21_Caption"
 	{
-		"en"		"STUN AN ENEMY!"
+		"pt"		"ATORDOE UM INIMIGO!"
 	}
 	"Minigame22_Caption"
 	{
-		"en"		"STAY ON THE GROUND!"
+		"pt"		"FIQUE NO CHÃO!"
 	}
 	"Minigame23_Caption"
 	{
-		"en"		"DOUBLE JUMP!"
+		"pt"		"PULO DUPLO!"
 	}
 	"Minigame24_Caption"
 	{
-		"en"		"NEEDLEJUMP!"
+		"pt"		"PULE ATIRANDO NO CHÃO!"
 	}
 	"Minigame25_Caption"
 	{
-		"en"		"JETPACK!"
+		"pt"		"JETPACK!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"en"		"Say each word in chat as quick as you can to survive!"
+		"pt"		"Digite mais rápido que puder cada palavra no cha para permanecer vivo!"
 	}
 	"Bossgame7_Caption_Start"
 	{
-		"en"		"START!"
+		"pt"		"COMEÇOU!"
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"	"{1:i}"
-		"en"		"== SPECTATING ==\n\nTime remaining: {1} seconds"
+		"pt"		"== OBSERVANDO ==\n\nTempo restante: {1} segundos"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"	"{1:s},{2:s},{3:i}"
-		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds"
+		"pt"		"== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"	"{1:s}"
-		"en"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
+		"pt"		"== ANÚNCIO ==\n\nO vencedor é...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
-		"en"		"== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!"
+		"pt"		"== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!"
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
 		"#format"	"{1:s}"
-		"en"		"== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}"
+		"pt"		"== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
 		"#format" 	"{1:s},{2:i}"
-		"en"		"{1}\nand {2} more..."
+		"pt"		"{1}\ne {2} mais..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
 		"#format" 	"{1:s}"
-		"en"		"{1}no one!\n\nEveryone survives another round!"
+		"pt"		"{1}ninguém!\n\nTodos sobreviveram!"
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"en"		"Changing class is not allowed during bosses!"
+		"pt"		"Não é permitido a troca de classes durante os boss!"
 	}
 	"SpecialRound0_Name"
 	{
-		"en"		"Thirdperson"
+		"pt"		"Terceira Pessoa"
 	}
 	"SpecialRound0_Description"
 	{
-		"en"		"All players play the round in a whole new perspective!"
+		"pt"		"Todos os jogadores jogam esta rodada em modo terceira pessoa!"
 	}
 	"SpecialRound1_Name"
 	{
-		"en"		"Adrenaline Shot"
+		"pt"		"Injeção de Adrenalina!"
 	}
 	"SpecialRound1_Description"
 	{
-		"en"		"The round starts fast! Then slows down!"
+		"pt"		"O round inicia rápido e termina lento."
 	}
 	"SpecialRound2_Name"
 	{
-		"en"		"Extended Round"
+		"pt"		"Rodada Extendida!"
 	}
 	"SpecialRound2_Description"
 	{
-		"en"		"30 microgames will be played before the bossgame!"
+		"pt"		"30 microgames serão jogados antes do evento do boss!"
 	}
 	"SpecialRound3_Name"
 	{
-		"en"		"Low Gravity"
+		"pt"		"Baixa Gravidade"
 	}
 	"SpecialRound3_Description"
 	{
-		"en"		"Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!"
+		"pt"		"Onde foi parar a gravidade?!"
 	}
 	"SpecialRound4_Name"
 	{
-		"en"		"Chill Pill"
+		"pt"		"Não se preocupe! Tudo calmo..."
 	}
 	"SpecialRound4_Description"
 	{
-		"en"		"No speed changes will happen in this round!"
+		"pt"		"Nenhuma mudança de velocidade será feita nesta rodada!"
 	}
 	"SpecialRound5_Name"
 	{
-		"en"		"Game Time Attack"
+		"pt"		"Cada vez mais rápido!"
 	}
 	"SpecialRound5_Description"
 	{
-		"en"		"The round will speed up after every microgame!"
+		"pt"		"Nesta rodada, a cada microgame a velocidade aumenta!"
 	}
 	"SpecialRound6_Name"
 	{
-		"en"		"Up and Down"
+		"pt"		"Sobe e Desce !"
 	}
 	"SpecialRound6_Description"
 	{
-		"en"		"After every microgame, a random speed will be chosen!"
+		"pt"		"Nesta rodada, cada microgame terá velocidade aleatória."
 	}
 	"SpecialRound7_Name"
 	{
-		"en"		"Slow-mo"
+		"pt"		"Câmera Lenta"
 	}
 	"SpecialRound7_Description"
 	{
-		"en"		"The round will slow down after every microgame!"
+		"pt"		"Nesta rodada, cada microgame ficará mais lento!"
 	}
 	"SpecialRound8_Name"
 	{
-		"en"		"Maths Only"
+		"pt"		"Matemática"
 	}
 	"SpecialRound8_Description"
 	{
-		"en"		"Time to test your maths skills!"
+		"pt"		"Testaremos suas habilidades com as operações matemáticas!"
 	}
 	"SpecialRound9_Name"
 	{
-		"en"		"Opposite Day"
+		"pt"		"O último será o primeiro"
 	}
 	"SpecialRound9_Description"
 	{
-		"en"		"The player with the lowest score wins the round!"
+		"pt"		"O jogador com menor placar será o vencedor!"
 	}
 	"SpecialRound10_Name"
 	{
-		"en"		"Two Boss Battles"
+		"pt"		"Batalha dos Boss"
 	}
 	"SpecialRound10_Description"
 	{
-		"en"		"Two bossgames will be played before game over!"
+		"pt"		"Dois bossgames serão jogados antes desta rodada acabar!"
 	}
 	"SpecialRound11_Name"
 	{
-		"en"		"Team Battle"
+		"pt"		"Batalha de Times"
 	}
 	"SpecialRound11_Description"
 	{
-		"en"		"If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!"
+		"pt"		"Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!"
 	}
 	"SpecialRound12_Name"
 	{
-		"en"		"Single Player"
+		"pt"		"Sozinho"
 	}
 	"SpecialRound12_Description"
 	{
-		"en"		"Hey... where did everyone go?"
+		"pt"		"Ué? Para onde foi todo mundo?"
 	}
 	"SpecialRound13_Name"
 	{
-		"en"		"Birds only"
+		"pt"		"Somente Pássaros"
 	}
 	"SpecialRound13_Description"
 	{
-		"en"		"Archimedes! No!"
+		"pt"		"Archimedes! Nãããõ!"
 	}
 	"SpecialRound14_Name"
 	{
-		"en"		"Tiny"
+		"pt"		"Minúsculos"
 	}
 	"SpecialRound14_Description"
 	{
-		"en"		"Everyone becomes teeny tiny men!"
+		"pt"		"Todos viraram formiguinhas!"
 	}
 	"SpecialRound15_Name"
 	{
-		"en"		"Bobbleheads"
+		"pt"		"Herp Derp"
 	}
 	"SpecialRound15_Description"
 	{
-		"en"		"Everyone becomes a bunch of airheads!"
+		"pt"		"Todos foram tranformados em bobalhões!"
 	}
 	"SpecialRound16_Name"
 	{
-		"en"		"Score Randomizer"
+		"pt"		"Placar Maluco"
 	}
 	"SpecialRound16_Description"
 	{
-		"en"		"If you win a microgame, you will be given a random amount of points!"
+		"pt"		"Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
-		"en"		"If you win this minigame, you will be awarded {1} points!"
+		"pt"		"Se você ganhar este microgame, sua recompensa será de {1} pontos!"
 	}
 	"SpecialRound17_Name"
 	{
-		"en"		"Sudden Death"
+		"pt"		"Morte Súbita"
 	}
 	"SpecialRound17_Description"
 	{
-		"en"		"If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!"
+		"pt"		"Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
 		"#format"	"{1:i},{2:i},{3:s}"
-		"en"		"Current players ({1} of {2})\n{3}"
+		"pt"		"Atualmente ({1} de {2} jogadores)\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
 		"#format"	"{1:s},{2:i}"
-		"en"		"{1} (and {2} more)"
+		"pt"		"{1} (e {2} mais)"
 	}
 	"SpecialRound18_Name"
 	{
-		"en"		"All In"
+		"pt"		"Vale Tudo"
 	}
 	"SpecialRound18_Description"
 	{
-		"en"		"If you lose a microgame, you will lose ALL your points!"
+		"pt"		"Se você perder um microgame, você PERDE TODOS pontos!"
 	}
 	"SpecialRound19_Name"
 	{
-		"en"		"Reversed Text"
+		"pt"		"Texto Espelhado"
 	}
 	"SpecialRound19_Description"
 	{
-		"en"		"!sdrawkcab era snoitcurtsni emagorciM"
+		"pt"		"!oirártnoc oa oãtse seõçurtsni sA"
 	}
 	"SpecialRound20_Name"
 	{
-		"en"		"Non-stop"
+		"pt"		"Sem Parar"
 	}
 	"SpecialRound20_Description"
 	{
-		"en"		"There's no break in between microgames this round!"
+		"pt"		"Não haverá intervalos entre os microgames nesta rodada."
 	}
 }
