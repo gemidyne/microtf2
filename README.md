@@ -38,3 +38,5 @@ We currently are looking for translators to help improve the multilingual aspect
 - Russian: Taken
 - Italian: Taken
 - Spanish: Taken
+- Portuguese: Taken
+- Brazilian Portuguese: Taken
