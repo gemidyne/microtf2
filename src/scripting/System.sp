@@ -110,7 +110,7 @@ stock void InitializeSystem()
 public void System_OnMapStart()
 {
 	char gameDescription[32];
-	Format(gameDescription, sizeof(gameDescription), "WarioWare (%s)", PLUGIN_VERSION);
+	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
 	Steam_SetGameDescription(gameDescription);
 
 	MinigameID = 0;
