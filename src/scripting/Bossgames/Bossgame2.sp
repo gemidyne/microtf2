@@ -58,20 +58,21 @@ public void Bossgame2_OnSelection(int client)
 	ResetWeapon(client, false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 180.0, 0.0 };
+	float ang[3] = { 0.0, 137.0, 0.0 };
 	float pos[3];
 
 	int column = client;
 	int row = 0;
+
 	while (column > 6)
 	{
 		column = column - 6;
 		row = row + 1;
 	}
 
-	pos[0] = 4250.0 + float(row*70);
-	pos[1] = 2700.0 - float(column*70);
-	pos[2] = 0.0;
+	pos[0] = 4417.0 + float(row*70); 
+	pos[1] = 2164.0 + float(column*70);
+	pos[2] = 11.0;
 
 	TeleportEntity(client, pos, ang, vel);
 }
