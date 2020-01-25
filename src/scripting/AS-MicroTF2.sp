@@ -32,8 +32,9 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "2019.3.0"
+#define PLUGIN_VERSION "v3.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
+#define PLUGIN_MAPPREFIX "warioware_redux_"
 
 #include "Header.sp"
 #include "Forwards.sp"

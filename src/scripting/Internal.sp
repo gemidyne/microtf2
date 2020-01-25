@@ -16,9 +16,10 @@ stock int FindEntityByClassname2(int startEntityId, const char[] classname)
 
 stock bool IsWarioWareMap()
 {
-	char curMap[32];
-	GetCurrentMap(curMap, sizeof(curMap));
-	return strncmp("MicroTF2_", curMap, 9, false) == 0 || strncmp("warioware_", curMap, 10, false) == 0;
+	char map[32];
+	GetCurrentMap(map, sizeof(map));
+	
+	return strncmp(PLUGIN_MAPPREFIX, map, strlen(PLUGIN_MAPPREFIX), false) == 0;
 }
 
 stock void UnloadPlugin()
