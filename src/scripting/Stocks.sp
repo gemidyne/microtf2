@@ -178,6 +178,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 	event.SetBool("show_effect", false);
 	event.SetInt("visibilityBitfield", bitfield);
 	event.FireToClient(client);
+	delete event;
 	
 	g_iAnnotationEventId++;
 }
