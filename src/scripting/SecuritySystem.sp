@@ -33,6 +33,11 @@ public void InitialiseSecuritySystem()
 	AddCommandListener(Cmd_BlockCompletely, "currency_give");
 	AddCommandListener(Cmd_BlockCompletely, "ent_remove");
 	AddCommandListener(Cmd_BlockCompletely, "ent_remove_all");
+	AddCommandListener(Cmd_BlockCompletely, "mp_playanimation");
+	AddCommandListener(Cmd_BlockCompletely, "particle_test_start");
+	AddCommandListener(Cmd_BlockCompletely, "particle_test_stop");
+	AddCommandListener(Cmd_BlockCompletely, "showtriggers_toggle");
+	AddCommandListener(Cmd_BlockCompletely, "r_drawclipbrushes");
 
 	SecuritySystem_HookCheatCommands();
 
