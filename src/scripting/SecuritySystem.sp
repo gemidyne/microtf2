@@ -214,7 +214,15 @@ public Action SecuritySystem_CheatCmdExec(int client, const char[] command, int 
 		}
 		else
 		{
-			KickClient(client, "Attempted to use a Cheat Command");
+			if (client > 0 && client <= MaxClients && IsClientInGame(client))
+			{
+				KickClient(client, "Attempted to use a Cheat Command");
+			}
+			else
+			{
+				LogMessage("Attempted to use cheat command, but client was server");
+			}
+
 			return Plugin_Handled;
 		}
 	}
