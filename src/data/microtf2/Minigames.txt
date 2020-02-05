@@ -237,5 +237,6 @@
 		"Caption"		"JETPACK!"
 		"EntryPoint"		"Minigame25_EntryPoint"
 		"BackgroundMusic_Length"		"4.153470"
+		"MaximumPlayerCount"			"10"
 	}
 }
