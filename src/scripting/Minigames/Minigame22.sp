@@ -69,9 +69,9 @@ public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		GetClientEyeAngles(attackerId, ang);
 		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
 
-		vel[0] -= 300.0 * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-		vel[1] -= 300.0 * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-		vel[2] += 450.0;
+		vel[0] -= 150.0 * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[1] -= 150.0 * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[2] += 275.0;
 
 		TeleportEntity(victimId, NULL_VECTOR, ang, vel);
 	}
