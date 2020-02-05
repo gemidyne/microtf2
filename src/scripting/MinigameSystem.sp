@@ -19,6 +19,7 @@ bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
+int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
 char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
@@ -200,6 +201,7 @@ public void LoadMinigameData()
 
 			MinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
 			MinigameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
+			MinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
 		}
 		while (kv.GotoNextKey());
 	}
@@ -300,6 +302,28 @@ public void DoSelectMinigame()
 	}
 	else
 	{
+		int redParticipants = 0;
+		int blueParticipants = 0;
+
+		for (int j = 1; j <= MaxClients; j++)
+		{
+			Player player = new Player(j);
+
+			if (player.IsValid && player.IsParticipating)
+			{
+				switch (player.Team)
+				{
+					case TFTeam_Red:
+						redParticipants++;
+
+					case TFTeam_Blue:
+						blueParticipants++;
+				}
+			}
+		}
+
+		int totalParticipants = redParticipants + blueParticipants;
+
 		do
 		{
 			MinigameID = GetRandomInt(1, MinigamesLoaded);
@@ -328,41 +352,42 @@ public void DoSelectMinigame()
 					MinigameID = PreviousMinigameID;
 				}
 
+
+
 				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
 				{
 					// If minigame is blocked on this special round, re-roll
+					#if defined DEBUG
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", MinigameID, SpecialRoundID);
+					#endif
+
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameRequiresMultiplePlayers[MinigameID])
+				else if (MinigameRequiresMultiplePlayers[MinigameID] && (redParticipants == 0 || blueParticipants == 0)) 
 				{
-					int redParticipants = 0;
-					int blueParticipants = 0;
+					// Minigame requires players on both teams
+					#if defined DEBUG
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as we need players on both teams", MinigameID);
+					#endif
 
-					for (int j = 1; j <= MaxClients; j++)
-					{
-						Player player = new Player(j);
-
-						if (player.IsValid && player.IsParticipating)
-						{
-							switch (player.Team)
-							{
-								case TFTeam_Red:
-									redParticipants++;
-
-								case TFTeam_Blue:
-									blueParticipants++;
-							}
-						}
-					}
-
-					if (redParticipants == 0 || blueParticipants == 0)
-					{
-						// Minigame requires players on both teams
-						MinigameID = PreviousMinigameID;
-					}
+					MinigameID = PreviousMinigameID;
 				}
 				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && SpeedLevel > MinigameBlockedSpeedsHigherThan[MinigameID])
 				{
+					// Minigame cannot run on speeds higher than specified
+					#if defined DEBUG
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as speed level exceeds maximum", MinigameID);
+					#endif
+
+					MinigameID = PreviousMinigameID;
+				}
+				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && totalParticipants > MinigameMaximumParticipantCount[MinigameID])
+				{
+					// Current participant count exceeds maximum participant count specified for minigame
+					#if defined DEBUG
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count exceeds maximum permitted", MinigameID);
+					#endif
+
 					MinigameID = PreviousMinigameID;
 				}
 			}
