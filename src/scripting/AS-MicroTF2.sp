@@ -32,7 +32,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "3.0.2"
+#define PLUGIN_VERSION "3.0.3"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
