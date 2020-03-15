@@ -287,6 +287,8 @@ public void LoadBossgameData()
 
 public void DoSelectMinigame()
 {
+	CalculateActiveParticipantCount();
+
 	int forcedMinigameID = GetConVarInt(ConVar_MTF2ForceMinigame);
 	int rollCount = 0;
 
@@ -302,28 +304,6 @@ public void DoSelectMinigame()
 	}
 	else
 	{
-		int redParticipants = 0;
-		int blueParticipants = 0;
-
-		for (int j = 1; j <= MaxClients; j++)
-		{
-			Player player = new Player(j);
-
-			if (player.IsValid && player.IsParticipating)
-			{
-				switch (player.Team)
-				{
-					case TFTeam_Red:
-						redParticipants++;
-
-					case TFTeam_Blue:
-						blueParticipants++;
-				}
-			}
-		}
-
-		int totalParticipants = redParticipants + blueParticipants;
-
 		do
 		{
 			MinigameID = GetRandomInt(1, MinigamesLoaded);
@@ -352,8 +332,6 @@ public void DoSelectMinigame()
 					MinigameID = PreviousMinigameID;
 				}
 
-
-
 				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
 				{
 					// If minigame is blocked on this special round, re-roll
@@ -363,7 +341,7 @@ public void DoSelectMinigame()
 
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameRequiresMultiplePlayers[MinigameID] && (redParticipants == 0 || blueParticipants == 0)) 
+				else if (MinigameRequiresMultiplePlayers[MinigameID] && (ActiveRedParticipantCount == 0 || ActiveBlueParticipantCount == 0)) 
 				{
 					// Minigame requires players on both teams
 					#if defined DEBUG
@@ -381,7 +359,7 @@ public void DoSelectMinigame()
 
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && totalParticipants > MinigameMaximumParticipantCount[MinigameID])
+				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && ActiveParticipantCount > MinigameMaximumParticipantCount[MinigameID])
 				{
 					// Current participant count exceeds maximum participant count specified for minigame
 					#if defined DEBUG
@@ -406,6 +384,8 @@ public void DoSelectMinigame()
 
 public void DoSelectBossgame()
 {
+	CalculateActiveParticipantCount();
+
 	int forcedBossgameID = GetConVarInt(ConVar_MTF2ForceBossgame);
 	int rollCount = 0;
 
@@ -451,27 +431,7 @@ public void DoSelectBossgame()
 				}
 				else if (BossgameRequiresMultiplePlayers[BossgameID])
 				{
-					int redParticipants = 0;
-					int blueParticipants = 0;
-
-					for (int j = 1; j <= MaxClients; j++)
-					{
-						Player player = new Player(j);
-
-						if (player.IsValid && player.IsParticipating)
-						{
-							switch (player.Team)
-							{
-								case TFTeam_Red:
-									redParticipants++;
-
-								case TFTeam_Blue:
-									blueParticipants++;
-							}
-						}
-					}
-
-					if (redParticipants == 0 || blueParticipants == 0)
+					if (ActiveRedParticipantCount == 0 || ActiveBlueParticipantCount == 0)
 					{
 						// Bossgame requires players on both teams
 						BossgameID = PreviousBossgameID;
@@ -513,4 +473,29 @@ public bool TrySpeedChangeEvent()
 	}
 
 	return false;
+}
+
+public void CalculateActiveParticipantCount()
+{
+	ActiveRedParticipantCount = 0;
+	ActiveBlueParticipantCount = 0;
+
+	for (int j = 1; j <= MaxClients; j++)
+	{
+		Player player = new Player(j);
+
+		if (player.IsValid && player.IsParticipating)
+		{
+			switch (player.Team)
+			{
+				case TFTeam_Red:
+					ActiveRedParticipantCount++;
+
+				case TFTeam_Blue:
+					ActiveBlueParticipantCount++;
+			}
+		}
+	}
+
+	ActiveParticipantCount = ActiveRedParticipantCount + ActiveBlueParticipantCount;
 }

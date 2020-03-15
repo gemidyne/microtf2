@@ -115,7 +115,15 @@ stock void ClientWonMinigame(int client)
 	if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 	{
 		player.Status = PlayerStatus_Winner;
-		EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+
+		if (ActiveParticipantCount > 12)
+		{
+			EmitSoundToClient(client, SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+		}
+		else
+		{
+			EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+		}
 
 		if (player.Team == TFTeam_Blue)
 		{
