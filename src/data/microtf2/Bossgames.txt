@@ -48,7 +48,7 @@
 	}
 	"6"
 	{
-		"Enabled"		"0"
+		"Enabled"		"1"
 		"Duration"		"60.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/targetpractice.mp3"
 		"EntryPoint"		"Bossgame6_EntryPoint"

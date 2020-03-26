@@ -32,7 +32,7 @@ public void Bossgame6_OnMapStart()
 {
 	Bossgame6_RngModels[0] = "models/props_hydro/keg_large.mdl";
 	Bossgame6_RngModels[1] = "models/props_hydro/water_barrel_large.mdl";
-	Bossgame6_RngModels[2] = "models/props_hydro/water_barrel_cluster2.mdl";
+	Bossgame6_RngModels[2] = "models/props_gameplay/orange_cone001.mdl";
 	Bossgame6_RngModels[3] = "models/props_hydro/barrel_crate.mdl";
 
 	for (int i = 0; i < 4; i++)
@@ -221,25 +221,34 @@ public void Bossgame6_DoEntitySpawns()
 			}
 		}
 
-		int entity = CreateEntityByName("prop_physics");
+		int entity = CreateEntityByName("prop_physics_override");
 
 		if (IsValidEdict(entity))
 		{
 			// TODO: Random model here
 
-			if (GetRandomInt(0, 4) == 2)
+			char buffer[64];
+			bool hook = false;
+			
+			if (GetRandomInt(0, 2) == 2)
 			{
-				DispatchKeyValue(entity, "model", Bossgame6_RngModels[GetRandomInt(0, 3)]);
+				strcopy(buffer, sizeof(buffer), "models/props_farm/wooden_barrel.mdl");
+				hook = true;
 			}
 			else
 			{
-				DispatchKeyValue(entity, "model", "models/props_farm/wooden_barrel.mdl");
+				strcopy(buffer, sizeof(buffer), Bossgame6_RngModels[GetRandomInt(0, 3)]);
 			}
 			
+			DispatchKeyValue(entity, "model", buffer);
 			DispatchSpawn(entity);
 
 			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
-			SDKHook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
+
+			if (hook)
+			{
+				SDKHook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
+			}
 		}
 
 		Bossgame6_EntityIndexes[i] = entity;
@@ -274,6 +283,7 @@ public void Bossgame6_CleanupEntities()
 		if (IsValidEdict(entity) && entity > MaxClients)
 		{
 			CreateTimer(0.0, Timer_RemoveEntity, entity);
+			SDKUnhook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
 		}
 	}
 }
