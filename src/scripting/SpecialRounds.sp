@@ -25,7 +25,7 @@ bool IsChoosingSpecialRound = false;
 bool ForceNextSpecialRound = false;
 int ForceSpecialRound = 0;
 
-#define BIRD_MODEL "models/props_forest/dove.mdl"
+#define SPECIALROUND_SKELETON_MODEL "models/bots/skeleton_sniper/skeleton_sniper.mdl"
 
 stock void InitializeSpecialRounds()
 {
@@ -76,7 +76,7 @@ stock void InitializeSpecialRounds()
 
 public void SpecialRound_OnMapStart()
 {
-	PrecacheModel(BIRD_MODEL);
+	PrecacheModel(SPECIALROUND_SKELETON_MODEL);
 }
 
 public void SpecialRound_OnGameFrame()
@@ -337,10 +337,9 @@ public void Special_Bird(int client)
 	}
 	else
 	{
-		SetVariantString(BIRD_MODEL);
+		SetVariantString(SPECIALROUND_SKELETON_MODEL);
 		AcceptEntityInput(client, "SetCustomModel");
-		SetEntProp(client, Prop_Send, "m_bUseClassAnimations", 0);
-		SetEntProp(client, Prop_Send, "m_nBody", 0);
+		SetEntProp(client, Prop_Send, "m_bUseClassAnimations", 1);
 	}
 }
 

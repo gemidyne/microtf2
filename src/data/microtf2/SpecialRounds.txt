@@ -78,8 +78,8 @@
 	}
 	"13"
 	{
-		"Name"		"Birds"
-		"Description"	"ARCHIMEDES! NO!"
+		"Name"		"Skeletons Only"
+		"Description"	"No skin allowed on this round!"
 		"MultiplePlayersOnly"	"1"
 	}
 	"14"
