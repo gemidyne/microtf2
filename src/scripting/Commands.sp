@@ -26,12 +26,12 @@ stock void InitializeCommands()
 	ConVar_TFFastBuild = FindConVar("tf_fastbuild");
 	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
-	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Force a Special Round after this round!");
+	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
 	
-	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If less than 0, or not found, Normal Gamemode is run. Otherwise, Special Round.");
-	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Sets the current gamemode.");
+	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
+	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Changes the current gamemode.");
 
-	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers the boss round.");
+	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
 
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
