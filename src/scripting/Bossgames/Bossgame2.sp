@@ -203,9 +203,16 @@ public Action Bossgame2_HurtTimer(Handle timer)
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsAlive && player.IsParticipating && player.Health > 0)
+			if (player.IsValid && player.IsAlive && player.IsParticipating)
 			{
-				player.Health--;
+				if (player.Health > 0)
+				{
+					player.Health--;
+				}
+				else
+				{
+					player.Kill();
+				}
 			}
 		}
 
