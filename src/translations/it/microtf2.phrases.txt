@@ -500,11 +500,11 @@
 	}
 	"SpecialRound13_Name"
 	{
-		"it"		"Volare, oh oh!"
+		"it"		"SCHELETRI!"
 	}
 	"SpecialRound13_Description"
 	{
-		"it"		"Archimedes! No!"
+		"it"		"Muscoli? Pelle? A che servono?"
 	}
 	"SpecialRound14_Name"
 	{
