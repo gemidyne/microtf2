@@ -23,6 +23,12 @@ If you intend to use the SDK plugin for developing your own gamemodes or minigam
 
 - Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 
+## Commands 
+See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Commands
+
+## Console Variables
+See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Variables
+
 ## Credits
 
 View the full gamemode credits here: https://www.gemidyne.com/projects/warioware/credits
