@@ -500,11 +500,11 @@
 	}
 	"SpecialRound13_Name"
 	{
-		"en"		"Birds only"
+		"en"		"Skeletons only"
 	}
 	"SpecialRound13_Description"
 	{
-		"en"		"Archimedes! No!"
+		"en"		"No skin allowed in this round!"
 	}
 	"SpecialRound14_Name"
 	{
