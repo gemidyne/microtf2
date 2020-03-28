@@ -23,7 +23,7 @@
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"
-		"ru"		"Раунд {1} of {2}"
+		"ru"		"Раунд {1} из {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
