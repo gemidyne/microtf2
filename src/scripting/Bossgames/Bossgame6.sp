@@ -14,10 +14,15 @@
  * (1) is the X - left and right from view
  */
 
-int Bossgame6_EntityIndexes[32];
+#define BOSSGAME6_ENTITYSPAWN_COUNT 32
+#define BOSSGAME6_RNGMODELS_COUNT 10
+
+int Bossgame6_EntityIndexes[BOSSGAME6_ENTITYSPAWN_COUNT];
+bool Bossgame6_Entity_IsBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
+
 int Bossgame6_Timer;
 int Bossgame6_PlayerScore[MAXPLAYERS+1] = 0;
-char Bossgame6_RngModels[4][64];
+char Bossgame6_RngModels[BOSSGAME6_RNGMODELS_COUNT][64];
 
 public void Bossgame6_EntryPoint()
 {
@@ -31,11 +36,17 @@ public void Bossgame6_EntryPoint()
 public void Bossgame6_OnMapStart()
 {
 	Bossgame6_RngModels[0] = "models/props_hydro/keg_large.mdl";
-	Bossgame6_RngModels[1] = "models/props_hydro/water_barrel_large.mdl";
-	Bossgame6_RngModels[2] = "models/props_gameplay/orange_cone001.mdl";
-	Bossgame6_RngModels[3] = "models/props_hydro/barrel_crate.mdl";
+	Bossgame6_RngModels[1] = "models/props_gameplay/orange_cone001.mdl";
+	Bossgame6_RngModels[2] = "models/props_gameplay/ball001.mdl";
+	Bossgame6_RngModels[3] = "models/props_farm/tractor_tire001.mdl";
+	Bossgame6_RngModels[4] = "models/props_badlands/barrel01.mdl";
+	Bossgame6_RngModels[5] = "models/props_badlands/barrel03.mdl";
+	Bossgame6_RngModels[6] = "models/props_hydro/water_barrel.mdl";
+	Bossgame6_RngModels[7] = "models/props_farm/spool_rope.mdl";
+	Bossgame6_RngModels[8] = "models/props_farm/spool_wire.mdl";
+	Bossgame6_RngModels[9] = "models/props_gameplay/haybale.mdl";
 
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < BOSSGAME6_RNGMODELS_COUNT; i++)
 	{
 		PrecacheModel(Bossgame6_RngModels[i]);
 	}
@@ -50,7 +61,7 @@ public void Bossgame6_OnMinigameSelectedPre()
 {
 	if (BossgameID == 6)
 	{
-		for (int i = 0; i < 32; i++)
+		for (int i = 0; i < BOSSGAME6_ENTITYSPAWN_COUNT; i++)
 		{
 			Bossgame6_EntityIndexes[i] = 0;
 		}
@@ -182,8 +193,8 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 
 public void Bossgame6_DoEntitySpawns()
 {
-	float Bossgame6_SpawnedEntityPositions[32][3];
-	int count = GetRandomInt(1, 32);
+	float Bossgame6_SpawnedEntityPositions[BOSSGAME6_ENTITYSPAWN_COUNT][3];
+	int count = GetRandomInt(1, BOSSGAME6_ENTITYSPAWN_COUNT);
 
 	for (int i = 0; i < count; i++)
 	{
@@ -237,13 +248,15 @@ public void Bossgame6_DoEntitySpawns()
 			}
 			else
 			{
-				strcopy(buffer, sizeof(buffer), Bossgame6_RngModels[GetRandomInt(0, 3)]);
+				strcopy(buffer, sizeof(buffer), Bossgame6_RngModels[GetRandomInt(0, BOSSGAME6_RNGMODELS_COUNT-1)]);
 			}
 			
 			DispatchKeyValue(entity, "model", buffer);
 			DispatchSpawn(entity);
 
 			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
+
+			Bossgame6_Entity_IsBarrel[i] = hook;
 
 			if (hook)
 			{
@@ -264,6 +277,10 @@ public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &infl
 		PlaySoundToPlayer(player.ClientId, "ui/hitsound_retro1.wav");
 		Bossgame6_PlayerScore[player.ClientId]++;
 
+		CreateTimer(0.05, Timer_RemoveEntity, victim);
+		SDKUnhook(victim, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
+		CreateParticle(victim, "bombinomicon_flash", 1.0);
+
 		damage = 500.0;
 		return Plugin_Changed;
 	}
@@ -276,14 +293,18 @@ public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &infl
 
 public void Bossgame6_CleanupEntities()
 {
-	for (int i = 0; i < 32; i++)
+	for (int i = 0; i < BOSSGAME6_ENTITYSPAWN_COUNT; i++)
 	{
 		int entity = Bossgame6_EntityIndexes[i];
 
 		if (IsValidEdict(entity) && entity > MaxClients)
 		{
 			CreateTimer(0.0, Timer_RemoveEntity, entity);
-			SDKUnhook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
+
+			if (Bossgame6_Entity_IsBarrel[i]) 
+			{
+				SDKUnhook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
+			}
 		}
 	}
 }
