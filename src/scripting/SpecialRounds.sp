@@ -25,7 +25,7 @@ bool IsChoosingSpecialRound = false;
 bool ForceNextSpecialRound = false;
 int ForceSpecialRound = 0;
 
-#define SPECIALROUND_SKELETON_MODEL "models/bots/skeleton_sniper/skeleton_sniper.mdl"
+#define SPECIALROUND_SKELETON_MODEL "models/gemidyne/warioware/skeleton.mdl"
 
 stock void InitializeSpecialRounds()
 {
