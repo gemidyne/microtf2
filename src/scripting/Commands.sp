@@ -4,8 +4,6 @@
  * Implements functionality for commands and convars.
  */
 
-#include <sourcemod>
-
 stock void InitializeCommands()
 {
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Commands_OnMapStart);
