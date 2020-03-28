@@ -418,7 +418,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 		return;
 	}
 
-	if (StrEqual(classname, "tf_wearable"))
+	if (!AllowCosmetics && StrEqual(classname, "tf_wearable"))
 	{
 		// Delay is present so m_ModelName is set 
 		CreateTimer(0.1, Timer_HatRemove, entity);
@@ -437,7 +437,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 
 public Action Timer_HatRemove(Handle timer, int entity)
 {
-	if (!IsPluginEnabled)
+	if (!IsPluginEnabled || AllowCosmetics)
 	{
 		return Plugin_Handled;
 	}
@@ -446,13 +446,15 @@ public Action Timer_HatRemove(Handle timer, int entity)
 	{
 		//Hook transmit
 		//Unless it's a The Razorback, Darwin's Danger Shield or Gunboats
-		char sModel[256];
+		char model[256];
 
-		GetEntPropString(entity, Prop_Data, "m_ModelName", sModel, sizeof(sModel));
+		GetEntPropString(entity, Prop_Data, "m_ModelName", model, sizeof(model));
 
-		if(!( StrContains(sModel, "croc_shield") != -1 
-			|| StrContains(sModel, "c_rocketboots_soldier") != -1
-			|| StrContains(sModel, "knife_shield") != -1 ))
+		bool excluded = StrContains(model, "croc_shield") != -1 
+			|| StrContains(model, "c_rocketboots_soldier") != -1
+			|| StrContains(model, "knife_shield") != -1;
+
+		if (!excluded)
 		{
 			SDKHook(entity, SDKHook_SetTransmit, Transmit_HatRemove);
 		}
@@ -518,7 +520,9 @@ public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDe
 		return Plugin_Continue;
 	}
 
-	if (StrEqual(classname, "tf_wearable", false) || StrEqual(classname, "tf_wearable_demoshield", false) || StrEqual(classname, "tf_powerup_bottle", false) || StrEqual(classname, "tf_weapon_spellbook", false))
+	bool isCosmeticItem = StrEqual(classname, "tf_wearable", false) || StrEqual(classname, "tf_wearable_demoshield", false) || StrEqual(classname, "tf_powerup_bottle", false) || StrEqual(classname, "tf_weapon_spellbook", false);
+
+	if (!AllowCosmetics && isCosmeticItem) 
 	{
 		return Plugin_Stop;
 	}

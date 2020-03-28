@@ -83,6 +83,7 @@ bool IsOnlyBlockingDamageByPlayers = false;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 bool IsPlayerWinner[MAXPLAYERS+1] = false;
 bool HideHudGamemodeText = false;
+bool AllowCosmetics = false;
 
 /**
  * Enums
@@ -107,6 +108,7 @@ Handle Handle_ActiveGameTimer = INVALID_HANDLE;
 Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
 Handle ConVar_MTF2BonusPoints = INVALID_HANDLE;
+Handle ConVar_MTF2AllowCosmetics = INVALID_HANDLE;
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;

@@ -449,6 +449,11 @@ methodmap Player __nullable__
 
     public void RemoveWearables()
     {
+        if (AllowCosmetics) 
+        {
+            return;
+        }
+
         int entity = -1;
         while ((entity = FindEntityByClassname(entity, "tf_wearable*")) != -1)
         {

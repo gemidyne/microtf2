@@ -34,16 +34,22 @@ stock void InitializeCommands()
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
 	ConVar_MTF2BonusPoints = CreateConVar("mtf2_bonuspoints", "0", "Controls whether or not minigames should have a bonus point.", 0, true, 0.0, true, 1.0);
-
-	// Debug cvars/cmds
-	ConVar_MTF2ForceMinigame = CreateConVar("mtf2_debug_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
-	ConVar_MTF2ForceBossgame = CreateConVar("mtf2_debug_forcebossgame", "0", "Forces a bossgame to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
-	ConVar_MTF2ForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	ConVar_MTF2AllowCosmetics = CreateConVar("mtf2_cosmetics_enabled", "0", "Allows cosmetics to be worn by players. NOTE: This mode is not explicitly supported and may cause visual bugs and possible server lag spikes.", 0, true, 0.0, true, 1.0);
 
 	if (ConVar_MTF2MaxRounds != INVALID_HANDLE)
 	{
 		HookConVarChange(ConVar_MTF2MaxRounds, OnMaxRoundsChanged);
 	}
+
+	if (ConVar_MTF2AllowCosmetics != INVALID_HANDLE)
+	{
+		HookConVarChange(ConVar_MTF2AllowCosmetics, OnAllowCosmeticsChanged);
+	}
+
+	// Debug cvars/cmds
+	ConVar_MTF2ForceMinigame = CreateConVar("mtf2_debug_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	ConVar_MTF2ForceBossgame = CreateConVar("mtf2_debug_forcebossgame", "0", "Forces a bossgame to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	ConVar_MTF2ForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
 }
 
 public void Commands_OnMapStart()
@@ -236,4 +242,11 @@ public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] ne
 	int value = StringToInt(newVal);
 
 	MaxRounds = value;
+}
+
+public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
+{
+	int value = StringToInt(newVal);
+
+	AllowCosmetics = value == 1;
 }
