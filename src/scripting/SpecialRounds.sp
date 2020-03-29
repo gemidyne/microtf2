@@ -279,7 +279,7 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 
 	if (player.IsValid)
 	{
-		Special_Bird(client);
+		Special_ApplyCustomModel(client);
 
 		player.Scale = SpecialRoundID == 14 
 			? 0.3 
@@ -318,7 +318,7 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 	}
 }
 
-public void Special_Bird(int client)
+public void Special_ApplyCustomModel(int client)
 {
 	if (!IsValidEntity(client)) 
 	{
@@ -330,16 +330,46 @@ public void Special_Bird(int client)
 		return;
 	}
 
-	if (SpecialRoundID != 13) 
+	switch (SpecialRoundID)
 	{
-		SetVariantString("");
-		AcceptEntityInput(client, "SetCustomModel");
-	}
-	else
-	{
-		SetVariantString(SPECIALROUND_SKELETON_MODEL);
-		AcceptEntityInput(client, "SetCustomModel");
-		SetEntProp(client, Prop_Send, "m_bUseClassAnimations", 1);
+		case 13:
+		{
+			SetVariantString(SPECIALROUND_SKELETON_MODEL);
+			AcceptEntityInput(client, "SetCustomModel");
+			SetEntProp(client, Prop_Send, "m_bUseClassAnimations", 1);
+		}
+
+		case 21:
+		{
+			char model[128];
+			char class[16];
+			Player player = new Player(client);
+			
+			switch (player.Class)
+			{
+				case TFClass_Scout: strcopy(class, sizeof(class), "scout");
+				case TFClass_Sniper: strcopy(class, sizeof(class), "sniper");
+				case TFClass_Soldier: strcopy(class, sizeof(class), "soldier");
+				case TFClass_DemoMan: strcopy(class, sizeof(class), "demo");
+				case TFClass_Medic: strcopy(class, sizeof(class), "medic");
+				case TFClass_Heavy: strcopy(class, sizeof(class), "heavy");
+				case TFClass_Pyro: strcopy(class, sizeof(class), "pyro");
+				case TFClass_Spy: strcopy(class, sizeof(class), "spy");
+				case TFClass_Engineer: strcopy(class, sizeof(class), "engineer");
+			}
+
+			Format(model, sizeof(model), "gemidyne/warioware/%s_lowpoly.mdl", class);
+
+			SetVariantString(model);
+			AcceptEntityInput(client, "SetCustomModel");
+			SetEntProp(client, Prop_Send, "m_bUseClassAnimations", 1);
+		}
+
+		default: 
+		{
+			SetVariantString("");
+			AcceptEntityInput(client, "SetCustomModel");
+		}
 	}
 }
 

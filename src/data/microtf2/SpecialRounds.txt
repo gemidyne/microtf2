@@ -120,4 +120,9 @@
 		"Name"		"Non Stop"
 		"Description"	"There's no break in between microgames - be ready!"
 	}
+	"21"
+	{
+		"Name"		"Team Fortress 64"
+		"Description"	"Hey! Where did my polygons go?"
+	}
 }

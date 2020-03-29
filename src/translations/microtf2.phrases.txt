@@ -582,4 +582,12 @@
 	{
 		"en"		"There's no break in between microgames this round!"
 	}
+	"SpecialRound21_Name"
+	{
+		"en"		"Team Fortress 64"
+	}
+	"SpecialRound21_Description"
+	{
+		"en"		"Hey! Where did my polygons go?"
+	}
 }
