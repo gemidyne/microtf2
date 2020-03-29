@@ -20,6 +20,11 @@
 		"#format"	"{1:i}"
 		"en"		"Team Score: {1}"
 	}
+	"Hud_Score_Barrels"
+	{
+		"#format"	"{1:i}"
+		"en"		"Barrels: {1}"
+	}
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"

@@ -92,6 +92,13 @@ public void DisplayStatsHud(Player player)
 {
     char buffer[128];
 
+    if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
+    {
+        Call_StartForward(GlobalForward_OnRenderHudFrame);
+        Call_PushStringEx(buffer, sizeof(buffer), 0, SM_PARAM_COPYBACK);
+        Call_Finish();
+    }
+
     DisplayScoreHud(player, buffer);
     DisplayRoundHud(player, buffer);
     DisplaySpecialHud(player, buffer);

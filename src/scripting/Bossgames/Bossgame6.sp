@@ -31,6 +31,7 @@ public void Bossgame6_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
+	AddToForward(GlobalForward_OnRenderHudFrame, INVALID_HANDLE, Bossgame6_OnRenderHudFrame);
 }
 
 public void Bossgame6_OnMapStart()
@@ -110,15 +111,25 @@ public void Bossgame6_OnMinigameSelected(int client)
 	player.SetAmmo(2);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 90.0, 0.0 };
+	float ang[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
 
 	int column = client;
 	int row = 0;
 
-	pos[0] = -4015.0 + float(column*60); 
-	pos[1] = 959.0 - float(row*100);
-	pos[2] = -1093.0;
+	if (player.Team == TFTeam_Red)
+	{
+		pos[0] = -4015.0 + float(column*60); 
+		pos[1] = 959.0 - float(row*100);
+		pos[2] = -1093.0;
+		ang[1] = 90.0;
+	}
+	else if (player.Team == TFTeam_Blue)
+	{
+		pos[0] = -4052.0 + float(column*60); 
+		pos[1] = 2783.0 - float(row*100);
+		pos[2] = -1093.0;
+	}
 
 	TeleportEntity(client, pos, ang, vel);
 }
@@ -156,11 +167,15 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 		switch (Bossgame6_Timer)
 		{
 			case 8: 
+			{
 				Bossgame6_SendDoorInput("Close");
+				Bossgame6_ShowPlayerScores();
+			}
 				
 			case 7: 
 			{
 				Bossgame6_CleanupEntities();
+
 				for (int i = 1; i <= MaxClients; i++)
 				{
 					Player player = new Player(i);
@@ -171,16 +186,19 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 						player.SetAmmo(2, true, false);
 					}
 				}
+
+				Bossgame6_DoEntitySpawns();
 			}
 
-			case 6: 
-				Bossgame6_DoEntitySpawns();
-
 			case 5: 
+			{
 				Bossgame6_SendDoorInput("Open");
+			}
 
 			case 0:
+			{
 				Bossgame6_Timer = 9;
+			}
 		}
 
 		Bossgame6_Timer--;
@@ -277,12 +295,11 @@ public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &infl
 		PlaySoundToPlayer(player.ClientId, "ui/hitsound_retro1.wav");
 		Bossgame6_PlayerScore[player.ClientId]++;
 
-		CreateTimer(0.05, Timer_RemoveEntity, victim);
 		SDKUnhook(victim, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
 		CreateParticle(victim, "bombinomicon_flash", 1.0);
 
-		damage = 500.0;
-		return Plugin_Changed;
+		CreateTimer(0.05, Timer_RemoveEntity, victim);
+		return Plugin_Continue;
 	}
 	else
 	{
@@ -299,7 +316,7 @@ public void Bossgame6_CleanupEntities()
 
 		if (IsValidEdict(entity) && entity > MaxClients)
 		{
-			CreateTimer(0.0, Timer_RemoveEntity, entity);
+			AcceptEntityInput(entity, "Kill");
 
 			if (Bossgame6_Entity_IsBarrel[i]) 
 			{
@@ -324,4 +341,76 @@ public void Bossgame6_SendDoorInput(const char[] input)
 			//break;
 		}
 	}
+}
+
+public void Bossgame6_ShowPlayerScores()
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating)
+		{
+			int score = Bossgame6_PlayerScore[player.ClientId];
+
+			for (int j = 1; j <= MaxClients; j++)
+			{
+				if (j == i)
+				{
+					continue;
+				}
+
+				Player annotationViewer = new Player(j);
+
+				if (annotationViewer.IsInGame && !annotationViewer.IsBot)
+				{
+					char text[32];
+					Format(text, sizeof(text), "%T", "Hud_Score_Barrels", j, score);
+
+					annotationViewer.ShowAnnotation(player.ClientId, 2.0, text);
+				}
+			}
+		}
+	}
+}
+
+public void Bossgame6_OnRenderHudFrame(int client, char buffer[128])
+{
+    if (BossgameID != 6)
+    {
+        return;
+    }
+
+    Player player = new Player(client);
+
+    if (!player.IsValid)
+    {
+        return;
+    }
+
+    char scoreText[32];
+
+    Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, player.Score);
+
+    if (SpecialRoundID == 19)
+    {
+        char rewritten[32];
+        int rc = 0;
+        int len = strlen(scoreText);
+
+        for (int c = len - 1; c >= 0; c--)
+        {
+            if (scoreText[c] == '\0')
+            {
+                continue;
+            }
+
+            rewritten[rc] = scoreText[c];
+            rc++;
+        }
+
+        strcopy(scoreText, sizeof(scoreText), rewritten);
+    }
+
+    Format(buffer, sizeof(buffer), "%s%s\n", buffer, scoreText);
 }

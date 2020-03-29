@@ -256,6 +256,14 @@ Handle GlobalForward_OnBossStopAttempt;
  */
 Handle GlobalForward_OnTfRoundStart;
 
+/**
+ * Forward is called when the HUD is about to be rendered.
+ *
+ * @param String to append data to
+ * @noreturn
+ */
+Handle GlobalForward_OnRenderHudFrame;
+
 stock void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
@@ -291,6 +299,7 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
+	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any, Param_String);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -323,6 +332,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerRunCmd);
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
 	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);
+	SafelyRemoveAllFromForward(GlobalForward_OnRenderHudFrame);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)
