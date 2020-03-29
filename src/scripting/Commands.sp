@@ -22,6 +22,7 @@ stock void InitializeCommands()
 	ConVar_ServerGravity = FindConVar("sv_gravity");
 	ConVar_TFCheapObjects = FindConVar("tf_cheapobjects");
 	ConVar_TFFastBuild = FindConVar("tf_fastbuild");
+	ConVar_TFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
 	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
 	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
@@ -64,6 +65,7 @@ stock void ResetConVars()
 	ResetConVar(ConVar_ServerGravity);
 	ResetConVar(ConVar_TFCheapObjects);
 	ResetConVar(ConVar_TFFastBuild);
+	ResetConVar(ConVar_TFWeaponSpreads);
 	ResetConVar(ConVar_MTF2ForceMinigame);
 	ResetConVar(ConVar_MTF2ForceBossgame);
 	
@@ -121,6 +123,7 @@ stock void PrepareConVars()
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
 	SetConVarInt(ConVar_TFFastBuild, 0);
+	SetConVarInt(ConVar_TFWeaponSpreads, 1);
 	SetConVarFloat(FindConVar("tf_airblast_cray_ground_minz"), 268.3281572999747);
 	SetConVarInt(FindConVar("tf_player_movement_restart_freeze"), 0);
 

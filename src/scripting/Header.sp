@@ -101,6 +101,7 @@ Handle ConVar_PhysTimescale = INVALID_HANDLE;
 Handle ConVar_ServerGravity = INVALID_HANDLE;
 Handle ConVar_TFCheapObjects = INVALID_HANDLE;
 Handle ConVar_TFFastBuild = INVALID_HANDLE;
+Handle ConVar_TFWeaponSpreads = INVALID_HANDLE;
 Handle ConVar_FriendlyFire = INVALID_HANDLE;
 Handle Handle_BossCheckTimer = INVALID_HANDLE;
 Handle Handle_ActiveGameTimer = INVALID_HANDLE;
