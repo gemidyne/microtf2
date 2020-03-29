@@ -62,14 +62,16 @@ stock void InitializeSpecialRounds()
 
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
 	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(GlobalForward_OnMinigameSelectedPost, INVALID_HANDLE, SpecialRound_ApplyEffects);
+	AddToForward(GlobalForward_OnGameOverStart, INVALID_HANDLE, SpecialRound_ApplyEffects);
 
 	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 	AddToForward(GlobalForward_OnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 	AddToForward(GlobalForward_OnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
 
 	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
+	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
+
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
 }
@@ -77,6 +79,15 @@ stock void InitializeSpecialRounds()
 public void SpecialRound_OnMapStart()
 {
 	PrecacheModel(SPECIALROUND_SKELETON_MODEL);
+	PrecacheModel("models/gemidyne/warioware/scout_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/sniper_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/soldier_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/demo_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/medic_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/heavy_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/pyro_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/spy_lowpoly.mdl");
+	PrecacheModel("models/gemidyne/warioware/engineer_lowpoly.mdl");
 }
 
 public void SpecialRound_OnGameFrame()
@@ -273,6 +284,19 @@ stock void SpecialRound_SetupEnv()
 	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
 }
 
+public void SpecialRound_ApplyEffects()
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsParticipating)
+		{
+			SpecialRound_ApplyPlayerEffects(player.ClientId);
+		}
+	}
+}
+
 public void SpecialRound_ApplyPlayerEffects(int client)
 {
 	Player player = new Player(client);
@@ -358,7 +382,7 @@ public void Special_ApplyCustomModel(int client)
 				case TFClass_Engineer: strcopy(class, sizeof(class), "engineer");
 			}
 
-			Format(model, sizeof(model), "gemidyne/warioware/%s_lowpoly.mdl", class);
+			Format(model, sizeof(model), "models/gemidyne/warioware/%s_lowpoly.mdl", class);
 
 			SetVariantString(model);
 			AcceptEntityInput(client, "SetCustomModel");

@@ -264,6 +264,14 @@ Handle GlobalForward_OnTfRoundStart;
  */
 Handle GlobalForward_OnRenderHudFrame;
 
+/**
+ * Forward is called when the round has finished and game over begins.
+ *
+ * @noparams
+ * @noreturn
+ */
+Handle GlobalForward_OnGameOverStart;
+
 stock void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
@@ -300,6 +308,7 @@ stock void InitializeForwards()
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
 	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any, Param_String);
+	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -333,6 +342,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
 	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);
 	SafelyRemoveAllFromForward(GlobalForward_OnRenderHudFrame);
+	SafelyRemoveAllFromForward(GlobalForward_OnGameOverStart);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)

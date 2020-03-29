@@ -95,7 +95,7 @@ public void DisplayStatsHud(Player player)
     if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
     {
         Call_StartForward(GlobalForward_OnRenderHudFrame);
-        Call_PushStringEx(buffer, sizeof(buffer), 0, SM_PARAM_COPYBACK);
+        Call_PushStringEx(buffer, sizeof(buffer), SM_PARAM_STRING_UTF8, SM_PARAM_COPYBACK);
         Call_Finish();
     }
 

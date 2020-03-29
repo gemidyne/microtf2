@@ -1063,6 +1063,12 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	CloseHandle(winners);
 	winners = INVALID_HANDLE;
 
+	if (GlobalForward_OnGameOverStart != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnGameOverStart);
+		Call_Finish();
+	}
+
 	CreateTimer(bgmDuration, Timer_GameLogic_GameOverEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
