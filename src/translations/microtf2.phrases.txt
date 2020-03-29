@@ -533,7 +533,7 @@
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"	"{1:i}"
-		"en"		"If you win this minigame, you will be awarded {1} points!"
+		"en"		"If you win this microgame, you will be awarded {1} points!"
 	}
 	"SpecialRound17_Name"
 	{
