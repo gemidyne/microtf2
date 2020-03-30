@@ -501,4 +501,14 @@ methodmap Player __nullable__
 
         EndMessage();
     }
+
+    public void SetCaption(const char[] text)
+    {
+        SetCaption(this.ClientId, text);
+    }
+
+    public bool HasCaption()
+    {
+        return HasCaption(this.ClientId);
+    }
 }

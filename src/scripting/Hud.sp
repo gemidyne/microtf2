@@ -4,8 +4,7 @@
 int g_iCenterHudUpdateInterval = 10;
 int g_iCenterHudUpdateFrame = 0;
 char g_sCustomHudText[MAXPLAYERS+1][CUSTOM_HUD_TEXT_LENGTH];
-
-char MinigameCaption[MAXPLAYERS][CAPTION_LENGTH];
+char g_sCaptionText[MAXPLAYERS][CAPTION_LENGTH];
 
 stock void InitialiseHud()
 {
@@ -60,7 +59,7 @@ public void Hud_OnGameFrame()
             if (player.IsInGame && !player.IsBot)
             {
                 char buffer[CAPTION_LENGTH];
-                Format(buffer, sizeof(buffer), MinigameCaption[i]);
+                Format(buffer, sizeof(buffer), g_sCaptionText[i]);
 
                 if (SpecialRoundID == 19)
                 {
@@ -303,4 +302,28 @@ public Action Command_ViewGamemodeCredits(int client, int args)
     ShowMOTDPanel(client, "WarioWare Credits", "https://www.gemidyne.com/projects/warioware/credits", MOTDPANEL_TYPE_URL);
 
     return Plugin_Handled;
+}
+
+void ClearMinigameCaptionForAll()
+{
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsInGame)
+		{
+			player.DisplayOverlay(OVERLAY_BLANK);
+			player.SetCaption("");
+		}
+	}
+}
+
+void SetCaption(int client, const char[] text)
+{
+    strcopy(g_sCaptionText[client], CAPTION_LENGTH, text);
+}
+
+bool HasCaption(int client)
+{
+    return strlen(g_sCaptionText[client]) > 0;
 }

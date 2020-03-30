@@ -75,7 +75,7 @@ public void Minigame8_GetDynamicCaption(int client)
 	{
 		char text[64];
 		Format(text, sizeof(text), "%T", "Minigame8_CaptionFormatted", client, Minigame8_SayTextQuestion);
- 		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 

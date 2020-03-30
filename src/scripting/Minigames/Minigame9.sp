@@ -49,7 +49,7 @@ public void Minigame9_GetDynamicCaption(int client)
 			case 6: Format(text, sizeof(text), "%T", "Minigame9_Caption_SomeoneSaysCrouch", client);
 		}
 
-		MinigameCaption[client] = text; 
+		player.SetCaption(text);
 	}
 }
 
@@ -79,8 +79,8 @@ public void Minigame9_OnGameFrame()
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
-							MinigameCaption[i] = text;
-							PlayerStatus[i] = PlayerStatus_Failed;
+							player.SetCaption(text);
+							player.Status = PlayerStatus_Failed;
 						}
 					}
 
@@ -102,8 +102,8 @@ public void Minigame9_OnGameFrame()
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
-							MinigameCaption[i] = text;
-							PlayerStatus[i] = PlayerStatus_Failed;
+							player.SetCaption(text);
+							player.Status = PlayerStatus_Failed;
 						}
 					}
 
@@ -125,8 +125,8 @@ public void Minigame9_OnGameFrame()
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
-							MinigameCaption[i] = text;
-							PlayerStatus[i] = PlayerStatus_Failed;
+							player.SetCaption(text);
+							player.Status = PlayerStatus_Failed;
 						}
 					}
 				}

@@ -97,7 +97,7 @@ public void Minigame20_GetDynamicCaption(int client)
 			}
 		}
 
-		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 

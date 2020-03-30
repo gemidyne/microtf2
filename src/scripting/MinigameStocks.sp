@@ -101,7 +101,7 @@ public Action Timer_RemoveBossOverlay(Handle timer)
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
+		SetCaption(i, "");
 	}
 
 	return Plugin_Handled;
@@ -166,19 +166,5 @@ public void EndBoss()
 		}
 
 		CreateTimer(0.0, Timer_GameLogic_EndMinigame);
-	}
-}
-
-stock void ClearMinigameCaptionForAll()
-{
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsInGame)
-		{
-			player.DisplayOverlay(OVERLAY_BLANK);
-			strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
-		}
 	}
 }

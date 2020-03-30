@@ -39,7 +39,7 @@ public void Minigame6_GetDynamicCaption(int client)
 	{
 		char text[64];
 		Format(text, sizeof(text), "%T", "Minigame6_SayTheWord_CaptionFormatted", client, Minigame6_SayTextAnswer);
- 		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 

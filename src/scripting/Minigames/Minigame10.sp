@@ -107,7 +107,7 @@ public void Minigame10_GetDynamicCaption(int client)
 			Format(text, sizeof(text), "%T", "Minigame10_Caption_RunFromKamikaze", client);
 		}
 
-		MinigameCaption[client]	 = text;
+		player.SetCaption(text);
 	}
 }
 

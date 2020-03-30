@@ -283,7 +283,8 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			if (duration >= 1.0)
 			{
 				player.DisplayOverlay(OVERLAY_BLANK);
-				strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
+				player.SetCaption("");
+
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
@@ -307,8 +308,8 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 		{
 			player.Status = PlayerStatus_NotWon;
 			player.DisplayOverlay(OVERLAY_BLANK);
-
-			strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
+			player.SetCaption("");
+			
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 		}
 	}
@@ -404,7 +405,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Format(translationKey, sizeof(translationKey), "Bossgame%d_Caption", BossgameID);
 					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
-					strcopy(MinigameCaption[player.ClientId], CAPTION_LENGTH, text);
+					player.SetCaption(text);
 				}
 
 				if (strlen(BossgameMusic[BossgameID]) > 0)
@@ -422,7 +423,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Format(translationKey, sizeof(translationKey), "Minigame%d_Caption", MinigameID);
 					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
-					strcopy(MinigameCaption[player.ClientId], CAPTION_LENGTH, text);
+					player.SetCaption(text);
 				}
 
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
@@ -446,7 +447,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 				}
 			}
 
-			if (strlen(MinigameCaption[player.ClientId]) > 0)
+			if (player.HasCaption())
 			{
 				player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 			}
@@ -536,7 +537,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	{
 		Player player = new Player(i);
 
-		strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
+		player.SetCaption("");
 
 		if (player.IsValid)
 		{

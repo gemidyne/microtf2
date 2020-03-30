@@ -45,7 +45,7 @@ public void Minigame14_GetDynamicCaption(int client)
 			Format(text, sizeof(text), "%T", "Minigame14_Caption_Engineers", client);
 		}
 
-		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 

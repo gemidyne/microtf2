@@ -69,7 +69,7 @@ public void Minigame11_GetDynamicCaption(int client)
 			Format(text, sizeof(text), "%T", "Minigame11_Caption_DontMove", client);
 		}
 
-		MinigameCaption[client]	= text;
+		player.SetCaption(text);
 	}
 }
 

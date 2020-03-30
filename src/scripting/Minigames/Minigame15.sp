@@ -115,7 +115,7 @@ public void Minigame15_GetDynamicCaption(int client)
 			Format(text, sizeof(text), "%T", "Minigame15_Caption_Any", client);
 		}
 
-		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 

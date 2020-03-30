@@ -368,7 +368,7 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 
 		if (player.IsInGame)
 		{
-			MinigameCaption[player.ClientId] = "";
+			player.SetCaption("");
 			SetClientViewEntity(i, camera);
 
 			Bossgame7_PlaySnd(i, Bossgame7_BgmFiles[randomBgmIdx]);
@@ -563,8 +563,8 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		if (player.IsInGame)
 		{
 			SetClientViewEntity(i, camera);
-			MinigameCaption[i] = "";
 
+			player.SetCaption("");
 			player.DisplayOverlay(OVERLAY_BLANK);
 			EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW, Bossgame7_ActiveCameraEntityId);
 		}
@@ -652,7 +652,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_RoundReview", player.ClientId, text);
 
-			MinigameCaption[player.ClientId] = text;
+			player.SetCaption(text);
 		}
 	}
 
@@ -737,7 +737,7 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_LevelUpAnnouncement", player.ClientId);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_LEVEL_UP, Bossgame7_ActiveCameraEntityId);
-			MinigameCaption[player.ClientId] = text;
+			player.SetCaption(text);
 		}
 	}
 
@@ -769,7 +769,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 			char text[128];
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_WinnerAnnouncement", player.ClientId, winnerName);
 
-			MinigameCaption[player.ClientId] = text;
+			player.SetCaption(text);
 
 			if (i == winnerId)
 			{
@@ -825,7 +825,7 @@ public void PrintAnswerDisplay(Player player)
 		Format(text, sizeof(text), "%T", "Bossgame7_Caption_TimeRemaining", player.ClientId, Bossgame7_RemainingTime);
 	}
 
-	MinigameCaption[player.ClientId] = text;
+	player.SetCaption(text);
 }
 
 public int GetCameraEntity(const char[] name)

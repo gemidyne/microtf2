@@ -83,7 +83,7 @@ public void Minigame17_GetDynamicCaption(int client)
 			Format(text, sizeof(text), "%T", "Minigame17_Caption_GetHitByMedic", client);
 		}
 
-		MinigameCaption[client] = text;
+		player.SetCaption(text);
 	}
 }
 
