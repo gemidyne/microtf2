@@ -74,6 +74,9 @@ stock void InitializeSpecialRounds()
 
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
+
+	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
+	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
 }
 
 public void SpecialRound_OnMapStart()
@@ -542,5 +545,43 @@ public void SpecialRound_OnPlayerClassChange(int client, int class)
 	{
 		player.Score++;
 		CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "LowestScoreWins_ExploitBlocked", client);
+	}
+}
+
+public Action CmdSetNextSpecialRound(int client, int args)
+{
+	char text[10];
+	GetCmdArg(1, text, sizeof(text));
+
+	int id = StringToInt(text);
+
+	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
+	{
+		ForceNextSpecialRound = true;
+		ForceSpecialRound = id;
+
+		ReplyToCommand(client, "[ WarioWare ] The next special round has been set.");
+	}
+	else
+	{
+		ReplyToCommand(client, "[ WarioWare ] Error: special round number is outside of min and max range. Specified ID: %i", id);
+	}
+}
+
+public Action CmdChangeSpecialRound(int client, int args)
+{
+	char text[10];
+	GetCmdArg(1, text, sizeof(text));
+
+	int id = StringToInt(text);
+
+	if (id >= SPR_MIN && id <= SPR_MAX)
+	{
+		GamemodeID = SPR_GAMEMODEID;
+		SpecialRoundID = id;
+	}
+	else
+	{
+		GamemodeID = 0;
 	}
 }

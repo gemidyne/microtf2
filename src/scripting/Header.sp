@@ -96,23 +96,9 @@ PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
  * Handles
  */
 
-Handle ConVar_HostTimescale = INVALID_HANDLE;
-Handle ConVar_PhysTimescale = INVALID_HANDLE;
-Handle ConVar_ServerGravity = INVALID_HANDLE;
-Handle ConVar_TFCheapObjects = INVALID_HANDLE;
-Handle ConVar_TFFastBuild = INVALID_HANDLE;
-Handle ConVar_TFWeaponSpreads = INVALID_HANDLE;
-Handle ConVar_FriendlyFire = INVALID_HANDLE;
+Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle Handle_BossCheckTimer = INVALID_HANDLE;
 Handle Handle_ActiveGameTimer = INVALID_HANDLE;
-
-Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
-Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
-Handle ConVar_MTF2BonusPoints = INVALID_HANDLE;
-Handle ConVar_MTF2AllowCosmetics = INVALID_HANDLE;
-Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
-Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
-Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;
 
 /**
  * Offsets

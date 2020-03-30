@@ -4,6 +4,20 @@
  * Implements functionality for commands and convars.
  */
 
+Handle ConVar_HostTimescale = INVALID_HANDLE;
+Handle ConVar_PhysTimescale = INVALID_HANDLE;
+Handle ConVar_ServerGravity = INVALID_HANDLE;
+Handle ConVar_TFCheapObjects = INVALID_HANDLE;
+Handle ConVar_TFFastBuild = INVALID_HANDLE;
+Handle ConVar_TFWeaponSpreads = INVALID_HANDLE;
+Handle ConVar_FriendlyFire = INVALID_HANDLE;
+Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
+Handle ConVar_MTF2BonusPoints = INVALID_HANDLE;
+Handle ConVar_MTF2AllowCosmetics = INVALID_HANDLE;
+Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
+Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
+Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;
+
 stock void InitializeCommands()
 {
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Commands_OnMapStart);
@@ -25,9 +39,6 @@ stock void InitializeCommands()
 	ConVar_TFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
 	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
-	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
-	
-	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
 	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Changes the current gamemode.");
 
 	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
@@ -174,43 +185,6 @@ public Action CmdOnPlayerKill(int client, const char[] command, int args)
 	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);
 }
 
-public Action CmdSetNextSpecialRound(int client, int args)
-{
-	char text[10];
-	GetCmdArg(1, text, sizeof(text));
-
-	int id = StringToInt(text);
-
-	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
-	{
-		ForceNextSpecialRound = true;
-		ForceSpecialRound = id;
-
-		ReplyToCommand(client, "[ WarioWare ] The next special round has been set.");
-	}
-	else
-	{
-		ReplyToCommand(client, "[ WarioWare ] Error: special round number is outside of min and max range. Specified ID: %i", id);
-	}
-}
-
-public Action CmdChangeSpecialRound(int client, int args)
-{
-	char text[10];
-	GetCmdArg(1, text, sizeof(text));
-
-	int id = StringToInt(text);
-
-	if (id >= SPR_MIN && id <= SPR_MAX)
-	{
-		GamemodeID = SPR_GAMEMODEID;
-		SpecialRoundID = id;
-	}
-	else
-	{
-		GamemodeID = 0;
-	}
-}
 
 public Action CmdSetGamemode(int client, int args)
 {

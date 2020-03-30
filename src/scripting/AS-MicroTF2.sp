@@ -41,12 +41,13 @@
 
 #include "Header.sp"
 #include "Forwards.sp"
-#include "PluginInterop.sp"
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
 #include "Sounds.sp"
 #include "System.sp"
+#include "Commands.sp"
+#include "PluginInterop.sp"
 #include "Hud.sp"
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
@@ -57,7 +58,6 @@
 #include "SpecialRounds.sp"
 #include "Internal.sp"
 #include "Stocks.sp"
-#include "Commands.sp"
 #include "PrecacheManifest.sp"
 
 public Plugin myinfo = 

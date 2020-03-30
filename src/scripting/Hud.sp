@@ -3,6 +3,9 @@
 
 #define HUD_RENDER_INTERVAL 10
 
+Handle HudSync_Stats;
+Handle HudSync_Caption;
+
 int g_iCenterHudUpdateFrame = 0;
 char g_sCustomHudText[MAXPLAYERS][CUSTOM_HUD_TEXT_LENGTH];
 char g_sCaptionText[MAXPLAYERS][CAPTION_LENGTH];
@@ -12,6 +15,9 @@ stock void InitialiseHud()
     #if defined LOGGING_STARTUP
     LogMessage("Initializing HUD...");
     #endif
+    
+    HudSync_Stats = CreateHudSynchronizer();
+    HudSync_Caption = CreateHudSynchronizer();
 
     AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
     AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
