@@ -511,4 +511,14 @@ methodmap Player __nullable__
     {
         return HasCaption(this.ClientId);
     }
+
+    public void SetCustomHudText(const char[] text)
+    {
+        SetCustomHudText(this.ClientId, text);
+    }
+
+    public bool HasCustomHudText()
+    {
+        return HasCustomHudText(this.ClientId);
+    }
 }

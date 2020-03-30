@@ -411,6 +411,6 @@ public void Bossgame6_OnRenderHudFrame(int client)
 
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
-	
-    Format(g_sCustomHudText[player.ClientId], CUSTOM_HUD_TEXT_LENGTH, "%s", scoreText);
+
+    player.SetCustomHudText(scoreText);
 }

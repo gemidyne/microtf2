@@ -3,7 +3,7 @@
 
 int g_iCenterHudUpdateInterval = 10;
 int g_iCenterHudUpdateFrame = 0;
-char g_sCustomHudText[MAXPLAYERS+1][CUSTOM_HUD_TEXT_LENGTH];
+char g_sCustomHudText[MAXPLAYERS][CUSTOM_HUD_TEXT_LENGTH];
 char g_sCaptionText[MAXPLAYERS][CAPTION_LENGTH];
 
 stock void InitialiseHud()
@@ -103,7 +103,7 @@ public void DisplayStatsHud(Player player)
         Call_Finish();
     }
 
-    if (strlen(g_sCustomHudText[player.ClientId]) > 0)
+    if (player.HasCustomHudText())
     {
         Format(buffer, sizeof(buffer), "%s%s\n", buffer, g_sCustomHudText[player.ClientId]);
     }
@@ -326,4 +326,14 @@ void SetCaption(int client, const char[] text)
 bool HasCaption(int client)
 {
     return strlen(g_sCaptionText[client]) > 0;
+}
+
+void SetCustomHudText(int client, const char[] text)
+{
+    strcopy(g_sCustomHudText[client], CUSTOM_HUD_TEXT_LENGTH, text);
+}
+
+bool HasCustomHudText(int client)
+{
+    return strlen(g_sCustomHudText[client]) > 0;
 }
