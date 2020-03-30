@@ -1,5 +1,11 @@
+#define CUSTOM_HUD_TEXT_LENGTH 32
+#define CAPTION_LENGTH 256
+
 int g_iCenterHudUpdateInterval = 10;
 int g_iCenterHudUpdateFrame = 0;
+char g_sCustomHudText[MAXPLAYERS+1][CUSTOM_HUD_TEXT_LENGTH];
+
+char MinigameCaption[MAXPLAYERS][CAPTION_LENGTH];
 
 stock void InitialiseHud()
 {
@@ -53,12 +59,12 @@ public void Hud_OnGameFrame()
 
             if (player.IsInGame && !player.IsBot)
             {
-                char buffer[MINIGAME_CAPTION_LENGTH];
+                char buffer[CAPTION_LENGTH];
                 Format(buffer, sizeof(buffer), MinigameCaption[i]);
 
                 if (SpecialRoundID == 19)
                 {
-                    char rewritten[MINIGAME_CAPTION_LENGTH];
+                    char rewritten[CAPTION_LENGTH];
 
                     int rc = 0;
                     int len = strlen(buffer);
@@ -95,8 +101,12 @@ public void DisplayStatsHud(Player player)
     if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
     {
         Call_StartForward(GlobalForward_OnRenderHudFrame);
-        Call_PushStringEx(buffer, sizeof(buffer), SM_PARAM_STRING_UTF8, SM_PARAM_COPYBACK);
         Call_Finish();
+    }
+
+    if (strlen(g_sCustomHudText[player.ClientId]) > 0)
+    {
+        Format(buffer, sizeof(buffer), "%s%s\n", buffer, g_sCustomHudText[player.ClientId]);
     }
 
     DisplayScoreHud(player, buffer);

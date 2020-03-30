@@ -4,16 +4,11 @@
  * Implements a System for Minigames.
  */
 
-#include <sourcemod>
-
-#define MAXIMUM_MINIGAMES 64
-#define MINIGAME_CAPTION_LENGTH 256
-
 int MinigamesLoaded = 0;
 int BossgamesLoaded = 0;
 
 bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
-char MinigameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
+char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
@@ -22,7 +17,7 @@ float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
-char BossgameCaptions[MAXIMUM_MINIGAMES][MINIGAME_CAPTION_LENGTH];
+char BossgameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
@@ -35,7 +30,7 @@ float MinigameMusicLength[MAXIMUM_MINIGAMES];
 char BossgameMusic[MAXIMUM_MINIGAMES][128];
 float BossgameLength[MAXIMUM_MINIGAMES];
 
-char MinigameCaption[MAXPLAYERS][MINIGAME_CAPTION_LENGTH];
+
 
 ArrayList PlayedMinigamePool;
 ArrayList PlayedBossgamePool;

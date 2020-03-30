@@ -374,7 +374,7 @@ public void Bossgame6_ShowPlayerScores()
 	}
 }
 
-public void Bossgame6_OnRenderHudFrame(int client, char buffer[128])
+public void Bossgame6_OnRenderHudFrame(int client)
 {
     if (BossgameID != 6)
     {
@@ -411,6 +411,6 @@ public void Bossgame6_OnRenderHudFrame(int client, char buffer[128])
 
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
-
-    Format(buffer, sizeof(buffer), "%s%s\n", buffer, scoreText);
+	
+    Format(g_sCustomHudText[player.ClientId], CUSTOM_HUD_TEXT_LENGTH, "%s", scoreText);
 }

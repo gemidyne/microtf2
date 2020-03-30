@@ -27,6 +27,7 @@
 
 #pragma newdecls required
 
+
 /**
  * Defines
  */
@@ -36,6 +37,8 @@
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
+#define MAXIMUM_MINIGAMES 64
+
 #include "Header.sp"
 #include "Forwards.sp"
 #include "PluginInterop.sp"
@@ -44,6 +47,7 @@
 #include "Voices.sp"
 #include "Sounds.sp"
 #include "System.sp"
+#include "Hud.sp"
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
 #include "MethodMaps/Bossgame.inc"
@@ -51,7 +55,6 @@
 #include "SecuritySystem.sp"
 #include "Events.sp"
 #include "SpecialRounds.sp"
-#include "Hud.sp"
 #include "Internal.sp"
 #include "Stocks.sp"
 #include "Commands.sp"
@@ -280,7 +283,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			if (duration >= 1.0)
 			{
 				player.DisplayOverlay(OVERLAY_BLANK);
-				strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
+				strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
@@ -305,7 +308,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.Status = PlayerStatus_NotWon;
 			player.DisplayOverlay(OVERLAY_BLANK);
 
-			strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
+			strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 		}
 	}
@@ -401,7 +404,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Format(translationKey, sizeof(translationKey), "Bossgame%d_Caption", BossgameID);
 					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
-					strcopy(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH, text);
+					strcopy(MinigameCaption[player.ClientId], CAPTION_LENGTH, text);
 				}
 
 				if (strlen(BossgameMusic[BossgameID]) > 0)
@@ -419,7 +422,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Format(translationKey, sizeof(translationKey), "Minigame%d_Caption", MinigameID);
 					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
-					strcopy(MinigameCaption[player.ClientId], MINIGAME_CAPTION_LENGTH, text);
+					strcopy(MinigameCaption[player.ClientId], CAPTION_LENGTH, text);
 				}
 
 				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
@@ -533,7 +536,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	{
 		Player player = new Player(i);
 
-		strcopy(MinigameCaption[i], MINIGAME_CAPTION_LENGTH, "");
+		strcopy(MinigameCaption[i], CAPTION_LENGTH, "");
 
 		if (player.IsValid)
 		{
