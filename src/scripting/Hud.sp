@@ -1,7 +1,8 @@
 #define CUSTOM_HUD_TEXT_LENGTH 32
 #define CAPTION_LENGTH 256
 
-int g_iCenterHudUpdateInterval = 10;
+#define HUD_RENDER_INTERVAL 10
+
 int g_iCenterHudUpdateFrame = 0;
 char g_sCustomHudText[MAXPLAYERS][CUSTOM_HUD_TEXT_LENGTH];
 char g_sCaptionText[MAXPLAYERS][CAPTION_LENGTH];
@@ -42,7 +43,7 @@ public void Hud_OnGameFrame()
     }
 
     #if defined DEBUG
-	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
+	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > HUD_RENDER_INTERVAL)
 	{
 		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
 	}
@@ -50,7 +51,7 @@ public void Hud_OnGameFrame()
 
     g_iCenterHudUpdateFrame++;
 	
-    if (g_iCenterHudUpdateFrame > g_iCenterHudUpdateInterval)
+    if (g_iCenterHudUpdateFrame > HUD_RENDER_INTERVAL)
     {
         for (int i = 1; i <= MaxClients; i++)
         {
