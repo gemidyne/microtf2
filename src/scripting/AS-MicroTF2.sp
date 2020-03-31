@@ -38,6 +38,9 @@
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
 #define MAXIMUM_MINIGAMES 64
+#define SPR_GAMEMODEID 99
+#define SPR_MIN 0
+#define SPR_MAX 32
 
 #include "Header.sp"
 #include "Forwards.sp"

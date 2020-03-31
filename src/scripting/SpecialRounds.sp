@@ -4,9 +4,6 @@
  * Contains stuff for Special Round operation
  */
  
-#define SPR_GAMEMODEID 99
-#define SPR_MIN 0
-#define SPR_MAX 32
 #define SPR_NAME_LENGTH 64
 #define SPR_DESC_LENGTH 256
 #define SPR_FAKECOND_LENGTH 64
