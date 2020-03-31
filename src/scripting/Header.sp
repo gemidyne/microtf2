@@ -13,12 +13,6 @@
 
 #define HIDEHUD_BITCOUNT 12
 
-// Special Rounds
-#define SPR_GAMEMODEID 99
-
-#define SPR_MIN 0
-#define SPR_MAX 32
-
 enum GameStatus
 {
 	GameStatus_Unknown = 0,
