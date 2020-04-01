@@ -40,12 +40,12 @@ public void Bossgame6_OnMapStart()
 	Bossgame6_RngModels[1] = "models/props_gameplay/orange_cone001.mdl";
 	Bossgame6_RngModels[2] = "models/props_gameplay/ball001.mdl";
 	Bossgame6_RngModels[3] = "models/props_farm/tractor_tire001.mdl";
-	Bossgame6_RngModels[4] = "models/props_badlands/barrel01.mdl";
-	Bossgame6_RngModels[5] = "models/props_badlands/barrel03.mdl";
-	Bossgame6_RngModels[6] = "models/props_hydro/water_barrel.mdl";
-	Bossgame6_RngModels[7] = "models/props_farm/spool_rope.mdl";
-	Bossgame6_RngModels[8] = "models/props_farm/spool_wire.mdl";
-	Bossgame6_RngModels[9] = "models/props_gameplay/haybale.mdl";
+	Bossgame6_RngModels[4] = "models/props_farm/spool_rope.mdl";
+	Bossgame6_RngModels[5] = "models/props_farm/spool_wire.mdl";
+	Bossgame6_RngModels[6] = "models/props_gameplay/haybale.mdl";
+	Bossgame6_RngModels[7] = "models/props_2fort/milkjug001.mdl";
+	Bossgame6_RngModels[8] = "models/props_spytech/watercooler.mdl";
+	Bossgame6_RngModels[9] = "models/props_mvm/sack_flat.mdl";
 
 	for (int i = 0; i < BOSSGAME6_RNGMODELS_COUNT; i++)
 	{
