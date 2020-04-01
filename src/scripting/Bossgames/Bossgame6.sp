@@ -45,7 +45,7 @@ public void Bossgame6_OnMapStart()
 	Bossgame6_RngModels[6] = "models/props_gameplay/haybale.mdl";
 	Bossgame6_RngModels[7] = "models/props_2fort/milkjug001.mdl";
 	Bossgame6_RngModels[8] = "models/props_spytech/watercooler.mdl";
-	Bossgame6_RngModels[9] = "models/props_mvm/sack_flat.mdl";
+	Bossgame6_RngModels[9] = "models/props_mvm/clipboard.mdl";
 
 	for (int i = 0; i < BOSSGAME6_RNGMODELS_COUNT; i++)
 	{
