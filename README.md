@@ -3,6 +3,15 @@
 ![Small WarioWare logo](https://cdn.jsdelivr.net/gh/gemidyne/microtf2@master/assets/square-logo-200x200.png)
 Yet another WarioWare plugin for Team Fortress 2 servers.
 
+## Install Guide
+We have written a guide to assist you on installing the gamemode on your TF2 Server - read it here: https://www.gemidyne.com/projects/warioware/install-guide/
+
+## Commands 
+See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Commands
+
+## Console Variables
+See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Variables
+
 ## Repository info
 
 The /src folder contains the plugin source-code. 
@@ -22,12 +31,6 @@ The gamemode utilises the following extensions:
 If you intend to use the SDK plugin for developing your own gamemodes or minigames, you will need:
 
 - Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
-
-## Commands 
-See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Commands
-
-## Console Variables
-See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Variables
 
 ## Credits
 
