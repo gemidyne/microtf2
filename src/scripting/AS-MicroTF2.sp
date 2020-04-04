@@ -20,7 +20,6 @@
 #define REQUIRE_EXTENSIONS
 
 #include <sdkhooks>
-#include <soundlib>
 #include <steamtools>
 #include <tf2items>
 #include <tf2attributes>
