@@ -390,7 +390,7 @@ public void Bossgame6_OnRenderHudFrame(int client)
 
     char scoreText[32];
 
-    Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, player.Score);
+    Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, Bossgame6_PlayerScore[player.ClientId]);
 
     if (SpecialRoundID == 19)
     {

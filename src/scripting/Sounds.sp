@@ -26,8 +26,7 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 		|| StrContains(sample, "vo/spy_", false) != -1
 		|| StrContains(sample, "stsv/soundmods/", false) != -1;
 
-	bool isBlockedSound = StrContains(sample, "rocket_pack_boosters_fire", false) != -1
-		|| StrContains(sample, "rocket_pack_boosters_loop", false) != -1
+	bool isBlockedSound = StrContains(sample, "rocket_pack_", false) != -1
 		|| StrContains(sample, "grenade_jump", false) != -1;
 
 	if (isBlockedSound)

@@ -567,6 +567,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					? OVERLAY_FAIL 
 					: OVERLAY_BLANK);
 
+				player.SetCustomHudText("");
+
 				if (player.IsParticipating)
 				{
 					#if defined DEBUG

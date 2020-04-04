@@ -307,7 +307,7 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
-	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any, Param_String);
+	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
 }
 

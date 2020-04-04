@@ -107,6 +107,7 @@ public void DisplayStatsHud(Player player)
     if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
     {
         Call_StartForward(GlobalForward_OnRenderHudFrame);
+        Call_PushCell(player.ClientId);
         Call_Finish();
     }
 
