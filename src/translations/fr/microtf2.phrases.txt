@@ -20,6 +20,11 @@
 		"#format"	"{1:i}"
 		"fr"		"Score de l'équipe : {1}"
 	}
+	"Hud_Score_Barrels"
+	{
+		"#format"	"{1:i}"
+		"fr"		"Tonneaux: {1}"
+	}
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"
@@ -254,15 +259,15 @@
 	}
 	"Minigame15_Caption_Dispenser"
 	{
-		"fr"		"CONTRUISEZ UN DISTRIBUTEUR !"
+		"fr"		"CONSTRUISEZ UN DISTRIBUTEUR !"
 	}
 	"Minigame15_Caption_Teleporter"
 	{
-		"fr"		"CONTRUISEZ UN TÉLÉPORTEUR !"
+		"fr"		"CONSTRUISEZ UN TÉLÉPORTEUR !"
 	}
 	"Minigame15_Caption_Sentry"
 	{
-		"fr"		"CONTRUISEZ UNE MITRAILLEUSE !"
+		"fr"		"CONSTRUISEZ UNE MITRAILLEUSE !"
 	}
 	"Minigame16_Caption"
 	{
@@ -274,7 +279,7 @@
 	}
 	"Minigame17_Caption_GetHitByMedic"
 	{
-		"fr"		"SOYEZ FRAPPÉ PAR UN MEDIC! "
+		"fr"		"SOYEZ FRAPPÉ PAR UN MEDIC ! "
 	}
 	"Minigame18_Caption"
 	{
@@ -500,11 +505,11 @@
 	}
 	"SpecialRound13_Name"
 	{
-		"fr"		"Oiseaux uniquement"
+		"fr"		"Squelettes uniquement"
 	}
 	"SpecialRound13_Description"
 	{
-		"fr"		"Archimède ! Non !"
+		"fr"		"Pas de peau autorisée durant cette manche !"
 	}
 	"SpecialRound14_Name"
 	{
@@ -541,7 +546,7 @@
 	}
 	"SpecialRound17_Description"
 	{
-		"fr"		"Si vous perdez un mini-jeu, vous serez eliminé ! Le dernier joueur toujours en vie gagne la manche !"
+		"fr"		"Si vous perdez un mini-jeu, vous serez éliminé ! Le dernier joueur toujours en vie gagne la manche !"
 	}
 	"SpecialRound17_Caption_Full"
 	{
@@ -576,5 +581,13 @@
 	"SpecialRound20_Description"
 	{
 		"fr"		"Il n'y aura pour cette manche aucun arrêt entre les mini-jeux !"
+	}
+	"SpecialRound21_Name"
+	{
+		"fr"		"Team Fortress 64"
+	}
+	"SpecialRound21_Description"
+	{
+		"fr"		"Mais ! Où sont passés mes polygones ?"
 	}
 }
