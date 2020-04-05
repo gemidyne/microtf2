@@ -20,6 +20,11 @@
 		"#format"	"{1:i}"
 		"it"		"Punti Squadra: {1}"
 	}
+	"Hud_Score_Barrels"
+	{
+		"#format"	"{1:i}"
+		"it"		"Barili: {1}"
+	}				
 	"Hud_RoundDisplay"
 	{
 		"#format"	"{1:i},{2:i}"
@@ -577,4 +582,12 @@
 	{
 		"it"		"Nessuna pausa fra i minigiochi!"
 	}
+	"SpecialRound21_Name"
+	{
+		"it"		"Team Fortress 64"
+	}
+	"SpecialRound21_Description"
+	{
+		"it"		"Come ai vecchi tempi!"
+	}				  
 }
