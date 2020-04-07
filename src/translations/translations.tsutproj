@@ -35,7 +35,7 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The version number of the gamemode. Example: v3.0.0"
         }
       ],
       "translations": {
