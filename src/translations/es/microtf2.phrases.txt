@@ -2,47 +2,52 @@
 {
 	"System_Advertisement"
 	{
-		"#format"	"{1:s}"
-		"es" 		"Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos."
+		"#format"		"{1:s}"
+		"es"		"Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos."
 	}
 	"Hud_Score_Default"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"Puntuacion: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"Minijuegos: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"Puntuacion del Equipo: {1}"
+	}
+	"Hud_Score_Barrels"
+	{
+		"#format"		"{1:i}"
+		"es"		""
 	}
 	"Hud_RoundDisplay"
 	{
-		"#format"	"{1:i},{2:i}"
+		"#format"		"{1:i},{2:i}"
 		"es"		"Ronda {1} de {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"Ronda {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"Tema de {1}"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"RONDA ESPECIAL: {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"	"{1:s},{2:s},{3:s}"
+		"#format"		"{1:s},{2:s},{3:s}"
 		"es"		"{1}La condicion de la ronda especial es... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
@@ -87,22 +92,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
 		"es"		"{1}{2} {3} {green}con {4} puntos!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"es"		"{1}El equipo ganador es RED con {2} puntos!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"es"		"{1}El equipo ganador es BLU con {2} puntos!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"{1}Tablas! Ambos equipos tienen los mismos puntos!"
 	}
 	"Intermission_Header"
@@ -139,7 +144,7 @@
 	}
 	"Bossgame7_Caption"
 	{
-		"es"		"" // Leave this as empty.
+		"es"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -163,7 +168,7 @@
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"DI LA PALABRA!\n{1}"
 	}
 	"Minigame7_Caption"
@@ -172,12 +177,12 @@
 	}
 	"Minigame8_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"RESPONDE LA PREGUNTA!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"es"		"{1}La respuesta correcta era {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
@@ -358,17 +363,17 @@
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"== ESPECTANDO ==\n\nTiempo restante: {1} segundos"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"		"{1:s},{2:s},{3:i}"
 		"es"		"== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"== ANUNCIO ==\n\nEl ganador es...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
@@ -377,17 +382,17 @@
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
-		"#format" 	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"es"		"{1}\ny {2} mas..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
-		"#format" 	"{1:s}"
+		"#format"		"{1:s}"
 		"es"		"{1}nadie!\n\nTodo el mundo sobrevive otra ronda!"
 	}
 	"Bossgame7_ClassChangeWarning"
@@ -532,7 +537,7 @@
 	}
 	"SpecialRound16_Caption_Points"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"es"		"Si ganas este microjuego, recibiras {1} puntos!"
 	}
 	"SpecialRound17_Name"
@@ -545,12 +550,12 @@
 	}
 	"SpecialRound17_Caption_Full"
 	{
-		"#format"	"{1:i},{2:i},{3:s}"
+		"#format"		"{1:i},{2:i},{3:s}"
 		"es"		"Jugadores actuales ({1} de {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"es"		"{1} (y {2} mas)"
 	}
 	"SpecialRound18_Name"
@@ -576,5 +581,13 @@
 	"SpecialRound20_Description"
 	{
 		"es"		"No hay descanso entre microjuegos en esta ronda!"
+	}
+	"SpecialRound21_Name"
+	{
+		"es"		""
+	}
+	"SpecialRound21_Description"
+	{
+		"es"		""
 	}
 }

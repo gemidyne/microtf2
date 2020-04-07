@@ -2,52 +2,52 @@
 {
 	"System_Advertisement"
 	{
-		"#format"	"{1:s}"
-		"it" 		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti."
+		"#format"		"{1:s}"
+		"it"		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti."
 	}
 	"Hud_Score_Default"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Punti: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Minigiochi: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Punti Squadra: {1}"
 	}
 	"Hud_Score_Barrels"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Barili: {1}"
-	}				
+	}
 	"Hud_RoundDisplay"
 	{
-		"#format"	"{1:i},{2:i}"
+		"#format"		"{1:i},{2:i}"
 		"it"		"Round {1} di {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Round {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"Tema di {1}"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"ROUND SPECIALE: {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"	"{1:s},{2:s},{3:s}"
+		"#format"		"{1:s},{2:s},{3:s}"
 		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
@@ -92,22 +92,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
 		"it"		"{1}{2} {3} {green}con {4} punti!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"it"		"{1}Vince la squadra RED, con {2} punti!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"it"		"{1}Vince la squadra BLU, con {2} punti!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
 	}
 	"Intermission_Header"
@@ -144,7 +144,7 @@
 	}
 	"Bossgame7_Caption"
 	{
-		"it"		"" // Leave this as empty.
+		"it"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -168,7 +168,7 @@
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"SCRIVI LA PAROLA!\n{1}"
 	}
 	"Minigame7_Caption"
@@ -177,12 +177,12 @@
 	}
 	"Minigame8_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"RISPONDI ALLA DOMANDA!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"it"		"{1}La risposta corretta era {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
@@ -363,17 +363,17 @@
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"		"{1:s},{2:s},{3:i}"
 		"it"		"== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"== ANNUNCIO ==\n\nIl vincitore è...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
@@ -382,17 +382,17 @@
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"== INTERVALLO == \n\nI giocatori che hanno scritto il minor numero di parole sono...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
-		"#format" 	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"it"		"{1}\ne altri {2}..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
-		"#format" 	"{1:s}"
+		"#format"		"{1:s}"
 		"it"		"{1}Nessuno!\n\nTutti sopravvivono per un altro round!"
 	}
 	"Bossgame7_ClassChangeWarning"
@@ -537,7 +537,7 @@
 	}
 	"SpecialRound16_Caption_Points"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"it"		"Vinci questo minigioco per ottenere {1} punti!"
 	}
 	"SpecialRound17_Name"
@@ -550,12 +550,12 @@
 	}
 	"SpecialRound17_Caption_Full"
 	{
-		"#format"	"{1:i},{2:i},{3:s}"
+		"#format"		"{1:i},{2:i},{3:s}"
 		"it"		"Ancora in gioco: ({1} di {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"it"		"{1} (E altri {2})"
 	}
 	"SpecialRound18_Name"
@@ -589,5 +589,5 @@
 	"SpecialRound21_Description"
 	{
 		"it"		"Come ai vecchi tempi!"
-	}				  
+	}
 }

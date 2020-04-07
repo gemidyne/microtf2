@@ -2,52 +2,52 @@
 {
 	"System_Advertisement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"Vous jouez à WarioWare ! Version {1}. Tapez !credits dans le chat pour voir les crédits."
 	}
 	"Hud_Score_Default"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Score : {1}"
 	}
 	"Hud_Score_Minigames"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Mini-jeu : {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Score de l'équipe : {1}"
 	}
 	"Hud_Score_Barrels"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Tonneaux: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
-		"#format"	"{1:i},{2:i}"
+		"#format"		"{1:i},{2:i}"
 		"fr"		"Manche {1} sur {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Manche {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"Thème de {1}"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"MANCHE SPÉCIALE : {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"	"{1:s},{2:s},{3:s}"
+		"#format"		"{1:s},{2:s},{3:s}"
 		"fr"		"{1}La manche spéciale est... {2} !\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
@@ -92,22 +92,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
 		"fr"		"{1}{2} {3} {green}avec {4} points !"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}L'équipe gagnante est RED avec {2} points !"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}L'équipe gagnante est BLU avec {2} points !"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"{1}Égalité ! Les deux équipes ont le même nombre de points !"
 	}
 	"Intermission_Header"
@@ -168,7 +168,7 @@
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"DITES LE MOT !\n{1}"
 	}
 	"Minigame7_Caption"
@@ -177,12 +177,12 @@
 	}
 	"Minigame8_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"RÉPONDEZ À LA QUESTION !\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}La bonne réponse était {2} !"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
@@ -363,17 +363,17 @@
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes."
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"		"{1:s},{2:s},{3:i}"
 		"fr"		"== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes."
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"== ANNONCE ==\n\nLe gagnant est...\n{1} !"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
@@ -382,17 +382,17 @@
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"== REVUE DE LA MANCHE == \n\nLes joueurs ayant tapé le moins de mots sont...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
-		"#format" 	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}\net {2} plus..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
-		"#format" 	"{1:s}"
+		"#format"		"{1:s}"
 		"fr"		"{1}personne !\n\nTout le monde reste vivant !"
 	}
 	"Bossgame7_ClassChangeWarning"
@@ -537,7 +537,7 @@
 	}
 	"SpecialRound16_Caption_Points"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"fr"		"Si vous gagnez le mini-jeu, vous obtiendrez {1} points !"
 	}
 	"SpecialRound17_Name"
@@ -550,12 +550,12 @@
 	}
 	"SpecialRound17_Caption_Full"
 	{
-		"#format"	"{1:i},{2:i},{3:s}"
+		"#format"		"{1:i},{2:i},{3:s}"
 		"fr"		"Joueurs en jeu ({1} sur {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"fr"		"{1} (et {2} plus)"
 	}
 	"SpecialRound18_Name"

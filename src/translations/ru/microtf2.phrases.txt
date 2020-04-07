@@ -1,48 +1,53 @@
-﻿"Phrases"
+"Phrases"
 {
 	"System_Advertisement"
 	{
-		"#format"	"{1:s}"
-		"ru" 		"Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима."
+		"#format"		"{1:s}"
+		"ru"		"Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима."
 	}
 	"Hud_Score_Default"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"Очков: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"Миниигры: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"Очки комманды: {1}"
+	}
+	"Hud_Score_Barrels"
+	{
+		"#format"		"{1:i}"
+		"ru"		""
 	}
 	"Hud_RoundDisplay"
 	{
-		"#format"	"{1:i},{2:i}"
+		"#format"		"{1:i},{2:i}"
 		"ru"		"Раунд {1} из {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"Раунд {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"Тема {1}"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"ОСОБЫЙ РАУНД: {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"	"{1:s},{2:s},{3:s}"
+		"#format"		"{1:s},{2:s},{3:s}"
 		"ru"		"{1}Условие особого раунда... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
@@ -87,22 +92,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
 		"ru"		"{1}{2} {3} {green}с {4} очками!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"ru"		"{1}КРАСНАЯ комманда побеждает с {2} очками!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"ru"		"{1}СИНЯЯ комманда побеждает с {2} очками!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"{1}Ничья! Обе комманды имеют одинаковое кол-во очков!"
 	}
 	"Intermission_Header"
@@ -139,7 +144,7 @@
 	}
 	"Bossgame7_Caption"
 	{
-		"ru"		"" // Leave this as empty.
+		"ru"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -163,7 +168,7 @@
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"НАПИШИТЕ СЛОВО!\n{1}"
 	}
 	"Minigame7_Caption"
@@ -172,12 +177,12 @@
 	}
 	"Minigame8_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"ru"		"{1}Правильным ответом было {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
@@ -358,17 +363,17 @@
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"		"{1:s},{2:s},{3:i}"
 		"ru"		"== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
@@ -377,17 +382,17 @@
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
-		"#format" 	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"ru"		"{1}\nи {2} и другие..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
-		"#format" 	"{1:s}"
+		"#format"		"{1:s}"
 		"ru"		"{1}Никто!\n\nВсе выжили в этом раунде!"
 	}
 	"Bossgame7_ClassChangeWarning"
@@ -532,7 +537,7 @@
 	}
 	"SpecialRound16_Caption_Points"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"ru"		"Если вы победите, вы получите {1} очков!"
 	}
 	"SpecialRound17_Name"
@@ -545,12 +550,12 @@
 	}
 	"SpecialRound17_Caption_Full"
 	{
-		"#format"	"{1:i},{2:i},{3:s}"
+		"#format"		"{1:i},{2:i},{3:s}"
 		"ru"		"Данное кол-во игроков ({1} of {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"ru"		"{1} (и еще {2})"
 	}
 	"SpecialRound18_Name"
@@ -576,5 +581,13 @@
 	"SpecialRound20_Description"
 	{
 		"ru"		"Без пауз между раундами!"
+	}
+	"SpecialRound21_Name"
+	{
+		"ru"		""
+	}
+	"SpecialRound21_Description"
+	{
+		"ru"		""
 	}
 }

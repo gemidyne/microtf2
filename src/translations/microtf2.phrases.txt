@@ -2,52 +2,52 @@
 {
 	"System_Advertisement"
 	{
-		"#format"	"{1:s}"
-		"en" 		"You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits."
+		"#format"		"{1:s}"
+		"en"		"You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits."
 	}
 	"Hud_Score_Default"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"Score: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"Minigames: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"Team Score: {1}"
 	}
 	"Hud_Score_Barrels"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"Barrels: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
-		"#format"	"{1:i},{2:i}"
+		"#format"		"{1:i},{2:i}"
 		"en"		"Round {1} of {2}"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"Round {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"{1}'s theme"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"SPECIAL ROUND: {1}!"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"	"{1:s},{2:s},{3:s}"
+		"#format"		"{1:s},{2:s},{3:s}"
 		"en"		"{1}The special round condition is... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
@@ -92,22 +92,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"	"{1:s},{2:s},{3:s},{4:i}"
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
 		"en"		"{1}{2} {3} {green}with {4} points!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"en"		"{1}The winning team is the RED team with {2} points!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"en"		"{1}The winning team is the BLU team with {2} points!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"{1}Stalemate! Both teams have the same points!"
 	}
 	"Intermission_Header"
@@ -144,7 +144,7 @@
 	}
 	"Bossgame7_Caption"
 	{
-		"en"		"" // Leave this as empty.
+		"en"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -168,7 +168,7 @@
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"SAY THE WORD!\n{1}"
 	}
 	"Minigame7_Caption"
@@ -177,12 +177,12 @@
 	}
 	"Minigame8_CaptionFormatted"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"ANSWER THE QUESTION!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"en"		"{1}The correct answer was {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
@@ -363,17 +363,17 @@
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"== SPECTATING ==\n\nTime remaining: {1} seconds"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
-		"#format"	"{1:s},{2:s},{3:i}"
+		"#format"		"{1:s},{2:s},{3:i}"
 		"en"		"== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
@@ -382,17 +382,17 @@
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
-		"#format"	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
-		"#format" 	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"en"		"{1}\nand {2} more..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
-		"#format" 	"{1:s}"
+		"#format"		"{1:s}"
 		"en"		"{1}no one!\n\nEveryone survives another round!"
 	}
 	"Bossgame7_ClassChangeWarning"
@@ -537,7 +537,7 @@
 	}
 	"SpecialRound16_Caption_Points"
 	{
-		"#format"	"{1:i}"
+		"#format"		"{1:i}"
 		"en"		"If you win this microgame, you will be awarded {1} points!"
 	}
 	"SpecialRound17_Name"
@@ -550,12 +550,12 @@
 	}
 	"SpecialRound17_Caption_Full"
 	{
-		"#format"	"{1:i},{2:i},{3:s}"
+		"#format"		"{1:i},{2:i},{3:s}"
 		"en"		"Current players ({1} of {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
-		"#format"	"{1:s},{2:i}"
+		"#format"		"{1:s},{2:i}"
 		"en"		"{1} (and {2} more)"
 	}
 	"SpecialRound18_Name"
