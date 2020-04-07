@@ -49,11 +49,12 @@
     },
     {
       "key": "Hud_Score_Default",
+      "description": "The default type of score to display on the player HUD.",
       "text": "Score: {1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The amount of points the player has. Example: 5"
         }
       ],
       "translations": {
@@ -67,11 +68,12 @@
     },
     {
       "key": "Hud_Score_Minigames",
-      "text": "Minigames: {1}",
+      "description": "A score to display on the player HUD, based on amount of microgames played. Only used on a special round.",
+      "text": "Microgames: {1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The amount of microgames that have been played. Examples: 12"
         }
       ],
       "translations": {
@@ -85,11 +87,12 @@
     },
     {
       "key": "Hud_Score_TeamScore",
+      "description": "The player's own overall team score to display on the player HUD. Only used on a special round.",
       "text": "Team Score: {1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The team's overall score. Example: 53"
         }
       ],
       "translations": {
@@ -103,11 +106,12 @@
     },
     {
       "key": "Hud_Score_Barrels",
+      "description": "The player's current number of barrels shot. Used on the Target Practice bossgame.",
       "text": "Barrels: {1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The number of barrels that the player has shot. Example: 8"
         }
       ],
       "translations": {
@@ -121,15 +125,16 @@
     },
     {
       "key": "Hud_RoundDisplay",
+      "description": "The formatted HUD text which displays the current round number, and the maximum number of rounds that will be played.",
       "text": "Round {1} of {2}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The current round number. Example: 2"
         },
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The maximum number of rounds to be played. Example: 4"
         }
       ],
       "translations": {
@@ -143,11 +148,12 @@
     },
     {
       "key": "Hud_RoundDisplayUnlimited",
+      "description": "The HUD text which displays the current round number.",
       "text": "Round {1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The current round number. Example: 5"
         }
       ],
       "translations": {
@@ -161,11 +167,12 @@
     },
     {
       "key": "Hud_ThemeDisplay",
+      "description": "The HUD text which displays the current theme being played.",
       "text": "{1}'s theme",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The theme's name. This is currently a WarioWare character's name."
         }
       ],
       "translations": {
@@ -179,11 +186,12 @@
     },
     {
       "key": "Hud_SpecialRound_CenterDisplay",
+      "description": "The HUD text which displays what special round is being selected.",
       "text": "SPECIAL ROUND: {1}!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The special round's name."
         }
       ],
       "translations": {
@@ -197,19 +205,20 @@
     },
     {
       "key": "Hud_SpecialRound_ChatDisplay",
+      "description": "The chatbox text which displays what the new special round condition will be.",
       "text": "{1}The special round condition is... {2}!\n{3}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The gamemode's prefix, this is required. Example: [ WarioWare ]"
         },
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The selected special round's name."
         },
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The selected special round's description."
         }
       ],
       "translations": {
@@ -223,7 +232,8 @@
     },
     {
       "key": "PlayerSpawn_RespawnNotice",
-      "text": "You will be respawned once the current minigame or boss has finished.",
+      "description": "A message displayed in the chatbox which notifies the player that they will be respawned when the current microgame or bossgame has finished.",
+      "text": "You will be respawned once the current microgame or bossgame has finished.",
       "formatArguments": [],
       "translations": {
         "pt": "Você renascerá assim que o minigame ou boss tiverem sido finalizados.",
@@ -236,6 +246,7 @@
     },
     {
       "key": "SuddenDeath_YouHaveBeenKnockedOut",
+      "description": "The HUD text which notifies the player that they have been knocked out from the round. Only used on the Sudden Death special round.",
       "text": "YOU HAVE BEEN KNOCKED OUT!",
       "formatArguments": [],
       "translations": {
@@ -249,6 +260,7 @@
     },
     {
       "key": "LowestScoreWins_ExploitBlocked",
+      "description": "A message displayed in the chatbox which notifies the player cannot exploit the special round by intentionally failing by changing their class.",
       "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
       "formatArguments": [],
       "translations": {
