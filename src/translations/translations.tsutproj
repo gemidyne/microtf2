@@ -1,0 +1,2043 @@
+{
+  "id": "29b87e48-0d1d-4c4a-a7f4-34b81b9ccb3d",
+  "name": "WarioWare Redux",
+  "author": "Gemidyne Softworks",
+  "website": "https://www.gemidyne.com/warioware/",
+  "outputFileName": "microtf2.phrases.txt",
+  "languages": [
+    {
+      "code": "en"
+    },
+    {
+      "code": "pt"
+    },
+    {
+      "code": "fr"
+    },
+    {
+      "code": "it"
+    },
+    {
+      "code": "pt_p"
+    },
+    {
+      "code": "ru"
+    },
+    {
+      "code": "es"
+    }
+  ],
+  "phrases": [
+    {
+      "key": "System_Advertisement",
+      "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores.",
+        "fr": "Vous jouez à WarioWare ! Version {1}. Tapez !credits dans le chat pour voir les crédits.",
+        "it": "Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti.",
+        "pt_p": "Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores.",
+        "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
+        "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos."
+      }
+    },
+    {
+      "key": "Hud_Score_Default",
+      "text": "Score: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Pontuação: {1}",
+        "fr": "Score : {1}",
+        "it": "Punti: {1}",
+        "pt_p": "Pontuação: {1}",
+        "ru": "Очков: {1}",
+        "es": "Puntuacion: {1}"
+      }
+    },
+    {
+      "key": "Hud_Score_Minigames",
+      "text": "Minigames: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Minigames: {1}",
+        "fr": "Mini-jeu : {1}",
+        "it": "Minigiochi: {1}",
+        "pt_p": "Minigames: {1}",
+        "ru": "Миниигры: {1}",
+        "es": "Minijuegos: {1}"
+      }
+    },
+    {
+      "key": "Hud_Score_TeamScore",
+      "text": "Team Score: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Pontuação do Time: {1}",
+        "fr": "Score de l'équipe : {1}",
+        "it": "Punti Squadra: {1}",
+        "pt_p": "Pontuação do Time: {1}",
+        "ru": "Очки комманды: {1}",
+        "es": "Puntuacion del Equipo: {1}"
+      }
+    },
+    {
+      "key": "Hud_Score_Barrels",
+      "text": "Barrels: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "fr": "Tonneaux: {1}",
+        "it": "Barili: {1}"
+      }
+    },
+    {
+      "key": "Hud_RoundDisplay",
+      "text": "Round {1} of {2}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Rodada {1} de {2}",
+        "fr": "Manche {1} sur {2}",
+        "it": "Round {1} di {2}",
+        "pt_p": "Rodada {1} de {2}",
+        "ru": "Раунд {1} из {2}",
+        "es": "Ronda {1} de {2}"
+      }
+    },
+    {
+      "key": "Hud_RoundDisplayUnlimited",
+      "text": "Round {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Rodada {1}",
+        "fr": "Manche {1}",
+        "it": "Round {1}",
+        "pt_p": "Rodada {1}",
+        "ru": "Раунд {1}",
+        "es": "Ronda {1}"
+      }
+    },
+    {
+      "key": "Hud_ThemeDisplay",
+      "text": "{1}'s theme",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Tema Atual: {1}",
+        "fr": "Thème de {1}",
+        "it": "Tema di {1}",
+        "pt_p": "Tema Atual: {1}",
+        "ru": "Тема {1}",
+        "es": "Tema de {1}"
+      }
+    },
+    {
+      "key": "Hud_SpecialRound_CenterDisplay",
+      "text": "SPECIAL ROUND: {1}!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "RODADA ESPECIAL: {1}!",
+        "fr": "MANCHE SPÉCIALE : {1}!",
+        "it": "ROUND SPECIALE: {1}!",
+        "pt_p": "RODADA ESPECIAL: {1}!",
+        "ru": "ОСОБЫЙ РАУНД: {1}!",
+        "es": "RONDA ESPECIAL: {1}!"
+      }
+    },
+    {
+      "key": "Hud_SpecialRound_ChatDisplay",
+      "text": "{1}The special round condition is... {2}!\n{3}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}A rodada especial é... {2}!\n{3}",
+        "fr": "{1}La manche spéciale est... {2} !\n{3}",
+        "it": "{1}Il round speciale scelto è... {2}!\n{3}",
+        "pt_p": "{1}A rodada especial é... {2}!\n{3}",
+        "ru": "{1}Условие особого раунда... {2}!\n{3}",
+        "es": "{1}La condicion de la ronda especial es... {2}!\n{3}"
+      }
+    },
+    {
+      "key": "PlayerSpawn_RespawnNotice",
+      "text": "You will be respawned once the current minigame or boss has finished.",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Você renascerá assim que o minigame ou boss tiverem sido finalizados.",
+        "fr": "Vous serez respawn quand le mini-jeu ou le boss aura fini.",
+        "it": "Tornerai in gioco non appena il minigioco o boss corrente sarà terminato.",
+        "pt_p": "Você renascerá assim que o minigame ou boss tiverem sido finalizados.",
+        "ru": "Вы вернетесь в игру после окончания раунда или босс раунда.",
+        "es": "Reapareceras cuando el minijuego o jefe actual termine."
+      }
+    },
+    {
+      "key": "SuddenDeath_YouHaveBeenKnockedOut",
+      "text": "YOU HAVE BEEN KNOCKED OUT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "VOCÊ FOI DESCLASSIFICADO",
+        "fr": "VOUS AVEZ ÉTÉ ÉLIMINÉ !",
+        "it": "SEI STATO ELIMINATO!",
+        "pt_p": "VOCÊ FOI DESCLASSIFICADO",
+        "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
+        "es": "HAS SIDO ELIMINADO!"
+      }
+    },
+    {
+      "key": "LowestScoreWins_ExploitBlocked",
+      "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar.",
+        "fr": "Changer de classe n'est pas autorisé durant cette manche spéciale ! 1 point a été rajouté à votre score.",
+        "it": "Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale.",
+        "pt_p": "Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar.",
+        "ru": "Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет.",
+        "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion."
+      }
+    },
+    {
+      "key": "General_Loser",
+      "text": "Loser!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Perdeu!",
+        "fr": "Perdu !",
+        "it": "Perso!",
+        "pt_p": "Perdeu!",
+        "ru": "Неудачник!",
+        "es": "Perdedor!"
+      }
+    },
+    {
+      "key": "General_Winner",
+      "text": "Winner!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Ganhou!",
+        "fr": "Gagné !",
+        "it": "Vinto!",
+        "pt_p": "Ganhou!",
+        "ru": "Победитель!",
+        "es": "Ganador!"
+      }
+    },
+    {
+      "key": "GameOver_SpecialRoundHasFinished",
+      "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
+      "formatArguments": [],
+      "translations": {
+        "pt": "== A RODADA ESPECIAL ACABOU ! ==",
+        "fr": "== LA MANCHE SPÉCIALE EST TERMINÉE ! ==",
+        "it": "== IL ROUND SPECIALE È TERMINATO! ==",
+        "pt_p": "== A RODADA ESPECIAL ACABOU ! ==",
+        "ru": "== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! ==",
+        "es": "== LA RONDA ESPECIAL A TERMINADO! =="
+      }
+    },
+    {
+      "key": "GameOver_WinnerPrefixSingle",
+      "text": "The winner is...",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O vencedor é...",
+        "fr": "Le vainqueur est...",
+        "it": "Il vincitore è...",
+        "pt_p": "O vencedor é...",
+        "ru": "Победителем стал...",
+        "es": "El ganador es..."
+      }
+    },
+    {
+      "key": "GameOver_WinnerPrefixMultiple",
+      "text": "The winners are...",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Os vencedores são...",
+        "fr": "Les vainqueurs sont...",
+        "it": "I vincitori sono...",
+        "pt_p": "Os vencedores são...",
+        "ru": "Победителями стали...",
+        "es": "Los ganadores son..."
+      }
+    },
+    {
+      "key": "GameOver_WinnersAnd",
+      "text": "and",
+      "formatArguments": [],
+      "translations": {
+        "pt": "e",
+        "fr": "et",
+        "it": "e",
+        "pt_p": "e",
+        "ru": "и",
+        "es": "y"
+      }
+    },
+    {
+      "key": "GameOver_WinnerPrefixNoOne",
+      "text": "There were no winners!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Não houveram vencedores!",
+        "fr": "Il n'y a aucun gagnant !",
+        "it": "Nessuno ha vinto!",
+        "pt_p": "Não houveram vencedores!",
+        "ru": "Победителей нету!",
+        "es": "No hay ganadores!"
+      }
+    },
+    {
+      "key": "GameOver_WinnerSuffix",
+      "text": "{1}{2} {3} {green}with {4} points!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}{2} {3} {green}com {4} pontos!",
+        "fr": "{1}{2} {3} {green}avec {4} points !",
+        "it": "{1}{2} {3} {green}con {4} punti!",
+        "pt_p": "{1}{2} {3} {green}com {4} pontos!",
+        "ru": "{1}{2} {3} {green}с {4} очками!",
+        "es": "{1}{2} {3} {green}con {4} puntos!"
+      }
+    },
+    {
+      "key": "GameOver_WinningTeam_Red",
+      "text": "{1}The winning team is the RED team with {2} points!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}O time vencedor foi o TIME VERMELHO com {2} pontos!",
+        "fr": "{1}L'équipe gagnante est RED avec {2} points !",
+        "it": "{1}Vince la squadra RED, con {2} punti!",
+        "pt_p": "{1}O time vencedor foi o TIME VERMELHO com {2} pontos!",
+        "ru": "{1}КРАСНАЯ комманда побеждает с {2} очками!",
+        "es": "{1}El equipo ganador es RED con {2} puntos!"
+      }
+    },
+    {
+      "key": "GameOver_WinningTeam_Blue",
+      "text": "{1}The winning team is the BLU team with {2} points!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}O time vencedor foi o TIME AZUL com {2} pontos!",
+        "fr": "{1}L'équipe gagnante est BLU avec {2} points !",
+        "it": "{1}Vince la squadra BLU, con {2} punti!",
+        "pt_p": "{1}O time vencedor foi o TIME AZUL com {2} pontos!",
+        "ru": "{1}СИНЯЯ комманда побеждает с {2} очками!",
+        "es": "{1}El equipo ganador es BLU con {2} puntos!"
+      }
+    },
+    {
+      "key": "GameOver_WinningTeam_Stalemate",
+      "text": "{1}Stalemate! Both teams have the same points!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos.",
+        "fr": "{1}Égalité ! Les deux équipes ont le même nombre de points !",
+        "it": "{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!",
+        "pt_p": "{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos.",
+        "ru": "{1}Ничья! Обе комманды имеют одинаковое кол-во очков!",
+        "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!"
+      }
+    },
+    {
+      "key": "Intermission_Header",
+      "text": "Intermission!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Intervalo!",
+        "fr": "Entracte !",
+        "it": "Intervallo!",
+        "pt_p": "Intervalo!",
+        "ru": "Пауза!",
+        "es": "Intermedio!"
+      }
+    },
+    {
+      "key": "Intermission_Body",
+      "text": "Break time! Time to vote for the next map.",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Intervalo! Hora de votar para o próximo mapa.",
+        "fr": "Pause ! Il est temps de voter pour la prochaine carte.",
+        "it": "Pausa! È ora di votare per la prossima mappa.",
+        "pt_p": "Intervalo! Hora de votar para o próximo mapa.",
+        "ru": "Время перерыва! Голосование следующей карты началась.",
+        "es": "Descanso! Hora de votar el siguiente mapa."
+      }
+    },
+    {
+      "key": "Bossgame1_Caption",
+      "text": "ROCKET JUMP TO THE END!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "FAÇA ROCKET JUMP ATÉ O FINAL!",
+        "fr": "ROCKET JUMP JUSQU'À LA FIN !",
+        "it": "ARRIVA IN CIMA CON I SALTI RAZZO!",
+        "pt_p": "FAÇA ROCKET JUMP ATÉ O FINAL!",
+        "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
+        "es": "SALTA CON COHETES HASTA EL FINAL!"
+      }
+    },
+    {
+      "key": "Bossgame2_Caption",
+      "text": "ESCAPE THE FACTORY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ESCAPE DA FÁBRICA!",
+        "fr": "SORTEZ DE L'USINE !",
+        "it": "FUGGI DALLA FABBRICA!",
+        "pt_p": "ESCAPE DA FÁBRICA!",
+        "ru": "СБЕЖИТЕ ИЗ ЗАВОДА!",
+        "es": "ESCAPA DE LA FABRICA!"
+      }
+    },
+    {
+      "key": "Bossgame3_Caption",
+      "text": "DEFEAT THE ENEMY TEAM!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ELIMINE O TIME INIMIGO!",
+        "fr": "BATTEZ L'AUTRE ÉQUIPE !",
+        "it": "SCONFIGGI LA SQUADRA NEMICA!",
+        "pt_p": "ELIMINE O TIME INIMIGO!",
+        "ru": "ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!",
+        "es": "ACABA CON EL EQUIPO ENEMIGO!"
+      }
+    },
+    {
+      "key": "Bossgame4_Caption",
+      "text": "DON'T FALL INTO THE WATER",
+      "formatArguments": [],
+      "translations": {
+        "pt": "NÃO CAIA NA ÁGUA!",
+        "fr": "NE TOMBEZ PAS DANS L'EAU !",
+        "it": "NON FINIRE NELL'ACQUA!",
+        "pt_p": "NÃO CAIA NA ÁGUA!",
+        "ru": "НЕ УПАДИТЕ В ВОДУ!",
+        "es": "NO TE CAIGAS AL AGUA"
+      }
+    },
+    {
+      "key": "Bossgame5_Caption",
+      "text": "REACH THE GOAL!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ALCANCE O OBJETIVO!",
+        "fr": "ATTEIGNEZ L'OBJECTIF !",
+        "it": "RAGGIUNGI L'ARRIVO!",
+        "pt_p": "ALCANCE O OBJETIVO!",
+        "ru": "ДОБЕРИТЕСЬ ДО КОНЦА!",
+        "es": "LLEGA HASTA LA META!"
+      }
+    },
+    {
+      "key": "Bossgame6_Caption",
+      "text": "SHOOT THE MOST BARRELS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ACERTE O MÁXIMO DE BARRIS!",
+        "fr": "DÉTRUISEZ LE PLUS DE TONNEAUX !",
+        "it": "SPARA A PIU' BARILI CHE PUOI!",
+        "pt_p": "ACERTE O MÁXIMO DE BARRIS!",
+        "ru": "УНИЧТОЖТЕ БОЧКИ!",
+        "es": "DISPARA A LOS BARRILES!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption",
+      "text": "",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": ""
+      }
+    },
+    {
+      "key": "Minigame1_Caption",
+      "text": "GET TO THE END!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CHEGUE ATÉ O FINAL!",
+        "fr": "REJOIGNEZ L'AUTRE BOUT !",
+        "it": "RAGGIUNGI LA META!",
+        "pt_p": "CHEGUE ATÉ O FINAL!",
+        "ru": "ДОЙДИТЕ ДО КОНЦА!",
+        "es": "LLEGA HASTA EL FINAL!"
+      }
+    },
+    {
+      "key": "Minigame2_Caption",
+      "text": "KILL AN ENEMY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MATE UM INIMIGO!",
+        "fr": "TUEZ UN ENNEMI !",
+        "it": "UCCIDI UN NEMICO!",
+        "pt_p": "MATE UM INIMIGO!",
+        "ru": "УБЕЙТЕ ВРАГА!",
+        "es": "MATA A UN ENEMIGO!"
+      }
+    },
+    {
+      "key": "Minigame3_Caption",
+      "text": "BREAK THE BARRELS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "QUEBRE O BARRIL!",
+        "fr": "DÉTRUISEZ LES TONNEAUX !",
+        "it": "ROMPI I BARILI!",
+        "pt_p": "QUEBRE O BARRIL!",
+        "ru": "СЛОМАЙТЕ БОЧКУ!",
+        "es": "ROMPE LOS BARRILES!"
+      }
+    },
+    {
+      "key": "Minigame4_Caption",
+      "text": "AIRBLAST AND STAY ALIVE!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "AIRBLAST E CONTINUE VIVO!",
+        "fr": "REPOUSSEZ LES ENNEMIS ET RESTEZ EN VIE !",
+        "it": "SPINGI COL COMPRESSORE!",
+        "pt_p": "AIRBLAST E CONTINUE VIVO!",
+        "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
+        "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!"
+      }
+    },
+    {
+      "key": "Minigame5_Caption",
+      "text": "STICKY JUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "STICKY JUMP!",
+        "fr": "STICKY JUMP !",
+        "it": "SALTO ADESIVO!",
+        "pt_p": "STICKY JUMP!",
+        "ru": "ПРЫЖОК НА ЛЕПУЧКЕ!",
+        "es": "SALTO CON BOMBAS!"
+      }
+    },
+    {
+      "key": "Minigame6_SayTheWord_CaptionFormatted",
+      "text": "SAY THE WORD!\n{1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "DIGITE A PALAVRA!\n{1}",
+        "fr": "DITES LE MOT !\n{1}",
+        "it": "SCRIVI LA PAROLA!\n{1}",
+        "pt_p": "DIGITE A PALAVRA!\n{1}",
+        "ru": "НАПИШИТЕ СЛОВО!\n{1}",
+        "es": "DI LA PALABRA!\n{1}"
+      }
+    },
+    {
+      "key": "Minigame7_Caption",
+      "text": "ROCKET JUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ROCKET JUMP!",
+        "fr": "ROCKET JUMP !",
+        "it": "SALTO RAZZO!",
+        "pt_p": "ROCKET JUMP!",
+        "ru": "ПРЫЖОК НА РАКЕТЕ!",
+        "es": "SALTO CON COHETES!"
+      }
+    },
+    {
+      "key": "Minigame8_CaptionFormatted",
+      "text": "ANSWER THE QUESTION!\n{1} = ?",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "RESPONDA A QUESTÃO!\n{1} = ?",
+        "fr": "RÉPONDEZ À LA QUESTION !\n{1} = ?",
+        "it": "RISPONDI ALLA DOMANDA!\n{1} = ?",
+        "pt_p": "RESPONDA A QUESTÃO!\n{1} = ?",
+        "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
+        "es": "RESPONDE LA PREGUNTA!\n{1} = ?"
+      }
+    },
+    {
+      "key": "Minigame8_CorrectAnswerWas",
+      "text": "{1}The correct answer was {2}!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}A resposta certa é: {2}!",
+        "fr": "{1}La bonne réponse était {2} !",
+        "it": "{1}La risposta corretta era {2}!",
+        "pt_p": "{1}A resposta certa é: {2}!",
+        "ru": "{1}Правильным ответом было {2}!",
+        "es": "{1}La respuesta correcta era {2}!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SimonSaysTaunt",
+      "text": "SIMON SAYS: TAUNT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O MESMTRE MANDOU: DÊ TAUNT!",
+        "fr": "JACQUES A DIT : MOQUEZ-VOUS !",
+        "it": "SIMONE DICE: PROVOCA!",
+        "pt_p": "O MESMTRE MANDOU: DÊ TAUNT!",
+        "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
+        "es": "SIMON DICE: BURLATE!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SimonSaysJump",
+      "text": "SIMON SAYS: JUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O MESTRE MANDOU: PULE!",
+        "fr": "JACQUES A DIT : SAUTEZ !",
+        "it": "SIMONE DICE: SALTA!",
+        "pt_p": "O MESTRE MANDOU: PULE!",
+        "ru": "САЙМОН ГОВОРИТ: ПРЫЖОК!",
+        "es": "SIMON DICE: SALTA!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SimonSaysCrouch",
+      "text": "SIMON SAYS: CROUCH!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O MESTRE MANDAU: ABAIXE!",
+        "fr": "JACQUES A DIT : ACCROUPISSEZ-VOUS !",
+        "it": "SIMONE DICE: ABBASSATI!",
+        "pt_p": "O MESTRE MANDAU: ABAIXE!",
+        "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
+        "es": "SIMON DICE: AGACHATE!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SomeoneSaysTaunt",
+      "text": "SOMEONE SAYS: TAUNT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ALGUÉM MANDOU: DÊ TAUNT!",
+        "fr": "JACADI A DIT : MOQUEZ-VOUS !",
+        "it": "SALMONE DICE: PROVOCA!",
+        "pt_p": "ALGUÉM MANDOU: DÊ TAUNT!",
+        "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
+        "es": "ALGUIEN DICE: BURLATE!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SomeoneSaysJump",
+      "text": "SOMEONE SAYS: JUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ALGUÉM MANDOU: PULE!",
+        "fr": "JACADI A DIT : SAUTEZ !",
+        "it": "SALMONE DICE: SALTA!",
+        "pt_p": "ALGUÉM MANDOU: PULE!",
+        "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
+        "es": "ALGUIEN DICE: SALTA!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SomeoneSaysCrouch",
+      "text": "SOMEONE SAYS: CROUCH!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ALGUÉM MANDOU: ABAIXE!",
+        "fr": "JACADI A DIT : ACCROUPISSEZ-VOUS !",
+        "it": "SALMONE DICE: ABBASSATI!",
+        "pt_p": "ALGUÉM MANDOU: ABAIXE!",
+        "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
+        "es": "ALGUIEN DICE: AGACHATE!"
+      }
+    },
+    {
+      "key": "Minigame9_Caption_SimonDidntSayIt",
+      "text": "(Simon didn't say it..)",
+      "formatArguments": [],
+      "translations": {
+        "pt": "(O mestre não mandou você fazer isso..)",
+        "fr": "(Jacques n'a rien dit..)",
+        "it": "(Non lo ha detto Simone..)",
+        "pt_p": "(O mestre não mandou você fazer isso..)",
+        "ru": "(Саймон этого не говорил..)",
+        "es": "(Simon no a dicho eso..)"
+      }
+    },
+    {
+      "key": "Minigame10_KamikazeIsHere",
+      "text": "Kamikaze is over here!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "o homem bomba está aqui!",
+        "fr": "Un kamikaze est dans les parages !",
+        "it": "Il kamikaze è qui!",
+        "pt_p": "o homem bomba está aqui!",
+        "ru": "Камикадзе здесь!",
+        "es": "El Kamikaze esta por aqui!"
+      }
+    },
+    {
+      "key": "Minigame10_Caption_ExplodeAsMany",
+      "text": "EXPLODE AS MANY PEOPLE AS YOU CAN!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!",
+        "fr": "EXPLOSEZ LE PLUS DE PERSONNES POSSIBLE !",
+        "it": "FAI ESPLODERE PIU' GIOCATORI CHE PUOI!",
+        "pt_p": "EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!",
+        "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
+        "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!"
+      }
+    },
+    {
+      "key": "Minigame10_Caption_RunFromKamikaze",
+      "text": "RUN FROM THE KAMIKAZE!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CORRA DO HOMEM BOMBA!",
+        "fr": "ÉCHAPPEZ AU KAMIKAZE !",
+        "it": "SCAPPA DAL KAMIKAZE!",
+        "pt_p": "CORRA DO HOMEM BOMBA!",
+        "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
+        "es": "HUYE DEL KAMIKAZE!"
+      }
+    },
+    {
+      "key": "Minigame11_Caption_DontStopMoving",
+      "text": "DON'T STOP MOVING!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "NÃO PARE DE SE MOVER!",
+        "fr": "N'ARRÊTEZ PAS DE BOUGER !",
+        "it": "CONTINUA A MUOVERTI!",
+        "pt_p": "NÃO PARE DE SE MOVER!",
+        "ru": "ДВИГАТЬСЯ!",
+        "es": "NO PARES DE MOVERTE!"
+      }
+    },
+    {
+      "key": "Minigame11_Caption_DontMove",
+      "text": "DON'T MOVE!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "NÃO SE MOVA!",
+        "fr": "NE BOUGEZ PAS !",
+        "it": "NON MUOVERTI!",
+        "pt_p": "NÃO SE MOVA!",
+        "ru": "НЕ ДВИГАТЬСЯ!",
+        "es": "NO TE MUEVAS!"
+      }
+    },
+    {
+      "key": "Minigame12_Caption",
+      "text": "GET ON A PLATFORM!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "SUBA NA PLATAFORMA!",
+        "fr": "REJOIGNEZ UNE PLATE-FORME !",
+        "it": "SALI SU UNA PIATTAFORMA!",
+        "pt_p": "SUBA NA PLATAFORMA!",
+        "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
+        "es": "SUBE A UNA PLATAFORMA!"
+      }
+    },
+    {
+      "key": "Minigame13_Caption",
+      "text": "SPYCRAB!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "SPYCRAB!",
+        "fr": "SPYCRAB !",
+        "it": "FAI LO SPYCRAB!",
+        "pt_p": "SPYCRAB!",
+        "ru": "СПАЙКРАБ!",
+        "es": "SPYCRAB!"
+      }
+    },
+    {
+      "key": "Minigame13_SpycrabsMustCrouchAndLookup",
+      "text": "Spycrabs must crouch and look up!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Spycrabs precisam abaixar e olhar para cima!",
+        "fr": "Les spycrabs doivent s'accroupir et regarder en haut !",
+        "it": "Gli Spycrab devono abbassarsi e guardare in alto!",
+        "pt_p": "Spycrabs precisam abaixar e olhar para cima!",
+        "ru": "Спайкрабы должны присесть и посмотреть вверх!",
+        "es": "Los Spycrabs deben agacharse y mirar hacia arriba!"
+      }
+    },
+    {
+      "key": "Minigame14_Caption_Spies",
+      "text": "SAP A BUILDING!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "SOBOTE UMA CONSTRUÇÃO!",
+        "fr": "SABOTEZ UN BÂTIMENT !",
+        "it": "SABOTA UNA COSTRUZIONE!",
+        "pt_p": "SOBOTE UMA CONSTRUÇÃO!",
+        "ru": "ПОСТАВЬТЕ ЖУЧОК!",
+        "es": "DESTRUYE UNA CONSTRUCCION!"
+      }
+    },
+    {
+      "key": "Minigame14_Caption_Engineers",
+      "text": "GET A BUILDING SAPPED!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!",
+        "fr": "FAITES-VOUS SABOTER UN BÂTIMENT !",
+        "it": "FATTI SABOTARE UNA COSTRUZIONE!",
+        "pt_p": "VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!",
+        "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
+        "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!"
+      }
+    },
+    {
+      "key": "Minigame15_Caption_Any",
+      "text": "BUILD SOMETHING!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CONSTRUA QUALQUER COISA!",
+        "fr": "CONSTRUISEZ QUELQUE CHOSE !",
+        "it": "COSTRUISCI QUALCOSA!",
+        "pt_p": "CONSTRUA QUALQUER COISA!",
+        "ru": "ПОСТРОЙТЕ ЧТО-НИБУДЬ!",
+        "es": "CONSTRUYE ALGO!"
+      }
+    },
+    {
+      "key": "Minigame15_Caption_Dispenser",
+      "text": "BUILD A DISPENSER!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CONSTRUA UMA DISPENSER!",
+        "fr": "CONSTRUISEZ UN DISTRIBUTEUR !",
+        "it": "COSTRUISCI UN DISPENSER!",
+        "pt_p": "CONSTRUA UMA DISPENSER!",
+        "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
+        "es": "CONSTRUYE UN DISPENSADOR!"
+      }
+    },
+    {
+      "key": "Minigame15_Caption_Teleporter",
+      "text": "BUILD A TELEPORTER!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CONSTRUA UM TELEPORTE!",
+        "fr": "CONSTRUISEZ UN TÉLÉPORTEUR !",
+        "it": "COSTRUISCI UN TELETRASPORTO!",
+        "pt_p": "CONSTRUA UM TELEPORTE!",
+        "ru": "ПОСТРОЙТЕ ТЕЛЕПОРТ!",
+        "es": "CONSTRUYE UN TELETRANSPORTADOR!"
+      }
+    },
+    {
+      "key": "Minigame15_Caption_Sentry",
+      "text": "BUILD A SENTRY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "CONSTRUA UMA SENTINELA!",
+        "fr": "CONSTRUISEZ UNE MITRAILLEUSE !",
+        "it": "COSTRUSICI UNA TORRETTA!",
+        "pt_p": "CONSTRUA UMA SENTINELA!",
+        "ru": "ПОСТРОЙТЕ ТУРЕЛЬ!",
+        "es": "CONSTRUYE UN CENTINELA!"
+      }
+    },
+    {
+      "key": "Minigame16_Caption",
+      "text": "JARATE AN ENEMY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "JOGUE O JARATE NO INIMIGO!",
+        "fr": "JARATEZ UN ENNEMI !",
+        "it": "COPRI UN NEMICO DI GIARATE!",
+        "pt_p": "JOGUE O JARATE NO INIMIGO!",
+        "ru": "ОБМОЧИТЕ ВРАГА!",
+        "es": "LANZA JARATE A UN ENEMIGO!"
+      }
+    },
+    {
+      "key": "Minigame17_Caption_HitAHeavy",
+      "text": "HIT A HEAVY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "BATA NO HEAVY!",
+        "fr": "FRAPPEZ UN HEAVY !",
+        "it": "COLPISCI UN GROSSO!",
+        "pt_p": "BATA NO HEAVY!",
+        "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
+        "es": "GOLPEA A UN HEAVY!"
+      }
+    },
+    {
+      "key": "Minigame17_Caption_GetHitByMedic",
+      "text": "GET HIT BY A MEDIC!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "SEJA ATINGIDO POR UM MÉDICO",
+        "fr": "SOYEZ FRAPPÉ PAR UN MEDIC ! ",
+        "it": "FATTI COLPIRE DA UN MEDICO!",
+        "pt_p": "SEJA ATINGIDO POR UM MÉDICO",
+        "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
+        "es": "HAZ QUE TE GOLPEE UN MEDICO!"
+      }
+    },
+    {
+      "key": "Minigame18_Caption",
+      "text": "HIT THE TARGET!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ACERTE O ALVO!",
+        "fr": "TIREZ SUR LA CIBLE !",
+        "it": "COLPISCI IL BERSAGLIO!",
+        "pt_p": "ACERTE O ALVO!",
+        "ru": "ПОПОДИТЕ ПО МИШЕНИ!",
+        "es": "DALE AL OBJETIVO!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassAny",
+      "text": "CHANGE CLASS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE DE CLASSE!",
+        "fr": "CHANGEZ DE CLASSE !",
+        "it": "CAMBIA CLASSE!",
+        "pt_p": "MUDE DE CLASSE!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС!",
+        "es": "CAMBIA DE CLASE!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassScout",
+      "text": "CHANGE CLASS TO SCOUT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: SCOUT!",
+        "fr": "CHANGEZ DE CLASSE POUR LE SCOUT !",
+        "it": "CAMBIA CLASSE IN ESPLORATORE!",
+        "pt_p": "MUDE PARA A CLASSE: SCOUT!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
+        "es": "CAMBIA DE CLASE A SCOUT!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassSoldier",
+      "text": "CHANGE CLASS TO SOLDIER!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: SOLDIER!",
+        "fr": "CHANGEZ DE CLASSE POUR LE SOLDIER !",
+        "it": "CAMBIA CLASSE IN SOLDATO!",
+        "pt_p": "MUDE PARA A CLASSE: SOLDIER!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
+        "es": "CAMBIA DE CLASE A SOLDADO!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassPyro",
+      "text": "CHANGE CLASS TO PYRO!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: PYRO!",
+        "fr": "CHANGEZ DE CLASSE POUR LE PYRO !",
+        "it": "CAMBIA CLASSE IN PIRO!",
+        "pt_p": "MUDE PARA A CLASSE: PYRO!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
+        "es": "CAMBIA DE CLASE A PYRO!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassDemoman",
+      "text": "CHANGE CLASS TO DEMOMAN!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: DEMOMAN!",
+        "fr": "CHANGEZ DE CLASSE POUR LE DEMOMAN !",
+        "it": "CAMBIA CLASSE IN DEMOLITORE!",
+        "pt_p": "MUDE PARA A CLASSE: DEMOMAN!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
+        "es": "CAMBIA DE CLASE A DEMOMAN!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassHeavy",
+      "text": "CHANGE CLASS TO HEAVY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: HEAVY!",
+        "fr": "CHANGEZ DE CLASSE POUR LE HEAVY !",
+        "it": "CAMBIA CLASSE IN GROSSO!",
+        "pt_p": "MUDE PARA A CLASSE: HEAVY!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
+        "es": "CAMBIA DE CLASE A HEAVY!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassEngineer",
+      "text": "CHANGE CLASS TO ENGINEER!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: ENGENHEIRO!",
+        "fr": "CHANGEZ DE CLASSE POUR LE ENGINEER !",
+        "it": "CAMBIA CLASSE IN INGEGNERE!",
+        "pt_p": "MUDE PARA A CLASSE: ENGENHEIRO!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
+        "es": "CAMBIA DE CLASE A INGENIERO!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassMedic",
+      "text": "CHANGE CLASS TO MEDIC!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: MÉDICO!",
+        "fr": "CHANGEZ DE CLASSE POUR LE MEDIC !",
+        "it": "CAMBIA CLASSE IN MEDICO!",
+        "pt_p": "MUDE PARA A CLASSE: MÉDICO!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
+        "es": "CAMBIA DE CLASE A MEDICO!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassSniper",
+      "text": "CHANGE CLASS TO SNIPER!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: SNIPER!",
+        "fr": "CHANGEZ DE CLASSE POUR LE SNIPER !",
+        "it": "CAMBIA CLASSE IN CECCHINO!",
+        "pt_p": "MUDE PARA A CLASSE: SNIPER!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
+        "es": "CAMBIA DE CLASE A FRANCOTIRADOR!"
+      }
+    },
+    {
+      "key": "Minigame19_Caption_ChangeClassSpy",
+      "text": "CHANGE CLASS TO SPY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "MUDE PARA A CLASSE: SPY!",
+        "fr": "CHANGEZ DE CLASSE POUR LE SPY !",
+        "it": "CAMBIA CLASSE IN SPIA!",
+        "pt_p": "MUDE PARA A CLASSE: SPY!",
+        "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
+        "es": "CAMBIA DE CLASE A ESPIA!"
+      }
+    },
+    {
+      "key": "Minigame20_Caption_Drink",
+      "text": "DRINK!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "BEBA!",
+        "fr": "BUVEZ !",
+        "it": "BEVI!",
+        "pt_p": "BEBA!",
+        "ru": "ВЫПЕЙТЕ!",
+        "es": "BEBE!"
+      }
+    },
+    {
+      "key": "Minigame20_Caption_Eat",
+      "text": "EAT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "COMA!",
+        "fr": "MANGEZ !",
+        "it": "MANGIA!",
+        "pt_p": "COMA!",
+        "ru": "ПОЕШЬТЕ!",
+        "es": "COME!"
+      }
+    },
+    {
+      "key": "Minigame21_Caption",
+      "text": "STUN AN ENEMY!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "ATORDOE UM INIMIGO!",
+        "fr": "ÉTOURDISSEZ UN ENNEMI !",
+        "it": "STORDISCI UN NEMICO!",
+        "pt_p": "ATORDOE UM INIMIGO!",
+        "ru": "ОГЛУШИТЕ ПРОТИВНИКА!",
+        "es": "ATURDE A UN ENEMIGO!"
+      }
+    },
+    {
+      "key": "Minigame22_Caption",
+      "text": "STAY ON THE GROUND!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "FIQUE NO CHÃO!",
+        "fr": "RESTEZ SUR LE SOL !",
+        "it": "RIMANI A TERRA!",
+        "pt_p": "FIQUE NO CHÃO!",
+        "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
+        "es": "QUEDATE EN EL SUELO!"
+      }
+    },
+    {
+      "key": "Minigame23_Caption",
+      "text": "DOUBLE JUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "PULO DUPLO!",
+        "fr": "DOUBLE SAUT !",
+        "it": "DOPPIO SALTO!",
+        "pt_p": "PULO DUPLO!",
+        "ru": "ДВОЙНОЙ ПРЫЖОК!",
+        "es": "SALTO DOBLE!"
+      }
+    },
+    {
+      "key": "Minigame24_Caption",
+      "text": "NEEDLEJUMP!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "PULE ATIRANDO NO CHÃO!",
+        "fr": "NEEDLEJUMP !",
+        "it": "SALTO AGO!",
+        "pt_p": "PULE ATIRANDO NO CHÃO!",
+        "ru": "ПРЫЖОК ШПРИЦЕМЕТОМ!",
+        "es": "SALTO CON AGUJAS!"
+      }
+    },
+    {
+      "key": "Minigame25_Caption",
+      "text": "JETPACK!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "JETPACK!",
+        "fr": "JETPACK !",
+        "it": "PROPULSORE!",
+        "pt_p": "JETPACK!",
+        "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
+        "es": "JETPACK!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_Explain",
+      "text": "Say each word in chat as quick as you can to survive!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Digite mais rápido que puder cada palavra no cha para permanecer vivo!",
+        "fr": "Dites chaque mot dans le chat aussi vite que possible pour survivre !",
+        "it": "Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!",
+        "pt_p": "Digite mais rápido que puder cada palavra no cha para permanecer vivo!",
+        "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
+        "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_Start",
+      "text": "START!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "COMEÇOU!",
+        "fr": "C'EST PARTI !",
+        "it": "VIA!",
+        "pt_p": "COMEÇOU!",
+        "ru": "СТАРТ!",
+        "es": "EMPIEZA!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_TimeRemaining",
+      "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
+        "fr": "== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes.",
+        "it": "== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)",
+        "pt_p": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
+        "ru": "== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд",
+        "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_SayTheWord",
+      "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
+        "fr": "== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes.",
+        "it": "== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds",
+        "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
+        "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
+        "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_WinnerAnnouncement",
+      "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
+        "fr": "== ANNONCE ==\n\nLe gagnant est...\n{1} !",
+        "it": "== ANNUNCIO ==\n\nIl vincitore è...\n{1}!",
+        "pt_p": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
+        "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!",
+        "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_LevelUpAnnouncement",
+      "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
+        "fr": "== ANNONCE == \n\nNIVEAU SUIVANT ! LES MOTS SONT PLUS DIFFICILES !",
+        "it": "== ANNUNCIO == \n\nLIVELLO SUCCESSIVO! LE PAROLE SARANNO PIU' DIFFICILI!",
+        "pt_p": "== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
+        "ru": "== ОБЪЯВЛЕНИЕ == \n\nНОВЫЙ УРОВЕНЬ! СЛОВА СТАЛИ БОЛЕЕ СЛОЖНЫМИ!",
+        "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_RoundReview",
+      "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}",
+        "fr": "== REVUE DE LA MANCHE == \n\nLes joueurs ayant tapé le moins de mots sont...\n{1}",
+        "it": "== INTERVALLO == \n\nI giocatori che hanno scritto il minor numero di parole sono...\n{1}",
+        "pt_p": "== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}",
+        "ru": "== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}",
+        "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}"
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_RoundReview_AndMore",
+      "text": "{1}\nand {2} more...",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}\ne {2} mais...",
+        "fr": "{1}\net {2} plus...",
+        "it": "{1}\ne altri {2}...",
+        "pt_p": "{1}\ne {2} mais...",
+        "ru": "{1}\nи {2} и другие...",
+        "es": "{1}\ny {2} mas..."
+      }
+    },
+    {
+      "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
+      "text": "{1}no one!\n\nEveryone survives another round!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1}ninguém!\n\nTodos sobreviveram!",
+        "fr": "{1}personne !\n\nTout le monde reste vivant !",
+        "it": "{1}Nessuno!\n\nTutti sopravvivono per un altro round!",
+        "pt_p": "{1}ninguém!\n\nTodos sobreviveram!",
+        "ru": "{1}Никто!\n\nВсе выжили в этом раунде!",
+        "es": "{1}nadie!\n\nTodo el mundo sobrevive otra ronda!"
+      }
+    },
+    {
+      "key": "Bossgame7_ClassChangeWarning",
+      "text": "Changing class is not allowed during bosses!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Não é permitido a troca de classes durante os boss!",
+        "fr": "Changer de classe n'est pas autorisé durant les boss !",
+        "it": "Non è permesso cambiare classe durante i giochi boss!",
+        "pt_p": "Não é permitido a troca de classes durante os boss!",
+        "ru": "Смена класса запрещена во время босс раунда!",
+        "es": "Cambiar de clase no esta permitido durante los jefes!"
+      }
+    },
+    {
+      "key": "SpecialRound0_Name",
+      "text": "Thirdperson",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Terceira Pessoa",
+        "fr": "Troisième personne",
+        "it": "Terza Persona",
+        "pt_p": "Terceira Pessoa",
+        "ru": "От третьего лица",
+        "es": "Tercera Persona"
+      }
+    },
+    {
+      "key": "SpecialRound0_Description",
+      "text": "All players play the round in a whole new perspective!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Todos os jogadores jogam esta rodada em modo terceira pessoa!",
+        "fr": "Tous le monde joue dans une nouvelle perspective !",
+        "it": "Guarda il mondo da un'altra prospettiva!",
+        "pt_p": "Todos os jogadores jogam esta rodada em modo terceira pessoa!",
+        "ru": "Все игроки играют с новой точкой зрения!",
+        "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!"
+      }
+    },
+    {
+      "key": "SpecialRound1_Name",
+      "text": "Adrenaline Shot",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Injeção de Adrenalina!",
+        "fr": "Coup d'adrénaline",
+        "it": "Sprint",
+        "pt_p": "Injeção de Adrenalina!",
+        "ru": "Адреналин",
+        "es": "Inyección de Adrenalina"
+      }
+    },
+    {
+      "key": "SpecialRound1_Description",
+      "text": "The round starts fast! Then slows down!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O round inicia rápido e termina lento.",
+        "fr": "La manche commence rapidement, puis ralentie !",
+        "it": "Il round comincia veloce e poi va a rallentare!",
+        "pt_p": "O round inicia rápido e termina lento.",
+        "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
+        "es": "La ronda comienza rapido! Y despues se ralentiza!"
+      }
+    },
+    {
+      "key": "SpecialRound2_Name",
+      "text": "Extended Round",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Rodada Extendida!",
+        "fr": "Manche allongée",
+        "it": "Round Esteso",
+        "pt_p": "Rodada Extendida!",
+        "ru": "Бонусные Раунды",
+        "es": "Ronda Extendida"
+      }
+    },
+    {
+      "key": "SpecialRound2_Description",
+      "text": "30 microgames will be played before the bossgame!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "30 microgames serão jogados antes do evento do boss!",
+        "fr": "30 mini-jeux vont être joués avant le boss !",
+        "it": "Ben 30 minigiochi saranno giocati prima del gioco boss!",
+        "pt_p": "30 microgames serão jogados antes do evento do boss!",
+        "ru": "30 игр будет сыгранно перед босс раундом!",
+        "es": "Se jugaran 30 microjuegos antes del jefe!"
+      }
+    },
+    {
+      "key": "SpecialRound3_Name",
+      "text": "Low Gravity",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Baixa Gravidade",
+        "fr": "Gravité faible",
+        "it": "Bassa Gravità",
+        "pt_p": "Baixa Gravidade",
+        "ru": "Низкая Гравитация",
+        "es": "Gravedad Baja"
+      }
+    },
+    {
+      "key": "SpecialRound3_Description",
+      "text": "Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Onde foi parar a gravidade?!",
+        "fr": "L'espace ? L'ESPACE ! L'ESPAAAAAAAAAAAAAAACEEEEEEE !",
+        "it": "Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!",
+        "pt_p": "Onde foi parar a gravidade?!",
+        "ru": "Космос? КОСМОС! КОООСМООООООООС!",
+        "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!"
+      }
+    },
+    {
+      "key": "SpecialRound4_Name",
+      "text": "Chill Pill",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Não se preocupe! Tudo calmo...",
+        "fr": "Tranquillisant",
+        "it": "Camomilla",
+        "pt_p": "Não se preocupe! Tudo calmo...",
+        "ru": "Успокоительное",
+        "es": "Calmante"
+      }
+    },
+    {
+      "key": "SpecialRound4_Description",
+      "text": "No speed changes will happen in this round!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Nenhuma mudança de velocidade será feita nesta rodada!",
+        "fr": "Aucun changement de vitesse n'aura lieu dans cette manche !",
+        "it": "La velocità dei minigiochi non aumenterà in questo round!",
+        "pt_p": "Nenhuma mudança de velocidade será feita nesta rodada!",
+        "ru": "Скорость игр не будет меняться!",
+        "es": "No habra cambios de velocidad en esta ronda!"
+      }
+    },
+    {
+      "key": "SpecialRound5_Name",
+      "text": "Game Time Attack",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Cada vez mais rápido!",
+        "fr": "Time Attack",
+        "it": "Adrenalina Pura!",
+        "pt_p": "Cada vez mais rápido!",
+        "ru": "Скоростные игры",
+        "es": "Super-Velocidad"
+      }
+    },
+    {
+      "key": "SpecialRound5_Description",
+      "text": "The round will speed up after every microgame!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Nesta rodada, a cada microgame a velocidade aumenta!",
+        "fr": "La manche accéléra après chaque mini-jeu !",
+        "it": "Il round si farà più veloce dopo ogni minigioco!",
+        "pt_p": "Nesta rodada, a cada microgame a velocidade aumenta!",
+        "ru": "Скорость игр будет увеличиваться с каждым раундом!",
+        "es": "La ronda acelerara despues de cada microjuego!"
+      }
+    },
+    {
+      "key": "SpecialRound6_Name",
+      "text": "Up and Down",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Sobe e Desce !",
+        "fr": "Vitesse aléatoire",
+        "it": "Alti e Bassi",
+        "pt_p": "Sobe e Desce !",
+        "ru": "Вверх и вниз",
+        "es": "Arriba y Abajo"
+      }
+    },
+    {
+      "key": "SpecialRound6_Description",
+      "text": "After every microgame, a random speed will be chosen!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Nesta rodada, cada microgame terá velocidade aleatória.",
+        "fr": "Après chaque mini-jeu, la vitesse change aléatoirement !",
+        "it": "La velocità cambierà casualmente dopo ogni minigioco!",
+        "pt_p": "Nesta rodada, cada microgame terá velocidade aleatória.",
+        "ru": "Скорость каждого раунда будет случайной!",
+        "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!"
+      }
+    },
+    {
+      "key": "SpecialRound7_Name",
+      "text": "Slow-mo",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Câmera Lenta",
+        "fr": "Slow-mo",
+        "it": "Moviola",
+        "pt_p": "Câmera Lenta",
+        "ru": "Слоу мо",
+        "es": "Camara Lenta"
+      }
+    },
+    {
+      "key": "SpecialRound7_Description",
+      "text": "The round will slow down after every microgame!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Nesta rodada, cada microgame ficará mais lento!",
+        "fr": "La manche ralentira après chaque mini-jeu !",
+        "it": "Il round si farà più lento dopo ogni minigioco!",
+        "pt_p": "Nesta rodada, cada microgame ficará mais lento!",
+        "ru": "Игры становяться медленее с каждым раундом!",
+        "es": "La ronda se ralentizara despues de cada microjuego!"
+      }
+    },
+    {
+      "key": "SpecialRound8_Name",
+      "text": "Maths Only",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Matemática",
+        "fr": "Maths uniquement",
+        "it": "Incubo Matematico",
+        "pt_p": "Matemática",
+        "ru": "Математика",
+        "es": "Solo Matematicas"
+      }
+    },
+    {
+      "key": "SpecialRound8_Description",
+      "text": "Time to test your maths skills!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Testaremos suas habilidades com as operações matemáticas!",
+        "fr": "Testez vos performances mathématiques !",
+        "it": "Ci sai fare con i numeri?",
+        "pt_p": "Testaremos suas habilidades com as operações matemáticas!",
+        "ru": "Пришло время потренироваться в математику!",
+        "es": "Hora de poner a prueba tus habilidades matematicas!"
+      }
+    },
+    {
+      "key": "SpecialRound9_Name",
+      "text": "Opposite Day",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O último será o primeiro",
+        "fr": "Inversement des rôles",
+        "it": "Potere ai Poveri",
+        "pt_p": "O último será o primeiro",
+        "ru": "День Наоборот",
+        "es": "Dia Opuesto"
+      }
+    },
+    {
+      "key": "SpecialRound9_Description",
+      "text": "The player with the lowest score wins the round!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "O jogador com menor placar será o vencedor!",
+        "fr": "Le joueur avec le plus faible score gagne la manche !",
+        "it": "Vince il giocatore con il punteggio più basso!",
+        "pt_p": "O jogador com menor placar será o vencedor!",
+        "ru": "Игрок с наименшим кол-ом очков выигрывает!",
+        "es": "El jugador con la puntuacion mas baja gana la ronda!"
+      }
+    },
+    {
+      "key": "SpecialRound10_Name",
+      "text": "Two Boss Battles",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Batalha dos Boss",
+        "fr": "Double bataille de boss",
+        "it": "Bis di Boss",
+        "pt_p": "Batalha dos Boss",
+        "ru": "Два Босс Раунда",
+        "es": "Jefe Doble"
+      }
+    },
+    {
+      "key": "SpecialRound10_Description",
+      "text": "Two bossgames will be played before game over!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Dois bossgames serão jogados antes desta rodada acabar!",
+        "fr": "Deux boss auront lieu avant la fin de la manche !",
+        "it": "Il round avrà due giochi boss!",
+        "pt_p": "Dois bossgames serão jogados antes desta rodada acabar!",
+        "ru": "Два босс раунда играется перед концом игры!",
+        "es": "Se jugaran dos jefes antes de que termine el juego!"
+      }
+    },
+    {
+      "key": "SpecialRound11_Name",
+      "text": "Team Battle",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Batalha de Times",
+        "fr": "Bataille en équipe",
+        "it": "Gioco di Squadra",
+        "pt_p": "Batalha de Times",
+        "ru": "Битва комманд",
+        "es": "Batalla de Equipos"
+      }
+    },
+    {
+      "key": "SpecialRound11_Description",
+      "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!",
+        "fr": "Si vous gagnez un mini-jeu, un point sera rajouté au score de l'équipe. L'équipe avec le plus de points à la fin gagne !",
+        "it": "Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!",
+        "pt_p": "Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!",
+        "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
+        "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!"
+      }
+    },
+    {
+      "key": "SpecialRound12_Name",
+      "text": "Single Player",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Sozinho",
+        "fr": "Jeu en solo",
+        "it": "Giocatore Singolo",
+        "pt_p": "Sozinho",
+        "ru": "Одиночная Игра",
+        "es": "Modo Un Jugador"
+      }
+    },
+    {
+      "key": "SpecialRound12_Description",
+      "text": "Hey... where did everyone go?",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Ué? Para onde foi todo mundo?",
+        "fr": "Mais... Où sont les autres ?",
+        "it": "Ehi... Dove sono finiti tutti?",
+        "pt_p": "Ué? Para onde foi todo mundo?",
+        "ru": "Ой... а куда все делись?",
+        "es": "Hey... donde estan todos?"
+      }
+    },
+    {
+      "key": "SpecialRound13_Name",
+      "text": "Skeletons only",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Somente Pássaros",
+        "fr": "Squelettes uniquement",
+        "it": "SCHELETRI!",
+        "pt_p": "Somente Pássaros",
+        "ru": "Вечеринка Скелетов",
+        "es": "Solo Esqueletos"
+      }
+    },
+    {
+      "key": "SpecialRound13_Description",
+      "text": "No skin allowed in this round!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Archimedes! Nãããõ!",
+        "fr": "Pas de peau autorisée durant cette manche !",
+        "it": "Muscoli? Pelle? A che servono?",
+        "pt_p": "Archimedes! Nãããõ!",
+        "ru": "Кожа и мясо на выброс!",
+        "es": "No se permite piel en esta ronda!"
+      }
+    },
+    {
+      "key": "SpecialRound14_Name",
+      "text": "Tiny",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Minúsculos",
+        "fr": "Minuscule",
+        "it": "Noi Puffi siam così",
+        "pt_p": "Minúsculos",
+        "ru": "Малютка",
+        "es": "Pequeñito"
+      }
+    },
+    {
+      "key": "SpecialRound14_Description",
+      "text": "Everyone becomes teeny tiny men!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Todos viraram formiguinhas!",
+        "fr": "Tout le monde devient des tout-petits-mini-minus !",
+        "it": "Tutti i giocatori diventano alti due mele o poco più!",
+        "pt_p": "Todos viraram formiguinhas!",
+        "ru": "Все становяться маленькими-прималенькими мужичками!",
+        "es": "Todos se convierten en hombres pequeñitos!"
+      }
+    },
+    {
+      "key": "SpecialRound15_Name",
+      "text": "Bobbleheads",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Herp Derp",
+        "fr": "Bobbleheads",
+        "it": "Testone",
+        "pt_p": "Herp Derp",
+        "ru": "Голова-пузырь",
+        "es": "Cabezones"
+      }
+    },
+    {
+      "key": "SpecialRound15_Description",
+      "text": "Everyone becomes a bunch of airheads!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Todos foram tranformados em bobalhões!",
+        "fr": "Tout le monde devient des têtes en l'air !",
+        "it": "Tutti i giocatori sviluppano un intelletto superiore!",
+        "pt_p": "Todos foram tranformados em bobalhões!",
+        "ru": "Все головы становяться огромными!",
+        "es": "Todos se convierten en un montón de cabezas huecas!"
+      }
+    },
+    {
+      "key": "SpecialRound16_Name",
+      "text": "Score Randomizer",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Placar Maluco",
+        "fr": "Score aléatoire",
+        "it": "Punteggi casuali",
+        "pt_p": "Placar Maluco",
+        "ru": "Рандомные очки",
+        "es": "Puntuacion Aleatoria"
+      }
+    },
+    {
+      "key": "SpecialRound16_Description",
+      "text": "If you win a microgame, you will be given a random amount of points!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!",
+        "fr": "Si vous gagnez un mini-jeu, le score est attribué aléatoirement !",
+        "it": "I minigiochi vinti danno un numero di punti casuale!!",
+        "pt_p": "Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!",
+        "ru": "При победе, вы получаете случайное кол-во очков!",
+        "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!"
+      }
+    },
+    {
+      "key": "SpecialRound16_Caption_Points",
+      "text": "If you win this microgame, you will be awarded {1} points!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Se você ganhar este microgame, sua recompensa será de {1} pontos!",
+        "fr": "Si vous gagnez le mini-jeu, vous obtiendrez {1} points !",
+        "it": "Vinci questo minigioco per ottenere {1} punti!",
+        "pt_p": "Se você ganhar este microgame, sua recompensa será de {1} pontos!",
+        "ru": "Если вы победите, вы получите {1} очков!",
+        "es": "Si ganas este microjuego, recibiras {1} puntos!"
+      }
+    },
+    {
+      "key": "SpecialRound17_Name",
+      "text": "Sudden Death",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Morte Súbita",
+        "fr": "Mort subite",
+        "it": "Scontro Finale!",
+        "pt_p": "Morte Súbita",
+        "ru": "Внезапная Смерть",
+        "es": "Muerte Subita"
+      }
+    },
+    {
+      "key": "SpecialRound17_Description",
+      "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!",
+        "fr": "Si vous perdez un mini-jeu, vous serez éliminé ! Le dernier joueur toujours en vie gagne la manche !",
+        "it": "Un errore e sei fuori! Vince l'ultimo giocatore rimasto!",
+        "pt_p": "Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!",
+        "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
+        "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!"
+      }
+    },
+    {
+      "key": "SpecialRound17_Caption_Full",
+      "text": "Current players ({1} of {2})\n{3}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "Atualmente ({1} de {2} jogadores)\n{3}",
+        "fr": "Joueurs en jeu ({1} sur {2})\n{3}",
+        "it": "Ancora in gioco: ({1} di {2})\n{3}",
+        "pt_p": "Atualmente ({1} de {2} jogadores)\n{3}",
+        "ru": "Данное кол-во игроков ({1} of {2})\n{3}",
+        "es": "Jugadores actuales ({1} de {2})\n{3}"
+      }
+    },
+    {
+      "key": "SpecialRound17_Caption_AndMore",
+      "text": "{1} (and {2} more)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru",
+          "description": null
+        },
+        {
+          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru",
+          "description": null
+        }
+      ],
+      "translations": {
+        "pt": "{1} (e {2} mais)",
+        "fr": "{1} (et {2} plus)",
+        "it": "{1} (E altri {2})",
+        "pt_p": "{1} (e {2} mais)",
+        "ru": "{1} (и еще {2})",
+        "es": "{1} (y {2} mas)"
+      }
+    },
+    {
+      "key": "SpecialRound18_Name",
+      "text": "All In",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Vale Tudo",
+        "fr": "All In",
+        "it": "All In",
+        "pt_p": "Vale Tudo",
+        "ru": "Игра на все",
+        "es": "Todo a Una"
+      }
+    },
+    {
+      "key": "SpecialRound18_Description",
+      "text": "If you lose a microgame, you will lose ALL your points!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Se você perder um microgame, você PERDE TODOS pontos!",
+        "fr": "Si vous perdez un mini-jeu, vous perdez TOUS vos points !",
+        "it": "Perdi un minigioco e dì addio a TUTTI i tuoi punti!",
+        "pt_p": "Se você perder um microgame, você PERDE TODOS pontos!",
+        "ru": "При проигрыше, вы теряете ВСЕ очки!",
+        "es": "Si pierdes un microjuego, perderas TODOS tus puntos!"
+      }
+    },
+    {
+      "key": "SpecialRound19_Name",
+      "text": "Reversed Text",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Texto Espelhado",
+        "fr": "Texte inversé",
+        "it": "Testo Rovesciato",
+        "pt_p": "Texto Espelhado",
+        "ru": "Текст наоборот",
+        "es": "Texto Invertido"
+      }
+    },
+    {
+      "key": "SpecialRound19_Description",
+      "text": "!sdrawkcab era snoitcurtsni emagorciM",
+      "formatArguments": [],
+      "translations": {
+        "pt": "!oirártnoc oa oãtse seõçurtsni sA",
+        "fr": "! sésrevni tnos xuej-inim sed snoitcurtsni seL",
+        "it": "!oirartnoc la onos ihcoiginim ied inoizircsed eL",
+        "pt_p": "!oirártnoc oa oãtse seõçurtsni sA",
+        "ru": "!нелакрезто тедуб харги в тскеТ",
+        "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL"
+      }
+    },
+    {
+      "key": "SpecialRound20_Name",
+      "text": "Non-stop",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Sem Parar",
+        "fr": "Non-stop",
+        "it": "Senza Tregua",
+        "pt_p": "Sem Parar",
+        "ru": "Без остановки",
+        "es": "Sin Paradas"
+      }
+    },
+    {
+      "key": "SpecialRound20_Description",
+      "text": "There's no break in between microgames this round!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "Não haverá intervalos entre os microgames nesta rodada.",
+        "fr": "Il n'y aura pour cette manche aucun arrêt entre les mini-jeux !",
+        "it": "Nessuna pausa fra i minigiochi!",
+        "pt_p": "Não haverá intervalos entre os microgames nesta rodada.",
+        "ru": "Без пауз между раундами!",
+        "es": "No hay descanso entre microjuegos en esta ronda!"
+      }
+    },
+    {
+      "key": "SpecialRound21_Name",
+      "text": "Team Fortress 64",
+      "formatArguments": [],
+      "translations": {
+        "fr": "Team Fortress 64",
+        "it": "Team Fortress 64"
+      }
+    },
+    {
+      "key": "SpecialRound21_Description",
+      "text": "Hey! Where did my polygons go?",
+      "formatArguments": [],
+      "translations": {
+        "fr": "Mais ! Où sont passés mes polygones ?",
+        "it": "Come ai vecchi tempi!"
+      }
+    }
+  ]
+}
