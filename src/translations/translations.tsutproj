@@ -274,6 +274,7 @@
     },
     {
       "key": "General_Loser",
+      "description": "A word describing the player that did not successfully complete the microgame or bossgame.",
       "text": "Loser!",
       "formatArguments": [],
       "translations": {
@@ -287,6 +288,7 @@
     },
     {
       "key": "General_Winner",
+      "description": "A word describing the player that did successfully complete the microgame or bossgame.",
       "text": "Winner!",
       "formatArguments": [],
       "translations": {
@@ -300,6 +302,7 @@
     },
     {
       "key": "GameOver_SpecialRoundHasFinished",
+      "description": "A message displayed on the HUD when a special round has ended.",
       "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
       "formatArguments": [],
       "translations": {
@@ -313,6 +316,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixSingle",
+      "description": "Displayed in the chatbox when only one player has won the round.",
       "text": "The winner is...",
       "formatArguments": [],
       "translations": {
@@ -326,6 +330,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixMultiple",
+      "description": "Displayed in the chatbox when more than one player has won the round.",
       "text": "The winners are...",
       "formatArguments": [],
       "translations": {
@@ -339,6 +344,7 @@
     },
     {
       "key": "GameOver_WinnersAnd",
+      "description": "Used in the gameover sequence to combine one or more player names together.",
       "text": "and",
       "formatArguments": [],
       "translations": {
@@ -352,6 +358,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixNoOne",
+      "description": "Used in the gameover sequence in rare situations where no one wins.",
       "text": "There were no winners!",
       "formatArguments": [],
       "translations": {
@@ -365,23 +372,24 @@
     },
     {
       "key": "GameOver_WinnerSuffix",
+      "description": "Used in the gameover sequence.",
       "text": "{1}{2} {3} {green}with {4} points!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "Unknown"
         },
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "Unknown"
         },
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "Unknown"
         },
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The winning number of points the player or players have."
         }
       ],
       "translations": {
@@ -395,15 +403,16 @@
     },
     {
       "key": "GameOver_WinningTeam_Red",
+      "description": "Used in the Team Battle special round when the winning team is the RED Team.",
       "text": "{1}The winning team is the RED team with {2} points!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The winning number of points the team had."
         }
       ],
       "translations": {
@@ -417,15 +426,16 @@
     },
     {
       "key": "GameOver_WinningTeam_Blue",
+      "description": "Used in the Team Battle special round when the winning team is the BLU Team.",
       "text": "{1}The winning team is the BLU team with {2} points!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The winning number of points the team had."
         }
       ],
       "translations": {
@@ -439,11 +449,12 @@
     },
     {
       "key": "GameOver_WinningTeam_Stalemate",
+      "description": "Used in the Team Battle special round in the rare condition that both teams had the same number of points.",
       "text": "{1}Stalemate! Both teams have the same points!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         }
       ],
       "translations": {
@@ -457,6 +468,7 @@
     },
     {
       "key": "Intermission_Header",
+      "description": "A header displayed when the gamemode's intermission begins.",
       "text": "Intermission!",
       "formatArguments": [],
       "translations": {
@@ -470,6 +482,7 @@
     },
     {
       "key": "Intermission_Body",
+      "description": "A short message displayed when the gamemode's intermission begins.",
       "text": "Break time! Time to vote for the next map.",
       "formatArguments": [],
       "translations": {
@@ -561,6 +574,7 @@
     },
     {
       "key": "Bossgame7_Caption",
+      "description": "Do not set any text for this bossgame.",
       "text": "",
       "formatArguments": [],
       "translations": {
@@ -639,11 +653,12 @@
     },
     {
       "key": "Minigame6_SayTheWord_CaptionFormatted",
+      "description": "Say the Word's microgame caption.",
       "text": "SAY THE WORD!\n{1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The word players should type into the chatbox."
         }
       ],
       "translations": {
@@ -674,7 +689,7 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The maths equation that should be answered."
         }
       ],
       "translations": {
@@ -692,11 +707,11 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
           "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "description": "The math equation's correct answer. Example: 42"
         }
       ],
       "translations": {
