@@ -41,10 +41,11 @@
       "translations": {
         "pt": "Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores.",
         "fr": "Vous jouez à WarioWare ! Version {1}. Tapez !credits dans le chat pour voir les crédits.",
-        "it": "Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti.",
+        "it": "Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti. this is a test by Steven, please ignore it",
         "pt_p": "Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores.",
         "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
-        "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos."
+        "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
+        "jp": null
       }
     },
     {
@@ -63,7 +64,8 @@
         "it": "Punti: {1}",
         "pt_p": "Pontuação: {1}",
         "ru": "Очков: {1}",
-        "es": "Puntuacion: {1}"
+        "es": "Puntuacion: {1}",
+        "jp": null
       }
     },
     {
@@ -82,7 +84,8 @@
         "it": "Minigiochi: {1}",
         "pt_p": "Minigames: {1}",
         "ru": "Миниигры: {1}",
-        "es": "Minijuegos: {1}"
+        "es": "Minijuegos: {1}",
+        "jp": null
       }
     },
     {
@@ -101,7 +104,8 @@
         "it": "Punti Squadra: {1}",
         "pt_p": "Pontuação do Time: {1}",
         "ru": "Очки комманды: {1}",
-        "es": "Puntuacion del Equipo: {1}"
+        "es": "Puntuacion del Equipo: {1}",
+        "jp": null
       }
     },
     {
@@ -120,7 +124,8 @@
         "it": "Barili: {1}",
         "pt_p": "",
         "ru": "",
-        "es": ""
+        "es": "",
+        "jp": null
       }
     },
     {
@@ -143,7 +148,8 @@
         "it": "Round {1} di {2}",
         "pt_p": "Rodada {1} de {2}",
         "ru": "Раунд {1} из {2}",
-        "es": "Ronda {1} de {2}"
+        "es": "Ronda {1} de {2}",
+        "jp": null
       }
     },
     {
@@ -162,7 +168,8 @@
         "it": "Round {1}",
         "pt_p": "Rodada {1}",
         "ru": "Раунд {1}",
-        "es": "Ronda {1}"
+        "es": "Ronda {1}",
+        "jp": null
       }
     },
     {
@@ -181,7 +188,8 @@
         "it": "Tema di {1}",
         "pt_p": "Tema Atual: {1}",
         "ru": "Тема {1}",
-        "es": "Tema de {1}"
+        "es": "Tema de {1}",
+        "jp": null
       }
     },
     {
@@ -200,7 +208,8 @@
         "it": "ROUND SPECIALE: {1}!",
         "pt_p": "RODADA ESPECIAL: {1}!",
         "ru": "ОСОБЫЙ РАУНД: {1}!",
-        "es": "RONDA ESPECIAL: {1}!"
+        "es": "RONDA ESPECIAL: {1}!",
+        "jp": null
       }
     },
     {
@@ -227,7 +236,8 @@
         "it": "{1}Il round speciale scelto è... {2}!\n{3}",
         "pt_p": "{1}A rodada especial é... {2}!\n{3}",
         "ru": "{1}Условие особого раунда... {2}!\n{3}",
-        "es": "{1}La condicion de la ronda especial es... {2}!\n{3}"
+        "es": "{1}La condicion de la ronda especial es... {2}!\n{3}",
+        "jp": null
       }
     },
     {
@@ -241,7 +251,8 @@
         "it": "Tornerai in gioco non appena il minigioco o boss corrente sarà terminato.",
         "pt_p": "Você renascerá assim que o minigame ou boss tiverem sido finalizados.",
         "ru": "Вы вернетесь в игру после окончания раунда или босс раунда.",
-        "es": "Reapareceras cuando el minijuego o jefe actual termine."
+        "es": "Reapareceras cuando el minijuego o jefe actual termine.",
+        "jp": null
       }
     },
     {
@@ -255,7 +266,8 @@
         "it": "SEI STATO ELIMINATO!",
         "pt_p": "VOCÊ FOI DESCLASSIFICADO",
         "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
-        "es": "HAS SIDO ELIMINADO!"
+        "es": "HAS SIDO ELIMINADO!",
+        "jp": null
       }
     },
     {
@@ -269,7 +281,8 @@
         "it": "Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale.",
         "pt_p": "Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar.",
         "ru": "Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет.",
-        "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion."
+        "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion.",
+        "jp": null
       }
     },
     {
@@ -283,7 +296,8 @@
         "it": "Perso!",
         "pt_p": "Perdeu!",
         "ru": "Неудачник!",
-        "es": "Perdedor!"
+        "es": "Perdedor!",
+        "jp": null
       }
     },
     {
@@ -297,7 +311,8 @@
         "it": "Vinto!",
         "pt_p": "Ganhou!",
         "ru": "Победитель!",
-        "es": "Ganador!"
+        "es": "Ganador!",
+        "jp": null
       }
     },
     {
@@ -311,7 +326,8 @@
         "it": "== IL ROUND SPECIALE È TERMINATO! ==",
         "pt_p": "== A RODADA ESPECIAL ACABOU ! ==",
         "ru": "== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! ==",
-        "es": "== LA RONDA ESPECIAL A TERMINADO! =="
+        "es": "== LA RONDA ESPECIAL A TERMINADO! ==",
+        "jp": null
       }
     },
     {
@@ -325,7 +341,8 @@
         "it": "Il vincitore è...",
         "pt_p": "O vencedor é...",
         "ru": "Победителем стал...",
-        "es": "El ganador es..."
+        "es": "El ganador es...",
+        "jp": null
       }
     },
     {
@@ -339,7 +356,8 @@
         "it": "I vincitori sono...",
         "pt_p": "Os vencedores são...",
         "ru": "Победителями стали...",
-        "es": "Los ganadores son..."
+        "es": "Los ganadores son...",
+        "jp": null
       }
     },
     {
@@ -353,7 +371,8 @@
         "it": "e",
         "pt_p": "e",
         "ru": "и",
-        "es": "y"
+        "es": "y",
+        "jp": null
       }
     },
     {
@@ -367,7 +386,8 @@
         "it": "Nessuno ha vinto!",
         "pt_p": "Não houveram vencedores!",
         "ru": "Победителей нету!",
-        "es": "No hay ganadores!"
+        "es": "No hay ganadores!",
+        "jp": null
       }
     },
     {
@@ -398,7 +418,8 @@
         "it": "{1}{2} {3} {green}con {4} punti!",
         "pt_p": "{1}{2} {3} {green}com {4} pontos!",
         "ru": "{1}{2} {3} {green}с {4} очками!",
-        "es": "{1}{2} {3} {green}con {4} puntos!"
+        "es": "{1}{2} {3} {green}con {4} puntos!",
+        "jp": null
       }
     },
     {
@@ -421,7 +442,8 @@
         "it": "{1}Vince la squadra RED, con {2} punti!",
         "pt_p": "{1}O time vencedor foi o TIME VERMELHO com {2} pontos!",
         "ru": "{1}КРАСНАЯ комманда побеждает с {2} очками!",
-        "es": "{1}El equipo ganador es RED con {2} puntos!"
+        "es": "{1}El equipo ganador es RED con {2} puntos!",
+        "jp": null
       }
     },
     {
@@ -444,7 +466,8 @@
         "it": "{1}Vince la squadra BLU, con {2} punti!",
         "pt_p": "{1}O time vencedor foi o TIME AZUL com {2} pontos!",
         "ru": "{1}СИНЯЯ комманда побеждает с {2} очками!",
-        "es": "{1}El equipo ganador es BLU con {2} puntos!"
+        "es": "{1}El equipo ganador es BLU con {2} puntos!",
+        "jp": null
       }
     },
     {
@@ -463,7 +486,8 @@
         "it": "{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!",
         "pt_p": "{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos.",
         "ru": "{1}Ничья! Обе комманды имеют одинаковое кол-во очков!",
-        "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!"
+        "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!",
+        "jp": null
       }
     },
     {
@@ -477,7 +501,8 @@
         "it": "Intervallo!",
         "pt_p": "Intervalo!",
         "ru": "Пауза!",
-        "es": "Intermedio!"
+        "es": "Intermedio!",
+        "jp": null
       }
     },
     {
@@ -491,11 +516,13 @@
         "it": "Pausa! È ora di votare per la prossima mappa.",
         "pt_p": "Intervalo! Hora de votar para o próximo mapa.",
         "ru": "Время перерыва! Голосование следующей карты началась.",
-        "es": "Descanso! Hora de votar el siguiente mapa."
+        "es": "Descanso! Hora de votar el siguiente mapa.",
+        "jp": null
       }
     },
     {
       "key": "Bossgame1_Caption",
+      "description": null,
       "text": "ROCKET JUMP TO THE END!",
       "formatArguments": [],
       "translations": {
@@ -504,11 +531,13 @@
         "it": "ARRIVA IN CIMA CON I SALTI RAZZO!",
         "pt_p": "FAÇA ROCKET JUMP ATÉ O FINAL!",
         "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
-        "es": "SALTA CON COHETES HASTA EL FINAL!"
+        "es": "SALTA CON COHETES HASTA EL FINAL!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame2_Caption",
+      "description": null,
       "text": "ESCAPE THE FACTORY!",
       "formatArguments": [],
       "translations": {
@@ -517,11 +546,13 @@
         "it": "FUGGI DALLA FABBRICA!",
         "pt_p": "ESCAPE DA FÁBRICA!",
         "ru": "СБЕЖИТЕ ИЗ ЗАВОДА!",
-        "es": "ESCAPA DE LA FABRICA!"
+        "es": "ESCAPA DE LA FABRICA!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame3_Caption",
+      "description": null,
       "text": "DEFEAT THE ENEMY TEAM!",
       "formatArguments": [],
       "translations": {
@@ -530,11 +561,13 @@
         "it": "SCONFIGGI LA SQUADRA NEMICA!",
         "pt_p": "ELIMINE O TIME INIMIGO!",
         "ru": "ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!",
-        "es": "ACABA CON EL EQUIPO ENEMIGO!"
+        "es": "ACABA CON EL EQUIPO ENEMIGO!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame4_Caption",
+      "description": null,
       "text": "DON'T FALL INTO THE WATER",
       "formatArguments": [],
       "translations": {
@@ -543,11 +576,13 @@
         "it": "NON FINIRE NELL'ACQUA!",
         "pt_p": "NÃO CAIA NA ÁGUA!",
         "ru": "НЕ УПАДИТЕ В ВОДУ!",
-        "es": "NO TE CAIGAS AL AGUA"
+        "es": "NO TE CAIGAS AL AGUA",
+        "jp": null
       }
     },
     {
       "key": "Bossgame5_Caption",
+      "description": null,
       "text": "REACH THE GOAL!",
       "formatArguments": [],
       "translations": {
@@ -556,11 +591,13 @@
         "it": "RAGGIUNGI L'ARRIVO!",
         "pt_p": "ALCANCE O OBJETIVO!",
         "ru": "ДОБЕРИТЕСЬ ДО КОНЦА!",
-        "es": "LLEGA HASTA LA META!"
+        "es": "LLEGA HASTA LA META!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame6_Caption",
+      "description": null,
       "text": "SHOOT THE MOST BARRELS!",
       "formatArguments": [],
       "translations": {
@@ -569,7 +606,8 @@
         "it": "SPARA A PIU' BARILI CHE PUOI!",
         "pt_p": "ACERTE O MÁXIMO DE BARRIS!",
         "ru": "УНИЧТОЖТЕ БОЧКИ!",
-        "es": "DISPARA A LOS BARRILES!"
+        "es": "DISPARA A LOS BARRILES!",
+        "jp": null
       }
     },
     {
@@ -580,14 +618,16 @@
       "translations": {
         "pt": "",
         "fr": "",
-        "it": "",
+        "it": null,
         "pt_p": "",
         "ru": "",
-        "es": ""
+        "es": "",
+        "jp": null
       }
     },
     {
       "key": "Minigame1_Caption",
+      "description": null,
       "text": "GET TO THE END!",
       "formatArguments": [],
       "translations": {
@@ -596,11 +636,13 @@
         "it": "RAGGIUNGI LA META!",
         "pt_p": "CHEGUE ATÉ O FINAL!",
         "ru": "ДОЙДИТЕ ДО КОНЦА!",
-        "es": "LLEGA HASTA EL FINAL!"
+        "es": "LLEGA HASTA EL FINAL!",
+        "jp": null
       }
     },
     {
       "key": "Minigame2_Caption",
+      "description": null,
       "text": "KILL AN ENEMY!",
       "formatArguments": [],
       "translations": {
@@ -609,11 +651,13 @@
         "it": "UCCIDI UN NEMICO!",
         "pt_p": "MATE UM INIMIGO!",
         "ru": "УБЕЙТЕ ВРАГА!",
-        "es": "MATA A UN ENEMIGO!"
+        "es": "MATA A UN ENEMIGO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame3_Caption",
+      "description": null,
       "text": "BREAK THE BARRELS!",
       "formatArguments": [],
       "translations": {
@@ -622,11 +666,13 @@
         "it": "ROMPI I BARILI!",
         "pt_p": "QUEBRE O BARRIL!",
         "ru": "СЛОМАЙТЕ БОЧКУ!",
-        "es": "ROMPE LOS BARRILES!"
+        "es": "ROMPE LOS BARRILES!",
+        "jp": null
       }
     },
     {
       "key": "Minigame4_Caption",
+      "description": null,
       "text": "AIRBLAST AND STAY ALIVE!",
       "formatArguments": [],
       "translations": {
@@ -635,11 +681,13 @@
         "it": "SPINGI COL COMPRESSORE!",
         "pt_p": "AIRBLAST E CONTINUE VIVO!",
         "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
-        "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!"
+        "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame5_Caption",
+      "description": null,
       "text": "STICKY JUMP!",
       "formatArguments": [],
       "translations": {
@@ -648,7 +696,8 @@
         "it": "SALTO ADESIVO!",
         "pt_p": "STICKY JUMP!",
         "ru": "ПРЫЖОК НА ЛЕПУЧКЕ!",
-        "es": "SALTO CON BOMBAS!"
+        "es": "SALTO CON BOMBAS!",
+        "jp": null
       }
     },
     {
@@ -667,11 +716,13 @@
         "it": "SCRIVI LA PAROLA!\n{1}",
         "pt_p": "DIGITE A PALAVRA!\n{1}",
         "ru": "НАПИШИТЕ СЛОВО!\n{1}",
-        "es": "DI LA PALABRA!\n{1}"
+        "es": "DI LA PALABRA!\n{1}",
+        "jp": null
       }
     },
     {
       "key": "Minigame7_Caption",
+      "description": null,
       "text": "ROCKET JUMP!",
       "formatArguments": [],
       "translations": {
@@ -680,11 +731,13 @@
         "it": "SALTO RAZZO!",
         "pt_p": "ROCKET JUMP!",
         "ru": "ПРЫЖОК НА РАКЕТЕ!",
-        "es": "SALTO CON COHETES!"
+        "es": "SALTO CON COHETES!",
+        "jp": null
       }
     },
     {
       "key": "Minigame8_CaptionFormatted",
+      "description": null,
       "text": "ANSWER THE QUESTION!\n{1} = ?",
       "formatArguments": [
         {
@@ -698,11 +751,13 @@
         "it": "RISPONDI ALLA DOMANDA!\n{1} = ?",
         "pt_p": "RESPONDA A QUESTÃO!\n{1} = ?",
         "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
-        "es": "RESPONDE LA PREGUNTA!\n{1} = ?"
+        "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
+        "jp": null
       }
     },
     {
       "key": "Minigame8_CorrectAnswerWas",
+      "description": null,
       "text": "{1}The correct answer was {2}!",
       "formatArguments": [
         {
@@ -720,11 +775,13 @@
         "it": "{1}La risposta corretta era {2}!",
         "pt_p": "{1}A resposta certa é: {2}!",
         "ru": "{1}Правильным ответом было {2}!",
-        "es": "{1}La respuesta correcta era {2}!"
+        "es": "{1}La respuesta correcta era {2}!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SimonSaysTaunt",
+      "description": null,
       "text": "SIMON SAYS: TAUNT!",
       "formatArguments": [],
       "translations": {
@@ -733,11 +790,13 @@
         "it": "SIMONE DICE: PROVOCA!",
         "pt_p": "O MESMTRE MANDOU: DÊ TAUNT!",
         "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
-        "es": "SIMON DICE: BURLATE!"
+        "es": "SIMON DICE: BURLATE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SimonSaysJump",
+      "description": null,
       "text": "SIMON SAYS: JUMP!",
       "formatArguments": [],
       "translations": {
@@ -746,11 +805,13 @@
         "it": "SIMONE DICE: SALTA!",
         "pt_p": "O MESTRE MANDOU: PULE!",
         "ru": "САЙМОН ГОВОРИТ: ПРЫЖОК!",
-        "es": "SIMON DICE: SALTA!"
+        "es": "SIMON DICE: SALTA!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SimonSaysCrouch",
+      "description": null,
       "text": "SIMON SAYS: CROUCH!",
       "formatArguments": [],
       "translations": {
@@ -759,11 +820,13 @@
         "it": "SIMONE DICE: ABBASSATI!",
         "pt_p": "O MESTRE MANDAU: ABAIXE!",
         "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
-        "es": "SIMON DICE: AGACHATE!"
+        "es": "SIMON DICE: AGACHATE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysTaunt",
+      "description": null,
       "text": "SOMEONE SAYS: TAUNT!",
       "formatArguments": [],
       "translations": {
@@ -772,11 +835,13 @@
         "it": "SALMONE DICE: PROVOCA!",
         "pt_p": "ALGUÉM MANDOU: DÊ TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
-        "es": "ALGUIEN DICE: BURLATE!"
+        "es": "ALGUIEN DICE: BURLATE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysJump",
+      "description": null,
       "text": "SOMEONE SAYS: JUMP!",
       "formatArguments": [],
       "translations": {
@@ -785,11 +850,13 @@
         "it": "SALMONE DICE: SALTA!",
         "pt_p": "ALGUÉM MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
-        "es": "ALGUIEN DICE: SALTA!"
+        "es": "ALGUIEN DICE: SALTA!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysCrouch",
+      "description": null,
       "text": "SOMEONE SAYS: CROUCH!",
       "formatArguments": [],
       "translations": {
@@ -798,11 +865,13 @@
         "it": "SALMONE DICE: ABBASSATI!",
         "pt_p": "ALGUÉM MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
-        "es": "ALGUIEN DICE: AGACHATE!"
+        "es": "ALGUIEN DICE: AGACHATE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame9_Caption_SimonDidntSayIt",
+      "description": null,
       "text": "(Simon didn't say it..)",
       "formatArguments": [],
       "translations": {
@@ -811,11 +880,13 @@
         "it": "(Non lo ha detto Simone..)",
         "pt_p": "(O mestre não mandou você fazer isso..)",
         "ru": "(Саймон этого не говорил..)",
-        "es": "(Simon no a dicho eso..)"
+        "es": "(Simon no a dicho eso..)",
+        "jp": null
       }
     },
     {
       "key": "Minigame10_KamikazeIsHere",
+      "description": null,
       "text": "Kamikaze is over here!",
       "formatArguments": [],
       "translations": {
@@ -824,11 +895,13 @@
         "it": "Il kamikaze è qui!",
         "pt_p": "o homem bomba está aqui!",
         "ru": "Камикадзе здесь!",
-        "es": "El Kamikaze esta por aqui!"
+        "es": "El Kamikaze esta por aqui!",
+        "jp": null
       }
     },
     {
       "key": "Minigame10_Caption_ExplodeAsMany",
+      "description": null,
       "text": "EXPLODE AS MANY PEOPLE AS YOU CAN!",
       "formatArguments": [],
       "translations": {
@@ -837,11 +910,13 @@
         "it": "FAI ESPLODERE PIU' GIOCATORI CHE PUOI!",
         "pt_p": "EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!",
         "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
-        "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!"
+        "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
+        "jp": null
       }
     },
     {
       "key": "Minigame10_Caption_RunFromKamikaze",
+      "description": null,
       "text": "RUN FROM THE KAMIKAZE!",
       "formatArguments": [],
       "translations": {
@@ -850,11 +925,13 @@
         "it": "SCAPPA DAL KAMIKAZE!",
         "pt_p": "CORRA DO HOMEM BOMBA!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
-        "es": "HUYE DEL KAMIKAZE!"
+        "es": "HUYE DEL KAMIKAZE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame11_Caption_DontStopMoving",
+      "description": null,
       "text": "DON'T STOP MOVING!",
       "formatArguments": [],
       "translations": {
@@ -863,11 +940,13 @@
         "it": "CONTINUA A MUOVERTI!",
         "pt_p": "NÃO PARE DE SE MOVER!",
         "ru": "ДВИГАТЬСЯ!",
-        "es": "NO PARES DE MOVERTE!"
+        "es": "NO PARES DE MOVERTE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame11_Caption_DontMove",
+      "description": null,
       "text": "DON'T MOVE!",
       "formatArguments": [],
       "translations": {
@@ -876,11 +955,13 @@
         "it": "NON MUOVERTI!",
         "pt_p": "NÃO SE MOVA!",
         "ru": "НЕ ДВИГАТЬСЯ!",
-        "es": "NO TE MUEVAS!"
+        "es": "NO TE MUEVAS!",
+        "jp": null
       }
     },
     {
       "key": "Minigame12_Caption",
+      "description": null,
       "text": "GET ON A PLATFORM!",
       "formatArguments": [],
       "translations": {
@@ -889,11 +970,13 @@
         "it": "SALI SU UNA PIATTAFORMA!",
         "pt_p": "SUBA NA PLATAFORMA!",
         "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
-        "es": "SUBE A UNA PLATAFORMA!"
+        "es": "SUBE A UNA PLATAFORMA!",
+        "jp": null
       }
     },
     {
       "key": "Minigame13_Caption",
+      "description": null,
       "text": "SPYCRAB!",
       "formatArguments": [],
       "translations": {
@@ -902,11 +985,13 @@
         "it": "FAI LO SPYCRAB!",
         "pt_p": "SPYCRAB!",
         "ru": "СПАЙКРАБ!",
-        "es": "SPYCRAB!"
+        "es": "SPYCRAB!",
+        "jp": null
       }
     },
     {
       "key": "Minigame13_SpycrabsMustCrouchAndLookup",
+      "description": null,
       "text": "Spycrabs must crouch and look up!",
       "formatArguments": [],
       "translations": {
@@ -915,11 +1000,13 @@
         "it": "Gli Spycrab devono abbassarsi e guardare in alto!",
         "pt_p": "Spycrabs precisam abaixar e olhar para cima!",
         "ru": "Спайкрабы должны присесть и посмотреть вверх!",
-        "es": "Los Spycrabs deben agacharse y mirar hacia arriba!"
+        "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
+        "jp": null
       }
     },
     {
       "key": "Minigame14_Caption_Spies",
+      "description": null,
       "text": "SAP A BUILDING!",
       "formatArguments": [],
       "translations": {
@@ -928,11 +1015,13 @@
         "it": "SABOTA UNA COSTRUZIONE!",
         "pt_p": "SOBOTE UMA CONSTRUÇÃO!",
         "ru": "ПОСТАВЬТЕ ЖУЧОК!",
-        "es": "DESTRUYE UNA CONSTRUCCION!"
+        "es": "DESTRUYE UNA CONSTRUCCION!",
+        "jp": null
       }
     },
     {
       "key": "Minigame14_Caption_Engineers",
+      "description": null,
       "text": "GET A BUILDING SAPPED!",
       "formatArguments": [],
       "translations": {
@@ -941,11 +1030,13 @@
         "it": "FATTI SABOTARE UNA COSTRUZIONE!",
         "pt_p": "VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!",
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
-        "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!"
+        "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
+        "jp": null
       }
     },
     {
       "key": "Minigame15_Caption_Any",
+      "description": null,
       "text": "BUILD SOMETHING!",
       "formatArguments": [],
       "translations": {
@@ -954,11 +1045,13 @@
         "it": "COSTRUISCI QUALCOSA!",
         "pt_p": "CONSTRUA QUALQUER COISA!",
         "ru": "ПОСТРОЙТЕ ЧТО-НИБУДЬ!",
-        "es": "CONSTRUYE ALGO!"
+        "es": "CONSTRUYE ALGO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame15_Caption_Dispenser",
+      "description": null,
       "text": "BUILD A DISPENSER!",
       "formatArguments": [],
       "translations": {
@@ -967,11 +1060,13 @@
         "it": "COSTRUISCI UN DISPENSER!",
         "pt_p": "CONSTRUA UMA DISPENSER!",
         "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
-        "es": "CONSTRUYE UN DISPENSADOR!"
+        "es": "CONSTRUYE UN DISPENSADOR!",
+        "jp": null
       }
     },
     {
       "key": "Minigame15_Caption_Teleporter",
+      "description": null,
       "text": "BUILD A TELEPORTER!",
       "formatArguments": [],
       "translations": {
@@ -980,11 +1075,13 @@
         "it": "COSTRUISCI UN TELETRASPORTO!",
         "pt_p": "CONSTRUA UM TELEPORTE!",
         "ru": "ПОСТРОЙТЕ ТЕЛЕПОРТ!",
-        "es": "CONSTRUYE UN TELETRANSPORTADOR!"
+        "es": "CONSTRUYE UN TELETRANSPORTADOR!",
+        "jp": null
       }
     },
     {
       "key": "Minigame15_Caption_Sentry",
+      "description": null,
       "text": "BUILD A SENTRY!",
       "formatArguments": [],
       "translations": {
@@ -993,11 +1090,13 @@
         "it": "COSTRUSICI UNA TORRETTA!",
         "pt_p": "CONSTRUA UMA SENTINELA!",
         "ru": "ПОСТРОЙТЕ ТУРЕЛЬ!",
-        "es": "CONSTRUYE UN CENTINELA!"
+        "es": "CONSTRUYE UN CENTINELA!",
+        "jp": null
       }
     },
     {
       "key": "Minigame16_Caption",
+      "description": null,
       "text": "JARATE AN ENEMY!",
       "formatArguments": [],
       "translations": {
@@ -1006,11 +1105,13 @@
         "it": "COPRI UN NEMICO DI GIARATE!",
         "pt_p": "JOGUE O JARATE NO INIMIGO!",
         "ru": "ОБМОЧИТЕ ВРАГА!",
-        "es": "LANZA JARATE A UN ENEMIGO!"
+        "es": "LANZA JARATE A UN ENEMIGO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame17_Caption_HitAHeavy",
+      "description": null,
       "text": "HIT A HEAVY!",
       "formatArguments": [],
       "translations": {
@@ -1019,11 +1120,13 @@
         "it": "COLPISCI UN GROSSO!",
         "pt_p": "BATA NO HEAVY!",
         "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
-        "es": "GOLPEA A UN HEAVY!"
+        "es": "GOLPEA A UN HEAVY!",
+        "jp": null
       }
     },
     {
       "key": "Minigame17_Caption_GetHitByMedic",
+      "description": null,
       "text": "GET HIT BY A MEDIC!",
       "formatArguments": [],
       "translations": {
@@ -1032,11 +1135,13 @@
         "it": "FATTI COLPIRE DA UN MEDICO!",
         "pt_p": "SEJA ATINGIDO POR UM MÉDICO",
         "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
-        "es": "HAZ QUE TE GOLPEE UN MEDICO!"
+        "es": "HAZ QUE TE GOLPEE UN MEDICO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame18_Caption",
+      "description": null,
       "text": "HIT THE TARGET!",
       "formatArguments": [],
       "translations": {
@@ -1045,11 +1150,13 @@
         "it": "COLPISCI IL BERSAGLIO!",
         "pt_p": "ACERTE O ALVO!",
         "ru": "ПОПОДИТЕ ПО МИШЕНИ!",
-        "es": "DALE AL OBJETIVO!"
+        "es": "DALE AL OBJETIVO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassAny",
+      "description": null,
       "text": "CHANGE CLASS!",
       "formatArguments": [],
       "translations": {
@@ -1058,11 +1165,13 @@
         "it": "CAMBIA CLASSE!",
         "pt_p": "MUDE DE CLASSE!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС!",
-        "es": "CAMBIA DE CLASE!"
+        "es": "CAMBIA DE CLASE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassScout",
+      "description": null,
       "text": "CHANGE CLASS TO SCOUT!",
       "formatArguments": [],
       "translations": {
@@ -1071,11 +1180,13 @@
         "it": "CAMBIA CLASSE IN ESPLORATORE!",
         "pt_p": "MUDE PARA A CLASSE: SCOUT!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
-        "es": "CAMBIA DE CLASE A SCOUT!"
+        "es": "CAMBIA DE CLASE A SCOUT!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassSoldier",
+      "description": null,
       "text": "CHANGE CLASS TO SOLDIER!",
       "formatArguments": [],
       "translations": {
@@ -1084,11 +1195,13 @@
         "it": "CAMBIA CLASSE IN SOLDATO!",
         "pt_p": "MUDE PARA A CLASSE: SOLDIER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
-        "es": "CAMBIA DE CLASE A SOLDADO!"
+        "es": "CAMBIA DE CLASE A SOLDADO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassPyro",
+      "description": null,
       "text": "CHANGE CLASS TO PYRO!",
       "formatArguments": [],
       "translations": {
@@ -1097,11 +1210,13 @@
         "it": "CAMBIA CLASSE IN PIRO!",
         "pt_p": "MUDE PARA A CLASSE: PYRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
-        "es": "CAMBIA DE CLASE A PYRO!"
+        "es": "CAMBIA DE CLASE A PYRO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassDemoman",
+      "description": null,
       "text": "CHANGE CLASS TO DEMOMAN!",
       "formatArguments": [],
       "translations": {
@@ -1110,11 +1225,13 @@
         "it": "CAMBIA CLASSE IN DEMOLITORE!",
         "pt_p": "MUDE PARA A CLASSE: DEMOMAN!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
-        "es": "CAMBIA DE CLASE A DEMOMAN!"
+        "es": "CAMBIA DE CLASE A DEMOMAN!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassHeavy",
+      "description": null,
       "text": "CHANGE CLASS TO HEAVY!",
       "formatArguments": [],
       "translations": {
@@ -1123,11 +1240,13 @@
         "it": "CAMBIA CLASSE IN GROSSO!",
         "pt_p": "MUDE PARA A CLASSE: HEAVY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
-        "es": "CAMBIA DE CLASE A HEAVY!"
+        "es": "CAMBIA DE CLASE A HEAVY!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassEngineer",
+      "description": null,
       "text": "CHANGE CLASS TO ENGINEER!",
       "formatArguments": [],
       "translations": {
@@ -1136,11 +1255,13 @@
         "it": "CAMBIA CLASSE IN INGEGNERE!",
         "pt_p": "MUDE PARA A CLASSE: ENGENHEIRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
-        "es": "CAMBIA DE CLASE A INGENIERO!"
+        "es": "CAMBIA DE CLASE A INGENIERO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassMedic",
+      "description": null,
       "text": "CHANGE CLASS TO MEDIC!",
       "formatArguments": [],
       "translations": {
@@ -1149,11 +1270,13 @@
         "it": "CAMBIA CLASSE IN MEDICO!",
         "pt_p": "MUDE PARA A CLASSE: MÉDICO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
-        "es": "CAMBIA DE CLASE A MEDICO!"
+        "es": "CAMBIA DE CLASE A MEDICO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassSniper",
+      "description": null,
       "text": "CHANGE CLASS TO SNIPER!",
       "formatArguments": [],
       "translations": {
@@ -1162,11 +1285,13 @@
         "it": "CAMBIA CLASSE IN CECCHINO!",
         "pt_p": "MUDE PARA A CLASSE: SNIPER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
-        "es": "CAMBIA DE CLASE A FRANCOTIRADOR!"
+        "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
+        "jp": null
       }
     },
     {
       "key": "Minigame19_Caption_ChangeClassSpy",
+      "description": null,
       "text": "CHANGE CLASS TO SPY!",
       "formatArguments": [],
       "translations": {
@@ -1175,11 +1300,13 @@
         "it": "CAMBIA CLASSE IN SPIA!",
         "pt_p": "MUDE PARA A CLASSE: SPY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
-        "es": "CAMBIA DE CLASE A ESPIA!"
+        "es": "CAMBIA DE CLASE A ESPIA!",
+        "jp": null
       }
     },
     {
       "key": "Minigame20_Caption_Drink",
+      "description": null,
       "text": "DRINK!",
       "formatArguments": [],
       "translations": {
@@ -1188,11 +1315,13 @@
         "it": "BEVI!",
         "pt_p": "BEBA!",
         "ru": "ВЫПЕЙТЕ!",
-        "es": "BEBE!"
+        "es": "BEBE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame20_Caption_Eat",
+      "description": null,
       "text": "EAT!",
       "formatArguments": [],
       "translations": {
@@ -1201,11 +1330,13 @@
         "it": "MANGIA!",
         "pt_p": "COMA!",
         "ru": "ПОЕШЬТЕ!",
-        "es": "COME!"
+        "es": "COME!",
+        "jp": null
       }
     },
     {
       "key": "Minigame21_Caption",
+      "description": null,
       "text": "STUN AN ENEMY!",
       "formatArguments": [],
       "translations": {
@@ -1214,11 +1345,13 @@
         "it": "STORDISCI UN NEMICO!",
         "pt_p": "ATORDOE UM INIMIGO!",
         "ru": "ОГЛУШИТЕ ПРОТИВНИКА!",
-        "es": "ATURDE A UN ENEMIGO!"
+        "es": "ATURDE A UN ENEMIGO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame22_Caption",
+      "description": null,
       "text": "STAY ON THE GROUND!",
       "formatArguments": [],
       "translations": {
@@ -1227,11 +1360,13 @@
         "it": "RIMANI A TERRA!",
         "pt_p": "FIQUE NO CHÃO!",
         "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
-        "es": "QUEDATE EN EL SUELO!"
+        "es": "QUEDATE EN EL SUELO!",
+        "jp": null
       }
     },
     {
       "key": "Minigame23_Caption",
+      "description": null,
       "text": "DOUBLE JUMP!",
       "formatArguments": [],
       "translations": {
@@ -1240,11 +1375,13 @@
         "it": "DOPPIO SALTO!",
         "pt_p": "PULO DUPLO!",
         "ru": "ДВОЙНОЙ ПРЫЖОК!",
-        "es": "SALTO DOBLE!"
+        "es": "SALTO DOBLE!",
+        "jp": null
       }
     },
     {
       "key": "Minigame24_Caption",
+      "description": null,
       "text": "NEEDLEJUMP!",
       "formatArguments": [],
       "translations": {
@@ -1253,11 +1390,13 @@
         "it": "SALTO AGO!",
         "pt_p": "PULE ATIRANDO NO CHÃO!",
         "ru": "ПРЫЖОК ШПРИЦЕМЕТОМ!",
-        "es": "SALTO CON AGUJAS!"
+        "es": "SALTO CON AGUJAS!",
+        "jp": null
       }
     },
     {
       "key": "Minigame25_Caption",
+      "description": null,
       "text": "JETPACK!",
       "formatArguments": [],
       "translations": {
@@ -1266,11 +1405,13 @@
         "it": "PROPULSORE!",
         "pt_p": "JETPACK!",
         "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
-        "es": "JETPACK!"
+        "es": "JETPACK!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_Explain",
+      "description": null,
       "text": "Say each word in chat as quick as you can to survive!",
       "formatArguments": [],
       "translations": {
@@ -1279,11 +1420,13 @@
         "it": "Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!",
         "pt_p": "Digite mais rápido que puder cada palavra no cha para permanecer vivo!",
         "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
-        "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!"
+        "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_Start",
+      "description": null,
       "text": "START!",
       "formatArguments": [],
       "translations": {
@@ -1292,11 +1435,13 @@
         "it": "VIA!",
         "pt_p": "COMEÇOU!",
         "ru": "СТАРТ!",
-        "es": "EMPIEZA!"
+        "es": "EMPIEZA!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_TimeRemaining",
+      "description": null,
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
       "formatArguments": [
         {
@@ -1310,11 +1455,13 @@
         "it": "== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)",
         "pt_p": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
         "ru": "== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд",
-        "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos"
+        "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_SayTheWord",
+      "description": null,
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
         {
@@ -1336,11 +1483,13 @@
         "it": "== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds",
         "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
-        "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos"
+        "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_WinnerAnnouncement",
+      "description": null,
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
       "formatArguments": [
         {
@@ -1354,11 +1503,13 @@
         "it": "== ANNUNCIO ==\n\nIl vincitore è...\n{1}!",
         "pt_p": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
         "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!",
-        "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!"
+        "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_LevelUpAnnouncement",
+      "description": null,
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
       "formatArguments": [],
       "translations": {
@@ -1367,11 +1518,13 @@
         "it": "== ANNUNCIO == \n\nLIVELLO SUCCESSIVO! LE PAROLE SARANNO PIU' DIFFICILI!",
         "pt_p": "== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
         "ru": "== ОБЪЯВЛЕНИЕ == \n\nНОВЫЙ УРОВЕНЬ! СЛОВА СТАЛИ БОЛЕЕ СЛОЖНЫМИ!",
-        "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!"
+        "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_RoundReview",
+      "description": null,
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
         {
@@ -1385,11 +1538,13 @@
         "it": "== INTERVALLO == \n\nI giocatori che hanno scritto il minor numero di parole sono...\n{1}",
         "pt_p": "== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}",
         "ru": "== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}",
-        "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}"
+        "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_RoundReview_AndMore",
+      "description": null,
       "text": "{1}\nand {2} more...",
       "formatArguments": [
         {
@@ -1407,11 +1562,13 @@
         "it": "{1}\ne altri {2}...",
         "pt_p": "{1}\ne {2} mais...",
         "ru": "{1}\nи {2} и другие...",
-        "es": "{1}\ny {2} mas..."
+        "es": "{1}\ny {2} mas...",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
+      "description": null,
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
         {
@@ -1425,11 +1582,13 @@
         "it": "{1}Nessuno!\n\nTutti sopravvivono per un altro round!",
         "pt_p": "{1}ninguém!\n\nTodos sobreviveram!",
         "ru": "{1}Никто!\n\nВсе выжили в этом раунде!",
-        "es": "{1}nadie!\n\nTodo el mundo sobrevive otra ronda!"
+        "es": "{1}nadie!\n\nTodo el mundo sobrevive otra ronda!",
+        "jp": null
       }
     },
     {
       "key": "Bossgame7_ClassChangeWarning",
+      "description": null,
       "text": "Changing class is not allowed during bosses!",
       "formatArguments": [],
       "translations": {
@@ -1438,11 +1597,13 @@
         "it": "Non è permesso cambiare classe durante i giochi boss!",
         "pt_p": "Não é permitido a troca de classes durante os boss!",
         "ru": "Смена класса запрещена во время босс раунда!",
-        "es": "Cambiar de clase no esta permitido durante los jefes!"
+        "es": "Cambiar de clase no esta permitido durante los jefes!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound0_Name",
+      "description": null,
       "text": "Thirdperson",
       "formatArguments": [],
       "translations": {
@@ -1451,11 +1612,13 @@
         "it": "Terza Persona",
         "pt_p": "Terceira Pessoa",
         "ru": "От третьего лица",
-        "es": "Tercera Persona"
+        "es": "Tercera Persona",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound0_Description",
+      "description": null,
       "text": "All players play the round in a whole new perspective!",
       "formatArguments": [],
       "translations": {
@@ -1464,11 +1627,13 @@
         "it": "Guarda il mondo da un'altra prospettiva!",
         "pt_p": "Todos os jogadores jogam esta rodada em modo terceira pessoa!",
         "ru": "Все игроки играют с новой точкой зрения!",
-        "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!"
+        "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound1_Name",
+      "description": null,
       "text": "Adrenaline Shot",
       "formatArguments": [],
       "translations": {
@@ -1477,11 +1642,13 @@
         "it": "Sprint",
         "pt_p": "Injeção de Adrenalina!",
         "ru": "Адреналин",
-        "es": "Inyección de Adrenalina"
+        "es": "Inyección de Adrenalina",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound1_Description",
+      "description": null,
       "text": "The round starts fast! Then slows down!",
       "formatArguments": [],
       "translations": {
@@ -1490,11 +1657,13 @@
         "it": "Il round comincia veloce e poi va a rallentare!",
         "pt_p": "O round inicia rápido e termina lento.",
         "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
-        "es": "La ronda comienza rapido! Y despues se ralentiza!"
+        "es": "La ronda comienza rapido! Y despues se ralentiza!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound2_Name",
+      "description": null,
       "text": "Extended Round",
       "formatArguments": [],
       "translations": {
@@ -1503,11 +1672,13 @@
         "it": "Round Esteso",
         "pt_p": "Rodada Extendida!",
         "ru": "Бонусные Раунды",
-        "es": "Ronda Extendida"
+        "es": "Ronda Extendida",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound2_Description",
+      "description": null,
       "text": "30 microgames will be played before the bossgame!",
       "formatArguments": [],
       "translations": {
@@ -1516,11 +1687,13 @@
         "it": "Ben 30 minigiochi saranno giocati prima del gioco boss!",
         "pt_p": "30 microgames serão jogados antes do evento do boss!",
         "ru": "30 игр будет сыгранно перед босс раундом!",
-        "es": "Se jugaran 30 microjuegos antes del jefe!"
+        "es": "Se jugaran 30 microjuegos antes del jefe!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound3_Name",
+      "description": null,
       "text": "Low Gravity",
       "formatArguments": [],
       "translations": {
@@ -1529,11 +1702,13 @@
         "it": "Bassa Gravità",
         "pt_p": "Baixa Gravidade",
         "ru": "Низкая Гравитация",
-        "es": "Gravedad Baja"
+        "es": "Gravedad Baja",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound3_Description",
+      "description": null,
       "text": "Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!",
       "formatArguments": [],
       "translations": {
@@ -1542,11 +1717,13 @@
         "it": "Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!",
         "pt_p": "Onde foi parar a gravidade?!",
         "ru": "Космос? КОСМОС! КОООСМООООООООС!",
-        "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!"
+        "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound4_Name",
+      "description": null,
       "text": "Chill Pill",
       "formatArguments": [],
       "translations": {
@@ -1555,11 +1732,13 @@
         "it": "Camomilla",
         "pt_p": "Não se preocupe! Tudo calmo...",
         "ru": "Успокоительное",
-        "es": "Calmante"
+        "es": "Calmante",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound4_Description",
+      "description": null,
       "text": "No speed changes will happen in this round!",
       "formatArguments": [],
       "translations": {
@@ -1568,11 +1747,13 @@
         "it": "La velocità dei minigiochi non aumenterà in questo round!",
         "pt_p": "Nenhuma mudança de velocidade será feita nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
-        "es": "No habra cambios de velocidad en esta ronda!"
+        "es": "No habra cambios de velocidad en esta ronda!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound5_Name",
+      "description": null,
       "text": "Game Time Attack",
       "formatArguments": [],
       "translations": {
@@ -1581,11 +1762,13 @@
         "it": "Adrenalina Pura!",
         "pt_p": "Cada vez mais rápido!",
         "ru": "Скоростные игры",
-        "es": "Super-Velocidad"
+        "es": "Super-Velocidad",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound5_Description",
+      "description": null,
       "text": "The round will speed up after every microgame!",
       "formatArguments": [],
       "translations": {
@@ -1594,11 +1777,13 @@
         "it": "Il round si farà più veloce dopo ogni minigioco!",
         "pt_p": "Nesta rodada, a cada microgame a velocidade aumenta!",
         "ru": "Скорость игр будет увеличиваться с каждым раундом!",
-        "es": "La ronda acelerara despues de cada microjuego!"
+        "es": "La ronda acelerara despues de cada microjuego!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound6_Name",
+      "description": null,
       "text": "Up and Down",
       "formatArguments": [],
       "translations": {
@@ -1607,11 +1792,13 @@
         "it": "Alti e Bassi",
         "pt_p": "Sobe e Desce !",
         "ru": "Вверх и вниз",
-        "es": "Arriba y Abajo"
+        "es": "Arriba y Abajo",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound6_Description",
+      "description": null,
       "text": "After every microgame, a random speed will be chosen!",
       "formatArguments": [],
       "translations": {
@@ -1620,11 +1807,13 @@
         "it": "La velocità cambierà casualmente dopo ogni minigioco!",
         "pt_p": "Nesta rodada, cada microgame terá velocidade aleatória.",
         "ru": "Скорость каждого раунда будет случайной!",
-        "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!"
+        "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound7_Name",
+      "description": null,
       "text": "Slow-mo",
       "formatArguments": [],
       "translations": {
@@ -1633,11 +1822,13 @@
         "it": "Moviola",
         "pt_p": "Câmera Lenta",
         "ru": "Слоу мо",
-        "es": "Camara Lenta"
+        "es": "Camara Lenta",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound7_Description",
+      "description": null,
       "text": "The round will slow down after every microgame!",
       "formatArguments": [],
       "translations": {
@@ -1646,11 +1837,13 @@
         "it": "Il round si farà più lento dopo ogni minigioco!",
         "pt_p": "Nesta rodada, cada microgame ficará mais lento!",
         "ru": "Игры становяться медленее с каждым раундом!",
-        "es": "La ronda se ralentizara despues de cada microjuego!"
+        "es": "La ronda se ralentizara despues de cada microjuego!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound8_Name",
+      "description": null,
       "text": "Maths Only",
       "formatArguments": [],
       "translations": {
@@ -1659,11 +1852,13 @@
         "it": "Incubo Matematico",
         "pt_p": "Matemática",
         "ru": "Математика",
-        "es": "Solo Matematicas"
+        "es": "Solo Matematicas",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound8_Description",
+      "description": null,
       "text": "Time to test your maths skills!",
       "formatArguments": [],
       "translations": {
@@ -1672,11 +1867,13 @@
         "it": "Ci sai fare con i numeri?",
         "pt_p": "Testaremos suas habilidades com as operações matemáticas!",
         "ru": "Пришло время потренироваться в математику!",
-        "es": "Hora de poner a prueba tus habilidades matematicas!"
+        "es": "Hora de poner a prueba tus habilidades matematicas!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound9_Name",
+      "description": null,
       "text": "Opposite Day",
       "formatArguments": [],
       "translations": {
@@ -1685,11 +1882,13 @@
         "it": "Potere ai Poveri",
         "pt_p": "O último será o primeiro",
         "ru": "День Наоборот",
-        "es": "Dia Opuesto"
+        "es": "Dia Opuesto",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound9_Description",
+      "description": null,
       "text": "The player with the lowest score wins the round!",
       "formatArguments": [],
       "translations": {
@@ -1698,11 +1897,13 @@
         "it": "Vince il giocatore con il punteggio più basso!",
         "pt_p": "O jogador com menor placar será o vencedor!",
         "ru": "Игрок с наименшим кол-ом очков выигрывает!",
-        "es": "El jugador con la puntuacion mas baja gana la ronda!"
+        "es": "El jugador con la puntuacion mas baja gana la ronda!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound10_Name",
+      "description": null,
       "text": "Two Boss Battles",
       "formatArguments": [],
       "translations": {
@@ -1711,11 +1912,13 @@
         "it": "Bis di Boss",
         "pt_p": "Batalha dos Boss",
         "ru": "Два Босс Раунда",
-        "es": "Jefe Doble"
+        "es": "Jefe Doble",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound10_Description",
+      "description": null,
       "text": "Two bossgames will be played before game over!",
       "formatArguments": [],
       "translations": {
@@ -1724,11 +1927,13 @@
         "it": "Il round avrà due giochi boss!",
         "pt_p": "Dois bossgames serão jogados antes desta rodada acabar!",
         "ru": "Два босс раунда играется перед концом игры!",
-        "es": "Se jugaran dos jefes antes de que termine el juego!"
+        "es": "Se jugaran dos jefes antes de que termine el juego!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound11_Name",
+      "description": null,
       "text": "Team Battle",
       "formatArguments": [],
       "translations": {
@@ -1737,11 +1942,13 @@
         "it": "Gioco di Squadra",
         "pt_p": "Batalha de Times",
         "ru": "Битва комманд",
-        "es": "Batalla de Equipos"
+        "es": "Batalla de Equipos",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound11_Description",
+      "description": null,
       "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
       "formatArguments": [],
       "translations": {
@@ -1750,11 +1957,13 @@
         "it": "Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!",
         "pt_p": "Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!",
         "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
-        "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!"
+        "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound12_Name",
+      "description": null,
       "text": "Single Player",
       "formatArguments": [],
       "translations": {
@@ -1763,11 +1972,13 @@
         "it": "Giocatore Singolo",
         "pt_p": "Sozinho",
         "ru": "Одиночная Игра",
-        "es": "Modo Un Jugador"
+        "es": "Modo Un Jugador",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound12_Description",
+      "description": null,
       "text": "Hey... where did everyone go?",
       "formatArguments": [],
       "translations": {
@@ -1776,11 +1987,13 @@
         "it": "Ehi... Dove sono finiti tutti?",
         "pt_p": "Ué? Para onde foi todo mundo?",
         "ru": "Ой... а куда все делись?",
-        "es": "Hey... donde estan todos?"
+        "es": "Hey... donde estan todos?",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound13_Name",
+      "description": null,
       "text": "Skeletons only",
       "formatArguments": [],
       "translations": {
@@ -1789,11 +2002,13 @@
         "it": "SCHELETRI!",
         "pt_p": "Somente Pássaros",
         "ru": "Вечеринка Скелетов",
-        "es": "Solo Esqueletos"
+        "es": "Solo Esqueletos",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound13_Description",
+      "description": null,
       "text": "No skin allowed in this round!",
       "formatArguments": [],
       "translations": {
@@ -1802,11 +2017,13 @@
         "it": "Muscoli? Pelle? A che servono?",
         "pt_p": "Archimedes! Nãããõ!",
         "ru": "Кожа и мясо на выброс!",
-        "es": "No se permite piel en esta ronda!"
+        "es": "No se permite piel en esta ronda!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound14_Name",
+      "description": null,
       "text": "Tiny",
       "formatArguments": [],
       "translations": {
@@ -1815,11 +2032,13 @@
         "it": "Noi Puffi siam così",
         "pt_p": "Minúsculos",
         "ru": "Малютка",
-        "es": "Pequeñito"
+        "es": "Pequeñito",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound14_Description",
+      "description": null,
       "text": "Everyone becomes teeny tiny men!",
       "formatArguments": [],
       "translations": {
@@ -1828,11 +2047,13 @@
         "it": "Tutti i giocatori diventano alti due mele o poco più!",
         "pt_p": "Todos viraram formiguinhas!",
         "ru": "Все становяться маленькими-прималенькими мужичками!",
-        "es": "Todos se convierten en hombres pequeñitos!"
+        "es": "Todos se convierten en hombres pequeñitos!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound15_Name",
+      "description": null,
       "text": "Bobbleheads",
       "formatArguments": [],
       "translations": {
@@ -1841,11 +2062,13 @@
         "it": "Testone",
         "pt_p": "Herp Derp",
         "ru": "Голова-пузырь",
-        "es": "Cabezones"
+        "es": "Cabezones",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound15_Description",
+      "description": null,
       "text": "Everyone becomes a bunch of airheads!",
       "formatArguments": [],
       "translations": {
@@ -1854,11 +2077,13 @@
         "it": "Tutti i giocatori sviluppano un intelletto superiore!",
         "pt_p": "Todos foram tranformados em bobalhões!",
         "ru": "Все головы становяться огромными!",
-        "es": "Todos se convierten en un montón de cabezas huecas!"
+        "es": "Todos se convierten en un montón de cabezas huecas!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound16_Name",
+      "description": null,
       "text": "Score Randomizer",
       "formatArguments": [],
       "translations": {
@@ -1867,11 +2092,13 @@
         "it": "Punteggi casuali",
         "pt_p": "Placar Maluco",
         "ru": "Рандомные очки",
-        "es": "Puntuacion Aleatoria"
+        "es": "Puntuacion Aleatoria",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound16_Description",
+      "description": null,
       "text": "If you win a microgame, you will be given a random amount of points!",
       "formatArguments": [],
       "translations": {
@@ -1880,11 +2107,13 @@
         "it": "I minigiochi vinti danno un numero di punti casuale!!",
         "pt_p": "Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!",
         "ru": "При победе, вы получаете случайное кол-во очков!",
-        "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!"
+        "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound16_Caption_Points",
+      "description": null,
       "text": "If you win this microgame, you will be awarded {1} points!",
       "formatArguments": [
         {
@@ -1898,11 +2127,13 @@
         "it": "Vinci questo minigioco per ottenere {1} punti!",
         "pt_p": "Se você ganhar este microgame, sua recompensa será de {1} pontos!",
         "ru": "Если вы победите, вы получите {1} очков!",
-        "es": "Si ganas este microjuego, recibiras {1} puntos!"
+        "es": "Si ganas este microjuego, recibiras {1} puntos!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound17_Name",
+      "description": null,
       "text": "Sudden Death",
       "formatArguments": [],
       "translations": {
@@ -1911,11 +2142,13 @@
         "it": "Scontro Finale!",
         "pt_p": "Morte Súbita",
         "ru": "Внезапная Смерть",
-        "es": "Muerte Subita"
+        "es": "Muerte Subita",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound17_Description",
+      "description": null,
       "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
       "formatArguments": [],
       "translations": {
@@ -1924,11 +2157,13 @@
         "it": "Un errore e sei fuori! Vince l'ultimo giocatore rimasto!",
         "pt_p": "Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!",
         "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
-        "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!"
+        "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound17_Caption_Full",
+      "description": null,
       "text": "Current players ({1} of {2})\n{3}",
       "formatArguments": [
         {
@@ -1950,11 +2185,13 @@
         "it": "Ancora in gioco: ({1} di {2})\n{3}",
         "pt_p": "Atualmente ({1} de {2} jogadores)\n{3}",
         "ru": "Данное кол-во игроков ({1} of {2})\n{3}",
-        "es": "Jugadores actuales ({1} de {2})\n{3}"
+        "es": "Jugadores actuales ({1} de {2})\n{3}",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound17_Caption_AndMore",
+      "description": null,
       "text": "{1} (and {2} more)",
       "formatArguments": [
         {
@@ -1972,11 +2209,13 @@
         "it": "{1} (E altri {2})",
         "pt_p": "{1} (e {2} mais)",
         "ru": "{1} (и еще {2})",
-        "es": "{1} (y {2} mas)"
+        "es": "{1} (y {2} mas)",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound18_Name",
+      "description": null,
       "text": "All In",
       "formatArguments": [],
       "translations": {
@@ -1985,11 +2224,13 @@
         "it": "All In",
         "pt_p": "Vale Tudo",
         "ru": "Игра на все",
-        "es": "Todo a Una"
+        "es": "Todo a Una",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound18_Description",
+      "description": null,
       "text": "If you lose a microgame, you will lose ALL your points!",
       "formatArguments": [],
       "translations": {
@@ -1998,11 +2239,13 @@
         "it": "Perdi un minigioco e dì addio a TUTTI i tuoi punti!",
         "pt_p": "Se você perder um microgame, você PERDE TODOS pontos!",
         "ru": "При проигрыше, вы теряете ВСЕ очки!",
-        "es": "Si pierdes un microjuego, perderas TODOS tus puntos!"
+        "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound19_Name",
+      "description": null,
       "text": "Reversed Text",
       "formatArguments": [],
       "translations": {
@@ -2011,11 +2254,13 @@
         "it": "Testo Rovesciato",
         "pt_p": "Texto Espelhado",
         "ru": "Текст наоборот",
-        "es": "Texto Invertido"
+        "es": "Texto Invertido",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound19_Description",
+      "description": null,
       "text": "!sdrawkcab era snoitcurtsni emagorciM",
       "formatArguments": [],
       "translations": {
@@ -2024,11 +2269,13 @@
         "it": "!oirartnoc la onos ihcoiginim ied inoizircsed eL",
         "pt_p": "!oirártnoc oa oãtse seõçurtsni sA",
         "ru": "!нелакрезто тедуб харги в тскеТ",
-        "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL"
+        "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound20_Name",
+      "description": null,
       "text": "Non-stop",
       "formatArguments": [],
       "translations": {
@@ -2037,11 +2284,13 @@
         "it": "Senza Tregua",
         "pt_p": "Sem Parar",
         "ru": "Без остановки",
-        "es": "Sin Paradas"
+        "es": "Sin Paradas",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound20_Description",
+      "description": null,
       "text": "There's no break in between microgames this round!",
       "formatArguments": [],
       "translations": {
@@ -2050,11 +2299,13 @@
         "it": "Nessuna pausa fra i minigiochi!",
         "pt_p": "Não haverá intervalos entre os microgames nesta rodada.",
         "ru": "Без пауз между раундами!",
-        "es": "No hay descanso entre microjuegos en esta ronda!"
+        "es": "No hay descanso entre microjuegos en esta ronda!",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound21_Name",
+      "description": null,
       "text": "Team Fortress 64",
       "formatArguments": [],
       "translations": {
@@ -2063,11 +2314,13 @@
         "it": "Team Fortress 64",
         "pt_p": "",
         "ru": "",
-        "es": ""
+        "es": "",
+        "jp": null
       }
     },
     {
       "key": "SpecialRound21_Description",
+      "description": null,
       "text": "Hey! Where did my polygons go?",
       "formatArguments": [],
       "translations": {
@@ -2076,7 +2329,8 @@
         "it": "Come ai vecchi tempi!",
         "pt_p": "",
         "ru": "",
-        "es": ""
+        "es": "",
+        "jp": null
       }
     }
   ]
