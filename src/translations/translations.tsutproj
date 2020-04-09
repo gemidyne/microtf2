@@ -124,7 +124,7 @@
         "it": "Barili: {1}",
         "pt_p": "",
         "ru": "",
-        "es": "",
+        "es": "Barriles: {1}",
         "jp": null
       }
     },
@@ -621,7 +621,7 @@
         "it": null,
         "pt_p": "",
         "ru": "",
-        "es": "",
+        "es": null,
         "jp": null
       }
     },
@@ -2314,7 +2314,7 @@
         "it": "Team Fortress 64",
         "pt_p": "",
         "ru": "",
-        "es": "",
+        "es": "Team Fortress 64",
         "jp": null
       }
     },
@@ -2329,7 +2329,7 @@
         "it": "Come ai vecchi tempi!",
         "pt_p": "",
         "ru": "",
-        "es": "",
+        "es": "Hey! Donde han ido mis poligonos?",
         "jp": null
       }
     }
