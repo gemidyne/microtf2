@@ -48,20 +48,35 @@ stock void RemovePluginForwardsFromMemory()
 	SafelyRemoveAllFromForward(PluginForward_IntermissionHasMapVoteEnded);
 }
 
+public bool PluginForward_HasMapIntegrationLoaded()
+{
+	return GetForwardFunctionCount(PluginForward_IntermissionStartMapVote) > 0 && GetForwardFunctionCount(PluginForward_IntermissionHasMapVoteEnded) > 0;
+}
+
 public void PluginForward_StartMapVote()
 {
+	if (GetForwardFunctionCount(PluginForward_IntermissionStartMapVote) == 0)
+	{
+		return;
+	}
+
 	Call_StartForward(PluginForward_IntermissionStartMapVote);
 	Call_Finish();
 }
 
 public bool PluginForward_HasMapVoteEnded()
 {
-	bool voteIsInProgress = false;
+	if (GetForwardFunctionCount(PluginForward_IntermissionHasMapVoteEnded) > 0)
+	{
+		bool voteIsInProgress = false;
 
-	Call_StartForward(PluginForward_IntermissionHasMapVoteEnded);
-	Call_Finish(voteIsInProgress);
+		Call_StartForward(PluginForward_IntermissionHasMapVoteEnded);
+		Call_Finish(voteIsInProgress);
 
-	return voteIsInProgress;
+		return voteIsInProgress;
+	}
+	
+	return true;
 }
 
 public void PluginForward_SendMinigameSelected(int minigameId)

@@ -32,7 +32,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "3.0.3"
+#define PLUGIN_VERSION "3.0.3b"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
@@ -1139,7 +1139,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	{
 		bool isWaitingForVoteToFinish = false;
 
-		if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
+		if (PluginForward_HasMapIntegrationLoaded() && GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
 			PluginForward_StartMapVote();
 			isWaitingForVoteToFinish = true;
@@ -1194,12 +1194,15 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	bool voteHasEnded = PluginForward_HasMapVoteEnded();
-
-	if (!voteHasEnded)
+	if (PluginForward_HasMapIntegrationLoaded())
 	{
-		CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
-		return Plugin_Handled;
+		bool voteHasEnded = PluginForward_HasMapVoteEnded();
+
+		if (!voteHasEnded)
+		{
+			CreateTimer(1.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
+			return Plugin_Handled;
+		}
 	}
 
 	for (int i = 1; i <= MaxClients; i++)
