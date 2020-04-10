@@ -23,7 +23,7 @@
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"fr"		"Tonneaux: {1}"
+		"fr"		"Tonneaux : {1}"
 	}
 	"Hud_RoundDisplay"
 	{
@@ -43,7 +43,7 @@
 	"Hud_SpecialRound_CenterDisplay"
 	{
 		"#format"		"{1:s}"
-		"fr"		"MANCHE SPÉCIALE : {1}!"
+		"fr"		"MANCHE SPÉCIALE : {1} !"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
@@ -199,19 +199,19 @@
 	}
 	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
-		"fr"		"JACADI A DIT : MOQUEZ-VOUS !"
+		"fr"		"JACQUADI A DIT : MOQUEZ-VOUS !"
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"fr"		"JACADI A DIT : SAUTEZ !"
+		"fr"		"JACQUADI A DIT : SAUTEZ !"
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
-		"fr"		"JACADI A DIT : ACCROUPISSEZ-VOUS !"
+		"fr"		"JACQUADI A DIT : ACCROUPISSEZ-VOUS !"
 	}
 	"Minigame9_Caption_SimonDidntSayIt"
 	{
-		"fr"		"(Jacques n'a rien dit..)"
+		"fr"		"(Jacques n'a rien dit...)"
 	}
 	"Minigame10_KamikazeIsHere"
 	{
@@ -364,12 +364,12 @@
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"		"{1:i}"
-		"fr"		"== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes."
+		"fr"		"== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"fr"		"== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes."
+		"fr"		"== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
@@ -437,7 +437,7 @@
 	}
 	"SpecialRound4_Description"
 	{
-		"fr"		"Aucun changement de vitesse n'aura lieu dans cette manche !"
+		"fr"		"Aucun changement de vitesse n'aura lieu durant cette manche !"
 	}
 	"SpecialRound5_Name"
 	{
