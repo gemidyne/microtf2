@@ -120,7 +120,7 @@
       ],
       "translations": {
         "pt": "",
-        "fr": "Tonneaux: {1}",
+        "fr": "Tonneaux : {1}",
         "it": "Barili: {1}",
         "pt_p": "",
         "ru": "Бочки: {1}",
@@ -204,7 +204,7 @@
       ],
       "translations": {
         "pt": "RODADA ESPECIAL: {1}!",
-        "fr": "MANCHE SPÉCIALE : {1}!",
+        "fr": "MANCHE SPÉCIALE : {1} !",
         "it": "ROUND SPECIALE: {1}!",
         "pt_p": "RODADA ESPECIAL: {1}!",
         "ru": "ОСОБЫЙ РАУНД: {1}!",
@@ -617,7 +617,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "",
-        "fr": "",
+        "fr": null,
         "it": null,
         "pt_p": "",
         "ru": null,
@@ -831,7 +831,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "ALGUÉM MANDOU: DÊ TAUNT!",
-        "fr": "JACADI A DIT : MOQUEZ-VOUS !",
+        "fr": "JACQUADI A DIT : MOQUEZ-VOUS !",
         "it": "SALMONE DICE: PROVOCA!",
         "pt_p": "ALGUÉM MANDOU: DÊ TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
@@ -846,7 +846,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "ALGUÉM MANDOU: PULE!",
-        "fr": "JACADI A DIT : SAUTEZ !",
+        "fr": "JACQUADI A DIT : SAUTEZ !",
         "it": "SALMONE DICE: SALTA!",
         "pt_p": "ALGUÉM MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
@@ -861,7 +861,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "ALGUÉM MANDOU: ABAIXE!",
-        "fr": "JACADI A DIT : ACCROUPISSEZ-VOUS !",
+        "fr": "JACQUADI A DIT : ACCROUPISSEZ-VOUS !",
         "it": "SALMONE DICE: ABBASSATI!",
         "pt_p": "ALGUÉM MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
@@ -876,7 +876,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "(O mestre não mandou você fazer isso..)",
-        "fr": "(Jacques n'a rien dit..)",
+        "fr": "(Jacques n'a rien dit...)",
         "it": "(Non lo ha detto Simone..)",
         "pt_p": "(O mestre não mandou você fazer isso..)",
         "ru": "(Саймон этого не говорил..)",
@@ -1451,7 +1451,7 @@
       ],
       "translations": {
         "pt": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
-        "fr": "== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes.",
+        "fr": "== MODE SPECTATEUR ==\n\nTemps restant : {1} secondes",
         "it": "== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)",
         "pt_p": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
         "ru": "== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд",
@@ -1479,7 +1479,7 @@
       ],
       "translations": {
         "pt": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
-        "fr": "== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes.",
+        "fr": "== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes",
         "it": "== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds",
         "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
@@ -1743,7 +1743,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "Nenhuma mudança de velocidade será feita nesta rodada!",
-        "fr": "Aucun changement de vitesse n'aura lieu dans cette manche !",
+        "fr": "Aucun changement de vitesse n'aura lieu durant cette manche !",
         "it": "La velocità dei minigiochi non aumenterà in questo round!",
         "pt_p": "Nenhuma mudança de velocidade será feita nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
