@@ -23,7 +23,7 @@
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"ru"		""
+		"ru"		"Бочки: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
@@ -584,10 +584,10 @@
 	}
 	"SpecialRound21_Name"
 	{
-		"ru"		""
+		"ru"		"Team Fortress 64"
 	}
 	"SpecialRound21_Description"
 	{
-		"ru"		""
+		"ru"		"Ой! Куда делись мои полигоны?"
 	}
 }
