@@ -588,6 +588,6 @@
 	}
 	"SpecialRound21_Description"
 	{
-		"it"		"Come ai vecchi tempi!test"
+		"it"		"Come ai vecchi tempi!"
 	}
 }
