@@ -123,7 +123,7 @@
         "fr": "Tonneaux: {1}",
         "it": "Barili: {1}",
         "pt_p": "",
-        "ru": "",
+        "ru": "Бочки: {1}",
         "es": "Barriles: {1}",
         "jp": null
       }
@@ -620,7 +620,7 @@
         "fr": "",
         "it": null,
         "pt_p": "",
-        "ru": "",
+        "ru": null,
         "es": null,
         "jp": null
       }
@@ -2313,7 +2313,7 @@
         "fr": "Team Fortress 64",
         "it": "Team Fortress 64",
         "pt_p": "",
-        "ru": "",
+        "ru": "Team Fortress 64",
         "es": "Team Fortress 64",
         "jp": null
       }
@@ -2328,7 +2328,7 @@
         "fr": "Mais ! Où sont passés mes polygones ?",
         "it": "Come ai vecchi tempi!",
         "pt_p": "",
-        "ru": "",
+        "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null
       }
