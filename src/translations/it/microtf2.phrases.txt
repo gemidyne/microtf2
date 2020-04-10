@@ -3,7 +3,7 @@
 	"System_Advertisement"
 	{
 		"#format"		"{1:s}"
-		"it"		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti. 123"
+		"it"		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti."
 	}
 	"Hud_Score_Default"
 	{
