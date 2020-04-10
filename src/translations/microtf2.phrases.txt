@@ -13,7 +13,7 @@
 	"Hud_Score_Minigames"
 	{
 		"#format"		"{1:i}"
-		"en"		"Minigames: {1}"
+		"en"		"Microgames: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
@@ -52,7 +52,7 @@
 	}
 	"PlayerSpawn_RespawnNotice"
 	{
-		"en"		"You will be respawned once the current minigame or boss has finished."
+		"en"		"You will be respawned once the current microgame or bossgame has finished."
 	}
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{

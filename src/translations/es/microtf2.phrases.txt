@@ -23,7 +23,7 @@
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"es"		""
+		"es"		"Barriles: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
@@ -584,10 +584,10 @@
 	}
 	"SpecialRound21_Name"
 	{
-		"es"		""
+		"es"		"Team Fortress 64"
 	}
 	"SpecialRound21_Description"
 	{
-		"es"		""
+		"es"		"Hey! Donde han ido mis poligonos?"
 	}
 }
