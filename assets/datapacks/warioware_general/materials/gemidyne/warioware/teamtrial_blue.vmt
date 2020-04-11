@@ -1,0 +1,14 @@
+"UnlitGeneric"
+{
+	"$baseTexture" "gemidyne/warioware/teamtrial_blue"
+	"$translucent" "1"
+	"Proxies"
+	{
+		"TextureScroll"
+		{
+			"texturescrollvar" "$basetexturetransform"
+			"texturescrollrate" 0.1
+			"texturescrollangle" 180
+		}
+	}
+}
