@@ -59,7 +59,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 	ResetWeapon(client, true);
 
-	Bossgame4_DamageAccumlated[player.ClientId] = 0.0;
+	Bossgame4_DamageAccumlated[player.ClientId] = 100.0;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
@@ -197,7 +197,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		vel[1] -= baseVelocity * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
 		vel[2] += baseVelocityZ;
 
-		TeleportEntity(victimId, NULL_VECTOR, ang, vel);
+		TeleportEntity(victimId, NULL_VECTOR, NULL_VECTOR, vel);
 	}
 }
 
