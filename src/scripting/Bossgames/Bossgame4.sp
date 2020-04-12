@@ -106,7 +106,7 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 	
 	if (player.IsValid)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		player.Status = PlayerStatus_Failed;
 
 		CreateTimer(0.05, Bossgame4_OnPlayerDeathTimer, victim);
 	}
