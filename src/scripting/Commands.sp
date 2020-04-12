@@ -196,6 +196,7 @@ public Action CmdSetGamemode(int client, int args)
 	if (id < TOTAL_GAMEMODES)
 	{
 		GamemodeID = id;
+		SpecialRoundID = 0;
 
 		ReplyToCommand(client, "[ WarioWare ] Gamemode set to %s.", SystemNames[GamemodeID]);
 
