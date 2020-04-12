@@ -208,7 +208,7 @@ public void Bossgame4_OnBossStopAttempt()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsAlive && player.IsParticipating && PlayerStatus[i] != PlayerStatus_Failed)
+			if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status != PlayerStatus_Failed)
 			{
 				alivePlayers++;
 			}
