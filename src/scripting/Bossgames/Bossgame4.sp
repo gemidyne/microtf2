@@ -4,6 +4,8 @@
  * Don't fall off!
  */
 
+float Bossgame4_DamageAccumlated[MAXPLAYERS];
+
 public void Bossgame4_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
@@ -53,9 +55,11 @@ public void Bossgame4_OnMinigameSelected(int client)
 	}
 
 	player.SetGodMode(false);
-	player.ResetHealth();
+	player.SetHealth(1000);
 
 	ResetWeapon(client, true);
+
+	Bossgame4_DamageAccumlated[player.ClientId] = 0.0;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
@@ -168,15 +172,30 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 	if (attacker.IsValid && victim.IsValid)
 	{
+		if (victim.Health >= 1)
+		{
+			victim.Health -= RoundToFloor(damage);
+
+			if (victim.Health < 1)
+			{
+				victim.Health = 1;
+			}
+		}
+
+		Bossgame4_DamageAccumlated[victim.ClientId] += damage * 2.0;
+
 		float ang[3];
 		float vel[3];
 
 		GetClientEyeAngles(attackerId, ang);
 		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
 
-		vel[0] -= 300.0 * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-		vel[1] -= 300.0 * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
-		vel[2] += 450.0;
+		float baseVelocity = Bossgame4_DamageAccumlated[victim.ClientId];
+		float baseVelocityZ = Bossgame4_DamageAccumlated[victim.ClientId];
+
+		vel[0] -= baseVelocity * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[1] -= baseVelocity * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
+		vel[2] += baseVelocityZ;
 
 		TeleportEntity(victimId, NULL_VECTOR, ang, vel);
 	}

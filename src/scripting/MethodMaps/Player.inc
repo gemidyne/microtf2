@@ -265,21 +265,29 @@ methodmap Player __nullable__
             this.SetHealth(value);
         }
     }
+  
+    property int DefaultHealth
+    {
+        public get() 
+        {
+            int health = 125;
+
+            switch (this.Class)
+            {
+                case TFClass_Soldier: health = 200;
+                case TFClass_Pyro: health = 175;
+                case TFClass_DemoMan: health = 175;
+                case TFClass_Heavy: health = 300;
+                case TFClass_Medic: health = 150;
+            }
+
+            return health;
+        }
+    }
 
     public void ResetHealth()
     {
-		int health = 125;
-
-		switch (this.Class)
-		{
-			case TFClass_Soldier: health = 200;
-			case TFClass_Pyro: health = 175;
-			case TFClass_DemoMan: health = 175;
-			case TFClass_Heavy: health = 300;
-			case TFClass_Medic: health = 150;
-		}
-		
-		this.SetHealth(health);
+		this.SetHealth(this.DefaultHealth);
     }
 
     public void Kill()
