@@ -8,12 +8,23 @@ float Bossgame4_DamageAccumlated[MAXPLAYERS];
 
 public void Bossgame4_EntryPoint()
 {
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame4_OnMapStart);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
 	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
+}
+
+public void Bossgame4_OnMapStart()
+{
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_small1.mp3", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_small2.mp3", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_mod1.mp3", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_mod2.mp3", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_stro1.mp3", true);
+	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_stro2.mp3", true);
 }
 
 public void Bossgame4_OnMinigameSelectedPre()
@@ -59,7 +70,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 	ResetWeapon(client, true);
 
-	Bossgame4_DamageAccumlated[player.ClientId] = 100.0;
+	Bossgame4_DamageAccumlated[player.ClientId] = 175.0;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
@@ -182,7 +193,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 			}
 		}
 
-		Bossgame4_DamageAccumlated[victim.ClientId] += damage * 2.0;
+		Bossgame4_DamageAccumlated[victim.ClientId] += damage;
 
 		float ang[3];
 		float vel[3];
@@ -198,6 +209,23 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		vel[2] += baseVelocityZ;
 
 		TeleportEntity(victimId, NULL_VECTOR, NULL_VECTOR, vel);
+
+		char path[64];
+
+		if (Bossgame4_DamageAccumlated[victim.ClientId] < 300.0)
+		{
+			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_small%d.mp3", GetRandomInt(1, 2));
+		}
+		else if (Bossgame4_DamageAccumlated[victim.ClientId] >= 300.0 && Bossgame4_DamageAccumlated[victim.ClientId] < 450.0)
+		{
+			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_mod%d.mp3", GetRandomInt(1, 2));
+		}
+		else
+		{
+			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_stro%d.mp3", GetRandomInt(1, 2));
+		}
+
+		EmitSoundToAll(path, victim.ClientId, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 	}
 }
 
