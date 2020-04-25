@@ -132,7 +132,7 @@
 	}
 	"Bossgame4_Caption"
 	{
-		"en"		"DON'T FALL INTO THE WATER"
+		"en"		"DON'T FALL INTO THE WATER!"
 	}
 	"Bossgame5_Caption"
 	{
