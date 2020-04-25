@@ -568,7 +568,7 @@
     {
       "key": "Bossgame4_Caption",
       "description": null,
-      "text": "DON'T FALL INTO THE WATER",
+      "text": "DON'T FALL INTO THE WATER!",
       "formatArguments": [],
       "translations": {
         "pt": "NÃO CAIA NA ÁGUA!",
