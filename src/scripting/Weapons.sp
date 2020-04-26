@@ -1724,13 +1724,13 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "528_ammo", 200);
 
 // Holiday Punch
-	SetTrieString(hItemInfoTrie, "656_classname", "tf_weapon_fists", false);
-	SetTrieValue(hItemInfoTrie, "656_index", 656, false);
-	SetTrieValue(hItemInfoTrie, "656_slot", 2, false);
-	SetTrieValue(hItemInfoTrie, "656_quality", 6, false);
-	SetTrieValue(hItemInfoTrie, "656_level", 10, false);
-	SetTrieString(hItemInfoTrie, "656_attribs", "358 ; 1.0 ; 362 ; 1.0 ; 363 ; 1.0 ; 369 ; 1.0 ; 292 ; 25.0 ; 293 ; 0.0", false);
-	SetTrieValue(hItemInfoTrie, "656_ammo", -1, false);
+	SetTrieString(g_hWeaponData, "656_classname", "tf_weapon_fists", false);
+	SetTrieValue(g_hWeaponData, "656_index", 656, false);
+	SetTrieValue(g_hWeaponData, "656_slot", 2, false);
+	SetTrieValue(g_hWeaponData, "656_quality", 6, false);
+	SetTrieValue(g_hWeaponData, "656_level", 10, false);
+	SetTrieString(g_hWeaponData, "656_attribs", "358 ; 1.0 ; 362 ; 1.0 ; 363 ; 1.0 ; 369 ; 1.0 ; 292 ; 25.0 ; 293 ; 0.0", false);
+	SetTrieValue(g_hWeaponData, "656_ammo", -1, false);
 
 //Sapper
 	SetTrieString(g_hWeaponData, "735_classname", "tf_weapon_builder", false);
