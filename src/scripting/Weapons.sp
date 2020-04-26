@@ -1723,6 +1723,24 @@ void LoadWeaponData()
 	SetTrieString(g_hWeaponData, "528_attribs", "300 ; 1.0 ; 307 ; 1.0 ; 303 ; -1.0 ; 15 ; 0.0 ; 298 ; 35.0 ; 301 ; 1.0 ; 312 ; 1.0");
 	SetTrieValue(g_hWeaponData, "528_ammo", 200);
 
+// Holiday Punch
+	SetTrieString(hItemInfoTrie, "656_classname", "tf_weapon_fists", false);
+	SetTrieValue(hItemInfoTrie, "656_index", 656, false);
+	SetTrieValue(hItemInfoTrie, "656_slot", 2, false);
+	SetTrieValue(hItemInfoTrie, "656_quality", 6, false);
+	SetTrieValue(hItemInfoTrie, "656_level", 10, false);
+	SetTrieString(hItemInfoTrie, "656_attribs", "358 ; 1.0 ; 362 ; 1.0 ; 363 ; 1.0 ; 369 ; 1.0 ; 292 ; 25.0 ; 293 ; 0.0", false);
+	SetTrieValue(hItemInfoTrie, "656_ammo", -1, false);
+
+//Sapper
+	SetTrieString(g_hWeaponData, "735_classname", "tf_weapon_builder", false);
+	SetTrieValue(g_hWeaponData, "735_index", 735, false);
+	SetTrieValue(g_hWeaponData, "735_slot", 1, false);
+	SetTrieValue(g_hWeaponData, "735_quality", 0, false);
+	SetTrieValue(g_hWeaponData, "735_level", 1, false);
+	SetTrieString(g_hWeaponData, "735_attribs", "", false);
+	SetTrieValue(g_hWeaponData, "735_ammo", -1, false);
+
 //The Thermal Thruster
 	SetTrieString(g_hWeaponData, "1179_classname", "tf_weapon_rocketpack");
 	SetTrieValue(g_hWeaponData, "1179_index", 1179);
@@ -1822,12 +1840,4 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "9266_level", 100);
 	SetTrieString(g_hWeaponData, "9266_attribs", "15 ; 0 ; 26 ; 600.0 ; 2 ; 999.0 ; 107 ; 4.0 ; 109 ; 0.0 ; 57 ; 50.0 ; 69 ; 0.0 ; 68 ; -1 ; 53 ; 1.0 ; 27 ; 1.0 ; 180 ; -25 ; 219 ; 1.0 ; 134 ; 8.0");
 	SetTrieValue(g_hWeaponData, "9266_ammo", -1);
-
-	SetTrieString(g_hWeaponData, "735_classname", "tf_weapon_builder", false);
-	SetTrieValue(g_hWeaponData, "735_index", 735, false);
-	SetTrieValue(g_hWeaponData, "735_slot", 1, false);
-	SetTrieValue(g_hWeaponData, "735_quality", 0, false);
-	SetTrieValue(g_hWeaponData, "735_level", 1, false);
-	SetTrieString(g_hWeaponData, "735_attribs", "", false);
-	SetTrieValue(g_hWeaponData, "735_ammo", -1, false);
 }
