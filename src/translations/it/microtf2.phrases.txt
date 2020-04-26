@@ -329,7 +329,15 @@
 	{
 		"it"		"BEVI!"
 	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"it"		""
+	}
 	"Minigame20_Caption_Eat"
+	{
+		"it"		"MANGIA!"
+	}
+	"Minigame20_Caption_DontEat"
 	{
 		"it"		"MANGIA!"
 	}
@@ -352,6 +360,14 @@
 	"Minigame25_Caption"
 	{
 		"it"		"PROPULSORE!"
+	}
+	"Minigame26_Caption"
+	{
+		"it"		""
+	}
+	"Minigame27_Caption"
+	{
+		"it"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
