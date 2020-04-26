@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"en"		"EAT!"
+		"en"		"DON'T EAT!"
 	}
 	"Minigame21_Caption"
 	{
