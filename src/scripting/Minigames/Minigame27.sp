@@ -50,7 +50,7 @@ public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);
 
-		if (attacker.IsValid && attacker.IsParticipating && victim.IsValid && victim.IsParticipating)
+		if (attacker.IsValid && attacker.IsParticipating && victim.IsValid && victim.IsParticipating && victim.ClientId != attacker.ClientId)
 		{
 			attacker.TriggerSuccess();
 		}
