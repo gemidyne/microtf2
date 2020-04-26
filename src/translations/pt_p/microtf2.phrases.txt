@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"pt_p"		"COMA!"
+		"pt_p"		""
 	}
 	"Minigame21_Caption"
 	{
