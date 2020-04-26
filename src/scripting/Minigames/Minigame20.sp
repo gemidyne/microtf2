@@ -70,6 +70,11 @@ public void Minigame20_OnMinigameSelected(int client)
 			player.GiveWeapon(311);
 		}
 	}
+
+	if (Minigame20_InvertedMode)
+	{
+		player.Status = PlayerStatus_Winner;
+	}
 }
 
 public void Minigame20_GetDynamicCaption(int client)
