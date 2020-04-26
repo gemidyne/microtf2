@@ -282,16 +282,6 @@ Handle GlobalForward_OnGameOverStart;
 Handle GlobalForward_OnPlayerConditionAdded;
 
 /**
- * Forward is called when a player receives a TFCondition.
- *
- * @param Client of player
- * @param Condition ID. You will want to cast this to TFCond.
- * @noreturn
- */
-Handle GlobalForward_OnPlayerConditionAdded;
-
-
-/**
  * Forward is called when a player has a TFCondition removed.
  *
  * @param Client of player
