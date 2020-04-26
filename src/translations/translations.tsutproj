@@ -1306,7 +1306,7 @@
     },
     {
       "key": "Minigame20_Caption_Drink",
-      "description": null,
+      "description": "Tell players to drink.",
       "text": "DRINK!",
       "formatArguments": [],
       "translations": {
@@ -1320,8 +1320,30 @@
       }
     },
     {
+      "key": "Minigame20_Caption_DontDrink",
+      "description": "Tell players not to drink.",
+      "text": "DON'T DRINK!",
+      "formatArguments": [],
+      "translations": {}
+    },
+    {
       "key": "Minigame20_Caption_Eat",
-      "description": null,
+      "description": "Tell players to eat.",
+      "text": "EAT!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "COMA!",
+        "fr": "MANGEZ !",
+        "it": "MANGIA!",
+        "pt_p": "COMA!",
+        "ru": "ПОЕШЬТЕ!",
+        "es": "COME!",
+        "jp": null
+      }
+    },
+    {
+      "key": "Minigame20_Caption_DontEat",
+      "description": "Tell players not to eat.",
       "text": "EAT!",
       "formatArguments": [],
       "translations": {

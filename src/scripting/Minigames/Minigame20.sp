@@ -5,12 +5,13 @@
  */
 
 int Minigame20_PlayerClass;
+bool Minigame20_InvertedMode;
 
 public void Minigame20_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame20_OnGameFrame);
+	AddToForward(GlobalForward_OnPlayerConditionAdded, INVALID_HANDLE, Minigame20_OnPlayerConditionAdded);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
 }
 
@@ -19,6 +20,7 @@ public void Minigame20_OnMinigameSelectedPre()
 	if (MinigameID == 20)
 	{
 		Minigame20_PlayerClass = GetRandomInt(0, 3);
+		Minigame20_InvertedMode = GetRandomInt(0, 1) == 1;
 	}
 }
 
@@ -36,34 +38,36 @@ public void Minigame20_OnMinigameSelected(int client)
 
 	Player player = new Player(client);
 
-	if (player.IsValid)
+	if (!player.IsValid)
 	{
-		switch (Minigame20_PlayerClass)
+		return;
+	}
+
+	switch (Minigame20_PlayerClass)
+	{
+		case 0:
 		{
-			case 0:
-			{
-				player.Class = TFClass_Scout;
-				ResetWeapon(client, true);
-				GiveWeapon(client, 163);
-			}
-			case 1:
-			{
-				player.Class = TFClass_Scout;
-				ResetWeapon(client, true);
-				GiveWeapon(client, 46);
-			}
-			case 2:
-			{
-				player.Class = TFClass_Heavy;
-				ResetWeapon(client, true);
-				GiveWeapon(client, 42);
-			}	
-			case 3:
-			{	
-				player.Class = TFClass_Heavy;
-				ResetWeapon(client, true);
-				GiveWeapon(client, 311);
-			}
+			player.Class = TFClass_Scout;
+			ResetWeapon(client, true);
+			player.GiveWeapon(163);
+		}
+		case 1:
+		{
+			player.Class = TFClass_Scout;
+			ResetWeapon(client, true);
+			player.GiveWeapon(46);
+		}
+		case 2:
+		{
+			player.Class = TFClass_Heavy;
+			ResetWeapon(client, true);
+			player.GiveWeapon(42);
+		}	
+		case 3:
+		{	
+			player.Class = TFClass_Heavy;
+			ResetWeapon(client, true);
+			player.GiveWeapon(311);
 		}
 	}
 }
@@ -77,23 +81,34 @@ public void Minigame20_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		switch (Minigame20_PlayerClass)
+		if (Minigame20_InvertedMode)
 		{
-			case 0:
+			switch (Minigame20_PlayerClass)
 			{
-				Format(text, sizeof(text), "%T", "Minigame20_Caption_Drink", client);
+				case 0, 1:
+				{
+					Format(text, sizeof(text), "%T", "Minigame20_Caption_DontDrink", client);
+				}
+				
+				case 2, 3:
+				{	
+					Format(text, sizeof(text), "%T", "Minigame20_Caption_DontEat", client);
+				}
 			}
-			case 1:
+		}
+		else
+		{
+			switch (Minigame20_PlayerClass)
 			{
-				Format(text, sizeof(text), "%T", "Minigame20_Caption_Drink", client);
-			}
-			case 2:
-			{
-				Format(text, sizeof(text), "%T", "Minigame20_Caption_Eat", client);
-			}	
-			case 3:
-			{	
-				Format(text, sizeof(text), "%T", "Minigame20_Caption_Eat", client);
+				case 0, 1:
+				{
+					Format(text, sizeof(text), "%T", "Minigame20_Caption_Drink", client);
+				}
+				
+				case 2, 3:
+				{	
+					Format(text, sizeof(text), "%T", "Minigame20_Caption_Eat", client);
+				}
 			}
 		}
 
@@ -101,26 +116,45 @@ public void Minigame20_GetDynamicCaption(int client)
 	}
 }
 
-public void Minigame20_OnGameFrame()
+public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 {
-	if (IsMinigameActive && MinigameID == 20)
+	if (MinigameID != 20)
 	{
-		for (int i = 1; i <= MaxClients; i++)
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	if (!player.IsParticipating)
+	{
+		return;
+	}
+
+	TFCond condition = view_as<TFCond>(conditionId);
+
+	if (condition == TFCond_Taunting)
+	{
+		switch (player.ActiveWeaponItemIndex)
 		{
-			Player player = new Player(i);
-
-			if (player.IsValid && player.IsParticipating && TF2_IsPlayerInCondition(i, TFCond_Taunting))
-			{	
-				//Credit to Tylerst & Powerlord!
-				int currentWeapon = GetEntDataEnt2(i, Offset_PlayerActiveWeapon);
-
-				if (IsValidEntity(currentWeapon))
+			case 46, 163, 42, 311:
+			{
+				if (Minigame20_InvertedMode)
 				{
-					int weaponIndex = GetEntProp(currentWeapon, Prop_Send, "m_iItemDefinitionIndex");
-					switch (weaponIndex)
-					{
-						case 46, 163, 42, 311: ClientWonMinigame(i); //Drink / Munch Minigame!
-					}
+					player.Status = PlayerStatus_Failed;
+				}
+				else
+				{
+					player.TriggerSuccess();
 				}
 			}
 		}

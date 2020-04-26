@@ -40,8 +40,7 @@ public void Minigame26_OnMinigameSelected(int client)
 		player.SetGodMode(false);
 		player.SetHealth(3000);
 		player.Status = PlayerStatus_Winner;
-
-		GiveWeapon(client, 656);
+		player.GiveWeapon(656);
 	}
 }
 

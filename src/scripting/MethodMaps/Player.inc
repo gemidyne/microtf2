@@ -285,6 +285,39 @@ methodmap Player __nullable__
         }
     }
 
+    property int ActiveWeaponEntityEdict
+    {
+        public get()
+        {
+            //Credit to Tylerst & Powerlord for this code.
+            int weapon = GetEntDataEnt2(this.ClientId, Offset_PlayerActiveWeapon);
+
+            if (IsValidEntity(weapon))
+            {
+                return weapon;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+    }
+
+    property int ActiveWeaponItemIndex
+    {
+        public get()
+        {
+            int entity = this.ActiveWeaponEntityEdict;
+
+            if (entity == -1)
+            {
+                return -1;
+            }
+
+            return GetEntProp(entity, Prop_Send, "m_iItemDefinitionIndex");
+        }
+    }
+
     public void ResetHealth()
     {
 		this.SetHealth(this.DefaultHealth);
@@ -528,5 +561,15 @@ methodmap Player __nullable__
     public bool HasCustomHudText()
     {
         return HasCustomHudText(this.ClientId);
+    }
+
+    public void TriggerSuccess()
+    {
+        ClientWonMinigame(this.ClientId);
+    }
+
+    public void GiveWeapon(int weaponItemIndex)
+    {
+        GiveWeapon(this.ClientId, weaponItemIndex);
     }
 }
