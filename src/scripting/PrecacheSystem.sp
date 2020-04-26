@@ -6,13 +6,15 @@
 
 stock void InitialisePrecacheSystem()
 {
+	#if defined PLUGIN_DOPRECACHE
 	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Precache System...");
 	#endif
-	
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, PrecacheSystem_OnMapStart);
+	#endif
 }
 
+#if defined PLUGIN_DOPRECACHE
 public void PrecacheSystem_OnMapStart()
 {
 	PrecacheAllModelsInManifest();
@@ -65,3 +67,5 @@ stock void PrecacheViewModels()
 	PrecacheModel("models/weapons/c_models/c_sniper_arms.mdl", true);
 	PrecacheModel("models/weapons/c_models/c_spy_arms.mdl", true);
 }
+
+#endif
