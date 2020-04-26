@@ -63,6 +63,7 @@ ArrayList PlayedBossgamePool;
 #include "Minigames/Minigame23.sp"
 #include "Minigames/Minigame24.sp"
 #include "Minigames/Minigame25.sp"
+#include "Minigames/Minigame26.sp"
 
 // Bossgames
 #include "Bossgames/Bossgame1.sp"

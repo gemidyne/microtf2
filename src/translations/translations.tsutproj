@@ -1410,6 +1410,13 @@
       }
     },
     {
+      "key": "Minigame26_Caption",
+      "description": null,
+      "text": "DON'T LAUGH!",
+      "formatArguments": [],
+      "translations": {}
+    },
+    {
       "key": "Bossgame7_Caption_Explain",
       "description": null,
       "text": "Say each word in chat as quick as you can to survive!",
