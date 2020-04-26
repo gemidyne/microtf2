@@ -327,8 +327,8 @@ stock void InitializeForwards()
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
 	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
-	GlobalForward_OnPlayerConditionAdded = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnPlayerConditionRemoved = CreateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnPlayerConditionAdded = CreateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerConditionRemoved = CreateForward(ET_Ignore, Param_Any, Param_Any);
 }
 
 stock void RemoveForwardsFromMemory()
