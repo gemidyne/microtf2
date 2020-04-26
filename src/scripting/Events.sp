@@ -599,6 +599,14 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 		return;
 	}
 
+	if (GlobalForward_OnPlayerConditionAdded != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnPlayerConditionAdded);
+		Call_PushCell(client);
+		Call_PushCell(view_as<int>(condition));
+		Call_Finish();
+	}
+
 	bool removeCondition = true;
 
 	switch (condition)
@@ -619,6 +627,22 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 	if (removeCondition)
 	{
 		TF2_RemoveCondition(client, condition);
+	}
+}
+
+public void TF2_OnConditionRemoved(int client, TFCond condition)
+{
+	if (!IsPluginEnabled)
+	{
+		return;
+	}
+
+	if (GlobalForward_OnPlayerConditionRemoved != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnPlayerConditionRemoved);
+		Call_PushCell(client);
+		Call_PushCell(view_as<int>(condition));
+		Call_Finish();
 	}
 }
 

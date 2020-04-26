@@ -272,6 +272,34 @@ Handle GlobalForward_OnRenderHudFrame;
  */
 Handle GlobalForward_OnGameOverStart;
 
+/**
+ * Forward is called when a player receives a TFCondition.
+ *
+ * @param Client of player
+ * @param Condition ID. You will want to cast this to TFCond.
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerConditionAdded;
+
+/**
+ * Forward is called when a player receives a TFCondition.
+ *
+ * @param Client of player
+ * @param Condition ID. You will want to cast this to TFCond.
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerConditionAdded;
+
+
+/**
+ * Forward is called when a player has a TFCondition removed.
+ *
+ * @param Client of player
+ * @param Condition ID. You will want to cast this to TFCond.
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerConditionRemoved;
+
 stock void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
@@ -309,6 +337,8 @@ stock void InitializeForwards()
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
 	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any);
 	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
+	GlobalForward_OnPlayerConditionAdded = CreateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnPlayerConditionRemoved = CreateForward(ET_Ignore, Param_Any);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -343,6 +373,8 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);
 	SafelyRemoveAllFromForward(GlobalForward_OnRenderHudFrame);
 	SafelyRemoveAllFromForward(GlobalForward_OnGameOverStart);
+	SafelyRemoveAllFromForward(GlobalForward_OnPlayerConditionAdded);
+	SafelyRemoveAllFromForward(GlobalForward_OnPlayerConditionRemoved);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)
