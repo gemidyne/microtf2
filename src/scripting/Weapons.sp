@@ -1732,96 +1732,6 @@ void LoadWeaponData()
 	SetTrieString(g_hWeaponData, "1179_attribs", "");
 	SetTrieValue(g_hWeaponData, "1179_ammo", 200);
 
-//valve rocket launcher
-	SetTrieString(g_hWeaponData, "9018_classname", "tf_weapon_rocketlauncher");
-	SetTrieValue(g_hWeaponData, "9018_index", 18);
-	SetTrieValue(g_hWeaponData, "9018_slot", 0);
-	SetTrieValue(g_hWeaponData, "9018_quality", 8);
-	SetTrieValue(g_hWeaponData, "9018_level", 100);
-	SetTrieString(g_hWeaponData, "9018_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9018_ammo", 200);
-
-//valve sticky launcher
-	SetTrieString(g_hWeaponData, "9020_classname", "tf_weapon_pipebomblauncher");
-	SetTrieValue(g_hWeaponData, "9020_index", 20);
-	SetTrieValue(g_hWeaponData, "9020_slot", 1);
-	SetTrieValue(g_hWeaponData, "9020_quality", 8);
-	SetTrieValue(g_hWeaponData, "9020_level", 100);
-	SetTrieString(g_hWeaponData, "9020_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9020_ammo", 200);
-
-//valve sniper rifle
-	SetTrieString(g_hWeaponData, "9014_classname", "tf_weapon_sniperrifle");
-	SetTrieValue(g_hWeaponData, "9014_index", 14);
-	SetTrieValue(g_hWeaponData, "9014_slot", 0);
-	SetTrieValue(g_hWeaponData, "9014_quality", 8);
-	SetTrieValue(g_hWeaponData, "9014_level", 100);
-	SetTrieString(g_hWeaponData, "9014_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9014_ammo", 200);
-
-//valve scattergun
-	SetTrieString(g_hWeaponData, "9013_classname", "tf_weapon_scattergun");
-	SetTrieValue(g_hWeaponData, "9013_index", 13);
-	SetTrieValue(g_hWeaponData, "9013_slot", 0);
-	SetTrieValue(g_hWeaponData, "9013_quality", 8);
-	SetTrieValue(g_hWeaponData, "9013_level", 100);
-	SetTrieString(g_hWeaponData, "9013_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9013_ammo", 200);
-
-//valve flamethrower
-	SetTrieString(g_hWeaponData, "9021_classname", "tf_weapon_flamethrower");
-	SetTrieValue(g_hWeaponData, "9021_index", 21);
-	SetTrieValue(g_hWeaponData, "9021_slot", 0);
-	SetTrieValue(g_hWeaponData, "9021_quality", 8);
-	SetTrieValue(g_hWeaponData, "9021_level", 100);
-	SetTrieString(g_hWeaponData, "9021_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9021_ammo", 400);
-
-//valve syringe gun
-	SetTrieString(g_hWeaponData, "9017_classname", "tf_weapon_syringegun_medic");
-	SetTrieValue(g_hWeaponData, "9017_index", 17);
-	SetTrieValue(g_hWeaponData, "9017_slot", 0);
-	SetTrieValue(g_hWeaponData, "9017_quality", 8);
-	SetTrieValue(g_hWeaponData, "9017_level", 100);
-	SetTrieString(g_hWeaponData, "9017_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9017_ammo", 300);
-
-//valve minigun
-	SetTrieString(g_hWeaponData, "9015_classname", "tf_weapon_minigun");
-	SetTrieValue(g_hWeaponData, "9015_index", 15);
-	SetTrieValue(g_hWeaponData, "9015_slot", 0);
-	SetTrieValue(g_hWeaponData, "9015_quality", 8);
-	SetTrieValue(g_hWeaponData, "9015_level", 100);
-	SetTrieString(g_hWeaponData, "9015_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9015_ammo", 400);
-
-//valve revolver
-	SetTrieString(g_hWeaponData, "9024_classname", "tf_weapon_revolver");
-	SetTrieValue(g_hWeaponData, "9024_index", 24);
-	SetTrieValue(g_hWeaponData, "9024_slot", 0);
-	SetTrieValue(g_hWeaponData, "9024_quality", 8);
-	SetTrieValue(g_hWeaponData, "9024_level", 100);
-	SetTrieString(g_hWeaponData, "9024_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9024_ammo", 100);
-
-//valve shotgun engineer
-	SetTrieString(g_hWeaponData, "9009_classname", "tf_weapon_shotgun_primary");
-	SetTrieValue(g_hWeaponData, "9009_index", 9);
-	SetTrieValue(g_hWeaponData, "9009_slot", 0);
-	SetTrieValue(g_hWeaponData, "9009_quality", 8);
-	SetTrieValue(g_hWeaponData, "9009_level", 100);
-	SetTrieString(g_hWeaponData, "9009_attribs", "2 ; 1.15 ; 4 ; 1.5 ; 6 ; 0.85 ; 110 ; 15.0 ; 20 ; 1.0 ; 26 ; 50.0 ; 31 ; 5.0 ; 32 ; 0.30 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.15 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9009_ammo", 100);
-
-//valve medigun
-	SetTrieString(g_hWeaponData, "9029_classname", "tf_weapon_medigun");
-	SetTrieValue(g_hWeaponData, "9029_index", 29);
-	SetTrieValue(g_hWeaponData, "9029_slot", 1);
-	SetTrieValue(g_hWeaponData, "9029_quality", 8);
-	SetTrieValue(g_hWeaponData, "9029_level", 100);
-	SetTrieString(g_hWeaponData, "9029_attribs", "8 ; 1.15 ; 10 ; 1.15 ; 13 ; 0.0 ; 26 ; 50.0 ; 53 ; 1.0 ; 60 ; 0.85 ; 123 ; 1.5 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9029_ammo", -1);
-
 //ludmila
 	SetTrieString(g_hWeaponData, "2041_classname", "tf_weapon_minigun");
 	SetTrieValue(g_hWeaponData, "2041_index", 41);
@@ -1858,41 +1768,6 @@ void LoadWeaponData()
 	SetTrieString(g_hWeaponData, "8018_attribs", "2 ; 100.0 ; 4 ; 91.0 ; 6 ; 0.25 ; 110 ; 500.0 ; 26 ; 250.0 ; 31 ; 10.0 ; 107 ; 3.0 ; 97 ; 0.4 ; 134 ; 2.0");
 	SetTrieValue(g_hWeaponData, "8018_ammo", 200);
 
-//PCG cheap Community rocket launcher
-	SetTrieString(g_hWeaponData, "7018_classname", "tf_weapon_rocketlauncher");
-	SetTrieValue(g_hWeaponData, "7018_index", 18);
-	SetTrieValue(g_hWeaponData, "7018_slot", 0);
-	SetTrieValue(g_hWeaponData, "7018_quality", 7);
-	SetTrieValue(g_hWeaponData, "7018_level", 100);
-	SetTrieString(g_hWeaponData, "7018_attribs", "26 ; 500.0 ; 110 ; 500.0 ; 6 ; 0.25 ; 4 ; 200.0 ; 2 ; 100.0 ; 97 ; 0.2 ; 134 ; 4.0");
-	SetTrieValue(g_hWeaponData, "7018_ammo", 200);
-
-//derpFaN
-	SetTrieString(g_hWeaponData, "8045_classname", "tf_weapon_scattergun");
-	SetTrieValue(g_hWeaponData, "8045_index", 45);
-	SetTrieValue(g_hWeaponData, "8045_slot", 0);
-	SetTrieValue(g_hWeaponData, "8045_quality", 8);
-	SetTrieValue(g_hWeaponData, "8045_level", 99);
-	SetTrieString(g_hWeaponData, "8045_attribs", "44 ; 1.0 ; 6 ; 0.25 ; 45 ; 2.0 ; 2 ; 10.0 ; 4 ; 100.0 ; 43 ; 1.0 ; 26 ; 500.0 ; 110 ; 500.0 ; 97 ; 0.2 ; 31 ; 10.0 ; 107 ; 3.0 ; 134 ; 4.0");
-	SetTrieValue(g_hWeaponData, "8045_ammo", 200);
-
-//Trilby's Rebel Pack - Texas Ten-Shot
-	SetTrieString(g_hWeaponData, "2141_classname", "tf_weapon_sentry_revenge");
-	SetTrieValue(g_hWeaponData, "2141_index", 141);
-	SetTrieValue(g_hWeaponData, "2141_slot", 0);
-	SetTrieValue(g_hWeaponData, "2141_quality", 10);
-	SetTrieValue(g_hWeaponData, "2141_level", 10);
-	SetTrieString(g_hWeaponData, "2141_attribs", "4 ; 1.66 ; 19 ; 0.15 ; 76 ; 1.25 ; 96 ; 1.8 ; 134 ; 3");
-	SetTrieValue(g_hWeaponData, "2141_ammo", 40);
-
-//Trilby's Rebel Pack - Texan Love
-	SetTrieString(g_hWeaponData, "2161_classname", "tf_weapon_shotgun_pyro");
-	SetTrieValue(g_hWeaponData, "2161_index", 460);
-	SetTrieValue(g_hWeaponData, "2161_slot", 1);
-	SetTrieValue(g_hWeaponData, "2161_quality", 10);
-	SetTrieValue(g_hWeaponData, "2161_level", 10);
-	SetTrieString(g_hWeaponData, "2161_attribs", "2 ; 1.4 ; 106 ; 0.65 ; 6 ; 0.80 ; 146 ; 1.0 ; 96 ; 1.2 ; 69 ; 0.80 ; 45 ; 0.3 ; 106 ; 0.0");
-	SetTrieValue(g_hWeaponData, "2161_ammo", 24);
 
 //direct hit LaN
 	SetTrieString(g_hWeaponData, "2127_classname", "tf_weapon_rocketlauncher_directhit");
@@ -1921,16 +1796,6 @@ void LoadWeaponData()
 	SetTrieString(g_hWeaponData, "2433_attribs", "140 ; 50 ; 139 ; 1");
 	SetTrieValue(g_hWeaponData, "2433_ammo", 1);
 
-//The Army of One
-	SetTrieString(g_hWeaponData, "2228_classname", "tf_weapon_rocketlauncher");
-	SetTrieValue(g_hWeaponData, "2228_index", 228);
-	SetTrieValue(g_hWeaponData, "2228_slot", 0);
-	SetTrieValue(g_hWeaponData, "2228_quality", 10);
-	SetTrieValue(g_hWeaponData, "2228_level", 5);
-	SetTrieString(g_hWeaponData, "2228_attribs", "2 ; 5.0 ; 99 ; 3.0 ; 3 ; 0.25 ; 104 ; 0.3 ; 37 ; 0.0");
-	SetTrieValue(g_hWeaponData, "2228_ammo", 0);
-	SetTrieString(g_hWeaponData, "2228_model", "models/advancedweaponiser/fbomb/c_fbomb.mdl");
-
 //Shotgun for all
 	SetTrieString(g_hWeaponData, "2009_classname", "tf_weapon_sentry_revenge");
 	SetTrieValue(g_hWeaponData, "2009_index", 141);
@@ -1939,46 +1804,6 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "2009_level", 1);
 	SetTrieString(g_hWeaponData, "2009_attribs", "");
 	SetTrieValue(g_hWeaponData, "2009_ammo", 32);
-
-//Another weapon by Trilby- Fighter's Falcata
-	SetTrieString(g_hWeaponData, "2193_classname", "tf_weapon_club");
-	SetTrieValue(g_hWeaponData, "2193_index", 193);
-	SetTrieValue(g_hWeaponData, "2193_slot", 2);
-	SetTrieValue(g_hWeaponData, "2193_quality", 10);
-	SetTrieValue(g_hWeaponData, "2193_level", 5);
-	SetTrieString(g_hWeaponData, "2193_attribs", "6 ; 0.8 ; 2 ; 1.1 ; 15 ; 0 ; 98 ; -15");
-	SetTrieValue(g_hWeaponData, "2193_ammo", -1);
-
-//Khopesh Climber- MECHA!
-	SetTrieString(g_hWeaponData, "2171_classname", "tf_weapon_club");
-	SetTrieValue(g_hWeaponData, "2171_index", 171);
-	SetTrieValue(g_hWeaponData, "2171_slot", 2);
-	SetTrieValue(g_hWeaponData, "2171_quality", 10);
-	SetTrieValue(g_hWeaponData, "2171_level", 11);
-	SetTrieString(g_hWeaponData, "2171_attribs", "1 ; 0.9 ; 5 ; 1.95");
-	SetTrieValue(g_hWeaponData, "2171_ammo", -1);
-	SetTrieString(g_hWeaponData, "2171_model", "models/advancedweaponiser/w_sickle_sniper.mdl");
-//	SetTrieString(g_hWeaponData, "2171_viewmodel", "models/advancedweaponiser/v_sickle_sniper.mdl");
-
-//Robin's new cheap Rocket Launcher
-	SetTrieString(g_hWeaponData, "9205_classname", "tf_weapon_rocketlauncher");
-	SetTrieValue(g_hWeaponData, "9205_index", 205);
-	SetTrieValue(g_hWeaponData, "9205_slot", 0);
-	SetTrieValue(g_hWeaponData, "9205_quality", 8);
-	SetTrieValue(g_hWeaponData, "9205_level", 100);
-	SetTrieString(g_hWeaponData, "9205_attribs", "2 ; 10100.0 ; 4 ; 1100.0 ; 6 ; 0.25 ; 16 ; 250.0 ; 31 ; 10.0 ; 103 ; 1.5 ; 107 ; 2.0 ; 134 ; 2.0");
-	SetTrieValue(g_hWeaponData, "9205_ammo", 200);
-
-//Trilby's Rebel Pack - Rebel's Curse
-	SetTrieString(g_hWeaponData, "2197_classname", "tf_weapon_wrench");
-	SetTrieValue(g_hWeaponData, "2197_index", 197);
-	SetTrieValue(g_hWeaponData, "2197_slot", 2);
-	SetTrieValue(g_hWeaponData, "2197_quality", 10);
-	SetTrieValue(g_hWeaponData, "2197_level", 13);
-	SetTrieString(g_hWeaponData, "2197_attribs", "156 ; 1 ; 2 ; 1.05 ; 107 ; 1.1 ; 62 ; 0.90 ; 64 ; 0.90 ; 125 ; -10 ; 5 ; 1.2 ; 81 ; 0.75");
-	SetTrieValue(g_hWeaponData, "2197_ammo", -1);
-	SetTrieString(g_hWeaponData, "2197_model", "models/custom/weapons/rebelscurse/c_wrench_v2.mdl");
-	SetTrieString(g_hWeaponData, "2197_viewmodel", "models/custom/weapons/rebelscurse/v_wrench_engineer_v2.mdl");
 
 //Jar of Ants
 	SetTrieString(g_hWeaponData, "2058_classname", "tf_weapon_jar");
@@ -1997,17 +1822,6 @@ void LoadWeaponData()
 	SetTrieValue(g_hWeaponData, "9266_level", 100);
 	SetTrieString(g_hWeaponData, "9266_attribs", "15 ; 0 ; 26 ; 600.0 ; 2 ; 999.0 ; 107 ; 4.0 ; 109 ; 0.0 ; 57 ; 50.0 ; 69 ; 0.0 ; 68 ; -1 ; 53 ; 1.0 ; 27 ; 1.0 ; 180 ; -25 ; 219 ; 1.0 ; 134 ; 8.0");
 	SetTrieValue(g_hWeaponData, "9266_ammo", -1);
-
-//Goldslinger
-	SetTrieString(g_hWeaponData, "5142_classname", "tf_weapon_robot_arm");
-	SetTrieValue(g_hWeaponData, "5142_index", 142);
-	SetTrieValue(g_hWeaponData, "5142_slot", 2);
-	SetTrieValue(g_hWeaponData, "5142_quality", 6);
-	SetTrieValue(g_hWeaponData, "5142_level", 25);
-	SetTrieString(g_hWeaponData, "5142_attribs", "124 ; 1 ; 26 ; 25.0 ; 15 ; 0 ; 150 ; 1");
-	SetTrieValue(g_hWeaponData, "5142_ammo", -1);
-	SetTrieString(g_hWeaponData, "5142_model", "models/custom/weapons/goldslinger/engineer_v2.mdl");
-	SetTrieString(g_hWeaponData, "5142_viewmodel", "models/custom/weapons/goldslinger/c_engineer_arms.mdl");
 
 	SetTrieString(g_hWeaponData, "735_classname", "tf_weapon_builder", false);
 	SetTrieValue(g_hWeaponData, "735_index", 735, false);
