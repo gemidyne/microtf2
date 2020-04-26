@@ -329,7 +329,15 @@
 	{
 		"ru"		"ВЫПЕЙТЕ!"
 	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"ru"		""
+	}
 	"Minigame20_Caption_Eat"
+	{
+		"ru"		"ПОЕШЬТЕ!"
+	}
+	"Minigame20_Caption_DontEat"
 	{
 		"ru"		"ПОЕШЬТЕ!"
 	}
@@ -352,6 +360,14 @@
 	"Minigame25_Caption"
 	{
 		"ru"		"ИСПОЛЬЗУЙТЕ РАНЕЦ!"
+	}
+	"Minigame26_Caption"
+	{
+		"ru"		""
+	}
+	"Minigame27_Caption"
+	{
+		"ru"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{

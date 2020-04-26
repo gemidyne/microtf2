@@ -329,7 +329,15 @@
 	{
 		"es"		"BEBE!"
 	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"es"		""
+	}
 	"Minigame20_Caption_Eat"
+	{
+		"es"		"COME!"
+	}
+	"Minigame20_Caption_DontEat"
 	{
 		"es"		"COME!"
 	}
@@ -352,6 +360,14 @@
 	"Minigame25_Caption"
 	{
 		"es"		"JETPACK!"
+	}
+	"Minigame26_Caption"
+	{
+		"es"		""
+	}
+	"Minigame27_Caption"
+	{
+		"es"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{

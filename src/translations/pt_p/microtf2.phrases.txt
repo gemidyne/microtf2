@@ -329,7 +329,15 @@
 	{
 		"pt_p"		"BEBA!"
 	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"pt_p"		""
+	}
 	"Minigame20_Caption_Eat"
+	{
+		"pt_p"		"COMA!"
+	}
+	"Minigame20_Caption_DontEat"
 	{
 		"pt_p"		"COMA!"
 	}
@@ -352,6 +360,14 @@
 	"Minigame25_Caption"
 	{
 		"pt_p"		"JETPACK!"
+	}
+	"Minigame26_Caption"
+	{
+		"pt_p"		""
+	}
+	"Minigame27_Caption"
+	{
+		"pt_p"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{

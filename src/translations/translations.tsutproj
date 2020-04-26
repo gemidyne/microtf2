@@ -1324,7 +1324,12 @@
       "description": "Tell players not to drink.",
       "text": "DON'T DRINK!",
       "formatArguments": [],
-      "translations": {}
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null
+      }
     },
     {
       "key": "Minigame20_Caption_Eat",
@@ -1428,14 +1433,24 @@
       "description": "Tell players to not laugh! (Laughing results in failure)",
       "text": "DON'T LAUGH!",
       "formatArguments": [],
-      "translations": {}
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null
+      }
     },
     {
       "key": "Minigame27_Caption",
       "description": "Tell players to hit someone! (If they miss, they will hit themselves and fail)",
       "text": "HIT SOMEONE!",
       "formatArguments": [],
-      "translations": {}
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null
+      }
     },
     {
       "key": "Bossgame7_Caption_Explain",
