@@ -1344,17 +1344,9 @@
     {
       "key": "Minigame20_Caption_DontEat",
       "description": "Tell players not to eat.",
-      "text": "EAT!",
+      "text": "DON'T EAT!",
       "formatArguments": [],
-      "translations": {
-        "pt": "COMA!",
-        "fr": "MANGEZ !",
-        "it": "MANGIA!",
-        "pt_p": "COMA!",
-        "ru": "ПОЕШЬТЕ!",
-        "es": "COME!",
-        "jp": null
-      }
+      "translations": {}
     },
     {
       "key": "Minigame21_Caption",
