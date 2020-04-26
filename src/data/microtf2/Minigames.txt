@@ -247,4 +247,12 @@
 		"EntryPoint"		"Minigame26_EntryPoint"
 		"BackgroundMusic_Length"		"4.153470"
 	}
+	"27"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jetpack.mp3"
+		"Caption"		"HIT SOMEONE!"
+		"EntryPoint"		"Minigame27_EntryPoint"
+		"BackgroundMusic_Length"		"4.153470"
+	}
 }

@@ -1433,8 +1433,15 @@
     },
     {
       "key": "Minigame26_Caption",
-      "description": null,
+      "description": "Tell players to not laugh! (Laughing results in failure)",
       "text": "DON'T LAUGH!",
+      "formatArguments": [],
+      "translations": {}
+    },
+    {
+      "key": "Minigame27_Caption",
+      "description": "Tell players to hit someone! (If they miss, they will hit themselves and fail)",
+      "text": "HIT SOMEONE!",
       "formatArguments": [],
       "translations": {}
     },
