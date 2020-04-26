@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"ru"		"ПОЕШЬТЕ!"
+		"ru"		""
 	}
 	"Minigame21_Caption"
 	{
