@@ -1351,7 +1351,12 @@
       "description": "Tell players not to eat.",
       "text": "DON'T EAT!",
       "formatArguments": [],
-      "translations": {}
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null
+      }
     },
     {
       "key": "Minigame21_Caption",
