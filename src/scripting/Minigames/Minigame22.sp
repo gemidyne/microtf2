@@ -72,7 +72,7 @@ public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float da
 	Player attacker = new Player(attackerId);
 	Player victim = new Player(victimId);
 
-	if (attacker.IsValid && victim.IsValid)
+	if (attacker.IsValid && victim.IsValid && attacker.IsParticipating && victim.IsParticipating)
 	{
 		float ang[3];
 		float vel[3];
