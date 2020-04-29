@@ -1,0 +1,66 @@
+{
+  "vmfPath": "S:\\microtf2\\assets\\map\\warioware_redux_master.vmf",
+  "compressToBZip2": false,
+  "copyToGameMapsOnComplete": true,
+  "vbsp": {
+    "entitiesOnly": false,
+    "propsOnly": false,
+    "noDetail": false,
+    "noWater": false,
+    "low": false,
+    "keepStalePackedData": false,
+    "otherArguments": ""
+  },
+  "vvis": {
+    "fast": false,
+    "low": false,
+    "otherArguments": ""
+  },
+  "vrad": {
+    "fast": false,
+    "final": true,
+    "ldr": true,
+    "hdr": false,
+    "staticPropLighting": true,
+    "staticPropPolys": true,
+    "textureShadows": true,
+    "useModifiedVrad": true,
+    "low": true,
+    "otherArguments": "-bounce 256",
+    "largeDispSampleRadius": true
+  },
+  "resourcePacking": {
+    "enabled": true,
+    "generateMapSpecificFiles": true,
+    "repackCompress": true,
+    "folders": [
+      {
+        "path": "s:\\microtf2\\assets\\datapacks\\warioware_general",
+        "intelligent": false
+      },
+      {
+        "path": "s:\\microtf2\\assets\\datapacks\\warioware_mapassets",
+        "intelligent": true
+      },
+      {
+        "path": "s:\\microtf2\\assets\\datapacks\\warioware_overlay",
+        "intelligent": false
+      },
+      {
+        "path": "s:\\microtf2\\assets\\datapacks\\warioware_particles",
+        "intelligent": false
+      },
+      {
+        "path": "s:\\microtf2\\assets\\datapacks\\warioware_sounds",
+        "intelligent": false
+      }
+    ]
+  },
+  "mapVersioning": {
+    "mode": 2,
+    "fileNamePrefix": "warioware_redux_dev",
+    "fileNameSuffix": "",
+    "nextBuildNumber": 2
+  },
+  "launchMapInGame": false
+}
