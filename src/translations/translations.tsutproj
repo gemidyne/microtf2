@@ -1327,7 +1327,7 @@
       "translations": {
         "it": "NON BERE!",
         "es": null,
-        "fr": null,
+        "fr": "NE BUVEZ PAS !",
         "ru": null
       }
     },
@@ -1354,7 +1354,7 @@
       "translations": {
         "it": "NON MANGIARE!",
         "es": null,
-        "fr": null,
+        "fr": "NE MANGEZ PAS !",
         "ru": null
       }
     },
@@ -1441,7 +1441,7 @@
       "translations": {
         "it": "NON RIDERE!",
         "es": null,
-        "fr": null,
+        "fr": "NE RIEZ PAS !",
         "ru": null
       }
     },
@@ -1453,7 +1453,7 @@
       "translations": {
         "it": "COLPISCI QUALCUNO!",
         "es": null,
-        "fr": null,
+        "fr": "FRAPPEZ QUELQU'UN !",
         "ru": null
       }
     },
