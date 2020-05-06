@@ -1325,7 +1325,7 @@
       "text": "DON'T DRINK!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "NON BERE!",
         "es": null,
         "fr": null,
         "ru": null
@@ -1352,7 +1352,7 @@
       "text": "DON'T EAT!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "NON MANGIARE!",
         "es": null,
         "fr": null,
         "ru": null
@@ -1439,7 +1439,7 @@
       "text": "DON'T LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "NON RIDERE!",
         "es": null,
         "fr": null,
         "ru": null
@@ -1451,7 +1451,7 @@
       "text": "HIT SOMEONE!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "COLPISCI QUALCUNO!",
         "es": null,
         "fr": null,
         "ru": null
@@ -1528,7 +1528,7 @@
       "translations": {
         "pt": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "fr": "== ÉCRIVEZ LE MOT ! ==\n\n{1}\n\nMot suivant : {2}\nTemps restant : {3} secondes",
-        "it": "== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds",
+        "it": "== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} secondo(i)",
         "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
         "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
