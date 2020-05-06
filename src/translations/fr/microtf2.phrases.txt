@@ -331,7 +331,7 @@
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"fr"		""
+		"fr"		"NE BUVEZ PAS !"
 	}
 	"Minigame20_Caption_Eat"
 	{
@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"fr"		""
+		"fr"		"NE MANGEZ PAS !"
 	}
 	"Minigame21_Caption"
 	{
@@ -363,11 +363,11 @@
 	}
 	"Minigame26_Caption"
 	{
-		"fr"		""
+		"fr"		"NE RIEZ PAS !"
 	}
 	"Minigame27_Caption"
 	{
-		"fr"		""
+		"fr"		"FRAPPEZ QUELQU'UN !"
 	}
 	"Bossgame7_Caption_Explain"
 	{
