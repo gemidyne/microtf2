@@ -331,7 +331,7 @@
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"it"		""
+		"it"		"NON BERE!"
 	}
 	"Minigame20_Caption_Eat"
 	{
@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"it"		""
+		"it"		"NON MANGIARE!"
 	}
 	"Minigame21_Caption"
 	{
@@ -363,11 +363,11 @@
 	}
 	"Minigame26_Caption"
 	{
-		"it"		""
+		"it"		"NON RIDERE!"
 	}
 	"Minigame27_Caption"
 	{
-		"it"		""
+		"it"		"COLPISCI QUALCUNO!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
@@ -385,7 +385,7 @@
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"it"		"== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} seconds"
+		"it"		"== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} secondo(i)"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
