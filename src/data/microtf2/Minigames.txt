@@ -237,22 +237,22 @@
 		"Caption"		"JETPACK!"
 		"EntryPoint"		"Minigame25_EntryPoint"
 		"BackgroundMusic_Length"		"4.153470"
-		"MaximumPlayerCount"			"10"
+		"MaximumPlayerCount"		"10"
 	}
 	"26"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jetpack.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/dontlaugh.mp3"
 		"Caption"		"DON'T LAUGH!"
 		"EntryPoint"		"Minigame26_EntryPoint"
-		"BackgroundMusic_Length"		"4.153470"
+		"BackgroundMusic_Length"		"3.770182"
 	}
 	"27"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jetpack.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/hitsomeone.mp3"
 		"Caption"		"HIT SOMEONE!"
 		"EntryPoint"		"Minigame27_EntryPoint"
-		"BackgroundMusic_Length"		"4.153470"
+		"BackgroundMusic_Length"		"3.431619"
 	}
 }
