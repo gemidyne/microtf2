@@ -38,7 +38,7 @@ public void Minigame27_OnMinigameSelected(int client)
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
-		player.SetHealth(30);
+		player.SetHealth(20);
 		player.GiveWeapon(325);
 	}
 }
