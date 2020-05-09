@@ -604,6 +604,6 @@
 	}
 	"SpecialRound21_Description"
 	{
-		"pt"		""
+		"pt"		"test"
 	}
 }
