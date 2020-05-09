@@ -2380,10 +2380,10 @@
       "text": "Hey! Where did my polygons go?",
       "formatArguments": [],
       "translations": {
-        "pt": "test",
+        "pt": null,
         "fr": "Mais ! Où sont passés mes polygones ?",
         "it": "Come ai vecchi tempi!",
-        "pt_p": "test",
+        "pt_p": null,
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null
