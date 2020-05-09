@@ -119,10 +119,10 @@
         }
       ],
       "translations": {
-        "pt": "",
+        "pt": null,
         "fr": "Tonneaux : {1}",
         "it": "Barili: {1}",
-        "pt_p": "",
+        "pt_p": null,
         "ru": "Бочки: {1}",
         "es": "Barriles: {1}",
         "jp": null
@@ -616,10 +616,10 @@
       "text": "",
       "formatArguments": [],
       "translations": {
-        "pt": "",
+        "pt": null,
         "fr": null,
         "it": null,
-        "pt_p": "",
+        "pt_p": null,
         "ru": null,
         "es": null,
         "jp": null
@@ -1328,7 +1328,9 @@
         "it": "NON BERE!",
         "es": null,
         "fr": "NE BUVEZ PAS !",
-        "ru": null
+        "ru": null,
+        "pt_p": null,
+        "pt": null
       }
     },
     {
@@ -1355,7 +1357,9 @@
         "it": "NON MANGIARE!",
         "es": null,
         "fr": "NE MANGEZ PAS !",
-        "ru": null
+        "ru": null,
+        "pt_p": null,
+        "pt": null
       }
     },
     {
@@ -1442,7 +1446,9 @@
         "it": "NON RIDERE!",
         "es": null,
         "fr": "NE RIEZ PAS !",
-        "ru": null
+        "ru": null,
+        "pt_p": null,
+        "pt": null
       }
     },
     {
@@ -1454,7 +1460,9 @@
         "it": "COLPISCI QUALCUNO!",
         "es": null,
         "fr": "FRAPPEZ QUELQU'UN !",
-        "ru": null
+        "ru": null,
+        "pt_p": null,
+        "pt": null
       }
     },
     {
@@ -2357,10 +2365,10 @@
       "text": "Team Fortress 64",
       "formatArguments": [],
       "translations": {
-        "pt": "",
+        "pt": null,
         "fr": "Team Fortress 64",
         "it": "Team Fortress 64",
-        "pt_p": "",
+        "pt_p": null,
         "ru": "Team Fortress 64",
         "es": "Team Fortress 64",
         "jp": null
@@ -2372,10 +2380,10 @@
       "text": "Hey! Where did my polygons go?",
       "formatArguments": [],
       "translations": {
-        "pt": "",
+        "pt": "test",
         "fr": "Mais ! Où sont passés mes polygones ?",
         "it": "Come ai vecchi tempi!",
-        "pt_p": "",
+        "pt_p": "test",
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null
