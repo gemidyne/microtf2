@@ -76,11 +76,6 @@ stock void InitializeSystem()
 		SetFailState("The SoundLib Extension is not loaded.");
 	}
 
-	if (FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
-	{
-		SetFailState("Bakugo's host_timescale fix is required to run this plugin. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
-	}
-
 	LoadTranslations("microtf2.phrases.txt");
 
 	#if defined LOGGING_STARTUP
@@ -107,6 +102,11 @@ stock void InitializeSystem()
 
 public void System_OnMapStart()
 {
+	if (FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
+	{
+		SetFailState("Bakugo's host_timescale fix is required to run this plugin. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
+	}
+
 	char gameDescription[32];
 	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
 	Steam_SetGameDescription(gameDescription);
