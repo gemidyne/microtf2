@@ -76,6 +76,11 @@ stock void InitializeSystem()
 		SetFailState("The SoundLib Extension is not loaded.");
 	}
 
+	if (FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
+	{
+		SetFailState("Bakugo's host_timescale fix is required to run this plugin. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
+	}
+
 	LoadTranslations("microtf2.phrases.txt");
 
 	#if defined LOGGING_STARTUP
@@ -96,7 +101,6 @@ stock void InitializeSystem()
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
 	InitializeMinigames();
 	InitialisePrecacheSystem();
-	InitialiseSecuritySystem();
 
 	InitialiseWeapons();
 }

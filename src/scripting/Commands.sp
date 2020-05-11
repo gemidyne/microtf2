@@ -4,6 +4,7 @@
  * Implements functionality for commands and convars.
  */
 
+Handle ConVar_SvCheats = INVALID_HANDLE;
 Handle ConVar_HostTimescale = INVALID_HANDLE;
 Handle ConVar_PhysTimescale = INVALID_HANDLE;
 Handle ConVar_ServerGravity = INVALID_HANDLE;
@@ -31,6 +32,7 @@ stock void InitializeCommands()
 	AddCommandListener(CmdOnPlayerKill, "kill");
 	AddCommandListener(CmdOnPlayerKill, "explode");
 
+	ConVar_SvCheats = FindConVar("sv_cheats");
 	ConVar_HostTimescale = FindConVar("host_timescale");
 	ConVar_PhysTimescale = FindConVar("phys_timescale");
 	ConVar_ServerGravity = FindConVar("sv_gravity");
@@ -82,7 +84,6 @@ stock void ResetConVars()
 	
 	// Non-Exclusive ConVars
 	// Server ConVars
-	ResetConVar(FindConVar("sv_cheats"));
 	SetConVarInt(FindConVar("sv_use_steam_voice"), 0);
 
 	// Multiplayer ConVars
@@ -117,7 +118,6 @@ stock void ResetConVars()
 stock void PrepareConVars()
 {
 	// Server ConVars	
-	SetConVarInt(FindConVar("sv_cheats"), 1);
 	SetConVarInt(FindConVar("sv_use_steam_voice"), 1);
 
 	// Multiplayer ConVars
