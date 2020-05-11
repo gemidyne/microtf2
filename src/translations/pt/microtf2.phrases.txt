@@ -259,7 +259,7 @@
 	}
 	"Minigame15_Caption_Dispenser"
 	{
-		"pt"		"CONSTRUA UMA DISPENSER!"
+		"pt"		"CONSTRUA UM FORNECEDOR!"
 	}
 	"Minigame15_Caption_Teleporter"
 	{
@@ -271,15 +271,15 @@
 	}
 	"Minigame16_Caption"
 	{
-		"pt"		"JOGUE O JARATE NO INIMIGO!"
+		"pt"		"JOGUE O JARATE NOS INIMIGOS!"
 	}
 	"Minigame17_Caption_HitAHeavy"
 	{
-		"pt"		"BATA NO HEAVY!"
+		"pt"		"ACERTE O HEAVY!"
 	}
 	"Minigame17_Caption_GetHitByMedic"
 	{
-		"pt"		"SEJA ATINGIDO POR UM MÉDICO"
+		"pt"		"SEJA ATINGIDO POR UM MÉDICO!"
 	}
 	"Minigame18_Caption"
 	{
@@ -291,55 +291,55 @@
 	}
 	"Minigame19_Caption_ChangeClassScout"
 	{
-		"pt"		"MUDE PARA A CLASSE: SCOUT!"
+		"pt"		"MUDE A CLASSE PARA SCOUT!"
 	}
 	"Minigame19_Caption_ChangeClassSoldier"
 	{
-		"pt"		"MUDE PARA A CLASSE: SOLDIER!"
+		"pt"		"MUDE A CLASSE PARA SOLDIER!"
 	}
 	"Minigame19_Caption_ChangeClassPyro"
 	{
-		"pt"		"MUDE PARA A CLASSE: PYRO!"
+		"pt"		"MUDE A CLASSE PARA PYRO!"
 	}
 	"Minigame19_Caption_ChangeClassDemoman"
 	{
-		"pt"		"MUDE PARA A CLASSE: DEMOMAN!"
+		"pt"		"MUDE A CLASSE PARA DEMOMAN!"
 	}
 	"Minigame19_Caption_ChangeClassHeavy"
 	{
-		"pt"		"MUDE PARA A CLASSE: HEAVY!"
+		"pt"		"MUDE A CLASSE PARA HEAVY!"
 	}
 	"Minigame19_Caption_ChangeClassEngineer"
 	{
-		"pt"		"MUDE PARA A CLASSE: ENGENHEIRO!"
+		"pt"		"MUDE A CLASSE PARA ENGENHEIRO!"
 	}
 	"Minigame19_Caption_ChangeClassMedic"
 	{
-		"pt"		"MUDE PARA A CLASSE: MÉDICO!"
+		"pt"		"MUDE A CLASSE PARA MÉDICO!"
 	}
 	"Minigame19_Caption_ChangeClassSniper"
 	{
-		"pt"		"MUDE PARA A CLASSE: SNIPER!"
+		"pt"		"MUDE A CLASSE PARA SNIPER!"
 	}
 	"Minigame19_Caption_ChangeClassSpy"
 	{
-		"pt"		"MUDE PARA A CLASSE: SPY!"
+		"pt"		"MUDE A CLASSE PARA SPY!"
 	}
 	"Minigame20_Caption_Drink"
 	{
-		"pt"		"BEBA!"
+		"pt"		"BEBA RÁPIDO!"
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"pt"		""
+		"pt"		"NÃO BEBA!"
 	}
 	"Minigame20_Caption_Eat"
 	{
-		"pt"		"COMA!"
+		"pt"		"COMA, RÁPIDO!"
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"pt"		""
+		"pt"		"NÃO COMA!"
 	}
 	"Minigame21_Caption"
 	{
@@ -347,11 +347,11 @@
 	}
 	"Minigame22_Caption"
 	{
-		"pt"		"FIQUE NO CHÃO!"
+		"pt"		"PERMANEÇA NO CHÃO!"
 	}
 	"Minigame23_Caption"
 	{
-		"pt"		"PULO DUPLO!"
+		"pt"		"SALTO DUPLO!"
 	}
 	"Minigame24_Caption"
 	{
@@ -359,19 +359,19 @@
 	}
 	"Minigame25_Caption"
 	{
-		"pt"		"JETPACK!"
+		"pt"		"USE O JETPACK!"
 	}
 	"Minigame26_Caption"
 	{
-		"pt"		""
+		"pt"		"NÃO VALE RIR!"
 	}
 	"Minigame27_Caption"
 	{
-		"pt"		""
+		"pt"		"ACERTE ALGUÉM!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"pt"		"Digite mais rápido que puder cada palavra no cha para permanecer vivo!"
+		"pt"		"No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!"
 	}
 	"Bossgame7_Caption_Start"
 	{
@@ -394,7 +394,7 @@
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
-		"pt"		"== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!"
+		"pt"		"== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!"
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
@@ -413,11 +413,11 @@
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"pt"		"Não é permitido a troca de classes durante os boss!"
+		"pt"		"A troca de classes não é permitida durante os 'bossgames' !"
 	}
 	"SpecialRound0_Name"
 	{
-		"pt"		"Terceira Pessoa"
+		"pt"		"Modo Terceira Pessoa"
 	}
 	"SpecialRound0_Description"
 	{
