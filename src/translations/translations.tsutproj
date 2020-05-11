@@ -601,10 +601,10 @@
       "text": "SHOOT THE MOST BARRELS!",
       "formatArguments": [],
       "translations": {
-        "pt": "ACERTE O MÁXIMO DE BARRIS!",
+        "pt": "ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!",
         "fr": "DÉTRUISEZ LE PLUS DE TONNEAUX !",
         "it": "SPARA A PIU' BARILI CHE PUOI!",
-        "pt_p": "ACERTE O MÁXIMO DE BARRIS!",
+        "pt_p": "ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!",
         "ru": "УНИЧТОЖТЕ БОЧКИ!",
         "es": "DISPARA A LOS BARRILES!",
         "jp": null
@@ -631,10 +631,10 @@
       "text": "GET TO THE END!",
       "formatArguments": [],
       "translations": {
-        "pt": "CHEGUE ATÉ O FINAL!",
+        "pt": "CHEGUE NO FINAL SE FOR CAPAZ!",
         "fr": "REJOIGNEZ L'AUTRE BOUT !",
         "it": "RAGGIUNGI LA META!",
-        "pt_p": "CHEGUE ATÉ O FINAL!",
+        "pt_p": "CHEGUE NO FINAL SE FOR CAPAZ!",
         "ru": "ДОЙДИТЕ ДО КОНЦА!",
         "es": "LLEGA HASTA EL FINAL!",
         "jp": null
@@ -661,10 +661,10 @@
       "text": "BREAK THE BARRELS!",
       "formatArguments": [],
       "translations": {
-        "pt": "QUEBRE O BARRIL!",
+        "pt": "QUEBRE OS BARRIS!",
         "fr": "DÉTRUISEZ LES TONNEAUX !",
         "it": "ROMPI I BARILI!",
-        "pt_p": "QUEBRE O BARRIL!",
+        "pt_p": "QUEBRE OS BARRIS!",
         "ru": "СЛОМАЙТЕ БОЧКУ!",
         "es": "ROMPE LOS BARRILES!",
         "jp": null
@@ -676,10 +676,10 @@
       "text": "AIRBLAST AND STAY ALIVE!",
       "formatArguments": [],
       "translations": {
-        "pt": "AIRBLAST E CONTINUE VIVO!",
+        "pt": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
         "fr": "REPOUSSEZ LES ENNEMIS ET RESTEZ EN VIE !",
         "it": "SPINGI COL COMPRESSORE!",
-        "pt_p": "AIRBLAST E CONTINUE VIVO!",
+        "pt_p": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
         "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
         "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
         "jp": null
@@ -746,10 +746,10 @@
         }
       ],
       "translations": {
-        "pt": "RESPONDA A QUESTÃO!\n{1} = ?",
+        "pt": "RESPONDA A PERGUNTA!\n{1} = ?",
         "fr": "RÉPONDEZ À LA QUESTION !\n{1} = ?",
         "it": "RISPONDI ALLA DOMANDA!\n{1} = ?",
-        "pt_p": "RESPONDA A QUESTÃO!\n{1} = ?",
+        "pt_p": "RESPONDA A PERGUNTA!\n{1} = ?",
         "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
         "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
         "jp": null
@@ -770,10 +770,10 @@
         }
       ],
       "translations": {
-        "pt": "{1}A resposta certa é: {2}!",
+        "pt": "{1}A reposta correta foi {2}!",
         "fr": "{1}La bonne réponse était {2} !",
         "it": "{1}La risposta corretta era {2}!",
-        "pt_p": "{1}A resposta certa é: {2}!",
+        "pt_p": "{1}A reposta correta foi {2}!",
         "ru": "{1}Правильным ответом было {2}!",
         "es": "{1}La respuesta correcta era {2}!",
         "jp": null
@@ -785,10 +785,10 @@
       "text": "SIMON SAYS: TAUNT!",
       "formatArguments": [],
       "translations": {
-        "pt": "O MESMTRE MANDOU: DÊ TAUNT!",
+        "pt": "O MESTRE MANDOU: TAUNT!",
         "fr": "JACQUES A DIT : MOQUEZ-VOUS !",
         "it": "SIMONE DICE: PROVOCA!",
-        "pt_p": "O MESMTRE MANDOU: DÊ TAUNT!",
+        "pt_p": "O MESTRE MANDOU: TAUNT!",
         "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "SIMON DICE: BURLATE!",
         "jp": null
@@ -815,10 +815,10 @@
       "text": "SIMON SAYS: CROUCH!",
       "formatArguments": [],
       "translations": {
-        "pt": "O MESTRE MANDAU: ABAIXE!",
+        "pt": "O MESTRE MANDOU: ABAIXE!",
         "fr": "JACQUES A DIT : ACCROUPISSEZ-VOUS !",
         "it": "SIMONE DICE: ABBASSATI!",
-        "pt_p": "O MESTRE MANDAU: ABAIXE!",
+        "pt_p": "O MESTRE MANDOU: ABAIXE!",
         "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "SIMON DICE: AGACHATE!",
         "jp": null
@@ -830,10 +830,10 @@
       "text": "SOMEONE SAYS: TAUNT!",
       "formatArguments": [],
       "translations": {
-        "pt": "ALGUÉM MANDOU: DÊ TAUNT!",
+        "pt": "O MESTRE NÃO MANDOU: TAUNT!",
         "fr": "JACQUADI A DIT : MOQUEZ-VOUS !",
         "it": "SALMONE DICE: PROVOCA!",
-        "pt_p": "ALGUÉM MANDOU: DÊ TAUNT!",
+        "pt_p": "O MESTRE NÃO MANDOU: TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "ALGUIEN DICE: BURLATE!",
         "jp": null
@@ -845,10 +845,10 @@
       "text": "SOMEONE SAYS: JUMP!",
       "formatArguments": [],
       "translations": {
-        "pt": "ALGUÉM MANDOU: PULE!",
+        "pt": "O MESTRE NÃO MANDOU: PULE!",
         "fr": "JACQUADI A DIT : SAUTEZ !",
         "it": "SALMONE DICE: SALTA!",
-        "pt_p": "ALGUÉM MANDOU: PULE!",
+        "pt_p": "O MESTRE NÃO MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
         "es": "ALGUIEN DICE: SALTA!",
         "jp": null
@@ -860,10 +860,10 @@
       "text": "SOMEONE SAYS: CROUCH!",
       "formatArguments": [],
       "translations": {
-        "pt": "ALGUÉM MANDOU: ABAIXE!",
+        "pt": "O MESTRE NÃO MANDOU: ABAIXE!",
         "fr": "JACQUADI A DIT : ACCROUPISSEZ-VOUS !",
         "it": "SALMONE DICE: ABBASSATI!",
-        "pt_p": "ALGUÉM MANDOU: ABAIXE!",
+        "pt_p": "O MESTRE NÃO MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "ALGUIEN DICE: AGACHATE!",
         "jp": null
@@ -875,10 +875,10 @@
       "text": "(Simon didn't say it..)",
       "formatArguments": [],
       "translations": {
-        "pt": "(O mestre não mandou você fazer isso..)",
+        "pt": "(O mestre NÃO mandou você fazer isso...)",
         "fr": "(Jacques n'a rien dit...)",
         "it": "(Non lo ha detto Simone..)",
-        "pt_p": "(O mestre não mandou você fazer isso..)",
+        "pt_p": "(O mestre NÃO mandou você fazer isso...)",
         "ru": "(Саймон этого не говорил..)",
         "es": "(Simon no a dicho eso..)",
         "jp": null
@@ -890,10 +890,10 @@
       "text": "Kamikaze is over here!",
       "formatArguments": [],
       "translations": {
-        "pt": "o homem bomba está aqui!",
+        "pt": "O Kamikaze chegou!",
         "fr": "Un kamikaze est dans les parages !",
         "it": "Il kamikaze è qui!",
-        "pt_p": "o homem bomba está aqui!",
+        "pt_p": "O Kamikaze chegou!",
         "ru": "Камикадзе здесь!",
         "es": "El Kamikaze esta por aqui!",
         "jp": null
@@ -905,10 +905,10 @@
       "text": "EXPLODE AS MANY PEOPLE AS YOU CAN!",
       "formatArguments": [],
       "translations": {
-        "pt": "EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!",
+        "pt": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
         "fr": "EXPLOSEZ LE PLUS DE PERSONNES POSSIBLE !",
         "it": "FAI ESPLODERE PIU' GIOCATORI CHE PUOI!",
-        "pt_p": "EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!",
+        "pt_p": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
         "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
         "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
         "jp": null
@@ -920,10 +920,10 @@
       "text": "RUN FROM THE KAMIKAZE!",
       "formatArguments": [],
       "translations": {
-        "pt": "CORRA DO HOMEM BOMBA!",
+        "pt": "FUJA PARA LONGE DO KAMIKAZE!",
         "fr": "ÉCHAPPEZ AU KAMIKAZE !",
         "it": "SCAPPA DAL KAMIKAZE!",
-        "pt_p": "CORRA DO HOMEM BOMBA!",
+        "pt_p": "FUJA PARA LONGE DO KAMIKAZE!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
         "es": "HUYE DEL KAMIKAZE!",
         "jp": null
@@ -935,10 +935,10 @@
       "text": "DON'T STOP MOVING!",
       "formatArguments": [],
       "translations": {
-        "pt": "NÃO PARE DE SE MOVER!",
+        "pt": "NÃO PARE DE SE MOVIMENTAR!",
         "fr": "N'ARRÊTEZ PAS DE BOUGER !",
         "it": "CONTINUA A MUOVERTI!",
-        "pt_p": "NÃO PARE DE SE MOVER!",
+        "pt_p": "NÃO PARE DE SE MOVIMENTAR!",
         "ru": "ДВИГАТЬСЯ!",
         "es": "NO PARES DE MOVERTE!",
         "jp": null
@@ -965,10 +965,10 @@
       "text": "GET ON A PLATFORM!",
       "formatArguments": [],
       "translations": {
-        "pt": "SUBA NA PLATAFORMA!",
+        "pt": "SUBA EM ALGUMA PLATAFORMA!",
         "fr": "REJOIGNEZ UNE PLATE-FORME !",
         "it": "SALI SU UNA PIATTAFORMA!",
-        "pt_p": "SUBA NA PLATAFORMA!",
+        "pt_p": "SUBA EM ALGUMA PLATAFORMA!",
         "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
         "es": "SUBE A UNA PLATAFORMA!",
         "jp": null
@@ -995,10 +995,10 @@
       "text": "Spycrabs must crouch and look up!",
       "formatArguments": [],
       "translations": {
-        "pt": "Spycrabs precisam abaixar e olhar para cima!",
+        "pt": "Spycrabs precisam abaixar olhando para cima!",
         "fr": "Les spycrabs doivent s'accroupir et regarder en haut !",
         "it": "Gli Spycrab devono abbassarsi e guardare in alto!",
-        "pt_p": "Spycrabs precisam abaixar e olhar para cima!",
+        "pt_p": "Spycrabs precisam abaixar olhando para cima!",
         "ru": "Спайкрабы должны присесть и посмотреть вверх!",
         "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
         "jp": null
@@ -1010,10 +1010,10 @@
       "text": "SAP A BUILDING!",
       "formatArguments": [],
       "translations": {
-        "pt": "SOBOTE UMA CONSTRUÇÃO!",
+        "pt": "SABOTE UMA CONSTRUÇÃO!",
         "fr": "SABOTEZ UN BÂTIMENT !",
         "it": "SABOTA UNA COSTRUZIONE!",
-        "pt_p": "SOBOTE UMA CONSTRUÇÃO!",
+        "pt_p": "SABOTE UMA CONSTRUÇÃO!",
         "ru": "ПОСТАВЬТЕ ЖУЧОК!",
         "es": "DESTRUYE UNA CONSTRUCCION!",
         "jp": null
@@ -1025,10 +1025,10 @@
       "text": "GET A BUILDING SAPPED!",
       "formatArguments": [],
       "translations": {
-        "pt": "VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!",
+        "pt": "CONSTRUA ALGO PARA O SPY SABOTAR!",
         "fr": "FAITES-VOUS SABOTER UN BÂTIMENT !",
         "it": "FATTI SABOTARE UNA COSTRUZIONE!",
-        "pt_p": "VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!",
+        "pt_p": "CONSTRUA ALGO PARA O SPY SABOTAR!",
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
         "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
         "jp": null
