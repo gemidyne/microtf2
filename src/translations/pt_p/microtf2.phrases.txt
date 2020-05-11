@@ -3,27 +3,27 @@
 	"System_Advertisement"
 	{
 		"#format"		"{1:s}"
-		"pt_p"		"Você está jogando WARIO WARE! Versão {1}. Digite !credits no chat para conhecer os desenvolvedores."
+		"pt_p"		"Você está jogando WARIO WARE! Versão {1}. Tecle !credits no chat e saiba quem são os desenvolvedores."
 	}
 	"Hud_Score_Default"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Pontuação: {1}"
+		"pt_p"		"Pontos: {1}"
 	}
 	"Hud_Score_Minigames"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Minigames: {1}"
+		"pt_p"		"Microgames: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Pontuação do Time: {1}"
+		"pt_p"		"Placar do Time: {1}"
 	}
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		""
+		"pt_p"		"Barris: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
@@ -48,31 +48,31 @@
 	"Hud_SpecialRound_ChatDisplay"
 	{
 		"#format"		"{1:s},{2:s},{3:s}"
-		"pt_p"		"{1}A rodada especial é... {2}!\n{3}"
+		"pt_p"		"{1}Rodada especial. Na condição... {2}!\n{3}"
 	}
 	"PlayerSpawn_RespawnNotice"
 	{
-		"pt_p"		"Você renascerá assim que o minigame ou boss tiverem sido finalizados."
+		"pt_p"		"Você renascerá assim que o microgame ou o 'bossgame' forem finalizados."
 	}
 	"SuddenDeath_YouHaveBeenKnockedOut"
 	{
-		"pt_p"		"VOCÊ FOI DESCLASSIFICADO"
+		"pt_p"		"VOCÊ FOI ELIMINADO!"
 	}
 	"LowestScoreWins_ExploitBlocked"
 	{
-		"pt_p"		"Não é permitida a troca de classe durante esta rodada especial. 1 ponto está sendo adicionado ao seu placar."
+		"pt_p"		"A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar."
 	}
 	"General_Loser"
 	{
-		"pt_p"		"Perdeu!"
+		"pt_p"		"Perdedor!"
 	}
 	"General_Winner"
 	{
-		"pt_p"		"Ganhou!"
+		"pt_p"		"Vencedor!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
-		"pt_p"		"== A RODADA ESPECIAL ACABOU ! =="
+		"pt_p"		"== A RODADA ESPECIAL FOI ENCERRADA! =="
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
@@ -88,7 +88,7 @@
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
-		"pt_p"		"Não houveram vencedores!"
+		"pt_p"		"Sem vencedores desta vez!"
 	}
 	"GameOver_WinnerSuffix"
 	{
@@ -98,33 +98,33 @@
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}O time vencedor foi o TIME VERMELHO com {2} pontos!"
+		"pt_p"		"{1}O TIME VERMELHO foi o time vencedor com {2} pontos!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}O time vencedor foi o TIME AZUL com {2} pontos!"
+		"pt_p"		"{1}O TIME AZUL foi o time vencedor com {2} pontos!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
 		"#format"		"{1:s}"
-		"pt_p"		"{1}EMPATE! Ambos os times terminaram com o mesmo número de pontos."
+		"pt_p"		"{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
 	}
 	"Intermission_Header"
 	{
-		"pt_p"		"Intervalo!"
+		"pt_p"		"Hora do Intervalo!"
 	}
 	"Intermission_Body"
 	{
-		"pt_p"		"Intervalo! Hora de votar para o próximo mapa."
+		"pt_p"		"Uma pequena parada para votar o próximo mapa."
 	}
 	"Bossgame1_Caption"
 	{
-		"pt_p"		"FAÇA ROCKET JUMP ATÉ O FINAL!"
+		"pt_p"		"CHEGUE AO FINAL COM ROCKET JUMPS!"
 	}
 	"Bossgame2_Caption"
 	{
-		"pt_p"		"ESCAPE DA FÁBRICA!"
+		"pt_p"		"FUJA DA FÁBRICA!"
 	}
 	"Bossgame3_Caption"
 	{
