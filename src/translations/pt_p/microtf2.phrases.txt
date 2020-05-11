@@ -140,7 +140,7 @@
 	}
 	"Bossgame6_Caption"
 	{
-		"pt_p"		"ACERTE O MÁXIMO DE BARRIS!"
+		"pt_p"		"ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!"
 	}
 	"Bossgame7_Caption"
 	{
@@ -148,7 +148,7 @@
 	}
 	"Minigame1_Caption"
 	{
-		"pt_p"		"CHEGUE ATÉ O FINAL!"
+		"pt_p"		"CHEGUE NO FINAL SE FOR CAPAZ!"
 	}
 	"Minigame2_Caption"
 	{
@@ -156,11 +156,11 @@
 	}
 	"Minigame3_Caption"
 	{
-		"pt_p"		"QUEBRE O BARRIL!"
+		"pt_p"		"QUEBRE OS BARRIS!"
 	}
 	"Minigame4_Caption"
 	{
-		"pt_p"		"AIRBLAST E CONTINUE VIVO!"
+		"pt_p"		"EMPURRE COM AIRBLAST E TENTE FICAR VIVO!"
 	}
 	"Minigame5_Caption"
 	{
@@ -178,16 +178,16 @@
 	"Minigame8_CaptionFormatted"
 	{
 		"#format"		"{1:s}"
-		"pt_p"		"RESPONDA A QUESTÃO!\n{1} = ?"
+		"pt_p"		"RESPONDA A PERGUNTA!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
 		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}A resposta certa é: {2}!"
+		"pt_p"		"{1}A reposta correta foi {2}!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
-		"pt_p"		"O MESMTRE MANDOU: DÊ TAUNT!"
+		"pt_p"		"O MESTRE MANDOU: TAUNT!"
 	}
 	"Minigame9_Caption_SimonSaysJump"
 	{
@@ -195,39 +195,39 @@
 	}
 	"Minigame9_Caption_SimonSaysCrouch"
 	{
-		"pt_p"		"O MESTRE MANDAU: ABAIXE!"
+		"pt_p"		"O MESTRE MANDOU: ABAIXE!"
 	}
 	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
-		"pt_p"		"ALGUÉM MANDOU: DÊ TAUNT!"
+		"pt_p"		"O MESTRE NÃO MANDOU: TAUNT!"
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"pt_p"		"ALGUÉM MANDOU: PULE!"
+		"pt_p"		"O MESTRE NÃO MANDOU: PULE!"
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
-		"pt_p"		"ALGUÉM MANDOU: ABAIXE!"
+		"pt_p"		"O MESTRE NÃO MANDOU: ABAIXE!"
 	}
 	"Minigame9_Caption_SimonDidntSayIt"
 	{
-		"pt_p"		"(O mestre não mandou você fazer isso..)"
+		"pt_p"		"(O mestre NÃO mandou você fazer isso...)"
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"pt_p"		"o homem bomba está aqui!"
+		"pt_p"		"O Kamikaze chegou!"
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
-		"pt_p"		"EXPLODA E LEVE O MÁXIMO DE PESSOAS COM VOCÊ!"
+		"pt_p"		"EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!"
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"pt_p"		"CORRA DO HOMEM BOMBA!"
+		"pt_p"		"FUJA PARA LONGE DO KAMIKAZE!"
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
-		"pt_p"		"NÃO PARE DE SE MOVER!"
+		"pt_p"		"NÃO PARE DE SE MOVIMENTAR!"
 	}
 	"Minigame11_Caption_DontMove"
 	{
@@ -235,7 +235,7 @@
 	}
 	"Minigame12_Caption"
 	{
-		"pt_p"		"SUBA NA PLATAFORMA!"
+		"pt_p"		"SUBA EM ALGUMA PLATAFORMA!"
 	}
 	"Minigame13_Caption"
 	{
@@ -243,15 +243,15 @@
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
-		"pt_p"		"Spycrabs precisam abaixar e olhar para cima!"
+		"pt_p"		"Spycrabs precisam abaixar olhando para cima!"
 	}
 	"Minigame14_Caption_Spies"
 	{
-		"pt_p"		"SOBOTE UMA CONSTRUÇÃO!"
+		"pt_p"		"SABOTE UMA CONSTRUÇÃO!"
 	}
 	"Minigame14_Caption_Engineers"
 	{
-		"pt_p"		"VÁ ATÉ UMA CONSTRUÇÃO SABOTADA!"
+		"pt_p"		"CONSTRUA ALGO PARA O SPY SABOTAR!"
 	}
 	"Minigame15_Caption_Any"
 	{
