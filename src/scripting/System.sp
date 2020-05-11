@@ -96,13 +96,17 @@ stock void InitializeSystem()
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
 	InitializeMinigames();
 	InitialisePrecacheSystem();
-	InitialiseSecuritySystem();
 
 	InitialiseWeapons();
 }
 
 public void System_OnMapStart()
 {
+	if (FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
+	{
+		SetFailState("Bakugo's host_timescale fix is required to run this plugin. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
+	}
+
 	char gameDescription[32];
 	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
 	Steam_SetGameDescription(gameDescription);

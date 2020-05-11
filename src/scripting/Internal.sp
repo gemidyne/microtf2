@@ -24,8 +24,6 @@ stock bool IsWarioWareMap()
 
 stock void UnloadPlugin()
 {
-	SecuritySystem_IgnoreServerCmdCheckOnce = true;
-
 	char fileName[244];
 	GetPluginFilename(GetMyHandle(), fileName, sizeof(fileName));
 	ServerCommand("sm plugins unload %s", fileName);
@@ -65,6 +63,27 @@ stock void SetSpeed()
 
 	SetConVarFloat(ConVar_HostTimescale, SpeedLevel);
 	SetConVarFloat(ConVar_PhysTimescale, SpeedLevel);
+
+	char buffer[2];
+
+	if (FloatCompare(SpeedLevel, 1.0) != 0)
+	{
+		strcopy(buffer, sizeof(buffer), "1");
+	}
+	else
+	{
+		strcopy(buffer, sizeof(buffer), "0");
+	}
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsInGame && !player.IsBot)
+		{
+			SendConVarValue(player.ClientId, ConVar_SvCheats, buffer);
+		}
+	}
 }
 
 stock int GetHighestScore()

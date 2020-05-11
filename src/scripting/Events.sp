@@ -689,7 +689,6 @@ public void OnClientPutInServer(int client)
 	}
 
 	SDKHook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
-	SecuritySystem_OnClientPutInServer(client);
 }
 
 public void OnClientDisconnect(int client)
