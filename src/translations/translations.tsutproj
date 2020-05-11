@@ -1678,10 +1678,10 @@
       "text": "All players play the round in a whole new perspective!",
       "formatArguments": [],
       "translations": {
-        "pt": "Todos os jogadores jogam esta rodada em modo terceira pessoa!",
+        "pt": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
         "fr": "Tous le monde joue dans une nouvelle perspective !",
         "it": "Guarda il mondo da un'altra prospettiva!",
-        "pt_p": "Todos os jogadores jogam esta rodada em modo terceira pessoa!",
+        "pt_p": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
         "ru": "Все игроки играют с новой точкой зрения!",
         "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
         "jp": null
@@ -1708,10 +1708,10 @@
       "text": "The round starts fast! Then slows down!",
       "formatArguments": [],
       "translations": {
-        "pt": "O round inicia rápido e termina lento.",
+        "pt": "O rodada inicia em velocidade alta e diminui a cada microgame.",
         "fr": "La manche commence rapidement, puis ralentie !",
         "it": "Il round comincia veloce e poi va a rallentare!",
-        "pt_p": "O round inicia rápido e termina lento.",
+        "pt_p": "O rodada inicia em velocidade alta e diminui a cada microgame.",
         "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
         "es": "La ronda comienza rapido! Y despues se ralentiza!",
         "jp": null
@@ -1738,10 +1738,10 @@
       "text": "30 microgames will be played before the bossgame!",
       "formatArguments": [],
       "translations": {
-        "pt": "30 microgames serão jogados antes do evento do boss!",
+        "pt": "30 microgames serão jogados e depois o 'bossgame'!",
         "fr": "30 mini-jeux vont être joués avant le boss !",
         "it": "Ben 30 minigiochi saranno giocati prima del gioco boss!",
-        "pt_p": "30 microgames serão jogados antes do evento do boss!",
+        "pt_p": "30 microgames serão jogados e depois o 'bossgame'!",
         "ru": "30 игр будет сыгранно перед босс раундом!",
         "es": "Se jugaran 30 microjuegos antes del jefe!",
         "jp": null
@@ -1768,10 +1768,10 @@
       "text": "Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!",
       "formatArguments": [],
       "translations": {
-        "pt": "Onde foi parar a gravidade?!",
+        "pt": "Ei ? Parece que estou na lua! E a gravidade?",
         "fr": "L'espace ? L'ESPACE ! L'ESPAAAAAAAAAAAAAAACEEEEEEE !",
         "it": "Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!",
-        "pt_p": "Onde foi parar a gravidade?!",
+        "pt_p": "Ei ? Parece que estou na lua! E a gravidade?",
         "ru": "Космос? КОСМОС! КОООСМООООООООС!",
         "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
         "jp": null
@@ -1783,10 +1783,10 @@
       "text": "Chill Pill",
       "formatArguments": [],
       "translations": {
-        "pt": "Não se preocupe! Tudo calmo...",
+        "pt": "Relaxe com esse calmante ...",
         "fr": "Tranquillisant",
         "it": "Camomilla",
-        "pt_p": "Não se preocupe! Tudo calmo...",
+        "pt_p": "Relaxe com esse calmante ...",
         "ru": "Успокоительное",
         "es": "Calmante",
         "jp": null
@@ -1798,10 +1798,10 @@
       "text": "No speed changes will happen in this round!",
       "formatArguments": [],
       "translations": {
-        "pt": "Nenhuma mudança de velocidade será feita nesta rodada!",
+        "pt": "Nenhuma mudança de velocidade nesta rodada!",
         "fr": "Aucun changement de vitesse n'aura lieu durant cette manche !",
         "it": "La velocità dei minigiochi non aumenterà in questo round!",
-        "pt_p": "Nenhuma mudança de velocidade será feita nesta rodada!",
+        "pt_p": "Nenhuma mudança de velocidade nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
         "es": "No habra cambios de velocidad en esta ronda!",
         "jp": null
@@ -1813,10 +1813,10 @@
       "text": "Game Time Attack",
       "formatArguments": [],
       "translations": {
-        "pt": "Cada vez mais rápido!",
+        "pt": "Agora vai ficar sério! Atenção !",
         "fr": "Time Attack",
         "it": "Adrenalina Pura!",
-        "pt_p": "Cada vez mais rápido!",
+        "pt_p": "Agora vai ficar sério! Atenção !",
         "ru": "Скоростные игры",
         "es": "Super-Velocidad",
         "jp": null
@@ -1828,10 +1828,10 @@
       "text": "The round will speed up after every microgame!",
       "formatArguments": [],
       "translations": {
-        "pt": "Nesta rodada, a cada microgame a velocidade aumenta!",
+        "pt": "Nesta rodada, cada microgame terá a velocidade aumentada!",
         "fr": "La manche accéléra après chaque mini-jeu !",
         "it": "Il round si farà più veloce dopo ogni minigioco!",
-        "pt_p": "Nesta rodada, a cada microgame a velocidade aumenta!",
+        "pt_p": "Nesta rodada, cada microgame terá a velocidade aumentada!",
         "ru": "Скорость игр будет увеличиваться с каждым раундом!",
         "es": "La ronda acelerara despues de cada microjuego!",
         "jp": null
@@ -1843,10 +1843,10 @@
       "text": "Up and Down",
       "formatArguments": [],
       "translations": {
-        "pt": "Sobe e Desce !",
+        "pt": "Sobe ou Desce?",
         "fr": "Vitesse aléatoire",
         "it": "Alti e Bassi",
-        "pt_p": "Sobe e Desce !",
+        "pt_p": "Sobe ou Desce?",
         "ru": "Вверх и вниз",
         "es": "Arriba y Abajo",
         "jp": null
@@ -1858,10 +1858,10 @@
       "text": "After every microgame, a random speed will be chosen!",
       "formatArguments": [],
       "translations": {
-        "pt": "Nesta rodada, cada microgame terá velocidade aleatória.",
+        "pt": "Em cada microgame, será escolhida uma velocidade aleatória!",
         "fr": "Après chaque mini-jeu, la vitesse change aléatoirement !",
         "it": "La velocità cambierà casualmente dopo ogni minigioco!",
-        "pt_p": "Nesta rodada, cada microgame terá velocidade aleatória.",
+        "pt_p": "Em cada microgame, será escolhida uma velocidade aleatória!",
         "ru": "Скорость каждого раунда будет случайной!",
         "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
         "jp": null
@@ -1873,10 +1873,10 @@
       "text": "Slow-mo",
       "formatArguments": [],
       "translations": {
-        "pt": "Câmera Lenta",
+        "pt": "Eu amo tartarugas, e você?",
         "fr": "Slow-mo",
         "it": "Moviola",
-        "pt_p": "Câmera Lenta",
+        "pt_p": "Eu amo tartarugas, e você?",
         "ru": "Слоу мо",
         "es": "Camara Lenta",
         "jp": null
@@ -1888,10 +1888,10 @@
       "text": "The round will slow down after every microgame!",
       "formatArguments": [],
       "translations": {
-        "pt": "Nesta rodada, cada microgame ficará mais lento!",
+        "pt": "Nesta rodada, a cada microgame a velocidade será diminuída!",
         "fr": "La manche ralentira après chaque mini-jeu !",
         "it": "Il round si farà più lento dopo ogni minigioco!",
-        "pt_p": "Nesta rodada, cada microgame ficará mais lento!",
+        "pt_p": "Nesta rodada, a cada microgame a velocidade será diminuída!",
         "ru": "Игры становяться медленее с каждым раундом!",
         "es": "La ronda se ralentizara despues de cada microjuego!",
         "jp": null
@@ -1903,10 +1903,10 @@
       "text": "Maths Only",
       "formatArguments": [],
       "translations": {
-        "pt": "Matemática",
+        "pt": "Que tal... Matemática?",
         "fr": "Maths uniquement",
         "it": "Incubo Matematico",
-        "pt_p": "Matemática",
+        "pt_p": "Que tal... Matemática?",
         "ru": "Математика",
         "es": "Solo Matematicas",
         "jp": null
@@ -1918,10 +1918,10 @@
       "text": "Time to test your maths skills!",
       "formatArguments": [],
       "translations": {
-        "pt": "Testaremos suas habilidades com as operações matemáticas!",
+        "pt": "Hora de testar sua habilidade com as operações matemáticas!",
         "fr": "Testez vos performances mathématiques !",
         "it": "Ci sai fare con i numeri?",
-        "pt_p": "Testaremos suas habilidades com as operações matemáticas!",
+        "pt_p": "Hora de testar sua habilidade com as operações matemáticas!",
         "ru": "Пришло время потренироваться в математику!",
         "es": "Hora de poner a prueba tus habilidades matematicas!",
         "jp": null
@@ -1933,10 +1933,10 @@
       "text": "Opposite Day",
       "formatArguments": [],
       "translations": {
-        "pt": "O último será o primeiro",
+        "pt": "Dia do Contra",
         "fr": "Inversement des rôles",
         "it": "Potere ai Poveri",
-        "pt_p": "O último será o primeiro",
+        "pt_p": "Dia do Contra",
         "ru": "День Наоборот",
         "es": "Dia Opuesto",
         "jp": null
@@ -1948,10 +1948,10 @@
       "text": "The player with the lowest score wins the round!",
       "formatArguments": [],
       "translations": {
-        "pt": "O jogador com menor placar será o vencedor!",
+        "pt": "O jogador com o menor número de pontos vencerá!",
         "fr": "Le joueur avec le plus faible score gagne la manche !",
         "it": "Vince il giocatore con il punteggio più basso!",
-        "pt_p": "O jogador com menor placar será o vencedor!",
+        "pt_p": "O jogador com o menor número de pontos vencerá!",
         "ru": "Игрок с наименшим кол-ом очков выигрывает!",
         "es": "El jugador con la puntuacion mas baja gana la ronda!",
         "jp": null
@@ -1963,10 +1963,10 @@
       "text": "Two Boss Battles",
       "formatArguments": [],
       "translations": {
-        "pt": "Batalha dos Boss",
+        "pt": "Batalha dos Chefões!",
         "fr": "Double bataille de boss",
         "it": "Bis di Boss",
-        "pt_p": "Batalha dos Boss",
+        "pt_p": "Batalha dos Chefões!",
         "ru": "Два Босс Раунда",
         "es": "Jefe Doble",
         "jp": null
@@ -1978,10 +1978,10 @@
       "text": "Two bossgames will be played before game over!",
       "formatArguments": [],
       "translations": {
-        "pt": "Dois bossgames serão jogados antes desta rodada acabar!",
+        "pt": "Dois 'bossgames' serão disputados antes da partida acabar!",
         "fr": "Deux boss auront lieu avant la fin de la manche !",
         "it": "Il round avrà due giochi boss!",
-        "pt_p": "Dois bossgames serão jogados antes desta rodada acabar!",
+        "pt_p": "Dois 'bossgames' serão disputados antes da partida acabar!",
         "ru": "Два босс раунда играется перед концом игры!",
         "es": "Se jugaran dos jefes antes de que termine el juego!",
         "jp": null
@@ -1993,10 +1993,10 @@
       "text": "Team Battle",
       "formatArguments": [],
       "translations": {
-        "pt": "Batalha de Times",
+        "pt": "Uma Batalha de Equipes",
         "fr": "Bataille en équipe",
         "it": "Gioco di Squadra",
-        "pt_p": "Batalha de Times",
+        "pt_p": "Uma Batalha de Equipes",
         "ru": "Битва комманд",
         "es": "Batalla de Equipos",
         "jp": null
@@ -2008,10 +2008,10 @@
       "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
       "formatArguments": [],
       "translations": {
-        "pt": "Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!",
+        "pt": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
         "fr": "Si vous gagnez un mini-jeu, un point sera rajouté au score de l'équipe. L'équipe avec le plus de points à la fin gagne !",
         "it": "Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!",
-        "pt_p": "Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!",
+        "pt_p": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
         "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
         "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
         "jp": null
@@ -2023,10 +2023,10 @@
       "text": "Single Player",
       "formatArguments": [],
       "translations": {
-        "pt": "Sozinho",
+        "pt": "Sozinho...",
         "fr": "Jeu en solo",
         "it": "Giocatore Singolo",
-        "pt_p": "Sozinho",
+        "pt_p": "Sozinho...",
         "ru": "Одиночная Игра",
         "es": "Modo Un Jugador",
         "jp": null
@@ -2038,10 +2038,10 @@
       "text": "Hey... where did everyone go?",
       "formatArguments": [],
       "translations": {
-        "pt": "Ué? Para onde foi todo mundo?",
+        "pt": "Alô? Ei ... Para onde foi todo mundo?",
         "fr": "Mais... Où sont les autres ?",
         "it": "Ehi... Dove sono finiti tutti?",
-        "pt_p": "Ué? Para onde foi todo mundo?",
+        "pt_p": "Alô? Ei ... Para onde foi todo mundo?",
         "ru": "Ой... а куда все делись?",
         "es": "Hey... donde estan todos?",
         "jp": null
@@ -2053,10 +2053,10 @@
       "text": "Skeletons only",
       "formatArguments": [],
       "translations": {
-        "pt": "Somente Pássaros",
+        "pt": "Somente Esqueletos",
         "fr": "Squelettes uniquement",
         "it": "SCHELETRI!",
-        "pt_p": "Somente Pássaros",
+        "pt_p": "Somente Esqueletos",
         "ru": "Вечеринка Скелетов",
         "es": "Solo Esqueletos",
         "jp": null
@@ -2068,10 +2068,10 @@
       "text": "No skin allowed in this round!",
       "formatArguments": [],
       "translations": {
-        "pt": "Archimedes! Nãããõ!",
+        "pt": "Nenhuma pele está permitida nessa rodada!",
         "fr": "Pas de peau autorisée durant cette manche !",
         "it": "Muscoli? Pelle? A che servono?",
-        "pt_p": "Archimedes! Nãããõ!",
+        "pt_p": "Nenhuma pele está permitida nessa rodada!",
         "ru": "Кожа и мясо на выброс!",
         "es": "No se permite piel en esta ronda!",
         "jp": null
@@ -2083,10 +2083,10 @@
       "text": "Tiny",
       "formatArguments": [],
       "translations": {
-        "pt": "Minúsculos",
+        "pt": "Minúsculos?",
         "fr": "Minuscule",
         "it": "Noi Puffi siam così",
-        "pt_p": "Minúsculos",
+        "pt_p": "Minúsculos?",
         "ru": "Малютка",
         "es": "Pequeñito",
         "jp": null
@@ -2098,10 +2098,10 @@
       "text": "Everyone becomes teeny tiny men!",
       "formatArguments": [],
       "translations": {
-        "pt": "Todos viraram formiguinhas!",
+        "pt": "Dessa vez todos ficarão minúsculos!",
         "fr": "Tout le monde devient des tout-petits-mini-minus !",
         "it": "Tutti i giocatori diventano alti due mele o poco più!",
-        "pt_p": "Todos viraram formiguinhas!",
+        "pt_p": "Dessa vez todos ficarão minúsculos!",
         "ru": "Все становяться маленькими-прималенькими мужичками!",
         "es": "Todos se convierten en hombres pequeñitos!",
         "jp": null
@@ -2113,10 +2113,10 @@
       "text": "Bobbleheads",
       "formatArguments": [],
       "translations": {
-        "pt": "Herp Derp",
+        "pt": "Cabeça de Vento",
         "fr": "Bobbleheads",
         "it": "Testone",
-        "pt_p": "Herp Derp",
+        "pt_p": "Cabeça de Vento",
         "ru": "Голова-пузырь",
         "es": "Cabezones",
         "jp": null
@@ -2128,10 +2128,10 @@
       "text": "Everyone becomes a bunch of airheads!",
       "formatArguments": [],
       "translations": {
-        "pt": "Todos foram tranformados em bobalhões!",
+        "pt": "Mas em que todos foram transformados? Loucos?",
         "fr": "Tout le monde devient des têtes en l'air !",
         "it": "Tutti i giocatori sviluppano un intelletto superiore!",
-        "pt_p": "Todos foram tranformados em bobalhões!",
+        "pt_p": "Mas em que todos foram transformados? Loucos?",
         "ru": "Все головы становяться огромными!",
         "es": "Todos se convierten en un montón de cabezas huecas!",
         "jp": null
@@ -2143,10 +2143,10 @@
       "text": "Score Randomizer",
       "formatArguments": [],
       "translations": {
-        "pt": "Placar Maluco",
+        "pt": "Pontuação Aleatória",
         "fr": "Score aléatoire",
         "it": "Punteggi casuali",
-        "pt_p": "Placar Maluco",
+        "pt_p": "Pontuação Aleatória",
         "ru": "Рандомные очки",
         "es": "Puntuacion Aleatoria",
         "jp": null
@@ -2158,10 +2158,10 @@
       "text": "If you win a microgame, you will be given a random amount of points!",
       "formatArguments": [],
       "translations": {
-        "pt": "Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!",
+        "pt": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "fr": "Si vous gagnez un mini-jeu, le score est attribué aléatoirement !",
         "it": "I minigiochi vinti danno un numero di punti casuale!!",
-        "pt_p": "Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!",
+        "pt_p": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "ru": "При победе, вы получаете случайное кол-во очков!",
         "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
         "jp": null
@@ -2178,10 +2178,10 @@
         }
       ],
       "translations": {
-        "pt": "Se você ganhar este microgame, sua recompensa será de {1} pontos!",
+        "pt": "Se você vencer este microgame, sua recompensa será de {1} pontos!",
         "fr": "Si vous gagnez le mini-jeu, vous obtiendrez {1} points !",
         "it": "Vinci questo minigioco per ottenere {1} punti!",
-        "pt_p": "Se você ganhar este microgame, sua recompensa será de {1} pontos!",
+        "pt_p": "Se você vencer este microgame, sua recompensa será de {1} pontos!",
         "ru": "Если вы победите, вы получите {1} очков!",
         "es": "Si ganas este microjuego, recibiras {1} puntos!",
         "jp": null
@@ -2208,10 +2208,10 @@
       "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
       "formatArguments": [],
       "translations": {
-        "pt": "Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!",
+        "pt": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
         "fr": "Si vous perdez un mini-jeu, vous serez éliminé ! Le dernier joueur toujours en vie gagne la manche !",
         "it": "Un errore e sei fuori! Vince l'ultimo giocatore rimasto!",
-        "pt_p": "Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!",
+        "pt_p": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
         "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
         "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
         "jp": null
@@ -2275,10 +2275,10 @@
       "text": "All In",
       "formatArguments": [],
       "translations": {
-        "pt": "Vale Tudo",
+        "pt": "Agora é Vale Tudo",
         "fr": "All In",
         "it": "All In",
-        "pt_p": "Vale Tudo",
+        "pt_p": "Agora é Vale Tudo",
         "ru": "Игра на все",
         "es": "Todo a Una",
         "jp": null
@@ -2290,10 +2290,10 @@
       "text": "If you lose a microgame, you will lose ALL your points!",
       "formatArguments": [],
       "translations": {
-        "pt": "Se você perder um microgame, você PERDE TODOS pontos!",
+        "pt": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
         "fr": "Si vous perdez un mini-jeu, vous perdez TOUS vos points !",
         "it": "Perdi un minigioco e dì addio a TUTTI i tuoi punti!",
-        "pt_p": "Se você perder um microgame, você PERDE TODOS pontos!",
+        "pt_p": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
         "ru": "При проигрыше, вы теряете ВСЕ очки!",
         "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
         "jp": null
@@ -2305,10 +2305,10 @@
       "text": "Reversed Text",
       "formatArguments": [],
       "translations": {
-        "pt": "Texto Espelhado",
+        "pt": "Leia ao Contrário",
         "fr": "Texte inversé",
         "it": "Testo Rovesciato",
-        "pt_p": "Texto Espelhado",
+        "pt_p": "Leia ao Contrário",
         "ru": "Текст наоборот",
         "es": "Texto Invertido",
         "jp": null
@@ -2365,10 +2365,10 @@
       "text": "Team Fortress 64",
       "formatArguments": [],
       "translations": {
-        "pt": null,
+        "pt": "Team Fortress 64",
         "fr": "Team Fortress 64",
         "it": "Team Fortress 64",
-        "pt_p": null,
+        "pt_p": "Team Fortress 64",
         "ru": "Team Fortress 64",
         "es": "Team Fortress 64",
         "jp": null
@@ -2380,10 +2380,10 @@
       "text": "Hey! Where did my polygons go?",
       "formatArguments": [],
       "translations": {
-        "pt": null,
+        "pt": "Ei!? Onde foram parar meus polígonos?",
         "fr": "Mais ! Où sont passés mes polygones ?",
         "it": "Come ai vecchi tempi!",
-        "pt_p": null,
+        "pt_p": "Ei!? Onde foram parar meus polígonos?",
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null
