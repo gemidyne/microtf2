@@ -421,7 +421,7 @@
 	}
 	"SpecialRound0_Description"
 	{
-		"pt_p"		"Todos os jogadores jogam esta rodada em modo terceira pessoa!"
+		"pt_p"		"Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!"
 	}
 	"SpecialRound1_Name"
 	{
@@ -429,7 +429,7 @@
 	}
 	"SpecialRound1_Description"
 	{
-		"pt_p"		"O round inicia rápido e termina lento."
+		"pt_p"		"O rodada inicia em velocidade alta e diminui a cada microgame."
 	}
 	"SpecialRound2_Name"
 	{
@@ -437,7 +437,7 @@
 	}
 	"SpecialRound2_Description"
 	{
-		"pt_p"		"30 microgames serão jogados antes do evento do boss!"
+		"pt_p"		"30 microgames serão jogados e depois o 'bossgame'!"
 	}
 	"SpecialRound3_Name"
 	{
@@ -445,116 +445,116 @@
 	}
 	"SpecialRound3_Description"
 	{
-		"pt_p"		"Onde foi parar a gravidade?!"
+		"pt_p"		"Ei ? Parece que estou na lua! E a gravidade?"
 	}
 	"SpecialRound4_Name"
 	{
-		"pt_p"		"Não se preocupe! Tudo calmo..."
+		"pt_p"		"Relaxe com esse calmante ..."
 	}
 	"SpecialRound4_Description"
 	{
-		"pt_p"		"Nenhuma mudança de velocidade será feita nesta rodada!"
+		"pt_p"		"Nenhuma mudança de velocidade nesta rodada!"
 	}
 	"SpecialRound5_Name"
 	{
-		"pt_p"		"Cada vez mais rápido!"
+		"pt_p"		"Agora vai ficar sério! Atenção !"
 	}
 	"SpecialRound5_Description"
 	{
-		"pt_p"		"Nesta rodada, a cada microgame a velocidade aumenta!"
+		"pt_p"		"Nesta rodada, cada microgame terá a velocidade aumentada!"
 	}
 	"SpecialRound6_Name"
 	{
-		"pt_p"		"Sobe e Desce !"
+		"pt_p"		"Sobe ou Desce?"
 	}
 	"SpecialRound6_Description"
 	{
-		"pt_p"		"Nesta rodada, cada microgame terá velocidade aleatória."
+		"pt_p"		"Em cada microgame, será escolhida uma velocidade aleatória!"
 	}
 	"SpecialRound7_Name"
 	{
-		"pt_p"		"Câmera Lenta"
+		"pt_p"		"Eu amo tartarugas, e você?"
 	}
 	"SpecialRound7_Description"
 	{
-		"pt_p"		"Nesta rodada, cada microgame ficará mais lento!"
+		"pt_p"		"Nesta rodada, a cada microgame a velocidade será diminuída!"
 	}
 	"SpecialRound8_Name"
 	{
-		"pt_p"		"Matemática"
+		"pt_p"		"Que tal... Matemática?"
 	}
 	"SpecialRound8_Description"
 	{
-		"pt_p"		"Testaremos suas habilidades com as operações matemáticas!"
+		"pt_p"		"Hora de testar sua habilidade com as operações matemáticas!"
 	}
 	"SpecialRound9_Name"
 	{
-		"pt_p"		"O último será o primeiro"
+		"pt_p"		"Dia do Contra"
 	}
 	"SpecialRound9_Description"
 	{
-		"pt_p"		"O jogador com menor placar será o vencedor!"
+		"pt_p"		"O jogador com o menor número de pontos vencerá!"
 	}
 	"SpecialRound10_Name"
 	{
-		"pt_p"		"Batalha dos Boss"
+		"pt_p"		"Batalha dos Chefões!"
 	}
 	"SpecialRound10_Description"
 	{
-		"pt_p"		"Dois bossgames serão jogados antes desta rodada acabar!"
+		"pt_p"		"Dois 'bossgames' serão disputados antes da partida acabar!"
 	}
 	"SpecialRound11_Name"
 	{
-		"pt_p"		"Batalha de Times"
+		"pt_p"		"Uma Batalha de Equipes"
 	}
 	"SpecialRound11_Description"
 	{
-		"pt_p"		"Se você ganhar um microgame, um ponto será adicionado ao placar do seu time! O time com mais pontos vence!"
+		"pt_p"		"Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!"
 	}
 	"SpecialRound12_Name"
 	{
-		"pt_p"		"Sozinho"
+		"pt_p"		"Sozinho..."
 	}
 	"SpecialRound12_Description"
 	{
-		"pt_p"		"Ué? Para onde foi todo mundo?"
+		"pt_p"		"Alô? Ei ... Para onde foi todo mundo?"
 	}
 	"SpecialRound13_Name"
 	{
-		"pt_p"		"Somente Pássaros"
+		"pt_p"		"Somente Esqueletos"
 	}
 	"SpecialRound13_Description"
 	{
-		"pt_p"		"Archimedes! Nãããõ!"
+		"pt_p"		"Nenhuma pele está permitida nessa rodada!"
 	}
 	"SpecialRound14_Name"
 	{
-		"pt_p"		"Minúsculos"
+		"pt_p"		"Minúsculos?"
 	}
 	"SpecialRound14_Description"
 	{
-		"pt_p"		"Todos viraram formiguinhas!"
+		"pt_p"		"Dessa vez todos ficarão minúsculos!"
 	}
 	"SpecialRound15_Name"
 	{
-		"pt_p"		"Herp Derp"
+		"pt_p"		"Cabeça de Vento"
 	}
 	"SpecialRound15_Description"
 	{
-		"pt_p"		"Todos foram tranformados em bobalhões!"
+		"pt_p"		"Mas em que todos foram transformados? Loucos?"
 	}
 	"SpecialRound16_Name"
 	{
-		"pt_p"		"Placar Maluco"
+		"pt_p"		"Pontuação Aleatória"
 	}
 	"SpecialRound16_Description"
 	{
-		"pt_p"		"Se você ganhar um microgame, seus pontos serão definidos aleatóriamente!"
+		"pt_p"		"Quando você vencer um microgame, a pontuação recebida será aleatória!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Se você ganhar este microgame, sua recompensa será de {1} pontos!"
+		"pt_p"		"Se você vencer este microgame, sua recompensa será de {1} pontos!"
 	}
 	"SpecialRound17_Name"
 	{
@@ -562,7 +562,7 @@
 	}
 	"SpecialRound17_Description"
 	{
-		"pt_p"		"Se você perder este microgame, será desclassificado! O último sobrevivente será o vencedor!"
+		"pt_p"		"Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
@@ -576,15 +576,15 @@
 	}
 	"SpecialRound18_Name"
 	{
-		"pt_p"		"Vale Tudo"
+		"pt_p"		"Agora é Vale Tudo"
 	}
 	"SpecialRound18_Description"
 	{
-		"pt_p"		"Se você perder um microgame, você PERDE TODOS pontos!"
+		"pt_p"		"Agora se você perder um microgame, você perderá TODOS os seus pontos!"
 	}
 	"SpecialRound19_Name"
 	{
-		"pt_p"		"Texto Espelhado"
+		"pt_p"		"Leia ao Contrário"
 	}
 	"SpecialRound19_Description"
 	{
@@ -600,10 +600,10 @@
 	}
 	"SpecialRound21_Name"
 	{
-		"pt_p"		""
+		"pt_p"		"Team Fortress 64"
 	}
 	"SpecialRound21_Description"
 	{
-		"pt_p"		""
+		"pt_p"		"Ei!? Onde foram parar meus polígonos?"
 	}
 }
