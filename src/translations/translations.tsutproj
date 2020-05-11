@@ -1055,10 +1055,10 @@
       "text": "BUILD A DISPENSER!",
       "formatArguments": [],
       "translations": {
-        "pt": "CONSTRUA UMA DISPENSER!",
+        "pt": "CONSTRUA UM FORNECEDOR!",
         "fr": "CONSTRUISEZ UN DISTRIBUTEUR !",
         "it": "COSTRUISCI UN DISPENSER!",
-        "pt_p": "CONSTRUA UMA DISPENSER!",
+        "pt_p": "CONSTRUA UM FORNECEDOR!",
         "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
         "es": "CONSTRUYE UN DISPENSADOR!",
         "jp": null
@@ -1100,10 +1100,10 @@
       "text": "JARATE AN ENEMY!",
       "formatArguments": [],
       "translations": {
-        "pt": "JOGUE O JARATE NO INIMIGO!",
+        "pt": "JOGUE O JARATE NOS INIMIGOS!",
         "fr": "JARATEZ UN ENNEMI !",
         "it": "COPRI UN NEMICO DI GIARATE!",
-        "pt_p": "JOGUE O JARATE NO INIMIGO!",
+        "pt_p": "JOGUE O JARATE NOS INIMIGOS!",
         "ru": "ОБМОЧИТЕ ВРАГА!",
         "es": "LANZA JARATE A UN ENEMIGO!",
         "jp": null
@@ -1115,10 +1115,10 @@
       "text": "HIT A HEAVY!",
       "formatArguments": [],
       "translations": {
-        "pt": "BATA NO HEAVY!",
+        "pt": "ACERTE O HEAVY!",
         "fr": "FRAPPEZ UN HEAVY !",
         "it": "COLPISCI UN GROSSO!",
-        "pt_p": "BATA NO HEAVY!",
+        "pt_p": "ACERTE O HEAVY!",
         "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
         "es": "GOLPEA A UN HEAVY!",
         "jp": null
@@ -1130,10 +1130,10 @@
       "text": "GET HIT BY A MEDIC!",
       "formatArguments": [],
       "translations": {
-        "pt": "SEJA ATINGIDO POR UM MÉDICO",
+        "pt": "SEJA ATINGIDO POR UM MÉDICO!",
         "fr": "SOYEZ FRAPPÉ PAR UN MEDIC ! ",
         "it": "FATTI COLPIRE DA UN MEDICO!",
-        "pt_p": "SEJA ATINGIDO POR UM MÉDICO",
+        "pt_p": "SEJA ATINGIDO POR UM MÉDICO!",
         "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
         "es": "HAZ QUE TE GOLPEE UN MEDICO!",
         "jp": null
@@ -1175,10 +1175,10 @@
       "text": "CHANGE CLASS TO SCOUT!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: SCOUT!",
+        "pt": "MUDE A CLASSE PARA SCOUT!",
         "fr": "CHANGEZ DE CLASSE POUR LE SCOUT !",
         "it": "CAMBIA CLASSE IN ESPLORATORE!",
-        "pt_p": "MUDE PARA A CLASSE: SCOUT!",
+        "pt_p": "MUDE A CLASSE PARA SCOUT!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
         "es": "CAMBIA DE CLASE A SCOUT!",
         "jp": null
@@ -1190,10 +1190,10 @@
       "text": "CHANGE CLASS TO SOLDIER!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: SOLDIER!",
+        "pt": "MUDE A CLASSE PARA SOLDIER!",
         "fr": "CHANGEZ DE CLASSE POUR LE SOLDIER !",
         "it": "CAMBIA CLASSE IN SOLDATO!",
-        "pt_p": "MUDE PARA A CLASSE: SOLDIER!",
+        "pt_p": "MUDE A CLASSE PARA SOLDIER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
         "es": "CAMBIA DE CLASE A SOLDADO!",
         "jp": null
@@ -1205,10 +1205,10 @@
       "text": "CHANGE CLASS TO PYRO!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: PYRO!",
+        "pt": "MUDE A CLASSE PARA PYRO!",
         "fr": "CHANGEZ DE CLASSE POUR LE PYRO !",
         "it": "CAMBIA CLASSE IN PIRO!",
-        "pt_p": "MUDE PARA A CLASSE: PYRO!",
+        "pt_p": "MUDE A CLASSE PARA PYRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
         "es": "CAMBIA DE CLASE A PYRO!",
         "jp": null
@@ -1220,10 +1220,10 @@
       "text": "CHANGE CLASS TO DEMOMAN!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: DEMOMAN!",
+        "pt": "MUDE A CLASSE PARA DEMOMAN!",
         "fr": "CHANGEZ DE CLASSE POUR LE DEMOMAN !",
         "it": "CAMBIA CLASSE IN DEMOLITORE!",
-        "pt_p": "MUDE PARA A CLASSE: DEMOMAN!",
+        "pt_p": "MUDE A CLASSE PARA DEMOMAN!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
         "es": "CAMBIA DE CLASE A DEMOMAN!",
         "jp": null
@@ -1235,10 +1235,10 @@
       "text": "CHANGE CLASS TO HEAVY!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: HEAVY!",
+        "pt": "MUDE A CLASSE PARA HEAVY!",
         "fr": "CHANGEZ DE CLASSE POUR LE HEAVY !",
         "it": "CAMBIA CLASSE IN GROSSO!",
-        "pt_p": "MUDE PARA A CLASSE: HEAVY!",
+        "pt_p": "MUDE A CLASSE PARA HEAVY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
         "es": "CAMBIA DE CLASE A HEAVY!",
         "jp": null
@@ -1250,10 +1250,10 @@
       "text": "CHANGE CLASS TO ENGINEER!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: ENGENHEIRO!",
+        "pt": "MUDE A CLASSE PARA ENGENHEIRO!",
         "fr": "CHANGEZ DE CLASSE POUR LE ENGINEER !",
         "it": "CAMBIA CLASSE IN INGEGNERE!",
-        "pt_p": "MUDE PARA A CLASSE: ENGENHEIRO!",
+        "pt_p": "MUDE A CLASSE PARA ENGENHEIRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
         "es": "CAMBIA DE CLASE A INGENIERO!",
         "jp": null
@@ -1265,10 +1265,10 @@
       "text": "CHANGE CLASS TO MEDIC!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: MÉDICO!",
+        "pt": "MUDE A CLASSE PARA MÉDICO!",
         "fr": "CHANGEZ DE CLASSE POUR LE MEDIC !",
         "it": "CAMBIA CLASSE IN MEDICO!",
-        "pt_p": "MUDE PARA A CLASSE: MÉDICO!",
+        "pt_p": "MUDE A CLASSE PARA MÉDICO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
         "es": "CAMBIA DE CLASE A MEDICO!",
         "jp": null
@@ -1280,10 +1280,10 @@
       "text": "CHANGE CLASS TO SNIPER!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: SNIPER!",
+        "pt": "MUDE A CLASSE PARA SNIPER!",
         "fr": "CHANGEZ DE CLASSE POUR LE SNIPER !",
         "it": "CAMBIA CLASSE IN CECCHINO!",
-        "pt_p": "MUDE PARA A CLASSE: SNIPER!",
+        "pt_p": "MUDE A CLASSE PARA SNIPER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
         "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
         "jp": null
@@ -1295,10 +1295,10 @@
       "text": "CHANGE CLASS TO SPY!",
       "formatArguments": [],
       "translations": {
-        "pt": "MUDE PARA A CLASSE: SPY!",
+        "pt": "MUDE A CLASSE PARA SPY!",
         "fr": "CHANGEZ DE CLASSE POUR LE SPY !",
         "it": "CAMBIA CLASSE IN SPIA!",
-        "pt_p": "MUDE PARA A CLASSE: SPY!",
+        "pt_p": "MUDE A CLASSE PARA SPY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
         "es": "CAMBIA DE CLASE A ESPIA!",
         "jp": null
@@ -1310,10 +1310,10 @@
       "text": "DRINK!",
       "formatArguments": [],
       "translations": {
-        "pt": "BEBA!",
+        "pt": "BEBA RÁPIDO!",
         "fr": "BUVEZ !",
         "it": "BEVI!",
-        "pt_p": "BEBA!",
+        "pt_p": "BEBA RÁPIDO!",
         "ru": "ВЫПЕЙТЕ!",
         "es": "BEBE!",
         "jp": null
@@ -1329,8 +1329,8 @@
         "es": null,
         "fr": "NE BUVEZ PAS !",
         "ru": null,
-        "pt_p": null,
-        "pt": null
+        "pt_p": "NÃO BEBA!",
+        "pt": "NÃO BEBA!"
       }
     },
     {
@@ -1339,10 +1339,10 @@
       "text": "EAT!",
       "formatArguments": [],
       "translations": {
-        "pt": "COMA!",
+        "pt": "COMA, RÁPIDO!",
         "fr": "MANGEZ !",
         "it": "MANGIA!",
-        "pt_p": "COMA!",
+        "pt_p": "COMA, RÁPIDO!",
         "ru": "ПОЕШЬТЕ!",
         "es": "COME!",
         "jp": null
@@ -1358,8 +1358,8 @@
         "es": null,
         "fr": "NE MANGEZ PAS !",
         "ru": null,
-        "pt_p": null,
-        "pt": null
+        "pt_p": "NÃO COMA!",
+        "pt": "NÃO COMA!"
       }
     },
     {
@@ -1383,10 +1383,10 @@
       "text": "STAY ON THE GROUND!",
       "formatArguments": [],
       "translations": {
-        "pt": "FIQUE NO CHÃO!",
+        "pt": "PERMANEÇA NO CHÃO!",
         "fr": "RESTEZ SUR LE SOL !",
         "it": "RIMANI A TERRA!",
-        "pt_p": "FIQUE NO CHÃO!",
+        "pt_p": "PERMANEÇA NO CHÃO!",
         "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
         "es": "QUEDATE EN EL SUELO!",
         "jp": null
@@ -1398,10 +1398,10 @@
       "text": "DOUBLE JUMP!",
       "formatArguments": [],
       "translations": {
-        "pt": "PULO DUPLO!",
+        "pt": "SALTO DUPLO!",
         "fr": "DOUBLE SAUT !",
         "it": "DOPPIO SALTO!",
-        "pt_p": "PULO DUPLO!",
+        "pt_p": "SALTO DUPLO!",
         "ru": "ДВОЙНОЙ ПРЫЖОК!",
         "es": "SALTO DOBLE!",
         "jp": null
@@ -1428,10 +1428,10 @@
       "text": "JETPACK!",
       "formatArguments": [],
       "translations": {
-        "pt": "JETPACK!",
+        "pt": "USE O JETPACK!",
         "fr": "JETPACK !",
         "it": "PROPULSORE!",
-        "pt_p": "JETPACK!",
+        "pt_p": "USE O JETPACK!",
         "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
         "es": "JETPACK!",
         "jp": null
@@ -1447,8 +1447,8 @@
         "es": null,
         "fr": "NE RIEZ PAS !",
         "ru": null,
-        "pt_p": null,
-        "pt": null
+        "pt_p": "NÃO VALE RIR!",
+        "pt": "NÃO VALE RIR!"
       }
     },
     {
@@ -1461,8 +1461,8 @@
         "es": null,
         "fr": "FRAPPEZ QUELQU'UN !",
         "ru": null,
-        "pt_p": null,
-        "pt": null
+        "pt_p": "ACERTE ALGUÉM!",
+        "pt": "ACERTE ALGUÉM!"
       }
     },
     {
@@ -1471,10 +1471,10 @@
       "text": "Say each word in chat as quick as you can to survive!",
       "formatArguments": [],
       "translations": {
-        "pt": "Digite mais rápido que puder cada palavra no cha para permanecer vivo!",
+        "pt": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
         "fr": "Dites chaque mot dans le chat aussi vite que possible pour survivre !",
         "it": "Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!",
-        "pt_p": "Digite mais rápido que puder cada palavra no cha para permanecer vivo!",
+        "pt_p": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
         "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
         "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
         "jp": null
@@ -1569,10 +1569,10 @@
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
       "formatArguments": [],
       "translations": {
-        "pt": "== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
+        "pt": "== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
         "fr": "== ANNONCE == \n\nNIVEAU SUIVANT ! LES MOTS SONT PLUS DIFFICILES !",
         "it": "== ANNUNCIO == \n\nLIVELLO SUCCESSIVO! LE PAROLE SARANNO PIU' DIFFICILI!",
-        "pt_p": "== ANÚNCIO == \n\nSUBINDO NÍVEL! AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
+        "pt_p": "== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
         "ru": "== ОБЪЯВЛЕНИЕ == \n\nНОВЫЙ УРОВЕНЬ! СЛОВА СТАЛИ БОЛЕЕ СЛОЖНЫМИ!",
         "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!",
         "jp": null
@@ -1648,10 +1648,10 @@
       "text": "Changing class is not allowed during bosses!",
       "formatArguments": [],
       "translations": {
-        "pt": "Não é permitido a troca de classes durante os boss!",
+        "pt": "A troca de classes não é permitida durante os 'bossgames' !",
         "fr": "Changer de classe n'est pas autorisé durant les boss !",
         "it": "Non è permesso cambiare classe durante i giochi boss!",
-        "pt_p": "Não é permitido a troca de classes durante os boss!",
+        "pt_p": "A troca de classes não é permitida durante os 'bossgames' !",
         "ru": "Смена класса запрещена во время босс раунда!",
         "es": "Cambiar de clase no esta permitido durante los jefes!",
         "jp": null
@@ -1663,10 +1663,10 @@
       "text": "Thirdperson",
       "formatArguments": [],
       "translations": {
-        "pt": "Terceira Pessoa",
+        "pt": "Modo Terceira Pessoa",
         "fr": "Troisième personne",
         "it": "Terza Persona",
-        "pt_p": "Terceira Pessoa",
+        "pt_p": "Modo Terceira Pessoa",
         "ru": "От третьего лица",
         "es": "Tercera Persona",
         "jp": null
