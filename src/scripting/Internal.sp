@@ -79,7 +79,7 @@ stock void SetSpeed()
 	{
 		Player player = new Player(i);
 
-		if (player.IsInGame)
+		if (player.IsInGame && !player.IsBot)
 		{
 			SendConVarValue(player.ClientId, ConVar_SvCheats, buffer);
 		}
