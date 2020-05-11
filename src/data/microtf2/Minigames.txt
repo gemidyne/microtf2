@@ -246,6 +246,7 @@
 		"Caption"		"DON'T LAUGH!"
 		"EntryPoint"		"Minigame26_EntryPoint"
 		"BackgroundMusic_Length"		"4.061673"
+		"RequiresMultiplePlayers"		"1"
 	}
 	"27"
 	{
@@ -254,5 +255,6 @@
 		"Caption"		"HIT SOMEONE!"
 		"EntryPoint"		"Minigame27_EntryPoint"
 		"BackgroundMusic_Length"		"4.060270"
+		"RequiresMultiplePlayers"		"1"
 	}
 }
