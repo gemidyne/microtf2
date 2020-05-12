@@ -102,9 +102,9 @@ stock void InitializeSystem()
 
 public void System_OnMapStart()
 {
-	if (FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
+	if (FileExists("bin/server.dll") && FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)
 	{
-		SetFailState("Bakugo's host_timescale fix is required to run this plugin. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
+		SetFailState("Bakugo's host_timescale fix is required to run this plugin on Windows based servers. Download and install from: https://forums.alliedmods.net/showthread.php?t=324264");
 	}
 
 	char gameDescription[32];
