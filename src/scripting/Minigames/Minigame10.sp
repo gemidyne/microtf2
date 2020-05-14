@@ -200,7 +200,7 @@ public bool Minigame10_Timebomb_CanApplyToPlayer(int client)
 	if (!IsClientInGame(client)) return false;
 	if (IsClientInKickQueue(client)) return false;
 	if (!IsPlayerAlive(client)) return false;
-	if (IsFakeClient(client)) return false;
+	// if (IsFakeClient(client)) return false;
 	return true;
 }
 
@@ -347,7 +347,9 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (!IsClientInGame(i) || !IsPlayerAlive(i) || i == client || !IsPlayerParticipant[i])
+			Player player = new Player(i);
+
+			if (!player.IsValid || !player.IsAlive || !player.IsParticipating || i == client)
 			{
 				continue;
 			}
@@ -361,12 +363,14 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 			{
 				continue;
 			}
+
+			player.SetGodMode(false);
 			
-			int damage = 250; //220
-			damage = RoundToFloor(damage * (700 - distance) / 700); //600
+			float damage = 250.0; 
+			damage = damage * (700.0 - distance) / 700.0;
 			
-			SlapPlayer(i, damage, false);
-			
+			SDKHooks_TakeDamage(player.ClientId, player.ClientId, client, damage, DMG_BLAST);
+
 			if (Minigame10_ExplosionSprite > -1)
 			{
 				TE_SetupExplosion(pos, Minigame10_ExplosionSprite, 0.05, 1, 0, 1, 1);
