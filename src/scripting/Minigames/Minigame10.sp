@@ -4,9 +4,6 @@
  * Avoid the Kamikaze! / Explode a Player
  */
 
-#define SOUND_BEEP "vo/scout_award01.wav"
-#define SOUND_BEEPTWO "vo/scout_award02.wav"
-#define SOUND_BEEPTHR "vo/scout_award03.wav"
 #define SOUND_FINAL "weapons/mortar/mortar_shell_incomming1.wav"
 #define SOUND_BOOM "ambient/explosions/explode_3.wav"
 
@@ -39,9 +36,6 @@ public void Minigame10_OnMapStart()
 	Minigame10_HaloSprite = PrecacheModel("materials/sprites/halo01.vmt");
 	Minigame10_ExplosionSprite = PrecacheModel("sprites/sprite_fire01.vmt");
 
-	PrecacheSound(SOUND_BEEP, true);
-	PrecacheSound(SOUND_BEEPTWO, true);
-	PrecacheSound(SOUND_BEEPTHR, true);
 	PrecacheSound(SOUND_FINAL, true);
 	PrecacheSound(SOUND_BOOM, true);
 }
@@ -261,18 +255,8 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 	
 	if (Minigame10_TimebombTime[client] > 0)
 	{
-		int color;
-		
 		if (Minigame10_TimebombTime[client] > 1)
 		{
-			color = RoundToFloor(Minigame10_TimebombTime[client] * (128.0 / 2));
-			switch (GetRandomInt(0, 2))
-			{
-				case 0: EmitAmbientSound(SOUND_BEEP, vec, client, SNDLEVEL_RAIDSIREN);
-				case 1: EmitAmbientSound(SOUND_BEEPTWO, vec, client, SNDLEVEL_RAIDSIREN);
-				case 2: EmitAmbientSound(SOUND_BEEPTHR, vec, client, SNDLEVEL_RAIDSIREN);
-			}
-
 			char particle[64];
 
 			if (GetClientTeam(client) == 2)
@@ -288,7 +272,6 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 		}
 		else
 		{
-			color = 0;
 			EmitAmbientSound(SOUND_FINAL, vec, client, SNDLEVEL_RAIDSIREN);
 
 			char particle[64];
@@ -304,8 +287,6 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 
 			CreateParticle(client, particle, 1.0);
 		}
-		
-		SetEntityRenderColor(client, 255, 128, color, 255);
 		
 		GetClientAbsOrigin(client, vec);
 		vec[2] += 10;
@@ -343,7 +324,6 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 		
 		ForcePlayerSuicide(client);
 		Minigame10_Timebomb_Kill(client);
-		SetEntityRenderColor(client, 255, 255, 255, 255);
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -370,12 +350,6 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 			damage = damage * (700.0 - distance) / 700.0;
 			
 			SDKHooks_TakeDamage(player.ClientId, player.ClientId, client, damage, DMG_BLAST);
-
-			if (Minigame10_ExplosionSprite > -1)
-			{
-				TE_SetupExplosion(pos, Minigame10_ExplosionSprite, 0.05, 1, 0, 1, 1);
-				TE_SendToAll();	
-			}
 		}
 	}
 	return Plugin_Stop;
