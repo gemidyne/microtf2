@@ -120,11 +120,11 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	return Plugin_Handled;
 }
 
-public Action Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcast)
+public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
-		return Plugin_Handled;
+		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
@@ -151,15 +151,13 @@ public Action Event_PlayerDeath(Handle event, const char[] name, bool dontBroadc
 			CreateTimer(0.05, Timer_Respawn, client);
 		}
 	}
-
-	return Plugin_Handled;
 }
 
-public Action Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast)
+public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!IsPluginEnabled)
 	{
-		return Plugin_Handled;
+		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
@@ -172,8 +170,6 @@ public Action Event_PlayerHurt(Handle event, const char[] name, bool dontBroadca
 		Call_PushCell(attacker);
 		Call_Finish();
 	}
-
-	return Plugin_Handled;
 }
 
 public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBroadcast)
@@ -711,8 +707,8 @@ public void OnClientDisconnect(int client)
 
 stock void HookEvents()
 {
-	HookEvent("player_death", Event_PlayerDeath, EventHookMode_Pre);
-	HookEvent("player_hurt", Event_PlayerHurt, EventHookMode_Pre);
+	HookEvent("player_death", Event_PlayerDeath);
+	HookEvent("player_hurt", Event_PlayerHurt);
 	HookEvent("player_spawn", Event_PlayerSpawn, EventHookMode_PostNoCopy);
 	HookEvent("player_team", Event_PlayerTeam);
 	HookEvent("sticky_jump", Event_PlayerStickyJump);
