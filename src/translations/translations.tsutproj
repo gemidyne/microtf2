@@ -311,7 +311,7 @@
         "ru": "Неудачник!",
         "es": "Perdedor!",
         "jp": null,
-        "pl": "Przegrałeś!"
+        "pl": "Przegrany!"
       }
     },
     {
@@ -327,7 +327,7 @@
         "ru": "Победитель!",
         "es": "Ganador!",
         "jp": null,
-        "pl": "Wygrałeś!"
+        "pl": "Zwycięzca!"
       }
     },
     {
