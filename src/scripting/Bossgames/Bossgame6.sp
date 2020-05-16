@@ -107,7 +107,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 	player.SetGodMode(true);
 	player.SetCollisionsEnabled(false);
 	player.ResetHealth();
-	GiveWeapon(client, 24);
+	player.GiveWeapon(24);
 	player.SetAmmo(2);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
@@ -182,8 +182,8 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 
 					if (player.IsValid && player.IsParticipating)
 					{
-						player.SetAmmo(0, false, true);
-						player.SetAmmo(2, true, false);
+						player.SetWeaponPrimaryAmmoCount(0);
+						player.SetWeaponClipAmmoCount(2);
 					}
 				}
 

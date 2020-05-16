@@ -56,7 +56,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 	player.ResetHealth();
 	player.SetCollisionsEnabled(true);
 
-	GiveWeapon(client, 239);
+	player.GiveWeapon(239);
 
 	float pos[3];
 	float vel[3] = { 0.0, 0.0, 0.0 };

@@ -62,7 +62,8 @@ public void Minigame4_OnMinigameSelected(int client)
 
 		Minigame4_PlayerIndex++;
 
-		GiveWeapon(client, 21);
+		player.GiveWeapon(21);
+		player.SetWeaponClipAmmoCount(200);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		int posa = 360 / Minigame4_TotalPlayers * (Minigame4_PlayerIndex-1);

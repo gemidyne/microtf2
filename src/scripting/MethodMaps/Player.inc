@@ -318,6 +318,19 @@ methodmap Player __nullable__
         }
     }
 
+    property int Metal
+    {
+        public get()
+        {
+	        return GetEntProp(this.ClientId, Prop_Data, "m_iAmmo", 4, 3);
+        }
+
+        public set(int value)
+        {
+            SetEntProp(this.ClientId, Prop_Data, "m_iAmmo", value, 4, 3);
+        }
+    }
+
     public void ResetHealth()
     {
 		this.SetHealth(this.DefaultHealth);
@@ -447,7 +460,7 @@ methodmap Player __nullable__
         this.DestroyPlayerTeleporterExit(cleanDestroy);
     }
 
-    public void SetAmmo(int ammoCount, bool primaryAmmo = true, bool clipAmmo = true)
+    public void SetWeaponPrimaryAmmoCount(int count)
     {
         int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
 
@@ -465,26 +478,54 @@ methodmap Player __nullable__
 
         int ammoType = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
         int ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
-        int clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
 
         if (ammo <= 0)
         {
             return;
         }
 
+		int offset = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
+
+        SetEntData(this.ClientId, Offset_PlayerAmmo+offset, count, 4, true);
+    }
+
+    public void SetWeaponClipAmmoCount(int count)
+    {
+        int weaponHandleId = FindSendPropInfo("CAI_BaseNPC", "m_hActiveWeapon");
+
+        if (weaponHandleId <= 0)
+        {
+            return;
+        }
+
+        int entity = GetEntDataEnt2(this.ClientId, weaponHandleId);
+
+        if (!IsValidEntity(entity)) 
+        {
+            return;
+        }
+
+        int clip = FindSendPropInfo("CBaseCombatWeapon", "m_iClip1");
+
         if (clip <= 0)
         {
             return;
         }
 
+        SetEntData(entity, clip, count, 4, true);
+    }
+
+        // TODO: Remove because having both in one is dumb
+    public void SetAmmo(int ammoCount, bool primaryAmmo = true, bool clipAmmo = true)
+    {
         if (clipAmmo)
         {
-            SetEntData(entity, clip, ammoCount, 4, true);
+            this.SetWeaponClipAmmoCount(ammoCount);
         }
 
         if (primaryAmmo)
         {
-            SetEntData(this.ClientId, ammoType+ammo, ammoCount, 4, true);
+            this.SetWeaponPrimaryAmmoCount(ammoCount);
         }
     }
 
@@ -571,5 +612,10 @@ methodmap Player __nullable__
     public void GiveWeapon(int weaponItemIndex)
     {
         GiveWeapon(this.ClientId, weaponItemIndex);
+    }
+
+    public void ResetWeapon(bool viewModel)
+    {
+        ResetWeapon(this.ClientId, viewModel);
     }
 }

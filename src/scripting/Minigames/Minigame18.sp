@@ -119,7 +119,8 @@ public void Minigame18_OnMinigameSelected(int client)
 		player.RemoveAllWeapons();
 		player.Class = TFClass_Sniper;
 
-		GiveWeapon(client, 14);
+		player.GiveWeapon(14);
+		player.SetWeaponPrimaryAmmoCount(25);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		float ang[3] = { 0.0, 90.0, 0.0 };

@@ -29,8 +29,10 @@ public void Minigame24_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
+		player.RemoveAllWeapons();
 		player.Class = TFClass_Medic;
-		GiveWeapon(client, 17);
+		player.GiveWeapon(17);
+		player.SetWeaponPrimaryAmmoCount(150);
 
 		Minigame24_NeedleFireDelay[client] = 50;
 	}
@@ -53,8 +55,8 @@ public void Minigame24_OnGameFrame()
 
 				if (clientPos[2] > 0.0) 
 				{
-					ClientWonMinigame(i);
-					ResetWeapon(i, false); // Stops lag
+					player.TriggerSuccess();
+					player.ResetWeapon(false); // Stops lag
 				}
 			}
 		}
@@ -87,22 +89,22 @@ public void Minigame24_PerformNeedlejump(int i)
 
 			if (FloatAbs(fVelocity[0]) > 400.0)
 			{
-				if (fVelocity[0] > 0.0) 
-					fVelocity[0] = 400.0;
-				else 
-					fVelocity[0] = -400.0;
+				fVelocity[0] = fVelocity[0] > 0.0
+					? 400.0
+					: -400.0;
 			}
 
 			if (FloatAbs(fVelocity[1]) > 400.0)
 			{
-				if (fVelocity[1] > 0.0) 
-					fVelocity[1] = 400.0;
-				else 
-					fVelocity[1] = -400.0;
+				fVelocity[1] = fVelocity[1] > 0.0
+					? 400.0
+					: -400.0;
 			}
 
-			if (fVelocity[2] > 400.0) 
+			if (fVelocity[2] > 400.0)
+			{
 				fVelocity[2] = 400.0;
+			}
 
 			TeleportEntity(i, NULL_VECTOR, NULL_VECTOR, fVelocity);
 			Minigame24_NeedleFireDelay[i] = 3;

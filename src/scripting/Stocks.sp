@@ -66,7 +66,7 @@ stock void ResetWeapon(int client, bool viewModel)
 
 			if (weaponID != newWeaponID)
 			{
-				GiveWeapon(client, newWeaponID);
+				player.GiveWeapon(newWeaponID);
 			}
 		}
 

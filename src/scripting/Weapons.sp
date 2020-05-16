@@ -86,16 +86,7 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 	delete attributes;
 
-	// int entityID = GetPlayerWeaponSlot(iClient, weaponSlot);
-
-	// This is not used right now
-	// if (weaponAmmo > -1) 
-	// {
-	// 	SetSpeshulAmmo(iClient, entityID, weaponAmmo);
-	// }
-
 	SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", entityID);
-
 
 	player.SetWeaponVisible(true);
 	player.SetViewModelVisible(true);
@@ -135,14 +126,3 @@ stock int CreateNamedItem(int client, int itemindex, const char[] classname, int
 	
 	return weapon;
 } 
-
-//DarthNinja..
-stock void SetSpeshulAmmo(int client, int weaponEntityId, int newAmmo)
-{
-	if (IsValidEntity(weaponEntityId))
-	{
-		int offset = GetEntProp(weaponEntityId, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
-
-		SetEntData(client, Offset_PlayerAmmo+offset, newAmmo, 4, true);
-	}
-}
