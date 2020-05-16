@@ -12,6 +12,7 @@
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
+#include <tf_econ_data>
 #include <warioware>
 
 #undef REQUIRE_PLUGIN
