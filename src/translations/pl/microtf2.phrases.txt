@@ -64,11 +64,11 @@
 	}
 	"General_Loser"
 	{
-		"pl"		"Przegrałeś!"
+		"pl"		"Przegrany!"
 	}
 	"General_Winner"
 	{
-		"pl"		"Wygrałeś!"
+		"pl"		"Zwycięzca!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
