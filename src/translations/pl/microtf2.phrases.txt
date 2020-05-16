@@ -1,0 +1,609 @@
+"Phrases"
+{
+	"System_Advertisement"
+	{
+		"#format"		"{1:s}"
+		"pl"		"Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Wynik: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Mikrogry: {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Wynik drużyny: {1}"
+	}
+	"Hud_Score_Barrels"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Beczki: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"		"{1:i},{2:i}"
+		"pl"		"Runda {1} z {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Runda {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"		"{1:s},{2:s},{3:s}"
+		"pl"		""
+	}
+	"PlayerSpawn_RespawnNotice"
+	{
+		"pl"		""
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"pl"		""
+	}
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"pl"		""
+	}
+	"General_Loser"
+	{
+		"pl"		""
+	}
+	"General_Winner"
+	{
+		"pl"		""
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"pl"		""
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"pl"		""
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"pl"		""
+	}
+	"GameOver_WinnersAnd"
+	{
+		"pl"		""
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"pl"		""
+	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
+		"pl"		""
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		""
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		""
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Intermission_Header"
+	{
+		"pl"		""
+	}
+	"Intermission_Body"
+	{
+		"pl"		""
+	}
+	"Bossgame1_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame2_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame3_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame4_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame5_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame6_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame7_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame1_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame2_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame3_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame4_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame5_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Minigame7_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		""
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"pl"		""
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"pl"		""
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"pl"		""
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"pl"		""
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"pl"		""
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"pl"		""
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"pl"		""
+	}
+	"Minigame12_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame13_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"pl"		""
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"pl"		""
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"pl"		""
+	}
+	"Minigame15_Caption_Any"
+	{
+		"pl"		""
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"pl"		""
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"pl"		""
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"pl"		""
+	}
+	"Minigame16_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"pl"		""
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"pl"		""
+	}
+	"Minigame18_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"pl"		""
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"pl"		""
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"pl"		""
+	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"pl"		""
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"pl"		""
+	}
+	"Minigame20_Caption_DontEat"
+	{
+		"pl"		""
+	}
+	"Minigame21_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame22_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame23_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame24_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame25_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame27_Caption"
+	{
+		"pl"		""
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"pl"		""
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"pl"		""
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"		"{1:i}"
+		"pl"		""
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pl"		""
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"pl"		""
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		""
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format"		"{1:s}"
+		"pl"		""
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"pl"		""
+	}
+	"SpecialRound0_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound0_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound1_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound1_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound2_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound2_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound3_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound3_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound4_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound4_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound5_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound5_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound6_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound6_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound7_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound7_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound8_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound8_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound9_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound9_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound10_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound10_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound11_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound11_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound12_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound12_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound13_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound13_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound14_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound14_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound15_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound15_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound16_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound16_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"		"{1:i}"
+		"pl"		""
+	}
+	"SpecialRound17_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound17_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"		"{1:i},{2:i},{3:s}"
+		"pl"		""
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		""
+	}
+	"SpecialRound18_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound18_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound19_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound19_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound20_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound20_Description"
+	{
+		"pl"		""
+	}
+	"SpecialRound21_Name"
+	{
+		"pl"		""
+	}
+	"SpecialRound21_Description"
+	{
+		"pl"		"."
+	}
+}
