@@ -46,7 +46,7 @@
         "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
         "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
         "jp": null,
-        "pl": null
+        "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów."
       }
     },
     {
@@ -67,7 +67,7 @@
         "ru": "Очков: {1}",
         "es": "Puntuacion: {1}",
         "jp": null,
-        "pl": null
+        "pl": "Wynik: {1}"
       }
     },
     {
@@ -88,7 +88,7 @@
         "ru": "Миниигры: {1}",
         "es": "Minijuegos: {1}",
         "jp": null,
-        "pl": null
+        "pl": "Mikrogry: {1}"
       }
     },
     {
@@ -109,7 +109,7 @@
         "ru": "Очки комманды: {1}",
         "es": "Puntuacion del Equipo: {1}",
         "jp": null,
-        "pl": null
+        "pl": "Wynik drużyny: {1}"
       }
     },
     {
@@ -130,7 +130,7 @@
         "ru": "Бочки: {1}",
         "es": "Barriles: {1}",
         "jp": null,
-        "pl": null
+        "pl": "Beczki: {1}"
       }
     },
     {
@@ -155,7 +155,7 @@
         "ru": "Раунд {1} из {2}",
         "es": "Ronda {1} de {2}",
         "jp": null,
-        "pl": null
+        "pl": "Runda {1} z {2}"
       }
     },
     {
@@ -176,7 +176,7 @@
         "ru": "Раунд {1}",
         "es": "Ronda {1}",
         "jp": null,
-        "pl": null
+        "pl": "Runda {1}"
       }
     },
     {
