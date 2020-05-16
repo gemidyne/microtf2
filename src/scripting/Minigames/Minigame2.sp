@@ -56,13 +56,13 @@ public void Minigame2_OnMinigameSelected(int client)
 			case TFClass_Soldier:
 			{
 				weapon = 10;
-				ammo = 32;
+				ammo = 6;
 			}
 
 			case TFClass_Pyro: 
 			{
 				weapon = 12;
-				ammo = 32;
+				ammo = 6;
 			}
 
 			case TFClass_DemoMan:
@@ -73,13 +73,13 @@ public void Minigame2_OnMinigameSelected(int client)
 			case TFClass_Heavy:
 			{
 				weapon = 11;
-				ammo = 32;
+				ammo = 6;
 			}
 
 			case TFClass_Engineer:
 			{
 				weapon = 9;
-				ammo = 32;
+				ammo = 6;
 			}
 
 			case TFClass_Sniper:
@@ -96,20 +96,20 @@ public void Minigame2_OnMinigameSelected(int client)
 			case TFClass_Spy:
 			{
 				weapon = 24;
-				ammo = 24;
+				ammo = 6;
 			}
 		}
+
+		player.RemoveAllWeapons();
 
 		player.Class = Minigame2_Class;
 		player.SetHealth(1);
 		player.SetGodMode(false);
-
-		player.RemoveAllWeapons();
 		player.GiveWeapon(weapon);
 
 		if (ammo > -1)
 		{
-			player.SetWeaponPrimaryAmmoCount(ammo);
+			player.SetWeaponClipAmmoCount(ammo);
 		}
 	}
 }
