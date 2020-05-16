@@ -557,6 +557,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			TF2_RemoveCondition(i, TFCond_OnFire);
 			TF2_RemoveCondition(i, TFCond_Bonked);
 			TF2_RemoveCondition(i, TFCond_Dazed);
+			TF2_RemoveCondition(i, TFCond_Bleeding);
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{

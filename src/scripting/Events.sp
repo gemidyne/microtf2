@@ -482,19 +482,7 @@ public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, flo
 
 	Player attacker = new Player(inflictor);
 
-	if (IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
-	{
-		damage = 0.0;
-		
-		if (inflictor < 0) 
-		{
-			inflictor = 0;
-		}
-
-		return Plugin_Changed;
-	}
-
-	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]))
+	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]) || !IsBlockingDamage && IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
 	{
 		damage = 0.0;
 
@@ -614,7 +602,8 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Kritzkrieged, 
 			TFCond_Bonked, 
 			TFCond_Dazed, 
-			TFCond_Taunting:
+			TFCond_Taunting,
+			TFCond_Bleeding:
 		{
 			removeCondition = false;
 		}
