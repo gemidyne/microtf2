@@ -4,6 +4,8 @@
  * Hit someone! 
  */
 
+bool Minigame27_UseBleedingMode = false;
+
 public void Minigame27_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame27_OnMinigameSelectedPre);
@@ -16,6 +18,7 @@ public void Minigame27_OnMinigameSelectedPre()
 	if (MinigameID == 27)
 	{
 		IsBlockingDamage = false;
+		Minigame27_UseBleedingMode = GetRandomInt(0, 1) == 1;
 	}
 }
 
@@ -38,8 +41,16 @@ public void Minigame27_OnMinigameSelected(int client)
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
-		player.SetHealth(20);
-		player.GiveWeapon(325);
+
+		if (Minigame27_UseBleedingMode)
+		{
+			#error TODO: needs flying guillotine
+		}
+		else
+		{
+			player.SetHealth(20);
+			player.GiveWeapon(325);
+		}
 	}
 }
 
