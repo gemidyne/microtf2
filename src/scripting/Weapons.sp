@@ -36,15 +36,13 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 		return;
 	}
 
-	int weaponSlot;
+	int weaponSlot = TF2Econ_GetItemSlot(weaponLookupIndex, player.Class);
+	int weaponQuality = TF2Econ_GetItemQuality(weaponLookupIndex);
 	char weaponClassname[64];
-	int weaponQuality;
 	int minWeaponLevel;
 	int weaponLevel;
 
-	weaponSlot = TF2Econ_GetItemSlot(weaponLookupIndex, player.Class);
 	TF2Econ_GetItemClassName(weaponLookupIndex, weaponClassname, sizeof(weaponClassname));
-	weaponQuality = TF2Econ_GetItemQuality(weaponLookupIndex);
 	TF2Econ_GetItemLevelRange(weaponLookupIndex, minWeaponLevel, weaponLevel);
 
 	ArrayList attributes = TF2Econ_GetItemStaticAttributes(weaponLookupIndex);
@@ -78,9 +76,13 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 		for (int i = 0; i < attributes.Length; i++) 
 		{
 			int id = attributes.Get(i, 0);
-			float value = attributes.Get(i, 1);
+			float value = view_as<float>(attributes.Get(i, 1));
 
-			TF2Attrib_SetByDefIndex(entityID, id, value);
+			if (id > 0)
+			{
+				// TF2Attrib_SetByDefIndex(entityID, id, value);
+				PrintToChatAll("TF2Attrib_SetByDefIndex on entityID: %i, with attrid: %i and value: %f", entityID, id, value);
+			}
 		}
 	} 
 
