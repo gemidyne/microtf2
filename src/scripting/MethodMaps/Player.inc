@@ -476,7 +476,6 @@ methodmap Player __nullable__
             return;
         }
 
-        int ammoType = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
         int ammo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
 
         if (ammo <= 0)
@@ -484,7 +483,7 @@ methodmap Player __nullable__
             return;
         }
 
-		int offset = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
+        int offset = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
 
         SetEntData(this.ClientId, Offset_PlayerAmmo+offset, count, 4, true);
     }
