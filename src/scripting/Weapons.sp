@@ -73,11 +73,16 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 		}
 	}
 
+	if (attributes.Length > 1) 
+	{
+		for (int i = 0; i < attributes.Length; i++) 
 		{
-			SetSpeshulAmmo(iClient, entityID, weaponAmmo);
 			int id = attributes.Get(i, 0);
+			float value = attributes.Get(i, 1);
+
 			TF2Attrib_SetByDefIndex(entityID, id, value);
 		}
+	} 
 
 	delete attributes;
 
@@ -85,8 +90,11 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 	// This is not used right now
 	// if (weaponAmmo > -1) 
+	// {
+	// 	SetSpeshulAmmo(iClient, entityID, weaponAmmo);
 	// }
 
+	SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", entityID);
 
 
 	player.SetWeaponVisible(true);
