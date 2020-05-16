@@ -78,10 +78,11 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 			int id = attributes.Get(i, 0);
 			float value = view_as<float>(attributes.Get(i, 1));
 
-			if (id > 0)
+			if (id > 0 && id != 796)
 			{
-				// TF2Attrib_SetByDefIndex(entityID, id, value);
-				PrintToChatAll("TF2Attrib_SetByDefIndex on entityID: %i, with attrid: %i and value: %f", entityID, id, value);
+				// 796: min_viewmodel_offset causes crashes for players using min viewmodels
+
+				TF2Attrib_SetByDefIndex(entityID, id, value);
 			}
 		}
 	} 
