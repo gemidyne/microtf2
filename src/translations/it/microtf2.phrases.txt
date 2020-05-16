@@ -549,7 +549,7 @@
 	}
 	"SpecialRound16_Description"
 	{
-		"it"		"I minigiochi vinti danno un numero di punti casuale!!"
+		"it"		"I minigiochi vinti danno un numero causale di punti!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
