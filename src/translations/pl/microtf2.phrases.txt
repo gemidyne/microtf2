@@ -120,7 +120,7 @@
 	}
 	"Bossgame1_Caption"
 	{
-		"pl"		"WYKORZYSTAJ RAKIETOWE SKOKI BY DOTRZEĆ DO KOŃCA!"
+		"pl"		"UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!"
 	}
 	"Bossgame2_Caption"
 	{
@@ -251,7 +251,7 @@
 	}
 	"Minigame14_Caption_Engineers"
 	{
-		"pl"		"NIECH TWOJA KONSTRUKCJA ZOSTANIE ZNISZCZONA SAPEREM!"
+		"pl"		"POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!"
 	}
 	"Minigame15_Caption_Any"
 	{
@@ -604,6 +604,6 @@
 	}
 	"SpecialRound21_Description"
 	{
-		"pl"		"Hej! Gdzie się podziały moje wielokąty"
+		"pl"		"Hej! Gdzie się podziały moje wielokąty?"
 	}
 }
