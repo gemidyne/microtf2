@@ -991,7 +991,7 @@
         "fr": "N'ARRÊTEZ PAS DE BOUGER !",
         "it": "CONTINUA A MUOVERTI!",
         "pt_p": "NÃO PARE DE SE MOVIMENTAR!",
-        "ru": "ДВИГАТЬСЯ!",
+        "ru": "ДВИГАЙТЕСЬ!",
         "es": "NO PARES DE MOVERTE!",
         "jp": null,
         "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!"
@@ -1406,7 +1406,7 @@
         "it": "NON BERE!",
         "es": null,
         "fr": "NE BUVEZ PAS !",
-        "ru": null,
+        "ru": "НЕ ПЕЙТЕ!",
         "pt_p": "NÃO BEBA!",
         "pt": "NÃO BEBA!",
         "pl": "NIE PIJ!"
@@ -1437,7 +1437,7 @@
         "it": "NON MANGIARE!",
         "es": null,
         "fr": "NE MANGEZ PAS !",
-        "ru": null,
+        "ru": "НЕ ЕШЬТЕ!",
         "pt_p": "NÃO COMA!",
         "pt": "NÃO COMA!",
         "pl": "NIE JEDZ!"
@@ -1532,7 +1532,7 @@
         "it": "NON RIDERE!",
         "es": null,
         "fr": "NE RIEZ PAS !",
-        "ru": null,
+        "ru": "НЕ СМЕЙТЕСЬ!",
         "pt_p": "NÃO VALE RIR!",
         "pt": "NÃO VALE RIR!",
         "pl": "NIE ŚMIEJ SIĘ!"
@@ -1547,7 +1547,7 @@
         "it": "COLPISCI QUALCUNO!",
         "es": null,
         "fr": "FRAPPEZ QUELQU'UN !",
-        "ru": null,
+        "ru": "УДАРЬТЕ КОГО-НИБУДЬ!",
         "pt_p": "ACERTE ALGUÉM!",
         "pt": "ACERTE ALGUÉM!",
         "pl": "UDERZ KOGOŚ!"
