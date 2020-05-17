@@ -227,7 +227,7 @@
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
-		"ru"		"ДВИГАТЬСЯ!"
+		"ru"		"ДВИГАЙТЕСЬ!"
 	}
 	"Minigame11_Caption_DontMove"
 	{
@@ -331,7 +331,7 @@
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"ru"		""
+		"ru"		"НЕ ПЕЙТЕ!"
 	}
 	"Minigame20_Caption_Eat"
 	{
@@ -339,7 +339,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"ru"		""
+		"ru"		"НЕ ЕШЬТЕ!"
 	}
 	"Minigame21_Caption"
 	{
@@ -363,11 +363,11 @@
 	}
 	"Minigame26_Caption"
 	{
-		"ru"		""
+		"ru"		"НЕ СМЕЙТЕСЬ!"
 	}
 	"Minigame27_Caption"
 	{
-		"ru"		""
+		"ru"		"УДАРЬТЕ КОГО-НИБУДЬ!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
