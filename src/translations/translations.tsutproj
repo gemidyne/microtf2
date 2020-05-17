@@ -45,7 +45,8 @@
         "pt_p": "Você está jogando WARIO WARE! Versão {1}. Tecle !credits no chat e saiba quem são os desenvolvedores.",
         "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
         "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
-        "jp": null
+        "jp": null,
+        "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów."
       }
     },
     {
@@ -65,7 +66,8 @@
         "pt_p": "Pontos: {1}",
         "ru": "Очков: {1}",
         "es": "Puntuacion: {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Wynik: {1}"
       }
     },
     {
@@ -85,7 +87,8 @@
         "pt_p": "Microgames: {1}",
         "ru": "Миниигры: {1}",
         "es": "Minijuegos: {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Mikrogry: {1}"
       }
     },
     {
@@ -105,7 +108,8 @@
         "pt_p": "Placar do Time: {1}",
         "ru": "Очки комманды: {1}",
         "es": "Puntuacion del Equipo: {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Wynik Drużyny: {1}"
       }
     },
     {
@@ -125,7 +129,8 @@
         "pt_p": "Barris: {1}",
         "ru": "Бочки: {1}",
         "es": "Barriles: {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Beczki: {1}"
       }
     },
     {
@@ -149,7 +154,8 @@
         "pt_p": "Rodada {1} de {2}",
         "ru": "Раунд {1} из {2}",
         "es": "Ronda {1} de {2}",
-        "jp": null
+        "jp": null,
+        "pl": "Runda {1} z {2}"
       }
     },
     {
@@ -169,7 +175,8 @@
         "pt_p": "Rodada {1}",
         "ru": "Раунд {1}",
         "es": "Ronda {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Runda {1}"
       }
     },
     {
@@ -189,7 +196,8 @@
         "pt_p": "Tema Atual: {1}",
         "ru": "Тема {1}",
         "es": "Tema de {1}",
-        "jp": null
+        "jp": null,
+        "pl": "Piosenka przewodnia {1}"
       }
     },
     {
@@ -209,7 +217,8 @@
         "pt_p": "RODADA ESPECIAL: {1}!",
         "ru": "ОСОБЫЙ РАУНД: {1}!",
         "es": "RONDA ESPECIAL: {1}!",
-        "jp": null
+        "jp": null,
+        "pl": "RUNDA SPECJALNA: {1}!"
       }
     },
     {
@@ -237,7 +246,8 @@
         "pt_p": "{1}Rodada especial. Na condição... {2}!\n{3}",
         "ru": "{1}Условие особого раунда... {2}!\n{3}",
         "es": "{1}La condicion de la ronda especial es... {2}!\n{3}",
-        "jp": null
+        "jp": null,
+        "pl": "{1}Warunek rundy specjalnej to... {2}!\n{3}"
       }
     },
     {
@@ -252,7 +262,8 @@
         "pt_p": "Você renascerá assim que o microgame ou o 'bossgame' forem finalizados.",
         "ru": "Вы вернетесь в игру после окончания раунда или босс раунда.",
         "es": "Reapareceras cuando el minijuego o jefe actual termine.",
-        "jp": null
+        "jp": null,
+        "pl": "Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
       }
     },
     {
@@ -267,7 +278,8 @@
         "pt_p": "VOCÊ FOI ELIMINADO!",
         "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
         "es": "HAS SIDO ELIMINADO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZOSTAŁEŚ WYELIMINOWANY!"
       }
     },
     {
@@ -282,7 +294,8 @@
         "pt_p": "A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar.",
         "ru": "Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет.",
         "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion.",
-        "jp": null
+        "jp": null,
+        "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku."
       }
     },
     {
@@ -297,7 +310,8 @@
         "pt_p": "Perdedor!",
         "ru": "Неудачник!",
         "es": "Perdedor!",
-        "jp": null
+        "jp": null,
+        "pl": "Przegrany!"
       }
     },
     {
@@ -312,7 +326,8 @@
         "pt_p": "Vencedor!",
         "ru": "Победитель!",
         "es": "Ganador!",
-        "jp": null
+        "jp": null,
+        "pl": "Zwycięzca!"
       }
     },
     {
@@ -327,7 +342,8 @@
         "pt_p": "== A RODADA ESPECIAL FOI ENCERRADA! ==",
         "ru": "== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! ==",
         "es": "== LA RONDA ESPECIAL A TERMINADO! ==",
-        "jp": null
+        "jp": null,
+        "pl": "== RUNDA SPECJALNA DOBIEGŁA KOŃCA! =="
       }
     },
     {
@@ -342,7 +358,8 @@
         "pt_p": "O vencedor é...",
         "ru": "Победителем стал...",
         "es": "El ganador es...",
-        "jp": null
+        "jp": null,
+        "pl": "Zwycięzcą został..."
       }
     },
     {
@@ -357,7 +374,8 @@
         "pt_p": "Os vencedores são...",
         "ru": "Победителями стали...",
         "es": "Los ganadores son...",
-        "jp": null
+        "jp": null,
+        "pl": "Zwycięzcami zostali..."
       }
     },
     {
@@ -372,7 +390,8 @@
         "pt_p": "e",
         "ru": "и",
         "es": "y",
-        "jp": null
+        "jp": null,
+        "pl": "oraz"
       }
     },
     {
@@ -387,7 +406,8 @@
         "pt_p": "Sem vencedores desta vez!",
         "ru": "Победителей нету!",
         "es": "No hay ganadores!",
-        "jp": null
+        "jp": null,
+        "pl": "Nie ma zwycięzców!"
       }
     },
     {
@@ -419,7 +439,8 @@
         "pt_p": "{1}{2} {3} {green}com {4} pontos!",
         "ru": "{1}{2} {3} {green}с {4} очками!",
         "es": "{1}{2} {3} {green}con {4} puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}{2} {3} {green}z wynikiem {4}!"
       }
     },
     {
@@ -443,7 +464,8 @@
         "pt_p": "{1}O TIME VERMELHO foi o time vencedor com {2} pontos!",
         "ru": "{1}КРАСНАЯ комманда побеждает с {2} очками!",
         "es": "{1}El equipo ganador es RED con {2} puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}Zwyciężyła drużyna RED z wynikiem {2}!"
       }
     },
     {
@@ -467,7 +489,8 @@
         "pt_p": "{1}O TIME AZUL foi o time vencedor com {2} pontos!",
         "ru": "{1}СИНЯЯ комманда побеждает с {2} очками!",
         "es": "{1}El equipo ganador es BLU con {2} puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
       }
     },
     {
@@ -487,7 +510,8 @@
         "pt_p": "{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
         "ru": "{1}Ничья! Обе комманды имеют одинаковое кол-во очков!",
         "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}Impas! Obie drużyny mają tyle samo punktów!"
       }
     },
     {
@@ -502,7 +526,8 @@
         "pt_p": "Hora do Intervalo!",
         "ru": "Пауза!",
         "es": "Intermedio!",
-        "jp": null
+        "jp": null,
+        "pl": "Przerwa!"
       }
     },
     {
@@ -517,7 +542,8 @@
         "pt_p": "Uma pequena parada para votar o próximo mapa.",
         "ru": "Время перерыва! Голосование следующей карты началась.",
         "es": "Descanso! Hora de votar el siguiente mapa.",
-        "jp": null
+        "jp": null,
+        "pl": "Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę."
       }
     },
     {
@@ -532,7 +558,8 @@
         "pt_p": "CHEGUE AO FINAL COM ROCKET JUMPS!",
         "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
         "es": "SALTA CON COHETES HASTA EL FINAL!",
-        "jp": null
+        "jp": null,
+        "pl": "WYKORZYSTAJ RAKIETOWE SKOKI BY DOTRZEĆ DO KOŃCA!"
       }
     },
     {
@@ -547,7 +574,8 @@
         "pt_p": "FUJA DA FÁBRICA!",
         "ru": "СБЕЖИТЕ ИЗ ЗАВОДА!",
         "es": "ESCAPA DE LA FABRICA!",
-        "jp": null
+        "jp": null,
+        "pl": "UCIEKNIJ Z FABRYKI!"
       }
     },
     {
@@ -562,7 +590,8 @@
         "pt_p": "ELIMINE O TIME INIMIGO!",
         "ru": "ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!",
         "es": "ACABA CON EL EQUIPO ENEMIGO!",
-        "jp": null
+        "jp": null,
+        "pl": "POKONAJ WROGĄ DRUŻYNĘ!"
       }
     },
     {
@@ -577,7 +606,8 @@
         "pt_p": "NÃO CAIA NA ÁGUA!",
         "ru": "НЕ УПАДИТЕ В ВОДУ!",
         "es": "NO TE CAIGAS AL AGUA",
-        "jp": null
+        "jp": null,
+        "pl": "NIE WPADNIJ DO WODY!"
       }
     },
     {
@@ -592,7 +622,8 @@
         "pt_p": "ALCANCE O OBJETIVO!",
         "ru": "ДОБЕРИТЕСЬ ДО КОНЦА!",
         "es": "LLEGA HASTA LA META!",
-        "jp": null
+        "jp": null,
+        "pl": "DOTRZYJ DO CELU!"
       }
     },
     {
@@ -607,7 +638,8 @@
         "pt_p": "ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!",
         "ru": "УНИЧТОЖТЕ БОЧКИ!",
         "es": "DISPARA A LOS BARRILES!",
-        "jp": null
+        "jp": null,
+        "pl": "TRAF W JAK NAJWIĘCEJ BECZEK!"
       }
     },
     {
@@ -622,7 +654,8 @@
         "pt_p": null,
         "ru": null,
         "es": null,
-        "jp": null
+        "jp": null,
+        "pl": null
       }
     },
     {
@@ -637,7 +670,8 @@
         "pt_p": "CHEGUE NO FINAL SE FOR CAPAZ!",
         "ru": "ДОЙДИТЕ ДО КОНЦА!",
         "es": "LLEGA HASTA EL FINAL!",
-        "jp": null
+        "jp": null,
+        "pl": "DOTRZYJ DO KOŃCA!"
       }
     },
     {
@@ -652,7 +686,8 @@
         "pt_p": "MATE UM INIMIGO!",
         "ru": "УБЕЙТЕ ВРАГА!",
         "es": "MATA A UN ENEMIGO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZABIJ WROGA!"
       }
     },
     {
@@ -667,7 +702,8 @@
         "pt_p": "QUEBRE OS BARRIS!",
         "ru": "СЛОМАЙТЕ БОЧКУ!",
         "es": "ROMPE LOS BARRILES!",
-        "jp": null
+        "jp": null,
+        "pl": "ZNISZCZ BECZKI!"
       }
     },
     {
@@ -682,7 +718,8 @@
         "pt_p": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
         "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
         "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
-        "jp": null
+        "jp": null,
+        "pl": "ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!"
       }
     },
     {
@@ -697,7 +734,8 @@
         "pt_p": "STICKY JUMP!",
         "ru": "ПРЫЖОК НА ЛЕПУЧКЕ!",
         "es": "SALTO CON BOMBAS!",
-        "jp": null
+        "jp": null,
+        "pl": "WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!"
       }
     },
     {
@@ -717,7 +755,8 @@
         "pt_p": "DIGITE A PALAVRA!\n{1}",
         "ru": "НАПИШИТЕ СЛОВО!\n{1}",
         "es": "DI LA PALABRA!\n{1}",
-        "jp": null
+        "jp": null,
+        "pl": "NAPISZ SŁOWO!\n{1}"
       }
     },
     {
@@ -732,7 +771,8 @@
         "pt_p": "ROCKET JUMP!",
         "ru": "ПРЫЖОК НА РАКЕТЕ!",
         "es": "SALTO CON COHETES!",
-        "jp": null
+        "jp": null,
+        "pl": "WYKONAJ RAKIETOWY SKOK!"
       }
     },
     {
@@ -752,7 +792,8 @@
         "pt_p": "RESPONDA A PERGUNTA!\n{1} = ?",
         "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
         "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
-        "jp": null
+        "jp": null,
+        "pl": "ODPOWIEDZ NA PYTANIE!\n{1} = ?"
       }
     },
     {
@@ -776,7 +817,8 @@
         "pt_p": "{1}A reposta correta foi {2}!",
         "ru": "{1}Правильным ответом было {2}!",
         "es": "{1}La respuesta correcta era {2}!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}Poprawna odpowiedź to {2}!"
       }
     },
     {
@@ -791,7 +833,8 @@
         "pt_p": "O MESTRE MANDOU: TAUNT!",
         "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "SIMON DICE: BURLATE!",
-        "jp": null
+        "jp": null,
+        "pl": "SZYMON MÓWI: DRWINA!"
       }
     },
     {
@@ -806,7 +849,8 @@
         "pt_p": "O MESTRE MANDOU: PULE!",
         "ru": "САЙМОН ГОВОРИТ: ПРЫЖОК!",
         "es": "SIMON DICE: SALTA!",
-        "jp": null
+        "jp": null,
+        "pl": "SZYMON MÓWI: SKACZ!"
       }
     },
     {
@@ -821,7 +865,8 @@
         "pt_p": "O MESTRE MANDOU: ABAIXE!",
         "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "SIMON DICE: AGACHATE!",
-        "jp": null
+        "jp": null,
+        "pl": "SZYMON MÓWI: KUCNIJ!"
       }
     },
     {
@@ -836,7 +881,8 @@
         "pt_p": "O MESTRE NÃO MANDOU: TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "ALGUIEN DICE: BURLATE!",
-        "jp": null
+        "jp": null,
+        "pl": "KTOŚ MÓWI: DRWINA!"
       }
     },
     {
@@ -851,7 +897,8 @@
         "pt_p": "O MESTRE NÃO MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
         "es": "ALGUIEN DICE: SALTA!",
-        "jp": null
+        "jp": null,
+        "pl": "KTOŚ MÓWI: SKACZ!"
       }
     },
     {
@@ -866,7 +913,8 @@
         "pt_p": "O MESTRE NÃO MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "ALGUIEN DICE: AGACHATE!",
-        "jp": null
+        "jp": null,
+        "pl": "KTOŚ MÓWI: KUCNIJ!"
       }
     },
     {
@@ -881,7 +929,8 @@
         "pt_p": "(O mestre NÃO mandou você fazer isso...)",
         "ru": "(Саймон этого не говорил..)",
         "es": "(Simon no a dicho eso..)",
-        "jp": null
+        "jp": null,
+        "pl": "(Szymon tego nie powiedział...)"
       }
     },
     {
@@ -896,7 +945,8 @@
         "pt_p": "O Kamikaze chegou!",
         "ru": "Камикадзе здесь!",
         "es": "El Kamikaze esta por aqui!",
-        "jp": null
+        "jp": null,
+        "pl": "Kamikaze jest tutaj!"
       }
     },
     {
@@ -911,7 +961,8 @@
         "pt_p": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
         "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
         "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
-        "jp": null
+        "jp": null,
+        "pl": "ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!"
       }
     },
     {
@@ -926,7 +977,8 @@
         "pt_p": "FUJA PARA LONGE DO KAMIKAZE!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
         "es": "HUYE DEL KAMIKAZE!",
-        "jp": null
+        "jp": null,
+        "pl": "UCIEKNIJ OD KAMIKAZE!"
       }
     },
     {
@@ -941,7 +993,8 @@
         "pt_p": "NÃO PARE DE SE MOVIMENTAR!",
         "ru": "ДВИГАТЬСЯ!",
         "es": "NO PARES DE MOVERTE!",
-        "jp": null
+        "jp": null,
+        "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!"
       }
     },
     {
@@ -956,7 +1009,8 @@
         "pt_p": "NÃO SE MOVA!",
         "ru": "НЕ ДВИГАТЬСЯ!",
         "es": "NO TE MUEVAS!",
-        "jp": null
+        "jp": null,
+        "pl": "NIE RUSZAJ SIĘ!"
       }
     },
     {
@@ -971,7 +1025,8 @@
         "pt_p": "SUBA EM ALGUMA PLATAFORMA!",
         "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
         "es": "SUBE A UNA PLATAFORMA!",
-        "jp": null
+        "jp": null,
+        "pl": "DOSTAŃ SIĘ NA PLATFORMĘ!"
       }
     },
     {
@@ -986,7 +1041,8 @@
         "pt_p": "SPYCRAB!",
         "ru": "СПАЙКРАБ!",
         "es": "SPYCRAB!",
-        "jp": null
+        "jp": null,
+        "pl": "SZPIEGOKRAB!"
       }
     },
     {
@@ -1001,7 +1057,8 @@
         "pt_p": "Spycrabs precisam abaixar olhando para cima!",
         "ru": "Спайкрабы должны присесть и посмотреть вверх!",
         "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
-        "jp": null
+        "jp": null,
+        "pl": "Szpiegokraby muszą kucać i patrzeć w górę!"
       }
     },
     {
@@ -1016,7 +1073,8 @@
         "pt_p": "SABOTE UMA CONSTRUÇÃO!",
         "ru": "ПОСТАВЬТЕ ЖУЧОК!",
         "es": "DESTRUYE UNA CONSTRUCCION!",
-        "jp": null
+        "jp": null,
+        "pl": "ZNISZCZ KONSTRUKCJĘ SAPEREM!"
       }
     },
     {
@@ -1031,7 +1089,8 @@
         "pt_p": "CONSTRUA ALGO PARA O SPY SABOTAR!",
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
         "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
-        "jp": null
+        "jp": null,
+        "pl": "NIECH TWOJA KONSTRUKCJA ZOSTANIE ZNISZCZONA SAPEREM!"
       }
     },
     {
@@ -1046,7 +1105,8 @@
         "pt_p": "CONSTRUA QUALQUER COISA!",
         "ru": "ПОСТРОЙТЕ ЧТО-НИБУДЬ!",
         "es": "CONSTRUYE ALGO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZBUDUJ COKOLWIEK!"
       }
     },
     {
@@ -1061,7 +1121,8 @@
         "pt_p": "CONSTRUA UM FORNECEDOR!",
         "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
         "es": "CONSTRUYE UN DISPENSADOR!",
-        "jp": null
+        "jp": null,
+        "pl": "ZBUDUJ ZASOBNIK!"
       }
     },
     {
@@ -1076,7 +1137,8 @@
         "pt_p": "CONSTRUA UM TELEPORTE!",
         "ru": "ПОСТРОЙТЕ ТЕЛЕПОРТ!",
         "es": "CONSTRUYE UN TELETRANSPORTADOR!",
-        "jp": null
+        "jp": null,
+        "pl": "ZBUDUJ TELEPORT!"
       }
     },
     {
@@ -1091,7 +1153,8 @@
         "pt_p": "CONSTRUA UMA SENTINELA!",
         "ru": "ПОСТРОЙТЕ ТУРЕЛЬ!",
         "es": "CONSTRUYE UN CENTINELA!",
-        "jp": null
+        "jp": null,
+        "pl": "ZBUDUJ DZIAŁKO STRAŻNICZE!"
       }
     },
     {
@@ -1106,7 +1169,8 @@
         "pt_p": "JOGUE O JARATE NOS INIMIGOS!",
         "ru": "ОБМОЧИТЕ ВРАГА!",
         "es": "LANZA JARATE A UN ENEMIGO!",
-        "jp": null
+        "jp": null,
+        "pl": "TRAF WROGA SIKWONDEM!"
       }
     },
     {
@@ -1121,7 +1185,8 @@
         "pt_p": "ACERTE O HEAVY!",
         "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
         "es": "GOLPEA A UN HEAVY!",
-        "jp": null
+        "jp": null,
+        "pl": "UDERZ GRUBEGO!"
       }
     },
     {
@@ -1136,7 +1201,8 @@
         "pt_p": "SEJA ATINGIDO POR UM MÉDICO!",
         "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
         "es": "HAZ QUE TE GOLPEE UN MEDICO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZOSTAŃ UDERZONYM PRZEZ MEDYKA!"
       }
     },
     {
@@ -1151,7 +1217,8 @@
         "pt_p": "ACERTE O ALVO!",
         "ru": "ПОПОДИТЕ ПО МИШЕНИ!",
         "es": "DALE AL OBJETIVO!",
-        "jp": null
+        "jp": null,
+        "pl": "TRAF W CEL!"
       }
     },
     {
@@ -1166,7 +1233,8 @@
         "pt_p": "MUDE DE CLASSE!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС!",
         "es": "CAMBIA DE CLASE!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ!"
       }
     },
     {
@@ -1181,7 +1249,8 @@
         "pt_p": "MUDE A CLASSE PARA SCOUT!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
         "es": "CAMBIA DE CLASE A SCOUT!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SKAUTA!"
       }
     },
     {
@@ -1196,7 +1265,8 @@
         "pt_p": "MUDE A CLASSE PARA SOLDIER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
         "es": "CAMBIA DE CLASE A SOLDADO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA ŻOŁNIERZA!"
       }
     },
     {
@@ -1211,7 +1281,8 @@
         "pt_p": "MUDE A CLASSE PARA PYRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
         "es": "CAMBIA DE CLASE A PYRO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA PYRO!"
       }
     },
     {
@@ -1226,7 +1297,8 @@
         "pt_p": "MUDE A CLASSE PARA DEMOMAN!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
         "es": "CAMBIA DE CLASE A DEMOMAN!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA DEMOMANA!"
       }
     },
     {
@@ -1241,7 +1313,8 @@
         "pt_p": "MUDE A CLASSE PARA HEAVY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
         "es": "CAMBIA DE CLASE A HEAVY!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA GRUBEGO!"
       }
     },
     {
@@ -1256,7 +1329,8 @@
         "pt_p": "MUDE A CLASSE PARA ENGENHEIRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
         "es": "CAMBIA DE CLASE A INGENIERO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA INŻYNIERA!"
       }
     },
     {
@@ -1271,7 +1345,8 @@
         "pt_p": "MUDE A CLASSE PARA MÉDICO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
         "es": "CAMBIA DE CLASE A MEDICO!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA MEDYKA!"
       }
     },
     {
@@ -1286,7 +1361,8 @@
         "pt_p": "MUDE A CLASSE PARA SNIPER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
         "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SNAJPERA!"
       }
     },
     {
@@ -1301,7 +1377,8 @@
         "pt_p": "MUDE A CLASSE PARA SPY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
         "es": "CAMBIA DE CLASE A ESPIA!",
-        "jp": null
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SZPIEGA!"
       }
     },
     {
@@ -1316,7 +1393,8 @@
         "pt_p": "BEBA RÁPIDO!",
         "ru": "ВЫПЕЙТЕ!",
         "es": "BEBE!",
-        "jp": null
+        "jp": null,
+        "pl": "PIJ!"
       }
     },
     {
@@ -1330,7 +1408,8 @@
         "fr": "NE BUVEZ PAS !",
         "ru": null,
         "pt_p": "NÃO BEBA!",
-        "pt": "NÃO BEBA!"
+        "pt": "NÃO BEBA!",
+        "pl": "NIE PIJ!"
       }
     },
     {
@@ -1345,7 +1424,8 @@
         "pt_p": "COMA, RÁPIDO!",
         "ru": "ПОЕШЬТЕ!",
         "es": "COME!",
-        "jp": null
+        "jp": null,
+        "pl": "JEDZ!"
       }
     },
     {
@@ -1359,7 +1439,8 @@
         "fr": "NE MANGEZ PAS !",
         "ru": null,
         "pt_p": "NÃO COMA!",
-        "pt": "NÃO COMA!"
+        "pt": "NÃO COMA!",
+        "pl": "NIE JEDZ!"
       }
     },
     {
@@ -1374,7 +1455,8 @@
         "pt_p": "ATORDOE UM INIMIGO!",
         "ru": "ОГЛУШИТЕ ПРОТИВНИКА!",
         "es": "ATURDE A UN ENEMIGO!",
-        "jp": null
+        "jp": null,
+        "pl": "OGŁUSZ WROGA!"
       }
     },
     {
@@ -1389,7 +1471,8 @@
         "pt_p": "PERMANEÇA NO CHÃO!",
         "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
         "es": "QUEDATE EN EL SUELO!",
-        "jp": null
+        "jp": null,
+        "pl": "UTRZYMAJ SIĘ NA ZIEMI!"
       }
     },
     {
@@ -1404,7 +1487,8 @@
         "pt_p": "SALTO DUPLO!",
         "ru": "ДВОЙНОЙ ПРЫЖОК!",
         "es": "SALTO DOBLE!",
-        "jp": null
+        "jp": null,
+        "pl": "WYKONAJ PODWÓJNY SKOK!"
       }
     },
     {
@@ -1419,7 +1503,8 @@
         "pt_p": "PULE ATIRANDO NO CHÃO!",
         "ru": "ПРЫЖОК ШПРИЦЕМЕТОМ!",
         "es": "SALTO CON AGUJAS!",
-        "jp": null
+        "jp": null,
+        "pl": "WYKONAJ SKOK STRZYKAWKAMI!"
       }
     },
     {
@@ -1434,7 +1519,8 @@
         "pt_p": "USE O JETPACK!",
         "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
         "es": "JETPACK!",
-        "jp": null
+        "jp": null,
+        "pl": "UŻYJ PLECAKA ODRZUTOWEGO!"
       }
     },
     {
@@ -1448,7 +1534,8 @@
         "fr": "NE RIEZ PAS !",
         "ru": null,
         "pt_p": "NÃO VALE RIR!",
-        "pt": "NÃO VALE RIR!"
+        "pt": "NÃO VALE RIR!",
+        "pl": "NIE ŚMIEJ SIĘ!"
       }
     },
     {
@@ -1462,7 +1549,8 @@
         "fr": "FRAPPEZ QUELQU'UN !",
         "ru": null,
         "pt_p": "ACERTE ALGUÉM!",
-        "pt": "ACERTE ALGUÉM!"
+        "pt": "ACERTE ALGUÉM!",
+        "pl": "UDERZ KOGOŚ!"
       }
     },
     {
@@ -1477,7 +1565,8 @@
         "pt_p": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
         "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
         "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
-        "jp": null
+        "jp": null,
+        "pl": "Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!"
       }
     },
     {
@@ -1492,7 +1581,8 @@
         "pt_p": "COMEÇOU!",
         "ru": "СТАРТ!",
         "es": "EMPIEZA!",
-        "jp": null
+        "jp": null,
+        "pl": "START!"
       }
     },
     {
@@ -1512,7 +1602,8 @@
         "pt_p": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
         "ru": "== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд",
         "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos",
-        "jp": null
+        "jp": null,
+        "pl": "== OBSERWACJA ==\n\nCzas do końca (w sekundach): {1}"
       }
     },
     {
@@ -1540,7 +1631,8 @@
         "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
         "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
-        "jp": null
+        "jp": null,
+        "pl": "== NAPISZ SŁOWO! ==\n\n{1}\nNastępne słowo: {2}\nCzas do końca (w sekundach): {3}"
       }
     },
     {
@@ -1560,7 +1652,8 @@
         "pt_p": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
         "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!",
         "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!",
-        "jp": null
+        "jp": null,
+        "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!"
       }
     },
     {
@@ -1575,7 +1668,8 @@
         "pt_p": "== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
         "ru": "== ОБЪЯВЛЕНИЕ == \n\nНОВЫЙ УРОВЕНЬ! СЛОВА СТАЛИ БОЛЕЕ СЛОЖНЫМИ!",
         "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!",
-        "jp": null
+        "jp": null,
+        "pl": "== OGŁOSZENIE == \n\nNASTĘPNY POZIOM! SŁOWA STANĄ SIĘ TRUDNIEJSZE!"
       }
     },
     {
@@ -1595,7 +1689,8 @@
         "pt_p": "== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}",
         "ru": "== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}",
         "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}",
-        "jp": null
+        "jp": null,
+        "pl": "== PODSUMOWANIE RUNDY == \n\nGracze z najmniejszą liczbą napisanych słów to... \n{1}"
       }
     },
     {
@@ -1619,7 +1714,8 @@
         "pt_p": "{1}\ne {2} mais...",
         "ru": "{1}\nи {2} и другие...",
         "es": "{1}\ny {2} mas...",
-        "jp": null
+        "jp": null,
+        "pl": "{1}\noraz {2} innych..."
       }
     },
     {
@@ -1639,7 +1735,8 @@
         "pt_p": "{1}ninguém!\n\nTodos sobreviveram!",
         "ru": "{1}Никто!\n\nВсе выжили в этом раунде!",
         "es": "{1}nadie!\n\nTodo el mundo sobrevive otra ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "{1}nikt!\n\nWszyscy przeżyli kolejną rundę!"
       }
     },
     {
@@ -1654,7 +1751,8 @@
         "pt_p": "A troca de classes não é permitida durante os 'bossgames' !",
         "ru": "Смена класса запрещена во время босс раунда!",
         "es": "Cambiar de clase no esta permitido durante los jefes!",
-        "jp": null
+        "jp": null,
+        "pl": "Zmienianie klas jest zabronione podczas bossgier!"
       }
     },
     {
@@ -1669,7 +1767,8 @@
         "pt_p": "Modo Terceira Pessoa",
         "ru": "От третьего лица",
         "es": "Tercera Persona",
-        "jp": null
+        "jp": null,
+        "pl": "Trzecia Osoba"
       }
     },
     {
@@ -1684,7 +1783,8 @@
         "pt_p": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
         "ru": "Все игроки играют с новой точкой зрения!",
         "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
-        "jp": null
+        "jp": null,
+        "pl": "Wszyscy gracze w tej rundzie grają w nowej perspektywie!"
       }
     },
     {
@@ -1699,7 +1799,8 @@
         "pt_p": "Injeção de Adrenalina!",
         "ru": "Адреналин",
         "es": "Inyección de Adrenalina",
-        "jp": null
+        "jp": null,
+        "pl": "Zastrzyk Adrenaliny"
       }
     },
     {
@@ -1714,7 +1815,8 @@
         "pt_p": "O rodada inicia em velocidade alta e diminui a cada microgame.",
         "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
         "es": "La ronda comienza rapido! Y despues se ralentiza!",
-        "jp": null
+        "jp": null,
+        "pl": "Runda szybko się rozpoczyna, a następnie zwalnia!"
       }
     },
     {
@@ -1729,7 +1831,8 @@
         "pt_p": "Rodada Extendida!",
         "ru": "Бонусные Раунды",
         "es": "Ronda Extendida",
-        "jp": null
+        "jp": null,
+        "pl": "Wydłużona Runda"
       }
     },
     {
@@ -1744,7 +1847,8 @@
         "pt_p": "30 microgames serão jogados e depois o 'bossgame'!",
         "ru": "30 игр будет сыгранно перед босс раундом!",
         "es": "Se jugaran 30 microjuegos antes del jefe!",
-        "jp": null
+        "jp": null,
+        "pl": "Przed bossgrą odbędzie się 30 mikrogier!"
       }
     },
     {
@@ -1759,7 +1863,8 @@
         "pt_p": "Baixa Gravidade",
         "ru": "Низкая Гравитация",
         "es": "Gravedad Baja",
-        "jp": null
+        "jp": null,
+        "pl": "Niska Grawitacja"
       }
     },
     {
@@ -1774,7 +1879,8 @@
         "pt_p": "Ei ? Parece que estou na lua! E a gravidade?",
         "ru": "Космос? КОСМОС! КОООСМООООООООС!",
         "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
-        "jp": null
+        "jp": null,
+        "pl": "Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!"
       }
     },
     {
@@ -1789,7 +1895,8 @@
         "pt_p": "Relaxe com esse calmante ...",
         "ru": "Успокоительное",
         "es": "Calmante",
-        "jp": null
+        "jp": null,
+        "pl": "Runda Antystresowa"
       }
     },
     {
@@ -1804,7 +1911,8 @@
         "pt_p": "Nenhuma mudança de velocidade nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
         "es": "No habra cambios de velocidad en esta ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "W tej rundzie nie będzie zmian prędkości!"
       }
     },
     {
@@ -1819,7 +1927,8 @@
         "pt_p": "Agora vai ficar sério! Atenção !",
         "ru": "Скоростные игры",
         "es": "Super-Velocidad",
-        "jp": null
+        "jp": null,
+        "pl": "Czas Nagli"
       }
     },
     {
@@ -1834,7 +1943,8 @@
         "pt_p": "Nesta rodada, cada microgame terá a velocidade aumentada!",
         "ru": "Скорость игр будет увеличиваться с каждым раундом!",
         "es": "La ronda acelerara despues de cada microjuego!",
-        "jp": null
+        "jp": null,
+        "pl": "Runda będzie stale przyspieszać po każdej mikrogrze!"
       }
     },
     {
@@ -1849,7 +1959,8 @@
         "pt_p": "Sobe ou Desce?",
         "ru": "Вверх и вниз",
         "es": "Arriba y Abajo",
-        "jp": null
+        "jp": null,
+        "pl": "W górę i w dół"
       }
     },
     {
@@ -1864,7 +1975,8 @@
         "pt_p": "Em cada microgame, será escolhida uma velocidade aleatória!",
         "ru": "Скорость каждого раунда будет случайной!",
         "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
-        "jp": null
+        "jp": null,
+        "pl": "Po każdej mikrogrze zostanie dobrana losowa szybkość!"
       }
     },
     {
@@ -1879,7 +1991,8 @@
         "pt_p": "Eu amo tartarugas, e você?",
         "ru": "Слоу мо",
         "es": "Camara Lenta",
-        "jp": null
+        "jp": null,
+        "pl": "Spowolnienie"
       }
     },
     {
@@ -1894,7 +2007,8 @@
         "pt_p": "Nesta rodada, a cada microgame a velocidade será diminuída!",
         "ru": "Игры становяться медленее с каждым раундом!",
         "es": "La ronda se ralentizara despues de cada microjuego!",
-        "jp": null
+        "jp": null,
+        "pl": "Runda będzie stale zwalniać po każdej mikrogrze!"
       }
     },
     {
@@ -1909,7 +2023,8 @@
         "pt_p": "Que tal... Matemática?",
         "ru": "Математика",
         "es": "Solo Matematicas",
-        "jp": null
+        "jp": null,
+        "pl": "Tylko Matematyka"
       }
     },
     {
@@ -1924,7 +2039,8 @@
         "pt_p": "Hora de testar sua habilidade com as operações matemáticas!",
         "ru": "Пришло время потренироваться в математику!",
         "es": "Hora de poner a prueba tus habilidades matematicas!",
-        "jp": null
+        "jp": null,
+        "pl": "Czas sprawdzić Twoją wiedzę z matematyki!"
       }
     },
     {
@@ -1939,7 +2055,8 @@
         "pt_p": "Dia do Contra",
         "ru": "День Наоборот",
         "es": "Dia Opuesto",
-        "jp": null
+        "jp": null,
+        "pl": "Dzień na Opak"
       }
     },
     {
@@ -1954,7 +2071,8 @@
         "pt_p": "O jogador com o menor número de pontos vencerá!",
         "ru": "Игрок с наименшим кол-ом очков выигрывает!",
         "es": "El jugador con la puntuacion mas baja gana la ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "Gracz z najmniejszą liczbą punktów wygrywa rundę!"
       }
     },
     {
@@ -1969,7 +2087,8 @@
         "pt_p": "Batalha dos Chefões!",
         "ru": "Два Босс Раунда",
         "es": "Jefe Doble",
-        "jp": null
+        "jp": null,
+        "pl": "Dwie Walki z Bossem"
       }
     },
     {
@@ -1984,7 +2103,8 @@
         "pt_p": "Dois 'bossgames' serão disputados antes da partida acabar!",
         "ru": "Два босс раунда играется перед концом игры!",
         "es": "Se jugaran dos jefes antes de que termine el juego!",
-        "jp": null
+        "jp": null,
+        "pl": "Przed końcem gry odbędą się dwie bossgry!"
       }
     },
     {
@@ -1999,7 +2119,8 @@
         "pt_p": "Uma Batalha de Equipes",
         "ru": "Битва комманд",
         "es": "Batalla de Equipos",
-        "jp": null
+        "jp": null,
+        "pl": "Walka Drużyn"
       }
     },
     {
@@ -2014,7 +2135,8 @@
         "pt_p": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
         "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
         "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
-        "jp": null
+        "jp": null,
+        "pl": "Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!"
       }
     },
     {
@@ -2029,7 +2151,8 @@
         "pt_p": "Sozinho...",
         "ru": "Одиночная Игра",
         "es": "Modo Un Jugador",
-        "jp": null
+        "jp": null,
+        "pl": "Rozgrywka Jednoosobowa"
       }
     },
     {
@@ -2044,7 +2167,8 @@
         "pt_p": "Alô? Ei ... Para onde foi todo mundo?",
         "ru": "Ой... а куда все делись?",
         "es": "Hey... donde estan todos?",
-        "jp": null
+        "jp": null,
+        "pl": "Hej... Gdzie są wszyscy?"
       }
     },
     {
@@ -2059,7 +2183,8 @@
         "pt_p": "Somente Esqueletos",
         "ru": "Вечеринка Скелетов",
         "es": "Solo Esqueletos",
-        "jp": null
+        "jp": null,
+        "pl": "Tylko szkielety"
       }
     },
     {
@@ -2074,7 +2199,8 @@
         "pt_p": "Nenhuma pele está permitida nessa rodada!",
         "ru": "Кожа и мясо на выброс!",
         "es": "No se permite piel en esta ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "W tej rundzie posiadanie skóry jest zabronione!"
       }
     },
     {
@@ -2089,7 +2215,8 @@
         "pt_p": "Minúsculos?",
         "ru": "Малютка",
         "es": "Pequeñito",
-        "jp": null
+        "jp": null,
+        "pl": "Mały"
       }
     },
     {
@@ -2104,7 +2231,8 @@
         "pt_p": "Dessa vez todos ficarão minúsculos!",
         "ru": "Все становяться маленькими-прималенькими мужичками!",
         "es": "Todos se convierten en hombres pequeñitos!",
-        "jp": null
+        "jp": null,
+        "pl": "Każdy gracz staje się tyciusieńki!"
       }
     },
     {
@@ -2119,7 +2247,8 @@
         "pt_p": "Cabeça de Vento",
         "ru": "Голова-пузырь",
         "es": "Cabezones",
-        "jp": null
+        "jp": null,
+        "pl": "Bobbleheads"
       }
     },
     {
@@ -2134,7 +2263,8 @@
         "pt_p": "Mas em que todos foram transformados? Loucos?",
         "ru": "Все головы становяться огромными!",
         "es": "Todos se convierten en un montón de cabezas huecas!",
-        "jp": null
+        "jp": null,
+        "pl": "Każda głowa pęcznieje!"
       }
     },
     {
@@ -2149,7 +2279,8 @@
         "pt_p": "Pontuação Aleatória",
         "ru": "Рандомные очки",
         "es": "Puntuacion Aleatoria",
-        "jp": null
+        "jp": null,
+        "pl": "Losowe Punkty"
       }
     },
     {
@@ -2160,11 +2291,12 @@
       "translations": {
         "pt": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "fr": "Si vous gagnez un mini-jeu, le score est attribué aléatoirement !",
-        "it": "I minigiochi vinti danno un numero di punti casuale!!",
+        "it": "I minigiochi vinti danno un numero causale di punti!",
         "pt_p": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "ru": "При победе, вы получаете случайное кол-во очков!",
         "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!"
       }
     },
     {
@@ -2184,7 +2316,8 @@
         "pt_p": "Se você vencer este microgame, sua recompensa será de {1} pontos!",
         "ru": "Если вы победите, вы получите {1} очков!",
         "es": "Si ganas este microjuego, recibiras {1} puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!"
       }
     },
     {
@@ -2199,7 +2332,8 @@
         "pt_p": "Morte Súbita",
         "ru": "Внезапная Смерть",
         "es": "Muerte Subita",
-        "jp": null
+        "jp": null,
+        "pl": "Nagła Śmierć"
       }
     },
     {
@@ -2214,7 +2348,8 @@
         "pt_p": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
         "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
         "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!"
       }
     },
     {
@@ -2242,7 +2377,8 @@
         "pt_p": "Atualmente ({1} de {2} jogadores)\n{3}",
         "ru": "Данное кол-во игроков ({1} of {2})\n{3}",
         "es": "Jugadores actuales ({1} de {2})\n{3}",
-        "jp": null
+        "jp": null,
+        "pl": "Obecni gracze ({1} z {2})\n{3}"
       }
     },
     {
@@ -2266,7 +2402,8 @@
         "pt_p": "{1} (e {2} mais)",
         "ru": "{1} (и еще {2})",
         "es": "{1} (y {2} mas)",
-        "jp": null
+        "jp": null,
+        "pl": "{1} (oraz {2} innych)"
       }
     },
     {
@@ -2281,7 +2418,8 @@
         "pt_p": "Agora é Vale Tudo",
         "ru": "Игра на все",
         "es": "Todo a Una",
-        "jp": null
+        "jp": null,
+        "pl": "Wszystko albo Nic"
       }
     },
     {
@@ -2296,7 +2434,8 @@
         "pt_p": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
         "ru": "При проигрыше, вы теряете ВСЕ очки!",
         "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
-        "jp": null
+        "jp": null,
+        "pl": "Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!"
       }
     },
     {
@@ -2311,7 +2450,8 @@
         "pt_p": "Leia ao Contrário",
         "ru": "Текст наоборот",
         "es": "Texto Invertido",
-        "jp": null
+        "jp": null,
+        "pl": "Tekst Wspak"
       }
     },
     {
@@ -2326,7 +2466,8 @@
         "pt_p": "!oirártnoc oa oãtse seõçurtsni sA",
         "ru": "!нелакрезто тедуб харги в тскеТ",
         "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL",
-        "jp": null
+        "jp": null,
+        "pl": "!kapsw enasip ąs reigorkim od ejckurtsnI"
       }
     },
     {
@@ -2341,7 +2482,8 @@
         "pt_p": "Sem Parar",
         "ru": "Без остановки",
         "es": "Sin Paradas",
-        "jp": null
+        "jp": null,
+        "pl": "Non-stop"
       }
     },
     {
@@ -2356,7 +2498,8 @@
         "pt_p": "Não haverá intervalos entre os microgames nesta rodada.",
         "ru": "Без пауз между раундами!",
         "es": "No hay descanso entre microjuegos en esta ronda!",
-        "jp": null
+        "jp": null,
+        "pl": "W tej rundzie nie ma przerw pomiędzy mikrogrami!"
       }
     },
     {
@@ -2371,7 +2514,8 @@
         "pt_p": "Team Fortress 64",
         "ru": "Team Fortress 64",
         "es": "Team Fortress 64",
-        "jp": null
+        "jp": null,
+        "pl": "Team Fortress 64"
       }
     },
     {
@@ -2386,7 +2530,8 @@
         "pt_p": "Ei!? Onde foram parar meus polígonos?",
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
-        "jp": null
+        "jp": null,
+        "pl": "Hej! Gdzie się podziały moje wielokąty"
       }
     }
   ]

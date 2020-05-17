@@ -1,0 +1,609 @@
+"Phrases"
+{
+	"System_Advertisement"
+	{
+		"#format"		"{1:s}"
+		"pl"		"Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Wynik: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Mikrogry: {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Wynik Drużyny: {1}"
+	}
+	"Hud_Score_Barrels"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Beczki: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"		"{1:i},{2:i}"
+		"pl"		"Runda {1} z {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Runda {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"		"{1:s}"
+		"pl"		"Piosenka przewodnia {1}"
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"		"{1:s}"
+		"pl"		"RUNDA SPECJALNA: {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"		"{1:s},{2:s},{3:s}"
+		"pl"		"{1}Warunek rundy specjalnej to... {2}!\n{3}"
+	}
+	"PlayerSpawn_RespawnNotice"
+	{
+		"pl"		"Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
+	}
+	"SuddenDeath_YouHaveBeenKnockedOut"
+	{
+		"pl"		"ZOSTAŁEŚ WYELIMINOWANY!"
+	}
+	"LowestScoreWins_ExploitBlocked"
+	{
+		"pl"		"Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku."
+	}
+	"General_Loser"
+	{
+		"pl"		"Przegrany!"
+	}
+	"General_Winner"
+	{
+		"pl"		"Zwycięzca!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"pl"		"== RUNDA SPECJALNA DOBIEGŁA KOŃCA! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"pl"		"Zwycięzcą został..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"pl"		"Zwycięzcami zostali..."
+	}
+	"GameOver_WinnersAnd"
+	{
+		"pl"		"oraz"
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"pl"		"Nie ma zwycięzców!"
+	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"		"{1:s},{2:s},{3:s},{4:i}"
+		"pl"		"{1}{2} {3} {green}z wynikiem {4}!"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		"{1}Zwyciężyła drużyna RED z wynikiem {2}!"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		"{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"#format"		"{1:s}"
+		"pl"		"{1}Impas! Obie drużyny mają tyle samo punktów!"
+	}
+	"Intermission_Header"
+	{
+		"pl"		"Przerwa!"
+	}
+	"Intermission_Body"
+	{
+		"pl"		"Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę."
+	}
+	"Bossgame1_Caption"
+	{
+		"pl"		"WYKORZYSTAJ RAKIETOWE SKOKI BY DOTRZEĆ DO KOŃCA!"
+	}
+	"Bossgame2_Caption"
+	{
+		"pl"		"UCIEKNIJ Z FABRYKI!"
+	}
+	"Bossgame3_Caption"
+	{
+		"pl"		"POKONAJ WROGĄ DRUŻYNĘ!"
+	}
+	"Bossgame4_Caption"
+	{
+		"pl"		"NIE WPADNIJ DO WODY!"
+	}
+	"Bossgame5_Caption"
+	{
+		"pl"		"DOTRZYJ DO CELU!"
+	}
+	"Bossgame6_Caption"
+	{
+		"pl"		"TRAF W JAK NAJWIĘCEJ BECZEK!"
+	}
+	"Bossgame7_Caption"
+	{
+		"pl"		""
+	}
+	"Minigame1_Caption"
+	{
+		"pl"		"DOTRZYJ DO KOŃCA!"
+	}
+	"Minigame2_Caption"
+	{
+		"pl"		"ZABIJ WROGA!"
+	}
+	"Minigame3_Caption"
+	{
+		"pl"		"ZNISZCZ BECZKI!"
+	}
+	"Minigame4_Caption"
+	{
+		"pl"		"ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!"
+	}
+	"Minigame5_Caption"
+	{
+		"pl"		"WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!"
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"pl"		"NAPISZ SŁOWO!\n{1}"
+	}
+	"Minigame7_Caption"
+	{
+		"pl"		"WYKONAJ RAKIETOWY SKOK!"
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"pl"		"ODPOWIEDZ NA PYTANIE!\n{1} = ?"
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		"{1}Poprawna odpowiedź to {2}!"
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"pl"		"SZYMON MÓWI: DRWINA!"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"pl"		"SZYMON MÓWI: SKACZ!"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"pl"		"SZYMON MÓWI: KUCNIJ!"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"pl"		"KTOŚ MÓWI: DRWINA!"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"pl"		"KTOŚ MÓWI: SKACZ!"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"pl"		"KTOŚ MÓWI: KUCNIJ!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"pl"		"(Szymon tego nie powiedział...)"
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"pl"		"Kamikaze jest tutaj!"
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"pl"		"ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"pl"		"UCIEKNIJ OD KAMIKAZE!"
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"pl"		"NIE PRZESTAWAJ SIĘ PORUSZAĆ!"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"pl"		"NIE RUSZAJ SIĘ!"
+	}
+	"Minigame12_Caption"
+	{
+		"pl"		"DOSTAŃ SIĘ NA PLATFORMĘ!"
+	}
+	"Minigame13_Caption"
+	{
+		"pl"		"SZPIEGOKRAB!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"pl"		"Szpiegokraby muszą kucać i patrzeć w górę!"
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"pl"		"ZNISZCZ KONSTRUKCJĘ SAPEREM!"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"pl"		"NIECH TWOJA KONSTRUKCJA ZOSTANIE ZNISZCZONA SAPEREM!"
+	}
+	"Minigame15_Caption_Any"
+	{
+		"pl"		"ZBUDUJ COKOLWIEK!"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"pl"		"ZBUDUJ ZASOBNIK!"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"pl"		"ZBUDUJ TELEPORT!"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"pl"		"ZBUDUJ DZIAŁKO STRAŻNICZE!"
+	}
+	"Minigame16_Caption"
+	{
+		"pl"		"TRAF WROGA SIKWONDEM!"
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"pl"		"UDERZ GRUBEGO!"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"pl"		"ZOSTAŃ UDERZONYM PRZEZ MEDYKA!"
+	}
+	"Minigame18_Caption"
+	{
+		"pl"		"TRAF W CEL!"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"pl"		"ZMIEŃ KLASĘ!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA SKAUTA!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA ŻOŁNIERZA!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA PYRO!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA DEMOMANA!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA GRUBEGO!"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA INŻYNIERA!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA MEDYKA!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA SNAJPERA!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"pl"		"ZMIEŃ KLASĘ NA SZPIEGA!"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"pl"		"PIJ!"
+	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"pl"		"NIE PIJ!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"pl"		"JEDZ!"
+	}
+	"Minigame20_Caption_DontEat"
+	{
+		"pl"		"NIE JEDZ!"
+	}
+	"Minigame21_Caption"
+	{
+		"pl"		"OGŁUSZ WROGA!"
+	}
+	"Minigame22_Caption"
+	{
+		"pl"		"UTRZYMAJ SIĘ NA ZIEMI!"
+	}
+	"Minigame23_Caption"
+	{
+		"pl"		"WYKONAJ PODWÓJNY SKOK!"
+	}
+	"Minigame24_Caption"
+	{
+		"pl"		"WYKONAJ SKOK STRZYKAWKAMI!"
+	}
+	"Minigame25_Caption"
+	{
+		"pl"		"UŻYJ PLECAKA ODRZUTOWEGO!"
+	}
+	"Minigame26_Caption"
+	{
+		"pl"		"NIE ŚMIEJ SIĘ!"
+	}
+	"Minigame27_Caption"
+	{
+		"pl"		"UDERZ KOGOŚ!"
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"pl"		"Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"pl"		"START!"
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"		"{1:i}"
+		"pl"		"== OBSERWACJA ==\n\nCzas do końca (w sekundach): {1}"
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pl"		"== NAPISZ SŁOWO! ==\n\n{1}\nNastępne słowo: {2}\nCzas do końca (w sekundach): {3}"
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"		"{1:s}"
+		"pl"		"== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!"
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"pl"		"== OGŁOSZENIE == \n\nNASTĘPNY POZIOM! SŁOWA STANĄ SIĘ TRUDNIEJSZE!"
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"		"{1:s}"
+		"pl"		"== PODSUMOWANIE RUNDY == \n\nGracze z najmniejszą liczbą napisanych słów to... \n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		"{1}\noraz {2} innych..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format"		"{1:s}"
+		"pl"		"{1}nikt!\n\nWszyscy przeżyli kolejną rundę!"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"pl"		"Zmienianie klas jest zabronione podczas bossgier!"
+	}
+	"SpecialRound0_Name"
+	{
+		"pl"		"Trzecia Osoba"
+	}
+	"SpecialRound0_Description"
+	{
+		"pl"		"Wszyscy gracze w tej rundzie grają w nowej perspektywie!"
+	}
+	"SpecialRound1_Name"
+	{
+		"pl"		"Zastrzyk Adrenaliny"
+	}
+	"SpecialRound1_Description"
+	{
+		"pl"		"Runda szybko się rozpoczyna, a następnie zwalnia!"
+	}
+	"SpecialRound2_Name"
+	{
+		"pl"		"Wydłużona Runda"
+	}
+	"SpecialRound2_Description"
+	{
+		"pl"		"Przed bossgrą odbędzie się 30 mikrogier!"
+	}
+	"SpecialRound3_Name"
+	{
+		"pl"		"Niska Grawitacja"
+	}
+	"SpecialRound3_Description"
+	{
+		"pl"		"Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!"
+	}
+	"SpecialRound4_Name"
+	{
+		"pl"		"Runda Antystresowa"
+	}
+	"SpecialRound4_Description"
+	{
+		"pl"		"W tej rundzie nie będzie zmian prędkości!"
+	}
+	"SpecialRound5_Name"
+	{
+		"pl"		"Czas Nagli"
+	}
+	"SpecialRound5_Description"
+	{
+		"pl"		"Runda będzie stale przyspieszać po każdej mikrogrze!"
+	}
+	"SpecialRound6_Name"
+	{
+		"pl"		"W górę i w dół"
+	}
+	"SpecialRound6_Description"
+	{
+		"pl"		"Po każdej mikrogrze zostanie dobrana losowa szybkość!"
+	}
+	"SpecialRound7_Name"
+	{
+		"pl"		"Spowolnienie"
+	}
+	"SpecialRound7_Description"
+	{
+		"pl"		"Runda będzie stale zwalniać po każdej mikrogrze!"
+	}
+	"SpecialRound8_Name"
+	{
+		"pl"		"Tylko Matematyka"
+	}
+	"SpecialRound8_Description"
+	{
+		"pl"		"Czas sprawdzić Twoją wiedzę z matematyki!"
+	}
+	"SpecialRound9_Name"
+	{
+		"pl"		"Dzień na Opak"
+	}
+	"SpecialRound9_Description"
+	{
+		"pl"		"Gracz z najmniejszą liczbą punktów wygrywa rundę!"
+	}
+	"SpecialRound10_Name"
+	{
+		"pl"		"Dwie Walki z Bossem"
+	}
+	"SpecialRound10_Description"
+	{
+		"pl"		"Przed końcem gry odbędą się dwie bossgry!"
+	}
+	"SpecialRound11_Name"
+	{
+		"pl"		"Walka Drużyn"
+	}
+	"SpecialRound11_Description"
+	{
+		"pl"		"Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!"
+	}
+	"SpecialRound12_Name"
+	{
+		"pl"		"Rozgrywka Jednoosobowa"
+	}
+	"SpecialRound12_Description"
+	{
+		"pl"		"Hej... Gdzie są wszyscy?"
+	}
+	"SpecialRound13_Name"
+	{
+		"pl"		"Tylko szkielety"
+	}
+	"SpecialRound13_Description"
+	{
+		"pl"		"W tej rundzie posiadanie skóry jest zabronione!"
+	}
+	"SpecialRound14_Name"
+	{
+		"pl"		"Mały"
+	}
+	"SpecialRound14_Description"
+	{
+		"pl"		"Każdy gracz staje się tyciusieńki!"
+	}
+	"SpecialRound15_Name"
+	{
+		"pl"		"Bobbleheads"
+	}
+	"SpecialRound15_Description"
+	{
+		"pl"		"Każda głowa pęcznieje!"
+	}
+	"SpecialRound16_Name"
+	{
+		"pl"		"Losowe Punkty"
+	}
+	"SpecialRound16_Description"
+	{
+		"pl"		"Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!"
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!"
+	}
+	"SpecialRound17_Name"
+	{
+		"pl"		"Nagła Śmierć"
+	}
+	"SpecialRound17_Description"
+	{
+		"pl"		"Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"		"{1:i},{2:i},{3:s}"
+		"pl"		"Obecni gracze ({1} z {2})\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"pl"		"{1} (oraz {2} innych)"
+	}
+	"SpecialRound18_Name"
+	{
+		"pl"		"Wszystko albo Nic"
+	}
+	"SpecialRound18_Description"
+	{
+		"pl"		"Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!"
+	}
+	"SpecialRound19_Name"
+	{
+		"pl"		"Tekst Wspak"
+	}
+	"SpecialRound19_Description"
+	{
+		"pl"		"!kapsw enasip ąs reigorkim od ejckurtsnI"
+	}
+	"SpecialRound20_Name"
+	{
+		"pl"		"Non-stop"
+	}
+	"SpecialRound20_Description"
+	{
+		"pl"		"W tej rundzie nie ma przerw pomiędzy mikrogrami!"
+	}
+	"SpecialRound21_Name"
+	{
+		"pl"		"Team Fortress 64"
+	}
+	"SpecialRound21_Description"
+	{
+		"pl"		"Hej! Gdzie się podziały moje wielokąty"
+	}
+}
