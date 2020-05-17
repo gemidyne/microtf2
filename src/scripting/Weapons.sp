@@ -21,7 +21,7 @@ stock void InitialiseWeapons()
 	}
 }
 
-stock void GiveWeapon(int iClient, int weaponLookupIndex)
+stock void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
 {
 	if (!TF2Econ_IsValidItemDefinition(weaponLookupIndex))
 	{
@@ -29,7 +29,7 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 		return;
 	}
 
-	Player player = new Player(iClient);
+	Player player = new Player(client);
 
 	if (!player.IsInGame)
 	{
@@ -48,29 +48,9 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 	ArrayList attributes = TF2Econ_GetItemStaticAttributes(weaponLookupIndex);
 
-	TF2_RemoveWeaponSlot(iClient, weaponSlot);
+	TF2_RemoveWeaponSlot(player.ClientId, weaponSlot);
 
-	int entityID = CreateNamedItem(iClient, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality);
-
-	if (StrEqual(weaponClassname, "tf_weapon_builder", false) || StrEqual(weaponClassname, "tf_weapon_sapper", false))
-	{
-		if (weaponSlot == TFWeaponSlot_Secondary)
-		{
-			SetEntProp(entityID, Prop_Send, "m_iObjectType", 3);
-			SetEntProp(entityID, Prop_Data, "m_iSubType", 3);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 0);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 1);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 2);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 3);
-		}
-		else
-		{
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 0);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 1);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 1, _, 2);
-			SetEntProp(entityID, Prop_Send, "m_aBuildableObjectTypes", 0, _, 3);
-		}
-	}
+	int entityId = Weapons_CreateNamedItem(player.ClientId, weaponLookupIndex, weaponClassname, weaponLevel, weaponQuality, weaponSlot);
 
 	if (attributes.Length > 1) 
 	{
@@ -81,20 +61,20 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 			if (id > 0 && TF2Econ_IsValidAttributeDefinition(id) && !TF2Econ_IsAttributeHidden(id))
 			{
-				TF2Attrib_SetByDefIndex(entityID, id, value);
+				TF2Attrib_SetByDefIndex(entityId, id, value);
 			}
 		}
 	} 
 
 	delete attributes;
 
-	SetEntPropEnt(iClient, Prop_Send, "m_hActiveWeapon", entityID);
+	SetEntPropEnt(player.ClientId, Prop_Send, "m_hActiveWeapon", entityId);
 
 	player.SetWeaponVisible(true);
 	player.SetViewModelVisible(true);
 }
 
-stock int CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality)
+stock int Weapons_CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality, int weaponSlot)
 {
 	int weapon = CreateEntityByName(classname);
 	
@@ -104,15 +84,32 @@ stock int CreateNamedItem(int client, int itemindex, const char[] classname, int
 	}
 	
 	char entclass[64];
+
 	GetEntityNetClass(weapon, entclass, sizeof(entclass));	
 	SetEntData(weapon, FindSendPropInfo(entclass, "m_iItemDefinitionIndex"), itemindex);
-	SetEntData(weapon, FindSendPropInfo(entclass, "m_bInitialized"), 1);	
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_bInitialized"), 1);
 	SetEntData(weapon, FindSendPropInfo(entclass, "m_iEntityLevel"), level);
-	SetEntData(weapon, FindSendPropInfo(entclass, "m_iEntityQuality"), quality);	
+	SetEntData(weapon, FindSendPropInfo(entclass, "m_iEntityQuality"), quality);
 	
-	if (StrEqual(classname, "tf_weapon_builder", true) || StrEqual(classname, "tf_weapon_sapper", true))
+	if (StrEqual(classname, "tf_weapon_builder", false) || StrEqual(classname, "tf_weapon_sapper", false))
 	{
 		SetEntProp(weapon, Prop_Send, "m_iObjectType", 3);
+
+		if (weaponSlot == TFWeaponSlot_Secondary)
+		{
+			SetEntProp(weapon, Prop_Data, "m_iSubType", 3);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 0, _, 0);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 0, _, 1);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 0, _, 2);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 1, _, 3);
+		}
+		else
+		{
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 1, _, 0);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 1, _, 1);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 1, _, 2);
+			SetEntProp(weapon, Prop_Send, "m_aBuildableObjectTypes", 0, _, 3);
+		}
 	}
 	
 	DispatchSpawn(weapon);

@@ -610,7 +610,7 @@ methodmap Player __nullable__
 
     public void GiveWeapon(int weaponItemIndex)
     {
-        GiveWeapon(this.ClientId, weaponItemIndex);
+        Weapons_EquipWeaponByItemIndex(this.ClientId, weaponItemIndex);
     }
 
     public void ResetWeapon(bool viewModel)
