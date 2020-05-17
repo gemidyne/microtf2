@@ -381,10 +381,10 @@ public void Bossgame6_OnRenderHudFrame(int client)
         return;
     }
 
-	if (!IsMinigameActive)
-	{
-		return;
-	}
+    if (!IsMinigameActive)
+    {
+        return;
+    }
 
     Player player = new Player(client);
 
