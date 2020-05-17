@@ -182,8 +182,8 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 
 					if (player.IsValid && player.IsParticipating)
 					{
-						player.SetWeaponPrimaryAmmoCount(0);
-						player.SetWeaponClipAmmoCount(2);
+						player.SetWeaponPrimaryAmmoCount(2);
+						player.SetWeaponClipAmmoCount(0);
 					}
 				}
 
@@ -380,6 +380,11 @@ public void Bossgame6_OnRenderHudFrame(int client)
     {
         return;
     }
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
 
     Player player = new Player(client);
 
