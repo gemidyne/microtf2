@@ -53,7 +53,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 			player.SetGodMode(false);
 		}
 
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 
 		if (GlobalForward_OnPlayerSpawn != INVALID_HANDLE)
 		{
@@ -114,7 +114,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	if (player.IsValid && !IsMinigameActive && !IsBonusRound)
 	{
 		player.RemoveWearables();
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 	}
 
 	return Plugin_Handled;

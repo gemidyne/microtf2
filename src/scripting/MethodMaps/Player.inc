@@ -615,6 +615,6 @@ methodmap Player __nullable__
 
     public void ResetWeapon(bool viewModel)
     {
-        ResetWeapon(this.ClientId, viewModel);
+        Weapon_ResetToMelee(this.ClientId, viewModel);
     }
 }

@@ -218,8 +218,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				player.IsParticipating = true;
 			}
 
-			ResetWeapon(i, false);
-
+			player.ResetWeapon(false);
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
@@ -669,8 +668,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			player.Status = PlayerStatus_NotWon;
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
-
-			ResetWeapon(i, false);
+			player.ResetWeapon(false);
 
 			if (GlobalForward_OnMinigameFinishPost != INVALID_HANDLE)
 			{
@@ -1107,8 +1105,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			if (player.IsWinner)
 			{
 				TF2_SetPlayerPowerPlay(i, false);
-				ResetWeapon(i, false);
-			
+				player.ResetWeapon(false);
 				player.IsWinner = false;
 				player.DestroyPlayerBuildings(true);
 			}

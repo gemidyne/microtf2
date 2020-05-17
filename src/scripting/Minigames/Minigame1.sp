@@ -45,8 +45,7 @@ public void Minigame1_OnSelection(int client)
 		player.SetGodMode(false);
 		player.SetCollisionsEnabled(false);
 		player.SetHealth(1000);
-
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 
 		int column = client;
 		int row = 0;

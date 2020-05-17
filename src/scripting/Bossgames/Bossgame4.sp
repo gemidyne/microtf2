@@ -67,8 +67,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 	player.SetGodMode(false);
 	player.SetHealth(1000);
-
-	ResetWeapon(client, true);
+	player.ResetWeapon(true);
 
 	Bossgame4_DamageAccumlated[player.ClientId] = 175.0;
 

@@ -65,8 +65,7 @@ public void Bossgame5_OnMinigameSelected(int client)
 		player.SetGodMode(false);
 		player.SetCollisionsEnabled(false);
 		player.ResetHealth();
-
-		ResetWeapon(client, true);
+		player.ResetWeapon(true);
 
 		float pos[3];
 		float vel[3] = { 0.0, 0.0, 0.0 };

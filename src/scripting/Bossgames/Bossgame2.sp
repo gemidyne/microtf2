@@ -54,8 +54,7 @@ public void Bossgame2_OnSelection(int client)
 	player.SetGodMode(false);
 	player.SetCollisionsEnabled(false);
 	player.ResetHealth();
-
-	ResetWeapon(client, false);
+	player.ResetWeapon(false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float ang[3] = { 0.0, 137.0, 0.0 };
