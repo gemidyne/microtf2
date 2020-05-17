@@ -52,3 +52,4 @@ We currently are looking for translators to help improve the multilingual aspect
 - Spanish: Taken
 - Portuguese: Taken
 - Brazilian Portuguese: Taken
+- Polish: Taken
