@@ -559,7 +559,7 @@
         "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
         "es": "SALTA CON COHETES HASTA EL FINAL!",
         "jp": null,
-        "pl": "WYKORZYSTAJ RAKIETOWE SKOKI BY DOTRZEĆ DO KOŃCA!"
+        "pl": "UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!"
       }
     },
     {
@@ -1090,7 +1090,7 @@
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
         "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
         "jp": null,
-        "pl": "NIECH TWOJA KONSTRUKCJA ZOSTANIE ZNISZCZONA SAPEREM!"
+        "pl": "POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!"
       }
     },
     {
@@ -2531,7 +2531,7 @@
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null,
-        "pl": "Hej! Gdzie się podziały moje wielokąty"
+        "pl": "Hej! Gdzie się podziały moje wielokąty?"
       }
     }
   ]
