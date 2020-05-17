@@ -76,6 +76,7 @@ stock void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
 
 stock int Weapons_CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality, int weaponSlot)
 {
+	// Doing it this way means we can see the actual weapons that are given
 	int weapon = CreateEntityByName(classname);
 	
 	if (!IsValidEntity(weapon))
@@ -138,8 +139,8 @@ stock void Weapon_ResetToMelee(int client, bool viewModelVisible)
 		}
 
 		int weapon = 0;
-		int weaponID = -1;
-		int newWeaponID = 0;
+		int activeWeaponIndex = -1;
+		int newWeaponIndex = 0;
 
 		for (int i = 0; i <= 5; i++)
 		{
@@ -153,29 +154,29 @@ stock void Weapon_ResetToMelee(int client, bool viewModelVisible)
 			
 			if (weapon != -1)
 			{
-				weaponID = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
+				activeWeaponIndex = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
 			}
 			else
 			{
-				weaponID = -1;
+				activeWeaponIndex = -1;
 			}
 			
 			switch (TF2_GetPlayerClass(client))
 			{
-				case TFClass_Scout: newWeaponID = 0;
-				case TFClass_Soldier: newWeaponID = 6;
-				case TFClass_Pyro: newWeaponID = 2;
-				case TFClass_DemoMan: newWeaponID = 1;
-				case TFClass_Heavy: newWeaponID = 5;
-				case TFClass_Engineer: newWeaponID = 7;
-				case TFClass_Medic: newWeaponID = 8;
-				case TFClass_Sniper: newWeaponID = 3;
-				case TFClass_Spy: newWeaponID = 4;
+				case TFClass_Scout: newWeaponIndex = 0;
+				case TFClass_Soldier: newWeaponIndex = 6;
+				case TFClass_Pyro: newWeaponIndex = 2;
+				case TFClass_DemoMan: newWeaponIndex = 1;
+				case TFClass_Heavy: newWeaponIndex = 5;
+				case TFClass_Engineer: newWeaponIndex = 7;
+				case TFClass_Medic: newWeaponIndex = 8;
+				case TFClass_Sniper: newWeaponIndex = 3;
+				case TFClass_Spy: newWeaponIndex = 4;
 			}
 
-			if (weaponID != newWeaponID)
+			if (activeWeaponIndex != newWeaponIndex)
 			{
-				player.GiveWeapon(newWeaponID);
+				player.GiveWeapon(newWeaponIndex);
 			}
 		}
 
