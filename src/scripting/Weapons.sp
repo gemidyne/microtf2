@@ -43,6 +43,7 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 	int weaponLevel;
 
 	TF2Econ_GetItemClassName(weaponLookupIndex, weaponClassname, sizeof(weaponClassname));
+	TF2Econ_TranslateWeaponEntForClass(weaponClassname, sizeof(weaponClassname), player.Class);
 	TF2Econ_GetItemLevelRange(weaponLookupIndex, minWeaponLevel, weaponLevel);
 
 	ArrayList attributes = TF2Econ_GetItemStaticAttributes(weaponLookupIndex);
@@ -80,8 +81,6 @@ stock void GiveWeapon(int iClient, int weaponLookupIndex)
 
 			if (id > 0 && TF2Econ_IsValidAttributeDefinition(id) && !TF2Econ_IsAttributeHidden(id))
 			{
-				// 796: min_viewmodel_offset causes crashes for players using min viewmodels
-
 				TF2Attrib_SetByDefIndex(entityID, id, value);
 			}
 		}
