@@ -549,6 +549,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			}
 
 			player.SetGravity(1.0);
+			player.SetCustomHudText("");
 
 			TF2_RemoveCondition(i, TFCond_Disguised);
 			TF2_RemoveCondition(i, TFCond_Disguising);
@@ -566,8 +567,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.DisplayOverlay(((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17) 
 					? OVERLAY_FAIL 
 					: OVERLAY_BLANK);
-
-				player.SetCustomHudText("");
 
 				if (player.IsParticipating)
 				{
