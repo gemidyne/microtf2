@@ -1182,10 +1182,10 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 					char header[64];
 					Format(header, sizeof(header), "%T", "Intermission_Header", i);
 
-					char body[64];
+					char body[128];
 					Format(body, sizeof(body), "%T", "Intermission_Body", i);
 
-					char combined[128];
+					char combined[256];
 					Format(combined, sizeof(combined), "%s\n%s", header, body);
 
 					player.PrintChatText(combined);
