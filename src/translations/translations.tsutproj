@@ -1699,20 +1699,20 @@
     },
     {
       "key": "Bossgame7_Caption_SayTheWord",
-      "description": null,
+      "description": "Used on the Danganronpa inspired Typing Attack boss.",
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The word the player needs to type."
         },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The next word that will need to be typed."
         },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "Number of seconds remaining."
         }
       ],
       "translations": {
@@ -1734,7 +1734,7 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The name of the winning player."
         }
       ],
       "translations": {
@@ -1751,7 +1751,7 @@
     },
     {
       "key": "Bossgame7_Caption_LevelUpAnnouncement",
-      "description": null,
+      "description": "This message is displayed when the difficulty level increases.",
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
       "formatArguments": [],
       "translations": {
@@ -1768,12 +1768,12 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview",
-      "description": null,
+      "description": "This message is displayed showing players who typed the lowest number of words.",
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "A list of player names."
         }
       ],
       "translations": {
@@ -1790,16 +1790,16 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_AndMore",
-      "description": null,
+      "description": "This message is used and appended after the names displayed in Bossgame7_Caption_RoundReview only when there are too many names to display.",
       "text": "{1}\nand {2} more...",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The preceeding message - make sure this is at the start."
         },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The number of players which could not be displayed."
         }
       ],
       "translations": {
@@ -1816,12 +1816,12 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
-      "description": null,
+      "description": "This message is displayed when everyone has the same number of words typed.",
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "The preceeding message. Make sure this is at the start of the string."
         }
       ],
       "translations": {
@@ -1838,7 +1838,7 @@
     },
     {
       "key": "Bossgame7_ClassChangeWarning",
-      "description": null,
+      "description": "This message is printed in chat.",
       "text": "Changing class is not allowed during bosses!",
       "formatArguments": [],
       "translations": {
