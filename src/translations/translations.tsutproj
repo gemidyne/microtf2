@@ -540,7 +540,7 @@
     },
     {
       "key": "Intermission_Header",
-      "description": "A header displayed when the gamemode's intermission begins.",
+      "description": "A header displayed when the gamemode's intermission begins. This is run usually half way through the gamemode (e.g., round 2 of 4) and triggers a vote to let players decide the next map.",
       "text": "Intermission!",
       "formatArguments": [],
       "translations": {
