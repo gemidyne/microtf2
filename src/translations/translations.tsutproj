@@ -689,7 +689,7 @@
         "jp": null,
         "pl": null
       },
-      "ignoreEmptyValue": false
+      "ignoreEmptyValue": true
     },
     {
       "key": "Minigame1_Caption",
