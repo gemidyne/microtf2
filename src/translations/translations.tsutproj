@@ -34,7 +34,7 @@
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The version number of the gamemode. Example: v3.0.0"
         }
       ],
@@ -55,7 +55,7 @@
       "text": "Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The amount of points the player has. Example: 5"
         }
       ],
@@ -76,7 +76,7 @@
       "text": "Microgames: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The amount of microgames that have been played. Examples: 12"
         }
       ],
@@ -97,7 +97,7 @@
       "text": "Team Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The team's overall score. Example: 53"
         }
       ],
@@ -118,7 +118,7 @@
       "text": "Barrels: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The number of barrels that the player has shot. Example: 8"
         }
       ],
@@ -139,11 +139,11 @@
       "text": "Round {1} of {2}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The current round number. Example: 2"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The maximum number of rounds to be played. Example: 4"
         }
       ],
@@ -164,7 +164,7 @@
       "text": "Round {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The current round number. Example: 5"
         }
       ],
@@ -185,7 +185,7 @@
       "text": "{1}'s theme",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The theme's name. This is currently a WarioWare character's name."
         }
       ],
@@ -206,7 +206,7 @@
       "text": "SPECIAL ROUND: {1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The special round's name."
         }
       ],
@@ -227,15 +227,15 @@
       "text": "{1}The special round condition is... {2}!\n{3}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix, this is required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The selected special round's name."
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The selected special round's description."
         }
       ],
@@ -416,19 +416,19 @@
       "text": "{1}{2} {3} {green}with {4} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the player or players have."
         }
       ],
@@ -449,11 +449,11 @@
       "text": "{1}The winning team is the RED team with {2} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -474,11 +474,11 @@
       "text": "{1}The winning team is the BLU team with {2} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -499,7 +499,7 @@
       "text": "{1}Stalemate! Both teams have the same points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         }
       ],
@@ -744,7 +744,7 @@
       "text": "SAY THE WORD!\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The word players should type into the chatbox."
         }
       ],
@@ -781,7 +781,7 @@
       "text": "ANSWER THE QUESTION!\n{1} = ?",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The maths equation that should be answered."
         }
       ],
@@ -802,11 +802,11 @@
       "text": "{1}The correct answer was {2}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The math equation's correct answer. Example: 42"
         }
       ],
@@ -1591,7 +1591,7 @@
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1612,15 +1612,15 @@
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1641,7 +1641,7 @@
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1678,7 +1678,7 @@
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1699,11 +1699,11 @@
       "text": "{1}\nand {2} more...",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1724,7 +1724,7 @@
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2305,7 +2305,7 @@
       "text": "If you win this microgame, you will be awarded {1} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2358,15 +2358,15 @@
       "text": "Current players ({1} of {2})\n{3}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2387,11 +2387,11 @@
       "text": "{1} (and {2} more)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
