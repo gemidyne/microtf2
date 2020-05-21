@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}La bonne réponse était {2} !"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"fr"		"JACQUES A DIT : MOQUEZ-VOUS !"
