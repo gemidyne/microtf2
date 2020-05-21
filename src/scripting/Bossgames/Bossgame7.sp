@@ -206,7 +206,7 @@ public void Bossgame7_OnMinigameSelected(int client)
 	player.SetGodMode(true);
 	player.SetRandomClass();
 	player.RemoveAllWeapons();
-	ResetWeapon(client, false);
+	player.ResetWeapon(false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	int posa = 360 / Bossgame7_ParticipatingPlayerCount * client;

@@ -53,7 +53,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 			player.SetGodMode(false);
 		}
 
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 
 		if (GlobalForward_OnPlayerSpawn != INVALID_HANDLE)
 		{
@@ -65,7 +65,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
-			CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "PlayerSpawn_RespawnNotice", client);
+			CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "System_PlayerSpawn_RespawnNotice", client);
 		}
 	}
 
@@ -114,7 +114,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	if (player.IsValid && !IsMinigameActive && !IsBonusRound)
 	{
 		player.RemoveWearables();
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 	}
 
 	return Plugin_Handled;
@@ -482,19 +482,7 @@ public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, flo
 
 	Player attacker = new Player(inflictor);
 
-	if (IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
-	{
-		damage = 0.0;
-		
-		if (inflictor < 0) 
-		{
-			inflictor = 0;
-		}
-
-		return Plugin_Changed;
-	}
-
-	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]))
+	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]) || !IsBlockingDamage && IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
 	{
 		damage = 0.0;
 
@@ -614,7 +602,8 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Kritzkrieged, 
 			TFCond_Bonked, 
 			TFCond_Dazed, 
-			TFCond_Taunting:
+			TFCond_Taunting,
+			TFCond_Bleeding:
 		{
 			removeCondition = false;
 		}

@@ -17,68 +17,7 @@ stock void DisplayOverlayToAll(const char[] path)
 	}
 }
 
-stock void ResetWeapon(int client, bool viewModel)
-{
-	Player player = new Player(client);
 
-	if (player.IsInGame)
-	{
-		if (TF2_IsPlayerInCondition(client, TFCond_Taunting))
-		{
-			TF2_RemoveCondition(client, TFCond_Taunting);
-		}
-
-		int weapon = 0;
-		int weaponID = -1;
-		int newWeaponID = 0;
-
-		for (int i = 0; i <= 5; i++)
-		{
-			weapon = GetPlayerWeaponSlot(client, i);
-
-			if (i != 2)
-			{
-				TF2_RemoveWeaponSlot(client, i);
-				continue;
-			}
-			
-			if (weapon != -1)
-			{
-				weaponID = GetEntProp(weapon, Prop_Send, "m_iItemDefinitionIndex");
-			}
-			else
-			{
-				weaponID = -1;
-			}
-			
-			switch (TF2_GetPlayerClass(client))
-			{
-				case TFClass_Scout: newWeaponID = 0;
-				case TFClass_Soldier: newWeaponID = 6;
-				case TFClass_Pyro: newWeaponID = 2;
-				case TFClass_DemoMan: newWeaponID = 1;
-				case TFClass_Heavy: newWeaponID = 5;
-				case TFClass_Engineer: newWeaponID = 7;
-				case TFClass_Medic: newWeaponID = 8;
-				case TFClass_Sniper: newWeaponID = 3;
-				case TFClass_Spy: newWeaponID = 4;
-			}
-
-			if (weaponID != newWeaponID)
-			{
-				GiveWeapon(client, newWeaponID);
-			}
-		}
-
-		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(client, 2));
-
-		if (SpecialRoundID != 12)
-		{
-			player.SetWeaponVisible(viewModel);
-			player.SetViewModelVisible(viewModel);
-		}
-	}
-}
 
 stock void PlaySoundToPlayer(int client, const char[] sound)
 {

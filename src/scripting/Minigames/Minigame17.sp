@@ -52,7 +52,7 @@ public void Minigame17_OnMinigameSelected(int client)
 		{
 			player.Class = TFClass_Medic;
 			player.SetGodMode(true);
-			ResetWeapon(client, true);
+			player.ResetWeapon(true);
 			Minigame17_Selected[client] = 1;
 		}
 		else
@@ -60,7 +60,7 @@ public void Minigame17_OnMinigameSelected(int client)
 			player.Class = TFClass_Heavy;
 			player.SetGodMode(false);
 			player.SetHealth(1000);
-			ResetWeapon(client, false);
+			player.ResetWeapon(false);
 			Minigame17_Selected[client] = 0;
 		}
 	}

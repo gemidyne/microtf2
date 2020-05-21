@@ -50,15 +50,15 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"en"		"{1}The special round condition is... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"en"		"You will be respawned once the current microgame or bossgame has finished."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"en"		"YOU HAVE BEEN KNOCKED OUT!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"en"		"Changing class is not allowed during this special round! 1 point has been added to your score."
 	}
@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"en"		"{1}Stalemate! Both teams have the same points!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"en"		"Intermission!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"en"		"Break time! Time to vote for the next map."
 	}

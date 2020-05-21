@@ -43,7 +43,8 @@ public void Minigame25_OnMinigameSelected(int client)
 		player.SetGodMode(false);
 		player.SetHealth(3000);
 
-		GiveWeapon(client, 1179);
+		player.GiveWeapon(1179);
+		player.SetWeaponPrimaryAmmoCount(200);
 
 		player.SetItemChargeMeter(100.0);
 	}

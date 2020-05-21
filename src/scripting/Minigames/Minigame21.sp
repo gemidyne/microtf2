@@ -32,7 +32,8 @@ public void Minigame21_OnMinigameSelected(int client)
 
 	player.Class = TFClass_Scout;
 
-	GiveWeapon(client, 44);
+	player.GiveWeapon(44);
+	player.SetWeaponPrimaryAmmoCount(1);
 
 	player.SetGodMode(false);
 	player.SetHealth(1000);
@@ -50,8 +51,8 @@ public void Minigame21_OnPlayerStunned(int stunner, int victim)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		ClientWonMinigame(stunner);
-		GiveWeapon(stunner, 0);
+		player.TriggerSuccess();
+		player.GiveWeapon(0);
 	}
 }
 

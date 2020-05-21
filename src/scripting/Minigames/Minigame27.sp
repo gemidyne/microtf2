@@ -41,14 +41,14 @@ public void Minigame27_OnMinigameSelected(int client)
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
-
+		
 		if (Minigame27_UseBleedingMode)
 		{
 			#error TODO: needs flying guillotine
 		}
 		else
 		{
-			player.SetHealth(20);
+			player.SetHealth(40);
 			player.GiveWeapon(325);
 		}
 	}

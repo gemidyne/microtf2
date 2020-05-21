@@ -69,7 +69,7 @@ public void Minigame14_OnMinigameSelected(int client)
 		{
 			player.Class = TFClass_Spy;
 			player.RemoveAllWeapons();
-			GiveWeapon(player.ClientId, 735);
+			player.GiveWeapon(735);
 			player.SetViewModelVisible(true);
 			player.SetWeaponVisible(true);
 		}
@@ -77,20 +77,13 @@ public void Minigame14_OnMinigameSelected(int client)
 		{
 			player.Class = TFClass_Engineer;
 			player.RemoveAllWeapons();
-			GiveWeapon(player.ClientId, 28);
-			GiveWeapon(player.ClientId, 25);
-			GiveWeapon(player.ClientId, 7);
+			player.GiveWeapon(28);
+			player.GiveWeapon(25);
+			player.GiveWeapon(7);
 			player.SetViewModelVisible(true);
 			player.SetWeaponVisible(true);
-			
-			int ammoOffset = FindDataMapInfo(client, "m_iAmmo");
 
-			if (ammoOffset == -1)
-			{
-				SetFailState("Failed to find m_iAmmo offset on CTFPlayer.");
-			}
-
-			SetEntData(client, ammoOffset + (3 * 4), 200, 4);
+			player.Metal = 200;
 		}
 	}
 }

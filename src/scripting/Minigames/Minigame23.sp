@@ -44,7 +44,7 @@ public void Minigame23_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.Class = TFClass_Scout;
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 	}
 }
 

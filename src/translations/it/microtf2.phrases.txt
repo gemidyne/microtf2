@@ -50,15 +50,15 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"it"		"SEI STATO ELIMINATO!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"it"		"Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale."
 	}
@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"it"		"Intervallo!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"it"		"Pausa! È ora di votare per la prossima mappa."
 	}
@@ -549,7 +549,7 @@
 	}
 	"SpecialRound16_Description"
 	{
-		"it"		"I minigiochi vinti danno un numero di punti casuale!!"
+		"it"		"I minigiochi vinti danno un numero causale di punti!"
 	}
 	"SpecialRound16_Caption_Points"
 	{

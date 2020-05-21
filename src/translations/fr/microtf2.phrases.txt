@@ -50,15 +50,15 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"fr"		"{1}La manche spéciale est... {2} !\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"fr"		"Vous serez respawn quand le mini-jeu ou le boss aura fini."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"fr"		"VOUS AVEZ ÉTÉ ÉLIMINÉ !"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"fr"		"Changer de classe n'est pas autorisé durant cette manche spéciale ! 1 point a été rajouté à votre score."
 	}
@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"fr"		"{1}Égalité ! Les deux équipes ont le même nombre de points !"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"fr"		"Entracte !"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"fr"		"Pause ! Il est temps de voter pour la prochaine carte."
 	}

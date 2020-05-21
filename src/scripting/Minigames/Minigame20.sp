@@ -48,28 +48,30 @@ public void Minigame20_OnMinigameSelected(int client)
 		case 0:
 		{
 			player.Class = TFClass_Scout;
-			ResetWeapon(client, true);
+			player.ResetWeapon(true);
 			player.GiveWeapon(163);
 		}
 		case 1:
 		{
 			player.Class = TFClass_Scout;
-			ResetWeapon(client, true);
+			player.ResetWeapon(true);
 			player.GiveWeapon(46);
 		}
 		case 2:
 		{
 			player.Class = TFClass_Heavy;
-			ResetWeapon(client, true);
+			player.ResetWeapon(true);
 			player.GiveWeapon(42);
 		}	
 		case 3:
 		{	
 			player.Class = TFClass_Heavy;
-			ResetWeapon(client, true);
+			player.ResetWeapon(true);
 			player.GiveWeapon(311);
 		}
 	}
+
+	player.SetWeaponPrimaryAmmoCount(1);
 
 	if (Minigame20_InvertedMode)
 	{

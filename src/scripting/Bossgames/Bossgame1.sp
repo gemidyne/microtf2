@@ -41,7 +41,8 @@ public void Bossgame1_OnMinigameSelected(int client)
 		player.SetCollisionsEnabled(false);
 		player.SetHealth(5000);
 
-		GiveWeapon(client, 237);
+		player.GiveWeapon(237);
+		player.SetWeaponPrimaryAmmoCount(60);
 
 		int column = client;
 		int row = 0;

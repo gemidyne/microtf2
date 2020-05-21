@@ -41,8 +41,8 @@ public void Minigame7_OnMinigameSelected(int client)
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
 		player.SetHealth(1000);
-
-		GiveWeapon(client, 237);
+		player.GiveWeapon(237);
+		player.SetWeaponPrimaryAmmoCount(60);
 	}
 }
 
@@ -62,7 +62,7 @@ public void Minigame7_OnRocketJump(int client)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		ClientWonMinigame(client);
+		player.TriggerSuccess();
 		player.SetGravity(0.5);
 	}
 }
@@ -77,7 +77,7 @@ public void Minigame7_OnMinigameFinish()
 
 			if (player.IsValid && player.IsParticipating && !player.IsBot)
 			{
-				StopSound(i, SNDCHAN_AUTO, "misc/grenade_jump_lp_01.wav");
+				StopSound(player.ClientId, SNDCHAN_AUTO, "misc/grenade_jump_lp_01.wav");
 			}
 		}
 	}

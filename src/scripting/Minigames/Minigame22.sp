@@ -41,7 +41,8 @@ public void Minigame22_OnMinigameSelected(int client)
 		player.SetGodMode(false);
 		player.SetHealth(3000);
 
-		GiveWeapon(client, 18);
+		player.GiveWeapon(18);
+		player.SetWeaponPrimaryAmmoCount(20);
 		TF2_AddCondition(client, TFCond_Kritzkrieged, 4.0);
 	}
 }
@@ -96,7 +97,7 @@ public void Minigame22_OnMinigameFinishPre()
 				}
 				else
 				{
-					ClientWonMinigame(i);
+					player.TriggerSuccess();
 				}
 			}
 		}

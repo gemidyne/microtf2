@@ -73,7 +73,7 @@ public void Minigame3_OnSelection(int client)
 	if (player.IsValid)
 	{
 		player.Class = TFClass_Scout;
-		ResetWeapon(client, true);
+		player.ResetWeapon(true);
 	}
 }
 

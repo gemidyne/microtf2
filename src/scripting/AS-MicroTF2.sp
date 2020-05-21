@@ -12,6 +12,7 @@
 #include <tf2>
 #include <tf2_stocks>
 #include <morecolors>
+#include <tf_econ_data>
 #include <warioware>
 
 #undef REQUIRE_PLUGIN
@@ -217,8 +218,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				player.IsParticipating = true;
 			}
 
-			ResetWeapon(i, false);
-
+			player.ResetWeapon(false);
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
@@ -549,6 +549,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			}
 
 			player.SetGravity(1.0);
+			player.SetCustomHudText("");
 
 			TF2_RemoveCondition(i, TFCond_Disguised);
 			TF2_RemoveCondition(i, TFCond_Disguising);
@@ -556,6 +557,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			TF2_RemoveCondition(i, TFCond_OnFire);
 			TF2_RemoveCondition(i, TFCond_Bonked);
 			TF2_RemoveCondition(i, TFCond_Dazed);
+			TF2_RemoveCondition(i, TFCond_Bleeding);
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
@@ -565,8 +567,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.DisplayOverlay(((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17) 
 					? OVERLAY_FAIL 
 					: OVERLAY_BLANK);
-
-				player.SetCustomHudText("");
 
 				if (player.IsParticipating)
 				{
@@ -607,7 +607,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					if (SpecialRoundID == 17)
 					{
 						player.IsParticipating = false;
-						PrintCenterText(i, "%T", "SuddenDeath_YouHaveBeenKnockedOut", i);
+						PrintCenterText(i, "%T", "SpecialRound_SuddenDeath_PlayerKnockOutNotification", i);
 					}
 
 					if (SpecialRoundID == 18)
@@ -667,8 +667,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			player.Status = PlayerStatus_NotWon;
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
-
-			ResetWeapon(i, false);
+			player.ResetWeapon(false);
 
 			if (GlobalForward_OnMinigameFinishPost != INVALID_HANDLE)
 			{
@@ -1105,8 +1104,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			if (player.IsWinner)
 			{
 				TF2_SetPlayerPowerPlay(i, false);
-				ResetWeapon(i, false);
-			
+				player.ResetWeapon(false);
 				player.IsWinner = false;
 				player.DestroyPlayerBuildings(true);
 			}
@@ -1182,12 +1180,12 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 				if (player.IsInGame && !player.IsBot)
 				{
 					char header[64];
-					Format(header, sizeof(header), "%T", "Intermission_Header", i);
+					Format(header, sizeof(header), "%T", "System_Intermission_Header", i);
 
-					char body[64];
-					Format(body, sizeof(body), "%T", "Intermission_Body", i);
+					char body[128];
+					Format(body, sizeof(body), "%T", "System_Intermission_Body", i);
 
-					char combined[128];
+					char combined[256];
 					Format(combined, sizeof(combined), "%s\n%s", header, body);
 
 					player.PrintChatText(combined);

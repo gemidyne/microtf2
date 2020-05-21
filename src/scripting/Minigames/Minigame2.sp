@@ -4,29 +4,29 @@
  * Kill an Enemy
  */
 
-int Minigame2_Class = -1;
+TFClassType Minigame2_Class;
 
 public void Minigame2_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnSelectionPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame2_OnSelection);
+	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnMinigameSelectedPre);
+	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame2_OnMinigameSelected);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
 }
 
-public void Minigame2_OnSelectionPre()
+public void Minigame2_OnMinigameSelectedPre()
 {
 	if (MinigameID == 2)
 	{
 		SetConVarInt(ConVar_FriendlyFire, 1);
 
-		Minigame2_Class = GetRandomInt(0, 7);
+		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
 		IsBlockingDamage = false;
 		IsOnlyBlockingDamageByPlayers = false;
 		IsBlockingDeathCommands = true;
 	}
 }
 
-public void Minigame2_OnSelection(int client)
+public void Minigame2_OnMinigameSelected(int client)
 {
 	if (MinigameID != 2)
 	{
@@ -42,59 +42,75 @@ public void Minigame2_OnSelection(int client)
 	
 	if (player.IsValid)
 	{
-		TFClassType class;
 		int weapon = 0;
+		int ammo = -1;
 
 		switch (Minigame2_Class)
 		{
-			case 0:
+			case TFClass_Scout:
 			{
-				class = TFClass_Scout;
 				weapon = 13;
+				ammo = 32;
 			}
-			case 1:
+
+			case TFClass_Soldier:
 			{
-				class = TFClass_Soldier;
 				weapon = 10;
+				ammo = 32;
 			}
-			case 2: 
+
+			case TFClass_Pyro: 
 			{
-				class = TFClass_Pyro;
 				weapon = 12;
+				ammo = 32;
 			}
-			case 3:
+
+			case TFClass_DemoMan:
 			{
-				class = TFClass_DemoMan;
 				weapon = 1;
 			}
-			case 4:
+
+			case TFClass_Heavy:
 			{
-				class = TFClass_Heavy;
 				weapon = 11;
+				ammo = 32;
 			}
-			case 5:
+
+			case TFClass_Engineer:
 			{
-				class = TFClass_Engineer;
 				weapon = 9;
+				ammo = 32;
 			}
-			case 6:
+
+			case TFClass_Sniper:
 			{
-				class = TFClass_Sniper;
 				weapon = 16;
+				ammo = 75;
 			}
-			case 7:
+
+			case TFClass_Medic:
 			{
-				class = TFClass_Spy;
+				weapon = 8;
+			}
+
+			case TFClass_Spy:
+			{
 				weapon = 24;
+				ammo = 24;
 			}
 		}
 
-		player.Class = class;
+		player.RemoveAllWeapons();
+
+		player.Class = Minigame2_Class;
 		player.SetHealth(1);
 		player.SetGodMode(false);
+		player.GiveWeapon(weapon);
 
-		ResetWeapon(client, true);
-		GiveWeapon(client, weapon);
+		if (ammo > -1)
+		{
+			player.SetWeaponPrimaryAmmoCount(ammo);
+		}
 	}
 }
 

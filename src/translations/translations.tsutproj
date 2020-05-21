@@ -34,7 +34,7 @@
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The version number of the gamemode. Example: v3.0.0"
         }
       ],
@@ -45,8 +45,10 @@
         "pt_p": "Você está jogando WARIO WARE! Versão {1}. Tecle !credits no chat e saiba quem são os desenvolvedores.",
         "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
         "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_Score_Default",
@@ -54,7 +56,7 @@
       "text": "Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The amount of points the player has. Example: 5"
         }
       ],
@@ -65,8 +67,10 @@
         "pt_p": "Pontos: {1}",
         "ru": "Очков: {1}",
         "es": "Puntuacion: {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Wynik: {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_Score_Minigames",
@@ -74,7 +78,7 @@
       "text": "Microgames: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The amount of microgames that have been played. Examples: 12"
         }
       ],
@@ -85,8 +89,10 @@
         "pt_p": "Microgames: {1}",
         "ru": "Миниигры: {1}",
         "es": "Minijuegos: {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Mikrogry: {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_Score_TeamScore",
@@ -94,7 +100,7 @@
       "text": "Team Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The team's overall score. Example: 53"
         }
       ],
@@ -105,8 +111,10 @@
         "pt_p": "Placar do Time: {1}",
         "ru": "Очки комманды: {1}",
         "es": "Puntuacion del Equipo: {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Wynik Drużyny: {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_Score_Barrels",
@@ -114,7 +122,7 @@
       "text": "Barrels: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The number of barrels that the player has shot. Example: 8"
         }
       ],
@@ -125,8 +133,10 @@
         "pt_p": "Barris: {1}",
         "ru": "Бочки: {1}",
         "es": "Barriles: {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Beczki: {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_RoundDisplay",
@@ -134,11 +144,11 @@
       "text": "Round {1} of {2}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The current round number. Example: 2"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The maximum number of rounds to be played. Example: 4"
         }
       ],
@@ -149,8 +159,10 @@
         "pt_p": "Rodada {1} de {2}",
         "ru": "Раунд {1} из {2}",
         "es": "Ronda {1} de {2}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda {1} z {2}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_RoundDisplayUnlimited",
@@ -158,7 +170,7 @@
       "text": "Round {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The current round number. Example: 5"
         }
       ],
@@ -169,8 +181,10 @@
         "pt_p": "Rodada {1}",
         "ru": "Раунд {1}",
         "es": "Ronda {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_ThemeDisplay",
@@ -178,7 +192,7 @@
       "text": "{1}'s theme",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The theme's name. This is currently a WarioWare character's name."
         }
       ],
@@ -189,8 +203,10 @@
         "pt_p": "Tema Atual: {1}",
         "ru": "Тема {1}",
         "es": "Tema de {1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Piosenka przewodnia {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_SpecialRound_CenterDisplay",
@@ -198,7 +214,7 @@
       "text": "SPECIAL ROUND: {1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The special round's name."
         }
       ],
@@ -209,8 +225,10 @@
         "pt_p": "RODADA ESPECIAL: {1}!",
         "ru": "ОСОБЫЙ РАУНД: {1}!",
         "es": "RONDA ESPECIAL: {1}!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "RUNDA SPECJALNA: {1}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Hud_SpecialRound_ChatDisplay",
@@ -218,15 +236,15 @@
       "text": "{1}The special round condition is... {2}!\n{3}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix, this is required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The selected special round's name."
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The selected special round's description."
         }
       ],
@@ -237,11 +255,13 @@
         "pt_p": "{1}Rodada especial. Na condição... {2}!\n{3}",
         "ru": "{1}Условие особого раунда... {2}!\n{3}",
         "es": "{1}La condicion de la ronda especial es... {2}!\n{3}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}Warunek rundy specjalnej to... {2}!\n{3}"
+      },
+      "ignoreEmptyValue": false
     },
     {
-      "key": "PlayerSpawn_RespawnNotice",
+      "key": "System_PlayerSpawn_RespawnNotice",
       "description": "A message displayed in the chatbox which notifies the player that they will be respawned when the current microgame or bossgame has finished.",
       "text": "You will be respawned once the current microgame or bossgame has finished.",
       "formatArguments": [],
@@ -252,11 +272,13 @@
         "pt_p": "Você renascerá assim que o microgame ou o 'bossgame' forem finalizados.",
         "ru": "Вы вернетесь в игру после окончания раунда или босс раунда.",
         "es": "Reapareceras cuando el minijuego o jefe actual termine.",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
+      },
+      "ignoreEmptyValue": false
     },
     {
-      "key": "SuddenDeath_YouHaveBeenKnockedOut",
+      "key": "SpecialRound_SuddenDeath_PlayerKnockOutNotification",
       "description": "The HUD text which notifies the player that they have been knocked out from the round. Only used on the Sudden Death special round.",
       "text": "YOU HAVE BEEN KNOCKED OUT!",
       "formatArguments": [],
@@ -267,11 +289,13 @@
         "pt_p": "VOCÊ FOI ELIMINADO!",
         "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
         "es": "HAS SIDO ELIMINADO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZOSTAŁEŚ WYELIMINOWANY!"
+      },
+      "ignoreEmptyValue": false
     },
     {
-      "key": "LowestScoreWins_ExploitBlocked",
+      "key": "System_SpecialRoundBlockClassChange",
       "description": "A message displayed in the chatbox which notifies the player cannot exploit the special round by intentionally failing by changing their class.",
       "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
       "formatArguments": [],
@@ -282,8 +306,10 @@
         "pt_p": "A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar.",
         "ru": "Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет.",
         "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion.",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "General_Loser",
@@ -297,8 +323,10 @@
         "pt_p": "Perdedor!",
         "ru": "Неудачник!",
         "es": "Perdedor!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Przegrany!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "General_Winner",
@@ -312,8 +340,10 @@
         "pt_p": "Vencedor!",
         "ru": "Победитель!",
         "es": "Ganador!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zwycięzca!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_SpecialRoundHasFinished",
@@ -327,8 +357,10 @@
         "pt_p": "== A RODADA ESPECIAL FOI ENCERRADA! ==",
         "ru": "== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! ==",
         "es": "== LA RONDA ESPECIAL A TERMINADO! ==",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== RUNDA SPECJALNA DOBIEGŁA KOŃCA! =="
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinnerPrefixSingle",
@@ -342,8 +374,10 @@
         "pt_p": "O vencedor é...",
         "ru": "Победителем стал...",
         "es": "El ganador es...",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zwycięzcą został..."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinnerPrefixMultiple",
@@ -357,8 +391,10 @@
         "pt_p": "Os vencedores são...",
         "ru": "Победителями стали...",
         "es": "Los ganadores son...",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zwycięzcami zostali..."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinnersAnd",
@@ -372,8 +408,10 @@
         "pt_p": "e",
         "ru": "и",
         "es": "y",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "oraz"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinnerPrefixNoOne",
@@ -387,8 +425,10 @@
         "pt_p": "Sem vencedores desta vez!",
         "ru": "Победителей нету!",
         "es": "No hay ganadores!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Nie ma zwycięzców!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinnerSuffix",
@@ -396,19 +436,19 @@
       "text": "{1}{2} {3} {green}with {4} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the player or players have."
         }
       ],
@@ -419,8 +459,10 @@
         "pt_p": "{1}{2} {3} {green}com {4} pontos!",
         "ru": "{1}{2} {3} {green}с {4} очками!",
         "es": "{1}{2} {3} {green}con {4} puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}{2} {3} {green}z wynikiem {4}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinningTeam_Red",
@@ -428,11 +470,11 @@
       "text": "{1}The winning team is the RED team with {2} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -443,8 +485,10 @@
         "pt_p": "{1}O TIME VERMELHO foi o time vencedor com {2} pontos!",
         "ru": "{1}КРАСНАЯ комманда побеждает с {2} очками!",
         "es": "{1}El equipo ganador es RED con {2} puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}Zwyciężyła drużyna RED z wynikiem {2}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinningTeam_Blue",
@@ -452,11 +496,11 @@
       "text": "{1}The winning team is the BLU team with {2} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -467,8 +511,10 @@
         "pt_p": "{1}O TIME AZUL foi o time vencedor com {2} pontos!",
         "ru": "{1}СИНЯЯ комманда побеждает с {2} очками!",
         "es": "{1}El equipo ganador es BLU con {2} puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinningTeam_Stalemate",
@@ -476,7 +522,7 @@
       "text": "{1}Stalemate! Both teams have the same points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         }
       ],
@@ -487,12 +533,14 @@
         "pt_p": "{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
         "ru": "{1}Ничья! Обе комманды имеют одинаковое кол-во очков!",
         "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}Impas! Obie drużyny mają tyle samo punktów!"
+      },
+      "ignoreEmptyValue": false
     },
     {
-      "key": "Intermission_Header",
-      "description": "A header displayed when the gamemode's intermission begins.",
+      "key": "System_Intermission_Header",
+      "description": "A header displayed when the gamemode's intermission begins. This is run usually half way through the gamemode (e.g., round 2 of 4) and triggers a vote to let players decide the next map.",
       "text": "Intermission!",
       "formatArguments": [],
       "translations": {
@@ -502,11 +550,13 @@
         "pt_p": "Hora do Intervalo!",
         "ru": "Пауза!",
         "es": "Intermedio!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Przerwa!"
+      },
+      "ignoreEmptyValue": false
     },
     {
-      "key": "Intermission_Body",
+      "key": "System_Intermission_Body",
       "description": "A short message displayed when the gamemode's intermission begins.",
       "text": "Break time! Time to vote for the next map.",
       "formatArguments": [],
@@ -517,8 +567,10 @@
         "pt_p": "Uma pequena parada para votar o próximo mapa.",
         "ru": "Время перерыва! Голосование следующей карты началась.",
         "es": "Descanso! Hora de votar el siguiente mapa.",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame1_Caption",
@@ -532,8 +584,10 @@
         "pt_p": "CHEGUE AO FINAL COM ROCKET JUMPS!",
         "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
         "es": "SALTA CON COHETES HASTA EL FINAL!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame2_Caption",
@@ -547,8 +601,10 @@
         "pt_p": "FUJA DA FÁBRICA!",
         "ru": "СБЕЖИТЕ ИЗ ЗАВОДА!",
         "es": "ESCAPA DE LA FABRICA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UCIEKNIJ Z FABRYKI!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame3_Caption",
@@ -562,8 +618,10 @@
         "pt_p": "ELIMINE O TIME INIMIGO!",
         "ru": "ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!",
         "es": "ACABA CON EL EQUIPO ENEMIGO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "POKONAJ WROGĄ DRUŻYNĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame4_Caption",
@@ -577,8 +635,10 @@
         "pt_p": "NÃO CAIA NA ÁGUA!",
         "ru": "НЕ УПАДИТЕ В ВОДУ!",
         "es": "NO TE CAIGAS AL AGUA",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "NIE WPADNIJ DO WODY!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame5_Caption",
@@ -592,8 +652,10 @@
         "pt_p": "ALCANCE O OBJETIVO!",
         "ru": "ДОБЕРИТЕСЬ ДО КОНЦА!",
         "es": "LLEGA HASTA LA META!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "DOTRZYJ DO CELU!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame6_Caption",
@@ -607,8 +669,10 @@
         "pt_p": "ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!",
         "ru": "УНИЧТОЖТЕ БОЧКИ!",
         "es": "DISPARA A LOS BARRILES!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "TRAF W JAK NAJWIĘCEJ BECZEK!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption",
@@ -622,8 +686,10 @@
         "pt_p": null,
         "ru": null,
         "es": null,
-        "jp": null
-      }
+        "jp": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": true
     },
     {
       "key": "Minigame1_Caption",
@@ -637,8 +703,10 @@
         "pt_p": "CHEGUE NO FINAL SE FOR CAPAZ!",
         "ru": "ДОЙДИТЕ ДО КОНЦА!",
         "es": "LLEGA HASTA EL FINAL!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "DOTRZYJ DO KOŃCA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame2_Caption",
@@ -652,8 +720,10 @@
         "pt_p": "MATE UM INIMIGO!",
         "ru": "УБЕЙТЕ ВРАГА!",
         "es": "MATA A UN ENEMIGO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZABIJ WROGA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame3_Caption",
@@ -667,8 +737,10 @@
         "pt_p": "QUEBRE OS BARRIS!",
         "ru": "СЛОМАЙТЕ БОЧКУ!",
         "es": "ROMPE LOS BARRILES!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZNISZCZ BECZKI!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame4_Caption",
@@ -682,8 +754,10 @@
         "pt_p": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
         "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
         "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame5_Caption",
@@ -697,8 +771,10 @@
         "pt_p": "STICKY JUMP!",
         "ru": "ПРЫЖОК НА ЛЕПУЧКЕ!",
         "es": "SALTO CON BOMBAS!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame6_SayTheWord_CaptionFormatted",
@@ -706,7 +782,7 @@
       "text": "SAY THE WORD!\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The word players should type into the chatbox."
         }
       ],
@@ -717,8 +793,10 @@
         "pt_p": "DIGITE A PALAVRA!\n{1}",
         "ru": "НАПИШИТЕ СЛОВО!\n{1}",
         "es": "DI LA PALABRA!\n{1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "NAPISZ SŁOWO!\n{1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame7_Caption",
@@ -732,8 +810,10 @@
         "pt_p": "ROCKET JUMP!",
         "ru": "ПРЫЖОК НА РАКЕТЕ!",
         "es": "SALTO CON COHETES!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "WYKONAJ RAKIETOWY SKOK!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame8_CaptionFormatted",
@@ -741,7 +821,7 @@
       "text": "ANSWER THE QUESTION!\n{1} = ?",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The maths equation that should be answered."
         }
       ],
@@ -752,8 +832,10 @@
         "pt_p": "RESPONDA A PERGUNTA!\n{1} = ?",
         "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
         "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ODPOWIEDZ NA PYTANIE!\n{1} = ?"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame8_CorrectAnswerWas",
@@ -761,11 +843,11 @@
       "text": "{1}The correct answer was {2}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The math equation's correct answer. Example: 42"
         }
       ],
@@ -776,8 +858,10 @@
         "pt_p": "{1}A reposta correta foi {2}!",
         "ru": "{1}Правильным ответом было {2}!",
         "es": "{1}La respuesta correcta era {2}!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}Poprawna odpowiedź to {2}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SimonSaysTaunt",
@@ -791,8 +875,10 @@
         "pt_p": "O MESTRE MANDOU: TAUNT!",
         "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "SIMON DICE: BURLATE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "SZYMON MÓWI: DRWINA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SimonSaysJump",
@@ -806,8 +892,10 @@
         "pt_p": "O MESTRE MANDOU: PULE!",
         "ru": "САЙМОН ГОВОРИТ: ПРЫЖОК!",
         "es": "SIMON DICE: SALTA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "SZYMON MÓWI: SKACZ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SimonSaysCrouch",
@@ -821,8 +909,10 @@
         "pt_p": "O MESTRE MANDOU: ABAIXE!",
         "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "SIMON DICE: AGACHATE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "SZYMON MÓWI: KUCNIJ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysTaunt",
@@ -836,8 +926,10 @@
         "pt_p": "O MESTRE NÃO MANDOU: TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
         "es": "ALGUIEN DICE: BURLATE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "KTOŚ MÓWI: DRWINA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysJump",
@@ -851,8 +943,10 @@
         "pt_p": "O MESTRE NÃO MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
         "es": "ALGUIEN DICE: SALTA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "KTOŚ MÓWI: SKACZ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysCrouch",
@@ -866,8 +960,10 @@
         "pt_p": "O MESTRE NÃO MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
         "es": "ALGUIEN DICE: AGACHATE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "KTOŚ MÓWI: KUCNIJ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame9_Caption_SimonDidntSayIt",
@@ -881,8 +977,10 @@
         "pt_p": "(O mestre NÃO mandou você fazer isso...)",
         "ru": "(Саймон этого не говорил..)",
         "es": "(Simon no a dicho eso..)",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "(Szymon tego nie powiedział...)"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame10_KamikazeIsHere",
@@ -896,8 +994,10 @@
         "pt_p": "O Kamikaze chegou!",
         "ru": "Камикадзе здесь!",
         "es": "El Kamikaze esta por aqui!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Kamikaze jest tutaj!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame10_Caption_ExplodeAsMany",
@@ -911,8 +1011,10 @@
         "pt_p": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
         "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
         "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame10_Caption_RunFromKamikaze",
@@ -926,8 +1028,10 @@
         "pt_p": "FUJA PARA LONGE DO KAMIKAZE!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
         "es": "HUYE DEL KAMIKAZE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UCIEKNIJ OD KAMIKAZE!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame11_Caption_DontStopMoving",
@@ -939,10 +1043,12 @@
         "fr": "N'ARRÊTEZ PAS DE BOUGER !",
         "it": "CONTINUA A MUOVERTI!",
         "pt_p": "NÃO PARE DE SE MOVIMENTAR!",
-        "ru": "ДВИГАТЬСЯ!",
+        "ru": "ДВИГАЙТЕСЬ!",
         "es": "NO PARES DE MOVERTE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame11_Caption_DontMove",
@@ -956,8 +1062,10 @@
         "pt_p": "NÃO SE MOVA!",
         "ru": "НЕ ДВИГАТЬСЯ!",
         "es": "NO TE MUEVAS!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "NIE RUSZAJ SIĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame12_Caption",
@@ -971,8 +1079,10 @@
         "pt_p": "SUBA EM ALGUMA PLATAFORMA!",
         "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
         "es": "SUBE A UNA PLATAFORMA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "DOSTAŃ SIĘ NA PLATFORMĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame13_Caption",
@@ -986,8 +1096,10 @@
         "pt_p": "SPYCRAB!",
         "ru": "СПАЙКРАБ!",
         "es": "SPYCRAB!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "SZPIEGOKRAB!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame13_SpycrabsMustCrouchAndLookup",
@@ -1001,8 +1113,10 @@
         "pt_p": "Spycrabs precisam abaixar olhando para cima!",
         "ru": "Спайкрабы должны присесть и посмотреть вверх!",
         "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Szpiegokraby muszą kucać i patrzeć w górę!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame14_Caption_Spies",
@@ -1016,8 +1130,10 @@
         "pt_p": "SABOTE UMA CONSTRUÇÃO!",
         "ru": "ПОСТАВЬТЕ ЖУЧОК!",
         "es": "DESTRUYE UNA CONSTRUCCION!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZNISZCZ KONSTRUKCJĘ SAPEREM!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame14_Caption_Engineers",
@@ -1031,8 +1147,10 @@
         "pt_p": "CONSTRUA ALGO PARA O SPY SABOTAR!",
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
         "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame15_Caption_Any",
@@ -1046,8 +1164,10 @@
         "pt_p": "CONSTRUA QUALQUER COISA!",
         "ru": "ПОСТРОЙТЕ ЧТО-НИБУДЬ!",
         "es": "CONSTRUYE ALGO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZBUDUJ COKOLWIEK!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame15_Caption_Dispenser",
@@ -1061,8 +1181,10 @@
         "pt_p": "CONSTRUA UM FORNECEDOR!",
         "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
         "es": "CONSTRUYE UN DISPENSADOR!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZBUDUJ ZASOBNIK!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame15_Caption_Teleporter",
@@ -1076,8 +1198,10 @@
         "pt_p": "CONSTRUA UM TELEPORTE!",
         "ru": "ПОСТРОЙТЕ ТЕЛЕПОРТ!",
         "es": "CONSTRUYE UN TELETRANSPORTADOR!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZBUDUJ TELEPORT!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame15_Caption_Sentry",
@@ -1091,8 +1215,10 @@
         "pt_p": "CONSTRUA UMA SENTINELA!",
         "ru": "ПОСТРОЙТЕ ТУРЕЛЬ!",
         "es": "CONSTRUYE UN CENTINELA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZBUDUJ DZIAŁKO STRAŻNICZE!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame16_Caption",
@@ -1106,8 +1232,10 @@
         "pt_p": "JOGUE O JARATE NOS INIMIGOS!",
         "ru": "ОБМОЧИТЕ ВРАГА!",
         "es": "LANZA JARATE A UN ENEMIGO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "TRAF WROGA SIKWONDEM!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame17_Caption_HitAHeavy",
@@ -1121,8 +1249,10 @@
         "pt_p": "ACERTE O HEAVY!",
         "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
         "es": "GOLPEA A UN HEAVY!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UDERZ GRUBEGO!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame17_Caption_GetHitByMedic",
@@ -1136,8 +1266,10 @@
         "pt_p": "SEJA ATINGIDO POR UM MÉDICO!",
         "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
         "es": "HAZ QUE TE GOLPEE UN MEDICO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZOSTAŃ UDERZONYM PRZEZ MEDYKA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame18_Caption",
@@ -1151,8 +1283,10 @@
         "pt_p": "ACERTE O ALVO!",
         "ru": "ПОПОДИТЕ ПО МИШЕНИ!",
         "es": "DALE AL OBJETIVO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "TRAF W CEL!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassAny",
@@ -1166,8 +1300,10 @@
         "pt_p": "MUDE DE CLASSE!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС!",
         "es": "CAMBIA DE CLASE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassScout",
@@ -1181,8 +1317,10 @@
         "pt_p": "MUDE A CLASSE PARA SCOUT!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
         "es": "CAMBIA DE CLASE A SCOUT!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SKAUTA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassSoldier",
@@ -1196,8 +1334,10 @@
         "pt_p": "MUDE A CLASSE PARA SOLDIER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
         "es": "CAMBIA DE CLASE A SOLDADO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA ŻOŁNIERZA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassPyro",
@@ -1211,8 +1351,10 @@
         "pt_p": "MUDE A CLASSE PARA PYRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
         "es": "CAMBIA DE CLASE A PYRO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA PYRO!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassDemoman",
@@ -1226,8 +1368,10 @@
         "pt_p": "MUDE A CLASSE PARA DEMOMAN!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
         "es": "CAMBIA DE CLASE A DEMOMAN!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA DEMOMANA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassHeavy",
@@ -1241,8 +1385,10 @@
         "pt_p": "MUDE A CLASSE PARA HEAVY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
         "es": "CAMBIA DE CLASE A HEAVY!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA GRUBEGO!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassEngineer",
@@ -1256,8 +1402,10 @@
         "pt_p": "MUDE A CLASSE PARA ENGENHEIRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
         "es": "CAMBIA DE CLASE A INGENIERO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA INŻYNIERA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassMedic",
@@ -1271,8 +1419,10 @@
         "pt_p": "MUDE A CLASSE PARA MÉDICO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
         "es": "CAMBIA DE CLASE A MEDICO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA MEDYKA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassSniper",
@@ -1286,8 +1436,10 @@
         "pt_p": "MUDE A CLASSE PARA SNIPER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
         "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SNAJPERA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame19_Caption_ChangeClassSpy",
@@ -1301,8 +1453,10 @@
         "pt_p": "MUDE A CLASSE PARA SPY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
         "es": "CAMBIA DE CLASE A ESPIA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "ZMIEŃ KLASĘ NA SZPIEGA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame20_Caption_Drink",
@@ -1316,8 +1470,10 @@
         "pt_p": "BEBA RÁPIDO!",
         "ru": "ВЫПЕЙТЕ!",
         "es": "BEBE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "PIJ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame20_Caption_DontDrink",
@@ -1328,10 +1484,12 @@
         "it": "NON BERE!",
         "es": null,
         "fr": "NE BUVEZ PAS !",
-        "ru": null,
+        "ru": "НЕ ПЕЙТЕ!",
         "pt_p": "NÃO BEBA!",
-        "pt": "NÃO BEBA!"
-      }
+        "pt": "NÃO BEBA!",
+        "pl": "NIE PIJ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame20_Caption_Eat",
@@ -1345,8 +1503,10 @@
         "pt_p": "COMA, RÁPIDO!",
         "ru": "ПОЕШЬТЕ!",
         "es": "COME!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "JEDZ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame20_Caption_DontEat",
@@ -1357,10 +1517,12 @@
         "it": "NON MANGIARE!",
         "es": null,
         "fr": "NE MANGEZ PAS !",
-        "ru": null,
+        "ru": "НЕ ЕШЬТЕ!",
         "pt_p": "NÃO COMA!",
-        "pt": "NÃO COMA!"
-      }
+        "pt": "NÃO COMA!",
+        "pl": "NIE JEDZ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame21_Caption",
@@ -1374,8 +1536,10 @@
         "pt_p": "ATORDOE UM INIMIGO!",
         "ru": "ОГЛУШИТЕ ПРОТИВНИКА!",
         "es": "ATURDE A UN ENEMIGO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "OGŁUSZ WROGA!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame22_Caption",
@@ -1389,8 +1553,10 @@
         "pt_p": "PERMANEÇA NO CHÃO!",
         "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
         "es": "QUEDATE EN EL SUELO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UTRZYMAJ SIĘ NA ZIEMI!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame23_Caption",
@@ -1404,8 +1570,10 @@
         "pt_p": "SALTO DUPLO!",
         "ru": "ДВОЙНОЙ ПРЫЖОК!",
         "es": "SALTO DOBLE!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "WYKONAJ PODWÓJNY SKOK!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame24_Caption",
@@ -1419,8 +1587,10 @@
         "pt_p": "PULE ATIRANDO NO CHÃO!",
         "ru": "ПРЫЖОК ШПРИЦЕМЕТОМ!",
         "es": "SALTO CON AGUJAS!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "WYKONAJ SKOK STRZYKAWKAMI!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame25_Caption",
@@ -1434,8 +1604,10 @@
         "pt_p": "USE O JETPACK!",
         "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
         "es": "JETPACK!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "UŻYJ PLECAKA ODRZUTOWEGO!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame26_Caption",
@@ -1446,10 +1618,12 @@
         "it": "NON RIDERE!",
         "es": null,
         "fr": "NE RIEZ PAS !",
-        "ru": null,
+        "ru": "НЕ СМЕЙТЕСЬ!",
         "pt_p": "NÃO VALE RIR!",
-        "pt": "NÃO VALE RIR!"
-      }
+        "pt": "NÃO VALE RIR!",
+        "pl": "NIE ŚMIEJ SIĘ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Minigame27_Caption",
@@ -1460,10 +1634,12 @@
         "it": "COLPISCI QUALCUNO!",
         "es": null,
         "fr": "FRAPPEZ QUELQU'UN !",
-        "ru": null,
+        "ru": "УДАРЬТЕ КОГО-НИБУДЬ!",
         "pt_p": "ACERTE ALGUÉM!",
-        "pt": "ACERTE ALGUÉM!"
-      }
+        "pt": "ACERTE ALGUÉM!",
+        "pl": "UDERZ KOGOŚ!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_Explain",
@@ -1477,8 +1653,10 @@
         "pt_p": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
         "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
         "es": "Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_Start",
@@ -1492,8 +1670,10 @@
         "pt_p": "COMEÇOU!",
         "ru": "СТАРТ!",
         "es": "EMPIEZA!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "START!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_TimeRemaining",
@@ -1501,7 +1681,7 @@
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -1512,25 +1692,27 @@
         "pt_p": "== OBSERVANDO ==\n\nTempo restante: {1} segundos",
         "ru": "== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд",
         "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== OBSERWACJA ==\n\nCzas do końca (w sekundach): {1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_SayTheWord",
-      "description": null,
+      "description": "Used on the Danganronpa inspired Typing Attack boss.",
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The word the player needs to type."
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The next word that will need to be typed."
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "Number of seconds remaining."
         }
       ],
       "translations": {
@@ -1540,8 +1722,10 @@
         "pt_p": "== DIGITE A PALAVRA! ==\n\n{1}\n\nPróxima palavra: {2}\ntempo restante: {3} segundos",
         "ru": "== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд",
         "es": "== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== NAPISZ SŁOWO! ==\n\n{1}\nNastępne słowo: {2}\nCzas do końca (w sekundach): {3}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_WinnerAnnouncement",
@@ -1549,8 +1733,8 @@
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the winning player."
         }
       ],
       "translations": {
@@ -1560,12 +1744,14 @@
         "pt_p": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
         "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!",
         "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_LevelUpAnnouncement",
-      "description": null,
+      "description": "This message is displayed when the difficulty level increases.",
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
       "formatArguments": [],
       "translations": {
@@ -1575,17 +1761,19 @@
         "pt_p": "== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
         "ru": "== ОБЪЯВЛЕНИЕ == \n\nНОВЫЙ УРОВЕНЬ! СЛОВА СТАЛИ БОЛЕЕ СЛОЖНЫМИ!",
         "es": "== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== OGŁOSZENIE == \n\nNASTĘPNY POZIOM! SŁOWA STANĄ SIĘ TRUDNIEJSZE!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_RoundReview",
-      "description": null,
+      "description": "This message is displayed showing players who typed the lowest number of words.",
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "A list of player names."
         }
       ],
       "translations": {
@@ -1595,21 +1783,23 @@
         "pt_p": "== RESUMO DA RODADA == \n\nOs jogadores com o menor número de palavras digitadas foram...\n{1}",
         "ru": "== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}",
         "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "== PODSUMOWANIE RUNDY == \n\nGracze z najmniejszą liczbą napisanych słów to... \n{1}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_RoundReview_AndMore",
-      "description": null,
+      "description": "This message is used and appended after the names displayed in Bossgame7_Caption_RoundReview only when there are too many names to display.",
       "text": "{1}\nand {2} more...",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The preceeding message - make sure this is at the start."
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The number of players which could not be displayed."
         }
       ],
       "translations": {
@@ -1619,17 +1809,19 @@
         "pt_p": "{1}\ne {2} mais...",
         "ru": "{1}\nи {2} и другие...",
         "es": "{1}\ny {2} mas...",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}\noraz {2} innych..."
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
-      "description": null,
+      "description": "This message is displayed when everyone has the same number of words typed.",
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
-          "description": null
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The preceeding message. Make sure this is at the start of the string."
         }
       ],
       "translations": {
@@ -1639,12 +1831,14 @@
         "pt_p": "{1}ninguém!\n\nTodos sobreviveram!",
         "ru": "{1}Никто!\n\nВсе выжили в этом раунде!",
         "es": "{1}nadie!\n\nTodo el mundo sobrevive otra ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1}nikt!\n\nWszyscy przeżyli kolejną rundę!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "Bossgame7_ClassChangeWarning",
-      "description": null,
+      "description": "This message is printed in chat.",
       "text": "Changing class is not allowed during bosses!",
       "formatArguments": [],
       "translations": {
@@ -1654,8 +1848,10 @@
         "pt_p": "A troca de classes não é permitida durante os 'bossgames' !",
         "ru": "Смена класса запрещена во время босс раунда!",
         "es": "Cambiar de clase no esta permitido durante los jefes!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zmienianie klas jest zabronione podczas bossgier!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound0_Name",
@@ -1669,8 +1865,10 @@
         "pt_p": "Modo Terceira Pessoa",
         "ru": "От третьего лица",
         "es": "Tercera Persona",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Trzecia Osoba"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound0_Description",
@@ -1684,8 +1882,10 @@
         "pt_p": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
         "ru": "Все игроки играют с новой точкой зрения!",
         "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Wszyscy gracze w tej rundzie grają w nowej perspektywie!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound1_Name",
@@ -1699,8 +1899,10 @@
         "pt_p": "Injeção de Adrenalina!",
         "ru": "Адреналин",
         "es": "Inyección de Adrenalina",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Zastrzyk Adrenaliny"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound1_Description",
@@ -1714,8 +1916,10 @@
         "pt_p": "O rodada inicia em velocidade alta e diminui a cada microgame.",
         "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
         "es": "La ronda comienza rapido! Y despues se ralentiza!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda szybko się rozpoczyna, a następnie zwalnia!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound2_Name",
@@ -1729,8 +1933,10 @@
         "pt_p": "Rodada Extendida!",
         "ru": "Бонусные Раунды",
         "es": "Ronda Extendida",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Wydłużona Runda"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound2_Description",
@@ -1744,8 +1950,10 @@
         "pt_p": "30 microgames serão jogados e depois o 'bossgame'!",
         "ru": "30 игр будет сыгранно перед босс раундом!",
         "es": "Se jugaran 30 microjuegos antes del jefe!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Przed bossgrą odbędzie się 30 mikrogier!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound3_Name",
@@ -1759,8 +1967,10 @@
         "pt_p": "Baixa Gravidade",
         "ru": "Низкая Гравитация",
         "es": "Gravedad Baja",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Niska Grawitacja"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound3_Description",
@@ -1774,8 +1984,10 @@
         "pt_p": "Ei ? Parece que estou na lua! E a gravidade?",
         "ru": "Космос? КОСМОС! КОООСМООООООООС!",
         "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound4_Name",
@@ -1789,8 +2001,10 @@
         "pt_p": "Relaxe com esse calmante ...",
         "ru": "Успокоительное",
         "es": "Calmante",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda Antystresowa"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound4_Description",
@@ -1804,8 +2018,10 @@
         "pt_p": "Nenhuma mudança de velocidade nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
         "es": "No habra cambios de velocidad en esta ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "W tej rundzie nie będzie zmian prędkości!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound5_Name",
@@ -1819,8 +2035,10 @@
         "pt_p": "Agora vai ficar sério! Atenção !",
         "ru": "Скоростные игры",
         "es": "Super-Velocidad",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Czas Nagli"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound5_Description",
@@ -1834,8 +2052,10 @@
         "pt_p": "Nesta rodada, cada microgame terá a velocidade aumentada!",
         "ru": "Скорость игр будет увеличиваться с каждым раундом!",
         "es": "La ronda acelerara despues de cada microjuego!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda będzie stale przyspieszać po każdej mikrogrze!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound6_Name",
@@ -1849,8 +2069,10 @@
         "pt_p": "Sobe ou Desce?",
         "ru": "Вверх и вниз",
         "es": "Arriba y Abajo",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "W górę i w dół"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound6_Description",
@@ -1864,8 +2086,10 @@
         "pt_p": "Em cada microgame, será escolhida uma velocidade aleatória!",
         "ru": "Скорость каждого раунда будет случайной!",
         "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Po każdej mikrogrze zostanie dobrana losowa szybkość!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound7_Name",
@@ -1879,8 +2103,10 @@
         "pt_p": "Eu amo tartarugas, e você?",
         "ru": "Слоу мо",
         "es": "Camara Lenta",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Spowolnienie"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound7_Description",
@@ -1894,8 +2120,10 @@
         "pt_p": "Nesta rodada, a cada microgame a velocidade será diminuída!",
         "ru": "Игры становяться медленее с каждым раундом!",
         "es": "La ronda se ralentizara despues de cada microjuego!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Runda będzie stale zwalniać po każdej mikrogrze!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound8_Name",
@@ -1909,8 +2137,10 @@
         "pt_p": "Que tal... Matemática?",
         "ru": "Математика",
         "es": "Solo Matematicas",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Tylko Matematyka"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound8_Description",
@@ -1924,8 +2154,10 @@
         "pt_p": "Hora de testar sua habilidade com as operações matemáticas!",
         "ru": "Пришло время потренироваться в математику!",
         "es": "Hora de poner a prueba tus habilidades matematicas!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Czas sprawdzić Twoją wiedzę z matematyki!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound9_Name",
@@ -1939,8 +2171,10 @@
         "pt_p": "Dia do Contra",
         "ru": "День Наоборот",
         "es": "Dia Opuesto",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Dzień na Opak"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound9_Description",
@@ -1954,8 +2188,10 @@
         "pt_p": "O jogador com o menor número de pontos vencerá!",
         "ru": "Игрок с наименшим кол-ом очков выигрывает!",
         "es": "El jugador con la puntuacion mas baja gana la ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Gracz z najmniejszą liczbą punktów wygrywa rundę!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound10_Name",
@@ -1969,8 +2205,10 @@
         "pt_p": "Batalha dos Chefões!",
         "ru": "Два Босс Раунда",
         "es": "Jefe Doble",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Dwie Walki z Bossem"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound10_Description",
@@ -1984,8 +2222,10 @@
         "pt_p": "Dois 'bossgames' serão disputados antes da partida acabar!",
         "ru": "Два босс раунда играется перед концом игры!",
         "es": "Se jugaran dos jefes antes de que termine el juego!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Przed końcem gry odbędą się dwie bossgry!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound11_Name",
@@ -1999,8 +2239,10 @@
         "pt_p": "Uma Batalha de Equipes",
         "ru": "Битва комманд",
         "es": "Batalla de Equipos",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Walka Drużyn"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound11_Description",
@@ -2014,8 +2256,10 @@
         "pt_p": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
         "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
         "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound12_Name",
@@ -2029,8 +2273,10 @@
         "pt_p": "Sozinho...",
         "ru": "Одиночная Игра",
         "es": "Modo Un Jugador",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Rozgrywka Jednoosobowa"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound12_Description",
@@ -2044,8 +2290,10 @@
         "pt_p": "Alô? Ei ... Para onde foi todo mundo?",
         "ru": "Ой... а куда все делись?",
         "es": "Hey... donde estan todos?",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Hej... Gdzie są wszyscy?"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound13_Name",
@@ -2059,8 +2307,10 @@
         "pt_p": "Somente Esqueletos",
         "ru": "Вечеринка Скелетов",
         "es": "Solo Esqueletos",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Tylko szkielety"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound13_Description",
@@ -2074,8 +2324,10 @@
         "pt_p": "Nenhuma pele está permitida nessa rodada!",
         "ru": "Кожа и мясо на выброс!",
         "es": "No se permite piel en esta ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "W tej rundzie posiadanie skóry jest zabronione!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound14_Name",
@@ -2089,8 +2341,10 @@
         "pt_p": "Minúsculos?",
         "ru": "Малютка",
         "es": "Pequeñito",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Mały"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound14_Description",
@@ -2104,8 +2358,10 @@
         "pt_p": "Dessa vez todos ficarão minúsculos!",
         "ru": "Все становяться маленькими-прималенькими мужичками!",
         "es": "Todos se convierten en hombres pequeñitos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Każdy gracz staje się tyciusieńki!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound15_Name",
@@ -2119,8 +2375,10 @@
         "pt_p": "Cabeça de Vento",
         "ru": "Голова-пузырь",
         "es": "Cabezones",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Bobbleheads"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound15_Description",
@@ -2134,8 +2392,10 @@
         "pt_p": "Mas em que todos foram transformados? Loucos?",
         "ru": "Все головы становяться огромными!",
         "es": "Todos se convierten en un montón de cabezas huecas!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Każda głowa pęcznieje!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound16_Name",
@@ -2149,8 +2409,10 @@
         "pt_p": "Pontuação Aleatória",
         "ru": "Рандомные очки",
         "es": "Puntuacion Aleatoria",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Losowe Punkty"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound16_Description",
@@ -2160,12 +2422,14 @@
       "translations": {
         "pt": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "fr": "Si vous gagnez un mini-jeu, le score est attribué aléatoirement !",
-        "it": "I minigiochi vinti danno un numero di punti casuale!!",
+        "it": "I minigiochi vinti danno un numero causale di punti!",
         "pt_p": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "ru": "При победе, вы получаете случайное кол-во очков!",
         "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound16_Caption_Points",
@@ -2173,7 +2437,7 @@
       "text": "If you win this microgame, you will be awarded {1} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2184,8 +2448,10 @@
         "pt_p": "Se você vencer este microgame, sua recompensa será de {1} pontos!",
         "ru": "Если вы победите, вы получите {1} очков!",
         "es": "Si ganas este microjuego, recibiras {1} puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound17_Name",
@@ -2199,8 +2465,10 @@
         "pt_p": "Morte Súbita",
         "ru": "Внезапная Смерть",
         "es": "Muerte Subita",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Nagła Śmierć"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound17_Description",
@@ -2214,8 +2482,10 @@
         "pt_p": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
         "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
         "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound17_Caption_Full",
@@ -2223,15 +2493,15 @@
       "text": "Current players ({1} of {2})\n{3}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2242,8 +2512,10 @@
         "pt_p": "Atualmente ({1} de {2} jogadores)\n{3}",
         "ru": "Данное кол-во игроков ({1} of {2})\n{3}",
         "es": "Jugadores actuales ({1} de {2})\n{3}",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Obecni gracze ({1} z {2})\n{3}"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound17_Caption_AndMore",
@@ -2251,11 +2523,11 @@
       "text": "{1} (and {2} more)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Translator.Data.StringFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Translator.Data.IntegerFormatArgument, Tsukuru.Translator",
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": null
         }
       ],
@@ -2266,8 +2538,10 @@
         "pt_p": "{1} (e {2} mais)",
         "ru": "{1} (и еще {2})",
         "es": "{1} (y {2} mas)",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "{1} (oraz {2} innych)"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound18_Name",
@@ -2281,8 +2555,10 @@
         "pt_p": "Agora é Vale Tudo",
         "ru": "Игра на все",
         "es": "Todo a Una",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Wszystko albo Nic"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound18_Description",
@@ -2296,8 +2572,10 @@
         "pt_p": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
         "ru": "При проигрыше, вы теряете ВСЕ очки!",
         "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound19_Name",
@@ -2311,8 +2589,10 @@
         "pt_p": "Leia ao Contrário",
         "ru": "Текст наоборот",
         "es": "Texto Invertido",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Tekst Wspak"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound19_Description",
@@ -2326,8 +2606,10 @@
         "pt_p": "!oirártnoc oa oãtse seõçurtsni sA",
         "ru": "!нелакрезто тедуб харги в тскеТ",
         "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "!kapsw enasip ąs reigorkim od ejckurtsnI"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound20_Name",
@@ -2341,8 +2623,10 @@
         "pt_p": "Sem Parar",
         "ru": "Без остановки",
         "es": "Sin Paradas",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Non-stop"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound20_Description",
@@ -2356,8 +2640,10 @@
         "pt_p": "Não haverá intervalos entre os microgames nesta rodada.",
         "ru": "Без пауз между раундами!",
         "es": "No hay descanso entre microjuegos en esta ronda!",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "W tej rundzie nie ma przerw pomiędzy mikrogrami!"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound21_Name",
@@ -2371,8 +2657,10 @@
         "pt_p": "Team Fortress 64",
         "ru": "Team Fortress 64",
         "es": "Team Fortress 64",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Team Fortress 64"
+      },
+      "ignoreEmptyValue": false
     },
     {
       "key": "SpecialRound21_Description",
@@ -2386,8 +2674,10 @@
         "pt_p": "Ei!? Onde foram parar meus polígonos?",
         "ru": "Ой! Куда делись мои полигоны?",
         "es": "Hey! Donde han ido mis poligonos?",
-        "jp": null
-      }
+        "jp": null,
+        "pl": "Hej! Gdzie się podziały moje wielokąty?"
+      },
+      "ignoreEmptyValue": false
     }
   ]
 }

@@ -57,8 +57,7 @@ public void Minigame12_OnMinigameSelected(int client)
 			}
 		}
 
-		ResetWeapon(client, false);
-
+		player.ResetWeapon(false);
 		player.SetGodMode(false);
 		player.SetHealth(3000);
 	}

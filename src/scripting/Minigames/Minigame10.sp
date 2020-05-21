@@ -78,8 +78,7 @@ public void Minigame10_OnMinigameSelected(int client)
 		player.RemoveAllWeapons();
 		player.Status = PlayerStatus_NotWon;
 		player.SetHealth(100);
-
-		ResetWeapon(client, false);
+		player.ResetWeapon(false);
 	}
 }
 

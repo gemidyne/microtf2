@@ -50,15 +50,15 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"es"		"{1}La condicion de la ronda especial es... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"es"		"Reapareceras cuando el minijuego o jefe actual termine."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"es"		"HAS SIDO ELIMINADO!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"es"		"Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion."
 	}
@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"es"		"{1}Tablas! Ambos equipos tienen los mismos puntos!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"es"		"Intermedio!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"es"		"Descanso! Hora de votar el siguiente mapa."
 	}
