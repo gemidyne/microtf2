@@ -906,7 +906,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
         "pt_p": null,
         "ru": null,
         "es": null,
