@@ -71,10 +71,21 @@ public Action Command_MinigameSixSay(int client, int args)
 
 				if (!Minigame6_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
 				{
-					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}answered first! (Bonus Point!)", PLUGIN_PREFIX, client);
-
 					PlayerScore[client]++;
 					Minigame6_HasBeenAnswered = true;
+
+					char name[32];
+					GetClientName(client, name, sizeof(name));
+
+					for (int i = 1; i <= MaxClients; i++)
+					{
+						Player player = new Player(i);
+
+						if (player.IsValid)
+						{
+							CPrintToChat(i, "%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, PLUGIN_PREFIX, name);
+						}
+					}
 				}
 
 				return Plugin_Handled;
