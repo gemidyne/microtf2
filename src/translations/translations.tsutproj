@@ -812,7 +812,16 @@
           "description": "The name of the player who said the word first."
         }
       ],
-      "translations": {},
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
+      },
       "ignoreEmptyValue": false
     },
     {
