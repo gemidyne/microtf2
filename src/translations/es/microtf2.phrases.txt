@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"es"		"{1}La respuesta correcta era {2}!"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"es"		"SIMON DICE: BURLATE!"
