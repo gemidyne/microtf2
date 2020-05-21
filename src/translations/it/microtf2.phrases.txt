@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"it"		"{1}La risposta corretta era {2}!"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!"
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"it"		"SIMONE DICE: PROVOCA!"
