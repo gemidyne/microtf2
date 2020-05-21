@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"ru"		"НАПИШИТЕ СЛОВО!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"ru"		""
+	}
 	"Minigame7_Caption"
 	{
 		"ru"		"ПРЫЖОК НА РАКЕТЕ!"

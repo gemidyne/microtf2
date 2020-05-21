@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"pl"		"NAPISZ SŁOWO!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"		""
+	}
 	"Minigame7_Caption"
 	{
 		"pl"		"WYKONAJ RAKIETOWY SKOK!"

@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"es"		"DI LA PALABRA!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
+	}
 	"Minigame7_Caption"
 	{
 		"es"		"SALTO CON COHETES!"

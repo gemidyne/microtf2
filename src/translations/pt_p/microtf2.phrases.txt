@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"pt_p"		"DIGITE A PALAVRA!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pt_p"		""
+	}
 	"Minigame7_Caption"
 	{
 		"pt_p"		"ROCKET JUMP!"
