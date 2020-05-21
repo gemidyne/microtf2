@@ -815,7 +815,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
         "pt_p": null,
         "ru": null,
         "es": null,
