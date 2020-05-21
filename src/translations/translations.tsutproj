@@ -890,6 +890,32 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame8_PlayerAnsweredFirst",
+      "description": "This message is displayed when a bonus point is given to a player for answering the question first.",
+      "text": "{1}{2} got the correct answer first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who answered."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Minigame9_Caption_SimonSaysTaunt",
       "description": null,
       "text": "SIMON SAYS: TAUNT!",
