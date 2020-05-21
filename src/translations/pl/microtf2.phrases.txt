@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"pl"		"{1}Poprawna odpowiedź to {2}!"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"		""
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"pl"		"SZYMON MÓWI: DRWINA!"
