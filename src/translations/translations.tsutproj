@@ -278,7 +278,7 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "SuddenDeath_YouHaveBeenKnockedOut",
+      "key": "SpecialRound_SuddenDeath_PlayerKnockOutNotification",
       "description": "The HUD text which notifies the player that they have been knocked out from the round. Only used on the Sudden Death special round.",
       "text": "YOU HAVE BEEN KNOCKED OUT!",
       "formatArguments": [],

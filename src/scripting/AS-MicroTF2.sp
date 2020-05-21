@@ -607,7 +607,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					if (SpecialRoundID == 17)
 					{
 						player.IsParticipating = false;
-						PrintCenterText(i, "%T", "SuddenDeath_YouHaveBeenKnockedOut", i);
+						PrintCenterText(i, "%T", "SpecialRound_SuddenDeath_PlayerKnockOutNotification", i);
 					}
 
 					if (SpecialRoundID == 18)
