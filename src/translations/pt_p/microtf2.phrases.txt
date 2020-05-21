@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"pt_p"		"{1}A reposta correta foi {2}!"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pt_p"		""
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"pt_p"		"O MESTRE MANDOU: TAUNT!"
