@@ -799,6 +799,23 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame6_SayTheWord_PlayerSaidWordFirst",
+      "description": "This message is displayed when a bonus point is given to a player for saying the word first.",
+      "text": "{1}{2} said the word first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who said the word first."
+        }
+      ],
+      "translations": {},
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Minigame7_Caption",
       "description": null,
       "text": "ROCKET JUMP!",
