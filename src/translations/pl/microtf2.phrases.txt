@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"pl"		"{1}Impas! Obie drużyny mają tyle samo punktów!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"pl"		"Przerwa!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"pl"		"Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę."
 	}

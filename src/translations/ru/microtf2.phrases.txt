@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"ru"		"{1}Ничья! Обе комманды имеют одинаковое кол-во очков!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"ru"		"Пауза!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"ru"		"Время перерыва! Голосование следующей карты началась."
 	}

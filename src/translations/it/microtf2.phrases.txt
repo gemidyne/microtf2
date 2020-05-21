@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"it"		"Intervallo!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"it"		"Pausa! È ora di votare per la prossima mappa."
 	}

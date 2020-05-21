@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"es"		"{1}Tablas! Ambos equipos tienen los mismos puntos!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"es"		"Intermedio!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"es"		"Descanso! Hora de votar el siguiente mapa."
 	}

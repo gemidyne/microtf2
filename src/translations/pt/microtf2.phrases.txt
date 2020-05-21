@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"pt"		"{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"pt"		"Hora do Intervalo!"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"pt"		"Uma pequena parada para votar o próximo mapa."
 	}

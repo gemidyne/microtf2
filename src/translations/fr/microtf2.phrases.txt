@@ -110,11 +110,11 @@
 		"#format"		"{1:s}"
 		"fr"		"{1}Égalité ! Les deux équipes ont le même nombre de points !"
 	}
-	"Intermission_Header"
+	"System_Intermission_Header"
 	{
 		"fr"		"Entracte !"
 	}
-	"Intermission_Body"
+	"System_Intermission_Body"
 	{
 		"fr"		"Pause ! Il est temps de voter pour la prochaine carte."
 	}
