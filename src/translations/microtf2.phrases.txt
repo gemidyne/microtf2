@@ -58,7 +58,7 @@
 	{
 		"en"		"YOU HAVE BEEN KNOCKED OUT!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"en"		"Changing class is not allowed during this special round! 1 point has been added to your score."
 	}

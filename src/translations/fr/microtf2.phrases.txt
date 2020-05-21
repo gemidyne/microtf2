@@ -58,7 +58,7 @@
 	{
 		"fr"		"VOUS AVEZ ÉTÉ ÉLIMINÉ !"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"fr"		"Changer de classe n'est pas autorisé durant cette manche spéciale ! 1 point a été rajouté à votre score."
 	}

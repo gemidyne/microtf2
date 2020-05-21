@@ -58,7 +58,7 @@
 	{
 		"pt"		"VOCÊ FOI ELIMINADO!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"pt"		"A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar."
 	}

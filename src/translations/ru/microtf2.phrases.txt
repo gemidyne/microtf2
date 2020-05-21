@@ -58,7 +58,7 @@
 	{
 		"ru"		"ВАС ВЫБИЛИ ИЗ ИГРЫ!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"ru"		"Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет."
 	}

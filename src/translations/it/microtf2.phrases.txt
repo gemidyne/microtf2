@@ -58,7 +58,7 @@
 	{
 		"it"		"SEI STATO ELIMINATO!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"it"		"Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale."
 	}

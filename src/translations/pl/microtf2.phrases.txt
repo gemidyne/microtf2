@@ -58,7 +58,7 @@
 	{
 		"pl"		"ZOSTAŁEŚ WYELIMINOWANY!"
 	}
-	"LowestScoreWins_ExploitBlocked"
+	"System_SpecialRoundBlockClassChange"
 	{
 		"pl"		"Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku."
 	}
