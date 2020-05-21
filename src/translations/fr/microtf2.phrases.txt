@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"fr"		"DITES LE MOT !\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
+	}
 	"Minigame7_Caption"
 	{
 		"fr"		"ROCKET JUMP !"
