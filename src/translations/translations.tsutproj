@@ -295,7 +295,7 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "LowestScoreWins_ExploitBlocked",
+      "key": "System_SpecialRoundBlockClassChange",
       "description": "A message displayed in the chatbox which notifies the player cannot exploit the special round by intentionally failing by changing their class.",
       "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
       "formatArguments": [],
