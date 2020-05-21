@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"en"		"{1}The special round condition is... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"en"		"You will be respawned once the current microgame or bossgame has finished."
 	}

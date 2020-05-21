@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"pt_p"		"{1}Rodada especial. Na condição... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"pt_p"		"Você renascerá assim que o microgame ou o 'bossgame' forem finalizados."
 	}

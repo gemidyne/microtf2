@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"pl"		"{1}Warunek rundy specjalnej to... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"pl"		"Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
 	}

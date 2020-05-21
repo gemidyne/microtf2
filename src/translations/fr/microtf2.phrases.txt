@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"fr"		"{1}La manche spéciale est... {2} !\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"fr"		"Vous serez respawn quand le mini-jeu ou le boss aura fini."
 	}

@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"ru"		"{1}Условие особого раунда... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"ru"		"Вы вернетесь в игру после окончания раунда или босс раунда."
 	}

@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
 	}

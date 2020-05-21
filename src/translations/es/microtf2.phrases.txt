@@ -50,7 +50,7 @@
 		"#format"		"{1:s},{2:s},{3:s}"
 		"es"		"{1}La condicion de la ronda especial es... {2}!\n{3}"
 	}
-	"PlayerSpawn_RespawnNotice"
+	"System_PlayerSpawn_RespawnNotice"
 	{
 		"es"		"Reapareceras cuando el minijuego o jefe actual termine."
 	}
