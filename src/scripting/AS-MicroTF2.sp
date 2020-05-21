@@ -1180,10 +1180,10 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 				if (player.IsInGame && !player.IsBot)
 				{
 					char header[64];
-					Format(header, sizeof(header), "%T", "Intermission_Header", i);
+					Format(header, sizeof(header), "%T", "System_Intermission_Header", i);
 
 					char body[128];
-					Format(body, sizeof(body), "%T", "Intermission_Body", i);
+					Format(body, sizeof(body), "%T", "System_Intermission_Body", i);
 
 					char combined[256];
 					Format(combined, sizeof(combined), "%s\n%s", header, body);
