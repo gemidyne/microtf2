@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"it"		"SCRIVI LA PAROLA!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!"
+	}
 	"Minigame7_Caption"
 	{
 		"it"		"SALTO RAZZO!"
