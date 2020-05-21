@@ -54,7 +54,7 @@
 	{
 		"es"		"Reapareceras cuando el minijuego o jefe actual termine."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"es"		"HAS SIDO ELIMINADO!"
 	}

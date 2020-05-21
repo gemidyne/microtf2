@@ -54,7 +54,7 @@
 	{
 		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"it"		"SEI STATO ELIMINATO!"
 	}

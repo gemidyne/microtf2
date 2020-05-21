@@ -54,7 +54,7 @@
 	{
 		"pl"		"Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"pl"		"ZOSTAŁEŚ WYELIMINOWANY!"
 	}

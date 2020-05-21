@@ -54,7 +54,7 @@
 	{
 		"fr"		"Vous serez respawn quand le mini-jeu ou le boss aura fini."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"fr"		"VOUS AVEZ ÉTÉ ÉLIMINÉ !"
 	}

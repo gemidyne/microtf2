@@ -54,7 +54,7 @@
 	{
 		"pt_p"		"Você renascerá assim que o microgame ou o 'bossgame' forem finalizados."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"pt_p"		"VOCÊ FOI ELIMINADO!"
 	}

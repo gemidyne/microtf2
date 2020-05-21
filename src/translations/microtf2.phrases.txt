@@ -54,7 +54,7 @@
 	{
 		"en"		"You will be respawned once the current microgame or bossgame has finished."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"en"		"YOU HAVE BEEN KNOCKED OUT!"
 	}

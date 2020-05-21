@@ -54,7 +54,7 @@
 	{
 		"ru"		"Вы вернетесь в игру после окончания раунда или босс раунда."
 	}
-	"SuddenDeath_YouHaveBeenKnockedOut"
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
 		"ru"		"ВАС ВЫБИЛИ ИЗ ИГРЫ!"
 	}
