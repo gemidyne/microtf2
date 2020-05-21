@@ -261,7 +261,7 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "PlayerSpawn_RespawnNotice",
+      "key": "System_PlayerSpawn_RespawnNotice",
       "description": "A message displayed in the chatbox which notifies the player that they will be respawned when the current microgame or bossgame has finished.",
       "text": "You will be respawned once the current microgame or bossgame has finished.",
       "formatArguments": [],
