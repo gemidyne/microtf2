@@ -190,6 +190,11 @@
 		"#format"		"{1:s},{2:i}"
 		"en"		"{1}The correct answer was {2}!"
 	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} got the correct answer first! (Bonus point!)"
+	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
 		"en"		"SIMON SAYS: TAUNT!"
