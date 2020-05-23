@@ -371,9 +371,41 @@
 	{
 		"pl"		"UŻYJ PLECAKA ODRZUTOWEGO!"
 	}
-	"Minigame26_Caption"
+	"Minigame26_Caption_DontLaugh"
 	{
 		"pl"		"NIE ŚMIEJ SIĘ!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Scout"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Soldier"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Pyro"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Demoman"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Engineer"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Medic"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Sniper"
+	{
+		"pl"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Spy"
+	{
+		"pl"		""
 	}
 	"Minigame27_Caption"
 	{
