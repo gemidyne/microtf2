@@ -1683,7 +1683,7 @@
       "text": "MAKE THE SCOUTS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE GLI ESPLORATORI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1699,7 +1699,7 @@
       "text": "MAKE THE SOLDIERS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE I SOLDATI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1715,7 +1715,7 @@
       "text": "MAKE THE PYROS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE I PIRO!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1731,7 +1731,7 @@
       "text": "MAKE THE DEMOMEN LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE I DEMOLITORI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1747,7 +1747,7 @@
       "text": "MAKE THE ENGINEERS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE GLI INGEGNERI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1763,7 +1763,7 @@
       "text": "MAKE THE MEDICS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE I MEDICI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1779,7 +1779,7 @@
       "text": "MAKE THE SNIPERS LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE I CECCHINI!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -1795,7 +1795,7 @@
       "text": "MAKE THE SPIES LAUGH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "FAI RIDERE LE SPIE!",
         "es": null,
         "fr": null,
         "ru": null,
