@@ -799,6 +799,32 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame6_SayTheWord_PlayerSaidWordFirst",
+      "description": "This message is displayed when a bonus point is given to a player for saying the word first.",
+      "text": "{1}{2} said the word first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who said the word first."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Minigame7_Caption",
       "description": null,
       "text": "ROCKET JUMP!",
@@ -860,6 +886,32 @@
         "es": "{1}La respuesta correcta era {2}!",
         "jp": null,
         "pl": "{1}Poprawna odpowiedź to {2}!"
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame8_PlayerAnsweredFirst",
+      "description": "This message is displayed when a bonus point is given to a player for answering the question first.",
+      "text": "{1}{2} got the correct answer first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who answered."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -1610,8 +1662,8 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "Minigame26_Caption",
-      "description": "Tell players to not laugh! (Laughing results in failure)",
+      "key": "Minigame26_Caption_DontLaugh",
+      "description": "Tell players to not laugh! (By avoiding the heavies - laughing results in failure)",
       "text": "DON'T LAUGH!",
       "formatArguments": [],
       "translations": {
@@ -1622,6 +1674,134 @@
         "pt_p": "NÃO VALE RIR!",
         "pt": "NÃO VALE RIR!",
         "pl": "NIE ŚMIEJ SIĘ!"
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Scout",
+      "description": "Tell selected players to make the Scouts laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SCOUTS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Soldier",
+      "description": "Tell selected players to make the Soldiers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SOLDIERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Pyro",
+      "description": "Tell selected players to make the Pyro laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE PYROS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Demoman",
+      "description": "Tell selected players to make the Demomen laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE DEMOMEN LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Engineer",
+      "description": "Tell selected players to make the Engineers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE ENGINEERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Medic",
+      "description": "Tell selected players to make the Medics laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE MEDICS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Sniper",
+      "description": "Tell selected players to make the Snipers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SNIPERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Spy",
+      "description": "Tell selected players to make the Spies laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SPIES LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },

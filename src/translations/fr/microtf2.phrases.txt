@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"fr"		"DITES LE MOT !\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
+	}
 	"Minigame7_Caption"
 	{
 		"fr"		"ROCKET JUMP !"
@@ -184,6 +189,11 @@
 	{
 		"#format"		"{1:s},{2:i}"
 		"fr"		"{1}La bonne réponse était {2} !"
+	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

@@ -16,6 +16,7 @@ public void Minigame6_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
 
+	// TODO: This should probably rely on forwards in the future
 	RegConsoleCmd("say", Command_MinigameSixSay);
 	RegConsoleCmd("say_team", Command_MinigameSixSay);
 
@@ -45,41 +46,63 @@ public void Minigame6_GetDynamicCaption(int client)
 
 public Action Command_MinigameSixSay(int client, int args)
 {
-	if (IsMinigameActive && MinigameID == 6)
+	if (!IsMinigameActive)
 	{
-		char text[192];
-		if (GetCmdArgString(text, sizeof(text)) < 1)
+		return Plugin_Continue;
+	}
+
+	if (MinigameID != 6)
+	{
+		return Plugin_Continue;
+	}
+
+	char text[192];
+	if (GetCmdArgString(text, sizeof(text)) < 1)
+	{
+		return Plugin_Continue;
+	}
+
+	Player invoker = new Player(client);
+
+	if (!invoker.IsParticipating)
+	{
+		return Plugin_Continue;
+	}
+
+	int startidx;
+	if (text[strlen(text)-1] == '"') 
+	{
+		text[strlen(text)-1] = '\0';
+	}
+
+	startidx = 1;
+	char message[192];
+	BreakString(text[startidx], message, sizeof(message));
+
+	if (strcmp(message, Minigame6_SayTextAnswer, false) == 0)
+	{
+		invoker.TriggerSuccess();
+
+		if (!Minigame6_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
 		{
-			return Plugin_Continue;
-		}
+			invoker.Score++;
+			Minigame6_HasBeenAnswered = true;
 
-		if (IsPlayerParticipant[client])
-		{
-			int startidx;
-			if (text[strlen(text)-1] == '"') 
+			char name[32];
+			GetClientName(invoker.ClientId, name, sizeof(name));
+
+			for (int i = 1; i <= MaxClients; i++)
 			{
-				text[strlen(text)-1] = '\0';
-			}
+				Player player = new Player(i);
 
-			startidx = 1;
-			char message[192];
-			BreakString(text[startidx], message, sizeof(message));
-	
-			if (strcmp(message, Minigame6_SayTextAnswer, false) == 0)
-			{
-				ClientWonMinigame(client);
-
-				if (!Minigame6_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
+				if (player.IsValid && !player.IsBot)
 				{
-					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}answered first! (Bonus Point!)", PLUGIN_PREFIX, client);
-
-					PlayerScore[client]++;
-					Minigame6_HasBeenAnswered = true;
+					CPrintToChat(i, "%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, PLUGIN_PREFIX, name);
 				}
-
-				return Plugin_Handled;
 			}
 		}
+
+		return Plugin_Handled;
 	}
 
 	return Plugin_Continue;

@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"es"		"DI LA PALABRA!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
+	}
 	"Minigame7_Caption"
 	{
 		"es"		"SALTO CON COHETES!"
@@ -184,6 +189,11 @@
 	{
 		"#format"		"{1:s},{2:i}"
 		"es"		"{1}La respuesta correcta era {2}!"
+	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"en"		"SAY THE WORD!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} said the word first! (Bonus point!)"
+	}
 	"Minigame7_Caption"
 	{
 		"en"		"ROCKET JUMP!"
@@ -184,6 +189,11 @@
 	{
 		"#format"		"{1:s},{2:i}"
 		"en"		"{1}The correct answer was {2}!"
+	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} got the correct answer first! (Bonus point!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

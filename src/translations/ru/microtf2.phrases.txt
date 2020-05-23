@@ -171,6 +171,11 @@
 		"#format"		"{1:s}"
 		"ru"		"НАПИШИТЕ СЛОВО!\n{1}"
 	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"ru"		""
+	}
 	"Minigame7_Caption"
 	{
 		"ru"		"ПРЫЖОК НА РАКЕТЕ!"
@@ -184,6 +189,11 @@
 	{
 		"#format"		"{1:s},{2:i}"
 		"ru"		"{1}Правильным ответом было {2}!"
+	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"ru"		""
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

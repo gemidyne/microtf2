@@ -13,6 +13,7 @@ public void Minigame8_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
 
+	// TODO: This should probably rely on forwards in the future
 	RegConsoleCmd("say", Command_Minigame8Say);
 	RegConsoleCmd("say_team", Command_Minigame8Say);
 }
@@ -82,52 +83,74 @@ public void Minigame8_GetDynamicCaption(int client)
 
 public Action Command_Minigame8Say(int client, int args)
 {
-	if (IsMinigameActive && MinigameID == 8)
+	if (!IsMinigameActive)
 	{
-		char text[192];
-		if (GetCmdArgString(text, sizeof(text)) < 1)
-		{
-			return Plugin_Continue;
-		}
-	
-		if (IsPlayerParticipant[client])
-		{
-			int startidx;
-			if (text[strlen(text)-1] == '"')
-			{
-				text[strlen(text)-1] = '\0';
-			}
+		return Plugin_Continue;
+	}
 
-			startidx = 1;
+	if (MinigameID != 8)
+	{
+		return Plugin_Continue;
+	}
 
-			char message[192];
-			BreakString(text[startidx], message, sizeof(message));
+	char text[192];
+	if (GetCmdArgString(text, sizeof(text)) < 1)
+	{
+		return Plugin_Continue;
+	}
 
-			char strArgument[64];
-			GetCmdArg(1, strArgument, sizeof(strArgument));
-				
-			if (!IsStringInt(strArgument)) 
-			{
-				return Plugin_Continue;
-			}
+	Player invoker = new Player(client);
+
+	if (!invoker.IsParticipating)
+	{
+		return Plugin_Continue;
+	}
+
+	int startidx;
+	if (text[strlen(text)-1] == '"')
+	{
+		text[strlen(text)-1] = '\0';
+	}
+
+	startidx = 1;
+
+	char message[192];
+	BreakString(text[startidx], message, sizeof(message));
+
+	char argument[64];
+	GetCmdArg(1, argument, sizeof(argument));
 		
-			int guess = StringToInt(strArgument);
-		
-			if (guess == Minigame8_SayTextAnswer)
-			{
-				ClientWonMinigame(client);
+	if (!IsStringInt(argument)) 
+	{
+		return Plugin_Continue;
+	}
 
-				if (!Minigame8_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
+	int guess = StringToInt(argument);
+
+	if (guess == Minigame8_SayTextAnswer)
+	{
+		invoker.TriggerSuccess();
+
+		if (!Minigame8_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
+		{
+			invoker.Score++;
+			Minigame8_HasBeenAnswered = true;
+
+			char name[32];
+			GetClientName(invoker.ClientId, name, sizeof(name));
+
+			for (int i = 1; i <= MaxClients; i++)
+			{
+				Player player = new Player(i);
+
+				if (player.IsValid && !player.IsBot)
 				{
-					CPrintToChatAllEx(client, "%s{teamcolor}%N {green}got the correct answer first! (Bonus Point!)", PLUGIN_PREFIX, client);
-
-					PlayerScore[client]++;
-					Minigame8_HasBeenAnswered = true;
+					CPrintToChat(i, "%T", "Minigame8_PlayerAnsweredFirst", i, PLUGIN_PREFIX, name);
 				}
-
-				return Plugin_Handled;
 			}
 		}
+
+		return Plugin_Handled;
 	}
 
 	return Plugin_Continue;
