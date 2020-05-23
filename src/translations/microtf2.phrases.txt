@@ -371,9 +371,41 @@
 	{
 		"en"		"JETPACK!"
 	}
-	"Minigame26_Caption"
+	"Minigame26_Caption_DontLaugh"
 	{
 		"en"		"DON'T LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Scout"
+	{
+		"en"		"MAKE THE SCOUTS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Soldier"
+	{
+		"en"		"MAKE THE SOLDIERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Pyro"
+	{
+		"en"		"MAKE THE PYROS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Demoman"
+	{
+		"en"		"MAKE THE DEMOMEN LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Engineer"
+	{
+		"en"		"MAKE THE ENGINEERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Medic"
+	{
+		"en"		"MAKE THE MEDICS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Sniper"
+	{
+		"en"		"MAKE THE SNIPERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Spy"
+	{
+		"en"		"MAKE THE SPIES LAUGH!"
 	}
 	"Minigame27_Caption"
 	{
