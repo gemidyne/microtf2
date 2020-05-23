@@ -371,9 +371,41 @@
 	{
 		"ru"		"ИСПОЛЬЗУЙТЕ РАНЕЦ!"
 	}
-	"Minigame26_Caption"
+	"Minigame26_Caption_DontLaugh"
 	{
 		"ru"		"НЕ СМЕЙТЕСЬ!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Scout"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Soldier"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Pyro"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Demoman"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Engineer"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Medic"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Sniper"
+	{
+		"ru"		""
+	}
+	"Minigame26_Caption_MakeThemLaugh_Spy"
+	{
+		"ru"		""
 	}
 	"Minigame27_Caption"
 	{
