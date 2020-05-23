@@ -1662,8 +1662,8 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "Minigame26_Caption",
-      "description": "Tell players to not laugh! (Laughing results in failure)",
+      "key": "Minigame26_Caption_DontLaugh",
+      "description": "Tell players to not laugh! (By avoiding the heavies - laughing results in failure)",
       "text": "DON'T LAUGH!",
       "formatArguments": [],
       "translations": {
@@ -1674,6 +1674,22 @@
         "pt_p": "NÃO VALE RIR!",
         "pt": "NÃO VALE RIR!",
         "pl": "NIE ŚMIEJ SIĘ!"
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh",
+      "description": "Tell selected players to make others laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THEM LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
