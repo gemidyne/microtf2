@@ -371,9 +371,41 @@
 	{
 		"it"		"PROPULSORE!"
 	}
-	"Minigame26_Caption"
+	"Minigame26_Caption_DontLaugh"
 	{
 		"it"		"NON RIDERE!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Scout"
+	{
+		"it"		"FAI RIDERE GLI ESPLORATORI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Soldier"
+	{
+		"it"		"FAI RIDERE I SOLDATI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Pyro"
+	{
+		"it"		"FAI RIDERE I PIRO!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Demoman"
+	{
+		"it"		"FAI RIDERE I DEMOLITORI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Engineer"
+	{
+		"it"		"FAI RIDERE GLI INGEGNERI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Medic"
+	{
+		"it"		"FAI RIDERE I MEDICI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Sniper"
+	{
+		"it"		"FAI RIDERE I CECCHINI!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Spy"
+	{
+		"it"		"FAI RIDERE LE SPIE!"
 	}
 	"Minigame27_Caption"
 	{
