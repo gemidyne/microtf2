@@ -244,6 +244,8 @@
 		"enabled"		"1"
 		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/dontlaugh.mp3"
 		"Caption"		"DON'T LAUGH!"
+		"CaptionIsDynamic"		"1"
+		"DynamicCaptionMethod"		"Minigame26_GetDynamicCaption"
 		"EntryPoint"		"Minigame26_EntryPoint"
 		"BackgroundMusic_Length"		"4.061673"
 		"RequiresMultiplePlayers"		"1"

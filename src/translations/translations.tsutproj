@@ -1678,9 +1678,121 @@
       "ignoreEmptyValue": false
     },
     {
-      "key": "Minigame26_Caption_MakeThemLaugh",
-      "description": "Tell selected players to make others laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
-      "text": "MAKE THEM LAUGH!",
+      "key": "Minigame26_Caption_MakeThemLaugh_Scout",
+      "description": "Tell selected players to make the Scouts laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SCOUTS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Soldier",
+      "description": "Tell selected players to make the Soldiers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SOLDIERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Pyro",
+      "description": "Tell selected players to make the Pyro laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE PYROS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Demoman",
+      "description": "Tell selected players to make the Demomen laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE DEMOMEN LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Engineer",
+      "description": "Tell selected players to make the Engineers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE ENGINEERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Medic",
+      "description": "Tell selected players to make the Medics laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE MEDICS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Sniper",
+      "description": "Tell selected players to make the Snipers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SNIPERS LAUGH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame26_Caption_MakeThemLaugh_Spy",
+      "description": "Tell selected players to make the Spies laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
+      "text": "MAKE THE SPIES LAUGH!",
       "formatArguments": [],
       "translations": {
         "it": null,
