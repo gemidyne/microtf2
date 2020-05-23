@@ -44,7 +44,9 @@ public void Minigame27_OnMinigameSelected(int client)
 		
 		if (Minigame27_UseBleedingMode)
 		{
-			#error TODO: needs flying guillotine
+			player.SetHealth(25);
+			player.GiveWeapon(812);
+			player.AddCondition(TFCond_Bleeding, 4.0);
 		}
 		else
 		{

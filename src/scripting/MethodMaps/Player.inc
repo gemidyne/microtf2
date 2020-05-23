@@ -412,6 +412,16 @@ methodmap Player __nullable__
         }
     }
 
+    public void AddCondition(TFCond condition, float duration = TFCondDuration_Infinite, int inflictor = 0)
+    {
+        TF2_AddCondition(this.ClientId, condition, duration, inflictor);
+    }
+
+    public void RemoveCondition(TFCond condition)
+    {
+        TF2_RemoveCondition(this.ClientId, condition);
+    }
+
     public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
     {
         int entity = -1;
