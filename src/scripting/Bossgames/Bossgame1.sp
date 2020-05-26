@@ -4,6 +4,8 @@
  * Get to the top 
  */
 
+bool Bossgame1_Completed;
+
 public void Bossgame1_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame1_OnMinigameSelectedPre);
@@ -17,6 +19,7 @@ public void Bossgame1_OnMinigameSelectedPre()
 {
 	IsBlockingDamage = false;
 	IsBlockingDeathCommands = true;
+	Bossgame1_Completed = false;
 }
 
 public void Bossgame1_OnMinigameSelected(int client)
@@ -73,14 +76,34 @@ public void Bossgame1_OnGameFrame()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsAlive && IsPlayerParticipant[i] && PlayerStatus[i] == PlayerStatus_NotWon)
+			if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 			{
 				float pos[3];
-				GetClientAbsOrigin(i, pos);
+				GetClientAbsOrigin(player.ClientId, pos);
 
 				if (pos[2] > 2656.0) 
 				{
-					ClientWonMinigame(i);
+					player.TriggerSuccess();
+
+					if (!Bossgame1_Completed)
+					{
+						player.Score++;
+
+						char name[32];
+						GetClientName(player.ClientId, name, sizeof(name));
+
+						for (int j = 1; j <= MaxClients; j++)
+						{
+							Player p = new Player(j);
+
+							if (p.IsValid && !p.IsBot)
+							{
+								CPrintToChat(p.ClientId, "%T", "Bossgame1_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
+							}
+						}
+
+						Bossgame1_Completed = true;
+					}
 				}
 			}
 		}
