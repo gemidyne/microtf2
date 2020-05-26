@@ -5,6 +5,7 @@
  */
 
 bool Bossgame2_CanCheckPosition = false;
+bool Bossgame2_Completed = false;
 
 public void Bossgame2_EntryPoint()
 {
@@ -24,7 +25,9 @@ public void Bossgame2_OnMinigameSelectedPre()
 		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
 		IsOnlyBlockingDamageByPlayers = true;
+
 		Bossgame2_CanCheckPosition = false;
+		Bossgame2_Completed = false;
 
 		CreateTimer(0.75, Bossgame2_HurtTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
@@ -104,7 +107,15 @@ public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int acti
 
 	if (activator.IsValid && activator.IsAlive && activator.IsParticipating && activator.Status == PlayerStatus_NotWon)
 	{
-		ClientWonMinigame(activatorId);
+		activator.TriggerSuccess();
+
+		if (!Bossgame2_Completed && Config_BonusPointsEnabled())
+		{
+			activator.Score++;
+
+			Bossgame2_NotifyPlayerComplete(activator);
+			Bossgame2_Completed = true;
+		}
 	}
 }
 
@@ -221,3 +232,18 @@ public Action Bossgame2_HurtTimer(Handle timer)
 	return Plugin_Stop; 
 }
 
+void Bossgame2_NotifyPlayerComplete(Player invoker)
+{
+	char name[32];
+	GetClientName(invoker.ClientId, name, sizeof(name));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			CPrintToChat(i, "%T", "Bossgame2_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
+		}
+	}
+}
