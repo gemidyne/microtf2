@@ -6,6 +6,7 @@
 
 bool Bossgame5_CanCheckPosition;
 bool Bossgame5_BlockState;
+bool Bossgame5_Completed;
 float Bossgame5_Step = 4.0;
 
 public void Bossgame5_EntryPoint()
@@ -36,6 +37,7 @@ public void Bossgame5_OnMinigameSelectedPre()
 
 	Bossgame5_CanCheckPosition = false;
 	Bossgame5_Step = 4.0;
+	Bossgame5_Completed = false;
 
 	IsBlockingDamage = false;
 	IsOnlyBlockingDamageByPlayers = true;
@@ -181,9 +183,17 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 
 	Player player = new Player(activator);
 
-	if (player.IsValid && player.IsAlive && IsPlayerParticipant[activator] && PlayerStatus[activator] == PlayerStatus_NotWon)
+	if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 	{
-		ClientWonMinigame(activator);
+		player.TriggerSuccess();
+
+		if (!Bossgame5_Completed && Config_BonusPointsEnabled())
+		{
+			player.Score++;
+			Bossgame5_NotifyPlayerComplete(player);
+
+			Bossgame5_Completed = true;
+		}
 	}
 }
 
@@ -252,6 +262,22 @@ public void Bossgame5_SendEntityInput(const char[] relayName, bool state)
 		{
 			AcceptEntityInput(entity, input, -1, -1, -1);
 			break;
+		}
+	}
+}
+
+void Bossgame5_NotifyPlayerComplete(Player invoker)
+{
+	char name[32];
+	GetClientName(invoker.ClientId, name, sizeof(name));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			CPrintToChat(i, "%T", "Bossgame5_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
 		}
 	}
 }
