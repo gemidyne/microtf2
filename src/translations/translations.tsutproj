@@ -590,6 +590,32 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Bossgame1_PlayerReachedEndFirst",
+      "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
+      "text": "{1}{2} reached the top first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who reached the end first."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame2_Caption",
       "description": null,
       "text": "ESCAPE THE FACTORY!",
@@ -603,6 +629,32 @@
         "es": "ESCAPA DE LA FABRICA!",
         "jp": null,
         "pl": "UCIEKNIJ Z FABRYKI!"
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame2_PlayerReachedEndFirst",
+      "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
+      "text": "{1}{2} escaped the factory first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who reached the end first."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -654,6 +706,32 @@
         "es": "LLEGA HASTA LA META!",
         "jp": null,
         "pl": "DOTRZYJ DO CELU!"
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame5_PlayerReachedEndFirst",
+      "description": "This message is displayed when a bonus point is given to a player for reaching the goal first.",
+      "text": "{1}{2} reached the goal first! (Bonus point!)",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The [ WarioWare ] prefix. This is required."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name of the player who reached the end first."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
