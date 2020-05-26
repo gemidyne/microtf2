@@ -122,9 +122,19 @@
 	{
 		"en"		"ROCKET JUMP TO THE END!"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} reached the top first! (Bonus point!)"
+	}
 	"Bossgame2_Caption"
 	{
 		"en"		"ESCAPE THE FACTORY!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} escaped the factory first! (Bonus point!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"en"		"REACH THE GOAL!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1}{2} reached the goal first! (Bonus point!)"
 	}
 	"Bossgame6_Caption"
 	{
