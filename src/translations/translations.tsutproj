@@ -611,7 +611,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -654,7 +654,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -731,7 +731,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -898,7 +898,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -989,7 +989,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1767,7 +1767,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ SKAUTÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1783,7 +1783,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ ŻOŁNIERZY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1799,7 +1799,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ PYRO!"
       },
       "ignoreEmptyValue": false
     },
@@ -1815,7 +1815,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ DEMOMANÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1831,7 +1831,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ INŻYNIERÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1847,7 +1847,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ MEDYKÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1863,7 +1863,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ SNAJPERÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1879,7 +1879,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null
+        "pl": "ROZŚMIESZ SZPIEGÓW!"
       },
       "ignoreEmptyValue": false
     },
