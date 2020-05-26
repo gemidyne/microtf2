@@ -122,9 +122,19 @@
 	{
 		"it"		"ARRIVA IN CIMA CON I SALTI RAZZO!"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!"
+	}
 	"Bossgame2_Caption"
 	{
 		"it"		"FUGGI DALLA FABBRICA!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!"
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"it"		"RAGGIUNGI L'ARRIVO!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!"
 	}
 	"Bossgame6_Caption"
 	{
