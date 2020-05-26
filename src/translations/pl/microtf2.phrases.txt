@@ -122,9 +122,19 @@
 	{
 		"pl"		"UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"		""
+	}
 	"Bossgame2_Caption"
 	{
 		"pl"		"UCIEKNIJ Z FABRYKI!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"		""
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"pl"		"DOTRZYJ DO CELU!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pl"		""
 	}
 	"Bossgame6_Caption"
 	{
