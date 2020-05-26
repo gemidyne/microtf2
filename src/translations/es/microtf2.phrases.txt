@@ -122,9 +122,19 @@
 	{
 		"es"		"SALTA CON COHETES HASTA EL FINAL!"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
+	}
 	"Bossgame2_Caption"
 	{
 		"es"		"ESCAPA DE LA FABRICA!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"es"		"LLEGA HASTA LA META!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"es"		""
 	}
 	"Bossgame6_Caption"
 	{
