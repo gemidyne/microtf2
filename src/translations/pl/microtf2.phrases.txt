@@ -125,7 +125,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pl"		""
+		"pl"		"{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -134,7 +134,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pl"		""
+		"pl"		"{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -151,7 +151,7 @@
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pl"		""
+		"pl"		"{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -189,7 +189,7 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pl"		""
+		"pl"		"{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -208,7 +208,7 @@
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pl"		""
+		"pl"		"{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -392,35 +392,35 @@
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ SKAUTÓW!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ ŻOŁNIERZY!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ PYRO!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ DEMOMANÓW!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ INŻYNIERÓW!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ MEDYKÓW!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ SNAJPERÓW!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"pl"		""
+		"pl"		"ROZŚMIESZ SZPIEGÓW!"
 	}
 	"Minigame27_Caption"
 	{
