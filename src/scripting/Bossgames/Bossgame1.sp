@@ -70,40 +70,40 @@ public void Bossgame1_OnMinigameSelected(int client)
 
 public void Bossgame1_OnGameFrame()
 {
-	if (IsMinigameActive && BossgameID == 1 && !IsMinigameEnding)
+	if (BossgameID != 1)
 	{
-		for (int i = 1; i <= MaxClients; i++)
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	if (!IsMinigameEnding)
+	{
+		return;
+	}
+	
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 		{
-			Player player = new Player(i);
+			float pos[3];
+			GetClientAbsOrigin(player.ClientId, pos);
 
-			if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
+			if (pos[2] > 2656.0) 
 			{
-				float pos[3];
-				GetClientAbsOrigin(player.ClientId, pos);
+				player.TriggerSuccess();
 
-				if (pos[2] > 2656.0) 
+				if (!Bossgame1_Completed && Config_BonusPointsEnabled())
 				{
-					player.TriggerSuccess();
+					player.Score++;
+					Bossgame1_NotifyPlayerComplete(player);
 
-					if (!Bossgame1_Completed)
-					{
-						player.Score++;
-
-						char name[32];
-						GetClientName(player.ClientId, name, sizeof(name));
-
-						for (int j = 1; j <= MaxClients; j++)
-						{
-							Player p = new Player(j);
-
-							if (p.IsValid && !p.IsBot)
-							{
-								CPrintToChat(p.ClientId, "%T", "Bossgame1_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
-							}
-						}
-
-						Bossgame1_Completed = true;
-					}
+					Bossgame1_Completed = true;
 				}
 			}
 		}
@@ -146,7 +146,7 @@ public void Bossgame1_BossCheck()
 			{
 				alivePlayers++;
 
-				if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
+				if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 				{
 					pendingPlayers++;
 				}
@@ -166,6 +166,22 @@ public void Bossgame1_BossCheck()
 		if (successfulPlayers > 0 && pendingPlayers == 0)
 		{
 			EndBoss();
+		}
+	}
+}
+
+void Bossgame1_NotifyPlayerComplete(Player invoker)
+{
+	char name[32];
+	GetClientName(invoker.ClientId, name, sizeof(name));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			CPrintToChat(i, "%T", "Bossgame1_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
 		}
 	}
 }

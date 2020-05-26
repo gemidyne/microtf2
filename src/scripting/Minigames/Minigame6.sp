@@ -83,23 +83,12 @@ public Action Command_MinigameSixSay(int client, int args)
 	{
 		invoker.TriggerSuccess();
 
-		if (!Minigame6_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
+		if (!Minigame6_HasBeenAnswered && Config_BonusPointsEnabled())
 		{
 			invoker.Score++;
 			Minigame6_HasBeenAnswered = true;
 
-			char name[32];
-			GetClientName(invoker.ClientId, name, sizeof(name));
-
-			for (int i = 1; i <= MaxClients; i++)
-			{
-				Player player = new Player(i);
-
-				if (player.IsValid && !player.IsBot)
-				{
-					CPrintToChat(i, "%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, PLUGIN_PREFIX, name);
-				}
-			}
+			Minigame6_NotifyFirstPlayerComplete(invoker);
 		}
 
 		return Plugin_Handled;
@@ -147,4 +136,20 @@ public bool Minigame6_LoadAnswers()
 	LogMessage("Minigame6: Loaded %i answers", Minigame6_SayTextAnswerCount);
 
 	return true;
+}
+
+void Minigame6_NotifyFirstPlayerComplete(Player invoker)
+{
+	char name[32];
+	GetClientName(invoker.ClientId, name, sizeof(name));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			CPrintToChat(i, "%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, PLUGIN_PREFIX, name);
+		}
+	}
 }

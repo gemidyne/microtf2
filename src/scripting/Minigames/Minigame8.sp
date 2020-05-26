@@ -131,29 +131,34 @@ public Action Command_Minigame8Say(int client, int args)
 	{
 		invoker.TriggerSuccess();
 
-		if (!Minigame8_HasBeenAnswered && GetConVarBool(ConVar_MTF2BonusPoints))
+		if (!Minigame8_HasBeenAnswered && Config_BonusPointsEnabled())
 		{
 			invoker.Score++;
 			Minigame8_HasBeenAnswered = true;
 
-			char name[32];
-			GetClientName(invoker.ClientId, name, sizeof(name));
-
-			for (int i = 1; i <= MaxClients; i++)
-			{
-				Player player = new Player(i);
-
-				if (player.IsValid && !player.IsBot)
-				{
-					CPrintToChat(i, "%T", "Minigame8_PlayerAnsweredFirst", i, PLUGIN_PREFIX, name);
-				}
-			}
+			Minigame8_NotifyPlayerComplete(invoker);
 		}
 
 		return Plugin_Handled;
 	}
 
 	return Plugin_Continue;
+}
+
+void Minigame8_NotifyPlayerComplete(Player invoker)
+{
+	char name[32];
+	GetClientName(invoker.ClientId, name, sizeof(name));
+
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			CPrintToChat(i, "%T", "Minigame8_PlayerAnsweredFirst", i, PLUGIN_PREFIX, name);
+		}
+	}
 }
 
 public void Minigame8_OnMinigameFinish()

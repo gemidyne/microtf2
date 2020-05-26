@@ -228,3 +228,8 @@ public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char
 
 	AllowCosmetics = value == 1;
 }
+
+public bool Config_BonusPointsEnabled()
+{
+	return GetConVarBool(ConVar_MTF2BonusPoints);
+}
