@@ -230,13 +230,6 @@ public bool TraceRayDontHitSelfOrPlayers(int entity, int mask, int data)
 	return (entity != data && !player.IsValid);
 }
 
-public float GetSpeedMultiplier(float count)
-{
-    float divide = ((SpeedLevel-1.0)/7.5)+1.0;
-    float speed = count / divide;
-    return speed;
-}
-
 stock void GetEntityPosition(int entity, float position[3])
 {
 	GetEntPropVector(entity, Prop_Send, "m_vecOrigin", position);

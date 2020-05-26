@@ -52,6 +52,7 @@
 #include "System.sp"
 #include "Commands.sp"
 #include "PluginInterop.sp"
+#include "Speed.sp"
 #include "Hud.sp"
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
@@ -766,19 +767,9 @@ public Action Timer_GameLogic_OnPreFinish(Handle timer)
 
 public Action Timer_GameLogic_SpeedChange(Handle timer)
 {
-	bool flag = false;
-	if (SpecialRoundID == 1)
-	{
-		flag = true;
-		SpeedLevel -= 0.1;
-	}
-	else
-	{
-		SpeedLevel += 0.1;
-	}
+	bool down = SpecialRoundID == 1;
 
-	SetSpeed();
-	PluginForward_SendSpeedChange(SpeedLevel);
+	ExecuteSpeedEvent();
 
 	if (SpecialRoundID == 20)
 	{
@@ -813,7 +804,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.SetGlow(false);
 				}
 				
-				player.DisplayOverlay((flag ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}

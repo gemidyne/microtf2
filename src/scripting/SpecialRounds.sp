@@ -419,7 +419,7 @@ stock void SetSpeed_SpecialRound()
 
 		case 6:
 		{
-			SpeedLevel = GetRandomFloat(1.0, 2.5);
+			SpeedLevel = GetRandomFloat(1.0, 2.3);
 		}
 
 		case 7:

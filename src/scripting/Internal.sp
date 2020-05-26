@@ -43,49 +43,6 @@ stock void PreloadSound(const char[] sound)
 	// the resources into the BSP so your players only require one download.
 }
 
-stock int GetSoundMultiplier()
-{
-	return SNDPITCH_NORMAL + RoundToCeil(((SpeedLevel-1.0) * 10)*8.0);
-}
-
-stock void SetSpeed()
-{
-	// Boundary Checks
-	if (SpeedLevel > 2.5)
-	{
-		SpeedLevel = 2.5;
-	}
-
-	if (SpeedLevel < 0.4)
-	{
-		SpeedLevel = 0.4;
-	}
-
-	SetConVarFloat(ConVar_HostTimescale, SpeedLevel);
-	SetConVarFloat(ConVar_PhysTimescale, SpeedLevel);
-
-	char buffer[2];
-
-	if (FloatCompare(SpeedLevel, 1.0) != 0)
-	{
-		strcopy(buffer, sizeof(buffer), "1");
-	}
-	else
-	{
-		strcopy(buffer, sizeof(buffer), "0");
-	}
-
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsInGame && !player.IsBot)
-		{
-			SendConVarValue(player.ClientId, ConVar_SvCheats, buffer);
-		}
-	}
-}
-
 stock int GetHighestScore()
 {
 	int threshold = 0;

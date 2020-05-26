@@ -30,8 +30,6 @@ float MinigameMusicLength[MAXIMUM_MINIGAMES];
 char BossgameMusic[MAXIMUM_MINIGAMES][128];
 float BossgameLength[MAXIMUM_MINIGAMES];
 
-
-
 ArrayList PlayedMinigamePool;
 ArrayList PlayedBossgamePool;
 
@@ -450,26 +448,6 @@ public void DoSelectBossgame()
 	#endif
 
 	PluginForward_SendBossgameSelected(BossgameID);
-}
-
-public bool TrySpeedChangeEvent()
-{
-	if (!Special_AreSpeedEventsEnabled())
-	{
-		return false;
-	}
-
-	if (MinigamesPlayed > 2 && SpeedLevel < 2.3 && MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
-	{
-		if (GetRandomInt(0, 2) == 1)
-		{
-			NextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
-
-			return true;
-		}
-	}
-
-	return false;
 }
 
 public void CalculateActiveParticipantCount()
