@@ -606,7 +606,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -649,7 +649,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -726,7 +726,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
         "pt_p": null,
         "ru": null,
         "es": null,
