@@ -125,7 +125,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt_p"		""
+		"pt_p"		"{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -134,7 +134,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt_p"		""
+		"pt_p"		"{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -151,7 +151,7 @@
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt_p"		""
+		"pt_p"		"{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -189,7 +189,7 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt_p"		""
+		"pt_p"		"{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -208,7 +208,7 @@
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"pt_p"		""
+		"pt_p"		"{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -392,35 +392,35 @@
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM SCOUT RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM SOLDIER RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM PYRO RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM DEMOMAN RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM ENGENHEIRO RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM MÉDICO RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM SNIPER RIR!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"pt_p"		""
+		"pt_p"		"FAÇA UM SPY RIR!"
 	}
 	"Minigame27_Caption"
 	{
