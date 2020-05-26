@@ -122,9 +122,19 @@
 	{
 		"pt"		"CHEGUE AO FINAL COM ROCKET JUMPS!"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pt"		""
+	}
 	"Bossgame2_Caption"
 	{
 		"pt"		"FUJA DA FÁBRICA!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pt"		""
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"pt"		"ALCANCE O OBJETIVO!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"pt"		""
 	}
 	"Bossgame6_Caption"
 	{
