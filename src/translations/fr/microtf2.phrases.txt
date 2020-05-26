@@ -122,9 +122,19 @@
 	{
 		"fr"		"ROCKET JUMP JUSQU'À LA FIN !"
 	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
+	}
 	"Bossgame2_Caption"
 	{
 		"fr"		"SORTEZ DE L'USINE !"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
 	}
 	"Bossgame3_Caption"
 	{
@@ -137,6 +147,11 @@
 	"Bossgame5_Caption"
 	{
 		"fr"		"ATTEIGNEZ L'OBJECTIF !"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s},{2:s}"
+		"fr"		""
 	}
 	"Bossgame6_Caption"
 	{
