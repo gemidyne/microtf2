@@ -604,14 +604,14 @@
         }
       ],
       "translations": {
-        "pt": null,
+        "pt": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
         "fr": null,
         "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
-        "pt_p": null,
+        "pt_p": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -647,14 +647,14 @@
         }
       ],
       "translations": {
-        "pt": null,
+        "pt": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "fr": null,
         "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
-        "pt_p": null,
+        "pt_p": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -724,14 +724,14 @@
         }
       ],
       "translations": {
-        "pt": null,
+        "pt": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
         "fr": null,
         "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
-        "pt_p": null,
+        "pt_p": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -891,14 +891,14 @@
         }
       ],
       "translations": {
-        "pt": null,
+        "pt": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
         "fr": null,
         "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
-        "pt_p": null,
+        "pt_p": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -982,14 +982,14 @@
         }
       ],
       "translations": {
-        "pt": null,
+        "pt": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
         "fr": null,
         "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
-        "pt_p": null,
+        "pt_p": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null
+        "pl": "{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1765,9 +1765,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM SCOUT RIR!",
+        "pt": "FAÇA UM SCOUT RIR!",
+        "pl": "ROZŚMIESZ SKAUTÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1781,9 +1781,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM SOLDIER RIR!",
+        "pt": "FAÇA UM SOLDIER RIR!",
+        "pl": "ROZŚMIESZ ŻOŁNIERZY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1797,9 +1797,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM PYRO RIR!",
+        "pt": "FAÇA UM PYRO RIR!",
+        "pl": "ROZŚMIESZ PYRO!"
       },
       "ignoreEmptyValue": false
     },
@@ -1813,9 +1813,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM DEMOMAN RIR!",
+        "pt": "FAÇA UM DEMOMAN RIR!",
+        "pl": "ROZŚMIESZ DEMOMANÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1829,9 +1829,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM ENGENHEIRO RIR!",
+        "pt": "FAÇA UM ENGENHEIRO RIR!",
+        "pl": "ROZŚMIESZ INŻYNIERÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1845,9 +1845,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM MÉDICO RIR!",
+        "pt": "FAÇA UM MÉDICO RIR!",
+        "pl": "ROZŚMIESZ MEDYKÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1861,9 +1861,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM SNIPER RIR!",
+        "pt": "FAÇA UM SNIPER RIR!",
+        "pl": "ROZŚMIESZ SNAJPERÓW!"
       },
       "ignoreEmptyValue": false
     },
@@ -1877,9 +1877,9 @@
         "es": null,
         "fr": null,
         "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "pt_p": "FAÇA UM SPY RIR!",
+        "pt": "FAÇA UM SPY RIR!",
+        "pl": "ROZŚMIESZ SZPIEGÓW!"
       },
       "ignoreEmptyValue": false
     },
