@@ -1,10 +1,5 @@
 "Water"
 {
-	"<dx90"
-	{
-		"$fallbackmaterial" "nature/water_riverbed01_dx8"
-	}
-
 	"$abovewater" 1
 	"%compilewater" 1
 	"$forceexpensive" 1
