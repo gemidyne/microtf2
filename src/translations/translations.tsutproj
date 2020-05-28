@@ -605,7 +605,7 @@
       ],
       "translations": {
         "pt": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
-        "fr": null,
+        "fr": "{1}{2} a atteint la fin en premier ! (Point bonus !)",
         "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
         "ru": null,
@@ -648,7 +648,7 @@
       ],
       "translations": {
         "pt": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
-        "fr": null,
+        "fr": "{1}{2} s'est échappé de l'usine en premier ! (Point bonus !)",
         "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "ru": null,
@@ -725,7 +725,7 @@
       ],
       "translations": {
         "pt": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
-        "fr": null,
+        "fr": "{1}{2} a atteint l'objectif en premier ! (Point bonus !)",
         "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
         "ru": null,
@@ -892,7 +892,7 @@
       ],
       "translations": {
         "pt": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
-        "fr": null,
+        "fr": "{1}{2} a dit le mot en premier ! (Point bonus !)",
         "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
         "ru": null,
@@ -983,7 +983,7 @@
       ],
       "translations": {
         "pt": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
-        "fr": null,
+        "fr": "{1}{2} a repondu correctement en premier ! (Point bonus !)",
         "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
         "ru": null,
@@ -1763,7 +1763,7 @@
       "translations": {
         "it": "FAI RIDERE GLI ESPLORATORI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE SCOUT !",
         "ru": null,
         "pt_p": "FAÇA UM SCOUT RIR!",
         "pt": "FAÇA UM SCOUT RIR!",
@@ -1779,7 +1779,7 @@
       "translations": {
         "it": "FAI RIDERE I SOLDATI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE SOLDIER !",
         "ru": null,
         "pt_p": "FAÇA UM SOLDIER RIR!",
         "pt": "FAÇA UM SOLDIER RIR!",
@@ -1795,7 +1795,7 @@
       "translations": {
         "it": "FAI RIDERE I PIRO!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE PYRO !",
         "ru": null,
         "pt_p": "FAÇA UM PYRO RIR!",
         "pt": "FAÇA UM PYRO RIR!",
@@ -1811,7 +1811,7 @@
       "translations": {
         "it": "FAI RIDERE I DEMOLITORI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE DEMOMAN !",
         "ru": null,
         "pt_p": "FAÇA UM DEMOMAN RIR!",
         "pt": "FAÇA UM DEMOMAN RIR!",
@@ -1827,7 +1827,7 @@
       "translations": {
         "it": "FAI RIDERE GLI INGEGNERI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE L'HEAVY !",
         "ru": null,
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
         "pt": "FAÇA UM ENGENHEIRO RIR!",
@@ -1843,7 +1843,7 @@
       "translations": {
         "it": "FAI RIDERE I MEDICI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE MEDIC !",
         "ru": null,
         "pt_p": "FAÇA UM MÉDICO RIR!",
         "pt": "FAÇA UM MÉDICO RIR!",
@@ -1859,7 +1859,7 @@
       "translations": {
         "it": "FAI RIDERE I CECCHINI!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE SNIPER !",
         "ru": null,
         "pt_p": "FAÇA UM SNIPER RIR!",
         "pt": "FAÇA UM SNIPER RIR!",
@@ -1875,7 +1875,7 @@
       "translations": {
         "it": "FAI RIDERE LE SPIE!",
         "es": null,
-        "fr": null,
+        "fr": "FAITES RIRE LE SPY !",
         "ru": null,
         "pt_p": "FAÇA UM SPY RIR!",
         "pt": "FAÇA UM SPY RIR!",
