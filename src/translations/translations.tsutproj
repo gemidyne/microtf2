@@ -609,7 +609,7 @@
         "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
         "ru": null,
-        "es": null,
+        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
       },
@@ -652,7 +652,7 @@
         "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "ru": null,
-        "es": null,
+        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
       },
@@ -729,7 +729,7 @@
         "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
         "ru": null,
-        "es": null,
+        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
       },
@@ -1890,7 +1890,7 @@
       "formatArguments": [],
       "translations": {
         "it": "COLPISCI QUALCUNO!",
-        "es": null,
+        "es": "¡GOLPEAR A ALGUIEN!",
         "fr": "FRAPPEZ QUELQU'UN !",
         "ru": "УДАРЬТЕ КОГО-НИБУДЬ!",
         "pt_p": "ACERTE ALGUÉM!",
