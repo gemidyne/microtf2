@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"pl"		"UDERZ KOGOŚ!"
+		"pl"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
