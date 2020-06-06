@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"pt"		""
+		"pt"		"ACERTE UM INIMIGO!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
