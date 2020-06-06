@@ -17,9 +17,12 @@ public void Bossgame1_EntryPoint()
 
 public void Bossgame1_OnMinigameSelectedPre()
 {
-	IsBlockingDamage = false;
-	IsBlockingDeathCommands = true;
-	Bossgame1_Completed = false;
+	if (BossgameID == 1)
+	{
+		IsBlockingDamage = false;
+		IsBlockingDeathCommands = true;
+		Bossgame1_Completed = false;
+	}
 }
 
 public void Bossgame1_OnMinigameSelected(int client)
