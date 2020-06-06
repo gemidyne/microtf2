@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"es"		"¡GOLPEAR A ALGUIEN!"
+		"es"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
