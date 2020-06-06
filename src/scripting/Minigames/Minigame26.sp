@@ -19,8 +19,6 @@ public void Minigame26_OnMinigameSelectedPre()
 {
 	if (MinigameID == 26)
 	{
-		IsBlockingDamage = false;
-
 		int count = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
@@ -29,6 +27,7 @@ public void Minigame26_OnMinigameSelectedPre()
 
 			if (player.IsValid && player.IsParticipating)
 			{
+				Minigame26_IsSelected[player.ClientId] = false;
 				count++;
 			}
 		}
@@ -56,6 +55,9 @@ public void Minigame26_OnMinigameSelectedPre()
 			Minigame26_VictimClass = view_as<TFClassType>(GetRandomInt(1, 9));
 		}
 		while (Minigame26_VictimClass == TFClass_Heavy);
+
+		IsBlockingDamage = true;
+		ForceCalculationCritical = true;
 	}
 }
 
@@ -68,10 +70,6 @@ public void Minigame26_GetDynamicCaption(int client)
 		char text[64];
 
 		if (Minigame26_IsSelected[player.ClientId])
-		{
-			Format(text, sizeof(text), "%T", "Minigame26_Caption_MakeThemLaugh", client);
-		}
-		else
 		{
 			char key[64];
 
@@ -119,6 +117,11 @@ public void Minigame26_GetDynamicCaption(int client)
 			}
 
 			Format(text, sizeof(text), "%T", key, client);
+		}
+		else
+		{
+			
+			Format(text, sizeof(text), "%T", "Minigame26_Caption_DontLaugh", client);
 		}
 
 		player.SetCaption(text);
@@ -219,6 +222,8 @@ void Minigame26_SetupAttacker(Player player)
 	player.SetHealth(3000);
 	player.GiveWeapon(656);
 	player.Status = PlayerStatus_NotWon;
+
+	TF2_AddCondition(player.ClientId, TFCond_CritCola, 4.0);
 }
 
 void Minigame26_SetupTarget(Player player)
