@@ -125,7 +125,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"es"		""
+		"es"		"{1}{2} alcanzó el objetivo primero! (+1 puntaje!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -134,7 +134,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"es"		""
+		"es"		"{1}{2} alcanzó el objetivo primero! (+1 puntaje!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -151,7 +151,7 @@
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"es"		""
+		"es"		"{1}{2} alcanzó el objetivo primero! (+1 puntaje!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"es"		""
+		"es"		"¡GOLPEAR A ALGUIEN!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
