@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"en"		"HIT SOMEONE!"
+		"en"		"HIT AN ENEMY!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
