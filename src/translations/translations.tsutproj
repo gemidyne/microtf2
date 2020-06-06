@@ -1885,17 +1885,17 @@
     },
     {
       "key": "Minigame27_Caption",
-      "description": "Tell players to hit someone! (If they miss, they will hit themselves and fail)",
+      "description": "Tell players to hit an enemy! (If they miss, they will hit themselves and fail)",
       "text": "HIT AN ENEMY!",
       "formatArguments": [],
       "translations": {
-        "it": "COLPISCI QUALCUNO!",
-        "es": "¡GOLPEAR A ALGUIEN!",
-        "fr": "FRAPPEZ QUELQU'UN !",
-        "ru": "УДАРЬТЕ КОГО-НИБУДЬ!",
-        "pt_p": "ACERTE ALGUÉM!",
-        "pt": "ACERTE ALGUÉM!",
-        "pl": "UDERZ KOGOŚ!"
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
