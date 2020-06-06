@@ -1886,7 +1886,7 @@
     {
       "key": "Minigame27_Caption",
       "description": "Tell players to hit someone! (If they miss, they will hit themselves and fail)",
-      "text": "HIT SOMEONE!",
+      "text": "HIT AN ENEMY!",
       "formatArguments": [],
       "translations": {
         "it": "COLPISCI QUALCUNO!",
