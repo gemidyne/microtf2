@@ -1893,8 +1893,8 @@
         "es": null,
         "fr": "FRAPPEZ UN ENNEMI !",
         "ru": null,
-        "pt_p": null,
-        "pt": null,
+        "pt_p": "ACERTE UM INIMIGO!",
+        "pt": "ACERTE UM INIMIGO!",
         "pl": "UDERZ WROGA!"
       },
       "ignoreEmptyValue": false
