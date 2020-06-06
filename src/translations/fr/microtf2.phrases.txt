@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"fr"		""
+		"fr"		"FRAPPEZ UN ENNEMI !"
 	}
 	"Bossgame7_Caption_Explain"
 	{
