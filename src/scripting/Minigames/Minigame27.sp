@@ -46,6 +46,7 @@ public void Minigame27_OnMinigameSelected(int client)
 		{
 			player.SetHealth(25);
 			player.GiveWeapon(812);
+			player.SetWeaponPrimaryAmmoCount(ActiveParticipantCount > 10 ? 1 : 2);
 			player.AddCondition(TFCond_Bleeding, 4.0);
 		}
 		else
