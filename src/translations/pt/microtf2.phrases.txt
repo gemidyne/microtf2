@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"pt"		"ACERTE ALGUÉM!"
+		"pt"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
