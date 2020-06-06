@@ -336,7 +336,7 @@ public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname
 		Call_Finish();
 	}
 	
-	result = false;
+	result = ForceCalculationCritical;
 	return Plugin_Changed;
 }
 

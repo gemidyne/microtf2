@@ -173,6 +173,7 @@ stock void ResetGamemode()
 	IsOnlyBlockingDamageByPlayers = false;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
+	ForceCalculationCritical = false;
 
 	SetTeamScore(view_as<int>(TFTeam_Red), 0);
 	SetTeamScore(view_as<int>(TFTeam_Blue), 0);

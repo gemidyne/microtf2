@@ -109,6 +109,14 @@ public void OnMapStart()
 		{
 			SetFailState("WarioWare failed to initialise: ForwardSystem failed to start.");
 		}
+
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			if (IsClientInGame(i))
+			{
+				SDKHook(i, SDKHook_OnTakeDamage, Client_TakeDamage);
+			}
+		}
 	}
 }
 
@@ -535,6 +543,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
+	ForceCalculationCritical = false;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -857,6 +866,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	PrintToChatAll("[DEBUG] GameOverStart");
 	#endif
 
+	ForceCalculationCritical = false;
 	IsBlockingDamage = false;
 	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
