@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"pl"		""
+		"pl"		"UDERZ WROGA!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
