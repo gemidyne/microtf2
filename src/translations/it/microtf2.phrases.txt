@@ -424,7 +424,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"it"		"COLPISCI QUALCUNO!"
+		"it"		"COLPISCI UN NEMICO!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
