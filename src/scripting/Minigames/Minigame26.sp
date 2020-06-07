@@ -223,7 +223,8 @@ void Minigame26_SetupAttacker(Player player)
 	player.GiveWeapon(656);
 	player.Status = PlayerStatus_NotWon;
 
-	TF2_AddCondition(player.ClientId, TFCond_CritCola, 4.0);
+	player.AddCondition(TFCond_CritCola, 4.0);
+	player.AddCondition(TFCond_RuneHaste, 4.0);
 }
 
 void Minigame26_SetupTarget(Player player)
