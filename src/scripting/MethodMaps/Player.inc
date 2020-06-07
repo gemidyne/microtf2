@@ -106,6 +106,18 @@ methodmap Player __nullable__
         }
     }
 
+    property float MaxSpeed
+    {
+        public get()
+        {
+            return GetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed");
+        }
+        public set(float value)
+        {
+	        SetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed", value);
+        }
+    }
+
     property bool IsValid
     {
         public get()
@@ -420,6 +432,25 @@ methodmap Player __nullable__
     public void RemoveCondition(TFCond condition)
     {
         TF2_RemoveCondition(this.ClientId, condition);
+    }
+
+    public void ClearConditions()
+    {
+        this.RemoveCondition(TFCond_Disguised);
+        this.RemoveCondition(TFCond_Disguising);
+        this.RemoveCondition(TFCond_Jarated);
+        this.RemoveCondition(TFCond_OnFire);
+        this.RemoveCondition(TFCond_Bonked);
+        this.RemoveCondition(TFCond_Dazed);
+        this.RemoveCondition(TFCond_Bleeding);
+        this.RemoveCondition(TFCond_RuneHaste);
+        this.RemoveCondition(TFCond_CritCola);
+        this.RemoveCondition(TFCond_Taunting);
+    }
+
+    public bool HasCondition(TFCond condition)
+    {
+        return TF2_IsPlayerInCondition(this.ClientId, condition);
     }
 
     public void TryDestroyPlayerBuilding(bool cleanDestroy, char[] entityClassname, TFObjectMode objectMode = TFObjectMode_None)
