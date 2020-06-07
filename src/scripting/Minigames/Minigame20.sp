@@ -178,8 +178,8 @@ public void Minigame20_OnMinigameFinish()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				TF2_RemoveCondition(i, TFCond_Taunting);
-				TF2_RemoveCondition(i, TFCond_CritCola);
+				player.RemoveCondition(TFCond_Taunting);
+				player.RemoveCondition(TFCond_CritCola);
 			}
 		}
 	}

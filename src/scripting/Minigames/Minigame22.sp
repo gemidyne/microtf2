@@ -43,7 +43,7 @@ public void Minigame22_OnMinigameSelected(int client)
 
 		player.GiveWeapon(18);
 		player.SetWeaponPrimaryAmmoCount(20);
-		TF2_AddCondition(client, TFCond_Kritzkrieged, 4.0);
+		player.AddCondition(TFCond_Kritzkrieged, 4.0);
 	}
 }
 

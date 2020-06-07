@@ -133,9 +133,9 @@ stock void Weapon_ResetToMelee(int client, bool viewModelVisible)
 
 	if (player.IsInGame)
 	{
-		if (TF2_IsPlayerInCondition(client, TFCond_Taunting))
+		if (player.HasCondition(TFCond_Taunting))
 		{
-			TF2_RemoveCondition(client, TFCond_Taunting);
+			player.RemoveCondition(TFCond_Taunting);
 		}
 
 		int weapon = 0;

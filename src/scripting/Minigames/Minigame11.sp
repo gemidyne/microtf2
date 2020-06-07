@@ -97,7 +97,7 @@ public void Minigame11_OnGameFrame()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				limit = GetEntPropFloat(i, Prop_Send, "m_flMaxspeed") - 100.0;
+				limit = player.MaxSpeed - 100.0;
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
 				speed = GetVectorLength(velocity);
 
