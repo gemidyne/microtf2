@@ -67,15 +67,15 @@ public void Minigame9_OnGameFrame()
 				{
 					case 1:
 					{
-						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Winner) 
+						if (player.HasCondition(TFCond_Taunting) && player.Status != PlayerStatus_Winner) 
 						{
-							ClientWonMinigame(i);
+							player.TriggerSuccess();
 						}
 					}
 
 					case 2: 
 					{
-						if (TF2_IsPlayerInCondition(i, TFCond_Taunting) && PlayerStatus[i] != PlayerStatus_Failed)
+						if (player.HasCondition(TFCond_Taunting) && player.Status != PlayerStatus_Failed)
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
@@ -88,9 +88,9 @@ public void Minigame9_OnGameFrame()
 					{
 						int button = GetClientButtons(i);
 
-						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Winner) 
+						if ((button & IN_JUMP) == IN_JUMP && player.Status != PlayerStatus_Winner) 
 						{
-							ClientWonMinigame(i);
+							player.TriggerSuccess();
 						}
 					}
 
@@ -98,7 +98,7 @@ public void Minigame9_OnGameFrame()
 					{
 						int button = GetClientButtons(i);
 
-						if ((button & IN_JUMP) == IN_JUMP && PlayerStatus[i] != PlayerStatus_Failed)
+						if ((button & IN_JUMP) == IN_JUMP && player.Status != PlayerStatus_Failed)
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
@@ -111,9 +111,9 @@ public void Minigame9_OnGameFrame()
 					{
 						int button = GetClientButtons(i);
 
-						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Winner)
+						if ((button & IN_DUCK) == IN_DUCK && player.Status != PlayerStatus_Winner)
 						{
-							ClientWonMinigame(i);
+							player.TriggerSuccess();
 						}
 					}
 
@@ -121,7 +121,7 @@ public void Minigame9_OnGameFrame()
 					{
 						int button = GetClientButtons(i);
 
-						if ((button & IN_DUCK) == IN_DUCK && PlayerStatus[i] != PlayerStatus_Failed)
+						if ((button & IN_DUCK) == IN_DUCK && player.Status != PlayerStatus_Failed)
 						{
 							char text[64];
 							Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonDidntSayIt", i);
@@ -147,9 +147,9 @@ public void Minigame9_OnMinigameFinishPre()
 			{
 				if (Minigame9_Mode == 2)
 				{
-					if (!TF2_IsPlayerInCondition(i, TFCond_Taunting))
+					if (!player.HasCondition(TFCond_Taunting))
 					{
-						ClientWonMinigame(i);
+						player.TriggerSuccess();
 					}
 				}
 				else if (Minigame9_Mode == 4) 
@@ -158,7 +158,7 @@ public void Minigame9_OnMinigameFinishPre()
 
 					if ((button & IN_JUMP) != IN_JUMP)
 					{
-						ClientWonMinigame(i);
+						player.TriggerSuccess();
 					}
 				}
 				else if (Minigame9_Mode == 6)
@@ -167,7 +167,7 @@ public void Minigame9_OnMinigameFinishPre()
 
 					if ((button & IN_DUCK) != IN_DUCK)
 					{
-						ClientWonMinigame(i);
+						player.TriggerSuccess();
 					}
 				}
 			}
