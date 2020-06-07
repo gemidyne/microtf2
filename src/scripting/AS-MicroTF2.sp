@@ -58,6 +58,7 @@
 #include "MethodMaps/Minigame.inc"
 #include "MethodMaps/Bossgame.inc"
 #include "PrecacheSystem.sp"
+#include "Hooks.sp"
 #include "Events.sp"
 #include "SpecialRounds.sp"
 #include "Internal.sp"
@@ -114,7 +115,7 @@ public void OnMapStart()
 		{
 			if (IsClientInGame(i))
 			{
-				SDKHook(i, SDKHook_OnTakeDamage, Client_TakeDamage);
+				AttachPlayerHooks(i);
 			}
 		}
 	}
@@ -560,14 +561,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			player.SetGravity(1.0);
 			player.SetCustomHudText("");
-
-			TF2_RemoveCondition(i, TFCond_Disguised);
-			TF2_RemoveCondition(i, TFCond_Disguising);
-			TF2_RemoveCondition(i, TFCond_Jarated);
-			TF2_RemoveCondition(i, TFCond_OnFire);
-			TF2_RemoveCondition(i, TFCond_Bonked);
-			TF2_RemoveCondition(i, TFCond_Dazed);
-			TF2_RemoveCondition(i, TFCond_Bleeding);
+			player.ClearConditions();
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
@@ -966,7 +960,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 					CreateParticle(i, "unusual_aaa_aaa", 10.0, true);
 				}
 				
-				TF2_AddCondition(i, TFCond_Kritzkrieged, 10.0);
+				player.AddCondition(TFCond_Kritzkrieged, 10.0);
 
 				PushArrayCell(winners, i);
 			}
@@ -1104,7 +1098,6 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			
 			if (player.IsWinner)
 			{
-				TF2_SetPlayerPowerPlay(i, false);
 				player.ResetWeapon(false);
 				player.IsWinner = false;
 				player.DestroyPlayerBuildings(true);
@@ -1112,8 +1105,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 			player.SetGodMode(true);
 			player.SetViewModelVisible(false);
-
-			TF2_RemoveCondition(i, TFCond_Dazed);
+			player.ClearConditions();
 		}
 	}
 

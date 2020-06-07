@@ -464,39 +464,6 @@ public Action Transmit_HatRemove(int entity, int client)
 	return Plugin_Handled;
 }
 
-public Action Client_TakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
-{
-	if (!IsPluginEnabled)
-	{
-		return Plugin_Continue;
-	}
-
-	if (GlobalForward_OnPlayerTakeDamage != INVALID_HANDLE)
-	{
-		Call_StartForward(GlobalForward_OnPlayerTakeDamage);
-		Call_PushCell(victim);
-		Call_PushCell(attackerId);
-		Call_PushFloat(damage);
-		Call_Finish();
-	}
-
-	Player attacker = new Player(inflictor);
-
-	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]) || !IsBlockingDamage && IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
-	{
-		damage = 0.0;
-
-		if (inflictor < 0) 
-		{
-			inflictor = 0;
-		}
-		
-		return Plugin_Changed;
-	}
-
-	return Plugin_Continue;
-}
-
 public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDefinitionIndex, Handle &hItem)
 {
 	if (!IsPluginEnabled)
@@ -603,7 +570,9 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Bonked, 
 			TFCond_Dazed, 
 			TFCond_Taunting,
-			TFCond_Bleeding:
+			TFCond_Bleeding,
+			TFCond_RuneHaste,
+			TFCond_CritCola:
 		{
 			removeCondition = false;
 		}
@@ -673,7 +642,7 @@ public void OnClientPutInServer(int client)
 		return;
 	}
 
-	SDKHook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
+	AttachPlayerHooks(client);
 }
 
 public void OnClientDisconnect(int client)
@@ -690,7 +659,7 @@ public void OnClientDisconnect(int client)
 		player.Score = 0;
 		player.Status = PlayerStatus_NotWon;
 
-		SDKUnhook(client, SDKHook_OnTakeDamage, Client_TakeDamage);
+		DetachPlayerHooks(player.ClientId);
 	}
 }
 
