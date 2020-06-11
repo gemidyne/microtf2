@@ -86,7 +86,7 @@ public void Minigame1_OnGameFrame()
 
 			if (pos[1] > 3755.0)
 			{
-				ClientWonMinigame(i);
+				player.TriggerSuccess();
 			}
 		}
 	}

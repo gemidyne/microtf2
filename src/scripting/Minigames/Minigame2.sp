@@ -136,6 +136,6 @@ public void Minigame2_OnPlayerDeath(int victimId, int attackerId)
 			victim.Status = PlayerStatus_Failed;
 		}
 
-		ClientWonMinigame(attackerId);
+		attacker.TriggerSuccess();
 	}
 }

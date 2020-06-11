@@ -141,7 +141,7 @@ public void Minigame10_OnMinigameFinish()
 				}
 				else if (!Minigame10_IsTimebomb[i] && player.IsAlive) 
 				{
-					ClientWonMinigame(i);
+					player.TriggerSuccess();
 				}
 			}
 		}

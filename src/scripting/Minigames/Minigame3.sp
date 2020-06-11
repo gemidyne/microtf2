@@ -93,6 +93,6 @@ public void Minigame3_OnPropBroken(int client)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		ClientWonMinigame(client);
+		player.TriggerSuccess();
 	}
 }

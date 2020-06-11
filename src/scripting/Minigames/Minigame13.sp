@@ -53,7 +53,7 @@ public void Minigame13_OnMinigameFinishPre()
 				GetClientEyeAngles(i, Minigame13_ClientEyePositionAngle);
 				if (Minigame13_ClientEyePositionAngle[0] < min && (button & IN_DUCK) == IN_DUCK)
 				{
-					ClientWonMinigame(i);
+					player.TriggerSuccess();
 				}
 
 				if (Minigame13_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
