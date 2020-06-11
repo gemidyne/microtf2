@@ -608,7 +608,7 @@
         "fr": "{1}{2} a atteint la fin en premier ! (Point bonus !)",
         "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
-        "ru": null,
+        "ru": "{1}{2} достал до вершины первым! (Доп. очко!)",
         "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
@@ -651,7 +651,7 @@
         "fr": "{1}{2} s'est échappé de l'usine en premier ! (Point bonus !)",
         "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
-        "ru": null,
+        "ru": "{1}{2} сбежал из завода первым! (Доп. очко!)",
         "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
@@ -728,7 +728,7 @@
         "fr": "{1}{2} a atteint l'objectif en premier ! (Point bonus !)",
         "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
-        "ru": null,
+        "ru": "{1}{2} дошел до конца первым! (Доп. очко!)",
         "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
@@ -895,7 +895,7 @@
         "fr": "{1}{2} a dit le mot en premier ! (Point bonus !)",
         "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
-        "ru": null,
+        "ru": "{1}{2} сказал слово первым! (Доп. очко!)",
         "es": null,
         "jp": null,
         "pl": "{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
@@ -986,7 +986,7 @@
         "fr": "{1}{2} a repondu correctement en premier ! (Point bonus !)",
         "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
-        "ru": null,
+        "ru": "{1}{2} написал правильный ответ первым! (Доп. очко!)",
         "es": null,
         "jp": null,
         "pl": "{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
@@ -1764,7 +1764,7 @@
         "it": "FAI RIDERE GLI ESPLORATORI!",
         "es": null,
         "fr": "FAITES RIRE LE SCOUT !",
-        "ru": null,
+        "ru": "НАСМЕШИТЕ РАЗВЕДЧИКА!",
         "pt_p": "FAÇA UM SCOUT RIR!",
         "pt": "FAÇA UM SCOUT RIR!",
         "pl": "ROZŚMIESZ SKAUTÓW!"
@@ -1780,7 +1780,7 @@
         "it": "FAI RIDERE I SOLDATI!",
         "es": null,
         "fr": "FAITES RIRE LE SOLDIER !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ СОЛДАТА!",
         "pt_p": "FAÇA UM SOLDIER RIR!",
         "pt": "FAÇA UM SOLDIER RIR!",
         "pl": "ROZŚMIESZ ŻOŁNIERZY!"
@@ -1796,7 +1796,7 @@
         "it": "FAI RIDERE I PIRO!",
         "es": null,
         "fr": "FAITES RIRE LE PYRO !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ ПОДЖИГАТЕЛЯ!",
         "pt_p": "FAÇA UM PYRO RIR!",
         "pt": "FAÇA UM PYRO RIR!",
         "pl": "ROZŚMIESZ PYRO!"
@@ -1812,7 +1812,7 @@
         "it": "FAI RIDERE I DEMOLITORI!",
         "es": null,
         "fr": "FAITES RIRE LE DEMOMAN !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ ПОДРЫВНИКА!",
         "pt_p": "FAÇA UM DEMOMAN RIR!",
         "pt": "FAÇA UM DEMOMAN RIR!",
         "pl": "ROZŚMIESZ DEMOMANÓW!"
@@ -1828,7 +1828,7 @@
         "it": "FAI RIDERE GLI INGEGNERI!",
         "es": null,
         "fr": "FAITES RIRE L'HEAVY !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ ИНЖЕНЕРА!",
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
         "pt": "FAÇA UM ENGENHEIRO RIR!",
         "pl": "ROZŚMIESZ INŻYNIERÓW!"
@@ -1844,7 +1844,7 @@
         "it": "FAI RIDERE I MEDICI!",
         "es": null,
         "fr": "FAITES RIRE LE MEDIC !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ МЕДИКА!",
         "pt_p": "FAÇA UM MÉDICO RIR!",
         "pt": "FAÇA UM MÉDICO RIR!",
         "pl": "ROZŚMIESZ MEDYKÓW!"
@@ -1860,7 +1860,7 @@
         "it": "FAI RIDERE I CECCHINI!",
         "es": null,
         "fr": "FAITES RIRE LE SNIPER !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ СНАЙПЕРА!",
         "pt_p": "FAÇA UM SNIPER RIR!",
         "pt": "FAÇA UM SNIPER RIR!",
         "pl": "ROZŚMIESZ SNAJPERÓW!"
@@ -1876,7 +1876,7 @@
         "it": "FAI RIDERE LE SPIE!",
         "es": null,
         "fr": "FAITES RIRE LE SPY !",
-        "ru": null,
+        "ru": "РАССМЕШИТЕ ШПИОНА!",
         "pt_p": "FAÇA UM SPY RIR!",
         "pt": "FAÇA UM SPY RIR!",
         "pl": "ROZŚMIESZ SZPIEGÓW!"
@@ -1892,10 +1892,10 @@
         "it": "COLPISCI UN NEMICO!",
         "es": null,
         "fr": "FRAPPEZ UN ENNEMI !",
-        "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
+        "ru": "УДАРЬТЕ ВРАГА!",
+        "pt_p": "ACERTE UM INIMIGO!",
+        "pt": "ACERTE UM INIMIGO!",
+        "pl": "UDERZ WROGA!"
       },
       "ignoreEmptyValue": false
     },

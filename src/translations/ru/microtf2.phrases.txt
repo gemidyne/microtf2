@@ -125,7 +125,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ru"		""
+		"ru"		"{1}{2} достал до вершины первым! (Доп. очко!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -134,7 +134,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ru"		""
+		"ru"		"{1}{2} сбежал из завода первым! (Доп. очко!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -151,7 +151,7 @@
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ru"		""
+		"ru"		"{1}{2} дошел до конца первым! (Доп. очко!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -189,7 +189,7 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ru"		""
+		"ru"		"{1}{2} сказал слово первым! (Доп. очко!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -208,7 +208,7 @@
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ru"		""
+		"ru"		"{1}{2} написал правильный ответ первым! (Доп. очко!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -392,39 +392,39 @@
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"ru"		""
+		"ru"		"НАСМЕШИТЕ РАЗВЕДЧИКА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ СОЛДАТА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ ПОДЖИГАТЕЛЯ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ ПОДРЫВНИКА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ ИНЖЕНЕРА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ МЕДИКА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ СНАЙПЕРА!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"ru"		""
+		"ru"		"РАССМЕШИТЕ ШПИОНА!"
 	}
 	"Minigame27_Caption"
 	{
-		"ru"		""
+		"ru"		"УДАРЬТЕ ВРАГА!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
