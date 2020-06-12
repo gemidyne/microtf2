@@ -189,7 +189,7 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"es"		""
+		"es"		"{1}{2} dijo la palabra primero! (Punto extra!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -208,7 +208,7 @@
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"es"		""
+		"es"		"{1}{2} dijo la respuesta primero! (Punto extra!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -356,7 +356,7 @@
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"es"		""
+		"es"		"NO BEBAS!"
 	}
 	"Minigame20_Caption_Eat"
 	{
@@ -364,7 +364,7 @@
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"es"		""
+		"es"		"NO COMAS!"
 	}
 	"Minigame21_Caption"
 	{
@@ -388,43 +388,43 @@
 	}
 	"Minigame26_Caption_DontLaugh"
 	{
-		"es"		""
+		"es"		"NO TE RIAS!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS SCOUTS RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS SOLDADOS RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS PYROS RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS DEMOMAN RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS INGENIEROS RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS MEDICOS RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS FRANCOTIRADORES RIAN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"es"		""
+		"es"		"HAZ QUE LOS ESPIAS RIAN!"
 	}
 	"Minigame27_Caption"
 	{
-		"es"		""
+		"es"		"GOLPEA A UN ENEMIGO!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
