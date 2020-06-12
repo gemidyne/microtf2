@@ -896,7 +896,7 @@
         "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
         "ru": "{1}{2} сказал слово первым! (Доп. очко!)",
-        "es": null,
+        "es": "{1}{2} dijo la palabra primero! (Punto extra!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
       },
@@ -987,7 +987,7 @@
         "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
         "pt_p": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
         "ru": "{1}{2} написал правильный ответ первым! (Доп. очко!)",
-        "es": null,
+        "es": "{1}{2} dijo la respuesta primero! (Punto extra!)",
         "jp": null,
         "pl": "{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
       },
@@ -1612,7 +1612,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON BERE!",
-        "es": null,
+        "es": "NO BEBAS!",
         "fr": "NE BUVEZ PAS !",
         "ru": "НЕ ПЕЙТЕ!",
         "pt_p": "NÃO BEBA!",
@@ -1645,7 +1645,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON MANGIARE!",
-        "es": null,
+        "es": "NO COMAS!",
         "fr": "NE MANGEZ PAS !",
         "ru": "НЕ ЕШЬТЕ!",
         "pt_p": "NÃO COMA!",
@@ -1746,7 +1746,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON RIDERE!",
-        "es": null,
+        "es": "NO TE RIAS!",
         "fr": "NE RIEZ PAS !",
         "ru": "НЕ СМЕЙТЕСЬ!",
         "pt_p": "NÃO VALE RIR!",
@@ -1762,7 +1762,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI ESPLORATORI!",
-        "es": null,
+        "es": "HAZ QUE LOS SCOUTS RIAN!",
         "fr": "FAITES RIRE LE SCOUT !",
         "ru": "НАСМЕШИТЕ РАЗВЕДЧИКА!",
         "pt_p": "FAÇA UM SCOUT RIR!",
@@ -1778,7 +1778,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I SOLDATI!",
-        "es": null,
+        "es": "HAZ QUE LOS SOLDADOS RIAN!",
         "fr": "FAITES RIRE LE SOLDIER !",
         "ru": "РАССМЕШИТЕ СОЛДАТА!",
         "pt_p": "FAÇA UM SOLDIER RIR!",
@@ -1794,7 +1794,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I PIRO!",
-        "es": null,
+        "es": "HAZ QUE LOS PYROS RIAN!",
         "fr": "FAITES RIRE LE PYRO !",
         "ru": "РАССМЕШИТЕ ПОДЖИГАТЕЛЯ!",
         "pt_p": "FAÇA UM PYRO RIR!",
@@ -1810,7 +1810,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I DEMOLITORI!",
-        "es": null,
+        "es": "HAZ QUE LOS DEMOMAN RIAN!",
         "fr": "FAITES RIRE LE DEMOMAN !",
         "ru": "РАССМЕШИТЕ ПОДРЫВНИКА!",
         "pt_p": "FAÇA UM DEMOMAN RIR!",
@@ -1826,7 +1826,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI INGEGNERI!",
-        "es": null,
+        "es": "HAZ QUE LOS INGENIEROS RIAN!",
         "fr": "FAITES RIRE L'HEAVY !",
         "ru": "РАССМЕШИТЕ ИНЖЕНЕРА!",
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
@@ -1842,7 +1842,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I MEDICI!",
-        "es": null,
+        "es": "HAZ QUE LOS MEDICOS RIAN!",
         "fr": "FAITES RIRE LE MEDIC !",
         "ru": "РАССМЕШИТЕ МЕДИКА!",
         "pt_p": "FAÇA UM MÉDICO RIR!",
@@ -1858,7 +1858,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I CECCHINI!",
-        "es": null,
+        "es": "HAZ QUE LOS FRANCOTIRADORES RIAN!",
         "fr": "FAITES RIRE LE SNIPER !",
         "ru": "РАССМЕШИТЕ СНАЙПЕРА!",
         "pt_p": "FAÇA UM SNIPER RIR!",
@@ -1874,7 +1874,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE LE SPIE!",
-        "es": null,
+        "es": "HAZ QUE LOS ESPIAS RIAN!",
         "fr": "FAITES RIRE LE SPY !",
         "ru": "РАССМЕШИТЕ ШПИОНА!",
         "pt_p": "FAÇA UM SPY RIR!",
@@ -1890,7 +1890,7 @@
       "formatArguments": [],
       "translations": {
         "it": "COLPISCI UN NEMICO!",
-        "es": null,
+        "es": "GOLPEA A UN ENEMIGO!",
         "fr": "FRAPPEZ UN ENNEMI !",
         "ru": "УДАРЬТЕ ВРАГА!",
         "pt_p": "ACERTE UM INIMIGO!",
