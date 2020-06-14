@@ -71,11 +71,6 @@ stock void InitializeSystem()
 		SetFailState("The SteamTools Extension is not loaded.");
 	}
 
-	if (GetExtensionFileStatus("soundlib.ext") < 1)
-	{
-		SetFailState("The SoundLib Extension is not loaded.");
-	}
-
 	LoadTranslations("microtf2.phrases.txt");
 
 	#if defined LOGGING_STARTUP
