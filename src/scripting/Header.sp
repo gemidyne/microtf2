@@ -45,8 +45,10 @@ int g_iAnnotationEventId = 0;
  */
 
 float SpeedLevel = 1.0;
+#if defined USE_MAXSPEED_HOOK
 float MaxSpeedDefaults[MAXPLAYERS+1] = 0.0;
 float MaxSpeedOverride[MAXPLAYERS+1] = 0.0;
+#endif
 
 /**
  * Booleans
@@ -66,7 +68,10 @@ bool IsPlayerWinner[MAXPLAYERS+1] = false;
 bool HideHudGamemodeText = false;
 bool AllowCosmetics = false;
 bool ForceCalculationCritical = false;
+
+#if defined USE_MAXSPEED_HOOK
 bool ApplyMaxSpeedOverrides = false;
+#endif
 
 /**
  * Enums

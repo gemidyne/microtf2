@@ -1,13 +1,21 @@
+//#define USE_MAXSPEED_HOOK
+
 public void AttachPlayerHooks(int client)
 {
     SDKHook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
+
+	#if defined USE_MAXSPEED_HOOK
     SDKHook(client, SDKHook_PreThink, Hooks_OnPreThink);
+	#endif
 }
 
 public void DetachPlayerHooks(int client)
 {
 	SDKUnhook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
+
+	#if defined USE_MAXSPEED_HOOK
 	SDKUnhook(client, SDKHook_PreThink, Hooks_OnPreThink);
+	#endif
 }
 
 public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
@@ -43,6 +51,7 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 	return Plugin_Continue;
 }
 
+#if defined USE_MAXSPEED_HOOK
 public void Hooks_OnPreThink(int client)
 {
     if (!IsPluginEnabled)
@@ -61,3 +70,4 @@ public void Hooks_OnPreThink(int client)
     //     MaxSpeedDefaults
     // }
 }
+#endif

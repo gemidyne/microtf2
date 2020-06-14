@@ -251,3 +251,22 @@ stock float NormalizeAngle(float angle)
 
 	return angle;
 }
+
+stock int GetRandomParticipatingPlayerId()
+{
+	int loop = 0;
+
+	while (loop < 32)
+	{
+		loop++;
+
+		Player player = new Player(GetRandomInt(1, MaxClients));
+
+		if (player.IsValid && player.IsParticipating) 
+		{
+			return player.ClientId;
+		}
+	}
+
+	return -1;
+}
