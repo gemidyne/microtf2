@@ -67,3 +67,8 @@
 #*.PDF   diff=astextplain
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
+
+###############################################################################
+# override linguist treating include files as c++ instead of sourcepawn
+###############################################################################
+*.inc linguist-language=SourcePawn
