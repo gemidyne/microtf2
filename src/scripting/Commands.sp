@@ -190,7 +190,7 @@ public Action Command_SetGamemode(int client, int args)
 	if (args != 1)
 	{
 		ReplyToCommand(client, "[WWR] Usage: sm_changegamemode <gamemodeid>");
-		return;
+		return Plugin_Handled;
 	}
 
 	char text[10];
@@ -206,11 +206,13 @@ public Action Command_SetGamemode(int client, int args)
 		ReplyToCommand(client, "[WWR] Gamemode changed to \"%s\".", SystemNames[GamemodeID]);
 
 		PluginForward_SendGamemodeChanged(id);
+
+		return Plugin_Handled;
 	}
-	else
-	{
-		ReplyToCommand(client, "[WWR] Error: specified gamemode ID is invalid.");
-	}
+	
+	ReplyToCommand(client, "[WWR] Error: specified gamemode ID is invalid.");
+	
+	return Plugin_Handled;
 }
 
 public Action Command_TriggerBoss(int client, int args)
@@ -218,6 +220,8 @@ public Action Command_TriggerBoss(int client, int args)
 	MinigamesPlayed = BossGameThreshold - 1;
 
 	ReplyToCommand(client, "[WWR] Bossgame will be played shortly.");
+
+	return Plugin_Handled;
 }
 
 public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
