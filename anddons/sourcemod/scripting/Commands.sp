@@ -126,7 +126,7 @@ stock void PrepareConVars()
 	SetConVarInt(FindConVar("mp_waitingforplayers_time"), 90);
 	SetConVarInt(FindConVar("mp_disable_respawn_times"), 0);
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
-	SetConVarInt(FindConVar("mp_timelimit"), 0);
+//	SetConVarInt(FindConVar("mp_timelimit"), 0);
 	SetConVarInt(FindConVar("mp_forcecamera"), 0);
 	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 

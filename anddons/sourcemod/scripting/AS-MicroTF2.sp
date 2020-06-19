@@ -134,6 +134,8 @@ public void OnMapEnd()
 
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	GamemodeStatus = GameStatus_Playing;
 
 	MinigameID = 0;
@@ -163,6 +165,8 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 
 public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (GamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
@@ -337,6 +341,8 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 public Action Timer_GameLogic_StartMinigame(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (GamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
@@ -493,6 +499,8 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 public Action Timer_GameLogic_EndMinigame(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	IsMinigameEnding = true;
 
 	SetSpeed();
@@ -759,6 +767,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 public Action Timer_GameLogic_OnPreFinish(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (GlobalForward_OnMinigameFinishPre != INVALID_HANDLE)
 	{
 		Call_StartForward(GlobalForward_OnMinigameFinishPre);
@@ -770,6 +780,8 @@ public Action Timer_GameLogic_OnPreFinish(Handle timer)
 
 public Action Timer_GameLogic_SpeedChange(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	bool down = SpecialRoundID == 1;
 
 	ExecuteSpeedEvent();
@@ -820,6 +832,8 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 
 public Action Timer_GameLogic_BossTime(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	SpeedLevel = 1.0;
 	SetSpeed();
 
@@ -850,6 +864,8 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 public Action Timer_GameLogic_GameOverStart(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (GamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
@@ -1077,6 +1093,8 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 public Action Timer_GameLogic_GameOverEnd(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (GamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
@@ -1199,6 +1217,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
+	if(!IsPluginEnabled) return;
+
 	if (PluginForward_HasMapIntegrationLoaded())
 	{
 		bool voteHasEnded = PluginForward_HasMapVoteEnded();
