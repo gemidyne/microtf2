@@ -27,6 +27,7 @@ The gamemode utilises the following extensions:
 - SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
 - TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
 - TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
+- TFEconData plugin - https://github.com/nosoop/SM-TFEconData (Used for giving weapons to players)
 
 If you intend to use the SDK plugin for developing your own gamemodes or minigames, you will need:
 
