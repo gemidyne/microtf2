@@ -41,9 +41,8 @@ stock void InitializeCommands()
 	ConVar_TFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
 	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
 
-	RegAdminCmd("sm_changegamemode", CmdSetGamemode, ADMFLAG_VOTE, "Changes the current gamemode.");
-
-	RegAdminCmd("sm_triggerboss", CmdTriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
+	RegAdminCmd("sm_changegamemode", Command_SetGamemode, ADMFLAG_VOTE, "Changes the current gamemode.");
+	RegAdminCmd("sm_triggerboss", Command_TriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
 
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
@@ -186,8 +185,14 @@ public Action CmdOnPlayerKill(int client, const char[] command, int args)
 }
 
 
-public Action CmdSetGamemode(int client, int args)
+public Action Command_SetGamemode(int client, int args)
 {
+	if (args != 1)
+	{
+		ReplyToCommand(client, "[WWR] Usage: sm_changegamemode <gamemodeid>");
+		return;
+	}
+
 	char text[10];
 	GetCmdArg(1, text, sizeof(text));
 
@@ -198,21 +203,21 @@ public Action CmdSetGamemode(int client, int args)
 		GamemodeID = id;
 		SpecialRoundID = 0;
 
-		ReplyToCommand(client, "[ WarioWare ] Gamemode set to %s.", SystemNames[GamemodeID]);
+		ReplyToCommand(client, "[WWR] Gamemode changed to \"%s\".", SystemNames[GamemodeID]);
 
 		PluginForward_SendGamemodeChanged(id);
 	}
 	else
 	{
-		ReplyToCommand(client, "[ WarioWare ] Unable to set gamemode, invalid value specified.");
+		ReplyToCommand(client, "[WWR] Error: specified gamemode ID is invalid.");
 	}
 }
 
-public Action CmdTriggerBoss(int client, int args)
+public Action Command_TriggerBoss(int client, int args)
 {
-	MinigamesPlayed = BossGameThreshold-1;
+	MinigamesPlayed = BossGameThreshold - 1;
 
-	ReplyToCommand(client, "[ WarioWare ] Triggering boss...");
+	ReplyToCommand(client, "[WWR] Bossgame will be played shortly.");
 }
 
 public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
