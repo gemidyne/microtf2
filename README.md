@@ -20,14 +20,15 @@ The /assets folder contains data relating to the map, plugin overlays and sounds
 The "master" branch is the latest stable version of the gamemode. We recommend you use this branch on your game servers.
 The "dev" branch is used for the latest development version of the gamemode. This branch contains work in progress projects so may be uncompilable, untested and not be the best experience for your players. We recommend you use the master branch over the dev branch.
 
-## SourceMod Extension Dependencies
+## SourceMod Extension / Plugin Dependencies
 
-The gamemode utilises the following extensions:
+The gamemode utilises the following extensions and plugins to run:
 
 - SteamTools extension - https://forums.alliedmods.net/showthread.php?t=170630 (Used for setting the game description)
 - TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
 - TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
 - TFEconData plugin - https://github.com/nosoop/SM-TFEconData (Used for giving weapons to players)
+- (Windows only) host_timescale_fix plugin - https://forums.alliedmods.net/showthread.php?t=324264 (Fixes a host_timescale issue only on Windows SRCDS installs. Not required if you are running the gamemode on Linux)
 
 If you intend to use the SDK plugin for developing your own gamemodes or minigames, you will need:
 
