@@ -562,7 +562,7 @@ public Action Command_SetNextSpecialRound(int client, int args)
 	else if (args > 1)
 	{
 		ReplyToCommand(client, "[WWR] Usage: sm_setnextspecialround <specialroundid>");
-		return;
+		return Plugin_Handled;
 	}
 	else
 	{
@@ -575,11 +575,13 @@ public Action Command_SetNextSpecialRound(int client, int args)
 		ForceSpecialRound = id;
 
 		ReplyToCommand(client, "[WWR] The next special round has been set to %i", id);
+
+		return Plugin_Handled;
 	}
-	else
-	{
-		ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
-	}
+
+	ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
+
+	return Plugin_Handled;
 }
 
 public Action Command_ChangeSpecialRound(int client, int args)
@@ -587,7 +589,7 @@ public Action Command_ChangeSpecialRound(int client, int args)
 	if (args != 1)
 	{
 		ReplyToCommand(client, "[WWR] Usage: sm_changespecialround <specialroundid>");
-		return;
+		return Plugin_Handled;
 	}
 
 	char text[10];
@@ -599,9 +601,11 @@ public Action Command_ChangeSpecialRound(int client, int args)
 	{
 		GamemodeID = SPR_GAMEMODEID;
 		SpecialRoundID = id;
+
+		return Plugin_Handled;
 	}
-	else
-	{
-		ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
-	}
+
+	ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
+
+	return Plugin_Handled;
 }
