@@ -257,6 +257,8 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 	{
 		SpecialRound_StartEffect = 1.0;
 	}
+
+	return Plugin_Handled;
 }
 
 public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
@@ -280,6 +282,8 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 	{
 		SpecialRound_StartEffect = 1.0;
 	}
+
+	return Plugin_Handled;
 }
 
 stock void SpecialRound_SetupEnv()

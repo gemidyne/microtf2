@@ -29,6 +29,7 @@ public void Minigame9_OnMinigameSelectedPre()
 public Action Timer_Minigame9_AllowConditions(Handle timer)
 {
 	Minigame9_CanCheckConditions = true;
+	return Plugin_Handled;
 }
 
 public void Minigame9_GetDynamicCaption(int client)

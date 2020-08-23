@@ -29,6 +29,7 @@ public void Minigame11_OnMinigameSelectedPre()
 public Action Timer_Minigame11_AllowConditions(Handle timer)
 {
 	Minigame11_CanCheckConditions = true;
+	return Plugin_Handled;
 }
 
 public void Minigame11_OnMinigameSelected(int client)

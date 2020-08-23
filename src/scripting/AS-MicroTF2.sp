@@ -159,6 +159,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsOnlyBlockingDamageByPlayers = false;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
+	return Plugin_Handled;
 }
 
 public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
