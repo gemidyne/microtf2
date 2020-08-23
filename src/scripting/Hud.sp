@@ -180,13 +180,13 @@ public void DisplayRoundHud(Player player, char buffer[128])
 {
     char roundDisplay[32];
 
-    if (MaxRounds > 0)
+    if (TimelimitManager_HasTimeLimit() || MaxRounds <= 0)
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, RoundsPlayed + 1, MaxRounds);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, RoundsPlayed + 1);
     }
     else
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, RoundsPlayed + 1);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, RoundsPlayed + 1, MaxRounds);
     }
 
     if (SpecialRoundID == 19)

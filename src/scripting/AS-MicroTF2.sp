@@ -33,7 +33,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "4.0.0"
+#define PLUGIN_VERSION "4.1.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 //#define PLUGIN_DOPRECACHE 
@@ -51,6 +51,7 @@
 #include "Sounds.sp"
 #include "System.sp"
 #include "Commands.sp"
+#include "TimelimitManager.sp"
 #include "PluginInterop.sp"
 #include "Speed.sp"
 #include "Hud.sp"
@@ -1141,7 +1142,9 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	SetSpeed();
 	SetConVarInt(ConVar_TFFastBuild, 0);
 
-	if (MaxRounds == 0 || RoundsPlayed < MaxRounds)
+	bool hasTimelimit = TimelimitManager_HasTimeLimit();
+
+	if ((!hasTimelimit && (MaxRounds == 0 || RoundsPlayed < MaxRounds)) || (hasTimelimit && !TimelimitManager_HasExceededTimeLimit()))
 	{
 		bool isWaitingForVoteToFinish = false;
 
