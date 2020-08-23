@@ -49,7 +49,7 @@ stock void InitializeCommands()
 	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
 	ConVar_MTF2BonusPoints = CreateConVar("mtf2_bonuspoints", "0", "Controls whether or not minigames should have a bonus point.", 0, true, 0.0, true, 1.0);
 	ConVar_MTF2AllowCosmetics = CreateConVar("mtf2_cosmetics_enabled", "0", "Allows cosmetics to be worn by players. NOTE: This mode is explicitly not supported and may cause visual bugs and possible server lag spikes.", 0, true, 0.0, true, 1.0);
-	ConVar_MTF2UseServerMapTimelimit = CreateConVar("mtf2_use_server_map_timelimit", "0", "Sets whether or not the gamemode should instead run an infinite number of rounds and let mp_timelimit dictate when the map ends. Changes to this convar will only take effect when a map loads - if you change this value mid-game whilst the gamemode is running, no change will occur.", 0, true, 0.0, true, 1.0);
+	ConVar_MTF2UseServerMapTimelimit = CreateConVar("mtf2_use_server_map_timelimit", "0", "Sets whether or not the gamemode should instead run an infinite number of rounds and let mp_timelimit dictate when the map ends. If set to 1, the gamemode will also not run intermission, and your mapchooser plugin will need to handle this instead.", 0, true, 0.0, true, 1.0);
 
 	if (ConVar_MTF2MaxRounds != INVALID_HANDLE)
 	{
