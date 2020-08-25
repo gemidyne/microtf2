@@ -34,6 +34,8 @@ public Action Cmd_ProcessSounds(int client, int args)
 
 	PrintToServer("Processing minigame music");
 	ProcessMinigameMusic();
+
+	return Plugin_Handled;
 }
 
 public void ProcessSystemMusic()

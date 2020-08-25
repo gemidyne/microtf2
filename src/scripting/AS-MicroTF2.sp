@@ -33,7 +33,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "4.0.0"
+#define PLUGIN_VERSION "4.1.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 //#define PLUGIN_DOPRECACHE 
@@ -51,6 +51,7 @@
 #include "Sounds.sp"
 #include "System.sp"
 #include "Commands.sp"
+#include "TimelimitManager.sp"
 #include "PluginInterop.sp"
 #include "Speed.sp"
 #include "Hud.sp"
@@ -159,6 +160,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsOnlyBlockingDamageByPlayers = false;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
+	return Plugin_Handled;
 }
 
 public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
@@ -1140,11 +1142,13 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	SetSpeed();
 	SetConVarInt(ConVar_TFFastBuild, 0);
 
-	if (MaxRounds == 0 || RoundsPlayed < MaxRounds)
+	bool hasTimelimit = TimelimitManager_HasTimeLimit();
+
+	if ((!hasTimelimit && (MaxRounds == 0 || RoundsPlayed < MaxRounds)) || (hasTimelimit && !TimelimitManager_HasExceededTimeLimit()))
 	{
 		bool isWaitingForVoteToFinish = false;
 
-		if (PluginForward_HasMapIntegrationLoaded() && GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
+		if (PluginForward_HasMapIntegrationLoaded() && !hasTimelimit && GetConVarBool(ConVar_MTF2IntermissionEnabled) && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
 		{
 			PluginForward_StartMapVote();
 			isWaitingForVoteToFinish = true;
@@ -1163,6 +1167,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 		PluginForward_SendGamemodeChanged(GamemodeID);
 		HideHudGamemodeText = true;
+
+		float waitTime;
 
 		if (isWaitingForVoteToFinish)
 		{
@@ -1185,9 +1191,15 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 					EmitSoundToClient(i, SYSBGM_WAITING);
 				}
 			}
+
+			waitTime = 3.0;
+		}
+		else
+		{
+			waitTime = 0.0;
 		}
 
-		CreateTimer(2.0, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(waitTime, Timer_GameLogic_WaitForVoteToFinishIfAny, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
@@ -1199,7 +1211,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 {
-	if (PluginForward_HasMapIntegrationLoaded())
+	if (GetConVarBool(ConVar_MTF2IntermissionEnabled) && !TimelimitManager_HasTimeLimit() && PluginForward_HasMapIntegrationLoaded())
 	{
 		bool voteHasEnded = PluginForward_HasMapVoteEnded();
 

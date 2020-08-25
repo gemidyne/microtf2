@@ -6,6 +6,7 @@
 
 #define BOSSGAME7_SAYTEXTANSWERS_CAPACITY 512
 
+int Bossgame7_LastBgmIdx = -1;
 char Bossgame7_BgmFiles[][] = 
 { 
 	"gemidyne/warioware/bosses/bgm/danganronpa_hga.mp3",
@@ -27,6 +28,7 @@ char Bossgame7_BgmFiles[][] =
 #define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/bosses/sfx/drpa_spiralinward.mp3"
 #define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/bosses/sfx/drpa_typingstart.mp3"
 #define BOSSGAME7_SFX_LEVEL_UP "gemidyne/warioware/bosses/sfx/drpa_levelup.mp3"
+#define BOSSGAME7_VO_LEVEL_UP "vo/announcer_warning.mp3"
 
 char Bossgame7_Sfx_WordFail[][] = 
 { 
@@ -43,6 +45,14 @@ char Bossgame7_Sfx_WordSuccessPinch[][] =
 	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch3.mp3",
 	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch4.mp3",
 };
+
+#define BOSSGAME7_VO_10SEC "vo/announcer_ends_10sec.mp3"
+#define BOSSGAME7_VO_5SEC "vo/announcer_ends_5sec.mp3"
+#define BOSSGAME7_VO_4SEC "vo/announcer_ends_4sec.mp3"
+#define BOSSGAME7_VO_3SEC "vo/announcer_ends_3sec.mp3"
+#define BOSSGAME7_VO_2SEC "vo/announcer_ends_2sec.mp3"
+#define BOSSGAME7_VO_1SEC "vo/announcer_ends_1sec.mp3"
+#define BOSSGAME7_VO_BEGIN "vo/announcer_am_roundstart03.mp3"
 
 #define BOSSGAME7_SAYTEXTINDICE_EASY 0
 #define BOSSGAME7_SAYTEXTINDICE_MEDIUM 1
@@ -111,6 +121,14 @@ public void Bossgame7_OnMapStart()
 	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
 	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
 	PrecacheSound(BOSSGAME7_SFX_LEVEL_UP, true);
+	PrecacheSound(BOSSGAME7_VO_LEVEL_UP, true);
+	PrecacheSound(BOSSGAME7_VO_10SEC, true);
+	PrecacheSound(BOSSGAME7_VO_5SEC, true);
+	PrecacheSound(BOSSGAME7_VO_4SEC, true);
+	PrecacheSound(BOSSGAME7_VO_3SEC, true);
+	PrecacheSound(BOSSGAME7_VO_2SEC, true);
+	PrecacheSound(BOSSGAME7_VO_1SEC, true);
+	PrecacheSound(BOSSGAME7_VO_BEGIN, true);
 }
 
 public bool Bossgame7_LoadDictionary(int indice, const char[] path)
@@ -357,10 +375,17 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 	}
 
 	int camera = GetCameraEntity("DRBoss_DescentCamera_Point");
+	int randomBgmIdx;
 
 	Bossgame7_ActiveCameraEntityId = camera;
 
-	int randomBgmIdx = GetRandomInt(0, sizeof(Bossgame7_BgmFiles)-1);
+	do
+	{
+		randomBgmIdx = GetRandomInt(0, sizeof(Bossgame7_BgmFiles)-1);
+	}
+	while (randomBgmIdx == Bossgame7_LastBgmIdx);
+
+	Bossgame7_LastBgmIdx = randomBgmIdx;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -453,6 +478,7 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 			player.DisplayOverlay(OVERLAY_BLANK);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_TYPING_START, Bossgame7_ActiveCameraEntityId);
+			EmitSoundToClient(i, BOSSGAME7_VO_BEGIN, Bossgame7_ActiveCameraEntityId);
 		}
 	}
 
@@ -521,6 +547,27 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 		if (player.IsValid && player.IsParticipating)
 		{
 			PrintAnswerDisplay(player);
+
+			switch (Bossgame7_RemainingTime)
+			{
+				case 10:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_10SEC, Bossgame7_ActiveCameraEntityId);
+
+				case 5:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_5SEC, Bossgame7_ActiveCameraEntityId);
+
+				case 4:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_4SEC, Bossgame7_ActiveCameraEntityId);
+
+				case 3:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_3SEC, Bossgame7_ActiveCameraEntityId);
+
+				case 2:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_2SEC, Bossgame7_ActiveCameraEntityId);
+
+				case 1:
+					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_1SEC, Bossgame7_ActiveCameraEntityId);
+			}
 		}
 	}
 
@@ -675,6 +722,8 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 	int activePlayers = 0;
 	int lastWinnerId = 0;
 
+	float additionalDelay = 0.1;
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -684,8 +733,10 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 			if (Bossgame7_PlayerActiveAnswerCount[i] <= data)
 			{
 				player.Status = PlayerStatus_Failed;
-				ForcePlayerSuicide(i);
 				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_DEFEAT, Bossgame7_ActiveCameraEntityId);
+				CreateTimer(additionalDelay, Bossgame7_DeferredDeath, player.ClientId);
+
+				additionalDelay += 0.1;
 			}
 			else
 			{
@@ -697,19 +748,43 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 		}
 	}
 
+	float nextTimerDelay = 2.0 + additionalDelay;
+
 	if (activePlayers <= 1)
 	{
-		CreateTimer(2.0, Bossgame7_DoFinalReview, lastWinnerId);
+		CreateTimer(nextTimerDelay, Bossgame7_DoFinalReview, lastWinnerId);
 		return Plugin_Handled;
 	}
 
 	if (Bossgame7_ActiveRound == 1 || Bossgame7_ActiveRound == 3)
 	{
-		CreateTimer(2.0, Bossgame7_DoLevelChange);
+		CreateTimer(nextTimerDelay, Bossgame7_DoLevelChange);
 	}
 	else
 	{
-		CreateTimer(2.0, Bossgame7_DoDescentSequence);
+		CreateTimer(nextTimerDelay, Bossgame7_DoDescentSequence);
+	}
+
+	return Plugin_Handled;
+}
+
+public Action Bossgame7_DeferredDeath(Handle timer, any clientId)
+{
+	if (BossgameID != 7)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+
+	Player player = new Player(clientId);
+
+	if (player.IsValid)
+	{
+		player.Kill();
 	}
 
 	return Plugin_Handled;
@@ -737,6 +812,8 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_LevelUpAnnouncement", player.ClientId);
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_LEVEL_UP, Bossgame7_ActiveCameraEntityId);
+			EmitSoundToClient(i, BOSSGAME7_VO_LEVEL_UP, Bossgame7_ActiveCameraEntityId);
+
 			player.SetCaption(text);
 		}
 	}

@@ -25,6 +25,7 @@ public void Minigame23_OnMinigameSelectedPre()
 public Action Timer_Minigame23_AllowConditions(Handle timer)
 {
 	Minigame23_CanCheckConditions = true;
+	return Plugin_Handled;
 }
 
 public void Minigame23_OnMinigameSelected(int client)

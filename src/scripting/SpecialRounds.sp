@@ -75,8 +75,8 @@ stock void InitializeSpecialRounds()
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
 
-	RegAdminCmd("sm_setnextspecialround", CmdSetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
-	RegAdminCmd("sm_changespecialround", CmdChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
+	RegAdminCmd("sm_setnextspecialround", Command_SetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
+	RegAdminCmd("sm_changespecialround", Command_ChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
 }
 
 public void SpecialRound_OnMapStart()
@@ -257,6 +257,8 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 	{
 		SpecialRound_StartEffect = 1.0;
 	}
+
+	return Plugin_Handled;
 }
 
 public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
@@ -280,6 +282,8 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 	{
 		SpecialRound_StartEffect = 1.0;
 	}
+
+	return Plugin_Handled;
 }
 
 stock void SpecialRound_SetupEnv()
@@ -548,28 +552,50 @@ public void SpecialRound_OnPlayerClassChange(int client, int class)
 	}
 }
 
-public Action CmdSetNextSpecialRound(int client, int args)
+public Action Command_SetNextSpecialRound(int client, int args)
 {
-	char text[10];
-	GetCmdArg(1, text, sizeof(text));
+	int id;
 
-	int id = StringToInt(text);
+	if (args == 1)
+	{
+		char text[10];
+		GetCmdArg(1, text, sizeof(text));
+
+		id = StringToInt(text);
+	}
+	else if (args > 1)
+	{
+		ReplyToCommand(client, "[WWR] Usage: sm_setnextspecialround <specialroundid>");
+		return Plugin_Handled;
+	}
+	else
+	{
+		id = GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1);
+	}
 
 	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
 	{
 		ForceNextSpecialRound = true;
 		ForceSpecialRound = id;
 
-		ReplyToCommand(client, "[ WarioWare ] The next special round has been set.");
+		ReplyToCommand(client, "[WWR] The next special round has been set to %i", id);
+
+		return Plugin_Handled;
 	}
-	else
-	{
-		ReplyToCommand(client, "[ WarioWare ] Error: special round number is outside of min and max range. Specified ID: %i", id);
-	}
+
+	ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
+
+	return Plugin_Handled;
 }
 
-public Action CmdChangeSpecialRound(int client, int args)
+public Action Command_ChangeSpecialRound(int client, int args)
 {
+	if (args != 1)
+	{
+		ReplyToCommand(client, "[WWR] Usage: sm_changespecialround <specialroundid>");
+		return Plugin_Handled;
+	}
+
 	char text[10];
 	GetCmdArg(1, text, sizeof(text));
 
@@ -579,9 +605,11 @@ public Action CmdChangeSpecialRound(int client, int args)
 	{
 		GamemodeID = SPR_GAMEMODEID;
 		SpecialRoundID = id;
+
+		return Plugin_Handled;
 	}
-	else
-	{
-		GamemodeID = 0;
-	}
+
+	ReplyToCommand(client, "[WWR] Error: specified special round ID is invalid.");
+
+	return Plugin_Handled;
 }

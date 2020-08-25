@@ -45,6 +45,8 @@ public Action Timer_Respawn(Handle timer, int client)
 	{
 		player.Respawn();
 	}
+
+	return Plugin_Handled;
 }
 
 stock void ClientWonMinigame(int client)
