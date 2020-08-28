@@ -426,6 +426,10 @@
 	{
 		"en"		"HIT AN ENEMY!"
 	}
+	"Minigame28_Caption"
+	{
+		"en"		"LISTEN FOR IT!"
+	}
 	"Bossgame7_Caption_Explain"
 	{
 		"en"		"Say each word in chat as quick as you can to survive!"

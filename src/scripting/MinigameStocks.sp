@@ -12,8 +12,8 @@ stock int CreatePropEntity(float position[3], char[] modelPath, int health, floa
 	
 	if (IsValidEntity(entity))
 	{
-		SetEntityModel(entity, modelPath);
-		
+		DispatchKeyValue(entity, "model", modelPath);
+
 		DispatchKeyValue(entity, "disableshadows", "1");
 		DispatchKeyValue(entity, "disablereceiveshadows", "1");
 		DispatchKeyValue(entity, "massScale", "70");

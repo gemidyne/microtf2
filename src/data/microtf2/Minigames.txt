@@ -259,4 +259,12 @@
 		"BackgroundMusic_Length"		"4.060270"
 		"RequiresMultiplePlayers"		"1"
 	}
+	"28"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		""
+		"Caption"		"LISTEN FOR IT!"
+		"EntryPoint"		"Minigame28_EntryPoint"
+		"BackgroundMusic_Length"		"6.0"
+	}
 }

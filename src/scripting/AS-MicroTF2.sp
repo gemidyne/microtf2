@@ -440,8 +440,11 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					player.SetCaption(text);
 				}
 
-				PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
-				PlaySoundToPlayer(i, SYSFX_CLOCK);
+				if (strlen(MinigameMusic[MinigameID]) > 0)
+				{
+					PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
+					PlaySoundToPlayer(i, SYSFX_CLOCK);
+				}
 			}
 			
 			if (player.IsValid && player.IsParticipating)
