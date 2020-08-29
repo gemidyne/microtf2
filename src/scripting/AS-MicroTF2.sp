@@ -157,6 +157,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingDamage = true;
+	IsBlockingVoices = false;
 	IsOnlyBlockingDamageByPlayers = false;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
@@ -550,6 +551,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	IsBlockingTaunts = true;
 	IsOnlyBlockingDamageByPlayers = false;
 	ForceCalculationCritical = false;
+	IsBlockingVoices = false;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -869,6 +871,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	IsBlockingDamage = false;
 	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
+	IsBlockingVoices = false;
 	IsOnlyBlockingDamageByPlayers = false;
 	IsBonusRound = true;
 	SpeedLevel = 1.0;
@@ -1136,6 +1139,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsBlockingDamage = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
+	IsBlockingVoices = false;
 	IsOnlyBlockingDamageByPlayers = false;
 
 	BossGameThreshold = GetConVarInt(ConVar_MTF2ForceBossgameThreshold) > 0 

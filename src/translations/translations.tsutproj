@@ -1916,6 +1916,22 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame28_Caption_ShootIt",
+      "description": "Tell players to shoot the one making the sound!",
+      "text": "SHOOT THE ONE MAKING A SOUND!",
+      "formatArguments": [],
+      "translations": {
+        "it": "",
+        "es": "",
+        "fr": "",
+        "ru": "",
+        "pt_p": "",
+        "pt": "",
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame7_Caption_Explain",
       "description": null,
       "text": "Say each word in chat as quick as you can to survive!",

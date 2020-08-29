@@ -1,3 +1,5 @@
+bool IsBlockingVoices = false;
+
 public void InitialiseSounds()
 {
     AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Sounds_OnMapStart);
@@ -23,13 +25,17 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 		|| StrContains(sample, "vo/engineer_", false) != -1 
 		|| StrContains(sample, "vo/medic_", false) != -1 
 		|| StrContains(sample, "vo/sniper_", false) != -1 
-		|| StrContains(sample, "vo/spy_", false) != -1
-		|| StrContains(sample, "stsv/soundmods/", false) != -1;
+		|| StrContains(sample, "vo/spy_", false) != -1;
 
 	bool isBlockedSound = StrContains(sample, "rocket_pack_", false) != -1
 		|| StrContains(sample, "grenade_jump", false) != -1;
 
 	if (isBlockedSound)
+	{
+		return Plugin_Stop;
+	}
+
+	if (isVoiceSound && IsBlockingVoices)
 	{
 		return Plugin_Stop;
 	}
