@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Minigame 28
  *
- * Listen for it!
+ * Listen for it! / Shoot the one making the noise!
  */
 
 #define MINIGAME28_MODEL "models/props_spytech/siren001.mdl"
