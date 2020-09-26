@@ -614,6 +614,7 @@ public void OnClientPostAdminCheck(int client)
 		if (!player.IsBot)
 		{
 			SendConVarValue(client, FindConVar("sv_cheats"), "1");
+			QueryClientConVar(client, "mat_dxlevel", OnQueryClientConVarCallback);
 		
 			if (GamemodeStatus == GameStatus_WaitingForPlayers)
 			{
@@ -681,4 +682,14 @@ stock void HookEvents()
 	HookEvent("post_inventory_application", Event_Regenerate, EventHookMode_Post);
 	HookEvent("player_sapped_object", Event_PlayerSappedObject);
 	HookUserMessage(GetUserMessageId("PlayerJarated"), Event_PlayerJarated);
+}
+
+public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)
+{
+	if (StrEqual(cvarName, "mat_dxlevel") && IsClientConnected(client) && IsClientInGame(client))
+	{
+		int dxLevel = StringToInt(cvarValue);
+		
+		RequiresLegacyOverlayWorkaround[client] = dxLevel == 80 && dxLevel == 81;
+	}
 }
