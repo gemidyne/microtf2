@@ -822,7 +822,19 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.SetGlow(false);
 				}
 				
-				player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				if (player.UsesLegacyDirectX)
+				{
+					player.DisplayOverlay(OVERLAY_BLANK);
+
+					char text[64];
+					Format(text, sizeof(text), "%T", down ? "General_SpeedDown" : "General_SpeedUp", player.ClientId);
+					player.SetCaption(text);
+				}
+				else
+				{
+					player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				}
+
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}

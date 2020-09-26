@@ -690,6 +690,6 @@ public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQu
 	{
 		int dxLevel = StringToInt(cvarValue);
 		
-		RequiresLegacyOverlayWorkaround[client] = dxLevel == 80 && dxLevel == 81;
+		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 && dxLevel == 81;
 	}
 }

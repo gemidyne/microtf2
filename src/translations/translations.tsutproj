@@ -346,6 +346,40 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "General_SpeedUp",
+      "description": "A term notifying the player that the round is going to speed up.",
+      "text": "Speed up!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "General_SpeedDown",
+      "description": "A term notifying the player that the round is going to speed down. This is used on special rounds only at the moment.",
+      "text": "Speed down!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "GameOver_SpecialRoundHasFinished",
       "description": "A message displayed on the HUD when a special round has ended.",
       "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
