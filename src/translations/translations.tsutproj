@@ -348,7 +348,7 @@
     {
       "key": "General_SpeedUp",
       "description": "A term notifying the player that the round is going to speed up.",
-      "text": "Speed up!",
+      "text": "SPEED UP!",
       "formatArguments": [],
       "translations": {
         "pt": "",
@@ -365,7 +365,75 @@
     {
       "key": "General_SpeedDown",
       "description": "A term notifying the player that the round is going to speed down. This is used on special rounds only at the moment.",
-      "text": "Speed down!",
+      "text": "SPEED DOWN!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "General_Failure",
+      "description": "A word notifying the player that they failed the microgame or boss.",
+      "text": "FAILURE!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "General_Success",
+      "description": "A word notifying the player that they won the microgame or boss.",
+      "text": "SUCCESS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "General_BossTime",
+      "description": "A term notifying the player that it's time for the bossgame to be played.",
+      "text": "BOSS TIME!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "General_GameOver",
+      "description": "A term notifying the player that the round has finished.",
+      "text": "GAME OVER!",
       "formatArguments": [],
       "translations": {
         "pt": "",
