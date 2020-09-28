@@ -2051,6 +2051,23 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Bossgame7_Caption_TypeTheWords",
+      "description": null,
+      "text": "TYPE THE WORDS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame7_Caption_Explain",
       "description": null,
       "text": "Say each word in chat as quick as you can to survive!",
