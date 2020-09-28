@@ -448,6 +448,23 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "General_SpecialRound",
+      "description": "A term notifying the player the next round is a special round.",
+      "text": "SPECIAL ROUND!",
+      "formatArguments": [],
+      "translations": {
+        "pt": "",
+        "fr": "",
+        "it": "",
+        "pt_p": "",
+        "ru": "",
+        "es": "",
+        "jp": null,
+        "pl": ""
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "GameOver_SpecialRoundHasFinished",
       "description": "A message displayed on the HUD when a special round has ended.",
       "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
