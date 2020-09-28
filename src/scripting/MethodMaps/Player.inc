@@ -210,7 +210,7 @@ methodmap Player __nullable__
         }
     }
 
-    property bool UsesLegacyDirectX
+    property bool IsUsingLegacyDirectX
     {
         public get()
         {
