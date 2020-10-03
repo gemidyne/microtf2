@@ -134,11 +134,11 @@ stock void PrepareConVars()
 	SetConVarInt(FindConVar("mp_forcecamera"), 0);
 	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 
-	if (!GetConVarBool(ConVar_MTF2UseServerMapTimelimit))
-	{
+	// if (!GetConVarBool(ConVar_MTF2UseServerMapTimelimit))
+	// {
 		// If not using mp_timelimit mode, set to 0.
-		SetConVarInt(FindConVar("mp_timelimit"), 0);
-	}
+	// 	SetConVarInt(FindConVar("mp_timelimit"), 0);
+	// }
 
 	// TeamFortress ConVars
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
