@@ -130,6 +130,15 @@ public void OnMapStart()
 	}
 }
 
+public void OnConfigsExecuted()
+{
+	if (IsPluginEnabled && GlobalForward_OnConfigsExecuted != INVALID_HANDLE)
+	{
+		Call_StartForward(GlobalForward_OnConfigsExecuted);
+		Call_Finish();
+	}
+}
+
 public void OnMapEnd()
 {
 	if (IsPluginEnabled && GlobalForward_OnMapEnd != INVALID_HANDLE)

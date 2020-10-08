@@ -13,6 +13,14 @@
 Handle GlobalForward_OnMapStart;
 
 /**
+ * Forward is called when configs have executed.
+ *
+ * @noparams
+ * @noreturn
+ */
+Handle GlobalForward_OnConfigsExecuted;
+
+/**
  * Forward is called when the map is ending.
  *
  * @noparams
@@ -297,6 +305,7 @@ stock void InitializeForwards()
 	#endif
 
 	GlobalForward_OnMapStart = CreateForward(ET_Ignore);
+	GlobalForward_OnConfigsExecuted = CreateForward(ET_Ignore);
 	GlobalForward_OnMapEnd = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePreload = CreateForward(ET_Ignore);
 	GlobalForward_OnMinigamePreparePre = CreateForward(ET_Ignore);
@@ -334,6 +343,7 @@ stock void InitializeForwards()
 stock void RemoveForwardsFromMemory()
 {
 	SafelyRemoveAllFromForward(GlobalForward_OnMapStart);
+	SafelyRemoveAllFromForward(GlobalForward_OnConfigsExecuted);
 	SafelyRemoveAllFromForward(GlobalForward_OnMapEnd);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreload);
 	SafelyRemoveAllFromForward(GlobalForward_OnMinigamePreparePre);
