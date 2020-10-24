@@ -70,6 +70,34 @@
 	{
 		"ru"		"Победитель!"
 	}
+	"General_SpeedUp"
+	{
+		"ru"		""
+	}
+	"General_SpeedDown"
+	{
+		"ru"		""
+	}
+	"General_Failure"
+	{
+		"ru"		""
+	}
+	"General_Success"
+	{
+		"ru"		""
+	}
+	"General_BossTime"
+	{
+		"ru"		""
+	}
+	"General_GameOver"
+	{
+		"ru"		""
+	}
+	"General_SpecialRound"
+	{
+		"ru"		""
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"ru"		"== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! =="
@@ -425,6 +453,18 @@
 	"Minigame27_Caption"
 	{
 		"ru"		"УДАРЬТЕ ВРАГА!"
+	}
+	"Minigame28_Caption"
+	{
+		"ru"		""
+	}
+	"Minigame28_Caption_ShootIt"
+	{
+		"ru"		""
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"ru"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
