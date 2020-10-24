@@ -70,6 +70,34 @@
 	{
 		"es"		"Ganador!"
 	}
+	"General_SpeedUp"
+	{
+		"es"		""
+	}
+	"General_SpeedDown"
+	{
+		"es"		""
+	}
+	"General_Failure"
+	{
+		"es"		""
+	}
+	"General_Success"
+	{
+		"es"		""
+	}
+	"General_BossTime"
+	{
+		"es"		""
+	}
+	"General_GameOver"
+	{
+		"es"		""
+	}
+	"General_SpecialRound"
+	{
+		"es"		""
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"es"		"== LA RONDA ESPECIAL A TERMINADO! =="
@@ -425,6 +453,18 @@
 	"Minigame27_Caption"
 	{
 		"es"		"GOLPEA A UN ENEMIGO!"
+	}
+	"Minigame28_Caption"
+	{
+		"es"		""
+	}
+	"Minigame28_Caption_ShootIt"
+	{
+		"es"		""
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"es"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
