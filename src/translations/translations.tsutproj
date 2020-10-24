@@ -351,14 +351,14 @@
       "text": "SPEED UP!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -368,14 +368,14 @@
       "text": "SPEED DOWN!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -385,14 +385,14 @@
       "text": "FAILURE!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -402,14 +402,14 @@
       "text": "SUCCESS!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -419,14 +419,14 @@
       "text": "BOSS TIME!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -436,14 +436,14 @@
       "text": "GAME OVER!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -453,14 +453,14 @@
       "text": "SPECIAL ROUND!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -2024,13 +2024,13 @@
       "text": "LISTEN FOR IT!",
       "formatArguments": [],
       "translations": {
-        "it": "",
-        "es": "",
-        "fr": "",
-        "ru": "",
-        "pt_p": "",
-        "pt": "",
-        "pl": ""
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -2040,13 +2040,13 @@
       "text": "SHOOT THE ONE MAKING A SOUND!",
       "formatArguments": [],
       "translations": {
-        "it": "",
-        "es": "",
-        "fr": "",
-        "ru": "",
-        "pt_p": "",
-        "pt": "",
-        "pl": ""
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
@@ -2056,14 +2056,14 @@
       "text": "TYPE THE WORDS!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": ""
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
