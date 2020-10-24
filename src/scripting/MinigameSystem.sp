@@ -408,7 +408,7 @@ public void DoSelectBossgame()
 			{
 				BossgameID = PreviousBossgameID;
 
-				if (rollCount >= BossgamesLoaded)
+				if (rollCount > 32)
 				{
 					PlayedBossgamePool.Clear();
 				}
