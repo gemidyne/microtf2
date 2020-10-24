@@ -70,6 +70,34 @@
 	{
 		"en"		"Winner!"
 	}
+	"General_SpeedUp"
+	{
+		"en"		"SPEED UP!"
+	}
+	"General_SpeedDown"
+	{
+		"en"		"SPEED DOWN!"
+	}
+	"General_Failure"
+	{
+		"en"		"FAILURE!"
+	}
+	"General_Success"
+	{
+		"en"		"SUCCESS!"
+	}
+	"General_BossTime"
+	{
+		"en"		"BOSS TIME!"
+	}
+	"General_GameOver"
+	{
+		"en"		"GAME OVER!"
+	}
+	"General_SpecialRound"
+	{
+		"en"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"en"		"== THE SPECIAL ROUND HAS FINISHED! =="
@@ -429,6 +457,14 @@
 	"Minigame28_Caption"
 	{
 		"en"		"LISTEN FOR IT!"
+	}
+	"Minigame28_Caption_ShootIt"
+	{
+		"en"		"SHOOT THE ONE MAKING A SOUND!"
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"en"		"TYPE THE WORDS!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
