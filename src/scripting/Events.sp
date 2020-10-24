@@ -659,6 +659,8 @@ public void OnClientDisconnect(int client)
 	{
 		player.Score = 0;
 		player.Status = PlayerStatus_NotWon;
+		player.IsUsingLegacyDirectX = false;
+		player.SetCaption("");
 
 		DetachPlayerHooks(player.ClientId);
 	}
@@ -686,10 +688,10 @@ stock void HookEvents()
 
 public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQueryResult result, const char[] cvarName, const char[] cvarValue)
 {
-	if (StrEqual(cvarName, "mat_dxlevel") && IsClientConnected(client) && IsClientInGame(client))
+	if (StrEqual(cvarName, "mat_dxlevel"))
 	{
 		int dxLevel = StringToInt(cvarValue);
 		
-		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 && dxLevel == 81;
+		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
 	}
 }
