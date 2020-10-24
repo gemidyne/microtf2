@@ -43,7 +43,7 @@ public void Hud_OnMapStart()
 
 public void Hud_OnGameFrame()
 {
-    if (MaxRounds > 0 && RoundsPlayed >= MaxRounds)
+    if (!TimelimitManager_HasTimeLimit() && MaxRounds > 0 && RoundsPlayed >= MaxRounds)
     {
         return;
     }

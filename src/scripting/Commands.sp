@@ -22,7 +22,7 @@ Handle ConVar_MTF2UseServerMapTimelimit = INVALID_HANDLE;
 
 stock void InitializeCommands()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Commands_OnMapStart);
+	AddToForward(GlobalForward_OnConfigsExecuted, INVALID_HANDLE, Commands_OnConfigsExecuted);
 
 	// Command Listeners
 	AddCommandListener(CmdOnPlayerTaunt, "taunt");
@@ -67,7 +67,7 @@ stock void InitializeCommands()
 	ConVar_MTF2ForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
 }
 
-public void Commands_OnMapStart()
+public void Commands_OnConfigsExecuted()
 {
 	PrepareConVars();
 }
@@ -137,7 +137,7 @@ stock void PrepareConVars()
 	if (!GetConVarBool(ConVar_MTF2UseServerMapTimelimit))
 	{
 		// If not using mp_timelimit mode, set to 0.
-		SetConVarInt(FindConVar("mp_timelimit"), 0);
+	 	SetConVarInt(FindConVar("mp_timelimit"), 0);
 	}
 
 	// TeamFortress ConVars
