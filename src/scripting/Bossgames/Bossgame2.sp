@@ -90,20 +90,20 @@ public void Bossgame2_OnTfRoundStart()
 
 		if (strcmp(entityName, "plugin_Bossgame2_WinArea") == 0)
 		{
-			HookSingleEntityOutput(entity, "OnStartTouch", Bossgame2_OnTriggerTouched, false);
+			SDKHook(entity, SDKHook_StartTouch, Bossgame2_OnTriggerTouched);
 			break;
 		}
 	}
 }
 
-public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int activatorId, float delay)
+public Action Bossgame2_OnTriggerTouched(int entity, int other)
 {
 	if (!Bossgame2_CanCheckPosition)
 	{
-		return;
+		return Plugin_Continue;
 	}
 
-	Player activator = new Player(activatorId);
+	Player activator = new Player(other);
 
 	if (activator.IsValid && activator.IsAlive && activator.IsParticipating && activator.Status == PlayerStatus_NotWon)
 	{
@@ -117,6 +117,8 @@ public void Bossgame2_OnTriggerTouched(const char[] output, int caller, int acti
 			Bossgame2_Completed = true;
 		}
 	}
+
+	return Plugin_Continue;
 }
 
 public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
