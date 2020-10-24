@@ -70,6 +70,34 @@
 	{
 		"it"		"Vinto!"
 	}
+	"General_SpeedUp"
+	{
+		"it"		""
+	}
+	"General_SpeedDown"
+	{
+		"it"		""
+	}
+	"General_Failure"
+	{
+		"it"		""
+	}
+	"General_Success"
+	{
+		"it"		""
+	}
+	"General_BossTime"
+	{
+		"it"		""
+	}
+	"General_GameOver"
+	{
+		"it"		""
+	}
+	"General_SpecialRound"
+	{
+		"it"		""
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"it"		"== IL ROUND SPECIALE È TERMINATO! =="
@@ -425,6 +453,18 @@
 	"Minigame27_Caption"
 	{
 		"it"		"COLPISCI UN NEMICO!"
+	}
+	"Minigame28_Caption"
+	{
+		"it"		""
+	}
+	"Minigame28_Caption_ShootIt"
+	{
+		"it"		""
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"it"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
