@@ -70,6 +70,34 @@
 	{
 		"fr"		"Gagné !"
 	}
+	"General_SpeedUp"
+	{
+		"fr"		""
+	}
+	"General_SpeedDown"
+	{
+		"fr"		""
+	}
+	"General_Failure"
+	{
+		"fr"		""
+	}
+	"General_Success"
+	{
+		"fr"		""
+	}
+	"General_BossTime"
+	{
+		"fr"		""
+	}
+	"General_GameOver"
+	{
+		"fr"		""
+	}
+	"General_SpecialRound"
+	{
+		"fr"		""
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"fr"		"== LA MANCHE SPÉCIALE EST TERMINÉE ! =="
@@ -425,6 +453,18 @@
 	"Minigame27_Caption"
 	{
 		"fr"		"FRAPPEZ UN ENNEMI !"
+	}
+	"Minigame28_Caption"
+	{
+		"fr"		""
+	}
+	"Minigame28_Caption_ShootIt"
+	{
+		"fr"		""
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"fr"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
