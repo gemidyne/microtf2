@@ -353,7 +353,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "PIU' VELOCE!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -370,7 +370,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "PIU' LENTO!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -387,7 +387,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "HAI PERSO!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -404,7 +404,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "HAI VINTO!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -421,7 +421,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "ORA DEL BOSS!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -438,7 +438,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "FINE DELLA PARTITA!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -455,7 +455,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "ROUND SPECIALE!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -2024,7 +2024,7 @@
       "text": "LISTEN FOR IT!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "ASCOLTA!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -2040,7 +2040,7 @@
       "text": "SHOOT THE ONE MAKING A SOUND!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "COLPISCI QUELLO CHE FA RUMORE!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -2058,7 +2058,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "SCRIVI LE PAROLE!",
         "pt_p": null,
         "ru": null,
         "es": null,
