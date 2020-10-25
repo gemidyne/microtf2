@@ -72,31 +72,31 @@
 	}
 	"General_SpeedUp"
 	{
-		"it"		""
+		"it"		"PIU' VELOCE!"
 	}
 	"General_SpeedDown"
 	{
-		"it"		""
+		"it"		"PIU' LENTO!"
 	}
 	"General_Failure"
 	{
-		"it"		""
+		"it"		"HAI PERSO!"
 	}
 	"General_Success"
 	{
-		"it"		""
+		"it"		"HAI VINTO!"
 	}
 	"General_BossTime"
 	{
-		"it"		""
+		"it"		"ORA DEL BOSS!"
 	}
 	"General_GameOver"
 	{
-		"it"		""
+		"it"		"FINE DELLA PARTITA!"
 	}
 	"General_SpecialRound"
 	{
-		"it"		""
+		"it"		"ROUND SPECIALE!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -456,15 +456,15 @@
 	}
 	"Minigame28_Caption"
 	{
-		"it"		""
+		"it"		"ASCOLTA!"
 	}
 	"Minigame28_Caption_ShootIt"
 	{
-		"it"		""
+		"it"		"COLPISCI QUELLO CHE FA RUMORE!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"it"		""
+		"it"		"SCRIVI LE PAROLE!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
