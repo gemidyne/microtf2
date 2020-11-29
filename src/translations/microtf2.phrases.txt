@@ -462,6 +462,10 @@
 	{
 		"en"		"SHOOT THE ONE MAKING A SOUND!"
 	}
+	"Minigame29_Caption"
+	{
+		"en"		"GET ON THE PLATFORM!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"en"		"TYPE THE WORDS!"

@@ -267,4 +267,12 @@
 		"EntryPoint"		"Minigame28_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
 	}
+	"29"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		""
+		"Caption"		"GET TO THE PLATFORM!"
+		"EntryPoint"		"Minigame29_EntryPoint"
+		"BackgroundMusic_Length"		"4.0"
+	}
 }

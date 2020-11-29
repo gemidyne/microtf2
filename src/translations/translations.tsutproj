@@ -2051,6 +2051,22 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame29_Caption",
+      "description": "Tell players to get on the platform!",
+      "text": "GET ON THE PLATFORM!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame7_Caption_TypeTheWords",
       "description": null,
       "text": "TYPE THE WORDS!",
