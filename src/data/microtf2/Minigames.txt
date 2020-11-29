@@ -273,6 +273,7 @@
 		"BackgroundMusic"		""
 		"Caption"		"GET TO THE PLATFORM!"
 		"EntryPoint"		"Minigame29_EntryPoint"
-		"BackgroundMusic_Length"		"4.0"
+		"BackgroundMusic_Length"		"6.0"
+		"MaximumPlayerCount"		"24"
 	}
 }
