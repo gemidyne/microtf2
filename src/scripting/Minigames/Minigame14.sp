@@ -22,8 +22,7 @@ public void Minigame14_OnMinigameSelectedPre()
 		return;
 	}
 	
-	IsBlockingDamage = false;
-	IsOnlyBlockingDamageByPlayers = true;
+	DamageBlockMode = EDamageBlockMode_AllPlayers;
 
 	Minigame14_SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 }

@@ -39,8 +39,7 @@ public void Bossgame5_OnMinigameSelectedPre()
 	Bossgame5_Step = 4.0;
 	Bossgame5_Completed = false;
 
-	IsBlockingDamage = false;
-	IsOnlyBlockingDamageByPlayers = true;
+	DamageBlockMode = EDamageBlockMode_AllPlayers;
 	IsBlockingDeathCommands = false;
 
 	CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);

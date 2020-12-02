@@ -20,8 +20,7 @@ public void Minigame2_OnMinigameSelectedPre()
 		SetConVarInt(ConVar_FriendlyFire, 1);
 
 		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
-		IsBlockingDamage = false;
-		IsOnlyBlockingDamageByPlayers = false;
+		DamageBlockMode = EDamageBlockMode_Nothing;
 		IsBlockingDeathCommands = true;
 	}
 }

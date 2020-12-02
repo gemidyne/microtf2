@@ -23,9 +23,8 @@ public void Bossgame3_OnMinigameSelectedPre()
 		Bossgame3_REDIdx = 1;
 		Bossgame3_BLUIdx = 1;
 
-		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
-		IsOnlyBlockingDamageByPlayers = false;
+		DamageBlockMode = EDamageBlockMode_Nothing;
 
 		SetConVarInt(ConVar_FriendlyFire, 0);
 	}

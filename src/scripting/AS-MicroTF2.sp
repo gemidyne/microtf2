@@ -173,9 +173,8 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsBonusRound = false;
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
-	IsBlockingDamage = true;
 	IsBlockingVoices = false;
-	IsOnlyBlockingDamageByPlayers = false;
+	DamageBlockMode = EDamageBlockMode_All;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
 	return Plugin_Handled;
@@ -563,10 +562,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	MinigameID = 0;
 	BossgameID = 0;
 
-	IsBlockingDamage = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
-	IsOnlyBlockingDamageByPlayers = false;
+	DamageBlockMode = EDamageBlockMode_All;
 	ForceCalculationCritical = false;
 	IsBlockingVoices = false;
 
@@ -936,11 +934,10 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	#endif
 
 	ForceCalculationCritical = false;
-	IsBlockingDamage = false;
 	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
 	IsBlockingVoices = false;
-	IsOnlyBlockingDamageByPlayers = false;
+	DamageBlockMode = EDamageBlockMode_WinnersOnly;
 	IsBonusRound = true;
 	SpeedLevel = 1.0;
 	SetSpeed();
@@ -1215,11 +1212,10 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	PlayedMinigamePool.Clear();
 	PlayedBossgamePool.Clear();
 
-	IsBlockingDamage = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsBlockingVoices = false;
-	IsOnlyBlockingDamageByPlayers = false;
+	DamageBlockMode = EDamageBlockMode_All;
 
 	BossGameThreshold = GetConVarInt(ConVar_MTF2ForceBossgameThreshold) > 0 
 		? GetConVarInt(ConVar_MTF2ForceBossgameThreshold)

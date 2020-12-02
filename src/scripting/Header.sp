@@ -16,6 +16,15 @@ enum PlayerStatuses
 	PlayerStatus_Winner
 }
 
+enum DamageBlockModes
+{
+	EDamageBlockMode_Nothing = 0,
+	EDamageBlockMode_OtherPlayersOnly,
+	EDamageBlockMode_AllPlayers,
+	EDamageBlockMode_WinnersOnly,
+	EDamageBlockMode_All
+}
+
 /**
  * Integers
  */
@@ -62,7 +71,6 @@ bool IsBonusRound = false;
 bool IsBlockingTaunts = true;
 bool IsBlockingDeathCommands = true;
 bool IsBlockingDamage = true;
-bool IsOnlyBlockingDamageByPlayers = false;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 bool IsPlayerWinner[MAXPLAYERS+1] = false;
 bool HideHudGamemodeText = false;
@@ -80,6 +88,8 @@ bool ApplyMaxSpeedOverrides = false;
 
 GameStatus GamemodeStatus = GameStatus_Unknown;
 PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+
+DamageBlockModes DamageBlockMode = EDamageBlockMode_All;
 
 /**
  * Handles

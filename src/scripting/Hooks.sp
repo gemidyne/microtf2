@@ -34,9 +34,49 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		Call_Finish();
 	}
 
-	Player attacker = new Player(inflictor);
+	bool doBlock = false;
 
-	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]) || !IsBlockingDamage && IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
+	// Compatibility shim: remove when everything is converted to blockmode enum
+	if (IsBlockingDamage)
+	{
+		DamageBlockMode = EDamageBlockMode_All;
+	}
+
+	switch (DamageBlockMode)
+	{
+		case EDamageBlockMode_Nothing:
+		{
+			doBlock = false;
+		}
+
+		case EDamageBlockMode_OtherPlayersOnly:
+		{
+			Player player = new Player(attackerId);
+
+			doBlock = attackerId != victim && player.IsValid && player.IsParticipating;
+		}
+
+		case EDamageBlockMode_AllPlayers:
+		{
+			Player player = new Player(inflictor);
+
+			doBlock = player.IsValid && player.IsParticipating;
+		}
+
+		case EDamageBlockMode_WinnersOnly:
+		{
+			Player player = new Player(attackerId);
+
+			doBlock = IsBonusRound && player.IsWinner;
+		}
+
+		case EDamageBlockMode_All:
+		{
+			doBlock = true;
+		}
+	}
+
+	if (doBlock)
 	{
 		damage = 0.0;
 

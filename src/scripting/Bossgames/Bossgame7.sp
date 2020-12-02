@@ -178,8 +178,7 @@ public void Bossgame7_OnMinigameSelectedPre()
 {
 	if (BossgameID == 7)
 	{
-		IsBlockingDamage = true;
-		IsOnlyBlockingDamageByPlayers = true;
+		DamageBlockMode = EDamageBlockMode_AllPlayers;
 		IsBlockingDeathCommands = true;
 
 		Bossgame7_ParticipatingPlayerCount = 0;

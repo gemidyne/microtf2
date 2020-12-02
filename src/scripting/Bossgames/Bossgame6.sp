@@ -4,16 +4,6 @@
  * Target Practice
  */
 
-/*
- * HORIZONTAL MIN: -1807 
- * HORIZONTAL MAX: -4063
- * VERTICAL MAX: 2495
- * VERTICAL MIN: 1199
- * (3) -1350  is the floor coord / Z
- * (2) is the Y - forward and back from view 
- * (1) is the X - left and right from view
- */
-
 #define BOSSGAME6_ENTITYSPAWN_COUNT 32
 #define BOSSGAME6_RNGMODELS_COUNT 10
 
@@ -72,8 +62,7 @@ public void Bossgame6_OnMinigameSelectedPre()
 			Bossgame6_PlayerScore[i] = 0;
 		}
 
-		IsBlockingDamage = true;
-		IsOnlyBlockingDamageByPlayers = true;
+		DamageBlockMode = EDamageBlockMode_AllPlayers;
 		IsBlockingDeathCommands = true;
 
 		Bossgame6_SendDoorInput("Close");

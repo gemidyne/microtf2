@@ -22,9 +22,8 @@ public void Bossgame2_OnMinigameSelectedPre()
 	{
 		Bossgame2_SendInput("logic_relay", "ERBoss_InitRelay", "Trigger");
 
-		IsBlockingDamage = false;
 		IsBlockingDeathCommands = true;
-		IsOnlyBlockingDamageByPlayers = true;
+		DamageBlockMode = EDamageBlockMode_AllPlayers;
 
 		Bossgame2_CanCheckPosition = false;
 		Bossgame2_Completed = false;
