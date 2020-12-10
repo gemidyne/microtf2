@@ -59,7 +59,7 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 
 		case EDamageBlockMode_WinnersOnly:
 		{
-			Player player = new Player(attackerId);
+			Player player = new Player(victim);
 
 			doBlock = IsBonusRound && player.IsWinner;
 		}
