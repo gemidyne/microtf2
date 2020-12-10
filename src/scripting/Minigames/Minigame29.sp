@@ -39,8 +39,7 @@ public void Minigame29_OnMinigameSelectedPre()
 {
 	if (MinigameID == 29)
 	{
-		IsBlockingDamage = false;
-		// TODO: need to rework damageblocking system to support better modes than individual variables
+		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 	}
 }
 

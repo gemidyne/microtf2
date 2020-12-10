@@ -19,7 +19,7 @@ public void Minigame4_OnMinigameSelectedPre()
 {
 	if (MinigameID == 4)
 	{
-		IsBlockingDamage = false;
+		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		IsBlockingDeathCommands = false;
 		Minigame4_TotalPlayers = 0;
 

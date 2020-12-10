@@ -17,7 +17,7 @@ public void Minigame27_OnMinigameSelectedPre()
 {
 	if (MinigameID == 27)
 	{
-		IsBlockingDamage = false;
+		DamageBlockMode = EDamageBlockMode_Nothing;
 		Minigame27_UseBleedingMode = GetRandomInt(0, 1) == 1;
 	}
 }

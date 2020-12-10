@@ -56,7 +56,7 @@ public void Minigame26_OnMinigameSelectedPre()
 		}
 		while (Minigame26_VictimClass == TFClass_Heavy);
 
-		IsBlockingDamage = true;
+		DamageBlockMode = EDamageBlockMode_All;
 		ForceCalculationCritical = true;
 	}
 }

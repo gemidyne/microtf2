@@ -16,7 +16,7 @@ public void Minigame1_OnSelectionPre()
 {
 	if (MinigameID == 1)
 	{
-		IsBlockingDamage = false;
+		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		IsBlockingDeathCommands = false;
 	}
 }

@@ -36,12 +36,6 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 
 	bool doBlock = false;
 
-	// Compatibility shim: remove when everything is converted to blockmode enum
-	if (IsBlockingDamage)
-	{
-		DamageBlockMode = EDamageBlockMode_All;
-	}
-
 	switch (DamageBlockMode)
 	{
 		case EDamageBlockMode_Nothing:
