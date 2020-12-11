@@ -1,10 +1,9 @@
-# microtf2
+# Microgames in TF2 // microtf2
 
-![Small WarioWare logo](https://cdn.jsdelivr.net/gh/gemidyne/microtf2@master/assets/square-logo-200x200.png)
-Yet another WarioWare plugin for Team Fortress 2 servers.
+A custom gamemode for Team Fortress 2 - Players compete against each other to get the most points by playing a series of rapid fire microgames in order to win the round!
 
 ## Install Guide
-We have written a guide to assist you on installing the gamemode on your TF2 Server - read it here: https://www.gemidyne.com/projects/warioware/install-guide/
+We have written a guide to assist you on installing the gamemode on your TF2 Server - read it here: https://www.gemidyne.com/projects/microtf2/install-guide/
 
 ## Commands 
 See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Commands
@@ -36,11 +35,9 @@ If you intend to use the SDK plugin for developing your own gamemodes or minigam
 
 ## Credits
 
-View the full gamemode credits here: https://www.gemidyne.com/projects/warioware/credits
+View the full gamemode credits here: https://www.gemidyne.com/projects/microtf2/credits
 
-![Team WarioWare](https://cdn.jsdelivr.net/gh/gemidyne/microtf2@master/assets/team_warioware.png)
-
-By Team WarioWare / Gemidyne Softworks
+Resurrected by Gemidyne Softworks.
 
 ### Localisation
 
