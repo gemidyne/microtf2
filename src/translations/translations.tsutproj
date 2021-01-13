@@ -2020,40 +2020,8 @@
     },
     {
       "key": "Minigame28_Caption",
-      "description": "Tell players to listen for the sound!",
-      "text": "LISTEN FOR IT!",
-      "formatArguments": [],
-      "translations": {
-        "it": "ASCOLTA!",
-        "es": null,
-        "fr": null,
-        "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
-      },
-      "ignoreEmptyValue": false
-    },
-    {
-      "key": "Minigame28_Caption_ShootIt",
-      "description": "Tell players to shoot the one making the sound!",
-      "text": "SHOOT THE ONE MAKING A SOUND!",
-      "formatArguments": [],
-      "translations": {
-        "it": "COLPISCI QUELLO CHE FA RUMORE!",
-        "es": null,
-        "fr": null,
-        "ru": null,
-        "pt_p": null,
-        "pt": null,
-        "pl": null
-      },
-      "ignoreEmptyValue": false
-    },
-    {
-      "key": "Minigame29_Caption",
-      "description": "Tell players to get on the platform!",
-      "text": "GET ON THE PLATFORM!",
+      "description": "Tell players to bombjump onto the platform!",
+      "text": "BOMB JUMP ONTO THE PLATFORM!",
       "formatArguments": [],
       "translations": {
         "it": null,
