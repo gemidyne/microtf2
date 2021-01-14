@@ -2020,8 +2020,24 @@
     },
     {
       "key": "Minigame28_Caption",
-      "description": "Tell players to bombjump onto the platform!",
+      "description": "Tell players to bomb jump onto the platform!",
       "text": "BOMB JUMP ONTO THE PLATFORM!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame29_Caption",
+      "description": "Tell players to avoid touching anyone!",
+      "text": "DON'T TOUCH ANYONE!",
       "formatArguments": [],
       "translations": {
         "it": null,

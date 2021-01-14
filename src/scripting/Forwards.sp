@@ -298,6 +298,15 @@ Handle GlobalForward_OnPlayerConditionAdded;
  */
 Handle GlobalForward_OnPlayerConditionRemoved;
 
+/**
+ * Forward is called when a player collides with another player.
+ *
+ * @param Player 1
+ * @param Player 2
+ * @noreturn
+ */
+Handle GlobalForward_OnPlayerCollisionWithPlayer;
+
 stock void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
@@ -338,6 +347,7 @@ stock void InitializeForwards()
 	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
 	GlobalForward_OnPlayerConditionAdded = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerConditionRemoved = CreateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerCollisionWithPlayer = CreateForward(ET_Ignore, Param_Any, Param_Any);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -375,6 +385,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnGameOverStart);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerConditionAdded);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerConditionRemoved);
+	SafelyRemoveAllFromForward(GlobalForward_OnPlayerCollisionWithPlayer);
 }
 
 stock void SafelyRemoveAllFromForward(Handle hndl)

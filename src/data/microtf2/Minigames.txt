@@ -262,9 +262,18 @@
 	"28"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		""
-		"Caption"		"PIPE JUMP ONTO THE PLATFORM"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/bombjump.mp3"
+		"Caption"		"BOMB JUMP ONTO THE PLATFORM"
 		"EntryPoint"		"Minigame28_EntryPoint"
+		"BackgroundMusic_Length"		"6.0"
+		"MaximumPlayerCount"		"24"
+	}
+	"29"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/donttouch.mp3"
+		"Caption"		"DONT TOUCH ANYONE"
+		"EntryPoint"		"Minigame29_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
 		"MaximumPlayerCount"		"24"
 	}
