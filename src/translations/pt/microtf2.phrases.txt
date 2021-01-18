@@ -458,7 +458,7 @@
 	{
 		"pt"		""
 	}
-	"Minigame28_Caption_ShootIt"
+	"Minigame29_Caption"
 	{
 		"pt"		""
 	}

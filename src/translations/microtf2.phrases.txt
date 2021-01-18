@@ -456,15 +456,11 @@
 	}
 	"Minigame28_Caption"
 	{
-		"en"		"LISTEN FOR IT!"
-	}
-	"Minigame28_Caption_ShootIt"
-	{
-		"en"		"SHOOT THE ONE MAKING A SOUND!"
+		"en"		"BOMB JUMP ONTO THE PLATFORM!"
 	}
 	"Minigame29_Caption"
 	{
-		"en"		"GET ON THE PLATFORM!"
+		"en"		"DON'T TOUCH ANYONE!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

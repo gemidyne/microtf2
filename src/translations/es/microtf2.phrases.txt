@@ -458,7 +458,7 @@
 	{
 		"es"		""
 	}
-	"Minigame28_Caption_ShootIt"
+	"Minigame29_Caption"
 	{
 		"es"		""
 	}

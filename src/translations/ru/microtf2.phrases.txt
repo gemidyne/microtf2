@@ -458,7 +458,7 @@
 	{
 		"ru"		""
 	}
-	"Minigame28_Caption_ShootIt"
+	"Minigame29_Caption"
 	{
 		"ru"		""
 	}

@@ -456,11 +456,11 @@
 	}
 	"Minigame28_Caption"
 	{
-		"it"		"ASCOLTA!"
+		"it"		""
 	}
-	"Minigame28_Caption_ShootIt"
+	"Minigame29_Caption"
 	{
-		"it"		"COLPISCI QUELLO CHE FA RUMORE!"
+		"it"		""
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
