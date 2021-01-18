@@ -4,6 +4,9 @@
  * Explosive Jump - get to the win area
  */
 
+int Minigame28_RedIndex = 0;
+int Minigame28_BlueIndex = 0;
+
 public void Minigame28_EntryPoint()
 {
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame28_OnMapStart);
@@ -40,6 +43,8 @@ public void Minigame28_OnMinigameSelectedPre()
 	if (MinigameID == 28)
 	{
 		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		Minigame28_RedIndex = 0;
+		Minigame28_BlueIndex = 0;
 	}
 }
 
@@ -72,21 +77,42 @@ public void Minigame28_OnMinigameSelected(int client)
 		player.SetCollisionsEnabled(false);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		float ang[3] = { 0.0, 137.0, 0.0 };
+		float ang[3] = { 0.0, 0.0, 0.0 };
 		float pos[3];
 
-		int column = client;
+		int column;
 		int row = 0;
 
-		while (column > 9)
+		if (player.Team == TFTeam_Red)
 		{
-			column = column - 9;
+			column = Minigame28_RedIndex;
+			Minigame28_RedIndex++;
+		}
+		else 
+		{
+			column = Minigame28_BlueIndex;
+			Minigame28_BlueIndex++;
+		}
+
+		while (column > 8)
+		{
+			column = column - 8;
 			row = row + 1;
 		}
 
-		pos[0] = 3650.0 - float(row*60); 
-		pos[1] = 1943.0 - float(column*60);
-		pos[2] = 937.0;
+		if (player.Team == TFTeam_Red)
+		{
+			pos[0] = 3600.0 - float(row*70); 
+			pos[1] = 1900.0 - float(column*60);
+			pos[2] = 890.0;
+		}
+		else
+		{
+			pos[0] = 4800.0 + float(row*70); 
+			pos[1] = 1404.0 + float(column*60);
+			pos[2] = 890.0;
+			ang[1] = 180.0;
+		}
 
 		TeleportEntity(client, pos, ang, vel);
 	}
