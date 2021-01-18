@@ -207,6 +207,11 @@ public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		return;
 	}
 
+	if (!attacker.IsParticipating || !victim.IsParticipating)
+	{
+		return;
+	}
+
 	if (Minigame26_IsSelected[attacker.ClientId] && !Minigame26_IsSelected[victim.ClientId])
 	{
 		attacker.Status = PlayerStatus_Winner;

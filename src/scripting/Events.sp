@@ -348,6 +348,8 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		return Plugin_Continue;
 	}
 
+	Player player = new Player(client);
+
 	if (impulse != 0)
 	{
 		bool isSpray = impulse == 201;
@@ -360,7 +362,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 	}
 
-	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE)
+	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE && player.IsValid && player.IsParticipating)
 	{
 		Call_StartForward(GlobalForward_OnPlayerRunCmd);
 		Call_PushCell(client);
