@@ -93,7 +93,7 @@ public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, fl
 		}
 		else
 		{
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 	}
 }
