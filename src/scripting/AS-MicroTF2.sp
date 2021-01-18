@@ -1,6 +1,5 @@
 /* 
- * WarioWare for TF2 (formerly MicroTF2)
- * Copyright (C) 2010 - 2020 Gemidyne Softworks.
+ * Microgames for Team Fortress 2
  *
  * https://www.gemidyne.com/
  */
@@ -68,8 +67,8 @@
 
 public Plugin myinfo = 
 {
-	name = "WarioWare REDUX",
-	author = "Gemidyne Softworks / Team WarioWare",
+	name = "Microgames in Team Fortress 2",
+	author = "gemidyne",
 	description = "Yet another WarioWare gamemode for Team Fortress 2",
 	version = PLUGIN_VERSION,
 	url = "https://www.gemidyne.com/"
