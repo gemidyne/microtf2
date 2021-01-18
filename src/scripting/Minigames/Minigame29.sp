@@ -19,7 +19,7 @@ public void Minigame29_OnMinigameSelectedPre()
 {
 	if (MinigameID == 29)
 	{
-		// DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		DamageBlockMode = EDamageBlockMode_Nothing;
 		Minigame29_IsCheckingCollisions = false;
 		CreateTimer(1.5, Minigame29_EnableCollisionCheck);
 	}
@@ -41,9 +41,18 @@ public void Minigame29_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
+		// player.Class = TFClass_Pyro;
+		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
-		player.ResetHealth();
+		player.SetHealth(1500);
 		player.SetGodMode(false);
+		player.SetCollisionsEnabled(true);
+		// player.GiveWeapon(21);
+		player.GiveWeapon(45);
+
+		player.SetWeaponPrimaryAmmoCount(0);
+		player.SetWeaponClipAmmoCount(1);
+		// SDKHook(client, SDKHook_PreThink, Minigame29_RemoveLeftClick);
 	}
 }
 
@@ -79,7 +88,8 @@ public void Minigame29_OnTouch(int entity, int other)
 	player1.Status = PlayerStatus_Failed;
 	player2.Status = PlayerStatus_Failed;
 
-	SDKHooks_TakeDamage(player1.ClientId, player1.ClientId, player2.ClientId, 999.9, DMG_BLAST);
+	SDKHooks_TakeDamage(player1.ClientId, player1.ClientId, player2.ClientId, 999.9, DMG_VEHICLE);
+	SDKHooks_TakeDamage(player2.ClientId, player2.ClientId, player1.ClientId, 999.9, DMG_VEHICLE);
 }
 
 public void Minigame29_OnPlayerClassChange(int client, int class)
@@ -122,9 +132,25 @@ public void Minigame29_OnMinigameFinish()
 	{
 		Player player = new Player(i);
 
-		if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
+		if (player.IsValid && player.IsParticipating)
 		{
-			player.TriggerSuccess();
+			// SDKUnhook(player.ClientId, SDKHook_PreThink, Minigame29_RemoveLeftClick);
+
+			if (player.Status == PlayerStatus_NotWon)
+			{
+				player.TriggerSuccess();
+			}
 		}
+	}
+}
+
+public void Minigame29_RemoveLeftClick(int client)
+{
+	int buttons = GetClientButtons(client);
+
+	if ((buttons & IN_ATTACK))
+	{
+		buttons &= ~IN_ATTACK;
+		SetEntProp(client, Prop_Data, "m_nButtons", buttons);
 	}
 }
