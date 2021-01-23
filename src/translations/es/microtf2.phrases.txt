@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"es"		"ACABA CON EL EQUIPO ENEMIGO!"
+		"es"		""
 	}
 	"Bossgame4_Caption"
 	{

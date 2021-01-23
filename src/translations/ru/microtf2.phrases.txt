@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"ru"		"ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!"
+		"ru"		""
 	}
 	"Bossgame4_Caption"
 	{

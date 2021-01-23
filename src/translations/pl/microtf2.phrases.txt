@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"pl"		"POKONAJ WROGĄ DRUŻYNĘ!"
+		"pl"		""
 	}
 	"Bossgame4_Caption"
 	{

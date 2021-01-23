@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"pt"		"ELIMINE O TIME INIMIGO!"
+		"pt"		""
 	}
 	"Bossgame4_Caption"
 	{

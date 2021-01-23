@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"it"		"SCONFIGGI LA SQUADRA NEMICA!"
+		"it"		""
 	}
 	"Bossgame4_Caption"
 	{

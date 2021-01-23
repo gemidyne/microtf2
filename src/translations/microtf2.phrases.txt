@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"en"		"DEFEAT THE ENEMY TEAM!"
+		"en"		"STAY ON THE GREEN BLOCK!"
 	}
 	"Bossgame4_Caption"
 	{

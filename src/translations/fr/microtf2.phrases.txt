@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"fr"		"BATTEZ L'AUTRE ÉQUIPE !"
+		"fr"		""
 	}
 	"Bossgame4_Caption"
 	{

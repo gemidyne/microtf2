@@ -23,7 +23,7 @@
 		"Duration"		"60.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/boxing.mp3"
 		"EntryPoint"		"Bossgame3_EntryPoint"
-		"Caption"		"DEFEAT THE ENEMY TEAM!"
+		"Caption"		"GET ON THE GREEN BLOCK!"
 		"BlockedSpecialRounds" "12,14"
 		"RequiresMultiplePlayers"	"1"
 	}

@@ -779,18 +779,18 @@
     },
     {
       "key": "Bossgame3_Caption",
-      "description": null,
-      "text": "DEFEAT THE ENEMY TEAM!",
+      "description": "Tell players to stay on the green block!",
+      "text": "STAY ON THE GREEN BLOCK!",
       "formatArguments": [],
       "translations": {
-        "pt": "ELIMINE O TIME INIMIGO!",
-        "fr": "BATTEZ L'AUTRE ÉQUIPE !",
-        "it": "SCONFIGGI LA SQUADRA NEMICA!",
-        "pt_p": "ELIMINE O TIME INIMIGO!",
-        "ru": "ОДОЛЕЙТЕ ВРАЖУСКУЮ КОММАНДУ!",
-        "es": "ACABA CON EL EQUIPO ENEMIGO!",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": "POKONAJ WROGĄ DRUŻYNĘ!"
+        "pl": null
       },
       "ignoreEmptyValue": false
     },
