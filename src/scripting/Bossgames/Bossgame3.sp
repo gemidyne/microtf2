@@ -4,18 +4,35 @@
  * Floor Break boss
  */
 
+#define BOSSGAME3_STARTING_COUNTDOWN_DURATION 2.5
+#define BOSSGAME3_COUNTDOWN_DECAY 0.15
+#define BOSSGAME3_COUNTDOWN_LIMIT 1.25
+
+#define BOSSGAME3_STARTING_INTERVAL_DURATION 2.0
+#define BOSSGAME3_INTERVAL_DECAY 0.2
+#define BOSSGAME3_INTERVAL_LIMIT 0.5
+
 int Bossgame3_TotalParticipants = 0;
 int Bossgame3_PlayerIndex = 0;
 
 int Bossgame3_SelectedBlockId = 0;
+float Bossgame3_CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
+float Bossgame3_IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
 
 public void Bossgame3_EntryPoint()
 {
+	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame3_OnMapStart);
 	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame3_OnMinigameSelectedPre);
 	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame3_OnMinigameSelected);
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame3_OnMinigameFinish);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame3_OnPlayerDeath);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
+}
+
+public void Bossgame3_OnMapStart()
+{
+	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PrecacheSound("ui/killsound_retro.wav", true);
 }
 
 public void Bossgame3_OnMinigameSelectedPre()
@@ -36,7 +53,10 @@ public void Bossgame3_OnMinigameSelectedPre()
 			}
 		}
 
+		Bossgame3_CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
+		Bossgame3_IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
 		CreateTimer(3.5, Bossgame3_BeginWarningSequence);
+		Bossgame3_EnableBlocks();
 	}
 }
 
@@ -64,7 +84,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 	player.SetGodMode(false);
 	player.ResetHealth();
 	player.ResetWeapon(false);
-	player.SetCollisionsEnabled(true);
+	player.SetCollisionsEnabled(false);
 
 	Bossgame3_PlayerIndex++;
 
@@ -174,8 +194,13 @@ public Action Bossgame3_BeginWarningSequence(Handle timer)
 	Bossgame3_SelectedBlockId = GetRandomInt(1, 9);
 
 	Bossgame3_HighlightSelectedBlock();
+	PlaySoundToAll("ui/hitsound_retro1.wav");
 
-	CreateTimer(3.0, Bossgame3_BeginSwitchSequence);
+	CreateTimer(Bossgame3_CountdownDuration, Bossgame3_BeginSwitchSequence);
+	CreateTimer(Bossgame3_CountdownDuration * 0.2, Bossgame3_DoTickSfx);
+	CreateTimer(Bossgame3_CountdownDuration * 0.4, Bossgame3_DoTickSfx);
+	CreateTimer(Bossgame3_CountdownDuration * 0.6, Bossgame3_DoTickSfx);
+	CreateTimer(Bossgame3_CountdownDuration * 0.8, Bossgame3_DoTickSfx);
 	return Plugin_Handled;
 }
 
@@ -192,8 +217,23 @@ public Action Bossgame3_BeginSwitchSequence(Handle timer)
 	}
 
 	Bossgame3_DisableBlocks();
+	
+	PlaySoundToAll("ui/killsound_retro.wav");
 
 	CreateTimer(2.0, Bossgame3_BeginIntervalSequence);
+	Bossgame3_CountdownDuration -= BOSSGAME3_COUNTDOWN_DECAY;
+	Bossgame3_IntervalDuration -= BOSSGAME3_INTERVAL_DECAY;
+
+	if (Bossgame3_CountdownDuration <= BOSSGAME3_COUNTDOWN_LIMIT)
+	{
+		Bossgame3_CountdownDuration = BOSSGAME3_COUNTDOWN_LIMIT;
+	}
+
+	if (Bossgame3_IntervalDuration <= BOSSGAME3_INTERVAL_LIMIT)
+	{
+		Bossgame3_IntervalDuration = BOSSGAME3_INTERVAL_LIMIT;
+	}
+
 	return Plugin_Handled;
 }
 
@@ -211,7 +251,13 @@ public Action Bossgame3_BeginIntervalSequence(Handle timer)
 
 	Bossgame3_EnableBlocks();
 
-	CreateTimer(3.0, Bossgame3_BeginWarningSequence);
+	CreateTimer(Bossgame3_IntervalDuration, Bossgame3_BeginWarningSequence);
+	return Plugin_Handled;
+}
+
+public Action Bossgame3_DoTickSfx(Handle timer)
+{
+	PlaySoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
 	return Plugin_Handled;
 }
 

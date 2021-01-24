@@ -20,7 +20,7 @@
 	"3"
 	{
 		"Enabled"		"1"
-		"Duration"		"60.0"
+		"Duration"		"80.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/boxing.mp3"
 		"EntryPoint"		"Bossgame3_EntryPoint"
 		"Caption"		"GET ON THE GREEN BLOCK!"
