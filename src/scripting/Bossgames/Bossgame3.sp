@@ -221,11 +221,11 @@ void Bossgame3_HighlightSelectedBlock()
 	{
 		if (Bossgame3_SelectedBlockId == i)
 		{
-			Bossgame3_DoHighlightBlock(Bossgame3_SelectedBlockId);
+			Bossgame3_DoHighlightBlock(i);
 		}
 		else
 		{
-			Bossgame3_DoUnhighlightBlock(Bossgame3_SelectedBlockId);
+			Bossgame3_DoUnhighlightBlock(i);
 		}
 	}
 }
@@ -236,11 +236,11 @@ void Bossgame3_DisableBlocks()
 	{
 		if (Bossgame3_SelectedBlockId == i)
 		{
-			Bossgame3_DoHighlightBlock(Bossgame3_SelectedBlockId);
+			Bossgame3_DoHighlightBlock(i);
 		}
 		else
 		{
-			Bossgame3_DoDisableBlock(Bossgame3_SelectedBlockId);
+			Bossgame3_DoDisableBlock(i);
 		}
 	}
 }
@@ -274,7 +274,7 @@ void Bossgame3_DoUnhighlightBlock(int blockId)
 void Bossgame3_SendUnselectedBlockInput(int blockId, const char[] input)
 {
 	char name[32];
-	Format(name, sizeof(name), "plugin_Bossgame3_B%i", blockId);
+	Format(name, sizeof(name), "plugin_Bossgame3_C%i", blockId);
 	Bossgame3_SendBlockInput(name, input);
 }
 
