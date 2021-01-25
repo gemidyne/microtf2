@@ -335,7 +335,7 @@ void Bossgame3_SendBlockInput(const char[] name, const char[] input)
 {
 	int entity = -1;
 	char entityName[32];
-	
+
 	while ((entity = FindEntityByClassname(entity, "func_brush")) != INVALID_ENT_REFERENCE)
 	{
 		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
@@ -343,7 +343,6 @@ void Bossgame3_SendBlockInput(const char[] name, const char[] input)
 		if (strcmp(entityName, name) == 0)
 		{
 			AcceptEntityInput(entity, input, -1, -1, -1);
-			break;
 		}
 	}
 }
