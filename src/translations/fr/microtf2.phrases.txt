@@ -70,6 +70,30 @@
 	{
 		"fr"		"Gagné !"
 	}
+	"General_SpeedUp"
+	{
+		"fr"		"SPEED UP!"
+	}
+	"General_SpeedDown"
+	{
+		"fr"		"SPEED DOWN!"
+	}
+	"General_Failure"
+	{
+		"fr"		"FAILURE!"
+	}
+	"General_Success"
+	{
+		"fr"		"SUCCESS!"
+	}
+	"General_BossTime"
+	{
+		"fr"		"BOSS TIME!"
+	}
+	"General_GameOver"
+	{
+		"fr"		"GAME OVER!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"fr"		"== LA MANCHE SPÉCIALE EST TERMINÉE ! =="
@@ -425,6 +449,10 @@
 	"Minigame27_Caption"
 	{
 		"fr"		"FRAPPEZ UN ENNEMI !"
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"fr"		"TYPE THE WORDS!"
 	}
 	"Bossgame7_Caption_Explain"
 	{

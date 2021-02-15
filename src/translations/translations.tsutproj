@@ -351,14 +351,14 @@
       "text": "SPEED UP!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "SPEED UP!",
+        "fr": "SPEED UP!",
+        "it": "SPEED UP!",
+        "pt_p": "SPEED UP!",
+        "ru": "SPEED UP!",
+        "es": "SPEED UP!",
         "jp": null,
-        "pl": ""
+        "pl": "SPEED UP!"
       },
       "ignoreEmptyValue": false
     },
@@ -368,14 +368,14 @@
       "text": "SPEED DOWN!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "SPEED DOWN!",
+        "fr": "SPEED DOWN!",
+        "it": "SPEED DOWN!",
+        "pt_p": "SPEED DOWN!",
+        "ru": "SPEED DOWN!",
+        "es": "SPEED DOWN!",
         "jp": null,
-        "pl": ""
+        "pl": "SPEED DOWN!"
       },
       "ignoreEmptyValue": false
     },
@@ -385,14 +385,14 @@
       "text": "FAILURE!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "FAILURE!",
+        "fr": "FAILURE!",
+        "it": "FAILURE!",
+        "pt_p": "FAILURE!",
+        "ru": "FAILURE!",
+        "es": "FAILURE!",
         "jp": null,
-        "pl": ""
+        "pl": "FAILURE!"
       },
       "ignoreEmptyValue": false
     },
@@ -402,14 +402,14 @@
       "text": "SUCCESS!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "SUCCESS!",
+        "fr": "SUCCESS!",
+        "it": "SUCCESS!",
+        "pt_p": "SUCCESS!",
+        "ru": "SUCCESS!",
+        "es": "SUCCESS!",
         "jp": null,
-        "pl": ""
+        "pl": "SUCCESS!"
       },
       "ignoreEmptyValue": false
     },
@@ -419,14 +419,14 @@
       "text": "BOSS TIME!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "BOSS TIME!",
+        "fr": "BOSS TIME!",
+        "it": "BOSS TIME!",
+        "pt_p": "BOSS TIME!",
+        "ru": "BOSS TIME!",
+        "es": "BOSS TIME!",
         "jp": null,
-        "pl": ""
+        "pl": "BOSS TIME!"
       },
       "ignoreEmptyValue": false
     },
@@ -436,14 +436,14 @@
       "text": "GAME OVER!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "GAME OVER!",
+        "fr": "GAME OVER!",
+        "it": "GAME OVER!",
+        "pt_p": "GAME OVER!",
+        "ru": "GAME OVER!",
+        "es": "GAME OVER!",
         "jp": null,
-        "pl": ""
+        "pl": "GAME OVER!"
       },
       "ignoreEmptyValue": false
     },
@@ -2007,14 +2007,14 @@
       "text": "TYPE THE WORDS!",
       "formatArguments": [],
       "translations": {
-        "pt": "",
-        "fr": "",
-        "it": "",
-        "pt_p": "",
-        "ru": "",
-        "es": "",
+        "pt": "TYPE THE WORDS!",
+        "fr": "TYPE THE WORDS!",
+        "it": "TYPE THE WORDS!",
+        "pt_p": "TYPE THE WORDS!",
+        "ru": "TYPE THE WORDS!",
+        "es": "TYPE THE WORDS!",
         "jp": null,
-        "pl": ""
+        "pl": "TYPE THE WORDS!"
       },
       "ignoreEmptyValue": false
     },

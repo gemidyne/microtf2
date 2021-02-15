@@ -70,6 +70,30 @@
 	{
 		"pl"		"Zwycięzca!"
 	}
+	"General_SpeedUp"
+	{
+		"pl"		"SPEED UP!"
+	}
+	"General_SpeedDown"
+	{
+		"pl"		"SPEED DOWN!"
+	}
+	"General_Failure"
+	{
+		"pl"		"FAILURE!"
+	}
+	"General_Success"
+	{
+		"pl"		"SUCCESS!"
+	}
+	"General_BossTime"
+	{
+		"pl"		"BOSS TIME!"
+	}
+	"General_GameOver"
+	{
+		"pl"		"GAME OVER!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"pl"		"== RUNDA SPECJALNA DOBIEGŁA KOŃCA! =="
@@ -425,6 +449,10 @@
 	"Minigame27_Caption"
 	{
 		"pl"		"UDERZ WROGA!"
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"pl"		"TYPE THE WORDS!"
 	}
 	"Bossgame7_Caption_Explain"
 	{

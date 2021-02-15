@@ -70,6 +70,30 @@
 	{
 		"pt_p"		"Vencedor!"
 	}
+	"General_SpeedUp"
+	{
+		"pt_p"		"SPEED UP!"
+	}
+	"General_SpeedDown"
+	{
+		"pt_p"		"SPEED DOWN!"
+	}
+	"General_Failure"
+	{
+		"pt_p"		"FAILURE!"
+	}
+	"General_Success"
+	{
+		"pt_p"		"SUCCESS!"
+	}
+	"General_BossTime"
+	{
+		"pt_p"		"BOSS TIME!"
+	}
+	"General_GameOver"
+	{
+		"pt_p"		"GAME OVER!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"pt_p"		"== A RODADA ESPECIAL FOI ENCERRADA! =="
@@ -425,6 +449,10 @@
 	"Minigame27_Caption"
 	{
 		"pt_p"		"ACERTE UM INIMIGO!"
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"pt_p"		"TYPE THE WORDS!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
