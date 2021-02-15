@@ -98,6 +98,14 @@ public void OnPluginEnd()
 
 public void OnMapStart()
 {
+	AddServerTag("warioware");
+	AddServerTag("wario ware");
+	AddServerTag("microtf2");
+	AddServerTag("minigames");
+	AddServerTag("mini games");
+	AddServerTag("microgames");
+	AddServerTag("micro games");
+
 	IsPluginEnabled = IsWarioWareMap();
 
 	if (IsPluginEnabled)
