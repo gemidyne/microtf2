@@ -68,6 +68,7 @@ bool IsPlayerWinner[MAXPLAYERS+1] = false;
 bool HideHudGamemodeText = false;
 bool AllowCosmetics = false;
 bool ForceCalculationCritical = false;
+bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
 #if defined USE_MAXSPEED_HOOK
 bool ApplyMaxSpeedOverrides = false;

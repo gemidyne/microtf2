@@ -435,7 +435,19 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Explain", i);
 
 			player.PrintHintBox(text);
-			player.DisplayOverlay("gemidyne/warioware/overlays/bossgame_typethewords");
+			
+			if (player.IsUsingLegacyDirectX)
+			{
+				player.DisplayOverlay(OVERLAY_BLANK);
+
+				char caption[64];
+				Format(caption, sizeof(caption), "%T", "Bossgame7_Caption_TypeTheWords", player.ClientId);
+				player.SetCaption(caption);
+			}
+			else
+			{
+				player.DisplayOverlay("gemidyne/warioware/overlays/bossgame_typethewords");
+			}
 
 			EmitSoundToClient(i, BOSSGAME7_SFX_SPIRAL, Bossgame7_ActiveCameraEntityId);
 		}

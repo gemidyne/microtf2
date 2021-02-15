@@ -33,7 +33,7 @@
  */
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "4.1.1"
+#define PLUGIN_VERSION "4.1.2"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 //#define PLUGIN_DOPRECACHE 
@@ -461,7 +461,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 				}
 			}
 
-			if (player.HasCaption())
+			if (player.HasCaption() && !player.IsUsingLegacyDirectX)
 			{
 				player.DisplayOverlay(OVERLAY_MINIGAMEBLANK);
 			}
@@ -570,9 +570,26 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
 				PlayNegativeVoice(i);
 
-				player.DisplayOverlay(((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17) 
-					? OVERLAY_FAIL 
-					: OVERLAY_BLANK);
+				bool showFailure = ((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17);
+
+				if (showFailure)
+				{
+					if (player.IsUsingLegacyDirectX)
+					{
+						char text[64];
+						Format(text, sizeof(text), "%T", "General_Failure", player.ClientId);
+						player.SetCaption(text);
+						player.DisplayOverlay(OVERLAY_BLANK);
+					}
+					else
+					{
+						player.DisplayOverlay(OVERLAY_FAIL);
+					}
+				}
+				else
+				{
+					player.DisplayOverlay(OVERLAY_BLANK);
+				}
 
 				if (player.IsParticipating)
 				{
@@ -646,7 +663,18 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER][0]);
 				PlayPositiveVoice(i);
 
-				player.DisplayOverlay(OVERLAY_WON);
+				if (player.IsUsingLegacyDirectX)
+				{
+					char text[64];
+					Format(text, sizeof(text), "%T", "General_Success", player.ClientId);
+					player.SetCaption(text);
+					player.DisplayOverlay(OVERLAY_BLANK);
+				}
+				else
+				{
+					player.DisplayOverlay(OVERLAY_WON);
+				}
+
 				player.ResetHealth();
 				player.SetGlow(true);
 
@@ -809,7 +837,19 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.SetGlow(false);
 				}
 				
-				player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				if (player.UsesLegacyDirectX)
+				{
+					player.DisplayOverlay(OVERLAY_BLANK);
+
+					char text[64];
+					Format(text, sizeof(text), "%T", down ? "General_SpeedDown" : "General_SpeedUp", player.ClientId);
+					player.SetCaption(text);
+				}
+				else
+				{
+					player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+				}
+
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
@@ -841,7 +881,18 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 				player.SetGlow(false);
 			}
 
-			player.DisplayOverlay(OVERLAY_BOSS);
+			if (player.IsUsingLegacyDirectX)
+			{
+				char text[64];
+				Format(text, sizeof(text), "%T", "General_BossTime", player.ClientId);
+				player.SetCaption(text);
+				player.DisplayOverlay(OVERLAY_BLANK);
+			}
+			else
+			{
+				player.DisplayOverlay(OVERLAY_BOSS);
+			}
+
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
 		}
 	}
@@ -911,7 +962,18 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				player.PrintCenterTextLocalised("GameOver_SpecialRoundHasFinished");
 			}
 
-			player.DisplayOverlay(OVERLAY_GAMEOVER);
+			if (player.IsUsingLegacyDirectX)
+			{
+				char text[64];
+				Format(text, sizeof(text), "%T", "General_GameOver", player.ClientId);
+				player.SetCaption(text);
+				player.DisplayOverlay(OVERLAY_BLANK);
+			}
+			else
+			{
+				player.DisplayOverlay(OVERLAY_GAMEOVER);
+			}
+
 			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
 
 			SetEntityRenderColor(i, 255, 255, 255, 255);
