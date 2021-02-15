@@ -210,6 +210,14 @@ methodmap Player __nullable__
         }
     }
 
+    property bool IsUsingLegacyDirectX
+    {
+        public get()
+        {
+            return IsPlayerUsingLegacyDirectX[this.ClientId];
+        }
+    }
+
     public void DisplayOverlay(const char[] path)
     {
         SetCommandFlags("r_screenoverlay", GetCommandFlags("r_screenoverlay") & (~FCVAR_CHEAT));

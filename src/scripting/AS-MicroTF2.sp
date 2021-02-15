@@ -837,7 +837,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.SetGlow(false);
 				}
 				
-				if (player.UsesLegacyDirectX)
+				if (player.IsUsingLegacyDirectX)
 				{
 					player.DisplayOverlay(OVERLAY_BLANK);
 
