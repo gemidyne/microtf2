@@ -402,22 +402,8 @@ methodmap Player __nullable__
 
     public void SetThirdPersonMode(bool enabled)
     {
-        if (enabled)
-        {
-            int flags = GetCommandFlags("thirdperson");
-
-            SetCommandFlags("thirdperson", flags & (~FCVAR_CHEAT));
-            ClientCommand(this.ClientId, "thirdperson");
-            SetCommandFlags("thirdperson", flags);
-        }
-        else
-        {
-            int flags = GetCommandFlags("firstperson");
-
-            SetCommandFlags("firstperson", flags & (~FCVAR_CHEAT));
-            ClientCommand(this.ClientId, "firstperson");
-            SetCommandFlags("firstperson", flags);
-        }
+        SetVariantInt(view_as<int>(enabled));
+        AcceptEntityInput(this.ClientId, "SetForcedTauntCam");
     }
 
     public void SetViewModelVisible(bool visible)
