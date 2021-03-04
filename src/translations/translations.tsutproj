@@ -459,7 +459,7 @@
         "pt_p": "SPECIAL ROUND!",
         "ru": "SPECIAL ROUND!",
         "es": "SPECIAL ROUND!",
-        "jp": "SPECIAL ROUND!",
+        "jp": null,
         "pl": "SPECIAL ROUND!"
       },
       "ignoreEmptyValue": false
