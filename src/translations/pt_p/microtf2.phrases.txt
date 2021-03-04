@@ -94,6 +94,10 @@
 	{
 		"pt_p"		"GAME OVER!"
 	}
+	"General_SpecialRound"
+	{
+		"pt_p"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"pt_p"		"== A RODADA ESPECIAL FOI ENCERRADA! =="

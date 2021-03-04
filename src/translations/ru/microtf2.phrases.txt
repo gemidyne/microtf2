@@ -94,6 +94,10 @@
 	{
 		"ru"		"GAME OVER!"
 	}
+	"General_SpecialRound"
+	{
+		"ru"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"ru"		"== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! =="

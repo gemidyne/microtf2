@@ -94,6 +94,10 @@
 	{
 		"pl"		"GAME OVER!"
 	}
+	"General_SpecialRound"
+	{
+		"pl"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"pl"		"== RUNDA SPECJALNA DOBIEGŁA KOŃCA! =="

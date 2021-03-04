@@ -516,7 +516,26 @@ public Action Timer_GameLogic_SpecialRoundChoosingStartSelection(Handle timer)
 {
 	IsChoosingSpecialRound = true;
 
-	DisplayOverlayToAll(OVERLAY_SPECIALROUND);
+	for (int i = 1; i <= MaxClients; i++)
+	{
+		Player player = new Player(i);
+
+		if (player.IsValid && !player.IsBot)
+		{
+			if (player.IsUsingLegacyDirectX)
+			{
+				player.DisplayOverlay(OVERLAY_BLANK);
+
+				char text[64];
+				Format(text, sizeof(text), "%T", "General_SpecialRound", player.ClientId);
+				player.SetCaption(text);
+			}
+			else
+			{
+				player.DisplayOverlay(OVERLAY_SPECIALROUND);
+			}
+		}
+	}
 
 	CreateTimer(6.8, Timer_GameLogic_SpecialRoundChoosingDoSelect, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;

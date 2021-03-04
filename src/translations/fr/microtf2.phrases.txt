@@ -94,6 +94,10 @@
 	{
 		"fr"		"GAME OVER!"
 	}
+	"General_SpecialRound"
+	{
+		"fr"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"fr"		"== LA MANCHE SPÉCIALE EST TERMINÉE ! =="

@@ -3,696 +3,696 @@
 	"System_Advertisement"
 	{
 		"#format"		"{1:s}"
-		"it"		"Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti."
+		"jp"		""
 	}
 	"Hud_Score_Default"
 	{
 		"#format"		"{1:i}"
-		"it"		"Punti: {1}"
+		"jp"		""
 	}
 	"Hud_Score_Minigames"
 	{
 		"#format"		"{1:i}"
-		"it"		"Minigiochi: {1}"
+		"jp"		""
 	}
 	"Hud_Score_TeamScore"
 	{
 		"#format"		"{1:i}"
-		"it"		"Punti Squadra: {1}"
+		"jp"		""
 	}
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"it"		"Barili: {1}"
+		"jp"		""
 	}
 	"Hud_RoundDisplay"
 	{
 		"#format"		"{1:i},{2:i}"
-		"it"		"Round {1} di {2}"
+		"jp"		""
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
 		"#format"		"{1:i}"
-		"it"		"Round {1}"
+		"jp"		""
 	}
 	"Hud_ThemeDisplay"
 	{
 		"#format"		"{1:s}"
-		"it"		"Tema di {1}"
+		"jp"		""
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
 		"#format"		"{1:s}"
-		"it"		"ROUND SPECIALE: {1}!"
+		"jp"		""
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
 		"#format"		"{1:s},{2:s},{3:s}"
-		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
+		"jp"		""
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
-		"it"		"Tornerai in gioco non appena il minigioco o boss corrente sarà terminato."
+		"jp"		""
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
-		"it"		"SEI STATO ELIMINATO!"
+		"jp"		""
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
-		"it"		"Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale."
+		"jp"		""
 	}
 	"General_Loser"
 	{
-		"it"		"Perso!"
+		"jp"		""
 	}
 	"General_Winner"
 	{
-		"it"		"Vinto!"
+		"jp"		""
 	}
 	"General_SpeedUp"
 	{
-		"it"		"SPEED UP!"
+		"jp"		""
 	}
 	"General_SpeedDown"
 	{
-		"it"		"SPEED DOWN!"
+		"jp"		""
 	}
 	"General_Failure"
 	{
-		"it"		"FAILURE!"
+		"jp"		""
 	}
 	"General_Success"
 	{
-		"it"		"SUCCESS!"
+		"jp"		""
 	}
 	"General_BossTime"
 	{
-		"it"		"BOSS TIME!"
+		"jp"		""
 	}
 	"General_GameOver"
 	{
-		"it"		"GAME OVER!"
+		"jp"		""
 	}
 	"General_SpecialRound"
 	{
-		"it"		"SPECIAL ROUND!"
+		"jp"		"SPECIAL ROUND!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
-		"it"		"== IL ROUND SPECIALE È TERMINATO! =="
+		"jp"		""
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"it"		"Il vincitore è..."
+		"jp"		""
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
-		"it"		"I vincitori sono..."
+		"jp"		""
 	}
 	"GameOver_WinnersAnd"
 	{
-		"it"		"e"
+		"jp"		""
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
-		"it"		"Nessuno ha vinto!"
+		"jp"		""
 	}
 	"GameOver_WinnerSuffix"
 	{
 		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"it"		"{1}{2} {3} {green}con {4} punti!"
+		"jp"		""
 	}
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"		"{1:s},{2:i}"
-		"it"		"{1}Vince la squadra RED, con {2} punti!"
+		"jp"		""
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"		"{1:s},{2:i}"
-		"it"		"{1}Vince la squadra BLU, con {2} punti!"
+		"jp"		""
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
 		"#format"		"{1:s}"
-		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
+		"jp"		""
 	}
 	"System_Intermission_Header"
 	{
-		"it"		"Intervallo!"
+		"jp"		""
 	}
 	"System_Intermission_Body"
 	{
-		"it"		"Pausa! È ora di votare per la prossima mappa."
+		"jp"		""
 	}
 	"Bossgame1_Caption"
 	{
-		"it"		"ARRIVA IN CIMA CON I SALTI RAZZO!"
+		"jp"		""
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!"
+		"jp"		""
 	}
 	"Bossgame2_Caption"
 	{
-		"it"		"FUGGI DALLA FABBRICA!"
+		"jp"		""
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!"
+		"jp"		""
 	}
 	"Bossgame3_Caption"
 	{
-		"it"		"SCONFIGGI LA SQUADRA NEMICA!"
+		"jp"		""
 	}
 	"Bossgame4_Caption"
 	{
-		"it"		"NON FINIRE NELL'ACQUA!"
+		"jp"		""
 	}
 	"Bossgame5_Caption"
 	{
-		"it"		"RAGGIUNGI L'ARRIVO!"
+		"jp"		""
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!"
+		"jp"		""
 	}
 	"Bossgame6_Caption"
 	{
-		"it"		"SPARA A PIU' BARILI CHE PUOI!"
+		"jp"		""
 	}
 	"Bossgame7_Caption"
 	{
-		"it"		""
+		"jp"		""
 	}
 	"Minigame1_Caption"
 	{
-		"it"		"RAGGIUNGI LA META!"
+		"jp"		""
 	}
 	"Minigame2_Caption"
 	{
-		"it"		"UCCIDI UN NEMICO!"
+		"jp"		""
 	}
 	"Minigame3_Caption"
 	{
-		"it"		"ROMPI I BARILI!"
+		"jp"		""
 	}
 	"Minigame4_Caption"
 	{
-		"it"		"SPINGI COL COMPRESSORE!"
+		"jp"		""
 	}
 	"Minigame5_Caption"
 	{
-		"it"		"SALTO ADESIVO!"
+		"jp"		""
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
 		"#format"		"{1:s}"
-		"it"		"SCRIVI LA PAROLA!\n{1}"
+		"jp"		""
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!"
+		"jp"		""
 	}
 	"Minigame7_Caption"
 	{
-		"it"		"SALTO RAZZO!"
+		"jp"		""
 	}
 	"Minigame8_CaptionFormatted"
 	{
 		"#format"		"{1:s}"
-		"it"		"RISPONDI ALLA DOMANDA!\n{1} = ?"
+		"jp"		""
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
 		"#format"		"{1:s},{2:i}"
-		"it"		"{1}La risposta corretta era {2}!"
+		"jp"		""
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
-		"it"		"SIMONE DICE: PROVOCA!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SimonSaysJump"
 	{
-		"it"		"SIMONE DICE: SALTA!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SimonSaysCrouch"
 	{
-		"it"		"SIMONE DICE: ABBASSATI!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
-		"it"		"SALMONE DICE: PROVOCA!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"it"		"SALMONE DICE: SALTA!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
-		"it"		"SALMONE DICE: ABBASSATI!"
+		"jp"		""
 	}
 	"Minigame9_Caption_SimonDidntSayIt"
 	{
-		"it"		"(Non lo ha detto Simone..)"
+		"jp"		""
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"it"		"Il kamikaze è qui!"
+		"jp"		""
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
-		"it"		"FAI ESPLODERE PIU' GIOCATORI CHE PUOI!"
+		"jp"		""
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"it"		"SCAPPA DAL KAMIKAZE!"
+		"jp"		""
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
-		"it"		"CONTINUA A MUOVERTI!"
+		"jp"		""
 	}
 	"Minigame11_Caption_DontMove"
 	{
-		"it"		"NON MUOVERTI!"
+		"jp"		""
 	}
 	"Minigame12_Caption"
 	{
-		"it"		"SALI SU UNA PIATTAFORMA!"
+		"jp"		""
 	}
 	"Minigame13_Caption"
 	{
-		"it"		"FAI LO SPYCRAB!"
+		"jp"		""
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
-		"it"		"Gli Spycrab devono abbassarsi e guardare in alto!"
+		"jp"		""
 	}
 	"Minigame14_Caption_Spies"
 	{
-		"it"		"SABOTA UNA COSTRUZIONE!"
+		"jp"		""
 	}
 	"Minigame14_Caption_Engineers"
 	{
-		"it"		"FATTI SABOTARE UNA COSTRUZIONE!"
+		"jp"		""
 	}
 	"Minigame15_Caption_Any"
 	{
-		"it"		"COSTRUISCI QUALCOSA!"
+		"jp"		""
 	}
 	"Minigame15_Caption_Dispenser"
 	{
-		"it"		"COSTRUISCI UN DISPENSER!"
+		"jp"		""
 	}
 	"Minigame15_Caption_Teleporter"
 	{
-		"it"		"COSTRUISCI UN TELETRASPORTO!"
+		"jp"		""
 	}
 	"Minigame15_Caption_Sentry"
 	{
-		"it"		"COSTRUSICI UNA TORRETTA!"
+		"jp"		""
 	}
 	"Minigame16_Caption"
 	{
-		"it"		"COPRI UN NEMICO DI GIARATE!"
+		"jp"		""
 	}
 	"Minigame17_Caption_HitAHeavy"
 	{
-		"it"		"COLPISCI UN GROSSO!"
+		"jp"		""
 	}
 	"Minigame17_Caption_GetHitByMedic"
 	{
-		"it"		"FATTI COLPIRE DA UN MEDICO!"
+		"jp"		""
 	}
 	"Minigame18_Caption"
 	{
-		"it"		"COLPISCI IL BERSAGLIO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
-		"it"		"CAMBIA CLASSE!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassScout"
 	{
-		"it"		"CAMBIA CLASSE IN ESPLORATORE!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassSoldier"
 	{
-		"it"		"CAMBIA CLASSE IN SOLDATO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassPyro"
 	{
-		"it"		"CAMBIA CLASSE IN PIRO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassDemoman"
 	{
-		"it"		"CAMBIA CLASSE IN DEMOLITORE!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassHeavy"
 	{
-		"it"		"CAMBIA CLASSE IN GROSSO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassEngineer"
 	{
-		"it"		"CAMBIA CLASSE IN INGEGNERE!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassMedic"
 	{
-		"it"		"CAMBIA CLASSE IN MEDICO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassSniper"
 	{
-		"it"		"CAMBIA CLASSE IN CECCHINO!"
+		"jp"		""
 	}
 	"Minigame19_Caption_ChangeClassSpy"
 	{
-		"it"		"CAMBIA CLASSE IN SPIA!"
+		"jp"		""
 	}
 	"Minigame20_Caption_Drink"
 	{
-		"it"		"BEVI!"
+		"jp"		""
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"it"		"NON BERE!"
+		"jp"		""
 	}
 	"Minigame20_Caption_Eat"
 	{
-		"it"		"MANGIA!"
+		"jp"		""
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"it"		"NON MANGIARE!"
+		"jp"		""
 	}
 	"Minigame21_Caption"
 	{
-		"it"		"STORDISCI UN NEMICO!"
+		"jp"		""
 	}
 	"Minigame22_Caption"
 	{
-		"it"		"RIMANI A TERRA!"
+		"jp"		""
 	}
 	"Minigame23_Caption"
 	{
-		"it"		"DOPPIO SALTO!"
+		"jp"		""
 	}
 	"Minigame24_Caption"
 	{
-		"it"		"SALTO AGO!"
+		"jp"		""
 	}
 	"Minigame25_Caption"
 	{
-		"it"		"PROPULSORE!"
+		"jp"		""
 	}
 	"Minigame26_Caption_DontLaugh"
 	{
-		"it"		"NON RIDERE!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"it"		"FAI RIDERE GLI ESPLORATORI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"it"		"FAI RIDERE I SOLDATI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"it"		"FAI RIDERE I PIRO!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"it"		"FAI RIDERE I DEMOLITORI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"it"		"FAI RIDERE GLI INGEGNERI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"it"		"FAI RIDERE I MEDICI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"it"		"FAI RIDERE I CECCHINI!"
+		"jp"		""
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"it"		"FAI RIDERE LE SPIE!"
+		"jp"		""
 	}
 	"Minigame27_Caption"
 	{
-		"it"		"COLPISCI UN NEMICO!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"it"		"TYPE THE WORDS!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"it"		"Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_Start"
 	{
-		"it"		"VIA!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"		"{1:i}"
-		"it"		"== SPETTATORE ==\n\nTempo rimasto: {1} secondo(i)"
+		"jp"		""
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"it"		"== SCRIVI LA PAROLA! ==\n\n{1}\n\nProssima parola: {2}\nTempo rimasto: {3} secondo(i)"
+		"jp"		""
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"		"{1:s}"
-		"it"		"== ANNUNCIO ==\n\nIl vincitore è...\n{1}!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
-		"it"		"== ANNUNCIO == \n\nLIVELLO SUCCESSIVO! LE PAROLE SARANNO PIU' DIFFICILI!"
+		"jp"		""
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
 		"#format"		"{1:s}"
-		"it"		"== INTERVALLO == \n\nI giocatori che hanno scritto il minor numero di parole sono...\n{1}"
+		"jp"		""
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
 		"#format"		"{1:s},{2:i}"
-		"it"		"{1}\ne altri {2}..."
+		"jp"		""
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
 		"#format"		"{1:s}"
-		"it"		"{1}Nessuno!\n\nTutti sopravvivono per un altro round!"
+		"jp"		""
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"it"		"Non è permesso cambiare classe durante i giochi boss!"
+		"jp"		""
 	}
 	"SpecialRound0_Name"
 	{
-		"it"		"Terza Persona"
+		"jp"		""
 	}
 	"SpecialRound0_Description"
 	{
-		"it"		"Guarda il mondo da un'altra prospettiva!"
+		"jp"		""
 	}
 	"SpecialRound1_Name"
 	{
-		"it"		"Sprint"
+		"jp"		""
 	}
 	"SpecialRound1_Description"
 	{
-		"it"		"Il round comincia veloce e poi va a rallentare!"
+		"jp"		""
 	}
 	"SpecialRound2_Name"
 	{
-		"it"		"Round Esteso"
+		"jp"		""
 	}
 	"SpecialRound2_Description"
 	{
-		"it"		"Ben 30 minigiochi saranno giocati prima del gioco boss!"
+		"jp"		""
 	}
 	"SpecialRound3_Name"
 	{
-		"it"		"Bassa Gravità"
+		"jp"		""
 	}
 	"SpecialRound3_Description"
 	{
-		"it"		"Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!"
+		"jp"		""
 	}
 	"SpecialRound4_Name"
 	{
-		"it"		"Camomilla"
+		"jp"		""
 	}
 	"SpecialRound4_Description"
 	{
-		"it"		"La velocità dei minigiochi non aumenterà in questo round!"
+		"jp"		""
 	}
 	"SpecialRound5_Name"
 	{
-		"it"		"Adrenalina Pura!"
+		"jp"		""
 	}
 	"SpecialRound5_Description"
 	{
-		"it"		"Il round si farà più veloce dopo ogni minigioco!"
+		"jp"		""
 	}
 	"SpecialRound6_Name"
 	{
-		"it"		"Alti e Bassi"
+		"jp"		""
 	}
 	"SpecialRound6_Description"
 	{
-		"it"		"La velocità cambierà casualmente dopo ogni minigioco!"
+		"jp"		""
 	}
 	"SpecialRound7_Name"
 	{
-		"it"		"Moviola"
+		"jp"		""
 	}
 	"SpecialRound7_Description"
 	{
-		"it"		"Il round si farà più lento dopo ogni minigioco!"
+		"jp"		""
 	}
 	"SpecialRound8_Name"
 	{
-		"it"		"Incubo Matematico"
+		"jp"		""
 	}
 	"SpecialRound8_Description"
 	{
-		"it"		"Ci sai fare con i numeri?"
+		"jp"		""
 	}
 	"SpecialRound9_Name"
 	{
-		"it"		"Potere ai Poveri"
+		"jp"		""
 	}
 	"SpecialRound9_Description"
 	{
-		"it"		"Vince il giocatore con il punteggio più basso!"
+		"jp"		""
 	}
 	"SpecialRound10_Name"
 	{
-		"it"		"Bis di Boss"
+		"jp"		""
 	}
 	"SpecialRound10_Description"
 	{
-		"it"		"Il round avrà due giochi boss!"
+		"jp"		""
 	}
 	"SpecialRound11_Name"
 	{
-		"it"		"Gioco di Squadra"
+		"jp"		""
 	}
 	"SpecialRound11_Description"
 	{
-		"it"		"Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!"
+		"jp"		""
 	}
 	"SpecialRound12_Name"
 	{
-		"it"		"Giocatore Singolo"
+		"jp"		""
 	}
 	"SpecialRound12_Description"
 	{
-		"it"		"Ehi... Dove sono finiti tutti?"
+		"jp"		""
 	}
 	"SpecialRound13_Name"
 	{
-		"it"		"SCHELETRI!"
+		"jp"		""
 	}
 	"SpecialRound13_Description"
 	{
-		"it"		"Muscoli? Pelle? A che servono?"
+		"jp"		""
 	}
 	"SpecialRound14_Name"
 	{
-		"it"		"Noi Puffi siam così"
+		"jp"		""
 	}
 	"SpecialRound14_Description"
 	{
-		"it"		"Tutti i giocatori diventano alti due mele o poco più!"
+		"jp"		""
 	}
 	"SpecialRound15_Name"
 	{
-		"it"		"Testone"
+		"jp"		""
 	}
 	"SpecialRound15_Description"
 	{
-		"it"		"Tutti i giocatori sviluppano un intelletto superiore!"
+		"jp"		""
 	}
 	"SpecialRound16_Name"
 	{
-		"it"		"Punteggi casuali"
+		"jp"		""
 	}
 	"SpecialRound16_Description"
 	{
-		"it"		"I minigiochi vinti danno un numero causale di punti!"
+		"jp"		""
 	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"		"{1:i}"
-		"it"		"Vinci questo minigioco per ottenere {1} punti!"
+		"jp"		""
 	}
 	"SpecialRound17_Name"
 	{
-		"it"		"Scontro Finale!"
+		"jp"		""
 	}
 	"SpecialRound17_Description"
 	{
-		"it"		"Un errore e sei fuori! Vince l'ultimo giocatore rimasto!"
+		"jp"		""
 	}
 	"SpecialRound17_Caption_Full"
 	{
 		"#format"		"{1:i},{2:i},{3:s}"
-		"it"		"Ancora in gioco: ({1} di {2})\n{3}"
+		"jp"		""
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
 		"#format"		"{1:s},{2:i}"
-		"it"		"{1} (E altri {2})"
+		"jp"		""
 	}
 	"SpecialRound18_Name"
 	{
-		"it"		"All In"
+		"jp"		""
 	}
 	"SpecialRound18_Description"
 	{
-		"it"		"Perdi un minigioco e dì addio a TUTTI i tuoi punti!"
+		"jp"		""
 	}
 	"SpecialRound19_Name"
 	{
-		"it"		"Testo Rovesciato"
+		"jp"		""
 	}
 	"SpecialRound19_Description"
 	{
-		"it"		"!oirartnoc la onos ihcoiginim ied inoizircsed eL"
+		"jp"		""
 	}
 	"SpecialRound20_Name"
 	{
-		"it"		"Senza Tregua"
+		"jp"		""
 	}
 	"SpecialRound20_Description"
 	{
-		"it"		"Nessuna pausa fra i minigiochi!"
+		"jp"		""
 	}
 	"SpecialRound21_Name"
 	{
-		"it"		"Team Fortress 64"
+		"jp"		""
 	}
 	"SpecialRound21_Description"
 	{
-		"it"		"Come ai vecchi tempi!"
+		"jp"		""
 	}
 }

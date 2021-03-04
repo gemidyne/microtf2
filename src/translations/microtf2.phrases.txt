@@ -94,6 +94,10 @@
 	{
 		"en"		"GAME OVER!"
 	}
+	"General_SpecialRound"
+	{
+		"en"		"SPECIAL ROUND!"
+	}
 	"GameOver_SpecialRoundHasFinished"
 	{
 		"en"		"== THE SPECIAL ROUND HAS FINISHED! =="
