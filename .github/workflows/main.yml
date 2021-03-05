@@ -21,36 +21,28 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
       
-      
-      
-      - name: Download morecolors
-        uses: carlosperate/download-file-action@v1.0.3
-        id: download-spinc-morecolors
+      - name: Download includes
+        uses: actions/checkout@v2
         with:
-          file-url: 'https://gemidyne.github.io/gh-actions-resources/sourcepawn/includes/morecolors.inc'
-          location: './addons/sourcemod/scripting/include'
+          name: gemidyne/gh-actions-resources 
+          path: './ext'
           
-      - name: Download tf_econ_data
-        uses: carlosperate/download-file-action@v1.0.3
-        id: download-spinc-tfecon
-        with:
-          file-url: 'https://gemidyne.github.io/gh-actions-resources/sourcepawn/includes/tf_econ_data.inc'
-          location: './addons/sourcemod/scripting/include'
+      - name: Copy morecolors
+        run: |
+          cp "./ext/sourcepawn/includes/morecolors.inc" "./addons/sourcemod/scripting/include/morecolors.inc"
           
-      - name: Download tf2attributes
-        uses: carlosperate/download-file-action@v1.0.3
-        id: download-spinc-tf2attributes
-        with:
-          file-url: 'https://gemidyne.github.io/gh-actions-resources/sourcepawn/includes/tf2attributes.inc'
-          location: './addons/sourcemod/scripting/include'
-          
-      - name: Download tf2items
-        uses: carlosperate/download-file-action@v1.0.3
-        id: download-spinc-tf2items
-        with:
-          file-url: 'https://gemidyne.github.io/gh-actions-resources/sourcepawn/includes/tf2items.inc'
-          location: './addons/sourcemod/scripting/include'
-      
+      - name: Copy tf_econ_data
+        run: |
+          cp "./ext/sourcepawn/includes/tf_econ_data.inc" "./addons/sourcemod/scripting/include/tf_econ_data.inc"
+
+      - name: Copy tf2attributes
+        run: |
+          cp "./ext/sourcepawn/includes/tf2attributes.inc" "./addons/sourcemod/scripting/include/tf2attributes.inc"
+
+      - name: Copy tf2items
+        run: |
+          cp "./ext/sourcepawn/includes/tf2items.inc" "./addons/sourcemod/scripting/include/tf2items.inc"
+
       - uses: rumblefrog/setup-sp@master
         with:
          version: '1.10.x'
