@@ -33,4 +33,4 @@ jobs:
         with:
          version: '1.10.x'
 
-      - run: spcomp -i'./ext/sourcepawn/includes' './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E
+      - run: spcomp -i'./ext/sourcepawn/includes' -i'./src/scripting/include/' './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E
