@@ -25,28 +25,28 @@ jobs:
         uses: carlosperate/download-file-action@v1.0.3
         id: download-spinc-morecolors
         with:
-          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/morecolors.inc'
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawn/includes/morecolors.inc'
           location: './addons/sourcemod/scripting/include'
           
       - name: Download tf_econ_data
         uses: carlosperate/download-file-action@v1.0.3
         id: download-spinc-tfecon
         with:
-          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf_econ_data.inc'
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawn/includes/tf_econ_data.inc'
           location: './addons/sourcemod/scripting/include'
           
       - name: Download tf2attributes
         uses: carlosperate/download-file-action@v1.0.3
         id: download-spinc-tf2attributes
         with:
-          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf2attributes.inc'
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawn/includes/tf2attributes.inc'
           location: './addons/sourcemod/scripting/include'
           
       - name: Download tf2items
         uses: carlosperate/download-file-action@v1.0.3
         id: download-spinc-tf2items
         with:
-          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf2items.inc'
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawn/includes/tf2items.inc'
           location: './addons/sourcemod/scripting/include'
       
       - uses: rumblefrog/setup-sp@master
