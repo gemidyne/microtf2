@@ -28,6 +28,11 @@ jobs:
           repository: gemidyne/gh-actions-resources
           path: './ext'
           
+        
+      - uses: rumblefrog/setup-sp@master
+        with:
+         version: '1.10.x'
+          
       - name: Copy morecolors
         run: |
           cp "./ext/sourcepawn/includes/morecolors.inc" "./addons/sourcemod/scripting/include/morecolors.inc"
@@ -44,8 +49,5 @@ jobs:
         run: |
           cp "./ext/sourcepawn/includes/tf2items.inc" "./addons/sourcemod/scripting/include/tf2items.inc"
 
-      - uses: rumblefrog/setup-sp@master
-        with:
-         version: '1.10.x'
 
       - run: spcomp './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E
