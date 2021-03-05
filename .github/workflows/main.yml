@@ -1,0 +1,56 @@
+# This is a basic workflow to help you get started with Actions
+
+name: CI
+
+# Controls when the action will run. 
+on:
+  # Triggers the workflow on push or pull request events but only for the master branch
+  push:
+    branches: [ dev ]
+  workflow_dispatch:
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  build:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+      
+      - name: Download morecolors
+        uses: carlosperate/download-file-action@v1.0.3
+        id: download-spinc-morecolors
+        with:
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/morecolors.inc'
+          location: './addons/sourcemod/scripting/include'
+          
+      - name: Download tf_econ_data
+        uses: carlosperate/download-file-action@v1.0.3
+        id: download-spinc-tfecon
+        with:
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf_econ_data.inc'
+          location: './addons/sourcemod/scripting/include'
+          
+      - name: Download tf2attributes
+        uses: carlosperate/download-file-action@v1.0.3
+        id: download-spinc-tf2attributes
+        with:
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf2attributes.inc'
+          location: './addons/sourcemod/scripting/include'
+          
+      - name: Download tf2items
+        uses: carlosperate/download-file-action@v1.0.3
+        id: download-spinc-tf2items
+        with:
+          file-url: 'https://raw.githubusercontent.com/gemidyne/gh-actions-resources/master/sourcepawns/includes/tf2items.inc'
+          location: './addons/sourcemod/scripting/include'
+      
+      - uses: rumblefrog/setup-sp@master
+        with:
+         version: '1.10.x'
+
+      - run: spcomp './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E
