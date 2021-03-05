@@ -35,19 +35,19 @@ jobs:
           
       - name: Copy morecolors
         run: |
-          cp "./ext/sourcepawn/includes/morecolors.inc" "./addons/sourcemod/scripting/include/morecolors.inc"
+          cp "./ext/sourcepawn/includes/morecolors.inc" "./include/morecolors.inc"
           
       - name: Copy tf_econ_data
         run: |
-          cp "./ext/sourcepawn/includes/tf_econ_data.inc" "./addons/sourcemod/scripting/include/tf_econ_data.inc"
+          cp "./ext/sourcepawn/includes/tf_econ_data.inc" "./include/tf_econ_data.inc"
 
       - name: Copy tf2attributes
         run: |
-          cp "./ext/sourcepawn/includes/tf2attributes.inc" "./addons/sourcemod/scripting/include/tf2attributes.inc"
+          cp "./ext/sourcepawn/includes/tf2attributes.inc" "./include/tf2attributes.inc"
 
       - name: Copy tf2items
         run: |
-          cp "./ext/sourcepawn/includes/tf2items.inc" "./addons/sourcemod/scripting/include/tf2items.inc"
+          cp "./ext/sourcepawn/includes/tf2items.inc" "./include/tf2items.inc"
 
 
       - run: spcomp './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E
