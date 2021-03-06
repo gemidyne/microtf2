@@ -400,20 +400,7 @@ public void Bossgame6_OnRenderHudFrame(int client)
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(scoreText);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            if (scoreText[c] == '\0')
-            {
-                continue;
-            }
-
-            rewritten[rc] = scoreText[c];
-            rc++;
-        }
-
+        ReverseString(scoreText, sizeof(scoreText), rewritten);
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
 

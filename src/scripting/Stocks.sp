@@ -101,20 +101,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 	if (SpecialRoundID == 19)
 	{
 		char rewritten[32];
-		int rc = 0;
-		int len = strlen(text);
-
-		for (int c = len - 1; c >= 0; c--)
-		{
-			if (text[c] == '\0')
-			{
-				continue;
-			}
-
-			rewritten[rc] = text[c];
-			rc++;
-		}
-
+		ReverseString(text, sizeof(text), rewritten);
 		strcopy(text, sizeof(text), rewritten);
 	}
 
@@ -191,6 +178,46 @@ stock void ToUpperString(const char[] input, char[] output, int size)
 	}
 
 	output[x] = '\0';
+}
+
+stock void ReverseString(const char[] input, int inputSize, char[] output)
+{
+	int rc = 0;
+	int len = inputSize;
+
+	for (int c = len - 1; c >= 0; c--)
+	{
+		if (input[c] == '\0')
+		{
+		 	continue;
+		}
+
+		// Thanks to whysodrooled for these Unicode reversal fixes (#199)
+
+		if (c >= 1 && (input[c-1] & 0xC0 == 0xC0)) // 2 bytes
+		{
+			for (int j = 0; j < 2; j++)
+			{
+				output[rc] = input[c-1+j];
+				rc++;
+			}
+			c--;
+		}
+		else if (c >= 2 && (input[c-2] & 0xE0 == 0xE0)) // 3 bytes
+		{
+			for (int j = 0; j < 3; j++)
+			{
+				output[rc] = input[c-2+j];
+				rc++;
+			}
+			c -= 2;
+		}
+		else
+		{
+			output[rc] = input[c];
+			rc++;
+		}
+	}
 }
 
 stock bool IsStringInt(const char arg[64])
