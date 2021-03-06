@@ -216,6 +216,10 @@ methodmap Player __nullable__
         {
             return IsPlayerUsingLegacyDirectX[this.ClientId];
         }
+        public set(bool value)
+        {
+            IsPlayerUsingLegacyDirectX[this.ClientId] = value;
+        }
     }
 
     public void DisplayOverlay(const char[] path)
