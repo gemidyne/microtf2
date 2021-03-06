@@ -434,7 +434,7 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_Explain", i);
 
 			player.PrintHintBox(text);
-
+			
 			if (player.IsUsingLegacyDirectX)
 			{
 				player.DisplayOverlay(OVERLAY_BLANK);

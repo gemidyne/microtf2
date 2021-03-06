@@ -693,7 +693,7 @@ public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQu
 	if (StrEqual(cvarName, "mat_dxlevel"))
 	{
 		int dxLevel = StringToInt(cvarValue);
-		
+
 		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
 	}
 }

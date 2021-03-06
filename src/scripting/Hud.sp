@@ -71,21 +71,7 @@ public void Hud_OnGameFrame()
                 if (SpecialRoundID == 19)
                 {
                     char rewritten[CAPTION_LENGTH];
-
-                    int rc = 0;
-                    int len = strlen(buffer);
-
-                    for (int c = len - 1; c >= 0; c--)
-                    {
-                        if (buffer[c] == '\0')
-                        {
-                            continue;
-                        }
-
-                        rewritten[rc] = buffer[c];
-                        rc++;
-                    }
-
+                    ReverseString(buffer, sizeof(buffer), rewritten);
                     strcopy(buffer, sizeof(buffer), rewritten);
                 }
 
@@ -156,20 +142,7 @@ public void DisplayScoreHud(Player player, char buffer[128])
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(scoreText);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            if (scoreText[c] == '\0')
-            {
-                continue;
-            }
-
-            rewritten[rc] = scoreText[c];
-            rc++;
-        }
-
+        ReverseString(scoreText, sizeof(scoreText), rewritten);
         strcopy(scoreText, sizeof(scoreText), rewritten);
     }
 
@@ -192,20 +165,7 @@ public void DisplayRoundHud(Player player, char buffer[128])
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(roundDisplay);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            if (roundDisplay[c] == '\0')
-            {
-                continue;
-            }
-
-            rewritten[rc] = roundDisplay[c];
-            rc++;
-        }
-
+        ReverseString(roundDisplay, sizeof(roundDisplay), rewritten);
         strcopy(roundDisplay, sizeof(roundDisplay), rewritten);
     }
 
@@ -237,19 +197,7 @@ public void DisplaySpecialHud(Player player, char buffer[128])
     if (SpecialRoundID == 19)
     {
         char rewritten[32];
-        int rc = 0;
-        int len = strlen(themeSpecialText);
-
-        for (int c = len - 1; c >= 0; c--)
-        {
-            if (themeSpecialText[c] == '\0')
-            {
-                continue;
-            }
-
-            rewritten[rc] = themeSpecialText[c];
-            rc++;
-        }
+        ReverseString(themeSpecialText, sizeof(themeSpecialText), rewritten);
         strcopy(themeSpecialText, sizeof(themeSpecialText), rewritten);
     }
 
