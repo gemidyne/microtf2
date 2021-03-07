@@ -601,17 +601,20 @@ methodmap Player __nullable__
     public void PrintChatText(const char[] text, any ...)
     {
         char buffer[MAX_BUFFER_LENGTH];
+        char buffer2[MAX_BUFFER_LENGTH];
+        
         SetGlobalTransTarget(this.ClientId);
-        VFormat(buffer, sizeof(buffer), text, 2);
+        Format(buffer, sizeof(buffer), "%s", text);
+        VFormat(buffer2, sizeof(buffer2), buffer, 3);
 
         if (SpecialRoundID == 19)
         {
             char rewritten[MAX_BUFFER_LENGTH];
-            ReverseString(buffer, sizeof(buffer), rewritten);
-            strcopy(buffer, sizeof(buffer), rewritten);
+            ReverseString(buffer2, sizeof(buffer2), rewritten);
+            strcopy(buffer2, sizeof(buffer2), rewritten);
         }
 
-        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer);
+        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer2);
     }
 
     public void ShowAnnotation(int attachToEntity, float lifetime, char text[32])

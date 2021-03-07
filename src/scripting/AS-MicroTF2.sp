@@ -1062,21 +1062,37 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 		for (int i = 0; i < GetArraySize(winners); i++)
 		{
 			int client = GetArrayCell(winners, i);
+			Player player = new Player(client);
+
+			char name[64];
+
+			if (player.Team == TFTeam_Red)
+			{
+				Format(name, sizeof(name), "{red}%N", client);
+			}
+			else if (player.Team == TFTeam_Blue)
+			{
+				Format(name, sizeof(name), "{blue}%N", client);
+			}
+			else
+			{
+				Format(name, sizeof(name), "{white}%N", client);
+			}
 
 			if (winnerCount > 1)
 			{
 				if (i >= (GetArraySize(winners)-1))
 				{
-					Format(names, sizeof(names), "%s & {olive}%N{green}", names, client); // "AND" here needs to be fixed!!!
+					Format(names, sizeof(names), "%s & %s{default}", names, name); // "AND" here needs to be fixed!!!
 				}
 				else
 				{
-					Format(names, sizeof(names), "%s, {olive}%N{green}", names, client);
+					Format(names, sizeof(names), "%s, %s{default}", names, name);
 				}
 			}
 			else
 			{
-				Format(names, sizeof(names), "{olive}%N{green}", client);
+				Format(names, sizeof(names), name);
 			}
 		}
 
