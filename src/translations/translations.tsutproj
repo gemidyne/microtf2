@@ -586,74 +586,61 @@
     {
       "key": "GameOver_WinningTeam_Red",
       "description": "Used in the Team Battle special round when the winning team is the RED Team.",
-      "text": "{1}The winning team is the RED team with {2} points!",
+      "text": "The winning team is the RED team with {1} points!",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
       "translations": {
-        "pt": "{1}O TIME VERMELHO foi o time vencedor com {2} pontos!",
-        "fr": "{1}L'équipe gagnante est RED avec {2} points !",
-        "it": "{1}Vince la squadra RED, con {2} punti!",
-        "pt_p": "{1}O TIME VERMELHO foi o time vencedor com {2} pontos!",
-        "ru": "{1}КРАСНАЯ комманда побеждает с {2} очками!",
-        "es": "{1}El equipo ganador es RED con {2} puntos!",
+        "pt": "O TIME VERMELHO foi o time vencedor com {1} pontos!",
+        "fr": "L'équipe gagnante est RED avec {1} points !",
+        "it": "Vince la squadra RED, con {1} punti!",
+        "pt_p": "O TIME VERMELHO foi o time vencedor com {1} pontos!",
+        "ru": "КРАСНАЯ комманда побеждает с {1} очками!",
+        "es": "El equipo ganador es RED con {1} puntos!",
         "jp": null,
-        "pl": "{1}Zwyciężyła drużyna RED z wynikiem {2}!"
+        "pl": "Zwyciężyła drużyna RED z wynikiem {1}!"
       },
       "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinningTeam_Blue",
       "description": "Used in the Team Battle special round when the winning team is the BLU Team.",
-      "text": "{1}The winning team is the BLU team with {2} points!",
+      "text": "The winning team is the BLU team with {1} points!",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The winning number of points the team had."
         }
       ],
       "translations": {
-        "pt": "{1}O TIME AZUL foi o time vencedor com {2} pontos!",
-        "fr": "{1}L'équipe gagnante est BLU avec {2} points !",
-        "it": "{1}Vince la squadra BLU, con {2} punti!",
-        "pt_p": "{1}O TIME AZUL foi o time vencedor com {2} pontos!",
-        "ru": "{1}СИНЯЯ комманда побеждает с {2} очками!",
-        "es": "{1}El equipo ganador es BLU con {2} puntos!",
+        "pt": "O TIME AZUL foi o time vencedor com {1} pontos!",
+        "fr": "L'équipe gagnante est BLU avec {1} points !",
+        "it": "Vince la squadra BLU, con {1} punti!",
+        "pt_p": "O TIME AZUL foi o time vencedor com {1} pontos!",
+        "ru": "СИНЯЯ комманда побеждает с {1} очками!",
+        "es": "El equipo ganador es BLU con {1} puntos!",
         "jp": null,
-        "pl": "{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
+        "pl": "Zwyciężyła drużyna BLU z wynikiem {1}!"
       },
       "ignoreEmptyValue": false
     },
     {
       "key": "GameOver_WinningTeam_Stalemate",
       "description": "Used in the Team Battle special round in the rare condition that both teams had the same number of points.",
-      "text": "{1}Stalemate! Both teams have the same points!",
-      "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
-        }
-      ],
+      "text": "Stalemate! Both teams have the same points!",
+      "formatArguments": [],
       "translations": {
-        "pt": "{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
-        "fr": "{1}Égalité ! Les deux équipes ont le même nombre de points !",
-        "it": "{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!",
-        "pt_p": "{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
-        "ru": "{1}Ничья! Обе комманды имеют одинаковое кол-во очков!",
-        "es": "{1}Tablas! Ambos equipos tienen los mismos puntos!",
+        "pt": "Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
+        "fr": "Égalité ! Les deux équipes ont le même nombre de points !",
+        "it": "Pareggio! Entrambe le squadre hanno lo stesso punteggio!",
+        "pt_p": "Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
+        "ru": "Ничья! Обе комманды имеют одинаковое кол-во очков!",
+        "es": "Tablas! Ambos equipos tienen los mismos puntos!",
         "jp": null,
-        "pl": "{1}Impas! Obie drużyny mają tyle samo punktów!"
+        "pl": "Impas! Obie drużyny mają tyle samo punktów!"
       },
       "ignoreEmptyValue": false
     },

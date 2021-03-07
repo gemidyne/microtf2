@@ -1087,21 +1087,23 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
+			Player player = new Player(i);
+
 			if (IsClientInGame(i) && !IsFakeClient(i))
 			{
 				if (SpecialRoundID == 11)
 				{
 					if (teamsHaveSameScore)
 					{
-						CPrintToChat(i, "%T", "GameOver_WinningTeam_Stalemate", i, PLUGIN_PREFIX);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Stalemate", i);
 					}
 					else if (overallWinningTeam == TFTeam_Red)
 					{
-						CPrintToChat(i, "%T", "GameOver_WinningTeam_Red", i, PLUGIN_PREFIX, redTeamScore);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Red", i, redTeamScore);
 					}
 					else if (overallWinningTeam == TFTeam_Blue)
 					{
-						CPrintToChat(i, "%T", "GameOver_WinningTeam_Blue", i, PLUGIN_PREFIX, blueTeamScore);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Blue", i, blueTeamScore);
 					}
 
 					continue;
