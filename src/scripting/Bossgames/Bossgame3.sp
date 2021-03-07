@@ -27,6 +27,7 @@ public void Bossgame3_EntryPoint()
 	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame3_OnMinigameFinish);
 	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame3_OnPlayerDeath);
 	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
+	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Bossgame3_OnPlayerTakeDamage);
 }
 
 public void Bossgame3_OnMapStart()
@@ -178,6 +179,36 @@ public void Bossgame3_OnBossStopAttempt()
 		EndBoss();
 	}
 }
+
+public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+{
+	if (BossgameID != 3)
+	{
+		return;
+	}
+
+	if (!IsMinigameActive)
+	{
+		return;
+	}
+
+	Player attacker = new Player(attackerId);
+	Player victim = new Player(victimId);
+
+	if (attacker.IsValid && victim.IsValid)
+	{
+		float vel[3];
+
+		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
+
+		vel[0] -= vel[0] * 0.5;
+		vel[1] -= vel[1] * 0.5;
+		vel[2] -= vel[2] * 0.5;
+
+		TeleportEntity(victimId, NULL_VECTOR, NULL_VECTOR, vel);
+	}
+}
+
 
 public Action Bossgame3_BeginWarningSequence(Handle timer)
 {
