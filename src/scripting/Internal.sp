@@ -29,20 +29,6 @@ stock void UnloadPlugin()
 	ServerCommand("sm plugins unload %s", fileName);
 }
 
-stock void PreloadSound(const char[] sound)
-{
-	if (strlen(sound) == 0)
-	{
-		return;
-	}
-
-	PrecacheSound(sound, true);
-
-	// This call intentionally does not add sounds to the files download table.
-	// This is because the correct approach to distributing the gamemode is to pack 
-	// the resources into the BSP so your players only require one download.
-}
-
 stock int GetHighestScore()
 {
 	int threshold = 0;
