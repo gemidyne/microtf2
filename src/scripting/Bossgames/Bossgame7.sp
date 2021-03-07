@@ -358,7 +358,7 @@ public void Bossgame7_OnPlayerClassChange(int client, int class)
 	player.Status = PlayerStatus_Failed;
 	EmitSoundToClient(client, BOSSGAME7_SFX_OVERVIEW_DEFEAT, Bossgame7_ActiveCameraEntityId);
 
-	CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "Bossgame7_ClassChangeWarning", client);
+	player.PrintChatText("%T", "Bossgame7_ClassChangeWarning", client);
 }
 
 public Action Bossgame7_DoDescentSequence(Handle timer)

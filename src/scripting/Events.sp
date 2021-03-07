@@ -65,7 +65,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
-			CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "System_PlayerSpawn_RespawnNotice", client);
+			player.PrintChatText("%T", "System_PlayerSpawn_RespawnNotice", player.ClientId);
 		}
 	}
 

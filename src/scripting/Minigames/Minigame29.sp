@@ -112,7 +112,7 @@ public void Minigame29_OnPlayerClassChange(int client, int class)
 	{
 		// Prevent players from abusing class change to circumvent the minigame objective
 		player.Score++;
-		CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "System_SpecialRoundBlockClassChange", client);
+		player.PrintChatText("%T", "System_SpecialRoundBlockClassChange", client);
 	}
 }
 

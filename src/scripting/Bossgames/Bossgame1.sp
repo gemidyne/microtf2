@@ -184,7 +184,7 @@ void Bossgame1_NotifyPlayerComplete(Player invoker)
 
 		if (player.IsValid && !player.IsBot)
 		{
-			CPrintToChat(i, "%T", "Bossgame1_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
+			player.PrintChatText("%T", "Bossgame1_PlayerReachedEndFirst", i, name);
 		}
 	}
 }

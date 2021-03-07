@@ -711,26 +711,22 @@
     {
       "key": "Bossgame1_PlayerReachedEndFirst",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
-      "text": "{1}{2} reached the top first! (Bonus point!)",
+      "text": "{1} reached the top first! (Bonus point!)",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The [ WarioWare ] prefix. This is required."
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
       "translations": {
-        "pt": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
-        "fr": "{1}{2} a atteint la fin en premier ! (Point bonus !)",
-        "it": "{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!",
-        "pt_p": "{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
-        "ru": "{1}{2} достал до вершины первым! (Доп. очко!)",
-        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
+        "pt": "{1} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
+        "fr": "{1} a atteint la fin en premier ! (Point bonus !)",
+        "it": "{1} è arrivato in cima per primo e ha vinto un punto bonus!",
+        "pt_p": "{1} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
+        "ru": "{1} достал до вершины первым! (Доп. очко!)",
+        "es": "{1} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
-        "pl": "{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
+        "pl": "{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -758,22 +754,18 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The [ WarioWare ] prefix. This is required."
-        },
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
       "translations": {
-        "pt": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
-        "fr": "{1}{2} s'est échappé de l'usine en premier ! (Point bonus !)",
-        "it": "{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
-        "pt_p": "{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)",
-        "ru": "{1}{2} сбежал из завода первым! (Доп. очко!)",
-        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
+        "pt": "{1} escapou da fábrica primeiro! (Pontos de Bônus!)",
+        "fr": "{1} s'est échappé de l'usine en premier ! (Point bonus !)",
+        "it": "{1} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
+        "pt_p": "{1} escapou da fábrica primeiro! (Pontos de Bônus!)",
+        "ru": "{1} сбежал из завода первым! (Доп. очко!)",
+        "es": "{1} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
-        "pl": "{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
+        "pl": "{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -831,26 +823,22 @@
     {
       "key": "Bossgame5_PlayerReachedEndFirst",
       "description": "This message is displayed when a bonus point is given to a player for reaching the goal first.",
-      "text": "{1}{2} reached the goal first! (Bonus point!)",
+      "text": "{1} reached the goal first! (Bonus point!)",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The [ WarioWare ] prefix. This is required."
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
       "translations": {
-        "pt": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
-        "fr": "{1}{2} a atteint l'objectif en premier ! (Point bonus !)",
-        "it": "{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
-        "pt_p": "{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
-        "ru": "{1}{2} дошел до конца первым! (Доп. очко!)",
-        "es": "{1}{2} alcanzó el objetivo primero! (+1 puntaje!)",
+        "pt": "{1} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
+        "fr": "{1} a atteint l'objectif en premier ! (Point bonus !)",
+        "it": "{1} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
+        "pt_p": "{1} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
+        "ru": "{1} дошел до конца первым! (Доп. очко!)",
+        "es": "{1} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
-        "pl": "{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
+        "pl": "{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -998,26 +986,22 @@
     {
       "key": "Minigame6_SayTheWord_PlayerSaidWordFirst",
       "description": "This message is displayed when a bonus point is given to a player for saying the word first.",
-      "text": "{1}{2} said the word first! (Bonus point!)",
+      "text": "{1} said the word first! (Bonus point!)",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The [ WarioWare ] prefix. This is required."
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The name of the player who said the word first."
         }
       ],
       "translations": {
-        "pt": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
-        "fr": "{1}{2} a dit le mot en premier ! (Point bonus !)",
-        "it": "{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!",
-        "pt_p": "{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
-        "ru": "{1}{2} сказал слово первым! (Доп. очко!)",
-        "es": "{1}{2} dijo la palabra primero! (Punto extra!)",
+        "pt": "{1} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
+        "fr": "{1} a dit le mot en premier ! (Point bonus !)",
+        "it": "{1} ha scritto la parola per primo e ha vinto un punto bonus!",
+        "pt_p": "{1} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
+        "ru": "{1} сказал слово первым! (Доп. очко!)",
+        "es": "{1} dijo la palabra primero! (Punto extra!)",
         "jp": null,
-        "pl": "{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
+        "pl": "{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1063,52 +1047,44 @@
     {
       "key": "Minigame8_CorrectAnswerWas",
       "description": null,
-      "text": "{1}The correct answer was {2}!",
+      "text": "The correct answer was {1}!",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The gamemode's prefix text, required. Example: [ WarioWare ]"
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
           "description": "The math equation's correct answer. Example: 42"
         }
       ],
       "translations": {
-        "pt": "{1}A reposta correta foi {2}!",
-        "fr": "{1}La bonne réponse était {2} !",
-        "it": "{1}La risposta corretta era {2}!",
-        "pt_p": "{1}A reposta correta foi {2}!",
-        "ru": "{1}Правильным ответом было {2}!",
-        "es": "{1}La respuesta correcta era {2}!",
+        "pt": "A reposta correta foi {1}!",
+        "fr": "La bonne réponse était {1} !",
+        "it": "La risposta corretta era {1}!",
+        "pt_p": "A reposta correta foi {1}!",
+        "ru": "Правильным ответом было {1}!",
+        "es": "La respuesta correcta era {1}!",
         "jp": null,
-        "pl": "{1}Poprawna odpowiedź to {2}!"
+        "pl": "Poprawna odpowiedź to {1}!"
       },
       "ignoreEmptyValue": false
     },
     {
       "key": "Minigame8_PlayerAnsweredFirst",
       "description": "This message is displayed when a bonus point is given to a player for answering the question first.",
-      "text": "{1}{2} got the correct answer first! (Bonus point!)",
+      "text": "{1} got the correct answer first! (Bonus point!)",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The [ WarioWare ] prefix. This is required."
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The name of the player who answered."
         }
       ],
       "translations": {
-        "pt": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
-        "fr": "{1}{2} a repondu correctement en premier ! (Point bonus !)",
-        "it": "{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!",
-        "pt_p": "{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)",
-        "ru": "{1}{2} написал правильный ответ первым! (Доп. очко!)",
-        "es": "{1}{2} dijo la respuesta primero! (Punto extra!)",
+        "pt": "{1} respondeu corretamente primeiro! (Pontos de Bônus!)",
+        "fr": "{1} a repondu correctement en premier ! (Point bonus !)",
+        "it": "{1} ha risposto correttamente per primo e ha vinto un punto bonus!",
+        "pt_p": "{1} respondeu corretamente primeiro! (Pontos de Bônus!)",
+        "ru": "{1} написал правильный ответ первым! (Доп. очко!)",
+        "es": "{1} dijo la respuesta primero! (Punto extra!)",
         "jp": null,
-        "pl": "{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
+        "pl": "{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
       },
       "ignoreEmptyValue": false
     },

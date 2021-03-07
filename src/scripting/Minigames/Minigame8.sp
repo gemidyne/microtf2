@@ -156,7 +156,7 @@ void Minigame8_NotifyPlayerComplete(Player invoker)
 
 		if (player.IsValid && !player.IsBot)
 		{
-			CPrintToChat(i, "%T", "Minigame8_PlayerAnsweredFirst", i, PLUGIN_PREFIX, name);
+			player.PrintChatText("%T", "Minigame8_PlayerAnsweredFirst", i, name);
 		}
 	}
 }
@@ -171,7 +171,7 @@ public void Minigame8_OnMinigameFinish()
 
 			if (player.IsValid)
 			{
-				CPrintToChat(i, "%T", "Minigame8_CorrectAnswerWas", i, PLUGIN_PREFIX, Minigame8_SayTextAnswer);
+				player.PrintChatText("%T", "Minigame8_CorrectAnswerWas", i, Minigame8_SayTextAnswer);
 			}
 		}
 	}

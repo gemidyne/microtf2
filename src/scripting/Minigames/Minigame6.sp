@@ -149,7 +149,7 @@ void Minigame6_NotifyFirstPlayerComplete(Player invoker)
 
 		if (player.IsValid && !player.IsBot)
 		{
-			CPrintToChat(i, "%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, PLUGIN_PREFIX, name);
+			player.PrintChatText("%T", "Minigame6_SayTheWord_PlayerSaidWordFirst", i, name);
 		}
 	}
 }

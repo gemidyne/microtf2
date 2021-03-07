@@ -237,11 +237,7 @@ public Action Timer_Advertise(Handle timer)
 
         if (player.IsInGame && !player.IsBot)
         {
-            char text[128];
-
-            Format(text, sizeof(text), "%T", "System_Advertisement", player.ClientId, PLUGIN_VERSION);
-
-            CPrintToChat(player.ClientId, "%s%s", PLUGIN_PREFIX, text);
+            player.PrintChatText("%T", "System_Advertisement", player.ClientId, PLUGIN_VERSION);
         }
     }
 

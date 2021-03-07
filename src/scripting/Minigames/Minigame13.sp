@@ -60,7 +60,7 @@ public void Minigame13_OnMinigameFinishPre()
 				{
 					SlapPlayer(i, 5000, false);
 					player.Status = PlayerStatus_Failed;
-					CPrintToChat(i, "%s%T", PLUGIN_PREFIX, "Minigame13_SpycrabsMustCrouchAndLookup", i);
+					player.PrintChatText("%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
 				}
 			}
 		}

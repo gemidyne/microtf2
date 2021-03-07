@@ -598,9 +598,20 @@ methodmap Player __nullable__
         PrintCenterText(this.ClientId, "%T", translationKey, this.ClientId);
     }
 
-    public void PrintChatText(const char[] text)
+    public void PrintChatText(const char[] text, any ...)
     {
-        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, text);
+        char buffer[MAX_BUFFER_LENGTH];
+        SetGlobalTransTarget(this.ClientId);
+        VFormat(buffer, sizeof(buffer), text, 2);
+
+        if (SpecialRoundID == 19)
+        {
+            char rewritten[MAX_BUFFER_LENGTH];
+            ReverseString(buffer, sizeof(buffer), rewritten);
+            strcopy(buffer, sizeof(buffer), rewritten);
+        }
+
+        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer);
     }
 
     public void ShowAnnotation(int attachToEntity, float lifetime, char text[32])
