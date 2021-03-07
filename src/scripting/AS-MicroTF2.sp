@@ -44,10 +44,10 @@
 
 #include "Header.sp"
 #include "Forwards.sp"
+#include "Sounds.sp"
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
-#include "Sounds.sp"
 #include "System.sp"
 #include "Commands.sp"
 #include "TimelimitManager.sp"

@@ -644,7 +644,32 @@ methodmap Player __nullable__
 
     public void TriggerSuccess()
     {
-        ClientWonMinigame(this.ClientId);
+        bool valid = this.IsValid && this.IsParticipating && this.Status == PlayerStatus_NotWon;
+
+        if (!valid)
+        {
+            return;
+        }
+
+        this.Status = PlayerStatus_Winner;
+
+        if (ActiveParticipantCount > 12)
+        {
+            EmitSoundToClient(this.ClientId, SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+        }
+        else
+        {
+            EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+        }
+
+        if (this.Team == TFTeam_Blue)
+        {
+            CreateParticle(this.ClientId, "Micro_Win_Blue", 6.0);
+        }
+        else if (this.Team == TFTeam_Red)
+        {
+            CreateParticle(this.ClientId, "Micro_Win_Red", 6.0);
+        }
     }
 
     public void GiveWeapon(int weaponItemIndex)

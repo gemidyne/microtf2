@@ -15,14 +15,6 @@
 #define SYSMUSIC_FAILURE 4
 #define SYSMUSIC_WINNER 5
 
-#define SYSBGM_WAITING "gemidyne/warioware/system/bgm/waitingforplayers.wav"
-#define SYSBGM_SPECIAL "gemidyne/warioware/system/bgm/specialround.mp3"
-#define SYSBGM_ENDING "gemidyne/warioware/system/bgm/mapend.mp3"
-
-#define SYSFX_CLOCK "gemidyne/warioware/system/sfx/clock.mp3"
-#define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
-#define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
-
 #define SYSMUSIC_MAXFILES 32
 #define SYSMUSIC_MAXSTRINGLENGTH 192
 
