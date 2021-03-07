@@ -82,8 +82,6 @@ stock void InitializeSystem()
 
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
 	InitializeMinigames();
-	InitialisePrecacheSystem();
-
 	InitialiseWeapons();
 }
 
@@ -137,22 +135,6 @@ public void System_OnMapStart()
 			}
 		}
 	}
-
-	PreloadSound(SYSBGM_WAITING);
-	PreloadSound(SYSBGM_SPECIAL);
-	PreloadSound(SYSBGM_ENDING);
-	PreloadSound(SYSFX_SELECTED);
-	PreloadSound(SYSFX_CLOCK);
-	PreloadSound(SYSFX_WINNER);
-
-	PrecacheSound("ui/system_message_alert.wav", true);
-	PrecacheSound("vo/announcer_ends_10sec.wav", true);
-	PrecacheSound("vo/announcer_ends_5sec.wav", true);
-	PrecacheSound("vo/announcer_ends_4sec.wav", true);
-	PrecacheSound("vo/announcer_ends_3sec.wav", true);
-	PrecacheSound("vo/announcer_ends_2sec.wav", true);
-	PrecacheSound("vo/announcer_ends_1sec.wav", true);
-	PrecacheSound("vo/announcer_success.wav", true);
 
 	PrecacheMaterial(OVERLAY_MINIGAMEBLANK);
 	PrecacheMaterial(OVERLAY_WON);

@@ -57,13 +57,11 @@
 #include "MinigameSystem.sp"
 #include "MethodMaps/Minigame.inc"
 #include "MethodMaps/Bossgame.inc"
-#include "PrecacheSystem.sp"
 #include "Hooks.sp"
 #include "Events.sp"
 #include "SpecialRounds.sp"
 #include "Internal.sp"
 #include "Stocks.sp"
-#include "PrecacheManifest.sp"
 
 public Plugin myinfo = 
 {
