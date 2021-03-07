@@ -222,10 +222,7 @@ stock void ReverseString(const char[] input, int inputSize, char[] output)
 
 stock bool IsStringInt(const char arg[64])
 {
-    if (StringToInt(arg) != 0) return true;
-    if (StrEqual(arg, "0")) return true;
-	
-    return false;
+	return StringToInt(arg) != 0 || StrEqual(arg, "0");
 }
 
 public int GetClientAimEntity3(int client, float &distancetoentity, float endpos[3])	//Snippet by Javalia
