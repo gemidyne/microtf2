@@ -150,7 +150,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 
 		if (winner)
 		{
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 	}
 }

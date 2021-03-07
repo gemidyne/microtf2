@@ -185,7 +185,7 @@ public void Minigame18_HitTarget(int attacker)
 
 	if (player.IsValid)
 	{
-		ClientWonMinigame(attacker);
+		player.TriggerSuccess();
 
 		switch (Minigame18_TargetModel)
 		{

@@ -119,8 +119,11 @@ public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
 		return;
 	}
 
-	ClientWonMinigame(attackerId);
-	ClientWonMinigame(buildingOwnerId);
+	Player attacker = new Player(attackerId);
+	Player owner = new Player(buildingOwnerId);
+
+	attacker.TriggerSuccess();
+	owner.TriggerSuccess();
 }
 
 public void Minigame14_OnMinigameFinish()

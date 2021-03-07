@@ -138,12 +138,12 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 		if (Minigame19_ClassMode == TFClass_Unknown)
 		{
 			// Any class is acceptable
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 		else if (playerClass == Minigame19_ClassMode)
 		{
 			// Must match expected class.
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 		else
 		{

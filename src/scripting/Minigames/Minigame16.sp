@@ -51,7 +51,7 @@ public void Minigame16_OnPlayerJarated(int client, int victimId)
 
 	if (player.IsValid && player.IsParticipating && victim.IsValid && victim.IsParticipating)
 	{
-		ClientWonMinigame(client);
+		player.TriggerSuccess();
 	}
 }
 

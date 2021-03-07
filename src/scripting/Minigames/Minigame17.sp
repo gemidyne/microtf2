@@ -98,8 +98,8 @@ public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		{
 			if (Minigame17_Selected[attackerId] == 1 && Minigame17_Selected[victimId] == 0)
 			{
-				ClientWonMinigame(attackerId);
-				ClientWonMinigame(victimId);
+				attacker.TriggerSuccess();
+				victim.TriggerSuccess();
 			}
 		}
 	}
