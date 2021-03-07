@@ -220,7 +220,7 @@ stock void PrintSelectedSpecialRound()
 			Format(key, sizeof(key), "SpecialRound%i_Description", SpecialRoundID);
 			Format(description, sizeof(description), "%T", key, i);
 
-			CPrintToChat(i, "%T", "Hud_SpecialRound_ChatDisplay", i, PLUGIN_PREFIX, name, description);
+			player.PrintChatText("%T", "Hud_SpecialRound_ChatDisplay", i, name, description);
 		}
 	}
 

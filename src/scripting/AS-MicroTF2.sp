@@ -1120,11 +1120,11 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 				if (SpecialRoundID == 17)
 				{
-					CPrintToChat(i, "%s%s %s!", PLUGIN_PREFIX, prefix, names);
+					player.PrintChatText("%s %s!", prefix, names);
 				}
 				else
 				{
-					CPrintToChat(i, "%T", "GameOver_WinnerSuffix", i, PLUGIN_PREFIX, prefix, names, score);
+					player.PrintChatText("%T", "GameOver_WinnerSuffix", i, prefix, names, score);
 				}
 			}
 		}

@@ -233,12 +233,8 @@
     {
       "key": "Hud_SpecialRound_ChatDisplay",
       "description": "The chatbox text which displays what the new special round condition will be.",
-      "text": "{1}The special round condition is... {2}!\n{3}",
+      "text": "The special round condition is... {1}!\n{2}",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The gamemode's prefix, this is required. Example: [ WarioWare ]"
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "The selected special round's name."
@@ -249,14 +245,14 @@
         }
       ],
       "translations": {
-        "pt": "{1}Rodada especial. Na condição... {2}!\n{3}",
-        "fr": "{1}La manche spéciale est... {2} !\n{3}",
-        "it": "{1}Il round speciale scelto è... {2}!\n{3}",
-        "pt_p": "{1}Rodada especial. Na condição... {2}!\n{3}",
-        "ru": "{1}Условие особого раунда... {2}!\n{3}",
-        "es": "{1}La condicion de la ronda especial es... {2}!\n{3}",
+        "pt": "Rodada especial. Na condição... {1}!\n{2}",
+        "fr": "La manche spéciale est... {1} !\n{2}",
+        "it": "Il round speciale scelto è... {1}!\n{2}",
+        "pt_p": "Rodada especial. Na condição... {1}!\n{2}",
+        "ru": "Условие особого раунда... {1}!\n{2}",
+        "es": "La condicion de la ronda especial es... {1}!\n{2}",
         "jp": null,
-        "pl": "{1}Warunek rundy specjalnej to... {2}!\n{3}"
+        "pl": "Warunek rundy specjalnej to... {1}!\n{2}"
       },
       "ignoreEmptyValue": false
     },
@@ -552,12 +548,8 @@
     {
       "key": "GameOver_WinnerSuffix",
       "description": "Used in the gameover sequence.",
-      "text": "{1}{2} {3} {green}with {4} points!",
+      "text": "{1} {2} {green}with {3} points!",
       "formatArguments": [
-        {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "Unknown"
-        },
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
           "description": "Unknown"
@@ -572,14 +564,14 @@
         }
       ],
       "translations": {
-        "pt": "{1}{2} {3} {green}com {4} pontos!",
-        "fr": "{1}{2} {3} {green}avec {4} points !",
-        "it": "{1}{2} {3} {green}con {4} punti!",
-        "pt_p": "{1}{2} {3} {green}com {4} pontos!",
-        "ru": "{1}{2} {3} {green}с {4} очками!",
-        "es": "{1}{2} {3} {green}con {4} puntos!",
+        "pt": "{1} {2} {green}com {3} pontos!",
+        "fr": "{1} {2} {green}avec {3} points !",
+        "it": "{1} {2} {green}con {3} punti!",
+        "pt_p": "{1} {2} {green}com {3} pontos!",
+        "ru": "{1} {2} {green}с {3} очками!",
+        "es": "{1} {2} {green}con {3} puntos!",
         "jp": null,
-        "pl": "{1}{2} {3} {green}z wynikiem {4}!"
+        "pl": "{1} {2} {green}z wynikiem {3}!"
       },
       "ignoreEmptyValue": false
     },
