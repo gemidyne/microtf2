@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"pt_p"		"{1}Rodada especial. Na condição... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"pt_p"		"Rodada especial. Na condição... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -120,23 +120,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"pt_p"		"{1}{2} {3} {green}com {4} pontos!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pt_p"		"{1} {2} {green}com {3} pontos!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}O TIME VERMELHO foi o time vencedor com {2} pontos!"
+		"#format"		"{1:i}"
+		"pt_p"		"O TIME VERMELHO foi o time vencedor com {1} pontos!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}O TIME AZUL foi o time vencedor com {2} pontos!"
+		"#format"		"{1:i}"
+		"pt_p"		"O TIME AZUL foi o time vencedor com {1} pontos!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"pt_p"		"{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
+		"pt_p"		"Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +151,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt_p"		"{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt_p"		"{1} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,8 +160,8 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt_p"		"{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt_p"		"{1} escapou da fábrica primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -178,8 +177,8 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt_p"		"{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt_p"		"{1} chegou até o final do percurso primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -216,8 +215,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt_p"		"{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt_p"		"{1} foi o primeiro a digitar a palavra! (Pontos de Bônus!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +229,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt_p"		"{1}A reposta correta foi {2}!"
+		"#format"		"{1:i}"
+		"pt_p"		"A reposta correta foi {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt_p"		"{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt_p"		"{1} respondeu corretamente primeiro! (Pontos de Bônus!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

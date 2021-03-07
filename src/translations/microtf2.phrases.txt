@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"en"		"{1}The special round condition is... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"en"		"The special round condition is... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -120,23 +120,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"en"		"{1}{2} {3} {green}with {4} points!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"en"		"{1} {2} {green}with {3} points!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The winning team is the RED team with {2} points!"
+		"#format"		"{1:i}"
+		"en"		"The winning team is the RED team with {1} points!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The winning team is the BLU team with {2} points!"
+		"#format"		"{1:i}"
+		"en"		"The winning team is the BLU team with {1} points!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"en"		"{1}Stalemate! Both teams have the same points!"
+		"en"		"Stalemate! Both teams have the same points!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +151,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} reached the top first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} reached the top first! (Bonus point!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,7 +160,7 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
+		"#format"		"{1:s}"
 		"en"		"{1}{2} escaped the factory first! (Bonus point!)"
 	}
 	"Bossgame3_Caption"
@@ -178,8 +177,8 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} reached the goal first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} reached the goal first! (Bonus point!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -216,8 +215,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} said the word first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} said the word first! (Bonus point!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +229,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The correct answer was {2}!"
+		"#format"		"{1:i}"
+		"en"		"The correct answer was {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} got the correct answer first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} got the correct answer first! (Bonus point!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

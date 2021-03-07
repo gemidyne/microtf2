@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"pl"		"{1}Warunek rundy specjalnej to... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"pl"		"Warunek rundy specjalnej to... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -120,23 +120,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"pl"		"{1}{2} {3} {green}z wynikiem {4}!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pl"		"{1} {2} {green}z wynikiem {3}!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Zwyciężyła drużyna RED z wynikiem {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Zwyciężyła drużyna RED z wynikiem {1}!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Zwyciężyła drużyna BLU z wynikiem {1}!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"pl"		"{1}Impas! Obie drużyny mają tyle samo punktów!"
+		"pl"		"Impas! Obie drużyny mają tyle samo punktów!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +151,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,8 +160,8 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -178,8 +177,8 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -216,8 +215,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +229,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Poprawna odpowiedź to {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Poprawna odpowiedź to {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{

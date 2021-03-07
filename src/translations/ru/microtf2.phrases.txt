@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"ru"		"{1}Условие особого раунда... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"ru"		"Условие особого раунда... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -120,23 +120,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"ru"		"{1}{2} {3} {green}с {4} очками!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"ru"		"{1} {2} {green}с {3} очками!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"ru"		"{1}КРАСНАЯ комманда побеждает с {2} очками!"
+		"#format"		"{1:i}"
+		"ru"		"КРАСНАЯ комманда побеждает с {1} очками!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"ru"		"{1}СИНЯЯ комманда побеждает с {2} очками!"
+		"#format"		"{1:i}"
+		"ru"		"СИНЯЯ комманда побеждает с {1} очками!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"ru"		"{1}Ничья! Обе комманды имеют одинаковое кол-во очков!"
+		"ru"		"Ничья! Обе комманды имеют одинаковое кол-во очков!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +151,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"ru"		"{1}{2} достал до вершины первым! (Доп. очко!)"
+		"#format"		"{1:s}"
+		"ru"		"{1} достал до вершины первым! (Доп. очко!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,8 +160,8 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"ru"		"{1}{2} сбежал из завода первым! (Доп. очко!)"
+		"#format"		"{1:s}"
+		"ru"		"{1} сбежал из завода первым! (Доп. очко!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -178,8 +177,8 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"ru"		"{1}{2} дошел до конца первым! (Доп. очко!)"
+		"#format"		"{1:s}"
+		"ru"		"{1} дошел до конца первым! (Доп. очко!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -216,8 +215,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"ru"		"{1}{2} сказал слово первым! (Доп. очко!)"
+		"#format"		"{1:s}"
+		"ru"		"{1} сказал слово первым! (Доп. очко!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +229,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"ru"		"{1}Правильным ответом было {2}!"
+		"#format"		"{1:i}"
+		"ru"		"Правильным ответом было {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"ru"		"{1}{2} написал правильный ответ первым! (Доп. очко!)"
+		"#format"		"{1:s}"
+		"ru"		"{1} написал правильный ответ первым! (Доп. очко!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
