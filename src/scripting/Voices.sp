@@ -120,7 +120,7 @@ public void Voices_OnMapStart()
 
 stock void PlayNegativeVoice(int client)
 {
-    if (SystemVoicesNegativeCount > 0)
+    if (SystemVoicesNegativeCount <= 0)
     {
         return;
     }
@@ -130,7 +130,7 @@ stock void PlayNegativeVoice(int client)
 
 stock void PlayPositiveVoice(int client)
 {
-    if (SystemVoicesPositiveCount > 0)
+    if (SystemVoicesPositiveCount <= 0)
     {
         return;
     }
