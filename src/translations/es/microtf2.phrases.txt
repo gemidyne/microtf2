@@ -72,31 +72,31 @@
 	}
 	"General_SpeedUp"
 	{
-		"es"		""
+		"es"		"¡MÁS RÁPIDO!"
 	}
 	"General_SpeedDown"
 	{
-		"es"		""
+		"es"		"¡MÁS LENTO!"
 	}
 	"General_Failure"
 	{
-		"es"		""
+		"es"		"¡FALLASTE!"
 	}
 	"General_Success"
 	{
-		"es"		""
+		"es"		"¡GANASTE!"
 	}
 	"General_BossTime"
 	{
-		"es"		""
+		"es"		"¡JEFE FINAL!"
 	}
 	"General_GameOver"
 	{
-		"es"		""
+		"es"		"¡FIN DEL JUEGO!"
 	}
 	"General_SpecialRound"
 	{
-		"es"		""
+		"es"		"¡RONDA ESPECIAL!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -161,28 +161,28 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"es"		"{1} alcanzó el objetivo primero! (+1 puntaje!)"
+		"es"		"{1} alcanzó el objetivo primero! (¡Punto extra!)"
 	}
 	"Bossgame3_Caption"
 	{
-		"es"		""
+		"es"		"¡QUEDATE EN EL BLOQUE VERDE!"
 	}
 	"Bossgame4_Caption"
 	{
-		"es"		"NO TE CAIGAS AL AGUA"
+		"es"		"¡NO TE CAIGAS AL AGUA!"
 	}
 	"Bossgame5_Caption"
 	{
-		"es"		"LLEGA HASTA LA META!"
+		"es"		"¡LLEGA HASTA LA META!"
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"es"		"{1} alcanzó el objetivo primero! (+1 puntaje!)"
+		"es"		"{1} alcanzó el objetivo primero! (¡Punto extra!)"
 	}
 	"Bossgame6_Caption"
 	{
-		"es"		"DISPARA A LOS BARRILES!"
+		"es"		"¡DISPARA A LOS BARRILES!"
 	}
 	"Bossgame7_Caption"
 	{
@@ -455,23 +455,23 @@
 	}
 	"Minigame28_Caption"
 	{
-		"es"		""
+		"es"		"¡SALTA CON BOMBAS HASTA LA PLATAFORMA!"
 	}
 	"Minigame29_Caption"
 	{
-		"es"		""
+		"es"		"¡NO TOQUES A NADIE!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"es"		""
+		"es"		"¡ESCRIBE LAS PALABRAS!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"es"		"Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!"
+		"es"		"¡Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!"
 	}
 	"Bossgame7_Caption_Start"
 	{
-		"es"		"EMPIEZA!"
+		"es"		"¡EMPIEZA!"
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
@@ -481,7 +481,7 @@
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"es"		"== ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos"
+		"es"		"== ¡ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
@@ -490,7 +490,7 @@
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
-		"es"		"== ANUNCIO == \n\nSIGUIENTE NIVEL! LAS PALABRAS AHORA SON MAS DIFICILES!"
+		"es"		"== ANUNCIO == \n\n¡SIGUIENTE NIVEL! ¡LAS PALABRAS AHORA SON MÁS DIFÍCILES!"
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
@@ -505,11 +505,11 @@
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
 		"#format"		"{1:s}"
-		"es"		"{1}nadie!\n\nTodo el mundo sobrevive otra ronda!"
+		"es"		"{1}¡nadie!\n\nTodo el mundo sobrevive otra ronda!"
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"es"		"Cambiar de clase no esta permitido durante los jefes!"
+		"es"		"¡Cambiar de clase no esta permitido durante los jefes!"
 	}
 	"SpecialRound0_Name"
 	{
