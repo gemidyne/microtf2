@@ -39,16 +39,19 @@ View the full gamemode credits here: https://www.gemidyne.com/projects/microtf2/
 
 Resurrected by Gemidyne Softworks.
 
-### Localisation
+### Want to help translate the gamemode into other languages? 
 
-We currently are looking for translators to help improve the multilingual aspect of the plugin! If your language is not listed below and you would like to help us out, please create an issue on this repository with the title "Translator request" and we will be in contact.
+We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
 
-## Languages
+1. We can add you onto our gemidyne.com Translator Tool which makes editing translations super quick and easy - [click this link](https://github.com/gemidyne/microtf2/issues/new/choose) and choose **Become a translator**.
+2. You can add your own language "microtf2.phrases.txt" file built from the english file into your own translation folder - this way is more manual but you can contribute via pull requests if you want 
 
-- French: Taken
-- Russian: Taken
-- Italian: Taken
-- Spanish: Taken
-- Portuguese: Taken
-- Brazilian Portuguese: Taken
-- Polish: Taken
+## We currently have translators for the following languages:
+
+- [X] French
+- [X] Italian
+- [X] Spanish
+- [X] Russian
+- [X] Portuguese
+- [X] Brazilian Portuguese
+- [X] Polish
