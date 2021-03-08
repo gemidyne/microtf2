@@ -33,20 +33,14 @@ If you intend to use the SDK plugin for developing your own gamemodes or minigam
 
 - Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 
-## Credits
-
-View the full gamemode credits here: https://www.gemidyne.com/projects/microtf2/credits
-
-Resurrected by Gemidyne Softworks.
-
-### Want to help translate the gamemode into other languages? 
+## Want to help translate the gamemode into other languages? 
 
 We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
 
 1. We can add you onto our gemidyne.com Translator Tool which makes editing translations super quick and easy - [click this link](https://github.com/gemidyne/microtf2/issues/new/choose) and choose **Become a translator**.
 2. You can add your own language "microtf2.phrases.txt" file built from the english file into your own translation folder - this way is more manual but you can contribute via pull requests if you want 
 
-## We currently have translators for the following languages:
+#### We currently have translators for the following languages:
 
 - [X] French
 - [X] Italian
@@ -55,3 +49,9 @@ We'd love to have you on board! If you are interested in contributing translatio
 - [X] Portuguese
 - [X] Brazilian Portuguese
 - [X] Polish
+
+## Credits
+
+View the full gamemode credits here: https://www.gemidyne.com/projects/microtf2/credits
+
+Resurrected by Gemidyne Softworks.
