@@ -947,8 +947,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 	int winnerCount = 0;
 	Handle winners = CreateArray();
-	char prefix[128];
-	char names[1024];
+
 	bool isWinner = false;
 
 	int redTeamScore = CalculateTeamScore(TFTeam_Red);
@@ -1059,79 +1058,82 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 	if (winnerCount > 0)
 	{
-		for (int i = 0; i < GetArraySize(winners); i++)
-		{
-			int client = GetArrayCell(winners, i);
-			Player player = new Player(client);
-
-			char name[64];
-
-			if (player.Team == TFTeam_Red)
-			{
-				Format(name, sizeof(name), "{red}%N", client);
-			}
-			else if (player.Team == TFTeam_Blue)
-			{
-				Format(name, sizeof(name), "{blue}%N", client);
-			}
-			else
-			{
-				Format(name, sizeof(name), "{white}%N", client);
-			}
-
-			if (winnerCount > 1)
-			{
-				if (i >= (GetArraySize(winners)-1))
-				{
-					Format(names, sizeof(names), "%s & %s{default}", names, name); // "AND" here needs to be fixed!!!
-				}
-				else
-				{
-					Format(names, sizeof(names), "%s, %s{default}", names, name);
-				}
-			}
-			else
-			{
-				Format(names, sizeof(names), name);
-			}
-		}
-
-		if (winnerCount > 1)
-		{
-			ReplaceStringEx(names, sizeof(names), ", ", "");
-		}
-
 		for (int i = 1; i <= MaxClients; i++)
 		{
 			Player player = new Player(i);
 
-			if (IsClientInGame(i) && !IsFakeClient(i))
+			if (player.IsInGame && !player.IsBot)
 			{
 				if (SpecialRoundID == 11)
 				{
 					if (teamsHaveSameScore)
 					{
-						player.PrintChatText("%T", "GameOver_WinningTeam_Stalemate", i);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Stalemate", player.ClientId);
 					}
 					else if (overallWinningTeam == TFTeam_Red)
 					{
-						player.PrintChatText("%T", "GameOver_WinningTeam_Red", i, redTeamScore);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Red", player.ClientId, redTeamScore);
 					}
 					else if (overallWinningTeam == TFTeam_Blue)
 					{
-						player.PrintChatText("%T", "GameOver_WinningTeam_Blue", i, blueTeamScore);
+						player.PrintChatText("%T", "GameOver_WinningTeam_Blue", player.ClientId, blueTeamScore);
 					}
 
 					continue;
 				}
 
+				char prefix[256];
+				char names[1024];
+
+				for (int winnerId = 0; winnerId < GetArraySize(winners); winnerId++)
+				{
+					int client = GetArrayCell(winners, winnerId);
+					Player winner = new Player(client);
+
+					char name[64];
+
+					if (winner.Team == TFTeam_Red)
+					{
+						Format(name, sizeof(name), "{red}%N", player.ClientId);
+					}
+					else if (winner.Team == TFTeam_Blue)
+					{
+						Format(name, sizeof(name), "{blue}%N", player.ClientId);
+					}
+					else
+					{
+						Format(name, sizeof(name), "{white}%N", player.ClientId);
+					}
+
+					if (winnerCount > 1)
+					{
+						if (winnerId >= (GetArraySize(winners)-1))
+						{
+							Format(names, sizeof(names), "%T", "GameOver_WinnersAnd", player.ClientId, names, name); // "AND" here needs to be fixed!!!
+						}
+						else
+						{
+							Format(names, sizeof(names), "%s, %s{default}", names, name);
+						}
+					}
+					else
+					{
+						Format(names, sizeof(names), name);
+					}
+				}
+
+				if (winnerCount > 1)
+				{
+					ReplaceStringEx(names, sizeof(names), ", ", "");
+				}
+
 				if (winnerCount == 1)
 				{
-					Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixSingle", i);
+					Format(prefix, sizeof(prefix), "%T", "GameOver_WinnerPrefixSingle", player.ClientId);
 				}
 				else
 				{
-					Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixMultiple", i);
+					Format(prefix, sizeof(prefix), "%T", "GameOver_WinnerPrefixMultiple", player.ClientId);
 				}
 
 				if (SpecialRoundID == 17)
@@ -1153,9 +1155,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 			if (player.IsInGame && !player.IsBot)
 			{
-				Format(prefix, sizeof(prefix), "{green}%T", "GameOver_WinnerPrefixNoOne", i);
-
-				player.PrintChatText(prefix);
+				player.PrintChatText("%T", "GameOver_WinnerPrefixNoOne", player.ClientId);
 			}
 		}
 	}

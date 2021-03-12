@@ -514,17 +514,26 @@
     {
       "key": "GameOver_WinnersAnd",
       "description": "Used in the gameover sequence to combine one or more player names together.",
-      "text": "and",
-      "formatArguments": [],
+      "text": "{1} and {2}{default}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The names to combine. For example: \"Name1, Name2\"."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The name to end the sentence with."
+        }
+      ],
       "translations": {
-        "pt": "e",
-        "fr": "et",
-        "it": "e",
-        "pt_p": "e",
-        "ru": "и",
-        "es": "y",
+        "pt": "{1} e {2}{default}",
+        "fr": "{1} et {2}{default}",
+        "it": "{1} e {2}{default}",
+        "pt_p": "{1} e {2}{default}",
+        "ru": "{1} и {2}{default}",
+        "es": "{1} y {2}{default}",
         "jp": null,
-        "pl": "oraz"
+        "pl": "{1} oraz {2}{default}"
       },
       "ignoreEmptyValue": false
     },
@@ -548,7 +557,7 @@
     {
       "key": "GameOver_WinnerSuffix",
       "description": "Used in the gameover sequence.",
-      "text": "{1} {2} {green}with {3} points!",
+      "text": "{1} {2} {default}with {3} points!",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
@@ -564,14 +573,14 @@
         }
       ],
       "translations": {
-        "pt": "{1} {2} {green}com {3} pontos!",
-        "fr": "{1} {2} {green}avec {3} points !",
-        "it": "{1} {2} {green}con {3} punti!",
-        "pt_p": "{1} {2} {green}com {3} pontos!",
-        "ru": "{1} {2} {green}с {3} очками!",
-        "es": "{1} {2} {green}con {3} puntos!",
+        "pt": "{1} {2} {default}com {3} pontos!",
+        "fr": "{1} {2} {default}avec {3} points !",
+        "it": "{1} {2} {default}con {3} punti!",
+        "pt_p": "{1} {2} {default}com {3} pontos!",
+        "ru": "{1} {2} {default}с {3} очками!",
+        "es": "{1} {2} {default}con {3} puntos!",
         "jp": null,
-        "pl": "{1} {2} {green}z wynikiem {3}!"
+        "pl": "{1} {2} {default}z wynikiem {3}!"
       },
       "ignoreEmptyValue": false
     },

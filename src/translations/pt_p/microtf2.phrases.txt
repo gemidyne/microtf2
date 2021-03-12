@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"pt_p"		"e"
+		"#format"		"{1:s},{2:s}"
+		"pt_p"		"{1} e {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -121,7 +122,7 @@
 	"GameOver_WinnerSuffix"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"pt_p"		"{1} {2} {green}com {3} pontos!"
+		"pt_p"		"{1} {2} {default}com {3} pontos!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
