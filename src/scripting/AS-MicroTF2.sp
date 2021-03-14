@@ -1087,29 +1087,28 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 				for (int winnerId = 0; winnerId < GetArraySize(winners); winnerId++)
 				{
-					int client = GetArrayCell(winners, winnerId);
-					Player winner = new Player(client);
+					Player winner = new Player(GetArrayCell(winners, winnerId));
 
 					char name[64];
 
 					if (winner.Team == TFTeam_Red)
 					{
-						Format(name, sizeof(name), "{red}%N", player.ClientId);
+						Format(name, sizeof(name), "{red}%N", winner.ClientId);
 					}
 					else if (winner.Team == TFTeam_Blue)
 					{
-						Format(name, sizeof(name), "{blue}%N", player.ClientId);
+						Format(name, sizeof(name), "{blue}%N", winner.ClientId);
 					}
 					else
 					{
-						Format(name, sizeof(name), "{white}%N", player.ClientId);
+						Format(name, sizeof(name), "{white}%N", winner.ClientId);
 					}
 
 					if (winnerCount > 1)
 					{
 						if (winnerId >= (GetArraySize(winners)-1))
 						{
-							Format(names, sizeof(names), "%T", "GameOver_WinnersAnd", player.ClientId, names, name); // "AND" here needs to be fixed!!!
+							Format(names, sizeof(names), "%T", "GameOver_WinnersAnd", player.ClientId, names, name);
 						}
 						else
 						{
@@ -1138,7 +1137,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 				if (SpecialRoundID == 17)
 				{
-					player.PrintChatText("%s %s!", prefix, names);
+					player.PrintChatText("%s %s{default}!", prefix, names);
 				}
 				else
 				{
