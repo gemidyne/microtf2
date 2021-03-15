@@ -1,6 +1,6 @@
 public bool TimelimitManager_HasTimeLimit()
 {
-    return GetConVarBool(ConVar_MTF2UseServerMapTimelimit);
+    return g_hConVarPluginUseServerMapTimelimit.BoolValue;
 }
 
 public bool TimelimitManager_HasExceededTimeLimit()

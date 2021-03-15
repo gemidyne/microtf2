@@ -13,13 +13,15 @@ ConVar g_hConVarTFFastBuild;
 ConVar g_hConVarTFWeaponSpreads;
 ConVar g_hConVarFriendlyFire;
 
-Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
-Handle ConVar_MTF2BonusPoints = INVALID_HANDLE;
-Handle ConVar_MTF2AllowCosmetics = INVALID_HANDLE;
+// Plugin specific ConVars: 
+ConVar g_hConVarPluginBonusPoints;
+ConVar g_hConVarPluginAllowCosmetics;
+ConVar g_hConVarPluginIntermissionEnabled;
+ConVar g_hConVarPluginUseServerMapTimelimit;
+
 Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
 Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;
-Handle ConVar_MTF2UseServerMapTimelimit = INVALID_HANDLE;
 
 stock void InitializeCommands()
 {
@@ -48,19 +50,19 @@ stock void InitializeCommands()
 	RegAdminCmd("sm_triggerboss", Command_TriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
 
 	ConVar_MTF2MaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
-	ConVar_MTF2IntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
-	ConVar_MTF2BonusPoints = CreateConVar("mtf2_bonuspoints", "0", "Controls whether or not minigames should have a bonus point.", 0, true, 0.0, true, 1.0);
-	ConVar_MTF2AllowCosmetics = CreateConVar("mtf2_cosmetics_enabled", "0", "Allows cosmetics to be worn by players. NOTE: This mode is explicitly not supported and may cause visual bugs and possible server lag spikes.", 0, true, 0.0, true, 1.0);
-	ConVar_MTF2UseServerMapTimelimit = CreateConVar("mtf2_use_server_map_timelimit", "0", "Sets whether or not the gamemode should instead run an infinite number of rounds and let mp_timelimit dictate when the map ends. If set to 1, the gamemode will also not run intermission, and your mapchooser plugin will need to handle this instead.", 0, true, 0.0, true, 1.0);
+	g_hConVarPluginIntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
+	g_hConVarPluginBonusPoints = CreateConVar("mtf2_bonuspoints", "0", "Controls whether or not minigames should have a bonus point.", 0, true, 0.0, true, 1.0);
+	g_hConVarPluginAllowCosmetics = CreateConVar("mtf2_cosmetics_enabled", "0", "Allows cosmetics to be worn by players. NOTE: This mode is explicitly not supported and may cause visual bugs and possible server lag spikes.", 0, true, 0.0, true, 1.0);
+	g_hConVarPluginUseServerMapTimelimit = CreateConVar("mtf2_use_server_map_timelimit", "0", "Sets whether or not the gamemode should instead run an infinite number of rounds and let mp_timelimit dictate when the map ends. If set to 1, the gamemode will also not run intermission, and your mapchooser plugin will need to handle this instead.", 0, true, 0.0, true, 1.0);
 
 	if (ConVar_MTF2MaxRounds != INVALID_HANDLE)
 	{
 		HookConVarChange(ConVar_MTF2MaxRounds, OnMaxRoundsChanged);
 	}
 
-	if (ConVar_MTF2AllowCosmetics != INVALID_HANDLE)
+	if (g_hConVarPluginAllowCosmetics != INVALID_HANDLE)
 	{
-		HookConVarChange(ConVar_MTF2AllowCosmetics, OnAllowCosmeticsChanged);
+		HookConVarChange(g_hConVarPluginAllowCosmetics, OnAllowCosmeticsChanged);
 	}
 
 	// Debug cvars/cmds
@@ -99,7 +101,7 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("mp_forcecamera"));
 	ResetConVar(FindConVar("mp_idlemaxtime"));
 	
-	if (!GetConVarBool(ConVar_MTF2UseServerMapTimelimit))
+	if (!g_hConVarPluginUseServerMapTimelimit.BoolValue)
 	{
 		ResetConVar(FindConVar("mp_timelimit"));
 	}
@@ -137,7 +139,7 @@ stock void PrepareConVars()
 	SetConVarInt(FindConVar("mp_forcecamera"), 0);
 	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 
-	if (!GetConVarBool(ConVar_MTF2UseServerMapTimelimit))
+	if (!g_hConVarPluginUseServerMapTimelimit.BoolValue)
 	{
 		// If not using mp_timelimit mode, set to 0.
 	 	SetConVarInt(FindConVar("mp_timelimit"), 0);
@@ -252,5 +254,5 @@ public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char
 
 public bool Config_BonusPointsEnabled()
 {
-	return GetConVarBool(ConVar_MTF2BonusPoints);
+	return g_hConVarPluginBonusPoints.BoolValue;
 }
