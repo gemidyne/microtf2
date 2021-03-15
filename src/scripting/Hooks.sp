@@ -1,23 +1,13 @@
-//#define USE_MAXSPEED_HOOK
-
 public void AttachPlayerHooks(int client)
 {
 	SDKHook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
 	SDKHook(client, SDKHook_Touch, Hooks_OnTouch);
-
-	#if defined USE_MAXSPEED_HOOK
-	SDKHook(client, SDKHook_PreThink, Hooks_OnPreThink);
-	#endif
 }
 
 public void DetachPlayerHooks(int client)
 {
 	SDKUnhook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
 	SDKUnhook(client, SDKHook_Touch, Hooks_OnTouch);
-
-	#if defined USE_MAXSPEED_HOOK
-	SDKUnhook(client, SDKHook_PreThink, Hooks_OnPreThink);
-	#endif
 }
 
 public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
@@ -109,25 +99,3 @@ public Action Hooks_OnTouch(int entity, int other)
 		}
 	}
 }
-
-
-#if defined USE_MAXSPEED_HOOK
-public void Hooks_OnPreThink(int client)
-{
-    if (!IsPluginEnabled)
-    {
-        return;
-    }
-    
-    Player player = new Player(client);
-
-    if (ApplyMaxSpeedOverrides)
-    {
-        player.MaxSpeed = MaxSpeedOverride[player.ClientId];
-    }
-    // else if (MaxSpeedDefaults[player.ClientId] == 0)
-    // {
-    //     MaxSpeedDefaults
-    // }
-}
-#endif
