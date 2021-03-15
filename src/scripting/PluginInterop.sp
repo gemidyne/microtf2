@@ -171,7 +171,12 @@ public int Native_WarioWare_SetMaxRounds(Handle plugin, int numParams)
 {
 	int value = GetNativeCell(1);
 
-	SetConVarInt(ConVar_MTF2MaxRounds, value);
+	if (value < 0)
+	{
+		value = 0;
+	}
+
+	g_hConVarPluginMaxRounds.IntValue = value;
 
 	return 0;
 }

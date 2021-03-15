@@ -48,6 +48,7 @@
 #include "MethodMaps/Player.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
+#include "ConVars.sp"
 #include "System.sp"
 #include "Commands.sp"
 #include "TimelimitManager.sp"
@@ -160,7 +161,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	MinigamesPlayed = 0;
 	NextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
-	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
+	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
 	RoundsPlayed = 0;
 	SpeedLevel = 1.0;
 

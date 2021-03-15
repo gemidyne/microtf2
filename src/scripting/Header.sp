@@ -94,7 +94,6 @@ DamageBlockModes DamageBlockMode = EDamageBlockMode_All;
  * Handles
  */
 
-Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
 Handle Handle_BossCheckTimer = INVALID_HANDLE;
 Handle Handle_ActiveGameTimer = INVALID_HANDLE;
 

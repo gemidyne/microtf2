@@ -105,7 +105,7 @@ public void System_OnMapStart()
 	MinigamesPlayed = 0;
 	NextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
-	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
+	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
 	RoundsPlayed = 0;
 	SpeedLevel = 1.0;
 
