@@ -133,7 +133,7 @@ public void EndBoss()
 {
 	if (IsMinigameActive && BossgameID > 0 && MinigameID == 0)
 	{
-		SetConVarInt(ConVar_FriendlyFire, 1);
+		g_hConVarFriendlyFire.BoolValue = true;
 
 		if (MinigamesPlayed != BossGameThreshold)
 		{

@@ -288,7 +288,7 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 stock void SpecialRound_SetupEnv()
 {
-	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
+	g_hConVarServerGravity.IntValue = (SpecialRoundID == 3) ? 200 : 800;
 }
 
 public void SpecialRound_ApplyEffects()

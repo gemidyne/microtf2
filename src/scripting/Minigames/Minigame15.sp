@@ -43,7 +43,7 @@ public void Minigame15_OnMinigameSelectedPre()
 		}
 		else
 		{
-			SetConVarInt(ConVar_TFCheapObjects, 1); // Buildings dont cost metal to build. 
+			g_hConVarTFCheapObjects.BoolValue = true;
 		}
 	}
 }
@@ -159,7 +159,7 @@ public void Minigame15_OnMinigameFinish()
 {
 	if (MinigameID == 15)
 	{
-		SetConVarInt(ConVar_TFCheapObjects, 0);
+		g_hConVarTFCheapObjects.BoolValue = false;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{

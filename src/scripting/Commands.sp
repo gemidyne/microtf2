@@ -4,14 +4,15 @@
  * Implements functionality for commands and convars.
  */
 
-Handle ConVar_SvCheats = INVALID_HANDLE;
-Handle ConVar_HostTimescale = INVALID_HANDLE;
-Handle ConVar_PhysTimescale = INVALID_HANDLE;
-Handle ConVar_ServerGravity = INVALID_HANDLE;
-Handle ConVar_TFCheapObjects = INVALID_HANDLE;
-Handle ConVar_TFFastBuild = INVALID_HANDLE;
-Handle ConVar_TFWeaponSpreads = INVALID_HANDLE;
-Handle ConVar_FriendlyFire = INVALID_HANDLE;
+ConVar g_hConVarServerCheats;
+ConVar g_hConVarHostTimescale;
+ConVar g_hConVarPhysTimescale;
+ConVar g_hConVarServerGravity;
+ConVar g_hConVarTFCheapObjects;
+ConVar g_hConVarTFFastBuild;
+ConVar g_hConVarTFWeaponSpreads;
+ConVar g_hConVarFriendlyFire;
+
 Handle ConVar_MTF2IntermissionEnabled = INVALID_HANDLE;
 Handle ConVar_MTF2BonusPoints = INVALID_HANDLE;
 Handle ConVar_MTF2AllowCosmetics = INVALID_HANDLE;
@@ -33,14 +34,15 @@ stock void InitializeCommands()
 	AddCommandListener(CmdOnPlayerKill, "kill");
 	AddCommandListener(CmdOnPlayerKill, "explode");
 
-	ConVar_SvCheats = FindConVar("sv_cheats");
-	ConVar_HostTimescale = FindConVar("host_timescale");
-	ConVar_PhysTimescale = FindConVar("phys_timescale");
-	ConVar_ServerGravity = FindConVar("sv_gravity");
-	ConVar_TFCheapObjects = FindConVar("tf_cheapobjects");
-	ConVar_TFFastBuild = FindConVar("tf_fastbuild");
-	ConVar_TFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
-	ConVar_FriendlyFire = FindConVar("mp_friendlyfire");
+	g_hConVarServerCheats = FindConVar("sv_cheats");
+	g_hConVarHostTimescale = FindConVar("host_timescale");
+	g_hConVarPhysTimescale = FindConVar("phys_timescale");
+
+	g_hConVarServerGravity = FindConVar("sv_gravity");
+	g_hConVarTFCheapObjects = FindConVar("tf_cheapobjects");
+	g_hConVarTFFastBuild = FindConVar("tf_fastbuild");
+	g_hConVarTFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
+	g_hConVarFriendlyFire = FindConVar("mp_friendlyfire");
 
 	RegAdminCmd("sm_changegamemode", Command_SetGamemode, ADMFLAG_VOTE, "Changes the current gamemode.");
 	RegAdminCmd("sm_triggerboss", Command_TriggerBoss, ADMFLAG_VOTE, "Triggers a bossgame to be played next.");
@@ -74,12 +76,14 @@ public void Commands_OnConfigsExecuted()
 
 stock void ResetConVars()
 {
-	ResetConVar(ConVar_HostTimescale);
-	ResetConVar(ConVar_PhysTimescale);
-	ResetConVar(ConVar_ServerGravity);
-	ResetConVar(ConVar_TFCheapObjects);
-	ResetConVar(ConVar_TFFastBuild);
-	ResetConVar(ConVar_TFWeaponSpreads);
+	g_hConVarHostTimescale.RestoreDefault();
+	g_hConVarPhysTimescale.RestoreDefault();
+	g_hConVarServerGravity.RestoreDefault();	
+	g_hConVarTFCheapObjects.RestoreDefault();
+	g_hConVarTFFastBuild.RestoreDefault();
+	g_hConVarTFWeaponSpreads.RestoreDefault();
+	g_hConVarFriendlyFire.RestoreDefault();
+
 	ResetConVar(ConVar_MTF2ForceMinigame);
 	ResetConVar(ConVar_MTF2ForceBossgame);
 	
@@ -89,7 +93,6 @@ stock void ResetConVars()
 
 	// Multiplayer ConVars
 	ResetConVar(FindConVar("mp_stalemate_enable"));
-	ResetConVar(ConVar_FriendlyFire);
 	ResetConVar(FindConVar("mp_waitingforplayers_time"));
 	ResetConVar(FindConVar("mp_disable_respawn_times"));
 	ResetConVar(FindConVar("mp_respawnwavetime"));
@@ -107,7 +110,7 @@ stock void ResetConVars()
 	ResetConVar(FindConVar("tf_airblast_cray_ground_minz"));
 	ResetConVar(FindConVar("tf_player_movement_restart_freeze"));
 
-	Handle conVar = FindConVar("sm_mapvote_extend");
+	ConVar conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)
 	{
 		ResetConVar(conVar);
@@ -140,19 +143,17 @@ stock void PrepareConVars()
 	 	SetConVarInt(FindConVar("mp_timelimit"), 0);
 	}
 
-	// TeamFortress ConVars
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
-	SetConVarInt(ConVar_TFFastBuild, 0);
-	SetConVarInt(ConVar_TFWeaponSpreads, 1);
 	SetConVarFloat(FindConVar("tf_airblast_cray_ground_minz"), 268.3281572999747);
 	SetConVarInt(FindConVar("tf_player_movement_restart_freeze"), 0);
 
-	// ConVars with Handles
-	SetConVarInt(ConVar_ServerGravity, 800);
+	g_hConVarTFFastBuild.BoolValue = false;
+	g_hConVarTFWeaponSpreads.BoolValue = true;
 
-	SetConVarFloat(ConVar_HostTimescale, 1.0);
-	SetConVarFloat(ConVar_PhysTimescale, 1.0);
+	g_hConVarServerGravity.IntValue = 800;
+	g_hConVarHostTimescale.FloatValue = 1.0;
+	g_hConVarPhysTimescale.FloatValue = 1.0;
 
 	Handle conVar = FindConVar("sm_mapvote_extend");
 	if (conVar != INVALID_HANDLE)

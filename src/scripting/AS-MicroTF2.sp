@@ -939,7 +939,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	SpeedLevel = 1.0;
 	SetSpeed();
 
-	SetConVarInt(ConVar_TFFastBuild, 1);
+	g_hConVarTFFastBuild.BoolValue = true;
 
 	int score = SpecialRoundID == 9 
 		? GetLowestScore() 
@@ -1236,7 +1236,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		: GetRandomInt(15, 26);
 
 	SetSpeed();
-	SetConVarInt(ConVar_TFFastBuild, 0);
+
+	g_hConVarTFFastBuild.BoolValue = false;
 
 	bool hasTimelimit = TimelimitManager_HasTimeLimit();
 

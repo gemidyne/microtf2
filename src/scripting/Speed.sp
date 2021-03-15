@@ -69,8 +69,8 @@ void SetSpeed()
 		SpeedLevel = 0.4;
 	}
 
-	SetConVarFloat(ConVar_HostTimescale, SpeedLevel);
-	SetConVarFloat(ConVar_PhysTimescale, SpeedLevel);
+	g_hConVarHostTimescale.FloatValue = SpeedLevel;
+	g_hConVarPhysTimescale.FloatValue = SpeedLevel;
 
 	char buffer[2];
 
@@ -89,7 +89,7 @@ void SetSpeed()
 
 		if (player.IsInGame && !player.IsBot)
 		{
-			SendConVarValue(player.ClientId, ConVar_SvCheats, buffer);
+			g_hConVarServerCheats.ReplicateToClient(player.ClientId, buffer);
 		}
 	}
 }

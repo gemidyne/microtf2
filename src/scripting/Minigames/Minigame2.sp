@@ -17,7 +17,7 @@ public void Minigame2_OnMinigameSelectedPre()
 {
 	if (MinigameID == 2)
 	{
-		SetConVarInt(ConVar_FriendlyFire, 1);
+		g_hConVarFriendlyFire.BoolValue = true;
 
 		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
 		DamageBlockMode = EDamageBlockMode_Nothing;
