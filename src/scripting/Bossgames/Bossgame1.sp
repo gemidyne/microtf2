@@ -175,13 +175,13 @@ public void Bossgame1_BossCheck()
 
 void Bossgame1_NotifyPlayerComplete(Player invoker)
 {
-	char name[32];
+	char name[64];
 	
 	if (invoker.Team == TFTeam_Red)
 	{
 		Format(name, sizeof(name), "{red}%N", invoker.ClientId);
 	}
-	else if (winner.Team == TFTeam_Blue)
+	else if (invoker.Team == TFTeam_Blue)
 	{
 		Format(name, sizeof(name), "{blue}%N", invoker.ClientId);
 	}

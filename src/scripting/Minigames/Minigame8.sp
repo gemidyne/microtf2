@@ -147,8 +147,20 @@ public Action Command_Minigame8Say(int client, int args)
 
 void Minigame8_NotifyPlayerComplete(Player invoker)
 {
-	char name[32];
-	GetClientName(invoker.ClientId, name, sizeof(name));
+	char name[64];
+	
+	if (invoker.Team == TFTeam_Red)
+	{
+		Format(name, sizeof(name), "{red}%N", invoker.ClientId);
+	}
+	else if (invoker.Team == TFTeam_Blue)
+	{
+		Format(name, sizeof(name), "{blue}%N", invoker.ClientId);
+	}
+	else
+	{
+		Format(name, sizeof(name), "{white}%N", invoker.ClientId);
+	}
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
