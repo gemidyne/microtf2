@@ -23,7 +23,7 @@ ConVar g_hConVarPluginForceBossgame;
 ConVar g_hConVarPluginForceBossgameThreshold;
 ConVar g_hConVarPluginMaxRounds;
 
-stock void InitializeConVars()
+void InitializeConVars()
 {
 	AddToForward(GlobalForward_OnConfigsExecuted, INVALID_HANDLE, PrepareConVars);
 
@@ -59,7 +59,7 @@ stock void InitializeConVars()
 	g_hConVarPluginForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
 }
 
-stock void ResetConVars()
+void ResetConVars()
 {
 	g_hConVarHostTimescale.RestoreDefault();
 	g_hConVarPhysTimescale.RestoreDefault();
@@ -109,7 +109,7 @@ stock void ResetConVars()
 	}
 }
 
-stock void PrepareConVars()
+void PrepareConVars()
 {
 	// Server ConVars	
 	SetConVarInt(FindConVar("sv_use_steam_voice"), 1);

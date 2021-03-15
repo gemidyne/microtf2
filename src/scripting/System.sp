@@ -1,7 +1,7 @@
 /**
- * MicroTF2 - System.inc
+ * MicroTF2 - System.sp
  * 
- * Implements main system
+ * Implements the coordinator that orchestrates the gameplay
  */
 
 #define TOTAL_GAMEMODES 100
@@ -74,6 +74,7 @@ stock void InitializeSystem()
 	InitializePluginForwards();
 	InitialiseHud();
 	LoadOffsets();
+	InitializeConVars();
 	InitializeCommands();
 	InitializeSpecialRounds();
 	InitialiseSounds();
