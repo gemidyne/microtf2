@@ -286,7 +286,7 @@ public void DoSelectMinigame()
 {
 	CalculateActiveParticipantCount();
 
-	int forcedMinigameID = GetConVarInt(ConVar_MTF2ForceMinigame);
+	int forcedMinigameID = g_hConVarPluginForceMinigame.IntValue;
 	int rollCount = 0;
 
 	if (SpecialRoundID == 8)
@@ -383,7 +383,7 @@ public void DoSelectBossgame()
 {
 	CalculateActiveParticipantCount();
 
-	int forcedBossgameID = GetConVarInt(ConVar_MTF2ForceBossgame);
+	int forcedBossgameID = g_hConVarPluginForceBossgame.IntValue;
 	int rollCount = 0;
 
 	if (forcedBossgameID > 0)

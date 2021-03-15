@@ -1231,8 +1231,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsBlockingVoices = false;
 	DamageBlockMode = EDamageBlockMode_All;
 
-	BossGameThreshold = GetConVarInt(ConVar_MTF2ForceBossgameThreshold) > 0 
-		? GetConVarInt(ConVar_MTF2ForceBossgameThreshold)
+	BossGameThreshold = g_hConVarPluginForceBossgameThreshold.IntValue > 0 
+		? g_hConVarPluginForceBossgameThreshold.IntValue
 		: GetRandomInt(15, 26);
 
 	SetSpeed();

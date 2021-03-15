@@ -18,10 +18,9 @@ ConVar g_hConVarPluginBonusPoints;
 ConVar g_hConVarPluginAllowCosmetics;
 ConVar g_hConVarPluginIntermissionEnabled;
 ConVar g_hConVarPluginUseServerMapTimelimit;
-
-Handle ConVar_MTF2ForceMinigame = INVALID_HANDLE;
-Handle ConVar_MTF2ForceBossgame = INVALID_HANDLE;
-Handle ConVar_MTF2ForceBossgameThreshold = INVALID_HANDLE;
+ConVar g_hConVarPluginForceMinigame;
+ConVar g_hConVarPluginForceBossgame;
+ConVar g_hConVarPluginForceBossgameThreshold;
 
 stock void InitializeCommands()
 {
@@ -65,10 +64,10 @@ stock void InitializeCommands()
 		HookConVarChange(g_hConVarPluginAllowCosmetics, OnAllowCosmeticsChanged);
 	}
 
-	// Debug cvars/cmds
-	ConVar_MTF2ForceMinigame = CreateConVar("mtf2_debug_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
-	ConVar_MTF2ForceBossgame = CreateConVar("mtf2_debug_forcebossgame", "0", "Forces a bossgame to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
-	ConVar_MTF2ForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	// Debugging ConVars / Commands. You don't really want these set all the time.
+	g_hConVarPluginForceMinigame = CreateConVar("mtf2_debug_forceminigame", "0", "Forces a minigame to always be played. If 0, no minigame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	g_hConVarPluginForceBossgame = CreateConVar("mtf2_debug_forcebossgame", "0", "Forces a bossgame to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
+	g_hConVarPluginForceBossgameThreshold = CreateConVar("mtf2_debug_forcebossgamethreshold", "0", "Forces a threshold to always be played. If 0, no bossgame will be forced. This cvar is used only when debugging.", 0, true, 0.0);
 }
 
 public void Commands_OnConfigsExecuted()
@@ -86,8 +85,9 @@ stock void ResetConVars()
 	g_hConVarTFWeaponSpreads.RestoreDefault();
 	g_hConVarFriendlyFire.RestoreDefault();
 
-	ResetConVar(ConVar_MTF2ForceMinigame);
-	ResetConVar(ConVar_MTF2ForceBossgame);
+	// Debugging: 
+	g_hConVarPluginForceMinigame.RestoreDefault();
+	g_hConVarPluginForceBossgame.RestoreDefault();
 	
 	// Non-Exclusive ConVars
 	// Server ConVars
