@@ -9,7 +9,7 @@ char g_sSystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSFX_VOCAL
 int g_iSystemVoicesPositiveCount = 0;
 int g_iSystemVoicesNegativeCount = 0;
 
-public void InitialiseVoices()
+void InitialiseVoices()
 {
 	LoadPositiveVoices();
 	LoadNegativeVoices();
@@ -17,7 +17,7 @@ public void InitialiseVoices()
 	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Voices_OnMapStart);
 }
 
-public void LoadPositiveVoices()
+void LoadPositiveVoices()
 {
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Positive.txt");
@@ -58,7 +58,7 @@ public void LoadPositiveVoices()
 	return;
 }
 
-public void LoadNegativeVoices()
+void LoadNegativeVoices()
 {
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Negative.txt");
@@ -99,7 +99,7 @@ public void LoadNegativeVoices()
 	return;
 }
 
-public void Voices_OnMapStart()
+void Voices_OnMapStart()
 {
 	char buffer[192];
 
@@ -117,7 +117,7 @@ public void Voices_OnMapStart()
 	}
 }
 
-stock void PlayNegativeVoice(int client)
+void PlayNegativeVoice(int client)
 {
     if (g_iSystemVoicesNegativeCount <= 0)
     {
@@ -127,7 +127,7 @@ stock void PlayNegativeVoice(int client)
     PlaySoundToPlayer(client, g_sSystemVocal[SYSFX_VOCAL_NEGATIVE][GetRandomInt(0, g_iSystemVoicesNegativeCount)]);
 }
 
-stock void PlayPositiveVoice(int client)
+void PlayPositiveVoice(int client)
 {
     if (g_iSystemVoicesPositiveCount <= 0)
     {
