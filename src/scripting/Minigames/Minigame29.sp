@@ -8,10 +8,10 @@ bool Minigame29_IsCheckingCollisions = false;
 
 public void Minigame29_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame29_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame29_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerCollisionWithPlayer, INVALID_HANDLE, Minigame29_OnTouch);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame29_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame29_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame29_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerCollisionWithPlayer, INVALID_HANDLE, Minigame29_OnTouch);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame29_OnMinigameFinish);
 
 }
 

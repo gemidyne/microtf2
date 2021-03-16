@@ -23,11 +23,11 @@ int Minigame10_Grey[4] = {128, 128, 128, 255};
 
 public void Minigame10_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame10_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame10_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame10_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame10_OnMinigameFinish);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame10_OnPlayerDeath);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame10_OnMapStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame10_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame10_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame10_OnMinigameFinish);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame10_OnPlayerDeath);
 }
 
 public void Minigame10_OnMapStart()

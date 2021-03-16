@@ -10,7 +10,7 @@ bool IsBlockingVoices = false;
 
 public void InitialiseSounds()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Sounds_OnMapStart);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Sounds_OnMapStart);
 }
 
 stock void PreloadSound(const char[] sound)

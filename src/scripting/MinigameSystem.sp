@@ -86,8 +86,8 @@ public void InitializeMinigames()
 
 	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", MinigamesLoaded, BossgamesLoaded);
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
-	AddToForward(GlobalForward_OnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
+	AddToForward(g_pfOnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
 }
 
 public void MinigameSystem_OnMapStart()

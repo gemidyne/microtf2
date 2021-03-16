@@ -19,8 +19,8 @@ stock void InitialiseHud()
     g_hHudSyncStats = CreateHudSynchronizer();
     g_hHudSyncCaption = CreateHudSynchronizer();
 
-    AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
-    AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
+    AddToForward(g_pfOnMapStart, INVALID_HANDLE, Hud_OnMapStart);
+    AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
 
     RegConsoleCmd("sm_credits", Command_ViewGamemodeCredits);
 }
@@ -90,9 +90,9 @@ public void DisplayStatsHud(Player player)
 {
     char buffer[128];
 
-    if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
+    if (g_pfOnRenderHudFrame != INVALID_HANDLE)
     {
-        Call_StartForward(GlobalForward_OnRenderHudFrame);
+        Call_StartForward(g_pfOnRenderHudFrame);
         Call_PushCell(player.ClientId);
         Call_Finish();
     }

@@ -8,9 +8,9 @@ TFClassType Minigame19_ClassMode = TFClass_Unknown;
 
 public void Minigame19_EntryPoint()
 {
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, Minigame19_OnPlayerClassChange);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame19_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame19_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, Minigame19_OnPlayerClassChange);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame19_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame19_OnMinigameSelected);
 }
 
 public void Minigame19_OnMinigameSelectedPre()

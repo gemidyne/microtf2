@@ -9,10 +9,10 @@ TFObjectType Minigame15_ExpectedObject;
 
 public void Minigame15_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame15_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame15_OnMinigameSelected);
-	AddToForward(GlobalForward_OnBuildObject, INVALID_HANDLE, Minigame15_OnBuildObject);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame15_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame15_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame15_OnMinigameSelected);
+	AddToForward(g_pfOnBuildObject, INVALID_HANDLE, Minigame15_OnBuildObject);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame15_OnMinigameFinish);
 }
 
 public void Minigame15_OnMinigameSelectedPre()

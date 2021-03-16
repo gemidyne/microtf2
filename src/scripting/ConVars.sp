@@ -25,7 +25,7 @@ ConVar g_hConVarPluginMaxRounds;
 
 void InitializeConVars()
 {
-	AddToForward(GlobalForward_OnConfigsExecuted, INVALID_HANDLE, PrepareConVars);
+	AddToForward(g_pfOnConfigsExecuted, INVALID_HANDLE, PrepareConVars);
 
 	g_hConVarServerCheats = FindConVar("sv_cheats");
 	g_hConVarHostTimescale = FindConVar("host_timescale");

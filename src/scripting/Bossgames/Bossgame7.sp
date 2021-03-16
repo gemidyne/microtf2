@@ -77,12 +77,12 @@ int Bossgame7_ActiveCameraEntityId = 0;
 
 public void Bossgame7_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame7_OnMapStart);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame7_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame7_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame7_OnMinigameFinish);
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, Bossgame7_OnPlayerClassChange);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame7_OnMapStart);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Bossgame7_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame7_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame7_OnMinigameFinish);
+	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, Bossgame7_OnPlayerClassChange);
 
 	RegConsoleCmd("say", Bossgame7_SayCommand);
 	RegConsoleCmd("say_team", Bossgame7_SayCommand);

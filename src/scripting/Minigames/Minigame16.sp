@@ -6,9 +6,9 @@
 
 public void Minigame16_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame16_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerJarated, INVALID_HANDLE, Minigame16_OnPlayerJarated);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame16_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerJarated, INVALID_HANDLE, Minigame16_OnPlayerJarated);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
 }
 
 public void Minigame16_OnMinigameSelected(int client)

@@ -9,11 +9,11 @@ int Minigame28_BlueIndex = 0;
 
 public void Minigame28_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame28_OnMapStart);
-	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Minigame28_OnRoundStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame28_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame28_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame28_OnMinigameFinish);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame28_OnMapStart);
+	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Minigame28_OnRoundStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame28_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame28_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame28_OnMinigameFinish);
 }
 
 public void Minigame28_OnMapStart()

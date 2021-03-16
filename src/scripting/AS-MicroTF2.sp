@@ -108,9 +108,9 @@ public void OnMapStart()
 
 	if (IsPluginEnabled)
 	{
-		if (GlobalForward_OnMapStart != INVALID_HANDLE)
+		if (g_pfOnMapStart != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnMapStart);
+			Call_StartForward(g_pfOnMapStart);
 			Call_Finish();
 		}
 		else
@@ -130,18 +130,18 @@ public void OnMapStart()
 
 public void OnConfigsExecuted()
 {
-	if (IsPluginEnabled && GlobalForward_OnConfigsExecuted != INVALID_HANDLE)
+	if (IsPluginEnabled && g_pfOnConfigsExecuted != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnConfigsExecuted);
+		Call_StartForward(g_pfOnConfigsExecuted);
 		Call_Finish();
 	}
 }
 
 public void OnMapEnd()
 {
-	if (IsPluginEnabled && GlobalForward_OnMapEnd != INVALID_HANDLE)
+	if (IsPluginEnabled && g_pfOnMapEnd != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMapEnd);
+		Call_StartForward(g_pfOnMapEnd);
 		Call_Finish();
 		
 		ResetConVars();
@@ -192,9 +192,9 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 	PrintToChatAll("[DEBUG] Timer_GameLogic_PrepareForMinigame");
 	#endif
 
-	if (GlobalForward_OnMinigamePreparePre != INVALID_HANDLE)
+	if (g_pfOnMinigamePreparePre != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMinigamePreparePre);
+		Call_StartForward(g_pfOnMinigamePreparePre);
 		Call_Finish();
 	}
 
@@ -258,9 +258,9 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 			player.Status = PlayerStatus_NotWon;
 
-			if (GlobalForward_OnMinigamePrepare != INVALID_HANDLE)
+			if (g_pfOnMinigamePrepare != INVALID_HANDLE)
 			{
-				Call_StartForward(GlobalForward_OnMinigamePrepare);
+				Call_StartForward(g_pfOnMinigamePrepare);
 				Call_PushCell(i);
 				Call_Finish();
 			}
@@ -364,9 +364,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	PrintToChatAll("[DEBUG] Timer_GameLogic_StartMinigame called - Starting Forward Calls for OnMinigameSelectedPre");
 	#endif
 
-	if (GlobalForward_OnMinigameSelectedPre != INVALID_HANDLE)
+	if (g_pfOnMinigameSelectedPre != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMinigameSelectedPre);
+		Call_StartForward(g_pfOnMinigameSelectedPre);
 		Call_Finish();
 	}
 
@@ -471,9 +471,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					Call_Finish();
 				}
 
-				if (GlobalForward_OnMinigameSelected != INVALID_HANDLE)
+				if (g_pfOnMinigameSelected != INVALID_HANDLE)
 				{
-					Call_StartForward(GlobalForward_OnMinigameSelected);
+					Call_StartForward(g_pfOnMinigameSelected);
 					Call_PushCell(i);
 					Call_Finish();
 				}
@@ -486,9 +486,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		}
 	}
 
-	if (GlobalForward_OnMinigameSelectedPost != INVALID_HANDLE)
+	if (g_pfOnMinigameSelectedPost != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMinigameSelectedPost);
+		Call_StartForward(g_pfOnMinigameSelectedPost);
 		Call_Finish();
 	}
 
@@ -517,9 +517,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 	SetSpeed();
 
-	if (GlobalForward_OnMinigameFinish != INVALID_HANDLE)
+	if (g_pfOnMinigameFinish != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMinigameFinish);
+		Call_StartForward(g_pfOnMinigameFinish);
 		Call_Finish();
 	}
 
@@ -721,9 +721,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			player.SetGodMode(true);
 			player.ResetWeapon(false);
 
-			if (GlobalForward_OnMinigameFinishPost != INVALID_HANDLE)
+			if (g_pfOnMinigameFinishPost != INVALID_HANDLE)
 			{
-				Call_StartForward(GlobalForward_OnMinigameFinishPost);
+				Call_StartForward(g_pfOnMinigameFinishPost);
 				Call_PushCell(i);
 				Call_Finish();
 			}
@@ -807,9 +807,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 public Action Timer_GameLogic_OnPreFinish(Handle timer)
 {
-	if (GlobalForward_OnMinigameFinishPre != INVALID_HANDLE)
+	if (g_pfOnMinigameFinishPre != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnMinigameFinishPre);
+		Call_StartForward(g_pfOnMinigameFinishPre);
 		Call_Finish();
 	}
 
@@ -1164,9 +1164,9 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	CloseHandle(winners);
 	winners = INVALID_HANDLE;
 
-	if (GlobalForward_OnGameOverStart != INVALID_HANDLE)
+	if (g_pfOnGameOverStart != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnGameOverStart);
+		Call_StartForward(g_pfOnGameOverStart);
 		Call_Finish();
 	}
 

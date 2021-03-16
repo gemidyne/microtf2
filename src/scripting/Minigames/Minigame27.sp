@@ -8,9 +8,9 @@ bool Minigame27_UseBleedingMode = false;
 
 public void Minigame27_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame27_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame27_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame27_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame27_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame27_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame27_OnPlayerTakeDamage);
 }
 
 public void Minigame27_OnMinigameSelectedPre()

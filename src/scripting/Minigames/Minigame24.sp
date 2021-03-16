@@ -9,8 +9,8 @@ int Minigame24_NeedleFireDelay[MAXPLAYERS+1];
 
 public void Minigame24_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame24_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame24_OnMinigameSelected);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
 }
 
 public void Minigame24_OnMinigameSelected(int client)

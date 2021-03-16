@@ -8,9 +8,9 @@ TFClassType Minigame2_Class;
 
 public void Minigame2_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame2_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame2_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
 }
 
 public void Minigame2_OnMinigameSelectedPre()

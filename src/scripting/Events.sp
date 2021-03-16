@@ -55,9 +55,9 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 
 		player.ResetWeapon(false);
 
-		if (GlobalForward_OnPlayerSpawn != INVALID_HANDLE)
+		if (g_pfOnPlayerSpawn != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnPlayerSpawn);
+			Call_StartForward(g_pfOnPlayerSpawn);
 			Call_PushCell(client);
 			Call_Finish();
 		}
@@ -135,11 +135,11 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 		{
 			if (IsPlayerParticipant[client])
 			{
-				if (GlobalForward_OnPlayerDeath != INVALID_HANDLE)
+				if (g_pfOnPlayerDeath != INVALID_HANDLE)
 				{
 					int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
-					Call_StartForward(GlobalForward_OnPlayerDeath);
+					Call_StartForward(g_pfOnPlayerDeath);
 					Call_PushCell(client);
 					Call_PushCell(attacker);
 					Call_Finish();
@@ -163,9 +163,9 @@ public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
-	if (GlobalForward_OnPlayerHurt != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[attacker])
+	if (g_pfOnPlayerHurt != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[attacker])
 	{
-		Call_StartForward(GlobalForward_OnPlayerHurt);
+		Call_StartForward(g_pfOnPlayerHurt);
 		Call_PushCell(client);
 		Call_PushCell(attacker);
 		Call_Finish();
@@ -182,9 +182,9 @@ public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int entity = GetEventInt(event, "index");
 
-	if (GlobalForward_OnBuildObject != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnBuildObject != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnBuildObject);
+		Call_StartForward(g_pfOnBuildObject);
 		Call_PushCell(client);
 		Call_PushCell(entity);
 		Call_Finish();
@@ -200,9 +200,9 @@ public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBro
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnStickyJump);
+		Call_StartForward(g_pfOnStickyJump);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -218,9 +218,9 @@ public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players
 	int client = BfReadByte(bf);
 	int victim = BfReadByte(bf);
 
-	if (GlobalForward_OnPlayerJarated != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerJarated != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
 	{
-		Call_StartForward(GlobalForward_OnPlayerJarated);
+		Call_StartForward(g_pfOnPlayerJarated);
 		Call_PushCell(client);
 		Call_PushCell(victim);
 		Call_Finish();
@@ -238,9 +238,9 @@ public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBro
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnRocketJump);
+		Call_StartForward(g_pfOnRocketJump);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -255,9 +255,9 @@ public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnPropBroken);
+		Call_StartForward(g_pfOnPropBroken);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -273,9 +273,9 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int newClass = GetEventInt(event, "class");
 
-	if (GlobalForward_OnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnPlayerClassChange);
+		Call_StartForward(g_pfOnPlayerClassChange);
 		Call_PushCell(client);
 		Call_PushCell(newClass);
 		Call_Finish();
@@ -292,9 +292,9 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 	int stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
 	int victim = GetClientOfUserId(GetEventInt(event, "victim"));
 
-	if (GlobalForward_OnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
 	{
-		Call_StartForward(GlobalForward_OnPlayerStunned);
+		Call_StartForward(g_pfOnPlayerStunned);
 		Call_PushCell(stunner);
 		Call_PushCell(victim);
 		Call_Finish();
@@ -311,9 +311,9 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 	Player attacker = new Player(GetClientOfUserId(GetEventInt(event, "userid")));
 	Player buildingOwner = new Player(GetClientOfUserId(GetEventInt(event, "ownerid")));
 
-	if (GlobalForward_OnPlayerSappedObject != INVALID_HANDLE && attacker.IsParticipating && buildingOwner.IsParticipating)
+	if (g_pfOnPlayerSappedObject != INVALID_HANDLE && attacker.IsParticipating && buildingOwner.IsParticipating)
 	{
-		Call_StartForward(GlobalForward_OnPlayerSappedObject);
+		Call_StartForward(g_pfOnPlayerSappedObject);
 		Call_PushCell(attacker.ClientId);
 		Call_PushCell(buildingOwner.ClientId);
 		Call_Finish();
@@ -327,9 +327,9 @@ public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname
 		return Plugin_Continue;
 	}
 
-	if (GlobalForward_OnPlayerCalculateCritical != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPlayerCalculateCritical != INVALID_HANDLE && IsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnPlayerCalculateCritical);
+		Call_StartForward(g_pfOnPlayerCalculateCritical);
 		Call_PushCell(client);
 		Call_PushCell(weapon);
 		Call_PushString(weaponname);
@@ -362,9 +362,9 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 	}
 
-	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE && player.IsValid && player.IsParticipating)
+	if (g_pfOnPlayerRunCmd != INVALID_HANDLE && player.IsValid && player.IsParticipating)
 	{
-		Call_StartForward(GlobalForward_OnPlayerRunCmd);
+		Call_StartForward(g_pfOnPlayerRunCmd);
 		Call_PushCell(client);
 		Call_PushCellRef(buttons);
 		Call_PushCellRef(impulse);
@@ -384,9 +384,9 @@ public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadca
 		return Plugin_Continue;
 	}
 
-	if (GlobalForward_OnTfRoundStart != INVALID_HANDLE)
+	if (g_pfOnTfRoundStart != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnTfRoundStart);
+		Call_StartForward(g_pfOnTfRoundStart);
 		Call_Finish();
 	}
 
@@ -423,9 +423,9 @@ public void OnEntityCreated(int entity, const char[] classname)
 	}
 	else
 	{
-		if (GlobalForward_OnEntityCreated != INVALID_HANDLE)
+		if (g_pfOnEntityCreated != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnEntityCreated);
+			Call_StartForward(g_pfOnEntityCreated);
 			Call_PushCell(entity);
 			Call_PushString(classname);
 			Call_Finish();
@@ -490,9 +490,9 @@ public void OnGameFrame()
 		return;
 	}
 
-	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
+	if (g_pfOnGameFrame != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnGameFrame);
+		Call_StartForward(g_pfOnGameFrame);
 		Call_Finish();
 	}
 
@@ -552,9 +552,9 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 		return;
 	}
 
-	if (GlobalForward_OnPlayerConditionAdded != INVALID_HANDLE)
+	if (g_pfOnPlayerConditionAdded != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerConditionAdded);
+		Call_StartForward(g_pfOnPlayerConditionAdded);
 		Call_PushCell(client);
 		Call_PushCell(view_as<int>(condition));
 		Call_Finish();
@@ -593,9 +593,9 @@ public void TF2_OnConditionRemoved(int client, TFCond condition)
 		return;
 	}
 
-	if (GlobalForward_OnPlayerConditionRemoved != INVALID_HANDLE)
+	if (g_pfOnPlayerConditionRemoved != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerConditionRemoved);
+		Call_StartForward(g_pfOnPlayerConditionRemoved);
 		Call_PushCell(client);
 		Call_PushCell(view_as<int>(condition));
 		Call_Finish();

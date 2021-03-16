@@ -8,8 +8,8 @@ float Minigame13_ClientEyePositionAngle[3];
 
 public void Minigame13_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, Minigame13_OnMinigameFinishPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinishPre, INVALID_HANDLE, Minigame13_OnMinigameFinishPre);
 }
 
 public void Minigame13_OnMinigameSelected(int client)

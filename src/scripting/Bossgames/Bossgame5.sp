@@ -11,12 +11,12 @@ float Bossgame5_Step = 4.0;
 
 public void Bossgame5_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
-	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame5_OnTfRoundStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
+	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame5_OnTfRoundStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
+	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
 }
 
 public void Bossgame5_OnMapStart()

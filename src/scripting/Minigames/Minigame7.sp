@@ -6,10 +6,10 @@
 
 public void Minigame7_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame7_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame7_OnMinigameSelected);
-	AddToForward(GlobalForward_OnRocketJump, INVALID_HANDLE, Minigame7_OnRocketJump);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame7_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame7_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame7_OnMinigameSelected);
+	AddToForward(g_pfOnRocketJump, INVALID_HANDLE, Minigame7_OnRocketJump);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame7_OnMinigameFinish);
 }
 
 public void Minigame7_OnMinigameSelectedPre()

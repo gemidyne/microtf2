@@ -14,7 +14,7 @@ void InitialiseVoices()
 	LoadPositiveVoices();
 	LoadNegativeVoices();
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Voices_OnMapStart);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Voices_OnMapStart);
 }
 
 void LoadPositiveVoices()

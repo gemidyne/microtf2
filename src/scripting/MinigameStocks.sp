@@ -117,9 +117,9 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 
 	if (IsMinigameActive && BossgameID > 0)
 	{
-		if (GlobalForward_OnBossStopAttempt != INVALID_HANDLE)
+		if (g_pfOnBossStopAttempt != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnBossStopAttempt);
+			Call_StartForward(g_pfOnBossStopAttempt);
 			Call_Finish();
 		}
 

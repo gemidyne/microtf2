@@ -59,20 +59,20 @@ void InitializeSpecialRounds()
 
 	Special_LoadFakeConditions();
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameSelectedPost, INVALID_HANDLE, SpecialRound_ApplyEffects);
-	AddToForward(GlobalForward_OnGameOverStart, INVALID_HANDLE, SpecialRound_ApplyEffects);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelectedPost, INVALID_HANDLE, SpecialRound_ApplyEffects);
+	AddToForward(g_pfOnGameOverStart, INVALID_HANDLE, SpecialRound_ApplyEffects);
 
-	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
-	AddToForward(GlobalForward_OnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
-	AddToForward(GlobalForward_OnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 
-	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
+	AddToForward(g_pfOnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
+	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
 
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
 
 	RegAdminCmd("sm_setnextspecialround", Command_SetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
 	RegAdminCmd("sm_changespecialround", Command_ChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");

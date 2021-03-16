@@ -14,7 +14,7 @@ bool Minigame6_HasBeenAnswered = false;
 
 public void Minigame6_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
 
 	// TODO: This should probably rely on forwards in the future
 	RegConsoleCmd("say", Command_MinigameSixSay);

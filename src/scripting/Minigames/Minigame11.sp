@@ -10,9 +10,9 @@ bool Minigame11_CanCheckConditions = false;
 
 public void Minigame11_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame11_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame11_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame11_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame11_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame11_OnMinigameSelected);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Minigame11_OnGameFrame);
 }
 
 public void Minigame11_OnMinigameSelectedPre()

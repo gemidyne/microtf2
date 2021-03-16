@@ -9,11 +9,11 @@ bool Bossgame2_Completed = false;
 
 public void Bossgame2_EntryPoint()
 {
-	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame2_OnTfRoundStart);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame2_OnSelection);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame2_BossCheck);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
+	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame2_OnTfRoundStart);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame2_OnSelection);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
+	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame2_BossCheck);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
 }
 
 public void Bossgame2_OnMinigameSelectedPre()

@@ -10,8 +10,8 @@ int Minigame8_SayTextAnswer = 0;
 
 public void Minigame8_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
 
 	// TODO: This should probably rely on forwards in the future
 	RegConsoleCmd("say", Command_Minigame8Say);

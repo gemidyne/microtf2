@@ -9,10 +9,10 @@ TFClassType Minigame26_VictimClass;
 
 public void Minigame26_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame26_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame26_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerConditionAdded, INVALID_HANDLE, Minigame26_OnPlayerConditionAdded);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame26_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame26_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame26_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerConditionAdded, INVALID_HANDLE, Minigame26_OnPlayerConditionAdded);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame26_OnPlayerTakeDamage);
 }
 
 public void Minigame26_OnMinigameSelectedPre()

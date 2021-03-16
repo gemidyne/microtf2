@@ -15,10 +15,10 @@ public void Minigame18_EntryPoint()
 	Minigame18_SniperTargets[2] = "models/props_training/target_sniper.mdl";
 	Minigame18_SniperTargets[3] = "models/props_training/target_medic.mdl";
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame18_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame18_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame18_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame18_OnMinigameFinish);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame18_OnMapStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame18_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame18_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame18_OnMinigameFinish);
 }
 
 public void Minigame18_OnMapStart()

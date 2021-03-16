@@ -8,11 +8,11 @@ TFTeam Minigame14_SpyTeam;
 
 public void Minigame14_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
-	AddToForward(GlobalForward_OnBuildObject, INVALID_HANDLE, Minigame14_OnBuildObject);
-	AddToForward(GlobalForward_OnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	AddToForward(g_pfOnBuildObject, INVALID_HANDLE, Minigame14_OnBuildObject);
+	AddToForward(g_pfOnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
 public void Minigame14_OnMinigameSelectedPre()

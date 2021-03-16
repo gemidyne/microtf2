@@ -8,13 +8,13 @@ float Bossgame4_DamageAccumlated[MAXPLAYERS];
 
 public void Bossgame4_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame4_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame4_OnMapStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
+	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
 }
 
 public void Bossgame4_OnMapStart()

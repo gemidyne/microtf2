@@ -17,9 +17,9 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		return Plugin_Continue;
 	}
 
-	if (GlobalForward_OnPlayerTakeDamage != INVALID_HANDLE)
+	if (g_pfOnPlayerTakeDamage != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerTakeDamage);
+		Call_StartForward(g_pfOnPlayerTakeDamage);
 		Call_PushCell(victim);
 		Call_PushCell(attackerId);
 		Call_PushFloat(damage);
@@ -85,14 +85,14 @@ public Action Hooks_OnTouch(int entity, int other)
 	GetEdictClassname(entity, entityClassName, sizeof(entityClassName));
 	GetEdictClassname(other, otherClassName, sizeof(otherClassName));
 
-	if (GlobalForward_OnPlayerCollisionWithPlayer != INVALID_HANDLE && StrEqual(entityClassName, "player") && StrEqual(otherClassName, "player")) 
+	if (g_pfOnPlayerCollisionWithPlayer != INVALID_HANDLE && StrEqual(entityClassName, "player") && StrEqual(otherClassName, "player")) 
 	{
 		Player player1 = new Player(entity);
 		Player player2 = new Player(other);
 
 		if (player1.IsValid && player2.IsValid && player1.IsAlive && player2.IsAlive && player1.Team != player2.Team)
 		{
-			Call_StartForward(GlobalForward_OnPlayerCollisionWithPlayer);
+			Call_StartForward(g_pfOnPlayerCollisionWithPlayer);
 			Call_PushCell(entity);
 			Call_PushCell(other);
 			Call_Finish();

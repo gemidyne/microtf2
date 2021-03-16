@@ -16,12 +16,12 @@ char Bossgame6_RngModels[BOSSGAME6_RNGMODELS_COUNT][64];
 
 public void Bossgame6_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame6_OnMapStart);
-	AddToForward(GlobalForward_OnTfRoundStart, INVALID_HANDLE, Bossgame6_OnTfRoundStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
-	AddToForward(GlobalForward_OnRenderHudFrame, INVALID_HANDLE, Bossgame6_OnRenderHudFrame);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame6_OnMapStart);
+	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame6_OnTfRoundStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
+	AddToForward(g_pfOnRenderHudFrame, INVALID_HANDLE, Bossgame6_OnRenderHudFrame);
 }
 
 public void Bossgame6_OnMapStart()

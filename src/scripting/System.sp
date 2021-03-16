@@ -81,7 +81,7 @@ stock void InitializeSystem()
 	LoadGamemodeInfo();
 	InitialiseVoices();
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, System_OnMapStart);
 	InitializeMinigames();
 	InitialiseWeapons();
 }

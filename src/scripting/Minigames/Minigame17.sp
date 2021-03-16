@@ -9,9 +9,9 @@ TFTeam Minigame17_ClientTeam;
 
 public void Minigame17_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame17_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame17_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame17_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame17_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
 }
 
 public void Minigame17_OnMinigameSelectedPre()

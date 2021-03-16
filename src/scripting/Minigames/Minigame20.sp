@@ -9,10 +9,10 @@ bool Minigame20_InvertedMode;
 
 public void Minigame20_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerConditionAdded, INVALID_HANDLE, Minigame20_OnPlayerConditionAdded);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerConditionAdded, INVALID_HANDLE, Minigame20_OnPlayerConditionAdded);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
 }
 
 public void Minigame20_OnMinigameSelectedPre()
