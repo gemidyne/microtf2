@@ -11,7 +11,7 @@
 
 int g_iLoadedSpecialRoundCount = 0;
 
-float SpecialRound_StartEffect = 1.0;
+float g_fSpecialRoundScaleEffect = 1.0;
 
 bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
 bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
@@ -225,19 +225,19 @@ stock void PrintSelectedSpecialRound()
 
 	if (SpecialRoundID == 14)
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSixteenEffect);
 	}
 	else if (SpecialRoundID == 15)
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSeventeenEffect);
 	}
 }
 
 public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 { 
-	if (SpecialRound_StartEffect > 0.3)
+	if (g_fSpecialRoundScaleEffect > 0.3)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -245,16 +245,16 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 
 			if (player.IsInGame && player.IsAlive)
 			{
-				player.Scale = SpecialRound_StartEffect;
+				player.Scale = g_fSpecialRoundScaleEffect;
 			}
 		}
 
-		SpecialRound_StartEffect -= 0.1;
+		g_fSpecialRoundScaleEffect -= 0.1;
 		CreateTimer(0.01, Timer_SpecialRoundSixteenEffect);
 	}
 	else
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 	}
 
 	return Plugin_Handled;
@@ -262,7 +262,7 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 
 public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 {
-	if (SpecialRound_StartEffect < 2.0)
+	if (g_fSpecialRoundScaleEffect < 2.0)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -270,16 +270,16 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 			if (player.IsInGame && player.IsAlive)
 			{
-				player.HeadScale = SpecialRound_StartEffect;
+				player.HeadScale = g_fSpecialRoundScaleEffect;
 			}
 		}
 
-		SpecialRound_StartEffect += 0.1;
+		g_fSpecialRoundScaleEffect += 0.1;
 		CreateTimer(0.01, Timer_SpecialRoundSeventeenEffect);
 	}
 	else
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 	}
 
 	return Plugin_Handled;
