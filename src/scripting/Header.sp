@@ -86,8 +86,8 @@ DamageBlockModes DamageBlockMode = EDamageBlockMode_All;
  * Handles
  */
 
-Handle Handle_BossCheckTimer = INVALID_HANDLE;
-Handle Handle_ActiveGameTimer = INVALID_HANDLE;
+Handle g_hBossCheckTimer = INVALID_HANDLE;
+Handle g_hActiveGameTimer = INVALID_HANDLE;
 
 /**
  * Offsets

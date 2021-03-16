@@ -499,9 +499,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	}
 	else if (BossgameID > 0)
 	{
-		Handle_ActiveGameTimer = CreateTimer(bossgame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		g_hActiveGameTimer = CreateTimer(bossgame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 		CreateTimer(10.0, Timer_RemoveBossOverlay, _, TIMER_FLAG_NO_MAPCHANGE);
-		Handle_BossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd, _, TIMER_FLAG_NO_MAPCHANGE);
+		g_hBossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
 	{
@@ -533,11 +533,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	else if (BossgameID > 0)
 	{
 		PreviousBossgameID = BossgameID;
-		if (Handle_BossCheckTimer != INVALID_HANDLE)
+		if (g_hBossCheckTimer != INVALID_HANDLE)
 		{
 			// Closes the Boss Check Timer.
-			KillTimer(Handle_BossCheckTimer);
-			Handle_BossCheckTimer = INVALID_HANDLE;
+			KillTimer(g_hBossCheckTimer);
+			g_hBossCheckTimer = INVALID_HANDLE;
 		}
 
 		returnedFromBoss = true;

@@ -123,7 +123,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 			Call_Finish();
 		}
 
-		Handle_BossCheckTimer = CreateTimer(2.0, Timer_CheckBossEnd);
+		g_hBossCheckTimer = CreateTimer(2.0, Timer_CheckBossEnd);
 	}
 
 	return Plugin_Handled;
@@ -159,10 +159,10 @@ public void EndBoss()
 			}
 		}
 
-		if (Handle_ActiveGameTimer != INVALID_HANDLE)
+		if (g_hActiveGameTimer != INVALID_HANDLE)
 		{
-			KillTimer(Handle_ActiveGameTimer);
-			Handle_ActiveGameTimer = INVALID_HANDLE;
+			KillTimer(g_hActiveGameTimer);
+			g_hActiveGameTimer = INVALID_HANDLE;
 		}
 
 		CreateTimer(0.0, Timer_GameLogic_EndMinigame);
