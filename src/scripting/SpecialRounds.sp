@@ -13,9 +13,9 @@ int g_iLoadedSpecialRoundCount = 0;
 
 float g_fSpecialRoundScaleEffect = 1.0;
 
-bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
-bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
-int SpecialRoundBossGameThreshold[SPR_MAX+1];
+bool g_bSpecialRoundSpeedEventsDisabled[SPR_MAX+1];
+bool g_bSpecialRoundMultiplePlayersOnly[SPR_MAX+1];
+int g_iSpecialRoundBossGameThreshold[SPR_MAX+1];
 
 char g_sSpecialRoundFakeConditionNames[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
 int g_iSpecialRoundFakeConditionCount = 0;
@@ -44,9 +44,9 @@ stock void InitializeSpecialRounds()
 
 		do
 		{
-			SpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
-			SpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
-			SpecialRoundBossGameThreshold[i] = KvGetNum(kv, "BossGameThreshold", 0);
+			g_bSpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
+			g_bSpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
+			g_iSpecialRoundBossGameThreshold[i] = KvGetNum(kv, "BossGameThreshold", 0);
 
 			i++;
 		}
@@ -168,9 +168,9 @@ public void SelectNewSpecialRound()
 	PluginForward_SendSpecialRoundSelected(SpecialRoundID);
 
 	// Setup the Boss game threshold.
-	if (SpecialRoundBossGameThreshold[SpecialRoundID] > 0)
+	if (g_iSpecialRoundBossGameThreshold[SpecialRoundID] > 0)
 	{
-		BossGameThreshold = SpecialRoundBossGameThreshold[SpecialRoundID];
+		BossGameThreshold = g_iSpecialRoundBossGameThreshold[SpecialRoundID];
 	}
 	else
 	{
@@ -180,7 +180,7 @@ public void SelectNewSpecialRound()
 
 stock bool SpecialRound_IsAvailable()
 {
-	if (SpecialRoundMultiplePlayersOnly[SpecialRoundID])
+	if (g_bSpecialRoundMultiplePlayersOnly[SpecialRoundID])
 	{
 		if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
 		{
@@ -452,7 +452,7 @@ stock bool Special_AreSpeedEventsEnabled()
 		return true;
 	}
 
-	return !SpecialRoundSpeedEventsDisabled[SpecialRoundID];
+	return !g_bSpecialRoundSpeedEventsDisabled[SpecialRoundID];
 }
 
 stock void Special_LoadFakeConditions()
