@@ -214,11 +214,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return IsPlayerUsingLegacyDirectX[this.ClientId];
+            return g_bIsPlayerUsingLegacyDirectX[this.ClientId];
         }
         public set(bool value)
         {
-            IsPlayerUsingLegacyDirectX[this.ClientId] = value;
+            g_bIsPlayerUsingLegacyDirectX[this.ClientId] = value;
         }
     }
 

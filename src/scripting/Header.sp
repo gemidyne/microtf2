@@ -70,8 +70,8 @@ bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 bool IsPlayerWinner[MAXPLAYERS+1] = false;
 bool g_bHideHudGamemodeText = false;
 bool g_bAllowCosmetics = false;
-bool ForceCalculationCritical = false;
-bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
+bool g_bForceCalculationCritical = false;
+bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
 /**
  * Enums

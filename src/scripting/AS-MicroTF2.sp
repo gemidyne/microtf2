@@ -563,7 +563,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	DamageBlockMode = EDamageBlockMode_All;
-	ForceCalculationCritical = false;
+	g_bForceCalculationCritical = false;
 	IsBlockingVoices = false;
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -931,7 +931,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	PrintToChatAll("[DEBUG] GameOverStart");
 	#endif
 
-	ForceCalculationCritical = false;
+	g_bForceCalculationCritical = false;
 	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
 	IsBlockingVoices = false;

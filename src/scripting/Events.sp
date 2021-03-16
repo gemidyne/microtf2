@@ -337,7 +337,7 @@ public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname
 		Call_Finish();
 	}
 	
-	result = ForceCalculationCritical;
+	result = g_bForceCalculationCritical;
 	return Plugin_Changed;
 }
 
@@ -695,6 +695,6 @@ public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQu
 	{
 		int dxLevel = StringToInt(cvarValue);
 
-		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
+		g_bIsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
 	}
 }
