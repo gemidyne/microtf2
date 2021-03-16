@@ -11,8 +11,6 @@
 
 int g_iLoadedSpecialRoundCount = 0;
 
-float g_fSpecialRoundScaleEffect = 1.0;
-
 bool g_bSpecialRoundSpeedEventsDisabled[SPR_MAX+1];
 bool g_bSpecialRoundMultiplePlayersOnly[SPR_MAX+1];
 int g_iSpecialRoundBossGameThreshold[SPR_MAX+1];
@@ -24,9 +22,11 @@ bool g_bIsChoosingSpecialRound = false;
 bool g_bForceSpecialRound = false;
 int g_iForceSpecialRoundId = 0;
 
+float g_fSpecialRoundScaleEffect = 1.0;
+
 #define SPECIALROUND_SKELETON_MODEL "models/gemidyne/warioware/skeleton.mdl"
 
-stock void InitializeSpecialRounds()
+void InitializeSpecialRounds()
 {
 	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Special Rounds...");
