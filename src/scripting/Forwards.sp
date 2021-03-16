@@ -10,7 +10,7 @@
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMapStart;
+PrivateForward GlobalForward_OnMapStart;
 
 /**
  * Forward is called when configs have executed.
@@ -18,7 +18,7 @@ Handle GlobalForward_OnMapStart;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnConfigsExecuted;
+PrivateForward GlobalForward_OnConfigsExecuted;
 
 /**
  * Forward is called when the map is ending.
@@ -26,7 +26,7 @@ Handle GlobalForward_OnConfigsExecuted;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMapEnd;
+PrivateForward GlobalForward_OnMapEnd;
 
 /**
  * Forward is called when a Minigame is being preloaded.
@@ -36,7 +36,7 @@ Handle GlobalForward_OnMapEnd;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigamePreload;
+PrivateForward GlobalForward_OnMinigamePreload;
 
 /**
  * Forward is called before preparing for a minigame
@@ -44,7 +44,7 @@ Handle GlobalForward_OnMinigamePreload;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigamePreparePre;
+PrivateForward GlobalForward_OnMinigamePreparePre;
 
 /**
  * Forward is called before preparing for a minigame
@@ -52,7 +52,7 @@ Handle GlobalForward_OnMinigamePreparePre;
  * @param Client to target
  * @noreturn
  */
-Handle GlobalForward_OnMinigamePrepare;
+PrivateForward GlobalForward_OnMinigamePrepare;
 
 /**
  * Forward is called just before a Minigame is started
@@ -60,7 +60,7 @@ Handle GlobalForward_OnMinigamePrepare;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigameSelectedPre;
+PrivateForward GlobalForward_OnMinigameSelectedPre;
 
 /**
  * Forward is called when a Minigame is started.
@@ -68,7 +68,7 @@ Handle GlobalForward_OnMinigameSelectedPre;
  * @param Client to target
  * @noreturn
  */
-Handle GlobalForward_OnMinigameSelected;
+PrivateForward GlobalForward_OnMinigameSelected;
 
 /**
  * Forward is called just after a Minigame is started.
@@ -76,7 +76,7 @@ Handle GlobalForward_OnMinigameSelected;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigameSelectedPost;
+PrivateForward GlobalForward_OnMinigameSelectedPost;
 
 /**
  * Forward is called just before a Minigame finishes.
@@ -84,7 +84,7 @@ Handle GlobalForward_OnMinigameSelectedPost;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigameFinishPre;
+PrivateForward GlobalForward_OnMinigameFinishPre;
 
 /**
  * Forward is called when a Minigame finishes.
@@ -92,7 +92,7 @@ Handle GlobalForward_OnMinigameFinishPre;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnMinigameFinish;
+PrivateForward GlobalForward_OnMinigameFinish;
 
 /**
  * Forward is called when a Minigame finishes.
@@ -100,7 +100,7 @@ Handle GlobalForward_OnMinigameFinish;
  * @param Client to target
  * @noreturn
  */
-Handle GlobalForward_OnMinigameFinishPost;
+PrivateForward GlobalForward_OnMinigameFinishPost;
 
 /**
  * Forward is called on every game frame. 
@@ -109,7 +109,7 @@ Handle GlobalForward_OnMinigameFinishPost;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnGameFrame;
+PrivateForward GlobalForward_OnGameFrame;
 
 /**
  * Forward is called when an entity is created.
@@ -118,7 +118,7 @@ Handle GlobalForward_OnGameFrame;
  * @param Entity Classname
  * @noreturn
  */
-Handle GlobalForward_OnEntityCreated;
+PrivateForward GlobalForward_OnEntityCreated;
 
 /**
  * Forward is called when PropBroken event is fired.
@@ -126,7 +126,7 @@ Handle GlobalForward_OnEntityCreated;
  * @param Client who broke the prop
  * @noreturn
  */
-Handle GlobalForward_OnPropBroken;
+PrivateForward GlobalForward_OnPropBroken;
 
 /**
  * Forward is called when a Player successfully performs a Sticky Jump.
@@ -134,7 +134,7 @@ Handle GlobalForward_OnPropBroken;
  * @param Client who performed the Sticky Jump
  * @noreturn
  */
-Handle GlobalForward_OnStickyJump;
+PrivateForward GlobalForward_OnStickyJump;
 
 /**
  * Forward is called when a Player successfully performs a Rocket Jump.
@@ -142,7 +142,7 @@ Handle GlobalForward_OnStickyJump;
  * @param Client who performed the Rocket Jump
  * @noreturn
  */
-Handle GlobalForward_OnRocketJump;
+PrivateForward GlobalForward_OnRocketJump;
 
 /**
  * Forward is called when a Player successfully builds an object (Sentry, Dispenser, Teleporter).
@@ -151,7 +151,7 @@ Handle GlobalForward_OnRocketJump;
  * @param Edict of entity that was built.
  * @noreturn
  */
-Handle GlobalForward_OnBuildObject;
+PrivateForward GlobalForward_OnBuildObject;
 
 /**
  * Forward is called when a Player spawns.
@@ -159,7 +159,7 @@ Handle GlobalForward_OnBuildObject;
  * @param Client who spawned
  * @noreturn
  */
-Handle GlobalForward_OnPlayerSpawn;
+PrivateForward GlobalForward_OnPlayerSpawn;
 
 /**
  * Forward is called when a Player dies.
@@ -168,7 +168,7 @@ Handle GlobalForward_OnPlayerSpawn;
  * @param Client who was the Attacker
  * @noreturn
  */
-Handle GlobalForward_OnPlayerDeath;
+PrivateForward GlobalForward_OnPlayerDeath;
 
 /**
  * Forward is called when a Player gets hurt.
@@ -177,7 +177,7 @@ Handle GlobalForward_OnPlayerDeath;
  * @param Client who was the Attacker
  * @noreturn
  */
-Handle GlobalForward_OnPlayerHurt;
+PrivateForward GlobalForward_OnPlayerHurt;
 
 /**
  * Forward is called when a Player takes damage (SDKHook).
@@ -187,7 +187,7 @@ Handle GlobalForward_OnPlayerHurt;
  * @param Damage amount
  * @noreturn
  */
-Handle GlobalForward_OnPlayerTakeDamage;
+PrivateForward GlobalForward_OnPlayerTakeDamage;
 
 /**
  * Forward is called when a Player gets Jarate thrown onto them.
@@ -196,7 +196,7 @@ Handle GlobalForward_OnPlayerTakeDamage;
  * @param Client who was the Attacker
  * @noreturn
  */
-Handle GlobalForward_OnPlayerJarated;
+PrivateForward GlobalForward_OnPlayerJarated;
 
 /**
  * Forward is called when a Player changes their class.
@@ -205,7 +205,7 @@ Handle GlobalForward_OnPlayerJarated;
  * @param Class the client changed to.
  * @noreturn
  */
-Handle GlobalForward_OnPlayerClassChange;
+PrivateForward GlobalForward_OnPlayerClassChange;
 
 /**
  * Forward is called when a Player gets stunned.
@@ -214,7 +214,7 @@ Handle GlobalForward_OnPlayerClassChange;
  * @param Client who hit the ball to the victim (Attacker)
  * @noreturn
  */
-Handle GlobalForward_OnPlayerStunned;
+PrivateForward GlobalForward_OnPlayerStunned;
 
 /**
  * Forward is called when a Spy has sapped an Engineer's building.
@@ -223,7 +223,7 @@ Handle GlobalForward_OnPlayerStunned;
  * @param Client who owns the building the was sapped.
  * @noreturn
  */
-Handle GlobalForward_OnPlayerSappedObject;
+PrivateForward GlobalForward_OnPlayerSappedObject;
 
 /**
  * Forward is called when a Player's Critical Chance is calculated.
@@ -233,7 +233,7 @@ Handle GlobalForward_OnPlayerSappedObject;
  * @param Weapon Name 
  * @noreturn
  */
-Handle GlobalForward_OnPlayerCalculateCritical;
+PrivateForward GlobalForward_OnPlayerCalculateCritical;
 
 /**
  * Forward is called when a Player runs a command.
@@ -246,7 +246,7 @@ Handle GlobalForward_OnPlayerCalculateCritical;
  * @param Weapon
  * @noreturn
  */
-Handle GlobalForward_OnPlayerRunCmd;
+PrivateForward GlobalForward_OnPlayerRunCmd;
 
 /**
  * Forward is called when a Boss Minigame will be attempted to stop. 
@@ -254,7 +254,7 @@ Handle GlobalForward_OnPlayerRunCmd;
  * @noparams
  * @returns True / False depending if the Boss can be stopped now.
  */
-Handle GlobalForward_OnBossStopAttempt;
+PrivateForward GlobalForward_OnBossStopAttempt;
 
 /**
  * Forward is called when a Player runs a command.
@@ -262,7 +262,7 @@ Handle GlobalForward_OnBossStopAttempt;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnTfRoundStart;
+PrivateForward GlobalForward_OnTfRoundStart;
 
 /**
  * Forward is called when the HUD is about to be rendered.
@@ -270,7 +270,7 @@ Handle GlobalForward_OnTfRoundStart;
  * @param String to append data to
  * @noreturn
  */
-Handle GlobalForward_OnRenderHudFrame;
+PrivateForward GlobalForward_OnRenderHudFrame;
 
 /**
  * Forward is called when the round has finished and game over begins.
@@ -278,7 +278,7 @@ Handle GlobalForward_OnRenderHudFrame;
  * @noparams
  * @noreturn
  */
-Handle GlobalForward_OnGameOverStart;
+PrivateForward GlobalForward_OnGameOverStart;
 
 /**
  * Forward is called when a player receives a TFCondition.
@@ -287,7 +287,7 @@ Handle GlobalForward_OnGameOverStart;
  * @param Condition ID. You will want to cast this to TFCond.
  * @noreturn
  */
-Handle GlobalForward_OnPlayerConditionAdded;
+PrivateForward GlobalForward_OnPlayerConditionAdded;
 
 /**
  * Forward is called when a player has a TFCondition removed.
@@ -296,7 +296,7 @@ Handle GlobalForward_OnPlayerConditionAdded;
  * @param Condition ID. You will want to cast this to TFCond.
  * @noreturn
  */
-Handle GlobalForward_OnPlayerConditionRemoved;
+PrivateForward GlobalForward_OnPlayerConditionRemoved;
 
 /**
  * Forward is called when a player collides with another player.
@@ -305,7 +305,7 @@ Handle GlobalForward_OnPlayerConditionRemoved;
  * @param Player 2
  * @noreturn
  */
-Handle GlobalForward_OnPlayerCollisionWithPlayer;
+PrivateForward GlobalForward_OnPlayerCollisionWithPlayer;
 
 stock void InitializeForwards()
 {
@@ -313,41 +313,41 @@ stock void InitializeForwards()
 	LogMessage("Initializing Forwards...");
 	#endif
 
-	GlobalForward_OnMapStart = CreateForward(ET_Ignore);
-	GlobalForward_OnConfigsExecuted = CreateForward(ET_Ignore);
-	GlobalForward_OnMapEnd = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigamePreload = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigamePreparePre = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigamePrepare = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnMinigameSelectedPre = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigameSelected = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnMinigameSelectedPost = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigameFinishPre = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigameFinish = CreateForward(ET_Ignore);
-	GlobalForward_OnMinigameFinishPost = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnGameFrame = CreateForward(ET_Ignore);
-	GlobalForward_OnEntityCreated = CreateForward(ET_Ignore, Param_Any, Param_String);
-	GlobalForward_OnPropBroken = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnStickyJump = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnRocketJump = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnBuildObject = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerSpawn = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnPlayerDeath = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerHurt = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerTakeDamage = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
-	GlobalForward_OnPlayerJarated = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerClassChange = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerStunned = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerSappedObject = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerCalculateCritical = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
-	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
-	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
-	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
-	GlobalForward_OnRenderHudFrame = CreateForward(ET_Ignore, Param_Any);
-	GlobalForward_OnGameOverStart = CreateForward(ET_Ignore);
-	GlobalForward_OnPlayerConditionAdded = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerConditionRemoved = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerCollisionWithPlayer = CreateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnMapStart = new PrivateForward(ET_Ignore);
+	GlobalForward_OnConfigsExecuted = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMapEnd = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigamePreload = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigamePreparePre = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigamePrepare = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnMinigameSelectedPre = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigameSelected = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnMinigameSelectedPost = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigameFinishPre = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigameFinish = new PrivateForward(ET_Ignore);
+	GlobalForward_OnMinigameFinishPost = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnGameFrame = new PrivateForward(ET_Ignore);
+	GlobalForward_OnEntityCreated = new PrivateForward(ET_Ignore, Param_Any, Param_String);
+	GlobalForward_OnPropBroken = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnStickyJump = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnRocketJump = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnBuildObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerSpawn = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerHurt = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerTakeDamage = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
+	GlobalForward_OnPlayerJarated = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerClassChange = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerStunned = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerSappedObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerCalculateCritical = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
+	GlobalForward_OnPlayerRunCmd = new PrivateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
+	GlobalForward_OnBossStopAttempt = new PrivateForward(ET_Single);
+	GlobalForward_OnTfRoundStart = new PrivateForward(ET_Ignore);
+	GlobalForward_OnRenderHudFrame = new PrivateForward(ET_Ignore, Param_Any);
+	GlobalForward_OnGameOverStart = new PrivateForward(ET_Ignore);
+	GlobalForward_OnPlayerConditionAdded = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerConditionRemoved = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	GlobalForward_OnPlayerCollisionWithPlayer = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 }
 
 stock void RemoveForwardsFromMemory()
@@ -388,10 +388,10 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerCollisionWithPlayer);
 }
 
-stock void SafelyRemoveAllFromForward(Handle hndl)
+stock void SafelyRemoveAllFromForward(PrivateForward fwd)
 {
-	if (hndl != INVALID_HANDLE)
+	if (fwd != INVALID_HANDLE)
 	{
-		RemoveAllFromForward(hndl, INVALID_HANDLE);
+		fwd.RemoveAllFunctions(INVALID_HANDLE);
 	}
 }
