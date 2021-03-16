@@ -3,8 +3,8 @@
 
 #define HUD_RENDER_INTERVAL 10
 
-Handle HudSync_Stats;
-Handle HudSync_Caption;
+Handle g_hHudSyncStats;
+Handle g_hHudSyncCaption;
 
 int g_iCenterHudUpdateFrame = 0;
 char g_sCustomHudText[MAXPLAYERS][CUSTOM_HUD_TEXT_LENGTH];
@@ -16,8 +16,8 @@ stock void InitialiseHud()
     LogMessage("Initializing HUD...");
     #endif
     
-    HudSync_Stats = CreateHudSynchronizer();
-    HudSync_Caption = CreateHudSynchronizer();
+    g_hHudSyncStats = CreateHudSynchronizer();
+    g_hHudSyncCaption = CreateHudSynchronizer();
 
     AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
     AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
@@ -76,7 +76,7 @@ public void Hud_OnGameFrame()
                 }
 
                 SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
-                ShowSyncHudText(i, HudSync_Caption, buffer);
+                ShowSyncHudText(i, g_hHudSyncCaption, buffer);
 
                 DisplayStatsHud(player);
             }
@@ -107,7 +107,7 @@ public void DisplayStatsHud(Player player)
     DisplaySpecialHud(player, buffer);
     
     SetHudTextParamsEx(0.2, 0.9, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.01, 0.01);
-    ShowSyncHudText(player.ClientId, HudSync_Stats, buffer);
+    ShowSyncHudText(player.ClientId, g_hHudSyncStats, buffer);
 }
 
 public void DisplayScoreHud(Player player, char buffer[128])
