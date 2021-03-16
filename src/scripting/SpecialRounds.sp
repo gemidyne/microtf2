@@ -9,7 +9,7 @@
 #define SPR_FAKECOND_LENGTH 64
 #define SPR_FAKECOND_CAPACITY 256
 
-int SpecialRoundsLoaded = 0;
+int g_iLoadedSpecialRoundCount = 0;
 
 float SpecialRound_StartEffect = 1.0;
 
@@ -17,13 +17,12 @@ bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
 bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
 int SpecialRoundBossGameThreshold[SPR_MAX+1];
 
-char SpecialRoundFakeConditions[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
-int SpecialRoundFakeConditionsCount = 0;
+char g_sSpecialRoundFakeConditionNames[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
+int g_iSpecialRoundFakeConditionCount = 0;
 
-bool IsChoosingSpecialRound = false;
-
-bool ForceNextSpecialRound = false;
-int ForceSpecialRound = 0;
+bool g_bIsChoosingSpecialRound = false;
+bool g_bForceSpecialRound = false;
+int g_iForceSpecialRoundId = 0;
 
 #define SPECIALROUND_SKELETON_MODEL "models/gemidyne/warioware/skeleton.mdl"
 
@@ -53,7 +52,7 @@ stock void InitializeSpecialRounds()
 		}
 		while (KvGotoNextKey(kv));
 
-		SpecialRoundsLoaded = i;
+		g_iLoadedSpecialRoundCount = i;
 	}
  
 	CloseHandle(kv);
@@ -97,7 +96,7 @@ public void SpecialRound_OnGameFrame()
 {
 	if (GamemodeStatus == GameStatus_Playing)
 	{
-		if (IsChoosingSpecialRound)
+		if (g_bIsChoosingSpecialRound)
 		{
 			SpecialRound_PrintRandomNameWhenChoosing();
 		}
@@ -132,9 +131,9 @@ public void SpecialRound_OnMinigamePreparePre()
 public void SpecialRound_PrintRandomNameWhenChoosing()
 {
 	char buffer[128];
-	int index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
+	int index = GetRandomInt(0, g_iSpecialRoundFakeConditionCount);
 
-	strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
+	strcopy(buffer, sizeof(buffer), g_sSpecialRoundFakeConditionNames[index]);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -149,21 +148,21 @@ public void SpecialRound_PrintRandomNameWhenChoosing()
 
 public void SelectNewSpecialRound()
 {
-	IsChoosingSpecialRound = false;
+	g_bIsChoosingSpecialRound = false;
 	HideHudGamemodeText = false;
 
-	if (!ForceNextSpecialRound)
+	if (!g_bForceSpecialRound)
 	{
 		do
 		{
-			SpecialRoundID = GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1);
+			SpecialRoundID = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
 		}
 		while (!SpecialRound_IsAvailable());
 	}
 	else
 	{
-		SpecialRoundID = ForceSpecialRound;
-		ForceNextSpecialRound = false;
+		SpecialRoundID = g_iForceSpecialRoundId;
+		g_bForceSpecialRound = false;
 	}
 
 	PluginForward_SendSpecialRoundSelected(SpecialRoundID);
@@ -477,7 +476,7 @@ stock void Special_LoadFakeConditions()
 
 	while (ReadFileLine(file, line, sizeof(line)))
 	{
-		if (SpecialRoundFakeConditionsCount >= SPR_FAKECOND_CAPACITY)
+		if (g_iSpecialRoundFakeConditionCount >= SPR_FAKECOND_CAPACITY)
 		{
 			LogError("Hit the hardcoded limit of Special Round fake conditions. If you really want to add more, recompile the plugin with the limit changed.");
 			break;
@@ -490,8 +489,8 @@ stock void Special_LoadFakeConditions()
 			continue;
 		}
 
-		SpecialRoundFakeConditions[SpecialRoundFakeConditionsCount] = line;
-		SpecialRoundFakeConditionsCount++;
+		g_sSpecialRoundFakeConditionNames[g_iSpecialRoundFakeConditionCount] = line;
+		g_iSpecialRoundFakeConditionCount++;
 	}
 
 	CloseHandle(file);
@@ -514,7 +513,7 @@ public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 
 public Action Timer_GameLogic_SpecialRoundChoosingStartSelection(Handle timer)
 {
-	IsChoosingSpecialRound = true;
+	g_bIsChoosingSpecialRound = true;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -589,13 +588,13 @@ public Action Command_SetNextSpecialRound(int client, int args)
 	}
 	else
 	{
-		id = GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1);
+		id = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
 	}
 
-	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
+	if (id >= SPR_MIN && id < g_iLoadedSpecialRoundCount)
 	{
-		ForceNextSpecialRound = true;
-		ForceSpecialRound = id;
+		g_bForceSpecialRound = true;
+		g_iForceSpecialRoundId = id;
 
 		ReplyToCommand(client, "[WWR] The next special round has been set to %i", id);
 

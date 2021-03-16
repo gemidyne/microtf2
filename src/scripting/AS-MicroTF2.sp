@@ -1252,7 +1252,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 			isWaitingForVoteToFinish = true;
 		}
 
-		if (GetRandomInt(0, 2) == 1 || ForceNextSpecialRound)
+		if (GetRandomInt(0, 2) == 1 || g_bForceSpecialRound)
 		{
 			// Special Round
 			GamemodeID = SPR_GAMEMODEID;
