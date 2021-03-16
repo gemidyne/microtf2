@@ -256,7 +256,7 @@ methodmap Player __nullable__
 
     public void SetCollisionsEnabled(bool enabled)
     {
-        SetEntData(this.ClientId, Offset_Collision, enabled ? 5 : 2, 4, true);
+        SetEntData(this.ClientId, g_oCollisionGroup, enabled ? 5 : 2, 4, true);
     }
 
     public void SetGravity(float gravity)
@@ -314,7 +314,7 @@ methodmap Player __nullable__
         public get()
         {
             //Credit to Tylerst & Powerlord for this code.
-            int weapon = GetEntDataEnt2(this.ClientId, Offset_PlayerActiveWeapon);
+            int weapon = GetEntDataEnt2(this.ClientId, g_oPlayerActiveWeapon);
 
             if (IsValidEntity(weapon))
             {
@@ -524,7 +524,7 @@ methodmap Player __nullable__
 
         int offset = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
 
-        SetEntData(this.ClientId, Offset_PlayerAmmo+offset, count, 4, true);
+        SetEntData(this.ClientId, g_oPlayerAmmo+offset, count, 4, true);
     }
 
     public void SetWeaponClipAmmoCount(int count)

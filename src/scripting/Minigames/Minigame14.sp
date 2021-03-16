@@ -103,7 +103,7 @@ public void Minigame14_OnBuildObject(int client, int entity)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		SetEntData(entity, Offset_Collision, 2, 4, true);
+		SetEntData(entity, g_oCollisionGroup, 2, 4, true);
 	}
 }
 

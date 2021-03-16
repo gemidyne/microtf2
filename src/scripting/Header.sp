@@ -54,10 +54,6 @@ int g_iAnnotationEventId = 0;
  */
 
 float SpeedLevel = 1.0;
-#if defined USE_MAXSPEED_HOOK
-float MaxSpeedDefaults[MAXPLAYERS+1] = 0.0;
-float MaxSpeedOverride[MAXPLAYERS+1] = 0.0;
-#endif
 
 /**
  * Booleans
@@ -76,10 +72,6 @@ bool HideHudGamemodeText = false;
 bool AllowCosmetics = false;
 bool ForceCalculationCritical = false;
 bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
-
-#if defined USE_MAXSPEED_HOOK
-bool ApplyMaxSpeedOverrides = false;
-#endif
 
 /**
  * Enums
@@ -100,7 +92,7 @@ Handle Handle_ActiveGameTimer = INVALID_HANDLE;
 /**
  * Offsets
  */
-int Offset_Collision;
-int Offset_WeaponBaseClip1;
-int Offset_PlayerActiveWeapon;
-int Offset_PlayerAmmo;
+int g_oCollisionGroup;
+int g_oWeaponBaseClip1;
+int g_oPlayerActiveWeapon;
+int g_oPlayerAmmo;

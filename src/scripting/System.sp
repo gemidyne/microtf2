@@ -263,10 +263,10 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 
 stock void LoadOffsets()
 {
-	Offset_Collision = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
-	Offset_WeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
-	Offset_PlayerActiveWeapon = TryFindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
-	Offset_PlayerAmmo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
+	g_oCollisionGroup = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
+	g_oWeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
+	g_oPlayerActiveWeapon = TryFindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
+	g_oPlayerAmmo = TryFindSendPropInfo("CTFPlayer", "m_iAmmo");
 }
 
 stock void PrecacheMaterial(const char[] material)
