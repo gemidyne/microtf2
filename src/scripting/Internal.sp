@@ -165,8 +165,8 @@ stock void ResetGamemode()
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		PlayerScore[i] = 0;
-		PlayerStatus[i] = PlayerStatus_NotWon;
+		g_iPlayerScore[i] = 0;
+		g_ePlayerStatus[i] = PlayerStatus_NotWon;
 		PlayerMinigamesWon[i] = 0;
 		PlayerMinigamesLost[i] = 0;
 	}

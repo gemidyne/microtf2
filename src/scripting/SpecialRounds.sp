@@ -149,7 +149,7 @@ public void SpecialRound_PrintRandomNameWhenChoosing()
 public void SelectNewSpecialRound()
 {
 	g_bIsChoosingSpecialRound = false;
-	HideHudGamemodeText = false;
+	g_bHideHudGamemodeText = false;
 
 	if (!g_bForceSpecialRound)
 	{

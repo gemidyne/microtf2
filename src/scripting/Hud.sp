@@ -174,7 +174,7 @@ public void DisplayRoundHud(Player player, char buffer[128])
 
 public void DisplaySpecialHud(Player player, char buffer[128])
 {
-    if (HideHudGamemodeText)
+    if (g_bHideHudGamemodeText)
     {
         Format(buffer, sizeof(buffer), "%s??????\n", buffer);
         return;

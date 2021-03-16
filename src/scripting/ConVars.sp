@@ -165,7 +165,7 @@ public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char
 {
 	int value = StringToInt(newVal);
 
-	AllowCosmetics = value == 1;
+	g_bAllowCosmetics = value == 1;
 }
 
 public bool Config_BonusPointsEnabled()

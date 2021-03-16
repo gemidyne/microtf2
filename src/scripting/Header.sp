@@ -40,7 +40,7 @@ int NextMinigamePlayedSpeedTestThreshold = 0;
 int BossGameThreshold = 20;
 int MaxRounds = 4;
 int RoundsPlayed = 0;
-int PlayerScore[MAXPLAYERS+1] = 0;
+int g_iPlayerScore[MAXPLAYERS+1] = 0;
 int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
 int PlayerIndex[MAXPLAYERS+1] = 0;
@@ -68,8 +68,8 @@ bool IsBlockingTaunts = true;
 bool IsBlockingDeathCommands = true;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
 bool IsPlayerWinner[MAXPLAYERS+1] = false;
-bool HideHudGamemodeText = false;
-bool AllowCosmetics = false;
+bool g_bHideHudGamemodeText = false;
+bool g_bAllowCosmetics = false;
 bool ForceCalculationCritical = false;
 bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
@@ -78,7 +78,7 @@ bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
  */
 
 GameStatus g_eGamemodeStatus = GameStatus_Unknown;
-PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+PlayerStatuses g_ePlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
 
 DamageBlockModes DamageBlockMode = EDamageBlockMode_All;
 

@@ -417,7 +417,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 		return;
 	}
 
-	if (!AllowCosmetics && StrEqual(classname, "tf_wearable"))
+	if (!g_bAllowCosmetics && StrEqual(classname, "tf_wearable"))
 	{
 		// Delay is present so m_ModelName is set 
 		CreateTimer(0.1, Timer_HatRemove, entity);
@@ -436,7 +436,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 
 public Action Timer_HatRemove(Handle timer, int entity)
 {
-	if (!IsPluginEnabled || AllowCosmetics)
+	if (!IsPluginEnabled || g_bAllowCosmetics)
 	{
 		return Plugin_Handled;
 	}
@@ -476,7 +476,7 @@ public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDe
 
 	bool isCosmeticItem = StrEqual(classname, "tf_wearable", false) || StrEqual(classname, "tf_wearable_demoshield", false) || StrEqual(classname, "tf_powerup_bottle", false) || StrEqual(classname, "tf_weapon_spellbook", false);
 
-	if (!AllowCosmetics && isCosmeticItem) 
+	if (!g_bAllowCosmetics && isCosmeticItem) 
 	{
 		return Plugin_Stop;
 	}

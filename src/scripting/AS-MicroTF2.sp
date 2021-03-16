@@ -1264,7 +1264,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		}
 
 		PluginForward_SendGamemodeChanged(GamemodeID);
-		HideHudGamemodeText = true;
+		g_bHideHudGamemodeText = true;
 
 		float waitTime;
 
@@ -1338,7 +1338,7 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 	}
 	else
 	{
-		HideHudGamemodeText = false;
+		g_bHideHudGamemodeText = false;
 		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 

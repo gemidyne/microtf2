@@ -154,11 +154,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerScore[this.ClientId];
+            return g_iPlayerScore[this.ClientId];
         }
         public set(int value)
         {
-            PlayerScore[this.ClientId] = value;
+            g_iPlayerScore[this.ClientId] = value;
         }
     }
 
@@ -166,11 +166,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerStatus[this.ClientId];
+            return g_ePlayerStatus[this.ClientId];
         }
         public set(PlayerStatuses value)
         {
-            PlayerStatus[this.ClientId] = value;
+            g_ePlayerStatus[this.ClientId] = value;
         }
     }
 
@@ -569,7 +569,7 @@ methodmap Player __nullable__
 
     public void RemoveWearables()
     {
-        if (AllowCosmetics) 
+        if (g_bAllowCosmetics) 
         {
             return;
         }
