@@ -80,11 +80,12 @@ public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	Player player = new Player(client);
 
-	if (IsClientInGame(client))
+	if (player.IsInGame)
 	{
-		IsPlayerParticipant[client] = false;
-		PlayerStatus[client] = PlayerStatus_NotWon;
+		player.IsParticipating = false;
+		player.Status = PlayerStatus_NotWon;
 	}
 }
 
@@ -400,7 +401,7 @@ public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast
 		return Plugin_Continue;
 	}
 
-	if (GamemodeStatus != GameStatus_WaitingForPlayers)
+	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
 		IsMapEnding = true;
 		SpeedLevel = 1.0;
@@ -496,9 +497,9 @@ public void OnGameFrame()
 		Call_Finish();
 	}
 
-	if (GameRules_GetRoundState() == RoundState_Pregame && GamemodeStatus != GameStatus_WaitingForPlayers)
+	if (GameRules_GetRoundState() == RoundState_Pregame && g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
-		GamemodeStatus = GameStatus_WaitingForPlayers;
+		g_eGamemodeStatus = GameStatus_WaitingForPlayers;
 	}
 }
 
@@ -521,7 +522,7 @@ public void TF2_OnWaitingForPlayersEnd()
 
 	PrepareConVars();
 
-	GamemodeStatus = GameStatus_Tutorial;
+	g_eGamemodeStatus = GameStatus_Tutorial;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -618,14 +619,14 @@ public void OnClientPostAdminCheck(int client)
 			SendConVarValue(client, FindConVar("sv_cheats"), "1");
 			QueryClientConVar(client, "mat_dxlevel", OnQueryClientConVarCallback);
 		
-			if (GamemodeStatus == GameStatus_WaitingForPlayers)
+			if (g_eGamemodeStatus == GameStatus_WaitingForPlayers)
 			{
 				player.DisplayOverlay(OVERLAY_WELCOME);
 				EmitSoundToClient(client, SYSBGM_WAITING);
 			}
 		}
 
-		if (GamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)
+		if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)
 		{
 			player.Score = 4;
 			player.Status = PlayerStatus_NotWon;

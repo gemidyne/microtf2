@@ -138,7 +138,7 @@ stock void UpdatePlayerIndexes(bool mustbealive = false)
 
 stock void ResetGamemode()
 {
-	GamemodeStatus = GameStatus_WaitingForPlayers;
+	g_eGamemodeStatus = GameStatus_WaitingForPlayers;
 
 	PrepareConVars();
 

@@ -109,7 +109,7 @@ public Action Timer_RemoveBossOverlay(Handle timer)
 
 public Action Timer_CheckBossEnd(Handle timer, int client)
 { 
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;

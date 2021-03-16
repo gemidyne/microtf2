@@ -129,7 +129,7 @@ public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 
 	if (player.IsValid)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		player.Status = PlayerStatus_Failed;
 	}
 }
 

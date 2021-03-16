@@ -77,7 +77,7 @@ bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
  * Enums
  */
 
-GameStatus GamemodeStatus = GameStatus_Unknown;
+GameStatus g_eGamemodeStatus = GameStatus_Unknown;
 PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
 
 DamageBlockModes DamageBlockMode = EDamageBlockMode_All;

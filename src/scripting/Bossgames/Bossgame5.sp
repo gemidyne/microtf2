@@ -105,7 +105,7 @@ public void Bossgame5_OnPlayerDeath(int victimId, int attacker)
 
 	if (victim.IsValid)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		victim.Status = PlayerStatus_Failed;
 	}
 }
 
@@ -134,7 +134,7 @@ public void Bossgame5_OnBossStopAttempt()
 		{
 			alivePlayers++;
 
-			if (PlayerStatus[i] == PlayerStatus_Failed || PlayerStatus[i] == PlayerStatus_NotWon)
+			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
 				pendingPlayers++;
 			}

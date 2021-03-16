@@ -94,7 +94,7 @@ public void SpecialRound_OnMapStart()
 
 public void SpecialRound_OnGameFrame()
 {
-	if (GamemodeStatus == GameStatus_Playing)
+	if (g_eGamemodeStatus == GameStatus_Playing)
 	{
 		if (g_bIsChoosingSpecialRound)
 		{

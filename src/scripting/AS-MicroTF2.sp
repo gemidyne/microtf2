@@ -150,7 +150,7 @@ public void OnMapEnd()
 
 public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
-	GamemodeStatus = GameStatus_Playing;
+	g_eGamemodeStatus = GameStatus_Playing;
 
 	MinigameID = 0;
 	BossgameID = 0;
@@ -180,13 +180,13 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 
 public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 {
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;
 	}
 
-	GamemodeStatus = GameStatus_Playing;
+	g_eGamemodeStatus = GameStatus_Playing;
 
 	#if defined DEBUG
 	PrintToChatAll("[DEBUG] Timer_GameLogic_PrepareForMinigame");
@@ -354,7 +354,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 public Action Timer_GameLogic_StartMinigame(Handle timer)
 {
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;
@@ -921,7 +921,7 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 public Action Timer_GameLogic_GameOverStart(Handle timer)
 {
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;
@@ -1176,7 +1176,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 public Action Timer_GameLogic_GameOverEnd(Handle timer)
 {
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;
