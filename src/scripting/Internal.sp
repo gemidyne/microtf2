@@ -152,7 +152,7 @@ stock void ResetGamemode()
 	{
 		g_iPlayerScore[i] = 0;
 		g_ePlayerStatus[i] = PlayerStatus_NotWon;
-		PlayerMinigamesWon[i] = 0;
-		PlayerMinigamesLost[i] = 0;
+		g_iPlayerMinigamesWon[i] = 0;
+		g_iPlayerMinigamesLost[i] = 0;
 	}
 }

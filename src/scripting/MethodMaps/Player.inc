@@ -178,11 +178,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerMinigamesWon[this.ClientId];
+            return g_iPlayerMinigamesWon[this.ClientId];
         }
         public set(int value)
         {
-            PlayerMinigamesWon[this.ClientId] = value;
+            g_iPlayerMinigamesWon[this.ClientId] = value;
         }
     }
 
@@ -190,11 +190,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerMinigamesLost[this.ClientId];
+            return g_iPlayerMinigamesLost[this.ClientId];
         }
         public set(int value)
         {
-            PlayerMinigamesLost[this.ClientId] = value;
+            g_iPlayerMinigamesLost[this.ClientId] = value;
         }
     }
 
