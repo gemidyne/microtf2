@@ -6,7 +6,7 @@
 
 public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -26,7 +26,7 @@ public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcas
 
 public Action Timer_PlayerSpawn(Handle timer, int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -37,14 +37,14 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 	{
 		player.RemoveWearables();
 
-		if (IsBonusRound)
+		if (g_bIsGameOver)
 		{
 			player.SetThirdPersonMode(true);
 							
 			TF2_StunPlayer(player.ClientId, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
 			player.SetHealth(1);
 		}
-		else if (!IsBonusRound)
+		else if (!g_bIsGameOver)
 		{
 			player.SetGodMode(true);
 		}
@@ -74,7 +74,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 
 public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -91,7 +91,7 @@ public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast
 
 public Action Event_Regenerate(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -104,7 +104,7 @@ public Action Event_Regenerate(Handle event, const char[] name, bool dontBroadca
 
 public Action Timer_LockerWeaponReset(Handle timer, int userid)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -112,7 +112,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	int client = GetClientOfUserId(userid);
 	Player player = new Player(client);
 
-	if (player.IsValid && !IsMinigameActive && !IsBonusRound)
+	if (player.IsValid && !IsMinigameActive && !g_bIsGameOver)
 	{
 		player.RemoveWearables();
 		player.ResetWeapon(false);
@@ -123,7 +123,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 
 public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -156,7 +156,7 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 
 public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -175,7 +175,7 @@ public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast
 
 public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -194,7 +194,7 @@ public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBr
 
 public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -211,7 +211,7 @@ public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBro
 
 public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players, int playersNum, bool reliable, bool init)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -232,7 +232,7 @@ public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players
 
 public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -249,7 +249,7 @@ public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBro
 
 public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -266,7 +266,7 @@ public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast
 
 public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -285,7 +285,7 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 
 public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -304,7 +304,7 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 
 public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -323,7 +323,7 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 
 public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname, bool &result)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -344,7 +344,7 @@ public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -380,7 +380,7 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 
 public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -396,14 +396,14 @@ public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadca
 
 public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
 	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
-		IsMapEnding = true;
+		g_bIsMapEnding = true;
 		g_fActiveGameSpeed = 1.0;
 	}
 
@@ -412,7 +412,7 @@ public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast
 
 public void OnEntityCreated(int entity, const char[] classname)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -436,7 +436,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 
 public Action Timer_HatRemove(Handle timer, int entity)
 {
-	if (!IsPluginEnabled || g_bAllowCosmetics)
+	if (!g_bIsPluginEnabled || g_bAllowCosmetics)
 	{
 		return Plugin_Handled;
 	}
@@ -469,7 +469,7 @@ public Action Transmit_HatRemove(int entity, int client)
 
 public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDefinitionIndex, Handle &hItem)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -486,7 +486,7 @@ public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDe
 
 public void OnGameFrame()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -505,7 +505,7 @@ public void OnGameFrame()
 
 public void TF2_OnWaitingForPlayersStart()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -515,7 +515,7 @@ public void TF2_OnWaitingForPlayersStart()
 
 public void TF2_OnWaitingForPlayersEnd()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -548,7 +548,7 @@ public void TF2_OnWaitingForPlayersEnd()
 
 public void TF2_OnConditionAdded(int client, TFCond condition)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -589,7 +589,7 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 
 public void TF2_OnConditionRemoved(int client, TFCond condition)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -605,7 +605,7 @@ public void TF2_OnConditionRemoved(int client, TFCond condition)
 
 public void OnClientPostAdminCheck(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -641,7 +641,7 @@ public void OnClientPostAdminCheck(int client)
 
 public void OnClientPutInServer(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -651,7 +651,7 @@ public void OnClientPutInServer(int client)
 
 public void OnClientDisconnect(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}

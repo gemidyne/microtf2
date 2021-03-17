@@ -198,7 +198,7 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 
 public Action Bossgame5_SwitchTimer(Handle timer)
 {
-	if (BossgameID == 5 && IsMinigameActive && !IsMinigameEnding) 
+	if (BossgameID == 5 && IsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		Bossgame5_Step -= 0.5;
 

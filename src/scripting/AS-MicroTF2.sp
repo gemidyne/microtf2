@@ -88,7 +88,7 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max
 
 public void OnPluginEnd()
 {
-	if (IsPluginEnabled)
+	if (g_bIsPluginEnabled)
 	{
 		ResetConVars();
 	}
@@ -104,9 +104,9 @@ public void OnMapStart()
 	AddServerTag("microgames");
 	AddServerTag("micro games");
 
-	IsPluginEnabled = IsWarioWareMap();
+	g_bIsPluginEnabled = IsWarioWareMap();
 
-	if (IsPluginEnabled)
+	if (g_bIsPluginEnabled)
 	{
 		if (g_pfOnMapStart != INVALID_HANDLE)
 		{
@@ -130,7 +130,7 @@ public void OnMapStart()
 
 public void OnConfigsExecuted()
 {
-	if (IsPluginEnabled && g_pfOnConfigsExecuted != INVALID_HANDLE)
+	if (g_bIsPluginEnabled && g_pfOnConfigsExecuted != INVALID_HANDLE)
 	{
 		Call_StartForward(g_pfOnConfigsExecuted);
 		Call_Finish();
@@ -139,7 +139,7 @@ public void OnConfigsExecuted()
 
 public void OnMapEnd()
 {
-	if (IsPluginEnabled && g_pfOnMapEnd != INVALID_HANDLE)
+	if (g_bIsPluginEnabled && g_pfOnMapEnd != INVALID_HANDLE)
 	{
 		Call_StartForward(g_pfOnMapEnd);
 		Call_Finish();
@@ -166,9 +166,9 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_fActiveGameSpeed = 1.0;
 
 	IsMinigameActive = false;
-	IsMinigameEnding = false;
-	IsMapEnding = false;
-	IsBonusRound = false;
+	g_bIsMinigameEnding = false;
+	g_bIsMapEnding = false;
+	g_bIsGameOver = false;
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingVoices = false;
@@ -511,7 +511,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 public Action Timer_GameLogic_EndMinigame(Handle timer)
 {
-	IsMinigameEnding = true;
+	g_bIsMinigameEnding = true;
 
 	SetSpeed();
 
@@ -553,7 +553,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	}
 
 	IsMinigameActive = false;
-	IsMinigameEnding = false;
+	g_bIsMinigameEnding = false;
 	MinigamesPlayed++;
 	MinigameID = 0;
 	BossgameID = 0;
@@ -934,7 +934,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	IsBlockingTaunts = false;
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
-	IsBonusRound = true;
+	g_bIsGameOver = true;
 	g_fActiveGameSpeed = 1.0;
 	SetSpeed();
 
@@ -1220,7 +1220,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	RoundsPlayed++;
 	
 	IsMinigameActive = false;
-	IsBonusRound = false;
+	g_bIsGameOver = false;
 
 	PlayedMinigamePool.Clear();
 	PlayedBossgamePool.Clear();

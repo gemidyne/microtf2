@@ -202,11 +202,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return IsPlayerWinner[this.ClientId];
+            return g_bIsPlayerWinner[this.ClientId];
         }
         public set(bool value)
         {
-            IsPlayerWinner[this.ClientId] = value;
+            g_bIsPlayerWinner[this.ClientId] = value;
         }
     }
 

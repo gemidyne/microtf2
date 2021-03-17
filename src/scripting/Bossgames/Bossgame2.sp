@@ -208,7 +208,7 @@ public void Bossgame2_SendInput(const char[] entityClass, const char[] name, con
 
 public Action Bossgame2_HurtTimer(Handle timer)
 {
-	if (BossgameID == 2 && IsMinigameActive && !IsMinigameEnding) 
+	if (BossgameID == 2 && IsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

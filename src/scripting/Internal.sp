@@ -138,7 +138,7 @@ stock void ResetGamemode()
 	NextMinigamePlayedSpeedTestThreshold = 0;
 	
 	IsMinigameActive = false;
-	IsBonusRound = false;
+	g_bIsGameOver = false;
 
 	g_eDamageBlockMode = EDamageBlockMode_All;
 	IsBlockingDeathCommands = true;

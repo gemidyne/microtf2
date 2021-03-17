@@ -22,7 +22,7 @@ void InitializeCommands()
 
 public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -36,7 +36,7 @@ public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
 
 public Action CmdOnPlayerKill(int client, const char[] command, int args)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}

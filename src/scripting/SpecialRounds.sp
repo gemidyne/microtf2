@@ -120,7 +120,7 @@ public void SpecialRound_OnGameFrame()
 
 public void SpecialRound_OnMinigamePreparePre()
 {
-	if (!IsBonusRound)
+	if (!g_bIsGameOver)
 	{
 		SetSpeed_SpecialRound();
 	}
@@ -330,7 +330,7 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);
 			}
-			else if (g_iSpecialRoundId == 12 && !IsBonusRound)
+			else if (g_iSpecialRoundId == 12 && !g_bIsGameOver)
 			{
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);

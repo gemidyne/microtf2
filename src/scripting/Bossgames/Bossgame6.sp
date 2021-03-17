@@ -151,7 +151,7 @@ public void Bossgame6_OnMinigameFinish()
 
 public Action Bossgame6_SwitchTimer(Handle timer)
 {
-	if (BossgameID == 6 && IsMinigameActive && !IsMinigameEnding) 
+	if (BossgameID == 6 && IsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		switch (Bossgame6_Timer)
 		{

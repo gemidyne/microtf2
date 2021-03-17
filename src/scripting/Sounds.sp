@@ -50,7 +50,7 @@ public void Sounds_OnMapStart()
 
 public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATFORM_MAX_PATH], int &entity, int &channel, float &volume, int &level, int &pitch, int &flags, char soundEntry[PLATFORM_MAX_PATH], int &seed)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}

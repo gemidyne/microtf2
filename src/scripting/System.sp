@@ -111,9 +111,9 @@ public void System_OnMapStart()
 	g_fActiveGameSpeed = 1.0;
 
 	IsMinigameActive = false;
-	IsMinigameEnding = false;
-	IsMapEnding = false;
-	IsBonusRound = false;
+	g_bIsMinigameEnding = false;
+	g_bIsMapEnding = false;
+	g_bIsGameOver = false;
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
 	g_eDamageBlockMode = EDamageBlockMode_All;

@@ -83,7 +83,7 @@ public void Bossgame1_OnGameFrame()
 		return;
 	}
 
-	if (!IsMinigameEnding)
+	if (!g_bIsMinigameEnding)
 	{
 		return;
 	}

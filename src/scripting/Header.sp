@@ -58,15 +58,15 @@ float g_fActiveGameSpeed = 1.0;
  * Booleans
  */
 
-bool IsPluginEnabled = false;
+bool g_bIsPluginEnabled = false;
 bool IsMinigameActive = false;
-bool IsMinigameEnding = false;
-bool IsMapEnding = false;
-bool IsBonusRound = false;
+bool g_bIsMinigameEnding = false;
+bool g_bIsMapEnding = false;
+bool g_bIsGameOver = false;
 bool IsBlockingTaunts = true;
 bool IsBlockingDeathCommands = true;
 bool IsPlayerParticipant[MAXPLAYERS+1] = false;
-bool IsPlayerWinner[MAXPLAYERS+1] = false;
+bool g_bIsPlayerWinner[MAXPLAYERS+1] = false;
 bool g_bHideHudGamemodeText = false;
 bool g_bAllowCosmetics = false;
 bool g_bForceCalculationCritical = false;

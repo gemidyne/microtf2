@@ -246,7 +246,7 @@ public Action Timer_Advertise(Handle timer)
 
 public Action Command_ViewGamemodeCredits(int client, int args)
 {
-    if (!IsPluginEnabled)
+    if (!g_bIsPluginEnabled)
     {
         return Plugin_Handled;
     }

@@ -23,7 +23,7 @@ stock void PlaySoundToPlayer(int client, const char[] sound)
 {
 	Player player = new Player(client);
 
-	if (player.IsInGame && !player.IsBot && !IsMapEnding)
+	if (player.IsInGame && !player.IsBot && !g_bIsMapEnding)
 	{
 		EmitSoundToClient(client, sound, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 	}

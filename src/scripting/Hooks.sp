@@ -12,7 +12,7 @@ public void DetachPlayerHooks(int client)
 
 public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -53,7 +53,7 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		{
 			Player player = new Player(victim);
 
-			doBlock = IsBonusRound && player.IsWinner;
+			doBlock = g_bIsGameOver && player.IsWinner;
 		}
 
 		case EDamageBlockMode_All:
