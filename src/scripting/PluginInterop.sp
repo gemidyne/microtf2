@@ -164,7 +164,7 @@ public void PluginForward_SendSpecialRoundSelected(int id)
 
 public int Native_WarioWare_GetMaxRounds(Handle plugin, int numParams)
 {
-	return MaxRounds;
+	return g_iMaxRoundsPlayable;
 }
 
 public int Native_WarioWare_SetMaxRounds(Handle plugin, int numParams)

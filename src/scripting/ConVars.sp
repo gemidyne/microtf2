@@ -158,7 +158,7 @@ public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] ne
 {
 	int value = StringToInt(newVal);
 
-	MaxRounds = value;
+	g_iMaxRoundsPlayable = value;
 }
 
 public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char[] newVal)

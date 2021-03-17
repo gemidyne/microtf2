@@ -106,7 +106,7 @@ public void System_OnMapStart()
 	MinigamesPlayed = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
-	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
+	g_iMaxRoundsPlayable = g_hConVarPluginMaxRounds.IntValue;
 	g_iTotalRoundsPlayed = 0;
 	g_fActiveGameSpeed = 1.0;
 
