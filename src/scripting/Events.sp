@@ -48,7 +48,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		{
 			player.SetGodMode(true);
 		}
-		else if (g_iMinigamesPlayedCount == 999 || !IsPlayerParticipant[client])
+		else if (g_iMinigamesPlayedCount == 999 || !g_bIsPlayerParticipant[client])
 		{
 			player.SetGodMode(false);
 		}
@@ -134,7 +134,7 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 	{
 		if (IsMinigameActive)
 		{
-			if (IsPlayerParticipant[client])
+			if (g_bIsPlayerParticipant[client])
 			{
 				if (g_pfOnPlayerDeath != INVALID_HANDLE)
 				{
@@ -164,7 +164,7 @@ public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
-	if (g_pfOnPlayerHurt != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[attacker])
+	if (g_pfOnPlayerHurt != INVALID_HANDLE && g_bIsPlayerParticipant[client] && g_bIsPlayerParticipant[attacker])
 	{
 		Call_StartForward(g_pfOnPlayerHurt);
 		Call_PushCell(client);
@@ -183,7 +183,7 @@ public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int entity = GetEventInt(event, "index");
 
-	if (g_pfOnBuildObject != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnBuildObject != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnBuildObject);
 		Call_PushCell(client);
@@ -201,7 +201,7 @@ public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBro
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (g_pfOnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnStickyJump != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnStickyJump);
 		Call_PushCell(client);
@@ -219,7 +219,7 @@ public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players
 	int client = BfReadByte(bf);
 	int victim = BfReadByte(bf);
 
-	if (g_pfOnPlayerJarated != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerJarated != INVALID_HANDLE && g_bIsPlayerParticipant[client] && g_bIsPlayerParticipant[victim])
 	{
 		Call_StartForward(g_pfOnPlayerJarated);
 		Call_PushCell(client);
@@ -239,7 +239,7 @@ public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBro
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (g_pfOnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnRocketJump != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnRocketJump);
 		Call_PushCell(client);
@@ -256,7 +256,7 @@ public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (g_pfOnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPropBroken != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnPropBroken);
 		Call_PushCell(client);
@@ -274,7 +274,7 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int newClass = GetEventInt(event, "class");
 
-	if (g_pfOnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPlayerClassChange != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnPlayerClassChange);
 		Call_PushCell(client);
@@ -293,7 +293,7 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 	int stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
 	int victim = GetClientOfUserId(GetEventInt(event, "victim"));
 
-	if (g_pfOnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerStunned != INVALID_HANDLE && g_bIsPlayerParticipant[stunner] && g_bIsPlayerParticipant[victim])
 	{
 		Call_StartForward(g_pfOnPlayerStunned);
 		Call_PushCell(stunner);
@@ -328,7 +328,7 @@ public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname
 		return Plugin_Continue;
 	}
 
-	if (g_pfOnPlayerCalculateCritical != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPlayerCalculateCritical != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
 		Call_StartForward(g_pfOnPlayerCalculateCritical);
 		Call_PushCell(client);
