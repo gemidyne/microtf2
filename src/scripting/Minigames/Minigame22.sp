@@ -16,7 +16,7 @@ public void Minigame22_OnMinigameSelectedPre()
 {
 	if (MinigameID == 22)
 	{
-		DamageBlockMode = EDamageBlockMode_Nothing;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 	}
 }
 

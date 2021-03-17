@@ -305,7 +305,7 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 		}
 
 		IsBlockingDeathCommands = false;
-		DamageBlockMode = EDamageBlockMode_Nothing;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		
 		EmitAmbientSound(SOUND_BOOM, vec, client, SNDLEVEL_RAIDSIREN);
 		char particle[64];

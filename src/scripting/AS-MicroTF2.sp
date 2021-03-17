@@ -172,7 +172,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
 	IsBlockingVoices = false;
-	DamageBlockMode = EDamageBlockMode_All;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
 	return Plugin_Handled;
@@ -562,7 +562,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
-	DamageBlockMode = EDamageBlockMode_All;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 	g_bForceCalculationCritical = false;
 	IsBlockingVoices = false;
 
@@ -935,7 +935,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	IsBlockingDeathCommands = false;
 	IsBlockingTaunts = false;
 	IsBlockingVoices = false;
-	DamageBlockMode = EDamageBlockMode_WinnersOnly;
+	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
 	IsBonusRound = true;
 	SpeedLevel = 1.0;
 	SetSpeed();
@@ -1230,7 +1230,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	IsBlockingVoices = false;
-	DamageBlockMode = EDamageBlockMode_All;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	BossGameThreshold = g_hConVarPluginForceBossgameThreshold.IntValue > 0 
 		? g_hConVarPluginForceBossgameThreshold.IntValue

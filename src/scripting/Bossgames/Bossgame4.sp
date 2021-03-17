@@ -35,7 +35,7 @@ public void Bossgame4_OnMinigameSelectedPre()
 	}
 
 	IsBlockingDeathCommands = true;
-	DamageBlockMode = EDamageBlockMode_AllPlayers;
+	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 }
 
 public void Bossgame4_OnMinigameSelected(int client)

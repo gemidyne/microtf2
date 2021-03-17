@@ -155,7 +155,7 @@ stock void ResetGamemode()
 	IsMinigameActive = false;
 	IsBonusRound = false;
 
-	DamageBlockMode = EDamageBlockMode_All;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 	IsBlockingDeathCommands = true;
 	IsBlockingTaunts = true;
 	g_bForceCalculationCritical = false;

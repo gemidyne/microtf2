@@ -28,7 +28,7 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 
 	bool doBlock = false;
 
-	switch (DamageBlockMode)
+	switch (g_eDamageBlockMode)
 	{
 		case EDamageBlockMode_Nothing:
 		{

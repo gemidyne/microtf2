@@ -20,7 +20,7 @@ public void Minigame2_OnMinigameSelectedPre()
 		g_hConVarFriendlyFire.BoolValue = true;
 
 		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
-		DamageBlockMode = EDamageBlockMode_Nothing;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		IsBlockingDeathCommands = true;
 	}
 }

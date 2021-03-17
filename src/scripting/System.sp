@@ -116,7 +116,7 @@ public void System_OnMapStart()
 	IsBonusRound = false;
 	IsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
-	DamageBlockMode = EDamageBlockMode_All;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	for (int g = 0; g < TOTAL_GAMEMODES; g++)
 	{

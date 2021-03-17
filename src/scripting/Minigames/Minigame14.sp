@@ -22,7 +22,7 @@ public void Minigame14_OnMinigameSelectedPre()
 		return;
 	}
 	
-	DamageBlockMode = EDamageBlockMode_AllPlayers;
+	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 
 	Minigame14_SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 }

@@ -19,7 +19,7 @@ public void Minigame29_OnMinigameSelectedPre()
 {
 	if (MinigameID == 29)
 	{
-		DamageBlockMode = EDamageBlockMode_Nothing;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		Minigame29_IsCheckingCollisions = false;
 		CreateTimer(1.5, Minigame29_EnableCollisionCheck);
 	}

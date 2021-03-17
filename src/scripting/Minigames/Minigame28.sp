@@ -42,7 +42,7 @@ public void Minigame28_OnMinigameSelectedPre()
 {
 	if (MinigameID == 28)
 	{
-		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		Minigame28_RedIndex = 0;
 		Minigame28_BlueIndex = 0;
 	}

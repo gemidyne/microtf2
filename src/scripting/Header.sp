@@ -79,8 +79,7 @@ bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
 GameStatus g_eGamemodeStatus = GameStatus_Unknown;
 PlayerStatuses g_ePlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
-
-DamageBlockModes DamageBlockMode = EDamageBlockMode_All;
+DamageBlockModes g_eDamageBlockMode = EDamageBlockMode_All;
 
 /**
  * Handles

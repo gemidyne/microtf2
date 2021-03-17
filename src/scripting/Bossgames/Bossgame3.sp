@@ -41,7 +41,7 @@ public void Bossgame3_OnMinigameSelectedPre()
 	if (BossgameID == 3)
 	{
 		IsBlockingDeathCommands = true;
-		DamageBlockMode = EDamageBlockMode_AllPlayers;
+		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 		Bossgame3_TotalParticipants = 0;
 
 		for (int i = 1; i <= MaxClients; i++)

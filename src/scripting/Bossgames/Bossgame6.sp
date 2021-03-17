@@ -62,7 +62,7 @@ public void Bossgame6_OnMinigameSelectedPre()
 			Bossgame6_PlayerScore[i] = 0;
 		}
 
-		DamageBlockMode = EDamageBlockMode_AllPlayers;
+		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 		IsBlockingDeathCommands = true;
 
 		Bossgame6_SendDoorInput("Close");

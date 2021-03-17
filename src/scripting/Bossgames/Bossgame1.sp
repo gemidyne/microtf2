@@ -19,7 +19,7 @@ public void Bossgame1_OnMinigameSelectedPre()
 {
 	if (BossgameID == 1)
 	{
-		DamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		IsBlockingDeathCommands = true;
 		Bossgame1_Completed = false;
 	}
