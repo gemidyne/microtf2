@@ -409,7 +409,7 @@ stock void SetSpeed_SpecialRound()
 	{
 		case 1:
 		{
-			if (MinigamesPlayed == 0)
+			if (g_iMinigamesPlayedCount == 0)
 			{
 				g_fActiveGameSpeed = 2.0;
 			}
@@ -432,7 +432,7 @@ stock void SetSpeed_SpecialRound()
 
 		case 8:
 		{
-			if (MinigamesPlayed % 2 == 0)
+			if (g_iMinigamesPlayedCount % 2 == 0)
 			{
 				g_fActiveGameSpeed += 0.2;
 			}

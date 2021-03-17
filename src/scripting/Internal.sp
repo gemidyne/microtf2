@@ -134,7 +134,7 @@ stock void ResetGamemode()
 	g_iSpecialRoundId = 0;
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
-	MinigamesPlayed = 0;
+	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	
 	IsMinigameActive = false;

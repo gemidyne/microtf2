@@ -81,7 +81,7 @@ public Action Command_SetGamemode(int client, int args)
 
 public Action Command_TriggerBoss(int client, int args)
 {
-	MinigamesPlayed = g_iBossGameThreshold - 1;
+	g_iMinigamesPlayedCount = g_iBossGameThreshold - 1;
 
 	ReplyToCommand(client, "[WWR] Bossgame will be played shortly.");
 

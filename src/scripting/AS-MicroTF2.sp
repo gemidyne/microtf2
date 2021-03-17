@@ -158,7 +158,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	PreviousBossgameID = 0;
 	g_iSpecialRoundId = 0;
 	g_iWinnerScorePointsAmount = 1;
-	MinigamesPlayed = 0;
+	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	g_iBossGameThreshold = 20;
 	g_iMaxRoundsPlayable = g_hConVarPluginMaxRounds.IntValue;
@@ -206,10 +206,10 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 	}
 	else
 	{
-		g_iWinnerScorePointsAmount = (MinigamesPlayed >= g_iBossGameThreshold ? 5 : 1);
+		g_iWinnerScorePointsAmount = (g_iMinigamesPlayedCount >= g_iBossGameThreshold ? 5 : 1);
 	}
 
-	if (MinigamesPlayed >= g_iBossGameThreshold)
+	if (g_iMinigamesPlayedCount >= g_iBossGameThreshold)
 	{
 		DoSelectBossgame();
 	}
@@ -539,7 +539,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 
 		returnedFromBoss = true;
-		playAnotherBossgame = (g_iSpecialRoundId == 10 && MinigamesPlayed == g_iBossGameThreshold);
+		playAnotherBossgame = (g_iSpecialRoundId == 10 && g_iMinigamesPlayedCount == g_iBossGameThreshold);
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -554,7 +554,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 	IsMinigameActive = false;
 	g_bIsMinigameEnding = false;
-	MinigamesPlayed++;
+	g_iMinigamesPlayedCount++;
 	MinigameID = 0;
 	BossgameID = 0;
 
@@ -775,7 +775,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		// Maybe it will be funny if we let the plugin free for a bit,
 		// but we *must* constrain it to a max of 75 if something goes wrong ;)
 
-		g_iBossGameThreshold = MinigamesPlayed;
+		g_iBossGameThreshold = g_iMinigamesPlayedCount;
 	}
 
 	if (TrySpeedChangeEvent())
@@ -784,12 +784,12 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if ((g_iSpecialRoundId != 10 && MinigamesPlayed == g_iBossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (MinigamesPlayed == g_iBossGameThreshold || playAnotherBossgame)))
+	if ((g_iSpecialRoundId != 10 && g_iMinigamesPlayedCount == g_iBossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (g_iMinigamesPlayedCount == g_iBossGameThreshold || playAnotherBossgame)))
 	{
 		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
-	else if (MinigamesPlayed > g_iBossGameThreshold && !playAnotherBossgame)
+	else if (g_iMinigamesPlayedCount > g_iBossGameThreshold && !playAnotherBossgame)
 	{
 		CreateTimer(2.0, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
@@ -1214,7 +1214,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	g_iSpecialRoundId = 0;
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
-	MinigamesPlayed = 0;
+	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 
 	g_iTotalRoundsPlayed++;

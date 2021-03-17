@@ -30,7 +30,7 @@ bool TrySpeedChangeEvent()
 		return false;
 	}
 
-	if (MinigamesPlayed < 3)
+	if (g_iMinigamesPlayedCount < 3)
 	{
 		return false;
 	}
@@ -40,7 +40,7 @@ bool TrySpeedChangeEvent()
 		return false;
 	}
 
-	if (MinigamesPlayed < g_iBossGameThreshold && MinigamesPlayed >= g_iNextMinigamePlayedSpeedTestThreshold)
+	if (g_iMinigamesPlayedCount < g_iBossGameThreshold && g_iMinigamesPlayedCount >= g_iNextMinigamePlayedSpeedTestThreshold)
 	{
 		bool success = GamemodeID == 99 && g_iSpecialRoundId == 1
 			? GetRandomInt(0, 1) == 1 // On Adrenaline shot, higher chance of speed down
@@ -48,7 +48,7 @@ bool TrySpeedChangeEvent()
 
 		if (success)
 		{
-			g_iNextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
+			g_iNextMinigamePlayedSpeedTestThreshold = g_iMinigamesPlayedCount + 2;
 
 			return true;
 		}

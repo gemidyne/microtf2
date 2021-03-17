@@ -135,10 +135,10 @@ public void EndBoss()
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 
-		if (MinigamesPlayed != g_iBossGameThreshold)
+		if (g_iMinigamesPlayedCount != g_iBossGameThreshold)
 		{
 			g_fActiveGameSpeed = 1.0;
-			MinigamesPlayed = 999;
+			g_iMinigamesPlayedCount = 999;
 		}
 
 		for (int i = 1; i <= MaxClients; i++)

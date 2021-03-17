@@ -48,7 +48,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 		{
 			player.SetGodMode(true);
 		}
-		else if (MinigamesPlayed == 999 || !IsPlayerParticipant[client])
+		else if (g_iMinigamesPlayedCount == 999 || !IsPlayerParticipant[client])
 		{
 			player.SetGodMode(false);
 		}
