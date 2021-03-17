@@ -338,7 +338,7 @@ public void DoSelectMinigame()
 
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameRequiresMultiplePlayers[MinigameID] && (ActiveRedParticipantCount == 0 || ActiveBlueParticipantCount == 0)) 
+				else if (MinigameRequiresMultiplePlayers[MinigameID] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
 				{
 					// Minigame requires players on both teams
 					#if defined DEBUG
@@ -356,7 +356,7 @@ public void DoSelectMinigame()
 
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && ActiveParticipantCount > MinigameMaximumParticipantCount[MinigameID])
+				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && g_iActiveParticipantCount > MinigameMaximumParticipantCount[MinigameID])
 				{
 					// Current participant count exceeds maximum participant count specified for minigame
 					#if defined DEBUG
@@ -428,7 +428,7 @@ public void DoSelectBossgame()
 				}
 				else if (BossgameRequiresMultiplePlayers[BossgameID])
 				{
-					if (ActiveRedParticipantCount == 0 || ActiveBlueParticipantCount == 0)
+					if (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)
 					{
 						// Bossgame requires players on both teams
 						BossgameID = PreviousBossgameID;
@@ -454,8 +454,8 @@ public void DoSelectBossgame()
 
 public void CalculateActiveParticipantCount()
 {
-	ActiveRedParticipantCount = 0;
-	ActiveBlueParticipantCount = 0;
+	g_iActiveRedParticipantCount = 0;
+	g_iActiveBlueParticipantCount = 0;
 
 	for (int j = 1; j <= MaxClients; j++)
 	{
@@ -466,13 +466,13 @@ public void CalculateActiveParticipantCount()
 			switch (player.Team)
 			{
 				case TFTeam_Red:
-					ActiveRedParticipantCount++;
+					g_iActiveRedParticipantCount++;
 
 				case TFTeam_Blue:
-					ActiveBlueParticipantCount++;
+					g_iActiveBlueParticipantCount++;
 			}
 		}
 	}
 
-	ActiveParticipantCount = ActiveRedParticipantCount + ActiveBlueParticipantCount;
+	g_iActiveParticipantCount = g_iActiveRedParticipantCount + g_iActiveBlueParticipantCount;
 }

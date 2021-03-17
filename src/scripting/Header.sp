@@ -44,9 +44,9 @@ int g_iPlayerScore[MAXPLAYERS+1] = 0;
 int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
 int PlayerIndex[MAXPLAYERS+1] = 0;
-int ActiveParticipantCount = 0;
-int ActiveRedParticipantCount = 0;
-int ActiveBlueParticipantCount = 0;
+int g_iActiveParticipantCount = 0;
+int g_iActiveRedParticipantCount = 0;
+int g_iActiveBlueParticipantCount = 0;
 int g_iAnnotationEventId = 0;
 
 /**

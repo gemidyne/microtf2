@@ -667,7 +667,7 @@ methodmap Player __nullable__
 
         this.Status = PlayerStatus_Winner;
 
-        if (ActiveParticipantCount > 12)
+        if (g_iActiveParticipantCount > 12)
         {
             EmitSoundToClient(this.ClientId, SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
         }
