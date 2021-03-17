@@ -50,7 +50,7 @@ public void Bossgame6_OnTfRoundStart()
 
 public void Bossgame6_OnMinigameSelectedPre()
 {
-	if (BossgameID == 6)
+	if (g_iActiveBossgameId == 6)
 	{
 		for (int i = 0; i < BOSSGAME6_ENTITYSPAWN_COUNT; i++)
 		{
@@ -74,7 +74,7 @@ public void Bossgame6_OnMinigameSelectedPre()
 
 public void Bossgame6_OnMinigameSelected(int client)
 {
-	if (BossgameID != 6)
+	if (g_iActiveBossgameId != 6)
 	{
 		return;
 	}
@@ -125,7 +125,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 
 public void Bossgame6_OnMinigameFinish()
 {
-	if (BossgameID == 6 && g_bIsMinigameActive) 
+	if (g_iActiveBossgameId == 6 && g_bIsMinigameActive) 
 	{
 		Bossgame6_SendDoorInput("Close");
 		Bossgame6_CleanupEntities();
@@ -151,7 +151,7 @@ public void Bossgame6_OnMinigameFinish()
 
 public Action Bossgame6_SwitchTimer(Handle timer)
 {
-	if (BossgameID == 6 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
+	if (g_iActiveBossgameId == 6 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		switch (Bossgame6_Timer)
 		{
@@ -365,7 +365,7 @@ public void Bossgame6_ShowPlayerScores()
 
 public void Bossgame6_OnRenderHudFrame(int client)
 {
-    if (BossgameID != 6)
+    if (g_iActiveBossgameId != 6)
     {
         return;
     }

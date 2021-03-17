@@ -17,7 +17,7 @@ public void Bossgame1_EntryPoint()
 
 public void Bossgame1_OnMinigameSelectedPre()
 {
-	if (BossgameID == 1)
+	if (g_iActiveBossgameId == 1)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = true;
@@ -27,7 +27,7 @@ public void Bossgame1_OnMinigameSelectedPre()
 
 public void Bossgame1_OnMinigameSelected(int client)
 {
-	if (BossgameID != 1)
+	if (g_iActiveBossgameId != 1)
 	{
 		return;
 	}
@@ -73,7 +73,7 @@ public void Bossgame1_OnMinigameSelected(int client)
 
 public void Bossgame1_OnGameFrame()
 {
-	if (BossgameID != 1)
+	if (g_iActiveBossgameId != 1)
 	{
 		return;
 	}
@@ -115,7 +115,7 @@ public void Bossgame1_OnGameFrame()
 
 public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 {
-	if (BossgameID != 1)
+	if (g_iActiveBossgameId != 1)
 	{
 		return;
 	}
@@ -135,7 +135,7 @@ public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 
 public void Bossgame1_BossCheck()
 {
-	if (g_bIsMinigameActive && BossgameID == 1)
+	if (g_bIsMinigameActive && g_iActiveBossgameId == 1)
 	{
 		int alivePlayers = 0;
 		int successfulPlayers = 0;

@@ -18,7 +18,7 @@ public void Bossgame2_EntryPoint()
 
 public void Bossgame2_OnMinigameSelectedPre()
 {
-	if (BossgameID == 2)
+	if (g_iActiveBossgameId == 2)
 	{
 		Bossgame2_SendInput("logic_relay", "ERBoss_InitRelay", "Trigger");
 
@@ -34,7 +34,7 @@ public void Bossgame2_OnMinigameSelectedPre()
 
 public void Bossgame2_OnSelection(int client)
 {
-	if (BossgameID != 2)
+	if (g_iActiveBossgameId != 2)
 	{
 		return;
 	}
@@ -122,7 +122,7 @@ public Action Bossgame2_OnTriggerTouched(int entity, int other)
 
 public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 {
-	if (BossgameID != 2)
+	if (g_iActiveBossgameId != 2)
 	{
 		return;
 	}
@@ -142,7 +142,7 @@ public void Bossgame2_OnPlayerDeath(int victimId, int attacker)
 
 public void Bossgame2_BossCheck()
 {
-	if (BossgameID != 2)
+	if (g_iActiveBossgameId != 2)
 	{
 		return;
 	}
@@ -208,7 +208,7 @@ public void Bossgame2_SendInput(const char[] entityClass, const char[] name, con
 
 public Action Bossgame2_HurtTimer(Handle timer)
 {
-	if (BossgameID == 2 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
+	if (g_iActiveBossgameId == 2 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

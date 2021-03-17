@@ -115,7 +115,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 		return Plugin_Stop;
 	}
 
-	if (g_bIsMinigameActive && BossgameID > 0)
+	if (g_bIsMinigameActive && g_iActiveBossgameId > 0)
 	{
 		if (g_pfOnBossStopAttempt != INVALID_HANDLE)
 		{
@@ -131,7 +131,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 
 public void EndBoss()
 {
-	if (g_bIsMinigameActive && BossgameID > 0 && MinigameID == 0)
+	if (g_bIsMinigameActive && g_iActiveBossgameId > 0 && MinigameID == 0)
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 
@@ -149,7 +149,7 @@ public void EndBoss()
 			{
                 for (int a = 0; a < 10; a++)
                 {
-                    StopSound(i, SNDCHAN_AUTO, BossgameMusic[BossgameID]);
+                    StopSound(i, SNDCHAN_AUTO, BossgameMusic[g_iActiveBossgameId]);
                 }
 
                 if (player.IsParticipating)

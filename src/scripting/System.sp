@@ -98,7 +98,7 @@ public void System_OnMapStart()
 	Steam_SetGameDescription(gameDescription);
 
 	MinigameID = 0;
-	BossgameID = 0;
+	g_iActiveBossgameId = 0;
 	g_iLastPlayedMinigameId = 0;
 	g_iLastPlayedBossgameId = 0;
 	g_iSpecialRoundId = 0;

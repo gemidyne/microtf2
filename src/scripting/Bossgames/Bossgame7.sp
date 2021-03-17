@@ -176,7 +176,7 @@ public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 
 public void Bossgame7_OnMinigameSelectedPre()
 {
-	if (BossgameID == 7)
+	if (g_iActiveBossgameId == 7)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 		g_bIsBlockingKillCommands = true;
@@ -203,7 +203,7 @@ public void Bossgame7_OnMinigameSelectedPre()
 
 public void Bossgame7_OnMinigameSelected(int client)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return;
 	}
@@ -246,7 +246,7 @@ public void Bossgame7_OnMinigameSelected(int client)
 
 public Action Bossgame7_SayCommand(int client, int args)
 {
-	if (g_bIsMinigameActive && BossgameID == 7)
+	if (g_bIsMinigameActive && g_iActiveBossgameId == 7)
 	{
 		char text[192];
 		if (GetCmdArgString(text, sizeof(text)) < 1)
@@ -306,7 +306,7 @@ public Action Bossgame7_SayCommand(int client, int args)
 
 public void Bossgame7_OnMinigameFinish()
 {
-	if (BossgameID == 7 && g_bIsMinigameActive) 
+	if (g_iActiveBossgameId == 7 && g_bIsMinigameActive) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -322,7 +322,7 @@ public void Bossgame7_OnMinigameFinish()
 
 public void Bossgame7_OnGameFrame()
 {
-	if (BossgameID == 7 && g_bIsMinigameActive) 
+	if (g_iActiveBossgameId == 7 && g_bIsMinigameActive) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -338,7 +338,7 @@ public void Bossgame7_OnGameFrame()
 
 public void Bossgame7_OnPlayerClassChange(int client, int class)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return;
 	}
@@ -363,7 +363,7 @@ public void Bossgame7_OnPlayerClassChange(int client, int class)
 
 public Action Bossgame7_DoDescentSequence(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -408,7 +408,7 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 
 public Action Bossgame7_DoSpinSequence(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -460,7 +460,7 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 
 public Action Bossgame7_DoCloseupSequence(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -541,7 +541,7 @@ public void Bossgame7_DoTypingSequence()
 
 public Action Bossgame7_DoTypingTick(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -598,7 +598,7 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 
 public Action Bossgame7_DoReviewSequence(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -720,7 +720,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -781,7 +781,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 
 public Action Bossgame7_DeferredDeath(Handle timer, any clientId)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -803,7 +803,7 @@ public Action Bossgame7_DeferredDeath(Handle timer, any clientId)
 
 public Action Bossgame7_DoLevelChange(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -835,7 +835,7 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 
 public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}
@@ -876,7 +876,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 
 public Action Bossgame7_DoFinalReviewPost(Handle timer)
 {
-	if (BossgameID != 7)
+	if (g_iActiveBossgameId != 7)
 	{
 		return Plugin_Handled;
 	}

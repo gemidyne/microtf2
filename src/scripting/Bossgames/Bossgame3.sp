@@ -38,7 +38,7 @@ public void Bossgame3_OnMapStart()
 
 public void Bossgame3_OnMinigameSelectedPre()
 {
-	if (BossgameID == 3)
+	if (g_iActiveBossgameId == 3)
 	{
 		g_bIsBlockingKillCommands = true;
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
@@ -63,7 +63,7 @@ public void Bossgame3_OnMinigameSelectedPre()
 
 public void Bossgame3_OnMinigameSelected(int client)
 {
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return;
 	}
@@ -107,7 +107,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 
 public void Bossgame3_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return;
 	}
@@ -129,7 +129,7 @@ public void Bossgame3_OnPlayerDeath(int victimId, int attackerId)
 
 public void Bossgame3_OnMinigameFinish()
 {
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return;
 	}
@@ -152,7 +152,7 @@ public void Bossgame3_OnMinigameFinish()
 
 public void Bossgame3_OnBossStopAttempt()
 {
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return;
 	}
@@ -182,7 +182,7 @@ public void Bossgame3_OnBossStopAttempt()
 
 public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return;
 	}
@@ -217,7 +217,7 @@ public Action Bossgame3_BeginWarningSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return Plugin_Handled;
 	}
@@ -242,7 +242,7 @@ public Action Bossgame3_BeginSwitchSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return Plugin_Handled;
 	}
@@ -275,7 +275,7 @@ public Action Bossgame3_BeginIntervalSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (BossgameID != 3)
+	if (g_iActiveBossgameId != 3)
 	{
 		return Plugin_Handled;
 	}

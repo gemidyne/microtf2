@@ -389,13 +389,13 @@ public void DoSelectBossgame()
 	if (forcedBossgameID > 0)
 	{
 		g_iLastPlayedBossgameId = 0;
-		BossgameID = forcedBossgameID;
+		g_iActiveBossgameId = forcedBossgameID;
 	}
 	else
 	{
 		do
 		{
-			BossgameID = GetRandomInt(1, BossgamesLoaded);
+			g_iActiveBossgameId = GetRandomInt(1, BossgamesLoaded);
 			rollCount++;
 
 			if (BossgamesLoaded == 1)
@@ -403,11 +403,11 @@ public void DoSelectBossgame()
 				g_iLastPlayedBossgameId = 0;
 			}
 
-			bool recentlyPlayed = PlayedBossgamePool.FindValue(BossgameID) >= 0;
+			bool recentlyPlayed = PlayedBossgamePool.FindValue(g_iActiveBossgameId) >= 0;
 
 			if (recentlyPlayed)
 			{
-				BossgameID = g_iLastPlayedBossgameId;
+				g_iActiveBossgameId = g_iLastPlayedBossgameId;
 
 				if (rollCount > 32)
 				{
@@ -416,40 +416,40 @@ public void DoSelectBossgame()
 			}
 			else
 			{
-				if (!BossgameIsEnabled[BossgameID])
+				if (!BossgameIsEnabled[g_iActiveBossgameId])
 				{
-					BossgameID = g_iLastPlayedBossgameId;
+					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][g_iSpecialRoundId])
+				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[g_iActiveBossgameId][g_iSpecialRoundId])
 				{
 					// If bossgame is blocked on this special round, re-roll
-					BossgameID = g_iLastPlayedBossgameId;
+					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
-				else if (BossgameRequiresMultiplePlayers[BossgameID])
+				else if (BossgameRequiresMultiplePlayers[g_iActiveBossgameId])
 				{
 					if (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)
 					{
 						// Bossgame requires players on both teams
-						BossgameID = g_iLastPlayedBossgameId;
+						g_iActiveBossgameId = g_iLastPlayedBossgameId;
 					}
 				}
-				else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && g_fActiveGameSpeed > BossgameBlockedSpeedsHigherThan[BossgameID])
+				else if (BossgameBlockedSpeedsHigherThan[g_iActiveBossgameId] > 0.0 && g_fActiveGameSpeed > BossgameBlockedSpeedsHigherThan[g_iActiveBossgameId])
 				{
-					BossgameID = g_iLastPlayedBossgameId;
+					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
 			}
 		}
-		while (BossgameID == g_iLastPlayedBossgameId);
+		while (g_iActiveBossgameId == g_iLastPlayedBossgameId);
 
-		PlayedBossgamePool.Push(BossgameID);
+		PlayedBossgamePool.Push(g_iActiveBossgameId);
 	}
 
 	#if defined DEBUG
-	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", BossgameID, PlayedBossgamePool.Length);
+	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", g_iActiveBossgameId, PlayedBossgamePool.Length);
 	#endif
 
-	PluginForward_SendBossgameSelected(BossgameID);
+	PluginForward_SendBossgameSelected(g_iActiveBossgameId);
 }
 
 public void CalculateActiveParticipantCount()
