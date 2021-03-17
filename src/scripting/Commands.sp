@@ -28,10 +28,10 @@ public Action CmdOnPlayerTaunt(int client, const char[] command, int args)
 	}
 
 	#if defined DEBUG
-	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerTaunt. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
+	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerTaunt. g_bIsBlockingTaunts: %s", client, g_bIsBlockingTaunts ? "True": "False");
 	#endif
 
-	return (IsBlockingTaunts ? Plugin_Handled : Plugin_Continue);
+	return (g_bIsBlockingTaunts ? Plugin_Handled : Plugin_Continue);
 }
 
 public Action CmdOnPlayerKill(int client, const char[] command, int args)
@@ -42,7 +42,7 @@ public Action CmdOnPlayerKill(int client, const char[] command, int args)
 	}
 
 	#if defined DEBUG
-	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerKill. IsBlockingTaunts: %s", client, IsBlockingTaunts ? "True": "False");
+	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerKill. g_bIsBlockingTaunts: %s", client, g_bIsBlockingTaunts ? "True": "False");
 	#endif
 
 	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);

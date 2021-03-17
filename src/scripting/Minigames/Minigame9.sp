@@ -18,7 +18,7 @@ public void Minigame9_OnMinigameSelectedPre()
 {
 	if (MinigameID == 9)
 	{
-		IsBlockingTaunts = false;
+		g_bIsBlockingTaunts = false;
 		Minigame9_Mode = GetRandomInt(1, 6);
 		Minigame9_CanCheckConditions = false;
 

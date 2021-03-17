@@ -114,7 +114,7 @@ public void System_OnMapStart()
 	g_bIsMinigameEnding = false;
 	g_bIsMapEnding = false;
 	g_bIsGameOver = false;
-	IsBlockingTaunts = true;
+	g_bIsBlockingTaunts = true;
 	IsBlockingDeathCommands = true;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
