@@ -52,7 +52,7 @@ int g_iAnnotationEventId = 0;
  * Floats
  */
 
-float SpeedLevel = 1.0;
+float g_fActiveGameSpeed = 1.0;
 
 /**
  * Booleans

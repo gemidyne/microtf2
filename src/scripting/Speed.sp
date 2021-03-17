@@ -2,25 +2,25 @@ void ExecuteSpeedEvent()
 {
 	if (g_iSpecialRoundId == 1)
 	{
-		SpeedLevel -= 0.1;
+		g_fActiveGameSpeed -= 0.1;
 	}
 	else
 	{
-		SpeedLevel += 0.1;
+		g_fActiveGameSpeed += 0.1;
 	}
 
 	SetSpeed();
-	PluginForward_SendSpeedChange(SpeedLevel);
+	PluginForward_SendSpeedChange(g_fActiveGameSpeed);
 }
 
 int GetSoundMultiplier()
 {
-	return SNDPITCH_NORMAL + RoundToCeil(((SpeedLevel-1.0) * 10)*8.0);
+	return SNDPITCH_NORMAL + RoundToCeil(((g_fActiveGameSpeed-1.0) * 10)*8.0);
 }
 
 bool IsSpeedLimitHit()
 {
-	return SpeedLevel >= 2.3 || SpeedLevel <= 0.4;
+	return g_fActiveGameSpeed >= 2.3 || g_fActiveGameSpeed <= 0.4;
 }
 
 bool TrySpeedChangeEvent()
@@ -59,22 +59,22 @@ bool TrySpeedChangeEvent()
 
 void SetSpeed()
 {
-	if (SpeedLevel > 2.3)
+	if (g_fActiveGameSpeed > 2.3)
 	{
-		SpeedLevel = 2.3;
+		g_fActiveGameSpeed = 2.3;
 	}
 
-	if (SpeedLevel < 0.4)
+	if (g_fActiveGameSpeed < 0.4)
 	{
-		SpeedLevel = 0.4;
+		g_fActiveGameSpeed = 0.4;
 	}
 
-	g_hConVarHostTimescale.FloatValue = SpeedLevel;
-	g_hConVarPhysTimescale.FloatValue = SpeedLevel;
+	g_hConVarHostTimescale.FloatValue = g_fActiveGameSpeed;
+	g_hConVarPhysTimescale.FloatValue = g_fActiveGameSpeed;
 
 	char buffer[2];
 
-	if (FloatCompare(SpeedLevel, 1.0) != 0)
+	if (FloatCompare(g_fActiveGameSpeed, 1.0) != 0)
 	{
 		strcopy(buffer, sizeof(buffer), "1");
 	}
@@ -96,7 +96,7 @@ void SetSpeed()
 
 float GetSpeedMultiplier(float count)
 {
-    float divide = ((SpeedLevel-1.0)/7.5)+1.0;
+    float divide = ((g_fActiveGameSpeed-1.0)/7.5)+1.0;
     float speed = count / divide;
     return speed;
 }

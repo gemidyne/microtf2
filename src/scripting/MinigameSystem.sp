@@ -347,7 +347,7 @@ public void DoSelectMinigame()
 
 					MinigameID = PreviousMinigameID;
 				}
-				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && SpeedLevel > MinigameBlockedSpeedsHigherThan[MinigameID])
+				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && g_fActiveGameSpeed > MinigameBlockedSpeedsHigherThan[MinigameID])
 				{
 					// Minigame cannot run on speeds higher than specified
 					#if defined DEBUG
@@ -434,7 +434,7 @@ public void DoSelectBossgame()
 						BossgameID = PreviousBossgameID;
 					}
 				}
-				else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && SpeedLevel > BossgameBlockedSpeedsHigherThan[BossgameID])
+				else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && g_fActiveGameSpeed > BossgameBlockedSpeedsHigherThan[BossgameID])
 				{
 					BossgameID = PreviousBossgameID;
 				}

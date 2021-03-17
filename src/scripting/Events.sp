@@ -404,7 +404,7 @@ public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast
 	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
 		IsMapEnding = true;
-		SpeedLevel = 1.0;
+		g_fActiveGameSpeed = 1.0;
 	}
 
 	return Plugin_Continue;

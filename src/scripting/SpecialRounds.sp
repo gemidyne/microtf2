@@ -411,30 +411,30 @@ stock void SetSpeed_SpecialRound()
 		{
 			if (MinigamesPlayed == 0)
 			{
-				SpeedLevel = 2.0;
+				g_fActiveGameSpeed = 2.0;
 			}
 		}
 
 		case 5: 
 		{
-			SpeedLevel += 0.1;
+			g_fActiveGameSpeed += 0.1;
 		}
 
 		case 6:
 		{
-			SpeedLevel = GetRandomFloat(1.0, 2.3);
+			g_fActiveGameSpeed = GetRandomFloat(1.0, 2.3);
 		}
 
 		case 7:
 		{
-			SpeedLevel -= 0.1;
+			g_fActiveGameSpeed -= 0.1;
 		}
 
 		case 8:
 		{
 			if (MinigamesPlayed % 2 == 0)
 			{
-				SpeedLevel += 0.2;
+				g_fActiveGameSpeed += 0.2;
 			}
 		}
 	}
@@ -498,7 +498,7 @@ stock void Special_LoadFakeConditions()
 
 public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 {
-	if (SpeedLevel == 1.0)
+	if (g_fActiveGameSpeed == 1.0)
 	{
 		EmitSoundToAll(SYSBGM_SPECIAL);
 	}

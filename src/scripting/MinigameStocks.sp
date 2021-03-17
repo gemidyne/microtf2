@@ -137,7 +137,7 @@ public void EndBoss()
 
 		if (MinigamesPlayed != BossGameThreshold)
 		{
-			SpeedLevel = 1.0;
+			g_fActiveGameSpeed = 1.0;
 			MinigamesPlayed = 999;
 		}
 

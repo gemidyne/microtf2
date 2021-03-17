@@ -163,7 +163,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	BossGameThreshold = 20;
 	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
 	RoundsPlayed = 0;
-	SpeedLevel = 1.0;
+	g_fActiveGameSpeed = 1.0;
 
 	IsMinigameActive = false;
 	IsMinigameEnding = false;
@@ -372,7 +372,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 	if (g_iSpecialRoundId == 7 && BossgameID > 0)
 	{
-		SpeedLevel = 0.7;
+		g_fActiveGameSpeed = 0.7;
 	}
 
 	SetSpeed();
@@ -878,7 +878,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 
 public Action Timer_GameLogic_BossTime(Handle timer)
 {
-	SpeedLevel = 1.0;
+	g_fActiveGameSpeed = 1.0;
 	SetSpeed();
 
 	int count = SystemMusicCount[GamemodeID][SYSMUSIC_BOSSTIME];
@@ -935,7 +935,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
 	IsBonusRound = true;
-	SpeedLevel = 1.0;
+	g_fActiveGameSpeed = 1.0;
 	SetSpeed();
 
 	g_hConVarTFFastBuild.BoolValue = true;
