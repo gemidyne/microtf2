@@ -6,7 +6,7 @@
 #define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
 #define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
 
-bool IsBlockingVoices = false;
+bool g_bIsBlockingPlayerClassVoices = false;
 
 public void InitialiseSounds()
 {
@@ -73,7 +73,7 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 		return Plugin_Stop;
 	}
 
-	if (isVoiceSound && IsBlockingVoices)
+	if (isVoiceSound && g_bIsBlockingPlayerClassVoices)
 	{
 		return Plugin_Stop;
 	}

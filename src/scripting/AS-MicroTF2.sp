@@ -171,7 +171,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_bIsGameOver = false;
 	g_bIsBlockingTaunts = true;
 	g_bIsBlockingKillCommands = true;
-	IsBlockingVoices = false;
+	g_bIsBlockingPlayerClassVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	CreateTimer(0.25, Timer_GameLogic_PrepareForMinigame);
@@ -562,7 +562,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	g_bIsBlockingTaunts = true;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 	g_bForceCalculationCritical = false;
-	IsBlockingVoices = false;
+	g_bIsBlockingPlayerClassVoices = false;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -932,7 +932,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	g_bForceCalculationCritical = false;
 	g_bIsBlockingKillCommands = false;
 	g_bIsBlockingTaunts = false;
-	IsBlockingVoices = false;
+	g_bIsBlockingPlayerClassVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
 	g_bIsGameOver = true;
 	g_fActiveGameSpeed = 1.0;
@@ -1227,7 +1227,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
-	IsBlockingVoices = false;
+	g_bIsBlockingPlayerClassVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	g_iBossGameThreshold = g_hConVarPluginForceBossgameThreshold.IntValue > 0 
