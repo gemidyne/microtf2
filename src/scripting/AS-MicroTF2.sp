@@ -162,7 +162,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
 	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
-	RoundsPlayed = 0;
+	g_iTotalRoundsPlayed = 0;
 	g_fActiveGameSpeed = 1.0;
 
 	IsMinigameActive = false;
@@ -1217,7 +1217,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	MinigamesPlayed = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 
-	RoundsPlayed++;
+	g_iTotalRoundsPlayed++;
 	
 	IsMinigameActive = false;
 	g_bIsGameOver = false;
@@ -1240,11 +1240,11 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	bool hasTimelimit = TimelimitManager_HasTimeLimit();
 
-	if ((!hasTimelimit && (MaxRounds == 0 || RoundsPlayed < MaxRounds)) || (hasTimelimit && !TimelimitManager_HasExceededTimeLimit()))
+	if ((!hasTimelimit && (MaxRounds == 0 || g_iTotalRoundsPlayed < MaxRounds)) || (hasTimelimit && !TimelimitManager_HasExceededTimeLimit()))
 	{
 		bool isWaitingForVoteToFinish = false;
 
-		if (PluginForward_HasMapIntegrationLoaded() && !hasTimelimit && g_hConVarPluginIntermissionEnabled.BoolValue && MaxRounds != 0 && RoundsPlayed == (MaxRounds / 2))
+		if (PluginForward_HasMapIntegrationLoaded() && !hasTimelimit && g_hConVarPluginIntermissionEnabled.BoolValue && MaxRounds != 0 && g_iTotalRoundsPlayed == (MaxRounds / 2))
 		{
 			PluginForward_StartMapVote();
 			isWaitingForVoteToFinish = true;

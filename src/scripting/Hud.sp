@@ -43,7 +43,7 @@ public void Hud_OnMapStart()
 
 public void Hud_OnGameFrame()
 {
-    if (!TimelimitManager_HasTimeLimit() && MaxRounds > 0 && RoundsPlayed >= MaxRounds)
+    if (!TimelimitManager_HasTimeLimit() && MaxRounds > 0 && g_iTotalRoundsPlayed >= MaxRounds)
     {
         return;
     }
@@ -155,11 +155,11 @@ public void DisplayRoundHud(Player player, char buffer[128])
 
     if (TimelimitManager_HasTimeLimit() || MaxRounds <= 0)
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, RoundsPlayed + 1);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, g_iTotalRoundsPlayed + 1);
     }
     else
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, RoundsPlayed + 1, MaxRounds);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, g_iTotalRoundsPlayed + 1, MaxRounds);
     }
 
     if (g_iSpecialRoundId == 19)
