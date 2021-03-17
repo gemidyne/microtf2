@@ -160,7 +160,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_iWinnerScorePointsAmount = 1;
 	MinigamesPlayed = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
-	BossGameThreshold = 20;
+	g_iBossGameThreshold = 20;
 	g_iMaxRoundsPlayable = g_hConVarPluginMaxRounds.IntValue;
 	g_iTotalRoundsPlayed = 0;
 	g_fActiveGameSpeed = 1.0;
@@ -206,10 +206,10 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 	}
 	else
 	{
-		g_iWinnerScorePointsAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
+		g_iWinnerScorePointsAmount = (MinigamesPlayed >= g_iBossGameThreshold ? 5 : 1);
 	}
 
-	if (MinigamesPlayed >= BossGameThreshold)
+	if (MinigamesPlayed >= g_iBossGameThreshold)
 	{
 		DoSelectBossgame();
 	}
@@ -539,7 +539,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 
 		returnedFromBoss = true;
-		playAnotherBossgame = (g_iSpecialRoundId == 10 && MinigamesPlayed == BossGameThreshold);
+		playAnotherBossgame = (g_iSpecialRoundId == 10 && MinigamesPlayed == g_iBossGameThreshold);
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -767,15 +767,15 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else
 		{
-			BossGameThreshold = 99999;
+			g_iBossGameThreshold = 99999;
 		}
 	}
-	else if (BossGameThreshold > 75)
+	else if (g_iBossGameThreshold > 75)
 	{
 		// Maybe it will be funny if we let the plugin free for a bit,
 		// but we *must* constrain it to a max of 75 if something goes wrong ;)
 
-		BossGameThreshold = MinigamesPlayed;
+		g_iBossGameThreshold = MinigamesPlayed;
 	}
 
 	if (TrySpeedChangeEvent())
@@ -784,12 +784,12 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if ((g_iSpecialRoundId != 10 && MinigamesPlayed == BossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (MinigamesPlayed == BossGameThreshold || playAnotherBossgame)))
+	if ((g_iSpecialRoundId != 10 && MinigamesPlayed == g_iBossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (MinigamesPlayed == g_iBossGameThreshold || playAnotherBossgame)))
 	{
 		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
-	else if (MinigamesPlayed > BossGameThreshold && !playAnotherBossgame)
+	else if (MinigamesPlayed > g_iBossGameThreshold && !playAnotherBossgame)
 	{
 		CreateTimer(2.0, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
@@ -1230,7 +1230,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
-	BossGameThreshold = g_hConVarPluginForceBossgameThreshold.IntValue > 0 
+	g_iBossGameThreshold = g_hConVarPluginForceBossgameThreshold.IntValue > 0 
 		? g_hConVarPluginForceBossgameThreshold.IntValue
 		: GetRandomInt(15, 26);
 

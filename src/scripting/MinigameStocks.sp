@@ -135,7 +135,7 @@ public void EndBoss()
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 
-		if (MinigamesPlayed != BossGameThreshold)
+		if (MinigamesPlayed != g_iBossGameThreshold)
 		{
 			g_fActiveGameSpeed = 1.0;
 			MinigamesPlayed = 999;

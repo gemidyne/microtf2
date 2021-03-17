@@ -46,7 +46,7 @@ void InitializeSpecialRounds()
 		{
 			g_bSpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
 			g_bSpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
-			g_iSpecialRoundBossGameThreshold[i] = KvGetNum(kv, "BossGameThreshold", 0);
+			g_iSpecialRoundBossGameThreshold[i] = KvGetNum(kv, "g_iBossGameThreshold", 0);
 
 			i++;
 		}
@@ -170,11 +170,11 @@ public void SelectNewSpecialRound()
 	// Setup the Boss game threshold.
 	if (g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId] > 0)
 	{
-		BossGameThreshold = g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId];
+		g_iBossGameThreshold = g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId];
 	}
 	else
 	{
-		BossGameThreshold = GetRandomInt(15, 26);
+		g_iBossGameThreshold = GetRandomInt(15, 26);
 	}
 }
 
