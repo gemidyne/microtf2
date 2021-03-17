@@ -109,7 +109,7 @@ public void SpecialRound_OnGameFrame()
 
 				if (player.IsValid && player.IsParticipating && player.IsAlive)
 				{
-					player.HeadScale = SpecialRoundID == 15 
+					player.HeadScale = g_iSpecialRoundId == 15 
 						? 2.0 
 						: 1.0;
 				}
@@ -155,22 +155,22 @@ public void SelectNewSpecialRound()
 	{
 		do
 		{
-			SpecialRoundID = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
+			g_iSpecialRoundId = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
 		}
 		while (!SpecialRound_IsAvailable());
 	}
 	else
 	{
-		SpecialRoundID = g_iForceSpecialRoundId;
+		g_iSpecialRoundId = g_iForceSpecialRoundId;
 		g_bForceSpecialRound = false;
 	}
 
-	PluginForward_SendSpecialRoundSelected(SpecialRoundID);
+	PluginForward_SendSpecialRoundSelected(g_iSpecialRoundId);
 
 	// Setup the Boss game threshold.
-	if (g_iSpecialRoundBossGameThreshold[SpecialRoundID] > 0)
+	if (g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId] > 0)
 	{
-		BossGameThreshold = g_iSpecialRoundBossGameThreshold[SpecialRoundID];
+		BossGameThreshold = g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId];
 	}
 	else
 	{
@@ -180,7 +180,7 @@ public void SelectNewSpecialRound()
 
 stock bool SpecialRound_IsAvailable()
 {
-	if (g_bSpecialRoundMultiplePlayersOnly[SpecialRoundID])
+	if (g_bSpecialRoundMultiplePlayersOnly[g_iSpecialRoundId])
 	{
 		if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
 		{
@@ -203,7 +203,7 @@ stock void PrintSelectedSpecialRound()
 		if (player.IsInGame && !player.IsBot)
 		{
 			char key[32];
-			Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+			Format(key, sizeof(key), "SpecialRound%i_Name", g_iSpecialRoundId);
 
 			char name[SPR_NAME_LENGTH];
 			char description[256];
@@ -216,19 +216,19 @@ stock void PrintSelectedSpecialRound()
 			// Restore name to normal casing
 			Format(name, sizeof(name), "%T", key, i);
 
-			Format(key, sizeof(key), "SpecialRound%i_Description", SpecialRoundID);
+			Format(key, sizeof(key), "SpecialRound%i_Description", g_iSpecialRoundId);
 			Format(description, sizeof(description), "%T", key, i);
 
 			player.PrintChatText("%T", "Hud_SpecialRound_ChatDisplay", i, name, description);
 		}
 	}
 
-	if (SpecialRoundID == 14)
+	if (g_iSpecialRoundId == 14)
 	{
 		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSixteenEffect);
 	}
-	else if (SpecialRoundID == 15)
+	else if (g_iSpecialRoundId == 15)
 	{
 		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSeventeenEffect);
@@ -287,7 +287,7 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 stock void SpecialRound_SetupEnv()
 {
-	g_hConVarServerGravity.IntValue = (SpecialRoundID == 3) ? 200 : 800;
+	g_hConVarServerGravity.IntValue = (g_iSpecialRoundId == 3) ? 200 : 800;
 }
 
 public void SpecialRound_ApplyEffects()
@@ -311,26 +311,26 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 	{
 		Special_ApplyCustomModel(client);
 
-		player.Scale = SpecialRoundID == 14 
+		player.Scale = g_iSpecialRoundId == 14 
 			? 0.3 
 			: 1.0;
 
-		if (SpecialRoundID != 15)
+		if (g_iSpecialRoundId != 15)
 		{
 			player.HeadScale = 1.0;
 		}
 
 		if (GamemodeID == SPR_GAMEMODEID)
 		{
-			player.SetThirdPersonMode(SpecialRoundID == 0);
+			player.SetThirdPersonMode(g_iSpecialRoundId == 0);
 
-			if (SpecialRoundID == 17 && !player.IsParticipating)
+			if (g_iSpecialRoundId == 17 && !player.IsParticipating)
 			{
 				player.SetCollisionsEnabled(false);
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);
 			}
-			else if (SpecialRoundID == 12 && !IsBonusRound)
+			else if (g_iSpecialRoundId == 12 && !IsBonusRound)
 			{
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);
@@ -360,7 +360,7 @@ public void Special_ApplyCustomModel(int client)
 		return;
 	}
 
-	switch (SpecialRoundID)
+	switch (g_iSpecialRoundId)
 	{
 		case 13:
 		{
@@ -405,7 +405,7 @@ public void Special_ApplyCustomModel(int client)
 
 stock void SetSpeed_SpecialRound()
 {
-	switch (SpecialRoundID)
+	switch (g_iSpecialRoundId)
 	{
 		case 1:
 		{
@@ -442,17 +442,17 @@ stock void SetSpeed_SpecialRound()
 
 stock bool Special_AreSpeedEventsEnabled()
 {
-	if (SpecialRoundID <= 0)
+	if (g_iSpecialRoundId <= 0)
 	{
 		return true;
 	}
 
-	if (SpecialRoundID > SPR_MAX)
+	if (g_iSpecialRoundId > SPR_MAX)
 	{
 		return true;
 	}
 
-	return !g_bSpecialRoundSpeedEventsDisabled[SpecialRoundID];
+	return !g_bSpecialRoundSpeedEventsDisabled[g_iSpecialRoundId];
 }
 
 stock void Special_LoadFakeConditions()
@@ -551,7 +551,7 @@ public Action Timer_GameLogic_SpecialRoundChoosingDoSelect(Handle timer)
 
 public void SpecialRound_OnPlayerClassChange(int client, int class)
 {
-	if (SpecialRoundID != 9)
+	if (g_iSpecialRoundId != 9)
 	{
 		return;
 	}
@@ -622,7 +622,7 @@ public Action Command_ChangeSpecialRound(int client, int args)
 	if (id >= SPR_MIN && id <= SPR_MAX)
 	{
 		GamemodeID = SPR_GAMEMODEID;
-		SpecialRoundID = id;
+		g_iSpecialRoundId = id;
 
 		return Plugin_Handled;
 	}

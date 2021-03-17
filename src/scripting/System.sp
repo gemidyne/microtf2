@@ -101,7 +101,7 @@ public void System_OnMapStart()
 	BossgameID = 0;
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
-	SpecialRoundID = 0;
+	g_iSpecialRoundId = 0;
 	ScoreAmount = 1;
 	MinigamesPlayed = 0;
 	NextMinigamePlayedSpeedTestThreshold = 0;

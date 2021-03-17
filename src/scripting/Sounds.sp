@@ -78,11 +78,11 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 		return Plugin_Stop;
 	}
 
-	if (SpecialRoundID == 14 || SpecialRoundID == 15)
+	if (g_iSpecialRoundId == 14 || g_iSpecialRoundId == 15)
 	{
 		if (isVoiceSound)
 		{
-			pitch = (SpecialRoundID == 14 ? SNDPITCH_HIGH : SNDPITCH_LOW);
+			pitch = (g_iSpecialRoundId == 14 ? SNDPITCH_HIGH : SNDPITCH_LOW);
 			return Plugin_Changed;
 		}
 	}

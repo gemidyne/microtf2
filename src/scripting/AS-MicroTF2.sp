@@ -156,7 +156,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	BossgameID = 0;
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
-	SpecialRoundID = 0;
+	g_iSpecialRoundId = 0;
 	ScoreAmount = 1;
 	MinigamesPlayed = 0;
 	NextMinigamePlayedSpeedTestThreshold = 0;
@@ -200,7 +200,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	SetSpeed();
 
-	if (SpecialRoundID == 16)
+	if (g_iSpecialRoundId == 16)
 	{
 		ScoreAmount = GetRandomInt(2, 14);
 	}
@@ -223,7 +223,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx];
 
-	if (GamemodeID == SPR_GAMEMODEID && SpecialRoundID == 20)
+	if (GamemodeID == SPR_GAMEMODEID && g_iSpecialRoundId == 20)
 	{
 		duration = 0.05;
 	}
@@ -239,7 +239,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				player.Respawn();
 			}
 
-			if (!player.IsParticipating && SpecialRoundID != 9 && SpecialRoundID != 17)
+			if (!player.IsParticipating && g_iSpecialRoundId != 9 && g_iSpecialRoundId != 17)
 			{
 				// If not a participant, and not Sudden Death, then they should now be a participant.
 				player.IsParticipating = true;
@@ -265,14 +265,14 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				Call_Finish();
 			}
 
-			if (SpecialRoundID == 16)
+			if (g_iSpecialRoundId == 16)
 			{
 				char buffer[128];
 				Format(buffer, sizeof(buffer), "%T", "SpecialRound16_Caption_Points", i, ScoreAmount);
 
 				PrintCenterText(i, buffer);
 			}
-			else if (SpecialRoundID == 17)
+			else if (g_iSpecialRoundId == 17)
 			{
 				char buffer[4096];
 
@@ -316,7 +316,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
-				if (player.IsParticipating && SpecialRoundID != 12 && SpecialRoundID != 17)
+				if (player.IsParticipating && g_iSpecialRoundId != 12 && g_iSpecialRoundId != 17)
 				{
 					// Print localised annotations
 					for (int j = 1; j <= MaxClients; j++)
@@ -370,7 +370,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		Call_Finish();
 	}
 
-	if (SpecialRoundID == 7 && BossgameID > 0)
+	if (g_iSpecialRoundId == 7 && BossgameID > 0)
 	{
 		SpeedLevel = 0.7;
 	}
@@ -541,7 +541,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 
 		returnedFromBoss = true;
-		playAnotherBossgame = (SpecialRoundID == 10 && MinigamesPlayed == BossGameThreshold);
+		playAnotherBossgame = (g_iSpecialRoundId == 10 && MinigamesPlayed == BossGameThreshold);
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -588,7 +588,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
 				PlayNegativeVoice(i);
 
-				bool showFailure = ((SpecialRoundID == 17 && player.IsParticipating) || SpecialRoundID != 17);
+				bool showFailure = ((g_iSpecialRoundId == 17 && player.IsParticipating) || g_iSpecialRoundId != 17);
 
 				if (showFailure)
 				{
@@ -629,7 +629,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 					player.MinigamesLost++;
 
-					if (SpecialRoundID != 12)
+					if (g_iSpecialRoundId != 12)
 					{
 						// Print localised annotations
 						for (int j = 1; j <= MaxClients; j++)
@@ -645,13 +645,13 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						}
 					}
 
-					if (SpecialRoundID == 17)
+					if (g_iSpecialRoundId == 17)
 					{
 						player.IsParticipating = false;
 						PrintCenterText(i, "%T", "SpecialRound_SuddenDeath_PlayerKnockOutNotification", i);
 					}
 
-					if (SpecialRoundID == 18)
+					if (g_iSpecialRoundId == 18)
 					{
 						player.Score = 0;
 					}
@@ -699,7 +699,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.Score += ScoreAmount;
 				player.MinigamesWon++;
 
-				if (SpecialRoundID != 12)
+				if (g_iSpecialRoundId != 12)
 				{
 					// Print localised annotations
 					for (int j = 1; j <= MaxClients; j++)
@@ -737,7 +737,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 	}
 
-	if (SpecialRoundID == 11)
+	if (g_iSpecialRoundId == 11)
 	{
 		SetTeamScore(view_as<int>(TFTeam_Red), CalculateTeamScore(TFTeam_Red));
 		SetTeamScore(view_as<int>(TFTeam_Blue), CalculateTeamScore(TFTeam_Blue));
@@ -748,7 +748,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		SetTeamScore(view_as<int>(TFTeam_Blue), 0);
 	}
 
-	if (SpecialRoundID == 17)
+	if (g_iSpecialRoundId == 17)
 	{
 		int participants = 0;
 		for (int i = 1; i <= MaxClients; i++)
@@ -786,7 +786,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if ((SpecialRoundID != 10 && MinigamesPlayed == BossGameThreshold && !playAnotherBossgame) || (SpecialRoundID == 10 && (MinigamesPlayed == BossGameThreshold || playAnotherBossgame)))
+	if ((g_iSpecialRoundId != 10 && MinigamesPlayed == BossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (MinigamesPlayed == BossGameThreshold || playAnotherBossgame)))
 	{
 		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
@@ -818,11 +818,11 @@ public Action Timer_GameLogic_OnPreFinish(Handle timer)
 
 public Action Timer_GameLogic_SpeedChange(Handle timer)
 {
-	bool down = SpecialRoundID == 1;
+	bool down = g_iSpecialRoundId == 1;
 
 	ExecuteSpeedEvent();
 
-	if (SpecialRoundID == 20)
+	if (g_iSpecialRoundId == 20)
 	{
 		// In Non-stop, speed events should not be announced!
 		for (int i = 1; i <= MaxClients; i++)
@@ -942,7 +942,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 	g_hConVarTFFastBuild.BoolValue = true;
 
-	int score = SpecialRoundID == 9 
+	int score = g_iSpecialRoundId == 9 
 		? GetLowestScore() 
 		: GetHighestScore();
 
@@ -956,7 +956,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	TFTeam overallWinningTeam;
 	bool teamsHaveSameScore = redTeamScore == blueTeamScore;
 
-	if (SpecialRoundID == 11 && !teamsHaveSameScore)
+	if (g_iSpecialRoundId == 11 && !teamsHaveSameScore)
 	{
 		overallWinningTeam = redTeamScore > blueTeamScore
 			? TFTeam_Red
@@ -996,7 +996,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			SetEntityRenderColor(i, 255, 255, 255, 255);
 			SetEntityRenderMode(i, RENDER_NORMAL);
 	
-			switch (SpecialRoundID)
+			switch (g_iSpecialRoundId)
 			{
 				case 9:
 				{
@@ -1065,7 +1065,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 			if (player.IsInGame && !player.IsBot)
 			{
-				if (SpecialRoundID == 11)
+				if (g_iSpecialRoundId == 11)
 				{
 					if (teamsHaveSameScore)
 					{
@@ -1136,7 +1136,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 					Format(prefix, sizeof(prefix), "%T", "GameOver_WinnerPrefixMultiple", player.ClientId);
 				}
 
-				if (SpecialRoundID == 17)
+				if (g_iSpecialRoundId == 17)
 				{
 					player.PrintChatText("%s %s{default}!", prefix, names);
 				}
@@ -1213,7 +1213,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	BossgameID = 0;
 	MinigameID = 0;
-	SpecialRoundID = 0;
+	g_iSpecialRoundId = 0;
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
 	MinigamesPlayed = 0;

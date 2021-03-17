@@ -289,7 +289,7 @@ public void DoSelectMinigame()
 	int forcedMinigameID = g_hConVarPluginForceMinigame.IntValue;
 	int rollCount = 0;
 
-	if (SpecialRoundID == 8)
+	if (g_iSpecialRoundId == 8)
 	{
 		PreviousMinigameID = 0;
 		MinigameID = 8;
@@ -329,11 +329,11 @@ public void DoSelectMinigame()
 					MinigameID = PreviousMinigameID;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][SpecialRoundID])
+				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][g_iSpecialRoundId])
 				{
 					// If minigame is blocked on this special round, re-roll
 					#if defined DEBUG
-					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", MinigameID, SpecialRoundID);
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", MinigameID, g_iSpecialRoundId);
 					#endif
 
 					MinigameID = PreviousMinigameID;
@@ -421,7 +421,7 @@ public void DoSelectBossgame()
 					BossgameID = PreviousBossgameID;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][SpecialRoundID])
+				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][g_iSpecialRoundId])
 				{
 					// If bossgame is blocked on this special round, re-roll
 					BossgameID = PreviousBossgameID;

@@ -108,7 +108,7 @@ public void Minigame29_OnPlayerClassChange(int client, int class)
 
 	player.Status = PlayerStatus_Failed;
 
-	if (SpecialRoundID == 9)
+	if (g_iSpecialRoundId == 9)
 	{
 		// Prevent players from abusing class change to circumvent the minigame objective
 		player.Score++;

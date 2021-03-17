@@ -70,7 +70,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 		g_iAnnotationEventId = 0;
 	}
 
-	if (SpecialRoundID == 19)
+	if (g_iSpecialRoundId == 19)
 	{
 		char rewritten[32];
 		ReverseString(text, sizeof(text), rewritten);

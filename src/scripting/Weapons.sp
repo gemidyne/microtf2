@@ -182,7 +182,7 @@ stock void Weapon_ResetToMelee(int client, bool viewModelVisible)
 
 		SetEntPropEnt(client, Prop_Send, "m_hActiveWeapon", GetPlayerWeaponSlot(client, 2));
 
-		if (SpecialRoundID != 12)
+		if (g_iSpecialRoundId != 12)
 		{
 			player.SetWeaponVisible(viewModelVisible);
 			player.SetViewModelVisible(viewModelVisible);

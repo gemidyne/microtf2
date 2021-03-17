@@ -386,7 +386,7 @@ public void Bossgame6_OnRenderHudFrame(int client)
 
     Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, Bossgame6_PlayerScore[player.ClientId]);
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(scoreText, sizeof(scoreText), rewritten);

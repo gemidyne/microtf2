@@ -1,6 +1,6 @@
 void ExecuteSpeedEvent()
 {
-	if (SpecialRoundID == 1)
+	if (g_iSpecialRoundId == 1)
 	{
 		SpeedLevel -= 0.1;
 	}
@@ -42,7 +42,7 @@ bool TrySpeedChangeEvent()
 
 	if (MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
 	{
-		bool success = GamemodeID == 99 && SpecialRoundID == 1
+		bool success = GamemodeID == 99 && g_iSpecialRoundId == 1
 			? GetRandomInt(0, 1) == 1 // On Adrenaline shot, higher chance of speed down
 			: GetRandomInt(0, 2) == 1;
 

@@ -62,7 +62,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 			Call_Finish();
 		}
 
-		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
+		if (IsMinigameActive && !player.IsParticipating && g_iSpecialRoundId != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
 			player.PrintChatText("%T", "System_PlayerSpawn_RespawnNotice", player.ClientId);
@@ -626,13 +626,13 @@ public void OnClientPostAdminCheck(int client)
 			}
 		}
 
-		if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)
+		if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && g_iSpecialRoundId == 9)
 		{
 			player.Score = 4;
 			player.Status = PlayerStatus_NotWon;
 		}
 
-		if (SpecialRoundID != 17)
+		if (g_iSpecialRoundId != 17)
 		{
 			player.IsParticipating = true;
 		}

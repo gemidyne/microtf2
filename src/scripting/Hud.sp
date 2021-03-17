@@ -51,7 +51,7 @@ public void Hud_OnGameFrame()
     #if defined DEBUG
 	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > HUD_RENDER_INTERVAL)
 	{
-		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
+		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, g_iSpecialRoundId, MinigamesPlayed, SpeedLevel);
 	}
 	#endif
 
@@ -68,7 +68,7 @@ public void Hud_OnGameFrame()
                 char buffer[CAPTION_LENGTH];
                 Format(buffer, sizeof(buffer), g_sCaptionText[i]);
 
-                if (SpecialRoundID == 19)
+                if (g_iSpecialRoundId == 19)
                 {
                     char rewritten[CAPTION_LENGTH];
                     ReverseString(buffer, sizeof(buffer), rewritten);
@@ -119,7 +119,7 @@ public void DisplayScoreHud(Player player, char buffer[128])
 
     char scoreText[32];
 
-    switch (SpecialRoundID)
+    switch (g_iSpecialRoundId)
     {
         case 11:
         {
@@ -139,7 +139,7 @@ public void DisplayScoreHud(Player player, char buffer[128])
         }
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(scoreText, sizeof(scoreText), rewritten);
@@ -162,7 +162,7 @@ public void DisplayRoundHud(Player player, char buffer[128])
         Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, RoundsPlayed + 1, MaxRounds);
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(roundDisplay, sizeof(roundDisplay), rewritten);
@@ -186,7 +186,7 @@ public void DisplaySpecialHud(Player player, char buffer[128])
     {
         char key[32];
         
-        Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+        Format(key, sizeof(key), "SpecialRound%i_Name", g_iSpecialRoundId);
         Format(themeSpecialText, sizeof(themeSpecialText), "%T", key, player.ClientId);
     }
     else
@@ -194,7 +194,7 @@ public void DisplaySpecialHud(Player player, char buffer[128])
         Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", player.ClientId, SystemNames[GamemodeID]);
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(themeSpecialText, sizeof(themeSpecialText), rewritten);

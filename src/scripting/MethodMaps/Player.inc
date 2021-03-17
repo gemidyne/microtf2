@@ -607,7 +607,7 @@ methodmap Player __nullable__
         Format(buffer, sizeof(buffer), "%s", text);
         VFormat(buffer2, sizeof(buffer2), buffer, 3);
 
-        if (SpecialRoundID == 19)
+        if (g_iSpecialRoundId == 19)
         {
             char rewritten[MAX_BUFFER_LENGTH];
             ReverseString(buffer2, sizeof(buffer2), rewritten);

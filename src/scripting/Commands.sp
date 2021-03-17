@@ -65,7 +65,7 @@ public Action Command_SetGamemode(int client, int args)
 	if (id < TOTAL_GAMEMODES)
 	{
 		GamemodeID = id;
-		SpecialRoundID = 0;
+		g_iSpecialRoundId = 0;
 
 		ReplyToCommand(client, "[WWR] Gamemode changed to \"%s\".", SystemNames[GamemodeID]);
 
