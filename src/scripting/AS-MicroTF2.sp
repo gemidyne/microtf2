@@ -157,7 +157,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
 	g_iSpecialRoundId = 0;
-	ScoreAmount = 1;
+	g_iWinnerScorePointsAmount = 1;
 	MinigamesPlayed = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
@@ -202,11 +202,11 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 
 	if (g_iSpecialRoundId == 16)
 	{
-		ScoreAmount = GetRandomInt(2, 14);
+		g_iWinnerScorePointsAmount = GetRandomInt(2, 14);
 	}
 	else
 	{
-		ScoreAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
+		g_iWinnerScorePointsAmount = (MinigamesPlayed >= BossGameThreshold ? 5 : 1);
 	}
 
 	if (MinigamesPlayed >= BossGameThreshold)
@@ -268,7 +268,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			if (g_iSpecialRoundId == 16)
 			{
 				char buffer[128];
-				Format(buffer, sizeof(buffer), "%T", "SpecialRound16_Caption_Points", i, ScoreAmount);
+				Format(buffer, sizeof(buffer), "%T", "SpecialRound16_Caption_Points", i, g_iWinnerScorePointsAmount);
 
 				PrintCenterText(i, buffer);
 			}
@@ -694,7 +694,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				player.ResetHealth();
 				player.SetGlow(true);
 
-				player.Score += ScoreAmount;
+				player.Score += g_iWinnerScorePointsAmount;
 				player.MinigamesWon++;
 
 				if (g_iSpecialRoundId != 12)
