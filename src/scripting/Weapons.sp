@@ -1,7 +1,7 @@
 Handle g_hGameConfig = INVALID_HANDLE;
 Handle g_hWearableEquip = INVALID_HANDLE;
 
-stock void InitialiseWeapons() 
+void InitialiseWeapons() 
 {
 	g_hGameConfig = LoadGameConfigFile("microtf2");
 	
@@ -21,7 +21,7 @@ stock void InitialiseWeapons()
 	}
 }
 
-stock void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
+void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
 {
 	if (!TF2Econ_IsValidItemDefinition(weaponLookupIndex))
 	{
@@ -74,7 +74,7 @@ stock void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
 	player.SetViewModelVisible(true);
 }
 
-stock int Weapons_CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality, int weaponSlot)
+int Weapons_CreateNamedItem(int client, int itemindex, const char[] classname, int level, int quality, int weaponSlot)
 {
 	// Doing it this way means we can see the actual weapons that are given
 	int weapon = CreateEntityByName(classname);
@@ -127,7 +127,7 @@ stock int Weapons_CreateNamedItem(int client, int itemindex, const char[] classn
 	return weapon;
 } 
 
-stock void Weapon_ResetToMelee(int client, bool viewModelVisible)
+void Weapon_ResetToMelee(int client, bool viewModelVisible)
 {
 	Player player = new Player(client);
 
