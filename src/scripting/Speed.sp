@@ -40,7 +40,7 @@ bool TrySpeedChangeEvent()
 		return false;
 	}
 
-	if (MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= NextMinigamePlayedSpeedTestThreshold)
+	if (MinigamesPlayed < BossGameThreshold && MinigamesPlayed >= g_iNextMinigamePlayedSpeedTestThreshold)
 	{
 		bool success = GamemodeID == 99 && g_iSpecialRoundId == 1
 			? GetRandomInt(0, 1) == 1 // On Adrenaline shot, higher chance of speed down
@@ -48,7 +48,7 @@ bool TrySpeedChangeEvent()
 
 		if (success)
 		{
-			NextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
+			g_iNextMinigamePlayedSpeedTestThreshold = MinigamesPlayed + 2;
 
 			return true;
 		}

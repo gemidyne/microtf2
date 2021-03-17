@@ -159,7 +159,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_iSpecialRoundId = 0;
 	ScoreAmount = 1;
 	MinigamesPlayed = 0;
-	NextMinigamePlayedSpeedTestThreshold = 0;
+	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	BossGameThreshold = 20;
 	MaxRounds = g_hConVarPluginMaxRounds.IntValue;
 	RoundsPlayed = 0;
@@ -1215,7 +1215,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	PreviousMinigameID = 0;
 	PreviousBossgameID = 0;
 	MinigamesPlayed = 0;
-	NextMinigamePlayedSpeedTestThreshold = 0;
+	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 
 	RoundsPlayed++;
 	
