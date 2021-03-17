@@ -45,7 +45,7 @@ public Action CmdOnPlayerKill(int client, const char[] command, int args)
 	PrintToServer("[WWDBG] Client num #%d CmdOnPlayerKill. g_bIsBlockingTaunts: %s", client, g_bIsBlockingTaunts ? "True": "False");
 	#endif
 
-	return (IsBlockingDeathCommands ? Plugin_Handled : Plugin_Continue);
+	return (g_bIsBlockingKillCommands ? Plugin_Handled : Plugin_Continue);
 }
 
 

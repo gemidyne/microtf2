@@ -40,7 +40,7 @@ public void Bossgame5_OnMinigameSelectedPre()
 	Bossgame5_Completed = false;
 
 	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
-	IsBlockingDeathCommands = false;
+	g_bIsBlockingKillCommands = false;
 
 	CreateTimer(0.5, Bossgame5_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 }

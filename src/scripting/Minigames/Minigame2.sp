@@ -21,7 +21,7 @@ public void Minigame2_OnMinigameSelectedPre()
 
 		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 	}
 }
 

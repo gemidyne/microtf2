@@ -141,7 +141,7 @@ stock void ResetGamemode()
 	g_bIsGameOver = false;
 
 	g_eDamageBlockMode = EDamageBlockMode_All;
-	IsBlockingDeathCommands = true;
+	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
 	g_bForceCalculationCritical = false;
 

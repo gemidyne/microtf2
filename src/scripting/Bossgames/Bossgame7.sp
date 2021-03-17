@@ -179,7 +179,7 @@ public void Bossgame7_OnMinigameSelectedPre()
 	if (BossgameID == 7)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 
 		Bossgame7_ParticipatingPlayerCount = 0;
 		Bossgame7_ActiveAnswerCount = 0;

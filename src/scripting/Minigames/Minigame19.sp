@@ -19,7 +19,7 @@ public void Minigame19_OnMinigameSelectedPre()
 	{
 		Minigame19_ClassMode = view_as<TFClassType>(GetRandomInt(0, 9));
 
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 	}
 }
 

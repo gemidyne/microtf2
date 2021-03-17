@@ -115,7 +115,7 @@ public void System_OnMapStart()
 	g_bIsMapEnding = false;
 	g_bIsGameOver = false;
 	g_bIsBlockingTaunts = true;
-	IsBlockingDeathCommands = true;
+	g_bIsBlockingKillCommands = true;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	for (int g = 0; g < TOTAL_GAMEMODES; g++)

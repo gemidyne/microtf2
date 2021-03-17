@@ -16,7 +16,7 @@ public void Minigame25_OnMinigameSelectedPre()
 	if (MinigameID == 25)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 
 		CreateTimer(0.15, Timer_Minigame25_TriggerWater);
 	}

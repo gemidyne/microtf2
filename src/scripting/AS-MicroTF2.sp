@@ -170,7 +170,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_bIsMapEnding = false;
 	g_bIsGameOver = false;
 	g_bIsBlockingTaunts = true;
-	IsBlockingDeathCommands = true;
+	g_bIsBlockingKillCommands = true;
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 
@@ -558,7 +558,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	MinigameID = 0;
 	BossgameID = 0;
 
-	IsBlockingDeathCommands = true;
+	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
 	g_eDamageBlockMode = EDamageBlockMode_All;
 	g_bForceCalculationCritical = false;
@@ -930,7 +930,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	#endif
 
 	g_bForceCalculationCritical = false;
-	IsBlockingDeathCommands = false;
+	g_bIsBlockingKillCommands = false;
 	g_bIsBlockingTaunts = false;
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
@@ -1225,7 +1225,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	PlayedMinigamePool.Clear();
 	PlayedBossgamePool.Clear();
 
-	IsBlockingDeathCommands = true;
+	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
 	IsBlockingVoices = false;
 	g_eDamageBlockMode = EDamageBlockMode_All;

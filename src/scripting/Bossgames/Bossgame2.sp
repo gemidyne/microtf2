@@ -22,7 +22,7 @@ public void Bossgame2_OnMinigameSelectedPre()
 	{
 		Bossgame2_SendInput("logic_relay", "ERBoss_InitRelay", "Trigger");
 
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 
 		Bossgame2_CanCheckPosition = false;

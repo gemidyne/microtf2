@@ -46,7 +46,7 @@ public void Minigame10_OnMinigameSelectedPre()
 	{
 		Minigame10_Timebomb_Init();
 
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 	}
 }
 
@@ -304,7 +304,7 @@ public Action Minigame10_Timebomb_Timer(Handle timer, int value)
 			TE_SendToAll();
 		}
 
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		
 		EmitAmbientSound(SOUND_BOOM, vec, client, SNDLEVEL_RAIDSIREN);

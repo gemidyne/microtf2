@@ -39,7 +39,7 @@ public void Minigame13_OnMinigameFinishPre()
 {
 	if (MinigameID == 13)
 	{
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -65,6 +65,6 @@ public void Minigame13_OnMinigameFinishPre()
 			}
 		}
 
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 	}
 }

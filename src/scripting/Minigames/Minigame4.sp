@@ -20,7 +20,7 @@ public void Minigame4_OnMinigameSelectedPre()
 	if (MinigameID == 4)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 		Minigame4_TotalPlayers = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
