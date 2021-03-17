@@ -67,7 +67,7 @@ public Action Command_SetGamemode(int client, int args)
 		g_iActiveGamemodeId = id;
 		g_iSpecialRoundId = 0;
 
-		ReplyToCommand(client, "[WWR] Gamemode changed to \"%s\".", SystemNames[g_iActiveGamemodeId]);
+		ReplyToCommand(client, "[WWR] Gamemode changed to \"%s\".", g_sGamemodeThemeName[g_iActiveGamemodeId]);
 
 		PluginForward_SendGamemodeChanged(id);
 

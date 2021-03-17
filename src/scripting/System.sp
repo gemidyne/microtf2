@@ -29,10 +29,10 @@
 #define OVERLAY_WELCOME "gemidyne/warioware/overlays/system_waitingforplayers"
 #define OVERLAY_SPECIALROUND "gemidyne/warioware/overlays/system_specialround"
 
-char SystemNames[TOTAL_GAMEMODES+1][32];
-char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
-int SystemMusicCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
-float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
+char g_sGamemodeThemeName[TOTAL_GAMEMODES+1][32];
+char g_sGamemodeThemeBgm[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
+int g_iGamemodeThemeBgmCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
+float g_fGamemodeThemeBgmLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
 
 int g_iActiveGamemodeId = 0;
 int g_iLoadedGamemodeCount = 0;
@@ -121,12 +121,12 @@ public void System_OnMapStart()
 	{
 		for (int i = 0; i < TOTAL_SYSMUSIC; i++)
 		{
-			for (int k = 0; k < SystemMusicCount[g][i]; k++)
+			for (int k = 0; k < g_iGamemodeThemeBgmCount[g][i]; k++)
 			{
 				// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
 				char buffer[SYSMUSIC_MAXSTRINGLENGTH];
 
-				strcopy(buffer, sizeof(buffer), SystemMusic[g][i][k]);
+				strcopy(buffer, sizeof(buffer), g_sGamemodeThemeBgm[g][i][k]);
 
 				if (strlen(buffer) > 0)
 				{
@@ -168,17 +168,17 @@ public void LoadGamemodeInfo()
 			int gamemodeId = GetIdFromSectionName(kv);
 
 			// These 2 cannot have the different lengths; they're played at the same time
-			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
-			kv.GetFloat("SysMusic_Failure_Length", SystemMusicLength[gamemodeId][SYSMUSIC_FAILURE][0]);
+			kv.GetString("SysMusic_Failure", g_sGamemodeThemeBgm[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Failure_Length", g_fGamemodeThemeBgmLength[gamemodeId][SYSMUSIC_FAILURE][0]);
 
-			SystemMusicCount[gamemodeId][SYSMUSIC_FAILURE]++;
+			g_iGamemodeThemeBgmCount[gamemodeId][SYSMUSIC_FAILURE]++;
 
-			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
-			kv.GetFloat("SysMusic_Winner_Length", SystemMusicLength[gamemodeId][SYSMUSIC_WINNER][0]);
+			kv.GetString("SysMusic_Winner", g_sGamemodeThemeBgm[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Winner_Length", g_fGamemodeThemeBgmLength[gamemodeId][SYSMUSIC_WINNER][0]);
 
-			SystemMusicCount[gamemodeId][SYSMUSIC_WINNER]++;
+			g_iGamemodeThemeBgmCount[gamemodeId][SYSMUSIC_WINNER]++;
 
-			kv.GetString("FriendlyName", SystemNames[gamemodeId], 32);
+			kv.GetString("FriendlyName", g_sGamemodeThemeName[gamemodeId], 32);
 
 			if (kv.GetNum("Selectable", 0) == 1)
 			{
@@ -190,7 +190,7 @@ public void LoadGamemodeInfo()
 			LoadSysMusicSection(kv, gamemodeId);
 
 			#if defined LOGGING_STARTUP
-			LogMessage("Loaded gamemode %d - %s", gamemodeId, SystemNames[gamemodeId]);
+			LogMessage("Loaded gamemode %d - %s", gamemodeId, g_sGamemodeThemeName[gamemodeId]);
 			#endif
 		}
 		while (kv.GotoNextKey());
@@ -245,10 +245,10 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 
 			do
 			{
-				kv.GetString("File", SystemMusic[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
+				kv.GetString("File", g_sGamemodeThemeBgm[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
 
-				SystemMusicLength[gamemodeId][bgmType][idx] = kv.GetFloat("Length");
-				SystemMusicCount[gamemodeId][bgmType]++;
+				g_fGamemodeThemeBgmLength[gamemodeId][bgmType][idx] = kv.GetFloat("Length");
+				g_iGamemodeThemeBgmCount[gamemodeId][bgmType]++;
 			}
 			while (kv.GotoNextKey());
 
