@@ -31,8 +31,8 @@ enum DamageBlockModes
 
 int MinigameID = 0;
 int BossgameID = 0;
-int PreviousMinigameID = 0;
-int PreviousBossgameID = 0;
+int g_iLastPlayedMinigameId = 0;
+int g_iLastPlayedBossgameId = 0;
 int g_iSpecialRoundId = 0;
 int g_iWinnerScorePointsAmount = 1;
 int g_iMinigamesPlayedCount = 0;

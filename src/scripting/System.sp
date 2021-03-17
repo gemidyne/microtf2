@@ -99,8 +99,8 @@ public void System_OnMapStart()
 
 	MinigameID = 0;
 	BossgameID = 0;
-	PreviousMinigameID = 0;
-	PreviousBossgameID = 0;
+	g_iLastPlayedMinigameId = 0;
+	g_iLastPlayedBossgameId = 0;
 	g_iSpecialRoundId = 0;
 	g_iWinnerScorePointsAmount = 1;
 	g_iMinigamesPlayedCount = 0;

@@ -291,12 +291,12 @@ public void DoSelectMinigame()
 
 	if (g_iSpecialRoundId == 8)
 	{
-		PreviousMinigameID = 0;
+		g_iLastPlayedMinigameId = 0;
 		MinigameID = 8;
 	}
 	else if (forcedMinigameID > 0 && forcedMinigameID <= MinigamesLoaded)
 	{
-		PreviousMinigameID = 0;
+		g_iLastPlayedMinigameId = 0;
 		MinigameID = forcedMinigameID;
 	}
 	else
@@ -308,14 +308,14 @@ public void DoSelectMinigame()
 
 			if (MinigamesLoaded == 1)
 			{
-				PreviousMinigameID = 0;
+				g_iLastPlayedMinigameId = 0;
 			}
 
 			bool recentlyPlayed = PlayedMinigamePool.FindValue(MinigameID) >= 0;
 
 			if (recentlyPlayed)
 			{
-				MinigameID = PreviousMinigameID;
+				MinigameID = g_iLastPlayedMinigameId;
 
 				if (rollCount >= MinigamesLoaded)
 				{
@@ -326,7 +326,7 @@ public void DoSelectMinigame()
 			{
 				if (!MinigameIsEnabled[MinigameID])
 				{
-					MinigameID = PreviousMinigameID;
+					MinigameID = g_iLastPlayedMinigameId;
 				}
 
 				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][g_iSpecialRoundId])
@@ -336,7 +336,7 @@ public void DoSelectMinigame()
 					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", MinigameID, g_iSpecialRoundId);
 					#endif
 
-					MinigameID = PreviousMinigameID;
+					MinigameID = g_iLastPlayedMinigameId;
 				}
 				else if (MinigameRequiresMultiplePlayers[MinigameID] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
 				{
@@ -345,7 +345,7 @@ public void DoSelectMinigame()
 					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as we need players on both teams", MinigameID);
 					#endif
 
-					MinigameID = PreviousMinigameID;
+					MinigameID = g_iLastPlayedMinigameId;
 				}
 				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && g_fActiveGameSpeed > MinigameBlockedSpeedsHigherThan[MinigameID])
 				{
@@ -354,7 +354,7 @@ public void DoSelectMinigame()
 					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as speed level exceeds maximum", MinigameID);
 					#endif
 
-					MinigameID = PreviousMinigameID;
+					MinigameID = g_iLastPlayedMinigameId;
 				}
 				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && g_iActiveParticipantCount > MinigameMaximumParticipantCount[MinigameID])
 				{
@@ -363,11 +363,11 @@ public void DoSelectMinigame()
 					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count exceeds maximum permitted", MinigameID);
 					#endif
 
-					MinigameID = PreviousMinigameID;
+					MinigameID = g_iLastPlayedMinigameId;
 				}
 			}
 		}
-		while (MinigameID == PreviousMinigameID);
+		while (MinigameID == g_iLastPlayedMinigameId);
 
 		PlayedMinigamePool.Push(MinigameID);
 
@@ -388,7 +388,7 @@ public void DoSelectBossgame()
 
 	if (forcedBossgameID > 0)
 	{
-		PreviousBossgameID = 0;
+		g_iLastPlayedBossgameId = 0;
 		BossgameID = forcedBossgameID;
 	}
 	else
@@ -400,14 +400,14 @@ public void DoSelectBossgame()
 
 			if (BossgamesLoaded == 1)
 			{
-				PreviousBossgameID = 0;
+				g_iLastPlayedBossgameId = 0;
 			}
 
 			bool recentlyPlayed = PlayedBossgamePool.FindValue(BossgameID) >= 0;
 
 			if (recentlyPlayed)
 			{
-				BossgameID = PreviousBossgameID;
+				BossgameID = g_iLastPlayedBossgameId;
 
 				if (rollCount > 32)
 				{
@@ -418,29 +418,29 @@ public void DoSelectBossgame()
 			{
 				if (!BossgameIsEnabled[BossgameID])
 				{
-					BossgameID = PreviousBossgameID;
+					BossgameID = g_iLastPlayedBossgameId;
 				}
 
 				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[BossgameID][g_iSpecialRoundId])
 				{
 					// If bossgame is blocked on this special round, re-roll
-					BossgameID = PreviousBossgameID;
+					BossgameID = g_iLastPlayedBossgameId;
 				}
 				else if (BossgameRequiresMultiplePlayers[BossgameID])
 				{
 					if (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)
 					{
 						// Bossgame requires players on both teams
-						BossgameID = PreviousBossgameID;
+						BossgameID = g_iLastPlayedBossgameId;
 					}
 				}
 				else if (BossgameBlockedSpeedsHigherThan[BossgameID] > 0.0 && g_fActiveGameSpeed > BossgameBlockedSpeedsHigherThan[BossgameID])
 				{
-					BossgameID = PreviousBossgameID;
+					BossgameID = g_iLastPlayedBossgameId;
 				}
 			}
 		}
-		while (BossgameID == PreviousBossgameID);
+		while (BossgameID == g_iLastPlayedBossgameId);
 
 		PlayedBossgamePool.Push(BossgameID);
 	}

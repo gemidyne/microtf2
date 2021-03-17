@@ -154,8 +154,8 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 
 	MinigameID = 0;
 	BossgameID = 0;
-	PreviousMinigameID = 0;
-	PreviousBossgameID = 0;
+	g_iLastPlayedMinigameId = 0;
+	g_iLastPlayedBossgameId = 0;
 	g_iSpecialRoundId = 0;
 	g_iWinnerScorePointsAmount = 1;
 	g_iMinigamesPlayedCount = 0;
@@ -526,11 +526,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 	if (MinigameID > 0)
 	{
-		PreviousMinigameID = MinigameID;
+		g_iLastPlayedMinigameId = MinigameID;
 	}
 	else if (BossgameID > 0)
 	{
-		PreviousBossgameID = BossgameID;
+		g_iLastPlayedBossgameId = BossgameID;
 		if (g_hBossCheckTimer != INVALID_HANDLE)
 		{
 			// Closes the Boss Check Timer.
@@ -547,7 +547,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.IsInGame)
 			{
-				StopSound(i, SNDCHAN_AUTO, BossgameMusic[PreviousBossgameID]);
+				StopSound(i, SNDCHAN_AUTO, BossgameMusic[g_iLastPlayedBossgameId]);
 			}
 		}
 	}
@@ -615,11 +615,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 					if (returnedFromBoss)
 					{
-						PluginForward_SendPlayerFailedBossgame(player.ClientId, PreviousBossgameID);
+						PluginForward_SendPlayerFailedBossgame(player.ClientId, g_iLastPlayedBossgameId);
 					}
 					else
 					{
-						PluginForward_SendPlayerFailedMinigame(player.ClientId, PreviousMinigameID);
+						PluginForward_SendPlayerFailedMinigame(player.ClientId, g_iLastPlayedMinigameId);
 					}
 
 					player.SetHealth(1);
@@ -669,11 +669,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 				if (returnedFromBoss)
 				{
-					PluginForward_SendPlayerWinBossgame(player.ClientId, PreviousBossgameID);
+					PluginForward_SendPlayerWinBossgame(player.ClientId, g_iLastPlayedBossgameId);
 				}
 				else
 				{
-					PluginForward_SendPlayerWinMinigame(player.ClientId, PreviousMinigameID);
+					PluginForward_SendPlayerWinMinigame(player.ClientId, g_iLastPlayedMinigameId);
 				}
 
 				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER][0]);
@@ -1212,8 +1212,8 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	BossgameID = 0;
 	MinigameID = 0;
 	g_iSpecialRoundId = 0;
-	PreviousMinigameID = 0;
-	PreviousBossgameID = 0;
+	g_iLastPlayedMinigameId = 0;
+	g_iLastPlayedBossgameId = 0;
 	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 
