@@ -355,7 +355,7 @@ public void Special_ApplyCustomModel(int client)
 		return;
 	}
 
-	if (MinigameID == 10)
+	if (g_iActiveMinigameId == 10)
 	{
 		return;
 	}

@@ -14,7 +14,7 @@ public void Minigame1_EntryPoint()
 
 public void Minigame1_OnSelectionPre()
 {
-	if (MinigameID == 1)
+	if (g_iActiveMinigameId == 1)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = false;
@@ -23,7 +23,7 @@ public void Minigame1_OnSelectionPre()
 
 public void Minigame1_OnSelection(int client)
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}
@@ -65,7 +65,7 @@ public void Minigame1_OnSelection(int client)
 
 public void Minigame1_OnGameFrame()
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}
@@ -94,7 +94,7 @@ public void Minigame1_OnGameFrame()
 
 public void Minigame1_OnFinish()
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}

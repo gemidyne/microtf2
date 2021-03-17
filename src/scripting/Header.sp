@@ -29,7 +29,7 @@ enum DamageBlockModes
  * Integers
  */
 
-int MinigameID = 0;
+int g_iActiveMinigameId = 0;
 int g_iActiveBossgameId = 0;
 int g_iLastPlayedMinigameId = 0;
 int g_iLastPlayedBossgameId = 0;

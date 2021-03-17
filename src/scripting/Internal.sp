@@ -130,7 +130,7 @@ stock void ResetGamemode()
 	g_iTotalRoundsPlayed = 0;
 
 	g_iActiveBossgameId = 0;
-	MinigameID = 0;
+	g_iActiveMinigameId = 0;
 	g_iSpecialRoundId = 0;
 	g_iLastPlayedMinigameId = 0;
 	g_iLastPlayedBossgameId = 0;

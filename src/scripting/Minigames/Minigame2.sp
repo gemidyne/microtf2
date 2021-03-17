@@ -15,7 +15,7 @@ public void Minigame2_EntryPoint()
 
 public void Minigame2_OnMinigameSelectedPre()
 {
-	if (MinigameID == 2)
+	if (g_iActiveMinigameId == 2)
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 
@@ -27,7 +27,7 @@ public void Minigame2_OnMinigameSelectedPre()
 
 public void Minigame2_OnMinigameSelected(int client)
 {
-	if (MinigameID != 2)
+	if (g_iActiveMinigameId != 2)
 	{
 		return;
 	}
@@ -115,7 +115,7 @@ public void Minigame2_OnMinigameSelected(int client)
 
 public void Minigame2_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (MinigameID != 2)
+	if (g_iActiveMinigameId != 2)
 	{
 		return;
 	}

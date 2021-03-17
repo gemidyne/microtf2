@@ -20,7 +20,7 @@ public void Minigame8_EntryPoint()
 
 public void Minigame8_OnMinigameSelectedPre()
 {
-	if (MinigameID == 8)
+	if (g_iActiveMinigameId == 8)
 	{
 		Minigame8_HasBeenAnswered = false;
 
@@ -88,7 +88,7 @@ public Action Command_Minigame8Say(int client, int args)
 		return Plugin_Continue;
 	}
 
-	if (MinigameID != 8)
+	if (g_iActiveMinigameId != 8)
 	{
 		return Plugin_Continue;
 	}
@@ -175,7 +175,7 @@ void Minigame8_NotifyPlayerComplete(Player invoker)
 
 public void Minigame8_OnMinigameFinish()
 {
-	if (MinigameID == 8)
+	if (g_iActiveMinigameId == 8)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

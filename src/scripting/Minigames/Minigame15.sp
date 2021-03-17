@@ -17,7 +17,7 @@ public void Minigame15_EntryPoint()
 
 public void Minigame15_OnMinigameSelectedPre()
 {
-	if (MinigameID == 15)
+	if (g_iActiveMinigameId == 15)
 	{
 		Minigame15_AssertObject = GetRandomInt(0, 1) == 1;
 
@@ -50,7 +50,7 @@ public void Minigame15_OnMinigameSelectedPre()
 
 public void Minigame15_OnMinigameSelected(int client)
 {
-	if (MinigameID != 15)
+	if (g_iActiveMinigameId != 15)
 	{
 		return;
 	}
@@ -121,7 +121,7 @@ public void Minigame15_GetDynamicCaption(int client)
 
 public void Minigame15_OnBuildObject(int client, int entity)
 {
-	if (MinigameID != 15)
+	if (g_iActiveMinigameId != 15)
 	{
 		return;
 	}
@@ -157,7 +157,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 
 public void Minigame15_OnMinigameFinish()
 {
-	if (MinigameID == 15)
+	if (g_iActiveMinigameId == 15)
 	{
 		g_hConVarTFCheapObjects.BoolValue = false;
 

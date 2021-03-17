@@ -17,7 +17,7 @@ public void Minigame20_EntryPoint()
 
 public void Minigame20_OnMinigameSelectedPre()
 {
-	if (MinigameID == 20)
+	if (g_iActiveMinigameId == 20)
 	{
 		Minigame20_PlayerClass = GetRandomInt(0, 3);
 		Minigame20_InvertedMode = GetRandomInt(0, 1) == 1;
@@ -26,7 +26,7 @@ public void Minigame20_OnMinigameSelectedPre()
 
 public void Minigame20_OnMinigameSelected(int client)
 {
-	if (MinigameID != 20)
+	if (g_iActiveMinigameId != 20)
 	{
 		return;
 	}
@@ -125,7 +125,7 @@ public void Minigame20_GetDynamicCaption(int client)
 
 public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 {
-	if (MinigameID != 20)
+	if (g_iActiveMinigameId != 20)
 	{
 		return;
 	}
@@ -170,7 +170,7 @@ public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 
 public void Minigame20_OnMinigameFinish()
 {
-	if (g_bIsMinigameActive && MinigameID == 20)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 20)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

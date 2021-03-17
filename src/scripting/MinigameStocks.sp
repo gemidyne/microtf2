@@ -131,7 +131,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 
 public void EndBoss()
 {
-	if (g_bIsMinigameActive && g_iActiveBossgameId > 0 && MinigameID == 0)
+	if (g_bIsMinigameActive && g_iActiveBossgameId > 0 && g_iActiveMinigameId == 0)
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 

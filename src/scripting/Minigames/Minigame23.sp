@@ -15,7 +15,7 @@ public void Minigame23_EntryPoint()
 
 public void Minigame23_OnMinigameSelectedPre()
 {
-	if (MinigameID == 23)
+	if (g_iActiveMinigameId == 23)
 	{
 		Minigame23_CanCheckConditions = false;
 		CreateTimer(1.5, Timer_Minigame23_AllowConditions);
@@ -30,7 +30,7 @@ public Action Timer_Minigame23_AllowConditions(Handle timer)
 
 public void Minigame23_OnMinigameSelected(int client)
 {
-	if (MinigameID != 23)
+	if (g_iActiveMinigameId != 23)
 	{
 		return;
 	}
@@ -56,7 +56,7 @@ public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, fl
 		return;
 	}
 
-	if (MinigameID != 23)
+	if (g_iActiveMinigameId != 23)
 	{
 		return;
 	}

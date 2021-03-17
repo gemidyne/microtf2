@@ -16,7 +16,7 @@ public void Minigame9_EntryPoint()
 
 public void Minigame9_OnMinigameSelectedPre()
 {
-	if (MinigameID == 9)
+	if (g_iActiveMinigameId == 9)
 	{
 		g_bIsBlockingTaunts = false;
 		Minigame9_Mode = GetRandomInt(1, 6);
@@ -56,7 +56,7 @@ public void Minigame9_GetDynamicCaption(int client)
 
 public void Minigame9_OnGameFrame()
 {
-	if (g_bIsMinigameActive && MinigameID == 9)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 9)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -138,7 +138,7 @@ public void Minigame9_OnGameFrame()
 
 public void Minigame9_OnMinigameFinishPre()
 {
-	if (g_bIsMinigameActive && MinigameID == 9)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 9)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

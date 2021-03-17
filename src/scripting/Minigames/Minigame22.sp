@@ -14,7 +14,7 @@ public void Minigame22_EntryPoint()
 
 public void Minigame22_OnMinigameSelectedPre()
 {
-	if (MinigameID == 22)
+	if (g_iActiveMinigameId == 22)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 	}
@@ -22,7 +22,7 @@ public void Minigame22_OnMinigameSelectedPre()
 
 public void Minigame22_OnMinigameSelected(int client)
 {
-	if (MinigameID != 22)
+	if (g_iActiveMinigameId != 22)
 	{
 		return;
 	}
@@ -49,7 +49,7 @@ public void Minigame22_OnMinigameSelected(int client)
 
 public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (MinigameID != 22)
+	if (g_iActiveMinigameId != 22)
 	{
 		return;
 	}
@@ -80,7 +80,7 @@ public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 public void Minigame22_OnMinigameFinishPre()
 {
-	if (MinigameID == 22)
+	if (g_iActiveMinigameId == 22)
 	{
 		g_bIsBlockingKillCommands = false;
 

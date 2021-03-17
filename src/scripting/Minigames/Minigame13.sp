@@ -14,7 +14,7 @@ public void Minigame13_EntryPoint()
 
 public void Minigame13_OnMinigameSelected(int client)
 {
-	if (MinigameID != 13)
+	if (g_iActiveMinigameId != 13)
 	{
 		return;
 	}
@@ -37,7 +37,7 @@ public void Minigame13_OnMinigameSelected(int client)
 
 public void Minigame13_OnMinigameFinishPre()
 {
-	if (MinigameID == 13)
+	if (g_iActiveMinigameId == 13)
 	{
 		g_bIsBlockingKillCommands = false;
 

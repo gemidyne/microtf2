@@ -16,7 +16,7 @@ public void Minigame17_EntryPoint()
 
 public void Minigame17_OnMinigameSelectedPre()
 {
-	if (MinigameID == 17)
+	if (g_iActiveMinigameId == 17)
 	{
 		Minigame17_ClientTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 
@@ -34,7 +34,7 @@ public void Minigame17_OnMinigameSelectedPre()
 
 public void Minigame17_OnMinigameSelected(int client)
 {
-	if (MinigameID != 17)
+	if (g_iActiveMinigameId != 17)
 	{
 		return;
 	}
@@ -89,7 +89,7 @@ public void Minigame17_GetDynamicCaption(int client)
 
 public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (g_bIsMinigameActive && MinigameID == 17)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 17)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);

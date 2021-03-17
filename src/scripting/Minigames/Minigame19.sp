@@ -15,7 +15,7 @@ public void Minigame19_EntryPoint()
 
 public void Minigame19_OnMinigameSelectedPre()
 {
-	if (MinigameID == 19)
+	if (g_iActiveMinigameId == 19)
 	{
 		Minigame19_ClassMode = view_as<TFClassType>(GetRandomInt(0, 9));
 
@@ -25,7 +25,7 @@ public void Minigame19_OnMinigameSelectedPre()
 
 public void Minigame19_OnMinigameSelected(int client)
 {
-	if (MinigameID != 19)
+	if (g_iActiveMinigameId != 19)
 	{
 		return;
 	}
@@ -119,7 +119,7 @@ public void Minigame19_GetDynamicCaption(int client)
 
 public void Minigame19_OnPlayerClassChange(int client, int class)
 {
-	if (MinigameID != 19)
+	if (g_iActiveMinigameId != 19)
 	{
 		return;
 	}

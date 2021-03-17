@@ -14,7 +14,7 @@ public void Minigame12_EntryPoint()
 
 public void Minigame12_OnMinigameSelectedPre()
 {
-	if (MinigameID == 12)
+	if (g_iActiveMinigameId == 12)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		g_bIsBlockingKillCommands = false;
@@ -25,7 +25,7 @@ public void Minigame12_OnMinigameSelectedPre()
 
 public void Minigame12_OnMinigameSelected(int client)
 {
-	if (MinigameID != 12)
+	if (g_iActiveMinigameId != 12)
 	{
 		return;
 	}
@@ -65,7 +65,7 @@ public void Minigame12_OnMinigameSelected(int client)
 
 public void Minigame12_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (MinigameID != 12)
+	if (g_iActiveMinigameId != 12)
 	{
 		return;
 	}
@@ -96,7 +96,7 @@ public void Minigame12_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 public void Minigame12_OnMinigameFinish()
 {
-	if (MinigameID == 12)
+	if (g_iActiveMinigameId == 12)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

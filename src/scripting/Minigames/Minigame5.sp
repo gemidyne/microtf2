@@ -14,7 +14,7 @@ public void Minigame5_EntryPoint()
 
 public void Minigame5_OnMinigameSelectedPre()
 {
-	if (MinigameID == 5)
+	if (g_iActiveMinigameId == 5)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = true;
@@ -23,7 +23,7 @@ public void Minigame5_OnMinigameSelectedPre()
 
 public void Minigame5_OnMinigameSelected(int client)
 {
-	if (MinigameID != 5)
+	if (g_iActiveMinigameId != 5)
 	{
 		return;
 	}
@@ -48,7 +48,7 @@ public void Minigame5_OnMinigameSelected(int client)
 
 public void Minigame5_OnStickyJump(int client)
 {
-	if (MinigameID != 5)
+	if (g_iActiveMinigameId != 5)
 	{
 		return;
 	}
@@ -69,7 +69,7 @@ public void Minigame5_OnStickyJump(int client)
 
 public void Minigame5_OnMinigameFinish()
 {
-	if (MinigameID == 5)
+	if (g_iActiveMinigameId == 5)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

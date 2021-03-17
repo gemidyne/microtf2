@@ -17,7 +17,7 @@ public void Minigame4_EntryPoint()
 
 public void Minigame4_OnMinigameSelectedPre()
 {
-	if (MinigameID == 4)
+	if (g_iActiveMinigameId == 4)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = false;
@@ -37,7 +37,7 @@ public void Minigame4_OnMinigameSelectedPre()
 
 public void Minigame4_OnMinigameSelected(int client)
 {
-	if (MinigameID != 4)
+	if (g_iActiveMinigameId != 4)
 	{
 		return;
 	}
@@ -85,7 +85,7 @@ public void Minigame4_OnMinigameSelected(int client)
 
 public void Minigame4_OnPlayerDeath(int client, int attacker)
 {
-	if (MinigameID != 4)
+	if (g_iActiveMinigameId != 4)
 	{
 		return;
 	}
@@ -112,7 +112,7 @@ public void Minigame4_OnPlayerDeath(int client, int attacker)
 
 public void Minigame4_OnMinigameFinish()
 {
-	if (g_bIsMinigameActive && MinigameID == 4)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 4)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

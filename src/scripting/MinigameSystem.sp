@@ -292,18 +292,18 @@ public void DoSelectMinigame()
 	if (g_iSpecialRoundId == 8)
 	{
 		g_iLastPlayedMinigameId = 0;
-		MinigameID = 8;
+		g_iActiveMinigameId = 8;
 	}
 	else if (forcedMinigameID > 0 && forcedMinigameID <= MinigamesLoaded)
 	{
 		g_iLastPlayedMinigameId = 0;
-		MinigameID = forcedMinigameID;
+		g_iActiveMinigameId = forcedMinigameID;
 	}
 	else
 	{
 		do
 		{
-			MinigameID = GetRandomInt(1, MinigamesLoaded);
+			g_iActiveMinigameId = GetRandomInt(1, MinigamesLoaded);
 			rollCount++;
 
 			if (MinigamesLoaded == 1)
@@ -311,11 +311,11 @@ public void DoSelectMinigame()
 				g_iLastPlayedMinigameId = 0;
 			}
 
-			bool recentlyPlayed = PlayedMinigamePool.FindValue(MinigameID) >= 0;
+			bool recentlyPlayed = PlayedMinigamePool.FindValue(g_iActiveMinigameId) >= 0;
 
 			if (recentlyPlayed)
 			{
-				MinigameID = g_iLastPlayedMinigameId;
+				g_iActiveMinigameId = g_iLastPlayedMinigameId;
 
 				if (rollCount >= MinigamesLoaded)
 				{
@@ -324,59 +324,59 @@ public void DoSelectMinigame()
 			}
 			else
 			{
-				if (!MinigameIsEnabled[MinigameID])
+				if (!MinigameIsEnabled[g_iActiveMinigameId])
 				{
-					MinigameID = g_iLastPlayedMinigameId;
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[MinigameID][g_iSpecialRoundId])
+				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[g_iActiveMinigameId][g_iSpecialRoundId])
 				{
 					// If minigame is blocked on this special round, re-roll
 					#if defined DEBUG
-					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", MinigameID, g_iSpecialRoundId);
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as its blocked on special round #", g_iActiveMinigameId, g_iSpecialRoundId);
 					#endif
 
-					MinigameID = g_iLastPlayedMinigameId;
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameRequiresMultiplePlayers[MinigameID] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
+				else if (MinigameRequiresMultiplePlayers[g_iActiveMinigameId] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
 				{
 					// Minigame requires players on both teams
 					#if defined DEBUG
-					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as we need players on both teams", MinigameID);
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as we need players on both teams", g_iActiveMinigameId);
 					#endif
 
-					MinigameID = g_iLastPlayedMinigameId;
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameBlockedSpeedsHigherThan[MinigameID] > 0.0 && g_fActiveGameSpeed > MinigameBlockedSpeedsHigherThan[MinigameID])
+				else if (MinigameBlockedSpeedsHigherThan[g_iActiveMinigameId] > 0.0 && g_fActiveGameSpeed > MinigameBlockedSpeedsHigherThan[g_iActiveMinigameId])
 				{
 					// Minigame cannot run on speeds higher than specified
 					#if defined DEBUG
-					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as speed level exceeds maximum", MinigameID);
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as speed level exceeds maximum", g_iActiveMinigameId);
 					#endif
 
-					MinigameID = g_iLastPlayedMinigameId;
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameMaximumParticipantCount[MinigameID] > 0 && g_iActiveParticipantCount > MinigameMaximumParticipantCount[MinigameID])
+				else if (MinigameMaximumParticipantCount[g_iActiveMinigameId] > 0 && g_iActiveParticipantCount > MinigameMaximumParticipantCount[g_iActiveMinigameId])
 				{
 					// Current participant count exceeds maximum participant count specified for minigame
 					#if defined DEBUG
-					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count exceeds maximum permitted", MinigameID);
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count exceeds maximum permitted", g_iActiveMinigameId);
 					#endif
 
-					MinigameID = g_iLastPlayedMinigameId;
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
 			}
 		}
-		while (MinigameID == g_iLastPlayedMinigameId);
+		while (g_iActiveMinigameId == g_iLastPlayedMinigameId);
 
-		PlayedMinigamePool.Push(MinigameID);
+		PlayedMinigamePool.Push(g_iActiveMinigameId);
 
 		#if defined DEBUG
-		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", MinigameID, PlayedMinigamePool.Length);
+		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", g_iActiveMinigameId, PlayedMinigamePool.Length);
 		#endif
 	}
 
-	PluginForward_SendMinigameSelected(MinigameID);
+	PluginForward_SendMinigameSelected(g_iActiveMinigameId);
 }
 
 public void DoSelectBossgame()

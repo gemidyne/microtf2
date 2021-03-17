@@ -40,7 +40,7 @@ public void Minigame28_OnRoundStart()
 
 public void Minigame28_OnMinigameSelectedPre()
 {
-	if (MinigameID == 28)
+	if (g_iActiveMinigameId == 28)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		Minigame28_RedIndex = 0;
@@ -50,7 +50,7 @@ public void Minigame28_OnMinigameSelectedPre()
 
 public void Minigame28_OnMinigameSelected(int client)
 {
-	if (MinigameID != 28)
+	if (g_iActiveMinigameId != 28)
 	{
 		return;
 	}
@@ -120,7 +120,7 @@ public void Minigame28_OnMinigameSelected(int client)
 
 public Action Minigame28_OnTriggerTouched(int entity, int other)
 {
-	if (MinigameID != 28)
+	if (g_iActiveMinigameId != 28)
 	{
 		return Plugin_Continue;
 	}
@@ -142,7 +142,7 @@ public Action Minigame28_OnTriggerTouched(int entity, int other)
 
 public void Minigame28_OnMinigameFinish()
 {
-	if (MinigameID != 28)
+	if (g_iActiveMinigameId != 28)
 	{
 		return;
 	}

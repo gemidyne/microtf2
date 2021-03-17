@@ -13,7 +13,7 @@ public void Minigame16_EntryPoint()
 
 public void Minigame16_OnMinigameSelected(int client)
 {
-	if (MinigameID != 16)
+	if (g_iActiveMinigameId != 16)
 	{
 		return;
 	}
@@ -36,7 +36,7 @@ public void Minigame16_OnMinigameSelected(int client)
 
 public void Minigame16_OnPlayerJarated(int client, int victimId)
 {
-	if (MinigameID != 16)
+	if (g_iActiveMinigameId != 16)
 	{
 		return;
 	}
@@ -57,7 +57,7 @@ public void Minigame16_OnPlayerJarated(int client, int victimId)
 
 public void Minigame16_OnMinigameFinish()
 {
-	if (g_bIsMinigameActive && MinigameID == 16)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 16)
 	{
 		RemoveAllJarateEntities();
 	}

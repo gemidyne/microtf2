@@ -69,7 +69,7 @@ public void Minigame18_OnMapStart()
 
 public void Minigame18_OnMinigameSelectedPre()
 {
-	if (MinigameID == 18)
+	if (g_iActiveMinigameId == 18)
 	{
 		Minigame18_TargetEntIndex = CreateEntityByName("prop_physics");
 
@@ -102,7 +102,7 @@ public void Minigame18_OnMinigameSelectedPre()
 
 public void Minigame18_OnMinigameSelected(int client)
 {
-	if (MinigameID != 18)
+	if (g_iActiveMinigameId != 18)
 	{
 		return;
 	}
@@ -140,7 +140,7 @@ public void Minigame18_OnMinigameSelected(int client)
 
 public void Minigame18_OnMinigameFinish()
 {
-	if (MinigameID == 18 && g_bIsMinigameActive)
+	if (g_iActiveMinigameId == 18 && g_bIsMinigameActive)
 	{
 		SDKUnhook(Minigame18_TargetEntIndex, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 

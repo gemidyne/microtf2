@@ -25,7 +25,7 @@ public void Minigame6_EntryPoint()
 
 public void Minigame6_OnMinigameSelectedPre()
 {
-	if (MinigameID == 6)
+	if (g_iActiveMinigameId == 6)
 	{
 		Format(Minigame6_SayTextAnswer, sizeof(Minigame6_SayTextAnswer), Minigame6_SayTextAnswers[GetRandomInt(0, Minigame6_SayTextAnswerCount - 1)]);
 		Minigame6_HasBeenAnswered = false;
@@ -51,7 +51,7 @@ public Action Command_MinigameSixSay(int client, int args)
 		return Plugin_Continue;
 	}
 
-	if (MinigameID != 6)
+	if (g_iActiveMinigameId != 6)
 	{
 		return Plugin_Continue;
 	}

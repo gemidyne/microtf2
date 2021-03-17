@@ -13,7 +13,7 @@ public void Minigame25_EntryPoint()
 
 public void Minigame25_OnMinigameSelectedPre()
 {
-	if (MinigameID == 25)
+	if (g_iActiveMinigameId == 25)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = false;
@@ -24,7 +24,7 @@ public void Minigame25_OnMinigameSelectedPre()
 
 public void Minigame25_OnMinigameSelected(int client)
 {
-	if (MinigameID != 25)
+	if (g_iActiveMinigameId != 25)
 	{
 		return;
 	}
@@ -52,7 +52,7 @@ public void Minigame25_OnMinigameSelected(int client)
 
 public void Minigame25_OnMinigameFinish()
 {
-	if (MinigameID == 25)
+	if (g_iActiveMinigameId == 25)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

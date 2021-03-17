@@ -15,7 +15,7 @@ public void Minigame24_EntryPoint()
 
 public void Minigame24_OnMinigameSelected(int client)
 {
-	if (MinigameID != 24)
+	if (g_iActiveMinigameId != 24)
 	{
 		return;
 	}
@@ -40,7 +40,7 @@ public void Minigame24_OnMinigameSelected(int client)
 
 public void Minigame24_OnGameFrame()
 {
-	if (g_bIsMinigameActive && MinigameID == 24)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 24)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

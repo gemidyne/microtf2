@@ -17,7 +17,7 @@ public void Minigame14_EntryPoint()
 
 public void Minigame14_OnMinigameSelectedPre()
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
@@ -50,7 +50,7 @@ public void Minigame14_GetDynamicCaption(int client)
 
 public void Minigame14_OnMinigameSelected(int client)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
@@ -89,7 +89,7 @@ public void Minigame14_OnMinigameSelected(int client)
 
 public void Minigame14_OnBuildObject(int client, int entity)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
@@ -109,7 +109,7 @@ public void Minigame14_OnBuildObject(int client, int entity)
 
 public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
@@ -128,7 +128,7 @@ public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
 
 public void Minigame14_OnMinigameFinish()
 {
-	if (MinigameID == 14)
+	if (g_iActiveMinigameId == 14)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

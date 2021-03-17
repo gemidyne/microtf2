@@ -13,7 +13,7 @@ public void Minigame21_EntryPoint()
 
 public void Minigame21_OnMinigameSelected(int client)
 {
-	if (MinigameID != 21)
+	if (g_iActiveMinigameId != 21)
 	{
 		return;
 	}
@@ -42,7 +42,7 @@ public void Minigame21_OnMinigameSelected(int client)
 
 public void Minigame21_OnPlayerStunned(int stunner, int victim)
 {
-	if (!g_bIsMinigameActive || MinigameID != 21)
+	if (!g_bIsMinigameActive || g_iActiveMinigameId != 21)
 	{
 		return;
 	}
@@ -58,7 +58,7 @@ public void Minigame21_OnPlayerStunned(int stunner, int victim)
 
 public void Minigame21_OnMinigameFinish()
 {
-	if (g_bIsMinigameActive && MinigameID == 21)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 21)
 	{
 		RemoveAllStunballEntities();
 	}

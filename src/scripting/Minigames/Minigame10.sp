@@ -42,7 +42,7 @@ public void Minigame10_OnMapStart()
 
 public void Minigame10_OnMinigameSelectedPre()
 {
-	if (MinigameID == 10)
+	if (g_iActiveMinigameId == 10)
 	{
 		Minigame10_Timebomb_Init();
 
@@ -52,7 +52,7 @@ public void Minigame10_OnMinigameSelectedPre()
 
 public void Minigame10_OnMinigameSelected(int client)
 {
-	if (MinigameID != 10)
+	if (g_iActiveMinigameId != 10)
 	{
 		return;
 	}
@@ -106,7 +106,7 @@ public void Minigame10_GetDynamicCaption(int client)
 
 public void Minigame10_OnPlayerDeath(int client)
 {
-	if (MinigameID != 10)
+	if (g_iActiveMinigameId != 10)
 	{
 		return;
 	}
@@ -127,7 +127,7 @@ public void Minigame10_OnPlayerDeath(int client)
 
 public void Minigame10_OnMinigameFinish()
 {
-	if (MinigameID == 10)
+	if (g_iActiveMinigameId == 10)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -150,7 +150,7 @@ public void Minigame10_OnMinigameFinish()
 
 public void Minigame10_Timebomb_Init()
 {
-	if (MinigameID == 10)
+	if (g_iActiveMinigameId == 10)
 	{
 		int[] arrayPlayers = new int[MaxClients + 1];
 		int index = 0;

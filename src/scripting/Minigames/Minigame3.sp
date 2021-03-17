@@ -21,7 +21,7 @@ public void Minigame3_MapStart()
 
 public void Minigame3_OnSelectionPre()
 {
-	if (MinigameID == 3)
+	if (g_iActiveMinigameId == 3)
 	{
 		int count = 0;
 
@@ -58,7 +58,7 @@ public void Minigame3_OnSelectionPre()
 
 public void Minigame3_OnSelection(int client)
 {
-	if (MinigameID != 3)
+	if (g_iActiveMinigameId != 3)
 	{
 		return;
 	}
@@ -79,7 +79,7 @@ public void Minigame3_OnSelection(int client)
 
 public void Minigame3_OnPropBroken(int client)
 {
-	if (MinigameID != 3)
+	if (g_iActiveMinigameId != 3)
 	{
 		return;
 	}

@@ -17,7 +17,7 @@ public void Minigame29_EntryPoint()
 
 public void Minigame29_OnMinigameSelectedPre()
 {
-	if (MinigameID == 29)
+	if (g_iActiveMinigameId == 29)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		Minigame29_IsCheckingCollisions = false;
@@ -27,7 +27,7 @@ public void Minigame29_OnMinigameSelectedPre()
 
 public void Minigame29_OnMinigameSelected(int client)
 {
-	if (MinigameID != 29)
+	if (g_iActiveMinigameId != 29)
 	{
 		return;
 	}
@@ -64,7 +64,7 @@ public Action Minigame29_EnableCollisionCheck(Handle timer)
 
 public void Minigame29_OnTouch(int entity, int other)
 {
-	if (MinigameID != 29)
+	if (g_iActiveMinigameId != 29)
 	{
 		return;
 	}
@@ -94,7 +94,7 @@ public void Minigame29_OnTouch(int entity, int other)
 
 public void Minigame29_OnPlayerClassChange(int client, int class)
 {
-	if (MinigameID != 29)
+	if (g_iActiveMinigameId != 29)
 	{
 		return;
 	}
@@ -118,7 +118,7 @@ public void Minigame29_OnPlayerClassChange(int client, int class)
 
 public void Minigame29_OnMinigameFinish()
 {
-	if (MinigameID != 29)
+	if (g_iActiveMinigameId != 29)
 	{
 		return;
 	}

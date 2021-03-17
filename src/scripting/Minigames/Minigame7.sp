@@ -14,7 +14,7 @@ public void Minigame7_EntryPoint()
 
 public void Minigame7_OnMinigameSelectedPre()
 {
-	if (MinigameID == 7)
+	if (g_iActiveMinigameId == 7)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = true;
@@ -23,7 +23,7 @@ public void Minigame7_OnMinigameSelectedPre()
 
 public void Minigame7_OnMinigameSelected(int client)
 {
-	if (MinigameID != 7)
+	if (g_iActiveMinigameId != 7)
 	{
 		return;
 	}
@@ -48,7 +48,7 @@ public void Minigame7_OnMinigameSelected(int client)
 
 public void Minigame7_OnRocketJump(int client)
 {
-	if (MinigameID != 7)
+	if (g_iActiveMinigameId != 7)
 	{
 		return;
 	}
@@ -69,7 +69,7 @@ public void Minigame7_OnRocketJump(int client)
 
 public void Minigame7_OnMinigameFinish()
 {
-	if (MinigameID == 7)
+	if (g_iActiveMinigameId == 7)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

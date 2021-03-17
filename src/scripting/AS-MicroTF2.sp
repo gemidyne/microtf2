@@ -152,7 +152,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 {
 	g_eGamemodeStatus = GameStatus_Playing;
 
-	MinigameID = 0;
+	g_iActiveMinigameId = 0;
 	g_iActiveBossgameId = 0;
 	g_iLastPlayedMinigameId = 0;
 	g_iLastPlayedBossgameId = 0;
@@ -387,7 +387,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	bool isCaptionDynamic;
 	Function func = INVALID_FUNCTION;
 
-	Minigame minigame = new Minigame(MinigameID);
+	Minigame minigame = new Minigame(g_iActiveMinigameId);
 	Bossgame bossgame = new Bossgame(g_iActiveBossgameId);
 
 	if (minigame.HasDynamicCaption || bossgame.HasDynamicCaption)
@@ -399,7 +399,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	{
 		char funcName[64];
 
-		if (MinigameID > 0)
+		if (g_iActiveMinigameId > 0)
 		{
 			minigame.GetDynamicCaptionFunctionName(funcName, sizeof(funcName));
 		}
@@ -440,22 +440,22 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					PlaySoundToPlayer(i, BossgameMusic[g_iActiveBossgameId]);
 				}
 			}
-			else if (MinigameID > 0)
+			else if (g_iActiveMinigameId > 0)
 			{
 				if (!isCaptionDynamic)
 				{
 					char text[64];
 					char translationKey[32];
 
-					Format(translationKey, sizeof(translationKey), "Minigame%d_Caption", MinigameID);
+					Format(translationKey, sizeof(translationKey), "Minigame%d_Caption", g_iActiveMinigameId);
 					Format(text, sizeof(text), "%T", translationKey, player.ClientId);
 
 					player.SetCaption(text);
 				}
 
-				if (strlen(MinigameMusic[MinigameID]) > 0)
+				if (strlen(MinigameMusic[g_iActiveMinigameId]) > 0)
 				{
-					PlaySoundToPlayer(i, MinigameMusic[MinigameID]);
+					PlaySoundToPlayer(i, MinigameMusic[g_iActiveMinigameId]);
 					PlaySoundToPlayer(i, SYSFX_CLOCK);
 				}
 			}
@@ -490,7 +490,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		Call_Finish();
 	}
 
-	if (MinigameID > 0)
+	if (g_iActiveMinigameId > 0)
 	{
 		CreateTimer(minigame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 		CreateTimer((minigame.Duration - 0.5), Timer_GameLogic_OnPreFinish, _, TIMER_FLAG_NO_MAPCHANGE);
@@ -503,7 +503,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	}
 	else
 	{
-		ThrowError("MinigameID and g_iActiveBossgameId are both 0: this should never happen.");
+		ThrowError("g_iActiveMinigameId and g_iActiveBossgameId are both 0: this should never happen.");
 	}
 
 	return Plugin_Handled;
@@ -524,9 +524,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	bool playAnotherBossgame = false;
 	bool returnedFromBoss = false;
 
-	if (MinigameID > 0)
+	if (g_iActiveMinigameId > 0)
 	{
-		g_iLastPlayedMinigameId = MinigameID;
+		g_iLastPlayedMinigameId = g_iActiveMinigameId;
 	}
 	else if (g_iActiveBossgameId > 0)
 	{
@@ -555,7 +555,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	g_bIsMinigameActive = false;
 	g_bIsMinigameEnding = false;
 	g_iMinigamesPlayedCount++;
-	MinigameID = 0;
+	g_iActiveMinigameId = 0;
 	g_iActiveBossgameId = 0;
 
 	g_bIsBlockingKillCommands = true;
@@ -1210,7 +1210,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	SetTeamScore(view_as<int>(TFTeam_Blue), 0);
 
 	g_iActiveBossgameId = 0;
-	MinigameID = 0;
+	g_iActiveMinigameId = 0;
 	g_iSpecialRoundId = 0;
 	g_iLastPlayedMinigameId = 0;
 	g_iLastPlayedBossgameId = 0;

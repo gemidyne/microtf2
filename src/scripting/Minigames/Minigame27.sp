@@ -15,7 +15,7 @@ public void Minigame27_EntryPoint()
 
 public void Minigame27_OnMinigameSelectedPre()
 {
-	if (MinigameID == 27)
+	if (g_iActiveMinigameId == 27)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		Minigame27_UseBleedingMode = GetRandomInt(0, 1) == 1;
@@ -24,7 +24,7 @@ public void Minigame27_OnMinigameSelectedPre()
 
 public void Minigame27_OnMinigameSelected(int client)
 {
-	if (MinigameID != 27)
+	if (g_iActiveMinigameId != 27)
 	{
 		return;
 	}
@@ -58,7 +58,7 @@ public void Minigame27_OnMinigameSelected(int client)
 
 public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (g_bIsMinigameActive && MinigameID == 27)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 27)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);

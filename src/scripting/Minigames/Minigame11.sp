@@ -17,7 +17,7 @@ public void Minigame11_EntryPoint()
 
 public void Minigame11_OnMinigameSelectedPre()
 {
-	if (MinigameID == 11)
+	if (g_iActiveMinigameId == 11)
 	{
 		Minigame11_Mode = GetRandomInt(1, 2);
 		Minigame11_CanCheckConditions = false;
@@ -34,7 +34,7 @@ public Action Timer_Minigame11_AllowConditions(Handle timer)
 
 public void Minigame11_OnMinigameSelected(int client)
 {
-	if (MinigameID != 11)
+	if (g_iActiveMinigameId != 11)
 	{
 		return;
 	}
@@ -76,7 +76,7 @@ public void Minigame11_GetDynamicCaption(int client)
 
 public void Minigame11_OnGameFrame()
 {
-	if (MinigameID != 11)
+	if (g_iActiveMinigameId != 11)
 	{
 		return;
 	}

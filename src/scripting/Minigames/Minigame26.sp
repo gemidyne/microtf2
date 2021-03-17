@@ -17,7 +17,7 @@ public void Minigame26_EntryPoint()
 
 public void Minigame26_OnMinigameSelectedPre()
 {
-	if (MinigameID == 26)
+	if (g_iActiveMinigameId == 26)
 	{
 		int count = 0;
 
@@ -130,7 +130,7 @@ public void Minigame26_GetDynamicCaption(int client)
 
 public void Minigame26_OnMinigameSelected(int client)
 {
-	if (MinigameID != 26)
+	if (g_iActiveMinigameId != 26)
 	{
 		return;
 	}
@@ -157,7 +157,7 @@ public void Minigame26_OnMinigameSelected(int client)
 
 public void Minigame26_OnPlayerConditionAdded(int client, int conditionId)
 {
-	if (MinigameID != 26)
+	if (g_iActiveMinigameId != 26)
 	{
 		return;
 	}
@@ -189,7 +189,7 @@ public void Minigame26_OnPlayerConditionAdded(int client, int conditionId)
 
 public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (MinigameID != 26)
+	if (g_iActiveMinigameId != 26)
 	{
 		return;
 	}

@@ -97,7 +97,7 @@ public void System_OnMapStart()
 	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
 	Steam_SetGameDescription(gameDescription);
 
-	MinigameID = 0;
+	g_iActiveMinigameId = 0;
 	g_iActiveBossgameId = 0;
 	g_iLastPlayedMinigameId = 0;
 	g_iLastPlayedBossgameId = 0;
