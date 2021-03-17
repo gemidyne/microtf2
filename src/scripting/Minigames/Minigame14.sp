@@ -55,7 +55,7 @@ public void Minigame14_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -94,7 +94,7 @@ public void Minigame14_OnBuildObject(int client, int entity)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -114,7 +114,7 @@ public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

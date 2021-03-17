@@ -45,7 +45,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -110,7 +110,7 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -132,7 +132,7 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -171,7 +171,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -229,7 +229,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 public void Bossgame4_OnMinigameFinish()
 {
-	if (IsMinigameActive && BossgameID == 4)
+	if (g_bIsMinigameActive && BossgameID == 4)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -245,7 +245,7 @@ public void Bossgame4_OnMinigameFinish()
 
 public void Bossgame4_OnBossStopAttempt()
 {
-	if (IsMinigameActive && BossgameID == 4)
+	if (g_bIsMinigameActive && BossgameID == 4)
 	{
 		int alivePlayers = 0;
 

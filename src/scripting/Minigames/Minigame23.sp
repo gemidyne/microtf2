@@ -35,7 +35,7 @@ public void Minigame23_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -51,7 +51,7 @@ public void Minigame23_OnMinigameSelected(int client)
 
 public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

@@ -556,7 +556,7 @@ public void SpecialRound_OnPlayerClassChange(int client, int class)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

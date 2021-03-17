@@ -83,7 +83,7 @@ public void Minigame8_GetDynamicCaption(int client)
 
 public Action Command_Minigame8Say(int client, int args)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Continue;
 	}

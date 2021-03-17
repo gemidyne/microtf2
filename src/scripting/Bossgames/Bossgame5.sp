@@ -52,7 +52,7 @@ public void Bossgame5_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -96,7 +96,7 @@ public void Bossgame5_OnPlayerDeath(int victimId, int attacker)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -116,7 +116,7 @@ public void Bossgame5_OnBossStopAttempt()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -198,7 +198,7 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 
 public Action Bossgame5_SwitchTimer(Handle timer)
 {
-	if (BossgameID == 5 && IsMinigameActive && !g_bIsMinigameEnding) 
+	if (BossgameID == 5 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		Bossgame5_Step -= 0.5;
 

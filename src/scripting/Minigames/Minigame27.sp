@@ -29,7 +29,7 @@ public void Minigame27_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -58,7 +58,7 @@ public void Minigame27_OnMinigameSelected(int client)
 
 public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (IsMinigameActive && MinigameID == 27)
+	if (g_bIsMinigameActive && MinigameID == 27)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);

@@ -115,7 +115,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 		return Plugin_Stop;
 	}
 
-	if (IsMinigameActive && BossgameID > 0)
+	if (g_bIsMinigameActive && BossgameID > 0)
 	{
 		if (g_pfOnBossStopAttempt != INVALID_HANDLE)
 		{
@@ -131,7 +131,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 
 public void EndBoss()
 {
-	if (IsMinigameActive && BossgameID > 0 && MinigameID == 0)
+	if (g_bIsMinigameActive && BossgameID > 0 && MinigameID == 0)
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 

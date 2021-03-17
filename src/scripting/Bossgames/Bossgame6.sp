@@ -79,7 +79,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -125,7 +125,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 
 public void Bossgame6_OnMinigameFinish()
 {
-	if (BossgameID == 6 && IsMinigameActive) 
+	if (BossgameID == 6 && g_bIsMinigameActive) 
 	{
 		Bossgame6_SendDoorInput("Close");
 		Bossgame6_CleanupEntities();
@@ -151,7 +151,7 @@ public void Bossgame6_OnMinigameFinish()
 
 public Action Bossgame6_SwitchTimer(Handle timer)
 {
-	if (BossgameID == 6 && IsMinigameActive && !g_bIsMinigameEnding) 
+	if (BossgameID == 6 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
 		switch (Bossgame6_Timer)
 		{
@@ -370,7 +370,7 @@ public void Bossgame6_OnRenderHudFrame(int client)
         return;
     }
 
-    if (!IsMinigameActive)
+    if (!g_bIsMinigameActive)
     {
         return;
     }

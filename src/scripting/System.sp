@@ -110,7 +110,7 @@ public void System_OnMapStart()
 	g_iTotalRoundsPlayed = 0;
 	g_fActiveGameSpeed = 1.0;
 
-	IsMinigameActive = false;
+	g_bIsMinigameActive = false;
 	g_bIsMinigameEnding = false;
 	g_bIsMapEnding = false;
 	g_bIsGameOver = false;

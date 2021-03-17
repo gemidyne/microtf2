@@ -42,7 +42,7 @@ public void Minigame4_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -90,7 +90,7 @@ public void Minigame4_OnPlayerDeath(int client, int attacker)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -112,7 +112,7 @@ public void Minigame4_OnPlayerDeath(int client, int attacker)
 
 public void Minigame4_OnMinigameFinish()
 {
-	if (IsMinigameActive && MinigameID == 4)
+	if (g_bIsMinigameActive && MinigameID == 4)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

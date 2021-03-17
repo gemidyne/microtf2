@@ -39,7 +39,7 @@ public void Minigame17_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -89,7 +89,7 @@ public void Minigame17_GetDynamicCaption(int client)
 
 public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (IsMinigameActive && MinigameID == 17)
+	if (g_bIsMinigameActive && MinigameID == 17)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);

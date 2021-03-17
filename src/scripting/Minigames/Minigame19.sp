@@ -30,7 +30,7 @@ public void Minigame19_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -124,7 +124,7 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

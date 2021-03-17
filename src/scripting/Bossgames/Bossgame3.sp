@@ -68,7 +68,7 @@ public void Bossgame3_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -112,7 +112,7 @@ public void Bossgame3_OnPlayerDeath(int victimId, int attackerId)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -134,7 +134,7 @@ public void Bossgame3_OnMinigameFinish()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -157,7 +157,7 @@ public void Bossgame3_OnBossStopAttempt()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -187,7 +187,7 @@ public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -212,7 +212,7 @@ public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 public Action Bossgame3_BeginWarningSequence(Handle timer)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -237,7 +237,7 @@ public Action Bossgame3_BeginWarningSequence(Handle timer)
 
 public Action Bossgame3_BeginSwitchSequence(Handle timer)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -270,7 +270,7 @@ public Action Bossgame3_BeginSwitchSequence(Handle timer)
 
 public Action Bossgame3_BeginIntervalSequence(Handle timer)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}

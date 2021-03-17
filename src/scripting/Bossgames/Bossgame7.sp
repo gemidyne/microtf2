@@ -208,7 +208,7 @@ public void Bossgame7_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -246,7 +246,7 @@ public void Bossgame7_OnMinigameSelected(int client)
 
 public Action Bossgame7_SayCommand(int client, int args)
 {
-	if (IsMinigameActive && BossgameID == 7)
+	if (g_bIsMinigameActive && BossgameID == 7)
 	{
 		char text[192];
 		if (GetCmdArgString(text, sizeof(text)) < 1)
@@ -306,7 +306,7 @@ public Action Bossgame7_SayCommand(int client, int args)
 
 public void Bossgame7_OnMinigameFinish()
 {
-	if (BossgameID == 7 && IsMinigameActive) 
+	if (BossgameID == 7 && g_bIsMinigameActive) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -322,7 +322,7 @@ public void Bossgame7_OnMinigameFinish()
 
 public void Bossgame7_OnGameFrame()
 {
-	if (BossgameID == 7 && IsMinigameActive) 
+	if (BossgameID == 7 && g_bIsMinigameActive) 
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -343,7 +343,7 @@ public void Bossgame7_OnPlayerClassChange(int client, int class)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -368,7 +368,7 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -413,7 +413,7 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -465,7 +465,7 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -546,7 +546,7 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -603,7 +603,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -725,7 +725,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -786,7 +786,7 @@ public Action Bossgame7_DeferredDeath(Handle timer, any clientId)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -808,7 +808,7 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -840,7 +840,7 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -881,7 +881,7 @@ public Action Bossgame7_DoFinalReviewPost(Handle timer)
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}

@@ -46,7 +46,7 @@ public void Minigame6_GetDynamicCaption(int client)
 
 public Action Command_MinigameSixSay(int client, int args)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Continue;
 	}

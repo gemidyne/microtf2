@@ -55,7 +55,7 @@ public void Minigame15_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -126,7 +126,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

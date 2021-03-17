@@ -56,7 +56,7 @@ public void Minigame9_GetDynamicCaption(int client)
 
 public void Minigame9_OnGameFrame()
 {
-	if (IsMinigameActive && MinigameID == 9)
+	if (g_bIsMinigameActive && MinigameID == 9)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -138,7 +138,7 @@ public void Minigame9_OnGameFrame()
 
 public void Minigame9_OnMinigameFinishPre()
 {
-	if (IsMinigameActive && MinigameID == 9)
+	if (g_bIsMinigameActive && MinigameID == 9)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

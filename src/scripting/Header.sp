@@ -59,7 +59,7 @@ float g_fActiveGameSpeed = 1.0;
  */
 
 bool g_bIsPluginEnabled = false;
-bool IsMinigameActive = false;
+bool g_bIsMinigameActive = false;
 bool g_bIsMinigameEnding = false;
 bool g_bIsMapEnding = false;
 bool g_bIsGameOver = false;

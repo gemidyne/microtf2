@@ -30,7 +30,7 @@ public void Minigame12_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -70,7 +70,7 @@ public void Minigame12_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

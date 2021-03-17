@@ -62,7 +62,7 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 			Call_Finish();
 		}
 
-		if (IsMinigameActive && !player.IsParticipating && g_iSpecialRoundId != 17)
+		if (g_bIsMinigameActive && !player.IsParticipating && g_iSpecialRoundId != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
 			player.PrintChatText("%T", "System_PlayerSpawn_RespawnNotice", player.ClientId);
@@ -112,7 +112,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	int client = GetClientOfUserId(userid);
 	Player player = new Player(client);
 
-	if (player.IsValid && !IsMinigameActive && !g_bIsGameOver)
+	if (player.IsValid && !g_bIsMinigameActive && !g_bIsGameOver)
 	{
 		player.RemoveWearables();
 		player.ResetWeapon(false);
@@ -132,7 +132,7 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 	
 	if (IsClientInGame(client))
 	{
-		if (IsMinigameActive)
+		if (g_bIsMinigameActive)
 		{
 			if (g_bIsPlayerParticipant[client])
 			{

@@ -107,7 +107,7 @@ public void Minigame18_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -140,7 +140,7 @@ public void Minigame18_OnMinigameSelected(int client)
 
 public void Minigame18_OnMinigameFinish()
 {
-	if (MinigameID == 18 && IsMinigameActive)
+	if (MinigameID == 18 && g_bIsMinigameActive)
 	{
 		SDKUnhook(Minigame18_TargetEntIndex, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 

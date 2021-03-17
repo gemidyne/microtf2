@@ -32,7 +32,7 @@ public void Minigame29_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -69,7 +69,7 @@ public void Minigame29_OnTouch(int entity, int other)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -99,7 +99,7 @@ public void Minigame29_OnPlayerClassChange(int client, int class)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -123,7 +123,7 @@ public void Minigame29_OnMinigameFinish()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

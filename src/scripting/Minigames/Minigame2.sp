@@ -32,7 +32,7 @@ public void Minigame2_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -120,7 +120,7 @@ public void Minigame2_OnPlayerDeath(int victimId, int attackerId)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

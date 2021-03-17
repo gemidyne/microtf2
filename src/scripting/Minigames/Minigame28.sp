@@ -55,7 +55,7 @@ public void Minigame28_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -125,7 +125,7 @@ public Action Minigame28_OnTriggerTouched(int entity, int other)
 		return Plugin_Continue;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Continue;
 	}
@@ -147,7 +147,7 @@ public void Minigame28_OnMinigameFinish()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

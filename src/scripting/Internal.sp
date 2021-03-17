@@ -137,7 +137,7 @@ stock void ResetGamemode()
 	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	
-	IsMinigameActive = false;
+	g_bIsMinigameActive = false;
 	g_bIsGameOver = false;
 
 	g_eDamageBlockMode = EDamageBlockMode_All;

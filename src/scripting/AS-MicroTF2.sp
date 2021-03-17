@@ -165,7 +165,7 @@ public Action Timer_GameLogic_EngineInitialisation(Handle timer)
 	g_iTotalRoundsPlayed = 0;
 	g_fActiveGameSpeed = 1.0;
 
-	IsMinigameActive = false;
+	g_bIsMinigameActive = false;
 	g_bIsMinigameEnding = false;
 	g_bIsMapEnding = false;
 	g_bIsGameOver = false;
@@ -378,7 +378,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	SetSpeed();
 
 	g_iCenterHudUpdateFrame = 999;
-	IsMinigameActive = true;
+	g_bIsMinigameActive = true;
 
 	#if defined DEBUG
 	PrintToChatAll("[DEBUG] Preparing clients..");
@@ -552,7 +552,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 	}
 
-	IsMinigameActive = false;
+	g_bIsMinigameActive = false;
 	g_bIsMinigameEnding = false;
 	g_iMinigamesPlayedCount++;
 	MinigameID = 0;
@@ -1219,7 +1219,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 
 	g_iTotalRoundsPlayed++;
 	
-	IsMinigameActive = false;
+	g_bIsMinigameActive = false;
 	g_bIsGameOver = false;
 
 	PlayedMinigamePool.Clear();

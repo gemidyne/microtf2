@@ -28,7 +28,7 @@ public void Minigame1_OnSelection(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -70,7 +70,7 @@ public void Minigame1_OnGameFrame()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -99,7 +99,7 @@ public void Minigame1_OnFinish()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

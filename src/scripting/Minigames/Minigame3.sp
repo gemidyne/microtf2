@@ -63,7 +63,7 @@ public void Minigame3_OnSelection(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -84,7 +84,7 @@ public void Minigame3_OnPropBroken(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

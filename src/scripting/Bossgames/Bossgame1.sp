@@ -32,7 +32,7 @@ public void Bossgame1_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -78,7 +78,7 @@ public void Bossgame1_OnGameFrame()
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -120,7 +120,7 @@ public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -135,7 +135,7 @@ public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 
 public void Bossgame1_BossCheck()
 {
-	if (IsMinigameActive && BossgameID == 1)
+	if (g_bIsMinigameActive && BossgameID == 1)
 	{
 		int alivePlayers = 0;
 		int successfulPlayers = 0;

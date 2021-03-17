@@ -135,7 +135,7 @@ public void Minigame26_OnMinigameSelected(int client)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -162,7 +162,7 @@ public void Minigame26_OnPlayerConditionAdded(int client, int conditionId)
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -194,7 +194,7 @@ public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
