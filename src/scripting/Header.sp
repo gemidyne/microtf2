@@ -43,7 +43,6 @@ int RoundsPlayed = 0;
 int g_iPlayerScore[MAXPLAYERS+1] = 0;
 int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
 int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
-int PlayerIndex[MAXPLAYERS+1] = 0;
 int g_iActiveParticipantCount = 0;
 int g_iActiveRedParticipantCount = 0;
 int g_iActiveBlueParticipantCount = 0;

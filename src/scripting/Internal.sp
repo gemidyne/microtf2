@@ -121,21 +121,6 @@ stock int GetActivePlayers(int team = 0, bool mustbealive = false)
     return output;
 }
 
-stock void UpdatePlayerIndexes(bool mustbealive = false)
-{
-	int id = 0;
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsValid && (!mustbealive || player.IsAlive))
-		{
-			id += 1;
-			PlayerIndex[i] = id;
-		}
-	}
-}
-
 stock void ResetGamemode()
 {
 	g_eGamemodeStatus = GameStatus_WaitingForPlayers;

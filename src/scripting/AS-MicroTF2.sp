@@ -375,8 +375,6 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		SpeedLevel = 0.7;
 	}
 
-	UpdatePlayerIndexes();
-
 	SetSpeed();
 
 	g_iCenterHudUpdateFrame = 999;
