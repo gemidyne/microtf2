@@ -218,12 +218,12 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 		DoSelectMinigame();
 	}
 
-	int count = SystemMusicCount[GamemodeID][SYSMUSIC_PREMINIGAME];
+	int count = SystemMusicCount[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME];
 	int selectedBgmIdx = GetRandomInt(0, count-1);
 
-	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx];
+	float duration = SystemMusicLength[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx];
 
-	if (GamemodeID == SPR_GAMEMODEID && g_iSpecialRoundId == 20)
+	if (g_iActiveGamemodeId == SPR_GAMEMODEID && g_iSpecialRoundId == 20)
 	{
 		duration = 0.05;
 	}
@@ -314,7 +314,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				player.DisplayOverlay(OVERLAY_BLANK);
 				player.SetCaption("");
 
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+				PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && g_iSpecialRoundId != 12 && g_iSpecialRoundId != 17)
 				{
@@ -339,7 +339,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.DisplayOverlay(OVERLAY_BLANK);
 			player.SetCaption("");
 			
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+			PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 		}
 	}
 
@@ -583,7 +583,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
+				PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
 				PlayNegativeVoice(i);
 
 				bool showFailure = ((g_iSpecialRoundId == 17 && player.IsParticipating) || g_iSpecialRoundId != 17);
@@ -676,7 +676,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PluginForward_SendPlayerWinMinigame(player.ClientId, g_iLastPlayedMinigameId);
 				}
 
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_WINNER][0]);
+				PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
 				PlayPositiveVoice(i);
 
 				if (player.IsUsingLegacyDirectX)
@@ -728,7 +728,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_FAILURE][0]); 
+			PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
 			PlayNegativeVoice(i);
 
 			player.DisplayOverlay(OVERLAY_BLANK);
@@ -837,10 +837,10 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	}
 	else
 	{
-		int count = SystemMusicCount[GamemodeID][SYSMUSIC_SPEEDUP];
+		int count = SystemMusicCount[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP];
 		int selectedBgmIdx = GetRandomInt(0, count-1);
 
-		float duration = SystemMusicLength[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx];
+		float duration = SystemMusicLength[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx];
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -866,7 +866,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
 				}
 
-				PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
+				PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
 
@@ -881,10 +881,10 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 	g_fActiveGameSpeed = 1.0;
 	SetSpeed();
 
-	int count = SystemMusicCount[GamemodeID][SYSMUSIC_BOSSTIME];
+	int count = SystemMusicCount[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME];
 	int selectedBgmIdx = GetRandomInt(0, count-1);
 
-	float duration = SystemMusicLength[GamemodeID][SYSMUSIC_BOSSTIME][selectedBgmIdx];
+	float duration = SystemMusicLength[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx];
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -909,7 +909,7 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 				player.DisplayOverlay(OVERLAY_BOSS);
 			}
 
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
+			PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
 		}
 	}
 
@@ -961,10 +961,10 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 			: TFTeam_Blue;
 	}
 
-	int selectedBgmCount = SystemMusicCount[GamemodeID][SYSMUSIC_GAMEOVER];
+	int selectedBgmCount = SystemMusicCount[g_iActiveGamemodeId][SYSMUSIC_GAMEOVER];
 	int selectedBgmIdx = GetRandomInt(0, selectedBgmCount-1);
 
-	float bgmDuration = SystemMusicLength[GamemodeID][SYSMUSIC_GAMEOVER][selectedBgmIdx];
+	float bgmDuration = SystemMusicLength[g_iActiveGamemodeId][SYSMUSIC_GAMEOVER][selectedBgmIdx];
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -972,7 +972,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 
 		if (player.IsValid)
 		{
-			if (GamemodeID == SPR_GAMEMODEID)
+			if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 			{
 				player.PrintCenterTextLocalised("GameOver_SpecialRoundHasFinished");
 			}
@@ -989,7 +989,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				player.DisplayOverlay(OVERLAY_GAMEOVER);
 			}
 
-			PlaySoundToPlayer(i, SystemMusic[GamemodeID][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
+			PlaySoundToPlayer(i, SystemMusic[g_iActiveGamemodeId][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
 
 			SetEntityRenderColor(i, 255, 255, 255, 255);
 			SetEntityRenderMode(i, RENDER_NORMAL);
@@ -1253,15 +1253,15 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 		if (GetRandomInt(0, 2) == 1 || g_bForceSpecialRound)
 		{
 			// Special Round
-			GamemodeID = SPR_GAMEMODEID;
+			g_iActiveGamemodeId = SPR_GAMEMODEID;
 		}
 		else
 		{
 			// Back to normal - use themes.
-			GamemodeID = GetRandomInt(0, MaxGamemodesSelectable - 1);
+			g_iActiveGamemodeId = GetRandomInt(0, g_iLoadedGamemodeCount - 1);
 		}
 
-		PluginForward_SendGamemodeChanged(GamemodeID);
+		PluginForward_SendGamemodeChanged(g_iActiveGamemodeId);
 		g_bHideHudGamemodeText = true;
 
 		float waitTime;
@@ -1330,7 +1330,7 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 
 	ClearMinigameCaptionForAll();
 
-	if (GamemodeID == SPR_GAMEMODEID)
+	if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 	{
 		CreateTimer(0.0, Timer_GameLogic_SpecialRoundSelectionStart, _, TIMER_FLAG_NO_MAPCHANGE);
 	}

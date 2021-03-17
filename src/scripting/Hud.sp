@@ -182,7 +182,7 @@ public void DisplaySpecialHud(Player player, char buffer[128])
 
     char themeSpecialText[32];
 
-    if (GamemodeID == SPR_GAMEMODEID)
+    if (g_iActiveGamemodeId == SPR_GAMEMODEID)
     {
         char key[32];
         
@@ -191,7 +191,7 @@ public void DisplaySpecialHud(Player player, char buffer[128])
     }
     else
     {
-        Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", player.ClientId, SystemNames[GamemodeID]);
+        Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", player.ClientId, SystemNames[g_iActiveGamemodeId]);
     }
 
     if (g_iSpecialRoundId == 19)

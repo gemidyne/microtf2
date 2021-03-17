@@ -34,9 +34,8 @@ char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSI
 int SystemMusicCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
 float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
 
-int GamemodeID = 0;
-int MaxGamemodesSelectable = 0;
-
+int g_iActiveGamemodeId = 0;
+int g_iLoadedGamemodeCount = 0;
 
 stock void InitializeSystem()
 {
@@ -184,7 +183,7 @@ public void LoadGamemodeInfo()
 			if (kv.GetNum("Selectable", 0) == 1)
 			{
 				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
-				MaxGamemodesSelectable++;
+				g_iLoadedGamemodeCount++;
 			}
 
 			// Get sections

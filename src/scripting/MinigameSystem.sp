@@ -329,7 +329,7 @@ public void DoSelectMinigame()
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[g_iActiveMinigameId][g_iSpecialRoundId])
+				if (g_iActiveGamemodeId == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[g_iActiveMinigameId][g_iSpecialRoundId])
 				{
 					// If minigame is blocked on this special round, re-roll
 					#if defined DEBUG
@@ -421,7 +421,7 @@ public void DoSelectBossgame()
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
 
-				if (GamemodeID == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[g_iActiveBossgameId][g_iSpecialRoundId])
+				if (g_iActiveGamemodeId == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[g_iActiveBossgameId][g_iSpecialRoundId])
 				{
 					// If bossgame is blocked on this special round, re-roll
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;

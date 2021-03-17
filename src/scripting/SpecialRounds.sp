@@ -101,7 +101,7 @@ public void SpecialRound_OnGameFrame()
 			SpecialRound_PrintRandomNameWhenChoosing();
 		}
 
-		if (GamemodeID == SPR_GAMEMODEID)
+		if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 		{
 			for (int i = 1; i <= MaxClients; i++)
 			{
@@ -320,7 +320,7 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 			player.HeadScale = 1.0;
 		}
 
-		if (GamemodeID == SPR_GAMEMODEID)
+		if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 		{
 			player.SetThirdPersonMode(g_iSpecialRoundId == 0);
 
@@ -621,7 +621,7 @@ public Action Command_ChangeSpecialRound(int client, int args)
 
 	if (id >= SPR_MIN && id <= SPR_MAX)
 	{
-		GamemodeID = SPR_GAMEMODEID;
+		g_iActiveGamemodeId = SPR_GAMEMODEID;
 		g_iSpecialRoundId = id;
 
 		return Plugin_Handled;
