@@ -12,7 +12,7 @@ char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
-bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
@@ -196,7 +196,7 @@ public void LoadMinigameData()
 				}
 			}
 
-			MinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
+			g_bMinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
 			g_fMinigameBlockedOnSpeedsGreaterThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 			g_iMinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
 		}
@@ -338,7 +338,7 @@ public void DoSelectMinigame()
 
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameRequiresMultiplePlayers[g_iActiveMinigameId] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
+				else if (g_bMinigameRequiresMultiplePlayers[g_iActiveMinigameId] && (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)) 
 				{
 					// Minigame requires players on both teams
 					#if defined DEBUG
