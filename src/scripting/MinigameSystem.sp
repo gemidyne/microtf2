@@ -21,7 +21,7 @@ char BossgameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
-bool BossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 
 char g_sMinigameBgm[MAXIMUM_MINIGAMES][128];
@@ -273,7 +273,7 @@ public void LoadBossgameData()
 				}
 			}
 
-			BossgameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
+			g_bBossgameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
 			g_fBossgameBlockedOnSpeedsGreaterThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 		}
 		while (kv.GotoNextKey());
@@ -426,7 +426,7 @@ public void DoSelectBossgame()
 					// If bossgame is blocked on this special round, re-roll
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
-				else if (BossgameRequiresMultiplePlayers[g_iActiveBossgameId])
+				else if (g_bBossgameRequiresMultiplePlayers[g_iActiveBossgameId])
 				{
 					if (g_iActiveRedParticipantCount == 0 || g_iActiveBlueParticipantCount == 0)
 					{
