@@ -11,7 +11,7 @@ bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
 char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
-bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
+bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
@@ -192,7 +192,7 @@ public void LoadMinigameData()
 				{
 					int id = StringToInt(specialRoundIds[j]);
 
-					MinigameBlockedSpecialRounds[i][id] = true;
+					g_bMinigameBlockedSpecialRound[i][id] = true;
 				}
 			}
 
@@ -329,7 +329,7 @@ public void DoSelectMinigame()
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
 
-				if (g_iActiveGamemodeId == SPR_GAMEMODEID && MinigameBlockedSpecialRounds[g_iActiveMinigameId][g_iSpecialRoundId])
+				if (g_iActiveGamemodeId == SPR_GAMEMODEID && g_bMinigameBlockedSpecialRound[g_iActiveMinigameId][g_iSpecialRoundId])
 				{
 					// If minigame is blocked on this special round, re-roll
 					#if defined DEBUG
