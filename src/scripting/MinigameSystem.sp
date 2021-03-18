@@ -20,7 +20,7 @@ bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
 char BossgameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
-bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
+bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 
@@ -269,7 +269,7 @@ public void LoadBossgameData()
 				{
 					int id = StringToInt(specialRoundIds[j]);
 
-					BossgameBlockedSpecialRounds[i][id] = true;
+					g_bBossgameBlockedSpecialRound[i][id] = true;
 				}
 			}
 
@@ -421,7 +421,7 @@ public void DoSelectBossgame()
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
 
-				if (g_iActiveGamemodeId == SPR_GAMEMODEID && BossgameBlockedSpecialRounds[g_iActiveBossgameId][g_iSpecialRoundId])
+				if (g_iActiveGamemodeId == SPR_GAMEMODEID && g_bBossgameBlockedSpecialRound[g_iActiveBossgameId][g_iSpecialRoundId])
 				{
 					// If bossgame is blocked on this special round, re-roll
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
