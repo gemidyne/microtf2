@@ -25,7 +25,7 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameMusicLength[this.Id];
+            return g_fMinigameBgmLength[this.Id];
         }
     }
 

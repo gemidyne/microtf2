@@ -25,7 +25,7 @@ bool BossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float BossgameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 
 char g_sMinigameBgm[MAXIMUM_MINIGAMES][128];
-float MinigameMusicLength[MAXIMUM_MINIGAMES];
+float g_fMinigameBgmLength[MAXIMUM_MINIGAMES];
 
 char g_sBossgameBgm[MAXIMUM_MINIGAMES][128];
 float g_fBossgameBgmLength[MAXIMUM_MINIGAMES];
@@ -169,7 +169,7 @@ public void LoadMinigameData()
 			}
 
 			kv.GetString("BackgroundMusic", g_sMinigameBgm[i], 128);
-			MinigameMusicLength[i] = kv.GetFloat("BackgroundMusic_Length");
+			g_fMinigameBgmLength[i] = kv.GetFloat("BackgroundMusic_Length");
 
 			kv.GetString("Caption", MinigameCaptions[i], 64);
 
