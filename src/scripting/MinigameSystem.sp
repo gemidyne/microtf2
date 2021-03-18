@@ -14,7 +14,7 @@ bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
-int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
+int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
 char g_sBossgameCaption[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
@@ -198,7 +198,7 @@ public void LoadMinigameData()
 
 			MinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
 			MinigameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
-			MinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
+			g_iMinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
 		}
 		while (kv.GotoNextKey());
 	}
@@ -356,7 +356,7 @@ public void DoSelectMinigame()
 
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameMaximumParticipantCount[g_iActiveMinigameId] > 0 && g_iActiveParticipantCount > MinigameMaximumParticipantCount[g_iActiveMinigameId])
+				else if (g_iMinigameMaximumParticipantCount[g_iActiveMinigameId] > 0 && g_iActiveParticipantCount > g_iMinigameMaximumParticipantCount[g_iActiveMinigameId])
 				{
 					// Current participant count exceeds maximum participant count specified for minigame
 					#if defined DEBUG
