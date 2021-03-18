@@ -16,7 +16,7 @@ bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
-bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
+bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
 char g_sBossgameCaption[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char g_sBossgameDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bBossgameHasDynamicCaption[MAXIMUM_MINIGAMES];
@@ -227,7 +227,7 @@ public void LoadBossgameData()
 		{
 			int i = GetIdFromSectionName(kv);
 
-			BossgameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
+			g_bBossgameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
 			g_iBossgamesLoadedCount++;
 
 			// Get EntryPoint first of all!
@@ -241,7 +241,7 @@ public void LoadBossgameData()
 			}
 			else
 			{
-				BossgameIsEnabled[i] = false;
+				g_bBossgameIsEnabled[i] = false;
 				LogError("Unable to find EntryPoint for Bossgame #%i with name: \"%s\". This bossgame will not be run.", i, funcName);
 				continue;
 			}
@@ -416,7 +416,7 @@ public void DoSelectBossgame()
 			}
 			else
 			{
-				if (!BossgameIsEnabled[g_iActiveBossgameId])
+				if (!g_bBossgameIsEnabled[g_iActiveBossgameId])
 				{
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
