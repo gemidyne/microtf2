@@ -17,7 +17,7 @@ float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
-char BossgameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
+char g_sBossgameCaption[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char g_sBossgameDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bBossgameHasDynamicCaption[MAXIMUM_MINIGAMES];
 bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
@@ -247,7 +247,7 @@ public void LoadBossgameData()
 			}
 
 			kv.GetString("BackgroundMusic", g_sBossgameBgm[i], 128);
-			kv.GetString("Caption", BossgameCaptions[i], 64);
+			kv.GetString("Caption", g_sBossgameCaption[i], 64);
 
 			g_fBossgameBgmLength[i] = kv.GetFloat("Duration", 30.0);
 			g_bBossgameHasDynamicCaption[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
