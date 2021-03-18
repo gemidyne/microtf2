@@ -30,7 +30,7 @@ float MinigameMusicLength[MAXIMUM_MINIGAMES];
 char BossgameMusic[MAXIMUM_MINIGAMES][128];
 float BossgameLength[MAXIMUM_MINIGAMES];
 
-ArrayList PlayedMinigamePool;
+ArrayList g_hPlayedMinigamePool;
 ArrayList PlayedBossgamePool;
 
 #include "MinigameStocks.sp"
@@ -92,7 +92,7 @@ public void InitializeMinigames()
 
 public void MinigameSystem_OnMapStart()
 {
-	PlayedMinigamePool = new ArrayList();
+	g_hPlayedMinigamePool = new ArrayList();
 	PlayedBossgamePool = new ArrayList();
 
 	for (int i = 1; i <= g_iMinigamesLoadedCount; i++)
@@ -118,7 +118,7 @@ public void MinigameSystem_OnMapStart()
 
 public void MinigameSystem_OnMapEnd()
 {
-	PlayedMinigamePool.Close();
+	g_hPlayedMinigamePool.Close();
 	PlayedBossgamePool.Close();
 }
 
@@ -311,7 +311,7 @@ public void DoSelectMinigame()
 				g_iLastPlayedMinigameId = 0;
 			}
 
-			bool recentlyPlayed = PlayedMinigamePool.FindValue(g_iActiveMinigameId) >= 0;
+			bool recentlyPlayed = g_hPlayedMinigamePool.FindValue(g_iActiveMinigameId) >= 0;
 
 			if (recentlyPlayed)
 			{
@@ -319,7 +319,7 @@ public void DoSelectMinigame()
 
 				if (rollCount >= g_iMinigamesLoadedCount)
 				{
-					PlayedMinigamePool.Clear();
+					g_hPlayedMinigamePool.Clear();
 				}
 			}
 			else
@@ -369,10 +369,10 @@ public void DoSelectMinigame()
 		}
 		while (g_iActiveMinigameId == g_iLastPlayedMinigameId);
 
-		PlayedMinigamePool.Push(g_iActiveMinigameId);
+		g_hPlayedMinigamePool.Push(g_iActiveMinigameId);
 
 		#if defined DEBUG
-		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", g_iActiveMinigameId, PlayedMinigamePool.Length);
+		PrintToChatAll("[MINIGAMESYS] Chose minigame %i, minigame pool count: %i", g_iActiveMinigameId, g_hPlayedMinigamePool.Length);
 		#endif
 	}
 
