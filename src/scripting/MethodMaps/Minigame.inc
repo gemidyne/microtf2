@@ -31,7 +31,7 @@ methodmap Minigame __nullable__
 
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameDynamicCaptionFunctions[this.Id]);
+        strcopy(buffer, size, g_sDynamicCaptionFunctionName[this.Id]);
     }
 
     public void GetBgmPath(char[] buffer, int size)
