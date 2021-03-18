@@ -28,7 +28,7 @@ char MinigameMusic[MAXIMUM_MINIGAMES][128];
 float MinigameMusicLength[MAXIMUM_MINIGAMES];
 
 char g_sBossgameBgm[MAXIMUM_MINIGAMES][128];
-float BossgameLength[MAXIMUM_MINIGAMES];
+float g_fBossgameBgmLength[MAXIMUM_MINIGAMES];
 
 ArrayList g_hPlayedMinigamePool;
 ArrayList g_hPlayedBossgamePool;
@@ -249,7 +249,7 @@ public void LoadBossgameData()
 			kv.GetString("BackgroundMusic", g_sBossgameBgm[i], 128);
 			kv.GetString("Caption", BossgameCaptions[i], 64);
 
-			BossgameLength[i] = kv.GetFloat("Duration", 30.0);
+			g_fBossgameBgmLength[i] = kv.GetFloat("Duration", 30.0);
 			BossgameCaptionIsDynamic[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
 
 			if (BossgameCaptionIsDynamic[i])

@@ -25,7 +25,7 @@ methodmap Bossgame __nullable__
     {
         public get()
         {
-            return BossgameLength[this.Id];
+            return g_fBossgameBgmLength[this.Id];
         }
     }
 
