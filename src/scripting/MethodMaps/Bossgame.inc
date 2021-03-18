@@ -17,7 +17,7 @@ methodmap Bossgame __nullable__
     {
         public get()
         {
-            return BossgameCaptionIsDynamic[this.Id];
+            return g_bBossgameHasDynamicCaption[this.Id];
         }
     }
 
