@@ -13,7 +13,7 @@ char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool MinigameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool MinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
-float MinigameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
+float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
@@ -197,7 +197,7 @@ public void LoadMinigameData()
 			}
 
 			MinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
-			MinigameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
+			g_fMinigameBlockedOnSpeedsGreaterThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 			g_iMinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
 		}
 		while (kv.GotoNextKey());
@@ -347,7 +347,7 @@ public void DoSelectMinigame()
 
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
-				else if (MinigameBlockedSpeedsHigherThan[g_iActiveMinigameId] > 0.0 && g_fActiveGameSpeed > MinigameBlockedSpeedsHigherThan[g_iActiveMinigameId])
+				else if (g_fMinigameBlockedOnSpeedsGreaterThan[g_iActiveMinigameId] > 0.0 && g_fActiveGameSpeed > g_fMinigameBlockedOnSpeedsGreaterThan[g_iActiveMinigameId])
 				{
 					// Minigame cannot run on speeds higher than specified
 					#if defined DEBUG
