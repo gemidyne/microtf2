@@ -7,7 +7,7 @@
 int g_iMinigamesLoadedCount = 0;
 int g_iBossgamesLoadedCount = 0;
 
-bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
+bool g_bMinigameIsEnabled[MAXIMUM_MINIGAMES];
 char g_sMinigameCaption[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char g_sDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bMinigameHasDynamicCaption[MAXIMUM_MINIGAMES];
@@ -151,7 +151,7 @@ public void LoadMinigameData()
 
 			g_iMinigamesLoadedCount++;
 
-			MinigameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
+			g_bMinigameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
 
 			kv.GetString("EntryPoint", funcName, sizeof(funcName));
 
@@ -163,7 +163,7 @@ public void LoadMinigameData()
 			}
 			else
 			{
-				MinigameIsEnabled[i] = false;
+				g_bMinigameIsEnabled[i] = false;
 				LogError("Unable to find EntryPoint for Minigame #%i with name: \"%s\". This minigame will not be run.", i, funcName);
 				continue;
 			}
@@ -324,7 +324,7 @@ public void DoSelectMinigame()
 			}
 			else
 			{
-				if (!MinigameIsEnabled[g_iActiveMinigameId])
+				if (!g_bMinigameIsEnabled[g_iActiveMinigameId])
 				{
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;
 				}
