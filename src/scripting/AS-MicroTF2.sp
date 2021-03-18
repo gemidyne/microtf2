@@ -492,9 +492,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					player.SetCaption(text);
 				}
 
-				if (strlen(MinigameMusic[g_iActiveMinigameId]) > 0)
+				if (strlen(g_sMinigameBgm[g_iActiveMinigameId]) > 0)
 				{
-					PlaySoundToPlayer(i, MinigameMusic[g_iActiveMinigameId]);
+					PlaySoundToPlayer(i, g_sMinigameBgm[g_iActiveMinigameId]);
 					PlaySoundToPlayer(i, SYSFX_CLOCK);
 				}
 			}

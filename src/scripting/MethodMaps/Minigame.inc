@@ -36,6 +36,6 @@ methodmap Minigame __nullable__
 
     public void GetBgmPath(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameMusic[this.Id]);
+        strcopy(buffer, size, g_sMinigameBgm[this.Id]);
     }
 }
