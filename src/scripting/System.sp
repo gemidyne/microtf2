@@ -37,54 +37,6 @@ float g_fGamemodeThemeBgmLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MA
 int g_iActiveGamemodeId = 0;
 int g_iLoadedGamemodeCount = 0;
 
-stock void InitializeSystem()
-{
-	char gameFolder[32];
-	GetGameFolderName(gameFolder, sizeof(gameFolder));
-
-	if (!StrEqual(gameFolder, "tf"))
-	{
-		SetFailState("WarioWare can only be run on Team Fortress 2.");
-	}
-
-	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
-	{
-		SetFailState("The SDKHooks Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("tf2items.ext") < 1)
-	{
-		SetFailState("The TF2Items Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("steamtools.ext") < 1)
-	{
-		SetFailState("The SteamTools Extension is not loaded.");
-	}
-
-	LoadTranslations("microtf2.phrases.txt");
-
-	#if defined LOGGING_STARTUP
-	LogMessage("Initializing System...");
-	#endif
-	
-	HookEvents();
-	InitializeForwards();
-	InitializePluginForwards();
-	InitialiseHud();
-	LoadOffsets();
-	InitializeConVars();
-	InitializeCommands();
-	InitializeSpecialRounds();
-	InitialiseSounds();
-	LoadGamemodeInfo();
-	InitialiseVoices();
-
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, System_OnMapStart);
-	InitializeMinigames();
-	InitialiseWeapons();
-}
-
 public void System_OnMapStart()
 {
 	if (FileExists("bin/server.dll") && FindConVar("sm_timescale_win_fix__version") == INVALID_HANDLE)

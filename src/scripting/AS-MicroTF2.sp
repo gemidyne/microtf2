@@ -75,7 +75,46 @@ public Plugin myinfo =
 
 public void OnPluginStart()
 {
-	InitializeSystem();
+	char gameFolder[32];
+	GetGameFolderName(gameFolder, sizeof(gameFolder));
+
+	if (!StrEqual(gameFolder, "tf"))
+	{
+		SetFailState("This plugin can only be run on Team Fortress 2.");
+	}
+
+	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
+	{
+		SetFailState("The SDKHooks Extension is not loaded.");
+	}
+
+	if (GetExtensionFileStatus("tf2items.ext") < 1)
+	{
+		SetFailState("The TF2Items Extension is not loaded.");
+	}
+
+	if (GetExtensionFileStatus("steamtools.ext") < 1)
+	{
+		SetFailState("The SteamTools Extension is not loaded.");
+	}
+
+	LoadTranslations("microtf2.phrases.txt");
+
+	HookEvents();
+	InitializeForwards();
+	InitializePluginForwards();
+	InitialiseHud();
+	LoadOffsets();
+	InitializeConVars();
+	InitializeCommands();
+	InitializeSpecialRounds();
+	InitialiseSounds();
+	LoadGamemodeInfo();
+	InitialiseVoices();
+
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, System_OnMapStart);
+	InitializeMinigames();
+	InitialiseWeapons();
 }
 
 public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max)
