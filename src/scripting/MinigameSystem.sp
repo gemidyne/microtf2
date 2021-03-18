@@ -5,7 +5,7 @@
  */
 
 int g_iMinigamesLoadedCount = 0;
-int BossgamesLoaded = 0;
+int g_iBossgamesLoadedCount = 0;
 
 bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
 char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
@@ -84,7 +84,7 @@ public void InitializeMinigames()
 	LoadMinigameData();
 	LoadBossgameData();
 
-	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", g_iMinigamesLoadedCount, BossgamesLoaded);
+	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", g_iMinigamesLoadedCount, g_iBossgamesLoadedCount);
 
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
 	AddToForward(g_pfOnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
@@ -105,7 +105,7 @@ public void MinigameSystem_OnMapStart()
 		PreloadSound(MinigameMusic[i]);
 	}
 
-	for (int i = 1; i <= BossgamesLoaded; i++)
+	for (int i = 1; i <= g_iBossgamesLoadedCount; i++)
 	{
 		if (strlen(BossgameMusic[i]) == 0)
 		{
@@ -228,7 +228,7 @@ public void LoadBossgameData()
 			int i = GetIdFromSectionName(kv);
 
 			BossgameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
-			BossgamesLoaded++;
+			g_iBossgamesLoadedCount++;
 
 			// Get EntryPoint first of all!
 			kv.GetString("EntryPoint", funcName, sizeof(funcName));
@@ -395,10 +395,10 @@ public void DoSelectBossgame()
 	{
 		do
 		{
-			g_iActiveBossgameId = GetRandomInt(1, BossgamesLoaded);
+			g_iActiveBossgameId = GetRandomInt(1, g_iBossgamesLoadedCount);
 			rollCount++;
 
-			if (BossgamesLoaded == 1)
+			if (g_iBossgamesLoadedCount == 1)
 			{
 				g_iLastPlayedBossgameId = 0;
 			}
