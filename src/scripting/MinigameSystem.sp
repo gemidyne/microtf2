@@ -8,7 +8,7 @@ int g_iMinigamesLoadedCount = 0;
 int g_iBossgamesLoadedCount = 0;
 
 bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
-char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
+char g_sMinigameCaption[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char g_sDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bMinigameHasDynamicCaption[MAXIMUM_MINIGAMES];
 bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
@@ -171,7 +171,7 @@ public void LoadMinigameData()
 			kv.GetString("BackgroundMusic", g_sMinigameBgm[i], 128);
 			g_fMinigameBgmLength[i] = kv.GetFloat("BackgroundMusic_Length");
 
-			kv.GetString("Caption", MinigameCaptions[i], 64);
+			kv.GetString("Caption", g_sMinigameCaption[i], 64);
 
 			g_bMinigameHasDynamicCaption[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
 
