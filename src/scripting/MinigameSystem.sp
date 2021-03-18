@@ -31,7 +31,7 @@ char BossgameMusic[MAXIMUM_MINIGAMES][128];
 float BossgameLength[MAXIMUM_MINIGAMES];
 
 ArrayList g_hPlayedMinigamePool;
-ArrayList PlayedBossgamePool;
+ArrayList g_hPlayedBossgamePool;
 
 #include "MinigameStocks.sp"
 
@@ -93,7 +93,7 @@ public void InitializeMinigames()
 public void MinigameSystem_OnMapStart()
 {
 	g_hPlayedMinigamePool = new ArrayList();
-	PlayedBossgamePool = new ArrayList();
+	g_hPlayedBossgamePool = new ArrayList();
 
 	for (int i = 1; i <= g_iMinigamesLoadedCount; i++)
 	{
@@ -119,7 +119,7 @@ public void MinigameSystem_OnMapStart()
 public void MinigameSystem_OnMapEnd()
 {
 	g_hPlayedMinigamePool.Close();
-	PlayedBossgamePool.Close();
+	g_hPlayedBossgamePool.Close();
 }
 
 public void LoadMinigameData()
@@ -403,7 +403,7 @@ public void DoSelectBossgame()
 				g_iLastPlayedBossgameId = 0;
 			}
 
-			bool recentlyPlayed = PlayedBossgamePool.FindValue(g_iActiveBossgameId) >= 0;
+			bool recentlyPlayed = g_hPlayedBossgamePool.FindValue(g_iActiveBossgameId) >= 0;
 
 			if (recentlyPlayed)
 			{
@@ -411,7 +411,7 @@ public void DoSelectBossgame()
 
 				if (rollCount > 32)
 				{
-					PlayedBossgamePool.Clear();
+					g_hPlayedBossgamePool.Clear();
 				}
 			}
 			else
@@ -442,11 +442,11 @@ public void DoSelectBossgame()
 		}
 		while (g_iActiveBossgameId == g_iLastPlayedBossgameId);
 
-		PlayedBossgamePool.Push(g_iActiveBossgameId);
+		g_hPlayedBossgamePool.Push(g_iActiveBossgameId);
 	}
 
 	#if defined DEBUG
-	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", g_iActiveBossgameId, PlayedBossgamePool.Length);
+	PrintToChatAll("[MINIGAMESYS] Chose bossgame %i, bossgame pool count: %i", g_iActiveBossgameId, g_hPlayedBossgamePool.Length);
 	#endif
 
 	PluginForward_SendBossgameSelected(g_iActiveBossgameId);

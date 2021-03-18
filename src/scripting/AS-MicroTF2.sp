@@ -1262,7 +1262,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	g_bIsGameOver = false;
 
 	g_hPlayedMinigamePool.Clear();
-	PlayedBossgamePool.Clear();
+	g_hPlayedBossgamePool.Clear();
 
 	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
