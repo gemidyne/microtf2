@@ -31,7 +31,7 @@ methodmap Bossgame __nullable__
 
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
-        strcopy(buffer, size, BossgameDynamicCaptionFunctions[this.Id]);
+        strcopy(buffer, size, g_sBossgameDynamicCaptionFunctionName[this.Id]);
     }
 
     public void GetBgmPath(char[] buffer, int size)

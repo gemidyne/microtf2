@@ -18,7 +18,7 @@ int MinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool BossgameIsEnabled[MAXIMUM_MINIGAMES];
 char BossgameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
-char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
+char g_sBossgameDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bBossgameHasDynamicCaption[MAXIMUM_MINIGAMES];
 bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
@@ -254,7 +254,7 @@ public void LoadBossgameData()
 
 			if (g_bBossgameHasDynamicCaption[i])
 			{
-				kv.GetString("DynamicCaptionMethod", BossgameDynamicCaptionFunctions[i], 64);
+				kv.GetString("DynamicCaptionMethod", g_sBossgameDynamicCaptionFunctionName[i], 64);
 			}
 
 			char blockedSpecialRounds[64];
