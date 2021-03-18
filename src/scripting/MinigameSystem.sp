@@ -22,7 +22,7 @@ char BossgameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
 bool BossgameCaptionIsDynamic[MAXIMUM_MINIGAMES];
 bool BossgameBlockedSpecialRounds[MAXIMUM_MINIGAMES][SPR_MAX];
 bool BossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
-float BossgameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
+float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 
 char g_sMinigameBgm[MAXIMUM_MINIGAMES][128];
 float g_fMinigameBgmLength[MAXIMUM_MINIGAMES];
@@ -274,7 +274,7 @@ public void LoadBossgameData()
 			}
 
 			BossgameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
-			BossgameBlockedSpeedsHigherThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
+			g_fBossgameBlockedOnSpeedsGreaterThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 		}
 		while (kv.GotoNextKey());
 	}
@@ -434,7 +434,7 @@ public void DoSelectBossgame()
 						g_iActiveBossgameId = g_iLastPlayedBossgameId;
 					}
 				}
-				else if (BossgameBlockedSpeedsHigherThan[g_iActiveBossgameId] > 0.0 && g_fActiveGameSpeed > BossgameBlockedSpeedsHigherThan[g_iActiveBossgameId])
+				else if (g_fBossgameBlockedOnSpeedsGreaterThan[g_iActiveBossgameId] > 0.0 && g_fActiveGameSpeed > g_fBossgameBlockedOnSpeedsGreaterThan[g_iActiveBossgameId])
 				{
 					g_iActiveBossgameId = g_iLastPlayedBossgameId;
 				}
