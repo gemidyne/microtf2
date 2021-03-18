@@ -36,6 +36,6 @@ methodmap Bossgame __nullable__
 
     public void GetBgmPath(char[] buffer, int size)
     {
-        strcopy(buffer, size, BossgameMusic[this.Id]);
+        strcopy(buffer, size, g_sBossgameBgm[this.Id]);
     }
 }

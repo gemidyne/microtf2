@@ -27,7 +27,7 @@ float BossgameBlockedSpeedsHigherThan[MAXIMUM_MINIGAMES];
 char MinigameMusic[MAXIMUM_MINIGAMES][128];
 float MinigameMusicLength[MAXIMUM_MINIGAMES];
 
-char BossgameMusic[MAXIMUM_MINIGAMES][128];
+char g_sBossgameBgm[MAXIMUM_MINIGAMES][128];
 float BossgameLength[MAXIMUM_MINIGAMES];
 
 ArrayList g_hPlayedMinigamePool;
@@ -107,12 +107,12 @@ public void MinigameSystem_OnMapStart()
 
 	for (int i = 1; i <= g_iBossgamesLoadedCount; i++)
 	{
-		if (strlen(BossgameMusic[i]) == 0)
+		if (strlen(g_sBossgameBgm[i]) == 0)
 		{
 			continue;
 		}
 
-		PreloadSound(BossgameMusic[i]);
+		PreloadSound(g_sBossgameBgm[i]);
 	}
 }
 
@@ -246,7 +246,7 @@ public void LoadBossgameData()
 				continue;
 			}
 
-			kv.GetString("BackgroundMusic", BossgameMusic[i], 128);
+			kv.GetString("BackgroundMusic", g_sBossgameBgm[i], 128);
 			kv.GetString("Caption", BossgameCaptions[i], 64);
 
 			BossgameLength[i] = kv.GetFloat("Duration", 30.0);

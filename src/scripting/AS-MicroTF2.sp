@@ -474,9 +474,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 					player.SetCaption(text);
 				}
 
-				if (strlen(BossgameMusic[g_iActiveBossgameId]) > 0)
+				if (strlen(g_sBossgameBgm[g_iActiveBossgameId]) > 0)
 				{
-					PlaySoundToPlayer(i, BossgameMusic[g_iActiveBossgameId]);
+					PlaySoundToPlayer(i, g_sBossgameBgm[g_iActiveBossgameId]);
 				}
 			}
 			else if (g_iActiveMinigameId > 0)
@@ -586,7 +586,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.IsInGame)
 			{
-				StopSound(i, SNDCHAN_AUTO, BossgameMusic[g_iLastPlayedBossgameId]);
+				StopSound(i, SNDCHAN_AUTO, g_sBossgameBgm[g_iLastPlayedBossgameId]);
 			}
 		}
 	}
