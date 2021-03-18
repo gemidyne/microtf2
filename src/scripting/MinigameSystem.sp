@@ -4,7 +4,7 @@
  * Implements a System for Minigames.
  */
 
-int MinigamesLoaded = 0;
+int g_iMinigamesLoadedCount = 0;
 int BossgamesLoaded = 0;
 
 bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
@@ -84,7 +84,7 @@ public void InitializeMinigames()
 	LoadMinigameData();
 	LoadBossgameData();
 
-	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", MinigamesLoaded, BossgamesLoaded);
+	LogMessage("Minigame System initialized with %d Minigame(s) and %d Bossgame(s).", g_iMinigamesLoadedCount, BossgamesLoaded);
 
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, MinigameSystem_OnMapStart);
 	AddToForward(g_pfOnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
@@ -95,7 +95,7 @@ public void MinigameSystem_OnMapStart()
 	PlayedMinigamePool = new ArrayList();
 	PlayedBossgamePool = new ArrayList();
 
-	for (int i = 1; i <= MinigamesLoaded; i++)
+	for (int i = 1; i <= g_iMinigamesLoadedCount; i++)
 	{
 		if (strlen(MinigameMusic[i]) == 0)
 		{
@@ -149,7 +149,7 @@ public void LoadMinigameData()
 		{
 			int i = GetIdFromSectionName(kv);
 
-			MinigamesLoaded++;
+			g_iMinigamesLoadedCount++;
 
 			MinigameIsEnabled[i] = kv.GetNum("Enabled", 0) == 1;
 
@@ -294,7 +294,7 @@ public void DoSelectMinigame()
 		g_iLastPlayedMinigameId = 0;
 		g_iActiveMinigameId = 8;
 	}
-	else if (forcedMinigameID > 0 && forcedMinigameID <= MinigamesLoaded)
+	else if (forcedMinigameID > 0 && forcedMinigameID <= g_iMinigamesLoadedCount)
 	{
 		g_iLastPlayedMinigameId = 0;
 		g_iActiveMinigameId = forcedMinigameID;
@@ -303,10 +303,10 @@ public void DoSelectMinigame()
 	{
 		do
 		{
-			g_iActiveMinigameId = GetRandomInt(1, MinigamesLoaded);
+			g_iActiveMinigameId = GetRandomInt(1, g_iMinigamesLoadedCount);
 			rollCount++;
 
-			if (MinigamesLoaded == 1)
+			if (g_iMinigamesLoadedCount == 1)
 			{
 				g_iLastPlayedMinigameId = 0;
 			}
@@ -317,7 +317,7 @@ public void DoSelectMinigame()
 			{
 				g_iActiveMinigameId = g_iLastPlayedMinigameId;
 
-				if (rollCount >= MinigamesLoaded)
+				if (rollCount >= g_iMinigamesLoadedCount)
 				{
 					PlayedMinigamePool.Clear();
 				}
