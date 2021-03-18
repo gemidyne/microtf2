@@ -10,7 +10,7 @@ int g_iBossgamesLoadedCount = 0;
 bool MinigameIsEnabled[MAXIMUM_MINIGAMES];
 char MinigameCaptions[MAXIMUM_MINIGAMES][CAPTION_LENGTH];
 char MinigameDynamicCaptionFunctions[MAXIMUM_MINIGAMES][64];
-bool MinigameCaptionIsDynamic[MAXIMUM_MINIGAMES];
+bool g_bMinigameHasDynamicCaption[MAXIMUM_MINIGAMES];
 bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
@@ -173,9 +173,9 @@ public void LoadMinigameData()
 
 			kv.GetString("Caption", MinigameCaptions[i], 64);
 
-			MinigameCaptionIsDynamic[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
+			g_bMinigameHasDynamicCaption[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
 
-			if (MinigameCaptionIsDynamic[i])
+			if (g_bMinigameHasDynamicCaption[i])
 			{
 				kv.GetString("DynamicCaptionMethod", MinigameDynamicCaptionFunctions[i], 64);
 			}

@@ -17,7 +17,7 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameCaptionIsDynamic[this.Id];
+            return g_bMinigameHasDynamicCaption[this.Id];
         }
     }
 
