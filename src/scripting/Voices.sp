@@ -22,7 +22,7 @@ void LoadPositiveVoices()
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Positive.txt");
 
-	Handle file = OpenFile(path, "r"); 
+	File file = OpenFile(path, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -31,7 +31,7 @@ void LoadPositiveVoices()
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
 		if (g_iSystemVoicesPositiveCount >= TOTAL_SYSFX_VOCALS)
 		{
@@ -49,7 +49,7 @@ void LoadPositiveVoices()
 		g_iSystemVoicesPositiveCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	#if defined LOGGING_STARTUP
 	LogMessage("System Voices: Loaded %i positive vocals", g_iSystemVoicesPositiveCount);
@@ -63,7 +63,7 @@ void LoadNegativeVoices()
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Negative.txt");
 
-	Handle file = OpenFile(path, "r"); 
+	File file = OpenFile(path, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -72,7 +72,7 @@ void LoadNegativeVoices()
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
 		if (g_iSystemVoicesNegativeCount >= TOTAL_SYSFX_VOCALS)
 		{
@@ -90,7 +90,7 @@ void LoadNegativeVoices()
 		g_iSystemVoicesNegativeCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	#if defined LOGGING_STARTUP
 	LogMessage("System Voices: Loaded %i negative vocals", g_iSystemVoicesNegativeCount);

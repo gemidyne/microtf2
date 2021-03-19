@@ -464,7 +464,7 @@ stock void Special_LoadFakeConditions()
 	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/SpecialRoundFakeConditions.txt");
 
-	Handle file = OpenFile(manifestPath, "r"); // Only need r for read
+	File file = OpenFile(manifestPath, "r"); // Only need r for read
 
 	if (file == INVALID_HANDLE)
 	{
@@ -474,7 +474,7 @@ stock void Special_LoadFakeConditions()
 
 	char line[SPR_FAKECOND_LENGTH];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
 		if (g_iSpecialRoundFakeConditionCount >= SPR_FAKECOND_CAPACITY)
 		{
@@ -493,7 +493,7 @@ stock void Special_LoadFakeConditions()
 		g_iSpecialRoundFakeConditionCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 }
 
 public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)

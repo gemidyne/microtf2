@@ -102,7 +102,7 @@ public bool Minigame6_LoadAnswers()
 	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/Minigame6.Answers.txt");
 
-	Handle file = OpenFile(manifestPath, "r"); 
+	File file = OpenFile(manifestPath, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -112,7 +112,7 @@ public bool Minigame6_LoadAnswers()
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
 		if (Minigame6_SayTextAnswerCount >= MINIGAME6_SAYTEXTANSWERS_CAPACITY)
 		{
@@ -131,7 +131,7 @@ public bool Minigame6_LoadAnswers()
 		Minigame6_SayTextAnswerCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	LogMessage("Minigame6: Loaded %i answers", Minigame6_SayTextAnswerCount);
 

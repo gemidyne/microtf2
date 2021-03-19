@@ -136,7 +136,7 @@ public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), path);
 
-	Handle file = OpenFile(manifestPath, "r"); 
+	File file = OpenFile(manifestPath, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -146,7 +146,7 @@ public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
 		if (g_iBossgame7SayTextAnswerCount[indice] >= BOSSGAME7_SAYTEXTANSWERS_CAPACITY)
 		{
@@ -165,7 +165,7 @@ public bool Bossgame7_LoadDictionary(int indice, const char[] path)
 		g_iBossgame7SayTextAnswerCount[indice]++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	#if defined LOGGING_STARTUP
 	LogMessage("Bossgame7: Loaded %i items from dictionary \"%s\".", g_iBossgame7SayTextAnswerCount[indice], path);
