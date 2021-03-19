@@ -4,10 +4,10 @@
  * BeatBlock Galaxy by Mario6493
  */
 
-bool Bossgame5_CanCheckPosition;
-bool Bossgame5_BlockState;
-bool Bossgame5_Completed;
-float Bossgame5_Step = 4.0;
+bool g_bBossgame5CanCheckWinArea;
+bool g_bBossgame5BlockState;
+bool g_bBossgame5HasAnyPlayerWon;
+float g_fBossgame5Timer = 4.0;
 
 public void Bossgame5_EntryPoint()
 {
@@ -35,9 +35,9 @@ public void Bossgame5_OnMinigameSelectedPre()
 
 	Bossgame5_SwitchYellow();
 
-	Bossgame5_CanCheckPosition = false;
-	Bossgame5_Step = 4.0;
-	Bossgame5_Completed = false;
+	g_bBossgame5CanCheckWinArea = false;
+	g_fBossgame5Timer = 4.0;
+	g_bBossgame5HasAnyPlayerWon = false;
 
 	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 	g_bIsBlockingKillCommands = false;
@@ -121,7 +121,7 @@ public void Bossgame5_OnBossStopAttempt()
 		return;
 	}
 	
-	Bossgame5_CanCheckPosition = true;
+	g_bBossgame5CanCheckWinArea = true;
 	int alivePlayers = 0;
 	int successfulPlayers = 0;
 	int pendingPlayers = 0;
@@ -175,7 +175,7 @@ public void Bossgame5_OnTfRoundStart()
 
 public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int activator, float delay)
 {
-	if (!Bossgame5_CanCheckPosition)
+	if (!g_bBossgame5CanCheckWinArea)
 	{
 		return;
 	}
@@ -186,12 +186,12 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 	{
 		player.TriggerSuccess();
 
-		if (!Bossgame5_Completed && Config_BonusPointsEnabled())
+		if (!g_bBossgame5HasAnyPlayerWon && Config_BonusPointsEnabled())
 		{
 			player.Score++;
 			Bossgame5_NotifyPlayerComplete(player);
 
-			Bossgame5_Completed = true;
+			g_bBossgame5HasAnyPlayerWon = true;
 		}
 	}
 }
@@ -200,13 +200,13 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 {
 	if (g_iActiveBossgameId == 5 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
-		Bossgame5_Step -= 0.5;
+		g_fBossgame5Timer -= 0.5;
 
-		if (Bossgame5_Step > 1.5)
+		if (g_fBossgame5Timer > 1.5)
 		{
 			// Silent
 		}
-		else if (Bossgame5_Step > 0)
+		else if (g_fBossgame5Timer > 0)
 		{
 			EmitSoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
 		}
@@ -214,10 +214,10 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 		{
 			PlaySoundToAll("ui/hitsound_retro1.wav");
 
-			Bossgame5_Step = 4.0;
-			Bossgame5_BlockState = !Bossgame5_BlockState;
+			g_fBossgame5Timer = 4.0;
+			g_bBossgame5BlockState = !g_bBossgame5BlockState;
 
-			if (Bossgame5_BlockState)
+			if (g_bBossgame5BlockState)
 			{
 				Bossgame5_SwitchGreen();
 			}
