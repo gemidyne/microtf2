@@ -7,12 +7,12 @@
 #define BOSSGAME6_ENTITYSPAWN_COUNT 32
 #define BOSSGAME6_RNGMODELS_COUNT 10
 
-int Bossgame6_EntityIndexes[BOSSGAME6_ENTITYSPAWN_COUNT];
-bool Bossgame6_Entity_IsBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
+int g_iBossgame6Entities[BOSSGAME6_ENTITYSPAWN_COUNT];
+bool g_bBossgame6IsEntityBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
 
-int Bossgame6_Timer;
-int Bossgame6_PlayerScore[MAXPLAYERS+1] = 0;
-char Bossgame6_RngModels[BOSSGAME6_RNGMODELS_COUNT][64];
+int g_iBossgame6Timer;
+int g_iBossgame6PlayerScore[MAXPLAYERS+1] = 0;
+char g_sBossgame6EntityModels[BOSSGAME6_RNGMODELS_COUNT][64];
 
 public void Bossgame6_EntryPoint()
 {
@@ -26,20 +26,20 @@ public void Bossgame6_EntryPoint()
 
 public void Bossgame6_OnMapStart()
 {
-	Bossgame6_RngModels[0] = "models/props_hydro/keg_large.mdl";
-	Bossgame6_RngModels[1] = "models/props_gameplay/orange_cone001.mdl";
-	Bossgame6_RngModels[2] = "models/props_gameplay/ball001.mdl";
-	Bossgame6_RngModels[3] = "models/props_farm/tractor_tire001.mdl";
-	Bossgame6_RngModels[4] = "models/props_farm/spool_rope.mdl";
-	Bossgame6_RngModels[5] = "models/props_farm/spool_wire.mdl";
-	Bossgame6_RngModels[6] = "models/props_gameplay/haybale.mdl";
-	Bossgame6_RngModels[7] = "models/props_2fort/milkjug001.mdl";
-	Bossgame6_RngModels[8] = "models/props_spytech/watercooler.mdl";
-	Bossgame6_RngModels[9] = "models/props_mvm/clipboard.mdl";
+	g_sBossgame6EntityModels[0] = "models/props_hydro/keg_large.mdl";
+	g_sBossgame6EntityModels[1] = "models/props_gameplay/orange_cone001.mdl";
+	g_sBossgame6EntityModels[2] = "models/props_gameplay/ball001.mdl";
+	g_sBossgame6EntityModels[3] = "models/props_farm/tractor_tire001.mdl";
+	g_sBossgame6EntityModels[4] = "models/props_farm/spool_rope.mdl";
+	g_sBossgame6EntityModels[5] = "models/props_farm/spool_wire.mdl";
+	g_sBossgame6EntityModels[6] = "models/props_gameplay/haybale.mdl";
+	g_sBossgame6EntityModels[7] = "models/props_2fort/milkjug001.mdl";
+	g_sBossgame6EntityModels[8] = "models/props_spytech/watercooler.mdl";
+	g_sBossgame6EntityModels[9] = "models/props_mvm/clipboard.mdl";
 
 	for (int i = 0; i < BOSSGAME6_RNGMODELS_COUNT; i++)
 	{
-		PrecacheModel(Bossgame6_RngModels[i]);
+		PrecacheModel(g_sBossgame6EntityModels[i]);
 	}
 }
 
@@ -54,12 +54,12 @@ public void Bossgame6_OnMinigameSelectedPre()
 	{
 		for (int i = 0; i < BOSSGAME6_ENTITYSPAWN_COUNT; i++)
 		{
-			Bossgame6_EntityIndexes[i] = 0;
+			g_iBossgame6Entities[i] = 0;
 		}
 
 		for (int i = 0; i < MAXPLAYERS; i++)
 		{
-			Bossgame6_PlayerScore[i] = 0;
+			g_iBossgame6PlayerScore[i] = 0;
 		}
 
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
@@ -67,7 +67,7 @@ public void Bossgame6_OnMinigameSelectedPre()
 
 		Bossgame6_SendDoorInput("Close");
 
-		Bossgame6_Timer = 9;
+		g_iBossgame6Timer = 9;
 		CreateTimer(0.5, Bossgame6_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
@@ -137,9 +137,9 @@ public void Bossgame6_OnMinigameFinish()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsParticipating && Bossgame6_PlayerScore[player.ClientId] > threshold)
+			if (player.IsValid && player.IsParticipating && g_iBossgame6PlayerScore[player.ClientId] > threshold)
 			{
-				threshold = Bossgame6_PlayerScore[player.ClientId];
+				threshold = g_iBossgame6PlayerScore[player.ClientId];
 				winningClient = player.ClientId;
 			}
 		}
@@ -153,7 +153,7 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 {
 	if (g_iActiveBossgameId == 6 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
 	{
-		switch (Bossgame6_Timer)
+		switch (g_iBossgame6Timer)
 		{
 			case 8: 
 			{
@@ -186,15 +186,15 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 
 			case 0:
 			{
-				Bossgame6_Timer = 9;
+				g_iBossgame6Timer = 9;
 			}
 		}
 
-		Bossgame6_Timer--;
+		g_iBossgame6Timer--;
 		return Plugin_Continue;
 	}
 
-	Bossgame6_Timer = 9;
+	g_iBossgame6Timer = 9;
 	return Plugin_Stop; 
 }
 
@@ -255,7 +255,7 @@ public void Bossgame6_DoEntitySpawns()
 			}
 			else
 			{
-				strcopy(buffer, sizeof(buffer), Bossgame6_RngModels[GetRandomInt(0, BOSSGAME6_RNGMODELS_COUNT-1)]);
+				strcopy(buffer, sizeof(buffer), g_sBossgame6EntityModels[GetRandomInt(0, BOSSGAME6_RNGMODELS_COUNT-1)]);
 			}
 			
 			DispatchKeyValue(entity, "model", buffer);
@@ -263,7 +263,7 @@ public void Bossgame6_DoEntitySpawns()
 
 			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
 
-			Bossgame6_Entity_IsBarrel[i] = hook;
+			g_bBossgame6IsEntityBarrel[i] = hook;
 
 			if (hook)
 			{
@@ -271,7 +271,7 @@ public void Bossgame6_DoEntitySpawns()
 			}
 		}
 
-		Bossgame6_EntityIndexes[i] = entity;
+		g_iBossgame6Entities[i] = entity;
 	}
 }
 
@@ -282,7 +282,7 @@ public Action Bossgame6_Barrel_OnTakeDamage(int victim, int &attacker, int &infl
 	if (player.IsValid)
 	{
 		PlaySoundToPlayer(player.ClientId, "ui/hitsound_retro1.wav");
-		Bossgame6_PlayerScore[player.ClientId]++;
+		g_iBossgame6PlayerScore[player.ClientId]++;
 
 		SDKUnhook(victim, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
 		CreateParticle(victim, "bombinomicon_flash", 1.0);
@@ -301,13 +301,13 @@ public void Bossgame6_CleanupEntities()
 {
 	for (int i = 0; i < BOSSGAME6_ENTITYSPAWN_COUNT; i++)
 	{
-		int entity = Bossgame6_EntityIndexes[i];
+		int entity = g_iBossgame6Entities[i];
 
 		if (IsValidEdict(entity) && entity > MaxClients)
 		{
 			AcceptEntityInput(entity, "Kill");
 
-			if (Bossgame6_Entity_IsBarrel[i]) 
+			if (g_bBossgame6IsEntityBarrel[i]) 
 			{
 				SDKUnhook(entity, SDKHook_OnTakeDamage, Bossgame6_Barrel_OnTakeDamage);
 			}
@@ -340,7 +340,7 @@ public void Bossgame6_ShowPlayerScores()
 
 		if (player.IsValid && player.IsParticipating)
 		{
-			int score = Bossgame6_PlayerScore[player.ClientId];
+			int score = g_iBossgame6PlayerScore[player.ClientId];
 
 			for (int j = 1; j <= MaxClients; j++)
 			{
@@ -384,7 +384,7 @@ public void Bossgame6_OnRenderHudFrame(int client)
 
     char scoreText[32];
 
-    Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, Bossgame6_PlayerScore[player.ClientId]);
+    Format(scoreText, sizeof(scoreText), "%T", "Hud_Score_Barrels", player.ClientId, g_iBossgame6PlayerScore[player.ClientId]);
 
     if (g_iSpecialRoundId == 19)
     {
