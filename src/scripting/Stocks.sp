@@ -17,8 +17,6 @@ stock void DisplayOverlayToAll(const char[] path)
 	}
 }
 
-
-
 stock void PlaySoundToPlayer(int client, const char[] sound)
 {
 	Player player = new Player(client);

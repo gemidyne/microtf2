@@ -4,7 +4,7 @@
  * Get to the top 
  */
 
-bool Bossgame1_Completed;
+bool g_bBossgame1HasAnyPlayerWon;
 
 public void Bossgame1_EntryPoint()
 {
@@ -21,7 +21,7 @@ public void Bossgame1_OnMinigameSelectedPre()
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = true;
-		Bossgame1_Completed = false;
+		g_bBossgame1HasAnyPlayerWon = false;
 	}
 }
 
@@ -101,12 +101,12 @@ public void Bossgame1_OnGameFrame()
 			{
 				player.TriggerSuccess();
 
-				if (!Bossgame1_Completed && Config_BonusPointsEnabled())
+				if (!g_bBossgame1HasAnyPlayerWon && Config_BonusPointsEnabled())
 				{
 					player.Score++;
 					Bossgame1_NotifyPlayerComplete(player);
 
-					Bossgame1_Completed = true;
+					g_bBossgame1HasAnyPlayerWon = true;
 				}
 			}
 		}

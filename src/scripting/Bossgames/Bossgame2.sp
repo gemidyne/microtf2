@@ -4,8 +4,8 @@
  * Escape route
  */
 
-bool Bossgame2_CanCheckPosition = false;
-bool Bossgame2_Completed = false;
+bool g_bBossgame2CanCheckWinArea = false;
+bool g_bBossgame2HasAnyPlayerWon = false;
 
 public void Bossgame2_EntryPoint()
 {
@@ -25,8 +25,8 @@ public void Bossgame2_OnMinigameSelectedPre()
 		g_bIsBlockingKillCommands = true;
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 
-		Bossgame2_CanCheckPosition = false;
-		Bossgame2_Completed = false;
+		g_bBossgame2CanCheckWinArea = false;
+		g_bBossgame2HasAnyPlayerWon = false;
 
 		CreateTimer(0.75, Bossgame2_HurtTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
@@ -97,7 +97,7 @@ public void Bossgame2_OnTfRoundStart()
 
 public Action Bossgame2_OnTriggerTouched(int entity, int other)
 {
-	if (!Bossgame2_CanCheckPosition)
+	if (!g_bBossgame2CanCheckWinArea)
 	{
 		return Plugin_Continue;
 	}
@@ -108,12 +108,12 @@ public Action Bossgame2_OnTriggerTouched(int entity, int other)
 	{
 		activator.TriggerSuccess();
 
-		if (!Bossgame2_Completed && Config_BonusPointsEnabled())
+		if (!g_bBossgame2HasAnyPlayerWon && Config_BonusPointsEnabled())
 		{
 			activator.Score++;
 
 			Bossgame2_NotifyPlayerComplete(activator);
-			Bossgame2_Completed = true;
+			g_bBossgame2HasAnyPlayerWon = true;
 		}
 	}
 
@@ -152,7 +152,7 @@ public void Bossgame2_BossCheck()
 		return;
 	}
 	
-	Bossgame2_CanCheckPosition = true;
+	g_bBossgame2CanCheckWinArea = true;
 
 	int alivePlayers = 0;
 	int successfulPlayers = 0;
