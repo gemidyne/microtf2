@@ -35,27 +35,33 @@ void InitializeSpecialRounds()
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/SpecialRounds.txt");
 
-	Handle kv = CreateKeyValues("SpecialRounds");
-	FileToKeyValues(kv, path);
+	KeyValues kv = new KeyValues("SpecialRounds");
+
+	if (!kv.ImportFromFile(path))
+	{
+		SetFailState("Unable to read SpecialRounds.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
  
-	if (KvGotoFirstSubKey(kv))
+	if (kv.GotoFirstSubKey())
 	{
 		int i = 0;
 
 		do
 		{
-			g_bSpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
-			g_bSpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
-			g_iSpecialRoundBossGameThreshold[i] = KvGetNum(kv, "g_iBossGameThreshold", 0);
+			g_bSpecialRoundSpeedEventsDisabled[i] = (kv.GetNum("DisableSpeedEvents", 0) == 1);
+			g_bSpecialRoundMultiplePlayersOnly[i] = (kv.GetNum("MultiplePlayersOnly", 0) == 1);
+			g_iSpecialRoundBossGameThreshold[i] = kv.GetNum("g_iBossGameThreshold", 0);
 
 			i++;
 		}
-		while (KvGotoNextKey(kv));
+		while (kv.GotoNextKey());
 
 		g_iLoadedSpecialRoundCount = i;
 	}
  
-	CloseHandle(kv);
+	kv.Close();
 
 	Special_LoadFakeConditions();
 
