@@ -12,12 +12,12 @@
 #define BOSSGAME3_INTERVAL_DECAY 0.2
 #define BOSSGAME3_INTERVAL_LIMIT 0.5
 
-int Bossgame3_TotalParticipants = 0;
-int Bossgame3_PlayerIndex = 0;
+int g_iBossgame3TotalParticipantCount = 0;
+int g_iBossgame3PlayerIndex = 0;
 
-int Bossgame3_SelectedBlockId = 0;
-float Bossgame3_CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
-float Bossgame3_IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
+int g_iBossgame3SelectedBlockId = 0;
+float g_fBossgame3CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
+float g_fBossgame3IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
 
 public void Bossgame3_EntryPoint()
 {
@@ -42,7 +42,7 @@ public void Bossgame3_OnMinigameSelectedPre()
 	{
 		g_bIsBlockingKillCommands = true;
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
-		Bossgame3_TotalParticipants = 0;
+		g_iBossgame3TotalParticipantCount = 0;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -50,12 +50,12 @@ public void Bossgame3_OnMinigameSelectedPre()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				Bossgame3_TotalParticipants++;
+				g_iBossgame3TotalParticipantCount++;
 			}
 		}
 
-		Bossgame3_CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
-		Bossgame3_IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
+		g_fBossgame3CountdownDuration = BOSSGAME3_STARTING_COUNTDOWN_DURATION;
+		g_fBossgame3IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
 		CreateTimer(3.5, Bossgame3_BeginWarningSequence);
 		Bossgame3_EnableBlocks();
 	}
@@ -87,10 +87,10 @@ public void Bossgame3_OnMinigameSelected(int client)
 	player.ResetWeapon(false);
 	player.SetCollisionsEnabled(false);
 
-	Bossgame3_PlayerIndex++;
+	g_iBossgame3PlayerIndex++;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	int posa = 360 / Bossgame3_TotalParticipants * (Bossgame3_PlayerIndex-1);
+	int posa = 360 / g_iBossgame3TotalParticipantCount * (g_iBossgame3PlayerIndex-1);
 	float pos[3];
 	float ang[3];
 
@@ -222,16 +222,16 @@ public Action Bossgame3_BeginWarningSequence(Handle timer)
 		return Plugin_Handled;
 	}
 
-	Bossgame3_SelectedBlockId = GetRandomInt(1, 9);
+	g_iBossgame3SelectedBlockId = GetRandomInt(1, 9);
 
 	Bossgame3_HighlightSelectedBlock();
 	PlaySoundToAll("ui/hitsound_retro1.wav");
 
-	CreateTimer(Bossgame3_CountdownDuration, Bossgame3_BeginSwitchSequence);
-	CreateTimer(Bossgame3_CountdownDuration * 0.2, Bossgame3_DoTickSfx);
-	CreateTimer(Bossgame3_CountdownDuration * 0.4, Bossgame3_DoTickSfx);
-	CreateTimer(Bossgame3_CountdownDuration * 0.6, Bossgame3_DoTickSfx);
-	CreateTimer(Bossgame3_CountdownDuration * 0.8, Bossgame3_DoTickSfx);
+	CreateTimer(g_fBossgame3CountdownDuration, Bossgame3_BeginSwitchSequence);
+	CreateTimer(g_fBossgame3CountdownDuration * 0.2, Bossgame3_DoTickSfx);
+	CreateTimer(g_fBossgame3CountdownDuration * 0.4, Bossgame3_DoTickSfx);
+	CreateTimer(g_fBossgame3CountdownDuration * 0.6, Bossgame3_DoTickSfx);
+	CreateTimer(g_fBossgame3CountdownDuration * 0.8, Bossgame3_DoTickSfx);
 	return Plugin_Handled;
 }
 
@@ -252,17 +252,17 @@ public Action Bossgame3_BeginSwitchSequence(Handle timer)
 	PlaySoundToAll("ui/killsound_retro.wav");
 
 	CreateTimer(2.0, Bossgame3_BeginIntervalSequence);
-	Bossgame3_CountdownDuration -= BOSSGAME3_COUNTDOWN_DECAY;
-	Bossgame3_IntervalDuration -= BOSSGAME3_INTERVAL_DECAY;
+	g_fBossgame3CountdownDuration -= BOSSGAME3_COUNTDOWN_DECAY;
+	g_fBossgame3IntervalDuration -= BOSSGAME3_INTERVAL_DECAY;
 
-	if (Bossgame3_CountdownDuration <= BOSSGAME3_COUNTDOWN_LIMIT)
+	if (g_fBossgame3CountdownDuration <= BOSSGAME3_COUNTDOWN_LIMIT)
 	{
-		Bossgame3_CountdownDuration = BOSSGAME3_COUNTDOWN_LIMIT;
+		g_fBossgame3CountdownDuration = BOSSGAME3_COUNTDOWN_LIMIT;
 	}
 
-	if (Bossgame3_IntervalDuration <= BOSSGAME3_INTERVAL_LIMIT)
+	if (g_fBossgame3IntervalDuration <= BOSSGAME3_INTERVAL_LIMIT)
 	{
-		Bossgame3_IntervalDuration = BOSSGAME3_INTERVAL_LIMIT;
+		g_fBossgame3IntervalDuration = BOSSGAME3_INTERVAL_LIMIT;
 	}
 
 	return Plugin_Handled;
@@ -282,7 +282,7 @@ public Action Bossgame3_BeginIntervalSequence(Handle timer)
 
 	Bossgame3_EnableBlocks();
 
-	CreateTimer(Bossgame3_IntervalDuration, Bossgame3_BeginWarningSequence);
+	CreateTimer(g_fBossgame3IntervalDuration, Bossgame3_BeginWarningSequence);
 	return Plugin_Handled;
 }
 
@@ -296,7 +296,7 @@ void Bossgame3_HighlightSelectedBlock()
 {
 	for (int i = 1; i <= 9; i++)
 	{
-		if (Bossgame3_SelectedBlockId == i)
+		if (g_iBossgame3SelectedBlockId == i)
 		{
 			Bossgame3_DoHighlightBlock(i);
 		}
@@ -311,7 +311,7 @@ void Bossgame3_DisableBlocks()
 {
 	for (int i = 1; i <= 9; i++)
 	{
-		if (Bossgame3_SelectedBlockId == i)
+		if (g_iBossgame3SelectedBlockId == i)
 		{
 			Bossgame3_DoHighlightBlock(i);
 		}
