@@ -4,7 +4,7 @@
  * Don't fall off!
  */
 
-float Bossgame4_DamageAccumlated[MAXPLAYERS];
+float g_fBossgame4PlayerDamageAccumulated[MAXPLAYERS];
 
 public void Bossgame4_EntryPoint()
 {
@@ -68,7 +68,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 	player.SetHealth(1000);
 	player.ResetWeapon(true);
 
-	Bossgame4_DamageAccumlated[player.ClientId] = 175.0;
+	g_fBossgame4PlayerDamageAccumulated[player.ClientId] = 175.0;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
@@ -191,7 +191,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 			}
 		}
 
-		Bossgame4_DamageAccumlated[victim.ClientId] += damage;
+		g_fBossgame4PlayerDamageAccumulated[victim.ClientId] += damage;
 
 		float ang[3];
 		float vel[3];
@@ -199,8 +199,8 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		GetClientEyeAngles(attackerId, ang);
 		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
 
-		float baseVelocity = Bossgame4_DamageAccumlated[victim.ClientId];
-		float baseVelocityZ = Bossgame4_DamageAccumlated[victim.ClientId];
+		float baseVelocity = g_fBossgame4PlayerDamageAccumulated[victim.ClientId];
+		float baseVelocityZ = g_fBossgame4PlayerDamageAccumulated[victim.ClientId];
 
 		vel[0] -= baseVelocity * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
 		vel[1] -= baseVelocity * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
@@ -210,11 +210,11 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 		char path[64];
 
-		if (Bossgame4_DamageAccumlated[victim.ClientId] < 300.0)
+		if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 300.0)
 		{
 			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_small%d.mp3", GetRandomInt(1, 2));
 		}
-		else if (Bossgame4_DamageAccumlated[victim.ClientId] >= 300.0 && Bossgame4_DamageAccumlated[victim.ClientId] < 450.0)
+		else if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] >= 300.0 && g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 450.0)
 		{
 			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_mod%d.mp3", GetRandomInt(1, 2));
 		}
