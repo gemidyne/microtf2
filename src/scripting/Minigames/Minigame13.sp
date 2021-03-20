@@ -4,8 +4,6 @@
  * Spycrab
  */
 
-float Minigame13_ClientEyePositionAngle[3];
-
 public void Minigame13_EntryPoint()
 {
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
@@ -49,14 +47,15 @@ public void Minigame13_OnMinigameFinishPre()
 			{
 				int button = GetClientButtons(i);
 				float min = 45.0 * -1;
+				float angle[3];
 
-				GetClientEyeAngles(i, Minigame13_ClientEyePositionAngle);
-				if (Minigame13_ClientEyePositionAngle[0] < min && (button & IN_DUCK) == IN_DUCK)
+				GetClientEyeAngles(i, angle);
+				if (angle[0] < min && (button & IN_DUCK) == IN_DUCK)
 				{
 					player.TriggerSuccess();
 				}
 
-				if (Minigame13_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
+				if (angle[0] > min || (button & IN_DUCK) != IN_DUCK)
 				{
 					SlapPlayer(i, 5000, false);
 					player.Status = PlayerStatus_Failed;
