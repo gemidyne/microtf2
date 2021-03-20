@@ -4,8 +4,8 @@
  * Simon Says!
  */
 
-int Minigame9_Mode = -1;
-bool Minigame9_CanCheckConditions = false;
+int g_iMinigame9Mode = -1;
+bool g_bMinigame9CanCheckConditions = false;
 
 public void Minigame9_EntryPoint()
 {
@@ -19,8 +19,8 @@ public void Minigame9_OnMinigameSelectedPre()
 	if (g_iActiveMinigameId == 9)
 	{
 		g_bIsBlockingTaunts = false;
-		Minigame9_Mode = GetRandomInt(1, 6);
-		Minigame9_CanCheckConditions = false;
+		g_iMinigame9Mode = GetRandomInt(1, 6);
+		g_bMinigame9CanCheckConditions = false;
 
 		CreateTimer(1.5, Timer_Minigame9_AllowConditions);
 	}
@@ -28,7 +28,7 @@ public void Minigame9_OnMinigameSelectedPre()
 
 public Action Timer_Minigame9_AllowConditions(Handle timer)
 {
-	Minigame9_CanCheckConditions = true;
+	g_bMinigame9CanCheckConditions = true;
 	return Plugin_Handled;
 }
 
@@ -40,7 +40,7 @@ public void Minigame9_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		switch (Minigame9_Mode)
+		switch (g_iMinigame9Mode)
 		{
 			case 1: Format(text, sizeof(text), "%T", "Minigame9_Caption_SimonSaysTaunt", client);
 			case 2: Format(text, sizeof(text), "%T", "Minigame9_Caption_SomeoneSaysTaunt", client);
@@ -62,9 +62,9 @@ public void Minigame9_OnGameFrame()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsParticipating && Minigame9_CanCheckConditions)
+			if (player.IsValid && player.IsParticipating && g_bMinigame9CanCheckConditions)
 			{
-				switch (Minigame9_Mode)
+				switch (g_iMinigame9Mode)
 				{
 					case 1:
 					{
@@ -146,14 +146,14 @@ public void Minigame9_OnMinigameFinishPre()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				if (Minigame9_Mode == 2)
+				if (g_iMinigame9Mode == 2)
 				{
 					if (!player.HasCondition(TFCond_Taunting))
 					{
 						player.TriggerSuccess();
 					}
 				}
-				else if (Minigame9_Mode == 4) 
+				else if (g_iMinigame9Mode == 4) 
 				{
 					int button = GetClientButtons(i);
 
@@ -162,7 +162,7 @@ public void Minigame9_OnMinigameFinishPre()
 						player.TriggerSuccess();
 					}
 				}
-				else if (Minigame9_Mode == 6)
+				else if (g_iMinigame9Mode == 6)
 				{
 					int button = GetClientButtons(i);
 
