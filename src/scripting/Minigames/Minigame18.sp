@@ -4,17 +4,23 @@
  * Hit the Target!
  */
 
-char g_sMinigame18TargetModels[4][64];
+char g_sMinigame18TargetModels[][] = 
+{
+	"models/props_training/target_scout.mdl",
+	"models/props_training/target_soldier.mdl",
+	"models/props_training/target_pyro.mdl",
+	"models/props_training/target_demoman.mdl",
+	"models/props_training/target_heavy.mdl",
+	"models/props_training/target_engineer.mdl",
+	"models/props_training/target_medic.mdl",
+	"models/props_training/target_sniper.mdl",
+	"models/props_training/target_spy.mdl"
+};
 int g_iMinigame18TargetEntity = -1;
 int g_iMinigame18SelectedTargetModel = 0;
 
 public void Minigame18_EntryPoint()
 {
-	g_sMinigame18TargetModels[0] = "models/props_training/target_scout.mdl";
-	g_sMinigame18TargetModels[1] = "models/props_training/target_demoman.mdl";
-	g_sMinigame18TargetModels[2] = "models/props_training/target_sniper.mdl";
-	g_sMinigame18TargetModels[3] = "models/props_training/target_medic.mdl";
-
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame18_OnMapStart);
 	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame18_OnMinigameSelectedPre);
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame18_OnMinigameSelected);
@@ -78,6 +84,7 @@ public void Minigame18_OnMinigameSelectedPre()
 			g_iMinigame18SelectedTargetModel = GetRandomInt(0,3);
 
 			DispatchKeyValue(g_iMinigame18TargetEntity, "model", g_sMinigame18TargetModels[g_iMinigame18SelectedTargetModel]);
+			DispatchKeyValue(g_iMinigame18TargetEntity, "skin", GetRandomInt(0, 1));
 			DispatchSpawn(g_iMinigame18TargetEntity);
 
 			SetEntityMoveType(g_iMinigame18TargetEntity, MOVETYPE_NONE);   
