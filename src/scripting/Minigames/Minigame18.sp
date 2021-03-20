@@ -4,16 +4,16 @@
  * Hit the Target!
  */
 
-char Minigame18_SniperTargets[4][64];
-int Minigame18_TargetEntIndex = -1;
-int Minigame18_TargetModel = 0;
+char g_sMinigame18TargetModels[4][64];
+int g_iMinigame18TargetEntity = -1;
+int g_iMinigame18SelectedTargetModel = 0;
 
 public void Minigame18_EntryPoint()
 {
-	Minigame18_SniperTargets[0] = "models/props_training/target_scout.mdl";
-	Minigame18_SniperTargets[1] = "models/props_training/target_demoman.mdl";
-	Minigame18_SniperTargets[2] = "models/props_training/target_sniper.mdl";
-	Minigame18_SniperTargets[3] = "models/props_training/target_medic.mdl";
+	g_sMinigame18TargetModels[0] = "models/props_training/target_scout.mdl";
+	g_sMinigame18TargetModels[1] = "models/props_training/target_demoman.mdl";
+	g_sMinigame18TargetModels[2] = "models/props_training/target_sniper.mdl";
+	g_sMinigame18TargetModels[3] = "models/props_training/target_medic.mdl";
 
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame18_OnMapStart);
 	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame18_OnMinigameSelectedPre);
@@ -25,7 +25,7 @@ public void Minigame18_OnMapStart()
 {
 	for (int i = 0; i < 4; i++)
 	{
-		PrecacheModel(Minigame18_SniperTargets[i], true);
+		PrecacheModel(g_sMinigame18TargetModels[i], true);
 	}
 
 	char buffer[32];
@@ -71,18 +71,18 @@ public void Minigame18_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 18)
 	{
-		Minigame18_TargetEntIndex = CreateEntityByName("prop_physics");
+		g_iMinigame18TargetEntity = CreateEntityByName("prop_physics");
 
-		if (IsValidEntity(Minigame18_TargetEntIndex))
+		if (IsValidEntity(g_iMinigame18TargetEntity))
 		{
-			Minigame18_TargetModel = GetRandomInt(0,3);
+			g_iMinigame18SelectedTargetModel = GetRandomInt(0,3);
 
-			DispatchKeyValue(Minigame18_TargetEntIndex, "model", Minigame18_SniperTargets[Minigame18_TargetModel]);
-			DispatchSpawn(Minigame18_TargetEntIndex);
+			DispatchKeyValue(g_iMinigame18TargetEntity, "model", g_sMinigame18TargetModels[g_iMinigame18SelectedTargetModel]);
+			DispatchSpawn(g_iMinigame18TargetEntity);
 
-			SetEntityMoveType(Minigame18_TargetEntIndex, MOVETYPE_NONE);   
+			SetEntityMoveType(g_iMinigame18TargetEntity, MOVETYPE_NONE);   
 
-			SDKHook(Minigame18_TargetEntIndex, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
+			SDKHook(g_iMinigame18TargetEntity, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 			
 			float pos[3];
 			float ang[3] = { 0.0, -90.0, 0.0 };
@@ -91,10 +91,10 @@ public void Minigame18_OnMinigameSelectedPre()
 			pos[1] = GetRandomFloat(7845.0, 8969.0);
 			pos[2] = -330.0;
 
-			if (IsValidEntity(Minigame18_TargetEntIndex))
+			if (IsValidEntity(g_iMinigame18TargetEntity))
 			{
-				TeleportEntity(Minigame18_TargetEntIndex, pos, ang, NULL_VECTOR);
-				CreateParticle(Minigame18_TargetEntIndex, "bombinomicon_flash", 1.0);
+				TeleportEntity(g_iMinigame18TargetEntity, pos, ang, NULL_VECTOR);
+				CreateParticle(g_iMinigame18TargetEntity, "bombinomicon_flash", 1.0);
 			}
 		}
 	}
@@ -142,14 +142,14 @@ public void Minigame18_OnMinigameFinish()
 {
 	if (g_iActiveMinigameId == 18 && g_bIsMinigameActive)
 	{
-		SDKUnhook(Minigame18_TargetEntIndex, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
+		SDKUnhook(g_iMinigame18TargetEntity, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 
-		if (IsValidEntity(Minigame18_TargetEntIndex))
+		if (IsValidEntity(g_iMinigame18TargetEntity))
 		{
-			AcceptEntityInput(Minigame18_TargetEntIndex, "Kill");
+			AcceptEntityInput(g_iMinigame18TargetEntity, "Kill");
 		}
 
-		Minigame18_TargetEntIndex = -1;
+		g_iMinigame18TargetEntity = -1;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -187,7 +187,7 @@ public void Minigame18_HitTarget(int attacker)
 	{
 		player.TriggerSuccess();
 
-		switch (Minigame18_TargetModel)
+		switch (g_iMinigame18SelectedTargetModel)
 		{
 			case 0: PlayScoutHurtSound(attacker);
 			case 1: PlayDemoHurtSound(attacker);
