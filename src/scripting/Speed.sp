@@ -42,9 +42,11 @@ bool TrySpeedChangeEvent()
 
 	if (g_iMinigamesPlayedCount < g_iBossGameThreshold && g_iMinigamesPlayedCount >= g_iNextMinigamePlayedSpeedTestThreshold)
 	{
-		bool success = g_iActiveGamemodeId == 99 && g_iSpecialRoundId == 1
-			? GetRandomInt(0, 1) == 1 // On Adrenaline shot, higher chance of speed down
-			: GetRandomInt(0, 2) == 1;
+		int chanceUpperLimit = g_iActiveGamemodeId == 99 && g_iSpecialRoundId == 1
+			? 1 // On Adrenaline shot, higher chance of speed down
+			: 2;
+
+		bool success = GetRandomInt(0, chanceUpperLimit) == 1; // On Adrenaline shot, higher chance of speed down
 
 		if (success)
 		{
