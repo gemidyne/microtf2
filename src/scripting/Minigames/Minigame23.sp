@@ -4,7 +4,7 @@
  * Double jump!
  */
 
-bool Minigame23_CanCheckConditions = false;
+bool g_bMinigame23CanCheckConditions = false;
 
 public void Minigame23_EntryPoint()
 {
@@ -17,14 +17,14 @@ public void Minigame23_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 23)
 	{
-		Minigame23_CanCheckConditions = false;
+		g_bMinigame23CanCheckConditions = false;
 		CreateTimer(1.5, Timer_Minigame23_AllowConditions);
 	}
 }
 
 public Action Timer_Minigame23_AllowConditions(Handle timer)
 {
-	Minigame23_CanCheckConditions = true;
+	g_bMinigame23CanCheckConditions = true;
 	return Plugin_Handled;
 }
 
@@ -61,7 +61,7 @@ public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, fl
 		return;
 	}
 
-	if (!Minigame23_CanCheckConditions)
+	if (!g_bMinigame23CanCheckConditions)
 	{
 		return;
 	}
