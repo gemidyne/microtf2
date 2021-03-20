@@ -4,8 +4,8 @@
  * Munch / Drink
  */
 
-int Minigame20_PlayerClass;
-bool Minigame20_InvertedMode;
+int g_iMinigame20PlayerClass;
+bool g_bMinigame20InvertConditions;
 
 public void Minigame20_EntryPoint()
 {
@@ -19,8 +19,8 @@ public void Minigame20_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 20)
 	{
-		Minigame20_PlayerClass = GetRandomInt(0, 3);
-		Minigame20_InvertedMode = GetRandomInt(0, 1) == 1;
+		g_iMinigame20PlayerClass = GetRandomInt(0, 3);
+		g_bMinigame20InvertConditions = GetRandomInt(0, 1) == 1;
 	}
 }
 
@@ -43,7 +43,7 @@ public void Minigame20_OnMinigameSelected(int client)
 		return;
 	}
 
-	switch (Minigame20_PlayerClass)
+	switch (g_iMinigame20PlayerClass)
 	{
 		case 0:
 		{
@@ -73,7 +73,7 @@ public void Minigame20_OnMinigameSelected(int client)
 
 	player.SetWeaponPrimaryAmmoCount(1);
 
-	if (Minigame20_InvertedMode)
+	if (g_bMinigame20InvertConditions)
 	{
 		player.Status = PlayerStatus_Winner;
 	}
@@ -88,9 +88,9 @@ public void Minigame20_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame20_InvertedMode)
+		if (g_bMinigame20InvertConditions)
 		{
-			switch (Minigame20_PlayerClass)
+			switch (g_iMinigame20PlayerClass)
 			{
 				case 0, 1:
 				{
@@ -105,7 +105,7 @@ public void Minigame20_GetDynamicCaption(int client)
 		}
 		else
 		{
-			switch (Minigame20_PlayerClass)
+			switch (g_iMinigame20PlayerClass)
 			{
 				case 0, 1:
 				{
@@ -155,7 +155,7 @@ public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 		{
 			case 46, 163, 42, 311:
 			{
-				if (Minigame20_InvertedMode)
+				if (g_bMinigame20InvertConditions)
 				{
 					player.Status = PlayerStatus_Failed;
 				}
