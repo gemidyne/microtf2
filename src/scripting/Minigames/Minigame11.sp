@@ -5,8 +5,8 @@
  */
 
 
-int Minigame11_Mode = -1;
-bool Minigame11_CanCheckConditions = false;
+int g_iMinigame11Mode = -1;
+bool g_iMinigame11CanCheckConditions = false;
 
 public void Minigame11_EntryPoint()
 {
@@ -19,8 +19,8 @@ public void Minigame11_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 11)
 	{
-		Minigame11_Mode = GetRandomInt(1, 2);
-		Minigame11_CanCheckConditions = false;
+		g_iMinigame11Mode = GetRandomInt(1, 2);
+		g_iMinigame11CanCheckConditions = false;
 
 		CreateTimer(2.0, Timer_Minigame11_AllowConditions);
 	}
@@ -28,7 +28,7 @@ public void Minigame11_OnMinigameSelectedPre()
 
 public Action Timer_Minigame11_AllowConditions(Handle timer)
 {
-	Minigame11_CanCheckConditions = true;
+	g_iMinigame11CanCheckConditions = true;
 	return Plugin_Handled;
 }
 
@@ -61,7 +61,7 @@ public void Minigame11_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame11_Mode == 2)
+		if (g_iMinigame11Mode == 2)
 		{
 			Format(text, sizeof(text), "%T", "Minigame11_Caption_DontStopMoving", client);
 		}
@@ -86,7 +86,7 @@ public void Minigame11_OnGameFrame()
 		return;
 	}
 
-	if (Minigame11_CanCheckConditions)
+	if (g_iMinigame11CanCheckConditions)
 	{
 		float velocity[3];
 		float speed = 0.0;
@@ -102,7 +102,7 @@ public void Minigame11_OnGameFrame()
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
 				speed = GetVectorLength(velocity);
 
-				if (Minigame11_Mode == 2)
+				if (g_iMinigame11Mode == 2)
 				{
 					if (speed < limit && player.Status == PlayerStatus_Winner) 
 					{
@@ -110,7 +110,7 @@ public void Minigame11_OnGameFrame()
 						player.Kill();
 					}
 				}
-				else if (Minigame11_Mode == 1)
+				else if (g_iMinigame11Mode == 1)
 				{
 					if (speed > 100.0 && player.Status == PlayerStatus_Winner)
 					{
