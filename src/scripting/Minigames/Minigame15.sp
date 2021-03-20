@@ -4,8 +4,8 @@
  * Build! 
  */
 
-bool Minigame15_AssertObject = false;
-TFObjectType Minigame15_ExpectedObject;
+bool g_bMinigame15ShouldAssertObject = false;
+TFObjectType g_oMinigame15ExpectedObjectType;
 
 public void Minigame15_EntryPoint()
 {
@@ -19,25 +19,25 @@ public void Minigame15_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 15)
 	{
-		Minigame15_AssertObject = GetRandomInt(0, 1) == 1;
+		g_bMinigame15ShouldAssertObject = GetRandomInt(0, 1) == 1;
 
-		if (Minigame15_AssertObject)
+		if (g_bMinigame15ShouldAssertObject)
 		{
 			switch (GetRandomInt(0, 2))
 			{
 				case 0:
 				{
-					Minigame15_ExpectedObject = TFObject_Dispenser;
+					g_oMinigame15ExpectedObjectType = TFObject_Dispenser;
 				}
 
 				case 1:
 				{
-					Minigame15_ExpectedObject = TFObject_Teleporter;
+					g_oMinigame15ExpectedObjectType = TFObject_Teleporter;
 				}
 
 				case 2:
 				{
-					Minigame15_ExpectedObject = TFObject_Sentry;
+					g_oMinigame15ExpectedObjectType = TFObject_Sentry;
 				}
 			}
 		}
@@ -92,9 +92,9 @@ public void Minigame15_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame15_AssertObject)
+		if (g_bMinigame15ShouldAssertObject)
 		{
-			switch (Minigame15_ExpectedObject)
+			switch (g_oMinigame15ExpectedObjectType)
 			{
 				case TFObject_Dispenser:
 				{
@@ -137,7 +137,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 	{
 		bool winner = false;
 
-		if (!Minigame15_AssertObject)
+		if (!g_bMinigame15ShouldAssertObject)
 		{
 			winner = true;
 		}
@@ -145,7 +145,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 		{
 			TFObjectType entityType = TF2_GetObjectType(entity);
 
-			winner = entityType == Minigame15_ExpectedObject;
+			winner = entityType == g_oMinigame15ExpectedObjectType;
 		}
 
 		if (winner)
