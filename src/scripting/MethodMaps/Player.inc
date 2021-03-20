@@ -17,7 +17,7 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return this.ClientId > 0 && this.ClientId <= MaxClients && IsClientInGame(this.ClientId) && !IsClientSourceTV(this.ClientId);
+            return this.ClientId > 0 && this.ClientId <= MaxClients && IsClientInGame(this.ClientId) && !IsClientSourceTV(this.ClientId) && !IsClientInKickQueue(this.ClientId);
         }
     }
 
