@@ -4,7 +4,7 @@
  * Change Class!
  */
 
-TFClassType Minigame19_ClassMode = TFClass_Unknown;
+TFClassType g_cMinigame19ExpectedClass = TFClass_Unknown;
 
 public void Minigame19_EntryPoint()
 {
@@ -17,7 +17,7 @@ public void Minigame19_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 19)
 	{
-		Minigame19_ClassMode = view_as<TFClassType>(GetRandomInt(0, 9));
+		g_cMinigame19ExpectedClass = view_as<TFClassType>(GetRandomInt(0, 9));
 
 		g_bIsBlockingKillCommands = false;
 	}
@@ -41,9 +41,9 @@ public void Minigame19_OnMinigameSelected(int client)
 	{
 		TFClassType playerClass = player.Class;
 
-		if (Minigame19_ClassMode != TFClass_Unknown && playerClass == Minigame19_ClassMode)
+		if (g_cMinigame19ExpectedClass != TFClass_Unknown && playerClass == g_cMinigame19ExpectedClass)
 		{
-			while (playerClass == Minigame19_ClassMode)
+			while (playerClass == g_cMinigame19ExpectedClass)
 			{
 				player.SetRandomClass();
 				playerClass = player.Class;
@@ -60,7 +60,7 @@ public void Minigame19_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		switch (Minigame19_ClassMode)
+		switch (g_cMinigame19ExpectedClass)
 		{
 			case TFClass_Unknown:
 			{
@@ -135,12 +135,12 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 	{
 		TFClassType playerClass = view_as<TFClassType>(class);
 
-		if (Minigame19_ClassMode == TFClass_Unknown)
+		if (g_cMinigame19ExpectedClass == TFClass_Unknown)
 		{
 			// Any class is acceptable
 			player.TriggerSuccess();
 		}
-		else if (playerClass == Minigame19_ClassMode)
+		else if (playerClass == g_cMinigame19ExpectedClass)
 		{
 			// Must match expected class.
 			player.TriggerSuccess();
