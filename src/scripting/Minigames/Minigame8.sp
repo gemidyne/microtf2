@@ -151,15 +151,15 @@ void Minigame8_NotifyPlayerComplete(Player invoker)
 	
 	if (invoker.Team == TFTeam_Red)
 	{
-		Format(name, sizeof(name), "{red}%N", invoker.ClientId);
+		Format(name, sizeof(name), "{red}%N{default}", invoker.ClientId);
 	}
 	else if (invoker.Team == TFTeam_Blue)
 	{
-		Format(name, sizeof(name), "{blue}%N", invoker.ClientId);
+		Format(name, sizeof(name), "{blue}%N{default}", invoker.ClientId);
 	}
 	else
 	{
-		Format(name, sizeof(name), "{white}%N", invoker.ClientId);
+		Format(name, sizeof(name), "{white}%N{default}", invoker.ClientId);
 	}
 
 	for (int i = 1; i <= MaxClients; i++)
