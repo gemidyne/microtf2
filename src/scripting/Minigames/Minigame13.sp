@@ -50,17 +50,16 @@ public void Minigame13_OnMinigameFinishPre()
 				float angle[3];
 
 				GetClientEyeAngles(i, angle);
+				
 				if (angle[0] < min && (button & IN_DUCK) == IN_DUCK)
 				{
 					player.TriggerSuccess();
+					continue;
 				}
 
-				if (angle[0] > min || (button & IN_DUCK) != IN_DUCK)
-				{
-					SlapPlayer(i, 5000, false);
-					player.Status = PlayerStatus_Failed;
-					player.PrintChatText("%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
-				}
+				SlapPlayer(i, 5000, false);
+				player.Status = PlayerStatus_Failed;
+				player.PrintChatText("%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
 			}
 		}
 
