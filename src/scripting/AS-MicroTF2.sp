@@ -424,18 +424,12 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	PrintToChatAll("[DEBUG] Preparing clients..");
 	#endif
 
-	bool isCaptionDynamic;
-	Function func = INVALID_FUNCTION;
+	Function dynamicCaptionFunction = INVALID_FUNCTION;
 
 	Minigame minigame = new Minigame(g_iActiveMinigameId);
 	Bossgame bossgame = new Bossgame(g_iActiveBossgameId);
 
 	if (minigame.HasDynamicCaption || bossgame.HasDynamicCaption)
-	{
-		isCaptionDynamic = true;
-	}
-
-	if (isCaptionDynamic)
 	{
 		char funcName[64];
 
@@ -448,9 +442,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			bossgame.GetDynamicCaptionFunctionName(funcName, sizeof(funcName));
 		}
 
-		func = GetFunctionByName(INVALID_HANDLE, funcName);
+		dynamicCaptionFunction = GetFunctionByName(INVALID_HANDLE, funcName);
 
-		if (func == INVALID_FUNCTION)
+		if (dynamicCaptionFunction == INVALID_FUNCTION)
 		{
 			LogError("Unable to find function \"%s\".", funcName);
 		}
@@ -464,7 +458,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		{
 			if (g_iActiveBossgameId > 0) 
 			{
-				if (!isCaptionDynamic)
+				if (dynamicCaptionFunction == INVALID_FUNCTION)
 				{
 					char text[64];
 					char translationKey[32];
@@ -482,7 +476,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			}
 			else if (g_iActiveMinigameId > 0)
 			{
-				if (!isCaptionDynamic)
+				if (dynamicCaptionFunction == INVALID_FUNCTION)
 				{
 					char text[64];
 					char translationKey[32];
@@ -502,9 +496,9 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 			
 			if (player.IsValid && player.IsParticipating)
 			{
-				if (isCaptionDynamic)
+				if (dynamicCaptionFunction != INVALID_FUNCTION)
 				{
-					Call_StartFunction(INVALID_HANDLE, func);
+					Call_StartFunction(INVALID_HANDLE, dynamicCaptionFunction);
 					Call_PushCell(i);
 					Call_Finish();
 				}
