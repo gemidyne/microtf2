@@ -6,11 +6,11 @@
 
 #define MINIGAME6_SAYTEXTANSWERS_CAPACITY 128
 
-char Minigame6_SayTextAnswers[MINIGAME6_SAYTEXTANSWERS_CAPACITY][64];
-int Minigame6_SayTextAnswerCount; 
+char g_sMinigame6SayTextAnswers[MINIGAME6_SAYTEXTANSWERS_CAPACITY][64];
+int g_iMinigame6SayTextAnswerCount; 
 
-char Minigame6_SayTextAnswer[64];
-bool Minigame6_HasBeenAnswered = false;
+char g_sMinigame6SayTextAnswer[64];
+bool g_bMinigame6HasAnyPlayerWon = false;
 
 public void Minigame6_EntryPoint()
 {
@@ -27,8 +27,8 @@ public void Minigame6_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 6)
 	{
-		Format(Minigame6_SayTextAnswer, sizeof(Minigame6_SayTextAnswer), Minigame6_SayTextAnswers[GetRandomInt(0, Minigame6_SayTextAnswerCount - 1)]);
-		Minigame6_HasBeenAnswered = false;
+		Format(g_sMinigame6SayTextAnswer, sizeof(g_sMinigame6SayTextAnswer), g_sMinigame6SayTextAnswers[GetRandomInt(0, g_iMinigame6SayTextAnswerCount - 1)]);
+		g_bMinigame6HasAnyPlayerWon = false;
 	}
 }
 
@@ -39,7 +39,7 @@ public void Minigame6_GetDynamicCaption(int client)
 	if (player.IsInGame)
 	{
 		char text[64];
-		Format(text, sizeof(text), "%T", "Minigame6_SayTheWord_CaptionFormatted", client, Minigame6_SayTextAnswer);
+		Format(text, sizeof(text), "%T", "Minigame6_SayTheWord_CaptionFormatted", client, g_sMinigame6SayTextAnswer);
 		player.SetCaption(text);
 	}
 }
@@ -79,14 +79,14 @@ public Action Command_MinigameSixSay(int client, int args)
 	char message[192];
 	BreakString(text[startidx], message, sizeof(message));
 
-	if (strcmp(message, Minigame6_SayTextAnswer, false) == 0)
+	if (strcmp(message, g_sMinigame6SayTextAnswer, false) == 0)
 	{
 		invoker.TriggerSuccess();
 
-		if (!Minigame6_HasBeenAnswered && Config_BonusPointsEnabled())
+		if (!g_bMinigame6HasAnyPlayerWon && Config_BonusPointsEnabled())
 		{
 			invoker.Score++;
-			Minigame6_HasBeenAnswered = true;
+			g_bMinigame6HasAnyPlayerWon = true;
 
 			Minigame6_NotifyFirstPlayerComplete(invoker);
 		}
@@ -114,7 +114,7 @@ public bool Minigame6_LoadAnswers()
 
 	while (file.ReadLine(line, sizeof(line)))
 	{
-		if (Minigame6_SayTextAnswerCount >= MINIGAME6_SAYTEXTANSWERS_CAPACITY)
+		if (g_iMinigame6SayTextAnswerCount >= MINIGAME6_SAYTEXTANSWERS_CAPACITY)
 		{
 			LogError("Hit the hardcoded limit of answers for Minigame6. If you really want to add more, recompile the plugin with the limit changed.");
 			break;
@@ -127,13 +127,13 @@ public bool Minigame6_LoadAnswers()
 			continue;
 		}
 
-		Minigame6_SayTextAnswers[Minigame6_SayTextAnswerCount] = line;
-		Minigame6_SayTextAnswerCount++;
+		g_sMinigame6SayTextAnswers[g_iMinigame6SayTextAnswerCount] = line;
+		g_iMinigame6SayTextAnswerCount++;
 	}
 
 	file.Close();
 
-	LogMessage("Minigame6: Loaded %i answers", Minigame6_SayTextAnswerCount);
+	LogMessage("Minigame6: Loaded %i answers", g_iMinigame6SayTextAnswerCount);
 
 	return true;
 }
