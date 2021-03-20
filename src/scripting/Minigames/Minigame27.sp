@@ -4,7 +4,7 @@
  * Hit someone! 
  */
 
-bool Minigame27_UseBleedingMode = false;
+bool g_bMinigame27UseBleedingMode = false;
 
 public void Minigame27_EntryPoint()
 {
@@ -18,7 +18,7 @@ public void Minigame27_OnMinigameSelectedPre()
 	if (g_iActiveMinigameId == 27)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
-		Minigame27_UseBleedingMode = GetRandomInt(0, 1) == 1;
+		g_bMinigame27UseBleedingMode = GetRandomInt(0, 1) == 1;
 	}
 }
 
@@ -42,7 +42,7 @@ public void Minigame27_OnMinigameSelected(int client)
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
 		
-		if (Minigame27_UseBleedingMode)
+		if (g_bMinigame27UseBleedingMode)
 		{
 			player.SetHealth(25);
 			player.GiveWeapon(812);
