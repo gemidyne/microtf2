@@ -83,8 +83,11 @@ public void Minigame18_OnMinigameSelectedPre()
 		{
 			g_iMinigame18SelectedTargetModel = GetRandomInt(0,3);
 
+			char skin[4];
+			Format(skin, sizeof(skin), "%i", GetRandomInt(0, 1));
+
 			DispatchKeyValue(g_iMinigame18TargetEntity, "model", g_sMinigame18TargetModels[g_iMinigame18SelectedTargetModel]);
-			DispatchKeyValue(g_iMinigame18TargetEntity, "skin", GetRandomInt(0, 1));
+			DispatchKeyValue(g_iMinigame18TargetEntity, "skin", skin);
 			DispatchSpawn(g_iMinigame18TargetEntity);
 
 			SetEntityMoveType(g_iMinigame18TargetEntity, MOVETYPE_NONE);   
