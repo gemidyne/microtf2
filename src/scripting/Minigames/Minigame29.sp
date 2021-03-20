@@ -4,7 +4,7 @@
  * Don't Touch anyone
  */
 
-bool Minigame29_IsCheckingCollisions = false;
+bool g_bMinigame29IsCheckingCollisions = false;
 
 public void Minigame29_EntryPoint()
 {
@@ -12,7 +12,6 @@ public void Minigame29_EntryPoint()
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame29_OnMinigameSelected);
 	AddToForward(g_pfOnPlayerCollisionWithPlayer, INVALID_HANDLE, Minigame29_OnTouch);
 	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame29_OnMinigameFinish);
-
 }
 
 public void Minigame29_OnMinigameSelectedPre()
@@ -20,7 +19,7 @@ public void Minigame29_OnMinigameSelectedPre()
 	if (g_iActiveMinigameId == 29)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
-		Minigame29_IsCheckingCollisions = false;
+		g_bMinigame29IsCheckingCollisions = false;
 		CreateTimer(1.5, Minigame29_EnableCollisionCheck);
 	}
 }
@@ -58,7 +57,7 @@ public void Minigame29_OnMinigameSelected(int client)
 
 public Action Minigame29_EnableCollisionCheck(Handle timer)
 {
-	Minigame29_IsCheckingCollisions = true;
+	g_bMinigame29IsCheckingCollisions = true;
 	return Plugin_Handled;
 }
 
@@ -74,7 +73,7 @@ public void Minigame29_OnTouch(int entity, int other)
 		return;
 	}
 
-	if (!Minigame29_IsCheckingCollisions)
+	if (!g_bMinigame29IsCheckingCollisions)
 	{
 		return;
 	}
