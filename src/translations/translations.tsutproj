@@ -765,7 +765,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "STAI SUL BLOCCO VERDE!",
         "pt_p": null,
         "ru": null,
         "es": "¡QUEDATE EN EL BLOQUE VERDE!",
@@ -1988,7 +1988,7 @@
       "text": "BOMB JUMP ONTO THE PLATFORM!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "SALTO BOMBA SULLA PIATTAFORMA!",
         "es": "¡SALTA CON BOMBAS HASTA LA PLATAFORMA!",
         "fr": null,
         "ru": null,
@@ -2004,7 +2004,7 @@
       "text": "DON'T TOUCH ANYONE!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "NON TOCCARE NESSUNO!",
         "es": "¡NO TOQUES A NADIE!",
         "fr": null,
         "ru": null,
