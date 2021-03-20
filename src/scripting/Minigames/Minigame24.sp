@@ -5,7 +5,7 @@
  * Requested by some. Credit to those responsible for the needlejump code.
  */
 
-int Minigame24_NeedleFireDelay[MAXPLAYERS+1];
+int g_iMinigame24NeedleFireDelay[MAXPLAYERS+1];
 
 public void Minigame24_EntryPoint()
 {
@@ -34,7 +34,7 @@ public void Minigame24_OnMinigameSelected(int client)
 		player.GiveWeapon(17);
 		player.SetWeaponPrimaryAmmoCount(150);
 
-		Minigame24_NeedleFireDelay[client] = 50;
+		g_iMinigame24NeedleFireDelay[client] = 50;
 	}
 }
 
@@ -68,12 +68,12 @@ public void Minigame24_PerformNeedlejump(int i)
 	float fEyeAngle[3];
 	float fVelocity[3];
 
-	if (Minigame24_NeedleFireDelay[i] > 0) 
+	if (g_iMinigame24NeedleFireDelay[i] > 0) 
 	{
-		Minigame24_NeedleFireDelay[i] -= 1;
+		g_iMinigame24NeedleFireDelay[i] -= 1;
 	}
 
-	if ((GetClientButtons(i) & IN_ATTACK) && (Minigame24_NeedleFireDelay[i] <= 0))
+	if ((GetClientButtons(i) & IN_ATTACK) && (g_iMinigame24NeedleFireDelay[i] <= 0))
 	{
 		int iWeapon = GetPlayerWeaponSlot(i, 0);
 
@@ -107,7 +107,7 @@ public void Minigame24_PerformNeedlejump(int i)
 			}
 
 			TeleportEntity(i, NULL_VECTOR, NULL_VECTOR, fVelocity);
-			Minigame24_NeedleFireDelay[i] = 3;
+			g_iMinigame24NeedleFireDelay[i] = 3;
         }
     }
 }
