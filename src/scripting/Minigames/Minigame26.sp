@@ -4,8 +4,8 @@
  * No laughing! / Make them laugh
  */
 
-bool Minigame26_IsSelected[MAXPLAYERS+1];
-TFClassType Minigame26_VictimClass;
+bool g_bMinigame26IsPlayerSelected[MAXPLAYERS+1];
+TFClassType g_cMinigame26VictimPlayerClass;
 
 public void Minigame26_EntryPoint()
 {
@@ -27,7 +27,7 @@ public void Minigame26_OnMinigameSelectedPre()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				Minigame26_IsSelected[player.ClientId] = false;
+				g_bMinigame26IsPlayerSelected[player.ClientId] = false;
 				count++;
 			}
 		}
@@ -45,16 +45,16 @@ public void Minigame26_OnMinigameSelectedPre()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				Minigame26_IsSelected[player.ClientId] = true;
+				g_bMinigame26IsPlayerSelected[player.ClientId] = true;
 				count--;
 			}
 		}
 
 		do
 		{
-			Minigame26_VictimClass = view_as<TFClassType>(GetRandomInt(1, 9));
+			g_cMinigame26VictimPlayerClass = view_as<TFClassType>(GetRandomInt(1, 9));
 		}
-		while (Minigame26_VictimClass == TFClass_Heavy);
+		while (g_cMinigame26VictimPlayerClass == TFClass_Heavy);
 
 		g_eDamageBlockMode = EDamageBlockMode_All;
 		g_bForceCalculationCritical = true;
@@ -69,11 +69,11 @@ public void Minigame26_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		if (Minigame26_IsSelected[player.ClientId])
+		if (g_bMinigame26IsPlayerSelected[player.ClientId])
 		{
 			char key[64];
 
-			switch (Minigame26_VictimClass)
+			switch (g_cMinigame26VictimPlayerClass)
 			{
 				case TFClass_Scout:
 				{
@@ -144,7 +144,7 @@ public void Minigame26_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		if (Minigame26_IsSelected[player.ClientId])
+		if (g_bMinigame26IsPlayerSelected[player.ClientId])
 		{
 			Minigame26_SetupAttacker(player);
 		}
@@ -212,7 +212,7 @@ public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		return;
 	}
 
-	if (Minigame26_IsSelected[attacker.ClientId] && !Minigame26_IsSelected[victim.ClientId])
+	if (g_bMinigame26IsPlayerSelected[attacker.ClientId] && !g_bMinigame26IsPlayerSelected[victim.ClientId])
 	{
 		attacker.Status = PlayerStatus_Winner;
 		victim.Status = PlayerStatus_Failed;
@@ -234,7 +234,7 @@ void Minigame26_SetupAttacker(Player player)
 
 void Minigame26_SetupTarget(Player player)
 {
-	player.Class = Minigame26_VictimClass;
+	player.Class = g_cMinigame26VictimPlayerClass;
 	player.ResetHealth();
 	player.RemoveAllWeapons();
 	player.SetGodMode(false);
