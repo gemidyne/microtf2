@@ -4,7 +4,7 @@
  * Sap a building! / Get sapped!
  */
 
-TFTeam Minigame14_SpyTeam;
+TFTeam g_tMinigame14SpyTeam;
 
 public void Minigame14_EntryPoint()
 {
@@ -23,8 +23,7 @@ public void Minigame14_OnMinigameSelectedPre()
 	}
 	
 	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
-
-	Minigame14_SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
+	g_tMinigame14SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 }
 
 public void Minigame14_GetDynamicCaption(int client)
@@ -35,7 +34,7 @@ public void Minigame14_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		if (player.Team == Minigame14_SpyTeam)
+		if (player.Team == g_tMinigame14SpyTeam)
 		{
 			Format(text, sizeof(text), "%T", "Minigame14_Caption_Spies", client);
 		}
@@ -64,7 +63,7 @@ public void Minigame14_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		if (player.Team == Minigame14_SpyTeam)
+		if (player.Team == g_tMinigame14SpyTeam)
 		{
 			player.Class = TFClass_Spy;
 			player.RemoveAllWeapons();
