@@ -168,7 +168,7 @@ public void LoadMinigameData()
 
 			kv.GetString("BackgroundMusic", g_sMinigameBgm[i], 128);
 			g_fMinigameBgmLength[i] = kv.GetFloat("BackgroundMusic_Length");
-			g_bMinigameHasDynamicCaption[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
+			g_bMinigameHasDynamicCaption[i] = kv.GetNum("CaptionIsDynamic", 0) == 1;
 
 			if (g_bMinigameHasDynamicCaption[i])
 			{
@@ -244,7 +244,7 @@ public void LoadBossgameData()
 			kv.GetString("BackgroundMusic", g_sBossgameBgm[i], 128);
 
 			g_fBossgameBgmLength[i] = kv.GetFloat("Duration", 30.0);
-			g_bBossgameHasDynamicCaption[i] = (kv.GetNum("CaptionIsDynamic", 0) == 1);
+			g_bBossgameHasDynamicCaption[i] = kv.GetNum("CaptionIsDynamic", 0) == 1;
 
 			if (g_bBossgameHasDynamicCaption[i])
 			{
@@ -280,7 +280,7 @@ public void DoSelectMinigame()
 {
 	CalculateActiveParticipantCount();
 
-	int forcedMinigameID = g_hConVarPluginForceMinigame.IntValue;
+	int forcedMinigameId = g_hConVarPluginForceMinigame.IntValue;
 	int rollCount = 0;
 
 	if (g_iSpecialRoundId == 8)
@@ -288,10 +288,10 @@ public void DoSelectMinigame()
 		g_iLastPlayedMinigameId = 0;
 		g_iActiveMinigameId = 8;
 	}
-	else if (forcedMinigameID > 0 && forcedMinigameID <= g_iMinigamesLoadedCount)
+	else if (forcedMinigameId > 0 && forcedMinigameId <= g_iMinigamesLoadedCount)
 	{
 		g_iLastPlayedMinigameId = 0;
-		g_iActiveMinigameId = forcedMinigameID;
+		g_iActiveMinigameId = forcedMinigameId;
 	}
 	else
 	{
@@ -377,13 +377,13 @@ public void DoSelectBossgame()
 {
 	CalculateActiveParticipantCount();
 
-	int forcedBossgameID = g_hConVarPluginForceBossgame.IntValue;
+	int forcedBossgameId = g_hConVarPluginForceBossgame.IntValue;
 	int rollCount = 0;
 
-	if (forcedBossgameID > 0)
+	if (forcedBossgameId > 0)
 	{
 		g_iLastPlayedBossgameId = 0;
-		g_iActiveBossgameId = forcedBossgameID;
+		g_iActiveBossgameId = forcedBossgameId;
 	}
 	else
 	{
