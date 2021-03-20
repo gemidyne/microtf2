@@ -284,8 +284,6 @@ public void ResetPlayedGamePools()
 
 public void DoSelectMinigame()
 {
-	CalculateActiveParticipantCount();
-
 	int forcedMinigameId = g_hConVarPluginForceMinigame.IntValue;
 	int rollCount = 0;
 
@@ -382,8 +380,6 @@ public void DoSelectMinigame()
 
 public void DoSelectBossgame()
 {
-	CalculateActiveParticipantCount();
-
 	int forcedBossgameId = g_hConVarPluginForceBossgame.IntValue;
 	int rollCount = 0;
 

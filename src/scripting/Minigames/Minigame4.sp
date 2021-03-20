@@ -4,8 +4,7 @@
  * Airblast!
  */
 
-int Minigame4_TotalPlayers;
-int Minigame4_PlayerIndex;
+int g_iMinigame4PlayerIndex;
 
 public void Minigame4_EntryPoint()
 {
@@ -21,17 +20,7 @@ public void Minigame4_OnMinigameSelectedPre()
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = false;
-		Minigame4_TotalPlayers = 0;
-
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid && player.IsParticipating)
-			{
-				Minigame4_TotalPlayers++;
-			}
-		}
+		g_iMinigame4PlayerIndex = 0;
 	}
 }
 
@@ -60,13 +49,13 @@ public void Minigame4_OnMinigameSelected(int client)
 
 		player.Status = PlayerStatus_Winner;
 
-		Minigame4_PlayerIndex++;
+		g_iMinigame4PlayerIndex++;
 
 		player.GiveWeapon(21);
 		player.SetWeaponPrimaryAmmoCount(200);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		int posa = 360 / Minigame4_TotalPlayers * (Minigame4_PlayerIndex-1);
+		int posa = 360 / g_iActiveParticipantCount * (g_iMinigame4PlayerIndex-1);
 		float pos[3];
 		float ang[3];
 

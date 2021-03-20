@@ -414,6 +414,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		g_fActiveGameSpeed = 0.7;
 	}
 
+	CalculateActiveParticipantCount();
 	SetSpeed();
 
 	g_iCenterHudUpdateFrame = 999;
@@ -570,7 +571,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	else if (g_iActiveBossgameId > 0)
 	{
 		g_iLastPlayedBossgameId = g_iActiveBossgameId;
-		
+
 		if (g_hBossCheckTimer != INVALID_HANDLE)
 		{
 			// Closes the Boss Check Timer.
