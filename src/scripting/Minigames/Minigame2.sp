@@ -4,7 +4,7 @@
  * Kill an Enemy
  */
 
-TFClassType Minigame2_Class;
+TFClassType g_cMinigame2ClassType;
 
 public void Minigame2_EntryPoint()
 {
@@ -19,7 +19,7 @@ public void Minigame2_OnMinigameSelectedPre()
 	{
 		g_hConVarFriendlyFire.BoolValue = true;
 
-		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
+		g_cMinigame2ClassType = view_as<TFClassType>(GetRandomInt(1, 9));
 		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 		g_bIsBlockingKillCommands = true;
 	}
@@ -44,7 +44,7 @@ public void Minigame2_OnMinigameSelected(int client)
 		int weapon = 0;
 		int ammo = -1;
 
-		switch (Minigame2_Class)
+		switch (g_cMinigame2ClassType)
 		{
 			case TFClass_Scout:
 			{
@@ -101,7 +101,7 @@ public void Minigame2_OnMinigameSelected(int client)
 
 		player.RemoveAllWeapons();
 
-		player.Class = Minigame2_Class;
+		player.Class = g_cMinigame2ClassType;
 		player.SetHealth(1);
 		player.SetGodMode(false);
 		player.GiveWeapon(weapon);
