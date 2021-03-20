@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"it"		""
+		"it"		"STAI SUL BLOCCO VERDE!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -456,11 +456,11 @@
 	}
 	"Minigame28_Caption"
 	{
-		"it"		""
+		"it"		"SALTO BOMBA SULLA PIATTAFORMA!"
 	}
 	"Minigame29_Caption"
 	{
-		"it"		""
+		"it"		"NON TOCCARE NESSUNO!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
