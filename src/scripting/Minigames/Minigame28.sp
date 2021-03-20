@@ -4,21 +4,15 @@
  * Explosive Jump - get to the win area
  */
 
-int Minigame28_RedIndex = 0;
-int Minigame28_BlueIndex = 0;
+int g_iMinigame28RedPlayerSpawnIndex = 0;
+int g_iMinigame28BluePlayerSpawnIndex = 0;
 
 public void Minigame28_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame28_OnMapStart);
 	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Minigame28_OnRoundStart);
 	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame28_OnMinigameSelectedPre);
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame28_OnMinigameSelected);
 	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame28_OnMinigameFinish);
-}
-
-public void Minigame28_OnMapStart()
-{
-
 }
 
 public void Minigame28_OnRoundStart()
@@ -43,8 +37,8 @@ public void Minigame28_OnMinigameSelectedPre()
 	if (g_iActiveMinigameId == 28)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
-		Minigame28_RedIndex = 0;
-		Minigame28_BlueIndex = 0;
+		g_iMinigame28RedPlayerSpawnIndex = 0;
+		g_iMinigame28BluePlayerSpawnIndex = 0;
 	}
 }
 
@@ -85,13 +79,13 @@ public void Minigame28_OnMinigameSelected(int client)
 
 		if (player.Team == TFTeam_Red)
 		{
-			column = Minigame28_RedIndex;
-			Minigame28_RedIndex++;
+			column = g_iMinigame28RedPlayerSpawnIndex;
+			g_iMinigame28RedPlayerSpawnIndex++;
 		}
 		else 
 		{
-			column = Minigame28_BlueIndex;
-			Minigame28_BlueIndex++;
+			column = g_iMinigame28BluePlayerSpawnIndex;
+			g_iMinigame28BluePlayerSpawnIndex++;
 		}
 
 		while (column > 8)
