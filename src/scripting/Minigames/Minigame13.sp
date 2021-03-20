@@ -57,7 +57,9 @@ public void Minigame13_OnMinigameFinishPre()
 					continue;
 				}
 
-				SlapPlayer(i, 5000, false);
+				player.SetGodMode(false);
+
+				SDKHooks_TakeDamage(player.ClientId, player.ClientId, player.ClientId, 5000.0, DMG_CLUB);
 				player.Status = PlayerStatus_Failed;
 				player.PrintChatText("%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
 			}
