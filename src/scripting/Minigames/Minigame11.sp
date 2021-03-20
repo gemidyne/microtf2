@@ -102,21 +102,15 @@ public void Minigame11_OnGameFrame()
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
 				speed = GetVectorLength(velocity);
 
-				if (g_iMinigame11Mode == 2)
+				if (g_iMinigame11Mode == 2 && speed < limit && player.Status == PlayerStatus_Winner)
 				{
-					if (speed < limit && player.Status == PlayerStatus_Winner) 
-					{
-						player.Status = PlayerStatus_Failed;
-						player.Kill();
-					}
+					player.Status = PlayerStatus_Failed;
+					player.Kill();
 				}
-				else if (g_iMinigame11Mode == 1)
+				else if (g_iMinigame11Mode == 1 && speed > 100.0 && player.Status == PlayerStatus_Winner)
 				{
-					if (speed > 100.0 && player.Status == PlayerStatus_Winner)
-					{
-						player.Status = PlayerStatus_Failed;
-						player.Kill();
-					}
+					player.Status = PlayerStatus_Failed;
+					player.Kill();
 				}
 			}
 		}
