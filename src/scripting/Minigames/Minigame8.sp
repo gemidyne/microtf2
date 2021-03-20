@@ -4,9 +4,9 @@
  * Maths
  */
 
-char Minigame8_SayTextQuestion[64];
-bool Minigame8_HasBeenAnswered = false;
-int Minigame8_SayTextAnswer = 0;
+char g_sMinigame8SayTextQuestion[64];
+bool g_bMinigame8HasAnyPlayerWon = false;
+int g_iMinigame8SayTextAnswer = 0;
 
 public void Minigame8_EntryPoint()
 {
@@ -22,7 +22,7 @@ public void Minigame8_OnMinigameSelectedPre()
 {
 	if (g_iActiveMinigameId == 8)
 	{
-		Minigame8_HasBeenAnswered = false;
+		g_bMinigame8HasAnyPlayerWon = false;
 
 		int int1 = GetRandomInt(3, 15);
 		int int2 = GetRandomInt(3, 15);
@@ -38,7 +38,7 @@ public void Minigame8_OnMinigameSelectedPre()
 					int2 = 9001 - int1;
 				}
 
-				Minigame8_SayTextAnswer = int1 + int2;
+				g_iMinigame8SayTextAnswer = int1 + int2;
 				Format(form, sizeof(form), "+");
 			}
 
@@ -50,7 +50,7 @@ public void Minigame8_OnMinigameSelectedPre()
 					int2 = 1;
 				}
 
-				Minigame8_SayTextAnswer = int1 - int2;
+				g_iMinigame8SayTextAnswer = int1 - int2;
 				Format(form, sizeof(form), "-");
 			}
 
@@ -60,11 +60,11 @@ public void Minigame8_OnMinigameSelectedPre()
 
 				int1 = GetRandomInt(2, 10);
 				int2 = GetRandomInt(2, 10);
-				Minigame8_SayTextAnswer = int1 * int2;
+				g_iMinigame8SayTextAnswer = int1 * int2;
 			}
 		}
 
-		Format(Minigame8_SayTextQuestion, sizeof(Minigame8_SayTextQuestion), "%d %s %d", int1, form, int2);
+		Format(g_sMinigame8SayTextQuestion, sizeof(g_sMinigame8SayTextQuestion), "%d %s %d", int1, form, int2);
 	}
 }
 
@@ -75,7 +75,7 @@ public void Minigame8_GetDynamicCaption(int client)
 	if (player.IsInGame)
 	{
 		char text[64];
-		Format(text, sizeof(text), "%T", "Minigame8_CaptionFormatted", client, Minigame8_SayTextQuestion);
+		Format(text, sizeof(text), "%T", "Minigame8_CaptionFormatted", client, g_sMinigame8SayTextQuestion);
 		player.SetCaption(text);
 	}
 }
@@ -127,14 +127,14 @@ public Action Command_Minigame8Say(int client, int args)
 
 	int guess = StringToInt(argument);
 
-	if (guess == Minigame8_SayTextAnswer)
+	if (guess == g_iMinigame8SayTextAnswer)
 	{
 		invoker.TriggerSuccess();
 
-		if (!Minigame8_HasBeenAnswered && Config_BonusPointsEnabled())
+		if (!g_bMinigame8HasAnyPlayerWon && Config_BonusPointsEnabled())
 		{
 			invoker.Score++;
-			Minigame8_HasBeenAnswered = true;
+			g_bMinigame8HasAnyPlayerWon = true;
 
 			Minigame8_NotifyPlayerComplete(invoker);
 		}
@@ -183,7 +183,7 @@ public void Minigame8_OnMinigameFinish()
 
 			if (player.IsValid)
 			{
-				player.PrintChatText("%T", "Minigame8_CorrectAnswerWas", i, Minigame8_SayTextAnswer);
+				player.PrintChatText("%T", "Minigame8_CorrectAnswerWas", i, g_iMinigame8SayTextAnswer);
 			}
 		}
 	}
