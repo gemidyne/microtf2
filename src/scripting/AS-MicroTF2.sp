@@ -570,6 +570,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	else if (g_iActiveBossgameId > 0)
 	{
 		g_iLastPlayedBossgameId = g_iActiveBossgameId;
+		
 		if (g_hBossCheckTimer != INVALID_HANDLE)
 		{
 			// Closes the Boss Check Timer.
@@ -1261,8 +1262,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 	g_bIsMinigameActive = false;
 	g_bIsGameOver = false;
 
-	g_hPlayedMinigamePool.Clear();
-	g_hPlayedBossgamePool.Clear();
+	ResetPlayedGamePools();
 
 	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;

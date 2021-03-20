@@ -276,6 +276,12 @@ public void LoadBossgameData()
 	kv.Close();
 }
 
+public void ResetPlayedGamePools()
+{
+	g_hPlayedMinigamePool.Clear();
+	g_hPlayedBossgamePool.Clear();
+}
+
 public void DoSelectMinigame()
 {
 	CalculateActiveParticipantCount();
@@ -311,9 +317,10 @@ public void DoSelectMinigame()
 			{
 				g_iActiveMinigameId = g_iLastPlayedMinigameId;
 
-				if (rollCount >= g_iMinigamesLoadedCount)
+				if (rollCount > (g_iMinigamesLoadedCount * 2))
 				{
-					g_hPlayedMinigamePool.Clear();
+					// Essentially, start from the beginning again until we're cleared at end of the round
+					g_hPlayedMinigamePool.Erase(0);
 				}
 			}
 			else
@@ -403,9 +410,10 @@ public void DoSelectBossgame()
 			{
 				g_iActiveBossgameId = g_iLastPlayedBossgameId;
 
-				if (rollCount > 32)
+				if (rollCount > (g_iBossgamesLoadedCount * 2))
 				{
-					g_hPlayedBossgamePool.Clear();
+					// Essentially, start from the beginning again until we're cleared at end of the round
+					g_hPlayedBossgamePool.Erase(0);
 				}
 			}
 			else
