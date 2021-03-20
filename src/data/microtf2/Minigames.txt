@@ -144,7 +144,7 @@
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame17_GetDynamicCaption"
 		"EntryPoint"		"Minigame17_EntryPoint"
-		"BlockedSpecialRounds"		"11,12"
+		"BlockedSpecialRounds"		"11,12,13"
 		"RequiresMultiplePlayers"		"1"
 		"BackgroundMusic_Length"		"4.048980"
 	}
@@ -223,6 +223,7 @@
 		"EntryPoint"		"Minigame26_EntryPoint"
 		"BackgroundMusic_Length"		"4.061673"
 		"RequiresMultiplePlayers"		"1"
+		"BlockedSpecialRounds"		"11,12,13"
 	}
 	"27"
 	{
