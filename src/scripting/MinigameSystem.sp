@@ -14,6 +14,7 @@ bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
+int g_iMinigameMinimumParticipantCount[MAXIMUM_MINIGAMES];
 
 bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
 char g_sBossgameDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
@@ -194,6 +195,7 @@ public void LoadMinigameData()
 			g_bMinigameRequiresMultiplePlayers[i] = kv.GetNum("RequiresMultiplePlayers", 0) == 1;
 			g_fMinigameBlockedOnSpeedsGreaterThan[i] = kv.GetFloat("BlockedOnSpeedsHigherThan", 0.0);
 			g_iMinigameMaximumParticipantCount[i] = kv.GetNum("MaximumPlayerCount", 0);
+			g_iMinigameMinimumParticipantCount[i] = kv.GetNum("MinimumPlayerCount", 0);
 		}
 		while (kv.GotoNextKey());
 	}
@@ -360,6 +362,15 @@ public void DoSelectMinigame()
 					// Current participant count exceeds maximum participant count specified for minigame
 					#if defined DEBUG
 					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count exceeds maximum permitted", g_iActiveMinigameId);
+					#endif
+
+					g_iActiveMinigameId = g_iLastPlayedMinigameId;
+				}
+				else if (g_iMinigameMinimumParticipantCount[g_iActiveMinigameId] > 0 && g_iActiveParticipantCount < g_iMinigameMinimumParticipantCount[g_iActiveMinigameId])
+				{
+					// Current participant count does not meet minimum requirement for minigame
+					#if defined DEBUG
+					PrintToChatAll("[MINIGAMESYS] Chose minigame %i, but rerolling as active participant count does not meet minimum required for minigame", g_iActiveMinigameId);
 					#endif
 
 					g_iActiveMinigameId = g_iLastPlayedMinigameId;

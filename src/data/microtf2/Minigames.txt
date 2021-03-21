@@ -248,5 +248,6 @@
 		"EntryPoint"		"Minigame29_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
 		"MaximumPlayerCount"		"24"
+		"MinimumPlayerCount"		"6"
 	}
 }
