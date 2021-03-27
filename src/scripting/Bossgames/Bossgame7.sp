@@ -77,15 +77,13 @@ int g_iBossgame7ActiveCameraEntityId = 0;
 
 public void Bossgame7_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame7_OnMapStart);
-	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Bossgame7_OnGameFrame);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame7_OnMinigameSelected);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame7_OnMinigameFinish);
-	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, Bossgame7_OnPlayerClassChange);
-
-	RegConsoleCmd("say", Bossgame7_SayCommand);
-	RegConsoleCmd("say_team", Bossgame7_SayCommand);
+	g_pfOnMapStart.AddFunction(INVALID_HANDLE, Bossgame7_OnMapStart);
+	g_pfOnGameFrame.AddFunction(INVALID_HANDLE, Bossgame7_OnGameFrame);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame7_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame7_OnMinigameSelected);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Bossgame7_OnMinigameFinish);
+	g_pfOnPlayerClassChange.AddFunction(INVALID_HANDLE, Bossgame7_OnPlayerClassChange);
+	g_pfOnPlayerChatMessage.AddFunction(INVALID_HANDLE, Bossgame7_OnChatMessage);
 
 	Bossgame7_LoadDictionary(BOSSGAME7_SAYTEXTINDICE_EASY, "data/microtf2/Bossgame7.Dictionary.Easy.txt");
 	Bossgame7_LoadDictionary(BOSSGAME7_SAYTEXTINDICE_MEDIUM, "data/microtf2/Bossgame7.Dictionary.Medium.txt");
@@ -242,33 +240,18 @@ public void Bossgame7_OnMinigameSelected(int client)
 	SetEntityMoveType(client, MOVETYPE_NONE);
 
 	Bossgame7_PlaySnd(client, BOSSGAME7_SFX_BOSS_START);
+	player.SetThirdPersonMode(true);
 }
 
-public Action Bossgame7_SayCommand(int client, int args)
+public Action Bossgame7_OnChatMessage(int client, const char[] messageText, bool isTeamMessage)
 {
 	if (g_bIsMinigameActive && g_iActiveBossgameId == 7)
 	{
-		char text[192];
-		if (GetCmdArgString(text, sizeof(text)) < 1)
-		{
-			return Plugin_Continue;
-		}
-
 		Player player = new Player(client);
 
 		if (player.IsParticipating && g_iBossgame7RemainingTime >= 0 && player.Status != PlayerStatus_Failed)
 		{
-			int startidx;
-			if (text[strlen(text)-1] == '"') 
-			{
-				text[strlen(text)-1] = '\0';
-			}
-
-			startidx = 1;
-			char message[192];
-			BreakString(text[startidx], message, sizeof(message));
-
-			if (strcmp(message, g_sBossgame7ActiveAnswerSet[g_iBossgame7PlayerActiveAnswerIndex[client]], false) == 0)
+			if (strcmp(messageText, g_sBossgame7ActiveAnswerSet[g_iBossgame7PlayerActiveAnswerIndex[client]], false) == 0)
 			{
 				g_iBossgame7PlayerActiveAnswerIndex[client]++;
 				PrintAnswerDisplay(player);
