@@ -97,29 +97,12 @@ public Action Minigame8_OnChatMessage(int client, const char[] messageText, bool
 		return Plugin_Continue;
 	}
 
-	char text[192];
-	strcopy(text, sizeof(text), messageText);
-
-	int startidx;
-	if (text[strlen(text)-1] == '"')
-	{
-		text[strlen(text)-1] = '\0';
-	}
-
-	startidx = 1;
-
-	char message[192];
-	BreakString(text[startidx], message, sizeof(message));
-
-	char argument[64];
-	GetCmdArg(1, argument, sizeof(argument));
-		
-	if (!IsStringInt(argument)) 
+	if (!IsStringInt(messageText)) 
 	{
 		return Plugin_Continue;
 	}
 
-	int guess = StringToInt(argument);
+	int guess = StringToInt(messageText);
 
 	if (guess == g_iMinigame8SayTextAnswer)
 	{

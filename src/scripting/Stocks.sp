@@ -190,7 +190,7 @@ stock void ReverseString(const char[] input, int inputSize, char[] output)
 	}
 }
 
-stock bool IsStringInt(const char arg[64])
+stock bool IsStringInt(const char[] arg)
 {
 	return StringToInt(arg) != 0 || StrEqual(arg, "0");
 }
