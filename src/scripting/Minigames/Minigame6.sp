@@ -14,11 +14,8 @@ bool g_bMinigame6HasAnyPlayerWon = false;
 
 public void Minigame6_EntryPoint()
 {
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
-
-	// TODO: This should probably rely on forwards in the future
-	RegConsoleCmd("say", Command_MinigameSixSay);
-	RegConsoleCmd("say_team", Command_MinigameSixSay);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Minigame6_OnMinigameSelectedPre);
+	g_pfOnPlayerChatMessage.AddFunction(INVALID_HANDLE, Minigame6_OnChatMessage);
 
 	Minigame6_LoadAnswers();
 }
@@ -44,7 +41,7 @@ public void Minigame6_GetDynamicCaption(int client)
 	}
 }
 
-public Action Command_MinigameSixSay(int client, int args)
+public Action Minigame6_OnChatMessage(int client, const char[] messageText, bool isTeamMessage)
 {
 	if (!g_bIsMinigameActive)
 	{
@@ -56,12 +53,6 @@ public Action Command_MinigameSixSay(int client, int args)
 		return Plugin_Continue;
 	}
 
-	char text[192];
-	if (GetCmdArgString(text, sizeof(text)) < 1)
-	{
-		return Plugin_Continue;
-	}
-
 	Player invoker = new Player(client);
 
 	if (!invoker.IsParticipating)
@@ -69,17 +60,7 @@ public Action Command_MinigameSixSay(int client, int args)
 		return Plugin_Continue;
 	}
 
-	int startidx;
-	if (text[strlen(text)-1] == '"') 
-	{
-		text[strlen(text)-1] = '\0';
-	}
-
-	startidx = 1;
-	char message[192];
-	BreakString(text[startidx], message, sizeof(message));
-
-	if (strcmp(message, g_sMinigame6SayTextAnswer, false) == 0)
+	if (strcmp(messageText, g_sMinigame6SayTextAnswer, false) == 0)
 	{
 		invoker.TriggerSuccess();
 
