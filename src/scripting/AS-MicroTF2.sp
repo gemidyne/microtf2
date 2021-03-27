@@ -131,6 +131,8 @@ public void OnPluginEnd()
 	{
 		ResetConVars();
 	}
+
+	RemoveForwardsFromMemory();
 }
 
 public void OnMapStart()

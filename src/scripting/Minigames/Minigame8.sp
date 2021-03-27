@@ -77,7 +77,6 @@ public void Minigame8_GetDynamicCaption(int client)
 	}
 }
 
-
 public Action Minigame8_OnChatMessage(int client, const char[] messageText, bool isTeamMessage)
 {
 	if (!g_bIsMinigameActive)
