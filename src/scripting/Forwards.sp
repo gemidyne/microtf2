@@ -307,7 +307,17 @@ PrivateForward g_pfOnPlayerConditionRemoved;
  */
 PrivateForward g_pfOnPlayerCollisionWithPlayer;
 
-stock void InitializeForwards()
+/**
+ * Forward is called when a player uses say/say_team command
+ *
+ * @param Player who sent the message
+ * @param Message text
+ * @param Is team only?
+ * @noreturn
+ */
+PrivateForward g_pfOnPlayerChatMessage;
+
+void InitializeForwards()
 {
 	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Forwards...");
@@ -348,9 +358,10 @@ stock void InitializeForwards()
 	g_pfOnPlayerConditionAdded = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerConditionRemoved = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerCollisionWithPlayer = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	g_pfOnPlayerChatMessage = new PrivateForward(ET_Event, Param_Any, Param_String, Param_Any);
 }
 
-stock void RemoveForwardsFromMemory()
+void RemoveForwardsFromMemory()
 {
 	SafelyRemoveAllFromForward(g_pfOnMapStart);
 	SafelyRemoveAllFromForward(g_pfOnConfigsExecuted);
@@ -386,6 +397,7 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(g_pfOnPlayerConditionAdded);
 	SafelyRemoveAllFromForward(g_pfOnPlayerConditionRemoved);
 	SafelyRemoveAllFromForward(g_pfOnPlayerCollisionWithPlayer);
+	SafelyRemoveAllFromForward(g_pfOnPlayerChatMessage);
 }
 
 stock void SafelyRemoveAllFromForward(PrivateForward fwd)

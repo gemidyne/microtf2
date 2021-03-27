@@ -10,12 +10,9 @@ int g_iMinigame8SayTextAnswer = 0;
 
 public void Minigame8_EntryPoint()
 {
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
-
-	// TODO: This should probably rely on forwards in the future
-	RegConsoleCmd("say", Command_Minigame8Say);
-	RegConsoleCmd("say_team", Command_Minigame8Say);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Minigame8_OnMinigameFinish);
+	g_pfOnPlayerChatMessage.AddFunction(INVALID_HANDLE, Minigame8_OnChatMessage);
 }
 
 public void Minigame8_OnMinigameSelectedPre()
@@ -81,7 +78,7 @@ public void Minigame8_GetDynamicCaption(int client)
 }
 
 
-public Action Command_Minigame8Say(int client, int args)
+public Action Minigame8_OnChatMessage(int client, const char[] messageText, bool isTeamMessage)
 {
 	if (!g_bIsMinigameActive)
 	{
@@ -93,18 +90,15 @@ public Action Command_Minigame8Say(int client, int args)
 		return Plugin_Continue;
 	}
 
-	char text[192];
-	if (GetCmdArgString(text, sizeof(text)) < 1)
-	{
-		return Plugin_Continue;
-	}
-
 	Player invoker = new Player(client);
 
 	if (!invoker.IsParticipating)
 	{
 		return Plugin_Continue;
 	}
+
+	char text[192];
+	strcopy(text, sizeof(text), messageText);
 
 	int startidx;
 	if (text[strlen(text)-1] == '"')

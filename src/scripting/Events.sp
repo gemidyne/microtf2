@@ -603,6 +603,29 @@ public void TF2_OnConditionRemoved(int client, TFCond condition)
 	}
 }
 
+public Action OnClientSayCommand(int client, const char[] command, const char[] sArgs)
+{
+	if (IsChatTrigger())
+	{
+		return Plugin_Continue;
+	}
+
+	if (g_pfOnPlayerChatMessage != INVALID_HANDLE)
+	{
+		Action result;
+
+		Call_StartForward(g_pfOnPlayerChatMessage);
+		Call_PushCell(client);
+		Call_PushString(sArgs);
+		Call_PushCell(strcmp(command, "say_team", false));
+		Call_Finish(result);
+
+		return result;
+	}
+
+	return Plugin_Continue;
+}
+
 public void OnClientPostAdminCheck(int client)
 {
 	if (!g_bIsPluginEnabled)
