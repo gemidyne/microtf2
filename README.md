@@ -33,6 +33,14 @@ If you intend to use the SDK plugin for developing your own gamemodes or minigam
 
 - Sound Info Library extension: https://forums.alliedmods.net/showthread.php?t=105816   https://github.com/bcserv/soundlib (Used for determining sound file length for themes and minigames)
 
+## Map Development
+
+The map's master VMF file lives in /assets/warioware_redux_master.vmf - we use https://www.gemidyne.com/projects/tsukuru/ to build dev & release versions of the map and pack in data. You can import our map compile settings into Tsukuru by importing the warioware_redux_master.tsumc in the /assets/ folder - and then fix the file paths to be correct for your repository path. 
+
+Our workflow for dev maps / release maps is to pack all necessary data into the BSP file, and then repack the BSP file. You can do all this by using Tsukuru. Packing all sounds, textures, models into the BSP file and repacking it means players will only need to download a single file to play the gamemode.
+
+We intend to use [Hammer++](https://ficool2.github.io/HammerPlusPlus-Website/index.html) going forward for map development, as this version of Hammer has many fixes over the stock version of Hammer bundled with TF2. If you want to use the original Hammer, you can - we have not tested this however.
+
 ## Want to help translate the gamemode into other languages? 
 
 We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
