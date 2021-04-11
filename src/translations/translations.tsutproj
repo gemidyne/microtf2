@@ -298,7 +298,7 @@
         "es": "HAS SIDO ELIMINADO!",
         "jp": null,
         "pl": "ZOSTAŁEŚ WYELIMINOWANY!",
-        "de": "DU WURDEST AUßER GEFECHT GESETZT!"
+        "de": "DU WURDEST AUSSER GEFECHT GESETZT!"
       },
       "ignoreEmptyValue": false
     },
@@ -885,7 +885,7 @@
         "es": "¡DISPARA A LOS BARRILES!",
         "jp": null,
         "pl": "TRAF W JAK NAJWIĘCEJ BECZEK!",
-        "de": "SCHIEßE DIE MEISTEN FÄSSER AB!"
+        "de": "SCHIESSE DIE MEISTEN FÄSSER AB!"
       },
       "ignoreEmptyValue": false
     },
@@ -2086,7 +2086,7 @@
         "pt_p": "ACERTE UM INIMIGO!",
         "pt": "ACERTE UM INIMIGO!",
         "pl": "UDERZ WROGA!",
-        "de": "ERSCHIEßE EINEN GEGNER"
+        "de": "ERSCHIESSE EINEN GEGNER"
       },
       "ignoreEmptyValue": false
     },
