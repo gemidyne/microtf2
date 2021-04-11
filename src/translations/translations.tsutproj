@@ -47,7 +47,7 @@
         "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
         "jp": null,
         "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów.",
-        "de": null
+        "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen."
       },
       "ignoreEmptyValue": false
     },
@@ -70,7 +70,7 @@
         "es": "Puntuacion: {1}",
         "jp": null,
         "pl": "Wynik: {1}",
-        "de": null
+        "de": "Punkte: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -93,7 +93,7 @@
         "es": "Minijuegos: {1}",
         "jp": null,
         "pl": "Mikrogry: {1}",
-        "de": null
+        "de": "Minispiele: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -116,7 +116,7 @@
         "es": "Puntuacion del Equipo: {1}",
         "jp": null,
         "pl": "Wynik Drużyny: {1}",
-        "de": null
+        "de": "Team Punkte: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -139,7 +139,7 @@
         "es": "Barriles: {1}",
         "jp": null,
         "pl": "Beczki: {1}",
-        "de": null
+        "de": "Fässer: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -166,7 +166,7 @@
         "es": "Ronda {1} de {2}",
         "jp": null,
         "pl": "Runda {1} z {2}",
-        "de": null
+        "de": "Runde {1} von {2}"
       },
       "ignoreEmptyValue": false
     },
@@ -189,7 +189,7 @@
         "es": "Ronda {1}",
         "jp": null,
         "pl": "Runda {1}",
-        "de": null
+        "de": "Runde {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -212,7 +212,7 @@
         "es": "Tema de {1}",
         "jp": null,
         "pl": "Piosenka przewodnia {1}",
-        "de": null
+        "de": "{1}'s Melodie"
       },
       "ignoreEmptyValue": false
     },
@@ -235,7 +235,7 @@
         "es": "RONDA ESPECIAL: {1}!",
         "jp": null,
         "pl": "RUNDA SPECJALNA: {1}!",
-        "de": null
+        "de": "SPEZIAL RUNDE: {1}!"
       },
       "ignoreEmptyValue": false
     },
@@ -262,7 +262,7 @@
         "es": "La condicion de la ronda especial es... {1}!\n{2}",
         "jp": null,
         "pl": "Warunek rundy specjalnej to... {1}!\n{2}",
-        "de": null
+        "de": "Die Bedingung für diese Spezial Runde ist... {1}!\n{2}"
       },
       "ignoreEmptyValue": false
     },
@@ -280,7 +280,7 @@
         "es": "Reapareceras cuando el minijuego o jefe actual termine.",
         "jp": null,
         "pl": "Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca.",
-        "de": null
+        "de": "Du wirst wiederbelebt sobald das derzeitige Mini- oder Bossspiel beendet wurde."
       },
       "ignoreEmptyValue": false
     },
@@ -298,7 +298,7 @@
         "es": "HAS SIDO ELIMINADO!",
         "jp": null,
         "pl": "ZOSTAŁEŚ WYELIMINOWANY!",
-        "de": null
+        "de": "DU WURDEST AUßER GEFECHT GESETZT!"
       },
       "ignoreEmptyValue": false
     },
@@ -316,7 +316,7 @@
         "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion.",
         "jp": null,
         "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku.",
-        "de": null
+        "de": "Es ist nicht erlaubt die Klasse währen dieser Spezial Runde zu wechseln! 1 Punkt wurde zu deinem Punktestand hinzugefügt."
       },
       "ignoreEmptyValue": false
     },
@@ -334,7 +334,7 @@
         "es": "Perdedor!",
         "jp": null,
         "pl": "Przegrany!",
-        "de": null
+        "de": "Verlierer!"
       },
       "ignoreEmptyValue": false
     },
@@ -352,7 +352,7 @@
         "es": "Ganador!",
         "jp": null,
         "pl": "Zwycięzca!",
-        "de": null
+        "de": "Gewinner!"
       },
       "ignoreEmptyValue": false
     },
@@ -370,7 +370,7 @@
         "es": "¡MÁS RÁPIDO!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "GESCHWINDIGKEIT ERHÖHT!"
       },
       "ignoreEmptyValue": false
     },
@@ -388,7 +388,7 @@
         "es": "¡MÁS LENTO!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "GESCHWINDIGKEIT VERLANGSAMT!"
       },
       "ignoreEmptyValue": false
     },
@@ -406,7 +406,7 @@
         "es": "¡FALLASTE!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "FEHLGESCHLAGEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -424,7 +424,7 @@
         "es": "¡GANASTE!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "ERFOLG!"
       },
       "ignoreEmptyValue": false
     },
@@ -442,7 +442,7 @@
         "es": "¡JEFE FINAL!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "BOSS ZEIT!"
       },
       "ignoreEmptyValue": false
     },
@@ -460,7 +460,7 @@
         "es": "¡FIN DEL JUEGO!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "SPIEL VORBEI!"
       },
       "ignoreEmptyValue": false
     },
@@ -478,7 +478,7 @@
         "es": "¡RONDA ESPECIAL!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "SPEZIAL RUNDE!"
       },
       "ignoreEmptyValue": false
     },
@@ -496,7 +496,7 @@
         "es": "== LA RONDA ESPECIAL A TERMINADO! ==",
         "jp": null,
         "pl": "== RUNDA SPECJALNA DOBIEGŁA KOŃCA! ==",
-        "de": null
+        "de": "== DIE SPEZIAL RUNDE IST VORBEI! =="
       },
       "ignoreEmptyValue": false
     },
@@ -514,7 +514,7 @@
         "es": "El ganador es...",
         "jp": null,
         "pl": "Zwycięzcą został...",
-        "de": null
+        "de": "Der Gewinner ist..."
       },
       "ignoreEmptyValue": false
     },
@@ -532,7 +532,7 @@
         "es": "Los ganadores son...",
         "jp": null,
         "pl": "Zwycięzcami zostali...",
-        "de": null
+        "de": "Die Gewinner sind..."
       },
       "ignoreEmptyValue": false
     },
@@ -559,7 +559,7 @@
         "es": "{1} y {2}{default}",
         "jp": null,
         "pl": "{1} oraz {2}{default}",
-        "de": null
+        "de": "{1} und {2}{default}"
       },
       "ignoreEmptyValue": false
     },
@@ -577,7 +577,7 @@
         "es": "No hay ganadores!",
         "jp": null,
         "pl": "Nie ma zwycięzców!",
-        "de": null
+        "de": "Es gibt keinen Gewinner!"
       },
       "ignoreEmptyValue": false
     },
@@ -608,7 +608,7 @@
         "es": "{1} {2} {default}con {3} puntos!",
         "jp": null,
         "pl": "{1} {2} {default}z wynikiem {3}!",
-        "de": null
+        "de": "{1} {2} {default}mit {3} Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -631,7 +631,7 @@
         "es": "El equipo ganador es RED con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna RED z wynikiem {1}!",
-        "de": null
+        "de": "Das Gewinner Team ist Team RED mit {1} Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -654,7 +654,7 @@
         "es": "El equipo ganador es BLU con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna BLU z wynikiem {1}!",
-        "de": null
+        "de": "Das Gewinner Team ist Team BLU mit {1} Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -672,7 +672,7 @@
         "es": "Tablas! Ambos equipos tienen los mismos puntos!",
         "jp": null,
         "pl": "Impas! Obie drużyny mają tyle samo punktów!",
-        "de": null
+        "de": "Unentschieden! Beide Teams haben die gleiche Punktezahl!"
       },
       "ignoreEmptyValue": false
     },
@@ -690,7 +690,7 @@
         "es": "Intermedio!",
         "jp": null,
         "pl": "Przerwa!",
-        "de": null
+        "de": "Unterbrechung!"
       },
       "ignoreEmptyValue": false
     },
@@ -708,7 +708,7 @@
         "es": "Descanso! Hora de votar el siguiente mapa.",
         "jp": null,
         "pl": "Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę.",
-        "de": null
+        "de": "Pause! Zeit um die nächste Karte zu wählen."
       },
       "ignoreEmptyValue": false
     },
@@ -726,7 +726,7 @@
         "es": "SALTA CON COHETES HASTA EL FINAL!",
         "jp": null,
         "pl": "UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!",
-        "de": null
+        "de": "ROCKET JUMP BIS ZUM ENDE!"
       },
       "ignoreEmptyValue": false
     },
@@ -749,7 +749,7 @@
         "es": "{1} alcanzó el objetivo primero! (+1 puntaje!)",
         "jp": null,
         "pl": "{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)",
-        "de": null
+        "de": "{1} hat als erstes die Spitze erreicht! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -767,7 +767,7 @@
         "es": "ESCAPA DE LA FABRICA!",
         "jp": null,
         "pl": "UCIEKNIJ Z FABRYKI!",
-        "de": null
+        "de": "FLÜCHTE AUS DER FABRIK!"
       },
       "ignoreEmptyValue": false
     },
@@ -790,7 +790,7 @@
         "es": "{1} alcanzó el objetivo primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)",
-        "de": null
+        "de": "{1}{2} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -808,7 +808,7 @@
         "es": "¡QUEDATE EN EL BLOQUE VERDE!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "BLEIBE AUF DEN GRÜNEN BLÖCKEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -826,7 +826,7 @@
         "es": "¡NO TE CAIGAS AL AGUA!",
         "jp": null,
         "pl": "NIE WPADNIJ DO WODY!",
-        "de": null
+        "de": "FALLE NICHT INS WASSER!"
       },
       "ignoreEmptyValue": false
     },
@@ -844,7 +844,7 @@
         "es": "¡LLEGA HASTA LA META!",
         "jp": null,
         "pl": "DOTRZYJ DO CELU!",
-        "de": null
+        "de": "ERREICHE DAS ZIEL!"
       },
       "ignoreEmptyValue": false
     },
@@ -867,7 +867,7 @@
         "es": "{1} alcanzó el objetivo primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)",
-        "de": null
+        "de": "{1} erreichte das Ziel als erstes! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -885,7 +885,7 @@
         "es": "¡DISPARA A LOS BARRILES!",
         "jp": null,
         "pl": "TRAF W JAK NAJWIĘCEJ BECZEK!",
-        "de": null
+        "de": "SCHIEßE DIE MEISTEN FÄSSER AB!"
       },
       "ignoreEmptyValue": false
     },
@@ -921,7 +921,7 @@
         "es": "LLEGA HASTA EL FINAL!",
         "jp": null,
         "pl": "DOTRZYJ DO KOŃCA!",
-        "de": null
+        "de": "BEGIB DICH ZUM ENDE!"
       },
       "ignoreEmptyValue": false
     },
@@ -939,7 +939,7 @@
         "es": "MATA A UN ENEMIGO!",
         "jp": null,
         "pl": "ZABIJ WROGA!",
-        "de": null
+        "de": "TÖTE EINEN GEGNER!"
       },
       "ignoreEmptyValue": false
     },
@@ -957,7 +957,7 @@
         "es": "ROMPE LOS BARRILES!",
         "jp": null,
         "pl": "ZNISZCZ BECZKI!",
-        "de": null
+        "de": "ZERBRICH DIE FÄSSER!"
       },
       "ignoreEmptyValue": false
     },
@@ -975,7 +975,7 @@
         "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
         "jp": null,
         "pl": "ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!",
-        "de": null
+        "de": "AIRBLAST UND AM LEBEN BLEIBEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -993,7 +993,7 @@
         "es": "SALTO CON BOMBAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!",
-        "de": null
+        "de": "STICKY JUMP!"
       },
       "ignoreEmptyValue": false
     },
@@ -1016,7 +1016,7 @@
         "es": "DI LA PALABRA!\n{1}",
         "jp": null,
         "pl": "NAPISZ SŁOWO!\n{1}",
-        "de": null
+        "de": "SCHREIB DAS WORT!\n{1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1039,7 +1039,7 @@
         "es": "{1} dijo la palabra primero! (Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)",
-        "de": null
+        "de": "{1} schrieb das Wort als erstes! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1057,7 +1057,7 @@
         "es": "SALTO CON COHETES!",
         "jp": null,
         "pl": "WYKONAJ RAKIETOWY SKOK!",
-        "de": null
+        "de": "ROCKET JUMP!"
       },
       "ignoreEmptyValue": false
     },
@@ -1080,7 +1080,7 @@
         "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
         "jp": null,
         "pl": "ODPOWIEDZ NA PYTANIE!\n{1} = ?",
-        "de": null
+        "de": "BEANTWORTE DIE FRAGE!\n{1} = ?"
       },
       "ignoreEmptyValue": false
     },
@@ -1103,7 +1103,7 @@
         "es": "La respuesta correcta era {1}!",
         "jp": null,
         "pl": "Poprawna odpowiedź to {1}!",
-        "de": null
+        "de": "Die richtige Antwort war {1}!"
       },
       "ignoreEmptyValue": false
     },
@@ -1126,7 +1126,7 @@
         "es": "{1} dijo la respuesta primero! (Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)",
-        "de": null
+        "de": "{1} hat als erstes die richtige Antwort erraten! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1144,7 +1144,7 @@
         "es": "SIMON DICE: BURLATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: DRWINA!",
-        "de": null
+        "de": "SIMON SAYS: VERSPOTTEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1162,7 +1162,7 @@
         "es": "SIMON DICE: SALTA!",
         "jp": null,
         "pl": "SZYMON MÓWI: SKACZ!",
-        "de": null
+        "de": "SIMON SAYS: SPRINGEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1180,7 +1180,7 @@
         "es": "SIMON DICE: AGACHATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: KUCNIJ!",
-        "de": null
+        "de": "SIMON SAYS: DUCKEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1198,7 +1198,7 @@
         "es": "ALGUIEN DICE: BURLATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: DRWINA!",
-        "de": null
+        "de": "JEMAND SAGT: VERSPOTTEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1216,7 +1216,7 @@
         "es": "ALGUIEN DICE: SALTA!",
         "jp": null,
         "pl": "KTOŚ MÓWI: SKACZ!",
-        "de": null
+        "de": "JEMAND SAGT: SPRINGEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1234,7 +1234,7 @@
         "es": "ALGUIEN DICE: AGACHATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: KUCNIJ!",
-        "de": null
+        "de": "JEMAND SAGT: DUCKEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1252,7 +1252,7 @@
         "es": "(Simon no a dicho eso..)",
         "jp": null,
         "pl": "(Szymon tego nie powiedział...)",
-        "de": null
+        "de": "(Simon hat es nicht gesagt..)"
       },
       "ignoreEmptyValue": false
     },
@@ -1270,7 +1270,7 @@
         "es": "El Kamikaze esta por aqui!",
         "jp": null,
         "pl": "Kamikaze jest tutaj!",
-        "de": null
+        "de": "Kamikaze ist hier!"
       },
       "ignoreEmptyValue": false
     },
@@ -1288,7 +1288,7 @@
         "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
         "jp": null,
         "pl": "ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!",
-        "de": null
+        "de": "SPRENGE SO VIELE SPIELER WIE MÖGLICH IN DIE LUFT!"
       },
       "ignoreEmptyValue": false
     },
@@ -1306,7 +1306,7 @@
         "es": "HUYE DEL KAMIKAZE!",
         "jp": null,
         "pl": "UCIEKNIJ OD KAMIKAZE!",
-        "de": null
+        "de": "RENN VON DER KAMIKAZE WEG!"
       },
       "ignoreEmptyValue": false
     },
@@ -1324,7 +1324,7 @@
         "es": "NO PARES DE MOVERTE!",
         "jp": null,
         "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!",
-        "de": null
+        "de": "BLEIB IN BEWEGUNG!"
       },
       "ignoreEmptyValue": false
     },
@@ -1342,7 +1342,7 @@
         "es": "NO TE MUEVAS!",
         "jp": null,
         "pl": "NIE RUSZAJ SIĘ!",
-        "de": null
+        "de": "NICHT BEWEGEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1360,7 +1360,7 @@
         "es": "SUBE A UNA PLATAFORMA!",
         "jp": null,
         "pl": "DOSTAŃ SIĘ NA PLATFORMĘ!",
-        "de": null
+        "de": "SPRING AUF EINE PLATFORM!"
       },
       "ignoreEmptyValue": false
     },
@@ -1378,7 +1378,7 @@
         "es": "SPYCRAB!",
         "jp": null,
         "pl": "SZPIEGOKRAB!",
-        "de": null
+        "de": "SPYCRAB!"
       },
       "ignoreEmptyValue": false
     },
@@ -1396,7 +1396,7 @@
         "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
         "jp": null,
         "pl": "Szpiegokraby muszą kucać i patrzeć w górę!",
-        "de": null
+        "de": "Spycrabs müssen sich Ducken und nach oben schauen!"
       },
       "ignoreEmptyValue": false
     },
@@ -1414,7 +1414,7 @@
         "es": "DESTRUYE UNA CONSTRUCCION!",
         "jp": null,
         "pl": "ZNISZCZ KONSTRUKCJĘ SAPEREM!",
-        "de": null
+        "de": "SABOTIERE EIN GEBÄUDE!"
       },
       "ignoreEmptyValue": false
     },
@@ -1432,7 +1432,7 @@
         "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
         "jp": null,
         "pl": "POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!",
-        "de": null
+        "de": "LASS EIN GEBÄUDE SABOTIERT WERDEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1450,7 +1450,7 @@
         "es": "CONSTRUYE ALGO!",
         "jp": null,
         "pl": "ZBUDUJ COKOLWIEK!",
-        "de": null
+        "de": "BAUE ETWAS!"
       },
       "ignoreEmptyValue": false
     },
@@ -1468,7 +1468,7 @@
         "es": "CONSTRUYE UN DISPENSADOR!",
         "jp": null,
         "pl": "ZBUDUJ ZASOBNIK!",
-        "de": null
+        "de": "BAUE EINEN DISPENSER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1486,7 +1486,7 @@
         "es": "CONSTRUYE UN TELETRANSPORTADOR!",
         "jp": null,
         "pl": "ZBUDUJ TELEPORT!",
-        "de": null
+        "de": "BAUE EINEN TELEPORTER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1504,7 +1504,7 @@
         "es": "CONSTRUYE UN CENTINELA!",
         "jp": null,
         "pl": "ZBUDUJ DZIAŁKO STRAŻNICZE!",
-        "de": null
+        "de": "BAUE EINE SENTRY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1522,7 +1522,7 @@
         "es": "LANZA JARATE A UN ENEMIGO!",
         "jp": null,
         "pl": "TRAF WROGA SIKWONDEM!",
-        "de": null
+        "de": "WIRF JARATE AUF EINEN GEGNER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1540,7 +1540,7 @@
         "es": "GOLPEA A UN HEAVY!",
         "jp": null,
         "pl": "UDERZ GRUBEGO!",
-        "de": null
+        "de": "SCHLAGE EINEN HEAVY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1558,7 +1558,7 @@
         "es": "HAZ QUE TE GOLPEE UN MEDICO!",
         "jp": null,
         "pl": "ZOSTAŃ UDERZONYM PRZEZ MEDYKA!",
-        "de": null
+        "de": "WERDE VON EINEM MEDIC GESCHLAGEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1576,7 +1576,7 @@
         "es": "DALE AL OBJETIVO!",
         "jp": null,
         "pl": "TRAF W CEL!",
-        "de": null
+        "de": "TRIFF DAS ZIEL!"
       },
       "ignoreEmptyValue": false
     },
@@ -1594,7 +1594,7 @@
         "es": "CAMBIA DE CLASE!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE!"
       },
       "ignoreEmptyValue": false
     },
@@ -1612,7 +1612,7 @@
         "es": "CAMBIA DE CLASE A SCOUT!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SKAUTA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU SCOUT!"
       },
       "ignoreEmptyValue": false
     },
@@ -1630,7 +1630,7 @@
         "es": "CAMBIA DE CLASE A SOLDADO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA ŻOŁNIERZA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU SOLDIER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1648,7 +1648,7 @@
         "es": "CAMBIA DE CLASE A PYRO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA PYRO!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU PYRO!"
       },
       "ignoreEmptyValue": false
     },
@@ -1666,7 +1666,7 @@
         "es": "CAMBIA DE CLASE A DEMOMAN!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA DEMOMANA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU DEMOMAN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1684,7 +1684,7 @@
         "es": "CAMBIA DE CLASE A HEAVY!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA GRUBEGO!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU HEAVY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1702,7 +1702,7 @@
         "es": "CAMBIA DE CLASE A INGENIERO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA INŻYNIERA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU ENGINEER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1720,7 +1720,7 @@
         "es": "CAMBIA DE CLASE A MEDICO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA MEDYKA!",
-        "de": null
+        "de": "WECHLSE DIE KLASSE ZU MEDIC!"
       },
       "ignoreEmptyValue": false
     },
@@ -1738,7 +1738,7 @@
         "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SNAJPERA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU SNIPER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1756,7 +1756,7 @@
         "es": "CAMBIA DE CLASE A ESPIA!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SZPIEGA!",
-        "de": null
+        "de": "WECHSLE DIE KLASSE ZU SPY!"
       },
       "ignoreEmptyValue": false
     },
@@ -1774,7 +1774,7 @@
         "es": "BEBE!",
         "jp": null,
         "pl": "PIJ!",
-        "de": null
+        "de": "TRINK!"
       },
       "ignoreEmptyValue": false
     },
@@ -1791,7 +1791,7 @@
         "pt_p": "NÃO BEBA!",
         "pt": "NÃO BEBA!",
         "pl": "NIE PIJ!",
-        "de": null
+        "de": "NICHT TRINKEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1809,7 +1809,7 @@
         "es": "COME!",
         "jp": null,
         "pl": "JEDZ!",
-        "de": null
+        "de": "ISS!"
       },
       "ignoreEmptyValue": false
     },
@@ -1826,7 +1826,7 @@
         "pt_p": "NÃO COMA!",
         "pt": "NÃO COMA!",
         "pl": "NIE JEDZ!",
-        "de": null
+        "de": "NICHT ESSEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1844,7 +1844,7 @@
         "es": "ATURDE A UN ENEMIGO!",
         "jp": null,
         "pl": "OGŁUSZ WROGA!",
-        "de": null
+        "de": "BETÄUBE EINEN GEGNER!"
       },
       "ignoreEmptyValue": false
     },
@@ -1862,7 +1862,7 @@
         "es": "QUEDATE EN EL SUELO!",
         "jp": null,
         "pl": "UTRZYMAJ SIĘ NA ZIEMI!",
-        "de": null
+        "de": "BLEIB AUF DEM BODEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1880,7 +1880,7 @@
         "es": "SALTO DOBLE!",
         "jp": null,
         "pl": "WYKONAJ PODWÓJNY SKOK!",
-        "de": null
+        "de": "DOPPEL SPRUNG!"
       },
       "ignoreEmptyValue": false
     },
@@ -1898,7 +1898,7 @@
         "es": "SALTO CON AGUJAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK STRZYKAWKAMI!",
-        "de": null
+        "de": "NEEDLEJUMP!"
       },
       "ignoreEmptyValue": false
     },
@@ -1916,7 +1916,7 @@
         "es": "JETPACK!",
         "jp": null,
         "pl": "UŻYJ PLECAKA ODRZUTOWEGO!",
-        "de": null
+        "de": "JETPACK!"
       },
       "ignoreEmptyValue": false
     },
@@ -1933,7 +1933,7 @@
         "pt_p": "NÃO VALE RIR!",
         "pt": "NÃO VALE RIR!",
         "pl": "NIE ŚMIEJ SIĘ!",
-        "de": null
+        "de": "NICHT LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1950,7 +1950,7 @@
         "pt_p": "FAÇA UM SCOUT RIR!",
         "pt": "FAÇA UM SCOUT RIR!",
         "pl": "ROZŚMIESZ SKAUTÓW!",
-        "de": null
+        "de": "BRING DIE SCOUTS ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1967,7 +1967,7 @@
         "pt_p": "FAÇA UM SOLDIER RIR!",
         "pt": "FAÇA UM SOLDIER RIR!",
         "pl": "ROZŚMIESZ ŻOŁNIERZY!",
-        "de": null
+        "de": "BRING DIE SOLDIER ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -1984,7 +1984,7 @@
         "pt_p": "FAÇA UM PYRO RIR!",
         "pt": "FAÇA UM PYRO RIR!",
         "pl": "ROZŚMIESZ PYRO!",
-        "de": null
+        "de": "BRING DIE PYROS ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2001,7 +2001,7 @@
         "pt_p": "FAÇA UM DEMOMAN RIR!",
         "pt": "FAÇA UM DEMOMAN RIR!",
         "pl": "ROZŚMIESZ DEMOMANÓW!",
-        "de": null
+        "de": "BRING DIE DEMOMANS ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2018,7 +2018,7 @@
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
         "pt": "FAÇA UM ENGENHEIRO RIR!",
         "pl": "ROZŚMIESZ INŻYNIERÓW!",
-        "de": null
+        "de": "BRING DIE ENGINEER ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2035,7 +2035,7 @@
         "pt_p": "FAÇA UM MÉDICO RIR!",
         "pt": "FAÇA UM MÉDICO RIR!",
         "pl": "ROZŚMIESZ MEDYKÓW!",
-        "de": null
+        "de": "BRING DIE MEDICS ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2052,7 +2052,7 @@
         "pt_p": "FAÇA UM SNIPER RIR!",
         "pt": "FAÇA UM SNIPER RIR!",
         "pl": "ROZŚMIESZ SNAJPERÓW!",
-        "de": null
+        "de": "BRING DIE SNIPER ZUM LACHEN"
       },
       "ignoreEmptyValue": false
     },
@@ -2069,7 +2069,7 @@
         "pt_p": "FAÇA UM SPY RIR!",
         "pt": "FAÇA UM SPY RIR!",
         "pl": "ROZŚMIESZ SZPIEGÓW!",
-        "de": null
+        "de": "BRING DIE SPIES ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2086,7 +2086,7 @@
         "pt_p": "ACERTE UM INIMIGO!",
         "pt": "ACERTE UM INIMIGO!",
         "pl": "UDERZ WROGA!",
-        "de": null
+        "de": "ERSCHIEßE EINEN GEGNER"
       },
       "ignoreEmptyValue": false
     },
@@ -2103,7 +2103,7 @@
         "pt_p": null,
         "pt": null,
         "pl": null,
-        "de": null
+        "de": "BOMB JUMP AUF DIE PLATTFORM!"
       },
       "ignoreEmptyValue": false
     },
@@ -2120,7 +2120,7 @@
         "pt_p": null,
         "pt": null,
         "pl": null,
-        "de": null
+        "de": "BERÜHRE NIEMANDEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2138,7 +2138,7 @@
         "es": "¡ESCRIBE LAS PALABRAS!",
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "SCHREIB DIE WÖRTER!"
       },
       "ignoreEmptyValue": false
     },
@@ -2156,7 +2156,7 @@
         "es": "¡Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
         "jp": null,
         "pl": "Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!",
-        "de": null
+        "de": "Schreib jedes Wort so schnell wie die kannst in den Chat um zu Überleben!"
       },
       "ignoreEmptyValue": false
     },
@@ -2174,7 +2174,7 @@
         "es": "¡EMPIEZA!",
         "jp": null,
         "pl": "START!",
-        "de": null
+        "de": "START!"
       },
       "ignoreEmptyValue": false
     },
@@ -2197,7 +2197,7 @@
         "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos",
         "jp": null,
         "pl": "== OBSERWACJA ==\n\nCzas do końca (w sekundach): {1}",
-        "de": null
+        "de": "== ZUSCHAUEN ==\nZeit verbleibend: {1} Sekunden"
       },
       "ignoreEmptyValue": false
     },
@@ -2228,7 +2228,7 @@
         "es": "== ¡ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
         "jp": null,
         "pl": "== NAPISZ SŁOWO! ==\n\n{1}\nNastępne słowo: {2}\nCzas do końca (w sekundach): {3}",
-        "de": null
+        "de": "== SCHREIBE DAS WORT! ==\n\n{1}\nNächstes Wort: {2}\nZeit verbleibend: {3} Sekunden!"
       },
       "ignoreEmptyValue": false
     },
@@ -2251,7 +2251,7 @@
         "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!",
         "jp": null,
         "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!",
-        "de": null
+        "de": "== ANKÜNDIGUNG ==\n\nDer Gewinner ist...\n{1}!"
       },
       "ignoreEmptyValue": false
     },
@@ -2269,7 +2269,7 @@
         "es": "== ANUNCIO == \n\n¡SIGUIENTE NIVEL! ¡LAS PALABRAS AHORA SON MÁS DIFÍCILES!",
         "jp": null,
         "pl": "== OGŁOSZENIE == \n\nNASTĘPNY POZIOM! SŁOWA STANĄ SIĘ TRUDNIEJSZE!",
-        "de": null
+        "de": "== ANKÜNDIGUNG ==\n\nLEVEL UP! DIE WÖRTER WERDEN AB JETZT SCHWIERIGER!"
       },
       "ignoreEmptyValue": false
     },
@@ -2292,7 +2292,7 @@
         "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}",
         "jp": null,
         "pl": "== PODSUMOWANIE RUNDY == \n\nGracze z najmniejszą liczbą napisanych słów to... \n{1}",
-        "de": null
+        "de": "== RUNDEN VORSCHAU ==\n\nDie Spieler mit den am wenigsten geschriebenen Wörter waren...\n{1}"
       },
       "ignoreEmptyValue": false
     },
@@ -2319,7 +2319,7 @@
         "es": "{1}\ny {2} mas...",
         "jp": null,
         "pl": "{1}\noraz {2} innych...",
-        "de": null
+        "de": "{1}\nund {2} mehr..."
       },
       "ignoreEmptyValue": false
     },
@@ -2342,7 +2342,7 @@
         "es": "{1}¡nadie!\n\nTodo el mundo sobrevive otra ronda!",
         "jp": null,
         "pl": "{1}nikt!\n\nWszyscy przeżyli kolejną rundę!",
-        "de": null
+        "de": "{1}niemand!\n\nJeder Überlebt die Runde!"
       },
       "ignoreEmptyValue": false
     },
@@ -2360,7 +2360,7 @@
         "es": "¡Cambiar de clase no esta permitido durante los jefes!",
         "jp": null,
         "pl": "Zmienianie klas jest zabronione podczas bossgier!",
-        "de": null
+        "de": "Es ist nicht erlaubt während eines Bosses die Klasse zu wechseln!"
       },
       "ignoreEmptyValue": false
     },
@@ -2378,7 +2378,7 @@
         "es": "Tercera Persona",
         "jp": null,
         "pl": "Trzecia Osoba",
-        "de": null
+        "de": "Thirdperson"
       },
       "ignoreEmptyValue": false
     },
@@ -2396,7 +2396,7 @@
         "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
         "jp": null,
         "pl": "Wszyscy gracze w tej rundzie grają w nowej perspektywie!",
-        "de": null
+        "de": "Alle Spieler spielen diese Runde in einer komplett neuen Perspektive!"
       },
       "ignoreEmptyValue": false
     },
@@ -2414,7 +2414,7 @@
         "es": "Inyección de Adrenalina",
         "jp": null,
         "pl": "Zastrzyk Adrenaliny",
-        "de": null
+        "de": "Adrenalin Schuss"
       },
       "ignoreEmptyValue": false
     },
@@ -2432,7 +2432,7 @@
         "es": "La ronda comienza rapido! Y despues se ralentiza!",
         "jp": null,
         "pl": "Runda szybko się rozpoczyna, a następnie zwalnia!",
-        "de": null
+        "de": "Die Runde beginnt schnell! Wird anschließend stetig langsamer!"
       },
       "ignoreEmptyValue": false
     },
@@ -2450,7 +2450,7 @@
         "es": "Ronda Extendida",
         "jp": null,
         "pl": "Wydłużona Runda",
-        "de": null
+        "de": "Runde wurde Verlängert"
       },
       "ignoreEmptyValue": false
     },
@@ -2468,7 +2468,7 @@
         "es": "Se jugaran 30 microjuegos antes del jefe!",
         "jp": null,
         "pl": "Przed bossgrą odbędzie się 30 mikrogier!",
-        "de": null
+        "de": "30 Minispiele werden vor dem Bossspiel gespielt!"
       },
       "ignoreEmptyValue": false
     },
@@ -2486,7 +2486,7 @@
         "es": "Gravedad Baja",
         "jp": null,
         "pl": "Niska Grawitacja",
-        "de": null
+        "de": "Geringe Schwerkraft"
       },
       "ignoreEmptyValue": false
     },
@@ -2504,7 +2504,7 @@
         "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
         "jp": null,
         "pl": "Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!",
-        "de": null
+        "de": "Weltraum? WELTRAUM! WELTRAAAAAAAAUUUUUUUM!"
       },
       "ignoreEmptyValue": false
     },
@@ -2522,7 +2522,7 @@
         "es": "Calmante",
         "jp": null,
         "pl": "Runda Antystresowa",
-        "de": null
+        "de": "Beruhigungspille!"
       },
       "ignoreEmptyValue": false
     },
@@ -2540,7 +2540,7 @@
         "es": "No habra cambios de velocidad en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie będzie zmian prędkości!",
-        "de": null
+        "de": "Keine Geschwindigkeitsveränderungen werden in dieser Runde auftreten!"
       },
       "ignoreEmptyValue": false
     },
@@ -2558,7 +2558,7 @@
         "es": "Super-Velocidad",
         "jp": null,
         "pl": "Czas Nagli",
-        "de": null
+        "de": "Spielzeit Attacke"
       },
       "ignoreEmptyValue": false
     },
@@ -2576,7 +2576,7 @@
         "es": "La ronda acelerara despues de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale przyspieszać po każdej mikrogrze!",
-        "de": null
+        "de": "Diese Runde wird nach jedem Minispiel schneller!"
       },
       "ignoreEmptyValue": false
     },
@@ -2594,7 +2594,7 @@
         "es": "Arriba y Abajo",
         "jp": null,
         "pl": "W górę i w dół",
-        "de": null
+        "de": "Hoch und Runter"
       },
       "ignoreEmptyValue": false
     },
@@ -2612,7 +2612,7 @@
         "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
         "jp": null,
         "pl": "Po każdej mikrogrze zostanie dobrana losowa szybkość!",
-        "de": null
+        "de": "Nach jedem Minispiel wird eine zufällige Geschwindigkeit gewählt!"
       },
       "ignoreEmptyValue": false
     },
@@ -2630,7 +2630,7 @@
         "es": "Camara Lenta",
         "jp": null,
         "pl": "Spowolnienie",
-        "de": null
+        "de": "Zeitlupe"
       },
       "ignoreEmptyValue": false
     },
@@ -2648,7 +2648,7 @@
         "es": "La ronda se ralentizara despues de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale zwalniać po każdej mikrogrze!",
-        "de": null
+        "de": "Diese Runde wird nach jedem Minispiel langsamer!"
       },
       "ignoreEmptyValue": false
     },
@@ -2666,7 +2666,7 @@
         "es": "Solo Matematicas",
         "jp": null,
         "pl": "Tylko Matematyka",
-        "de": null
+        "de": "Nur Mathematik!"
       },
       "ignoreEmptyValue": false
     },
@@ -2684,7 +2684,7 @@
         "es": "Hora de poner a prueba tus habilidades matematicas!",
         "jp": null,
         "pl": "Czas sprawdzić Twoją wiedzę z matematyki!",
-        "de": null
+        "de": "Zeit um dein Mathe können zu testen!"
       },
       "ignoreEmptyValue": false
     },
@@ -2702,7 +2702,7 @@
         "es": "Dia Opuesto",
         "jp": null,
         "pl": "Dzień na Opak",
-        "de": null
+        "de": "Gegenteiltag"
       },
       "ignoreEmptyValue": false
     },
@@ -2720,7 +2720,7 @@
         "es": "El jugador con la puntuacion mas baja gana la ronda!",
         "jp": null,
         "pl": "Gracz z najmniejszą liczbą punktów wygrywa rundę!",
-        "de": null
+        "de": "Der Spieler mit der geringsten Punktezahl gewinnt!"
       },
       "ignoreEmptyValue": false
     },
@@ -2738,7 +2738,7 @@
         "es": "Jefe Doble",
         "jp": null,
         "pl": "Dwie Walki z Bossem",
-        "de": null
+        "de": "Zwei Bosskämpfe!"
       },
       "ignoreEmptyValue": false
     },
@@ -2756,7 +2756,7 @@
         "es": "Se jugaran dos jefes antes de que termine el juego!",
         "jp": null,
         "pl": "Przed końcem gry odbędą się dwie bossgry!",
-        "de": null
+        "de": "Zwei Bossspiele werden gespielt bevor das Spiel endet!"
       },
       "ignoreEmptyValue": false
     },
@@ -2774,7 +2774,7 @@
         "es": "Batalla de Equipos",
         "jp": null,
         "pl": "Walka Drużyn",
-        "de": null
+        "de": "Teamkampf"
       },
       "ignoreEmptyValue": false
     },
@@ -2792,7 +2792,7 @@
         "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!",
-        "de": null
+        "de": "Jedes Minispiel, dass du gewinnst wird einen Punkt zu deinem Team hinzufügen! Das Team, dass die meisten Punkte am Ende hat gewinnt!"
       },
       "ignoreEmptyValue": false
     },
@@ -2810,7 +2810,7 @@
         "es": "Modo Un Jugador",
         "jp": null,
         "pl": "Rozgrywka Jednoosobowa",
-        "de": null
+        "de": "Einzelspieler"
       },
       "ignoreEmptyValue": false
     },
@@ -2828,7 +2828,7 @@
         "es": "Hey... donde estan todos?",
         "jp": null,
         "pl": "Hej... Gdzie są wszyscy?",
-        "de": null
+        "de": "Hey... wo sind alle?"
       },
       "ignoreEmptyValue": false
     },
@@ -2846,7 +2846,7 @@
         "es": "Solo Esqueletos",
         "jp": null,
         "pl": "Tylko szkielety",
-        "de": null
+        "de": "Nur Skelette"
       },
       "ignoreEmptyValue": false
     },
@@ -2864,7 +2864,7 @@
         "es": "No se permite piel en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie posiadanie skóry jest zabronione!",
-        "de": null
+        "de": "Keine Haut erlaubt in dieser Runde!"
       },
       "ignoreEmptyValue": false
     },
@@ -2882,7 +2882,7 @@
         "es": "Pequeñito",
         "jp": null,
         "pl": "Mały",
-        "de": null
+        "de": "Winzig"
       },
       "ignoreEmptyValue": false
     },
@@ -2900,7 +2900,7 @@
         "es": "Todos se convierten en hombres pequeñitos!",
         "jp": null,
         "pl": "Każdy gracz staje się tyciusieńki!",
-        "de": null
+        "de": "Jeder wird winzig!"
       },
       "ignoreEmptyValue": false
     },
@@ -2918,7 +2918,7 @@
         "es": "Cabezones",
         "jp": null,
         "pl": "Bobbleheads",
-        "de": null
+        "de": "Wackelköpfe"
       },
       "ignoreEmptyValue": false
     },
@@ -2936,7 +2936,7 @@
         "es": "Todos se convierten en un montón de cabezas huecas!",
         "jp": null,
         "pl": "Każda głowa pęcznieje!",
-        "de": null
+        "de": "Jeder wird zum Hohlkopf!"
       },
       "ignoreEmptyValue": false
     },
@@ -2954,7 +2954,7 @@
         "es": "Puntuacion Aleatoria",
         "jp": null,
         "pl": "Losowe Punkty",
-        "de": null
+        "de": "Punkte Zufallsgenerator"
       },
       "ignoreEmptyValue": false
     },
@@ -2972,7 +2972,7 @@
         "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!",
-        "de": null
+        "de": "Wenn du ein Minispiel gewinnst bekommst du eine zufällige Anzahl an Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -2995,7 +2995,7 @@
         "es": "Si ganas este microjuego, recibiras {1} puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!",
-        "de": null
+        "de": "Wenn du dieses Minispiel gewinnst, bekommst du {1} Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -3013,7 +3013,7 @@
         "es": "Muerte Subita",
         "jp": null,
         "pl": "Nagła Śmierć",
-        "de": null
+        "de": "Plötzlicher Tot"
       },
       "ignoreEmptyValue": false
     },
@@ -3031,7 +3031,7 @@
         "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!",
-        "de": null
+        "de": "Wenn du ein Minispiel verlierst, wirst du außer Gefecht gesetzt! Letzter Spieler welcher keinen Fehler gemacht hat gewinnt die Runde!"
       },
       "ignoreEmptyValue": false
     },
@@ -3062,7 +3062,7 @@
         "es": "Jugadores actuales ({1} de {2})\n{3}",
         "jp": null,
         "pl": "Obecni gracze ({1} z {2})\n{3}",
-        "de": null
+        "de": "Derzeitige Spieler ({1} von {2})\n{3}"
       },
       "ignoreEmptyValue": false
     },
@@ -3089,7 +3089,7 @@
         "es": "{1} (y {2} mas)",
         "jp": null,
         "pl": "{1} (oraz {2} innych)",
-        "de": null
+        "de": "{1} (und {2} mehr)"
       },
       "ignoreEmptyValue": false
     },
@@ -3107,7 +3107,7 @@
         "es": "Todo a Una",
         "jp": null,
         "pl": "Wszystko albo Nic",
-        "de": null
+        "de": "All In"
       },
       "ignoreEmptyValue": false
     },
@@ -3125,7 +3125,7 @@
         "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!",
-        "de": null
+        "de": "Wenn du ein Minispiel verlierst, verlierst du ALLE deine Punkte!"
       },
       "ignoreEmptyValue": false
     },
@@ -3143,7 +3143,7 @@
         "es": "Texto Invertido",
         "jp": null,
         "pl": "Tekst Wspak",
-        "de": null
+        "de": "Umgekehrter Text"
       },
       "ignoreEmptyValue": false
     },
@@ -3161,7 +3161,7 @@
         "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL",
         "jp": null,
         "pl": "!kapsw enasip ąs reigorkim od ejckurtsnI",
-        "de": null
+        "de": "!sträwkcür dnis eleipsiniM rüf negnusiewnA"
       },
       "ignoreEmptyValue": false
     },
@@ -3179,7 +3179,7 @@
         "es": "Sin Paradas",
         "jp": null,
         "pl": "Non-stop",
-        "de": null
+        "de": "Pausenlos"
       },
       "ignoreEmptyValue": false
     },
@@ -3197,7 +3197,7 @@
         "es": "No hay descanso entre microjuegos en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie ma przerw pomiędzy mikrogrami!",
-        "de": null
+        "de": "Es gibt keine Pause zwischen den Minispielen in dieser Runde!"
       },
       "ignoreEmptyValue": false
     },
@@ -3215,7 +3215,7 @@
         "es": "Team Fortress 64",
         "jp": null,
         "pl": "Team Fortress 64",
-        "de": null
+        "de": "Team Fortress 64"
       },
       "ignoreEmptyValue": false
     },
@@ -3233,7 +3233,7 @@
         "es": "Hey! Donde han ido mis poligonos?",
         "jp": null,
         "pl": "Hej! Gdzie się podziały moje wielokąty?",
-        "de": null
+        "de": "Hey! Wo sind meine Polygons?"
       },
       "ignoreEmptyValue": false
     }
