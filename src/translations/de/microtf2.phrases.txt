@@ -56,7 +56,7 @@
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
-		"de"		"DU WURDEST AUßER GEFECHT GESETZT!"
+		"de"		"DU WURDEST AUSSER GEFECHT GESETZT!"
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
@@ -183,7 +183,7 @@
 	}
 	"Bossgame6_Caption"
 	{
-		"de"		"SCHIEßE DIE MEISTEN FÄSSER AB!"
+		"de"		"SCHIESSE DIE MEISTEN FÄSSER AB!"
 	}
 	"Bossgame7_Caption"
 	{
@@ -452,7 +452,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"de"		"ERSCHIEßE EINEN GEGNER"
+		"de"		"ERSCHIESSE EINEN GEGNER"
 	}
 	"Minigame28_Caption"
 	{
