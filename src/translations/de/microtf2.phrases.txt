@@ -88,7 +88,7 @@
 	}
 	"General_BossTime"
 	{
-		"de"		"BOSS ZEIT!"
+		"de"		"BOSSKAMPF!"
 	}
 	"General_GameOver"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"de"		"BLEIBE AUF DEN GRÜNEN BLÖCKEN!"
+		"de"		"BLEIBE AUF DEM GRÜNEN BLOCK!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -444,7 +444,7 @@
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"de"		"BRING DIE SNIPER ZUM LACHEN"
+		"de"		"BRING DIE SNIPER ZUM LACHEN!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
@@ -452,7 +452,7 @@
 	}
 	"Minigame27_Caption"
 	{
-		"de"		"ERSCHIESSE EINEN GEGNER"
+		"de"		"ERSCHIESSE EINEN GEGNER!"
 	}
 	"Minigame28_Caption"
 	{
@@ -530,11 +530,11 @@
 	}
 	"SpecialRound2_Name"
 	{
-		"de"		"Runde wurde Verlängert"
+		"de"		"Verlängerte Runde"
 	}
 	"SpecialRound2_Description"
 	{
-		"de"		"30 Minispiele werden vor dem Bossspiel gespielt!"
+		"de"		"30 Minispiele werden vor dem Boss gespielt!"
 	}
 	"SpecialRound3_Name"
 	{
@@ -594,11 +594,11 @@
 	}
 	"SpecialRound10_Name"
 	{
-		"de"		"Zwei Bosskämpfe!"
+		"de"		"Zwei Bosskämpfe"
 	}
 	"SpecialRound10_Description"
 	{
-		"de"		"Zwei Bossspiele werden gespielt bevor das Spiel endet!"
+		"de"		"Zwei Bosse werden gespielt bevor das Spiel endet!"
 	}
 	"SpecialRound11_Name"
 	{
