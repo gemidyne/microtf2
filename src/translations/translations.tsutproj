@@ -442,7 +442,7 @@
         "es": "¡JEFE FINAL!",
         "jp": null,
         "pl": null,
-        "de": "BOSS ZEIT!"
+        "de": "BOSSKAMPF!"
       },
       "ignoreEmptyValue": false
     },
@@ -808,7 +808,7 @@
         "es": "¡QUEDATE EN EL BLOQUE VERDE!",
         "jp": null,
         "pl": null,
-        "de": "BLEIBE AUF DEN GRÜNEN BLÖCKEN!"
+        "de": "BLEIBE AUF DEM GRÜNEN BLOCK!"
       },
       "ignoreEmptyValue": false
     },
@@ -2052,7 +2052,7 @@
         "pt_p": "FAÇA UM SNIPER RIR!",
         "pt": "FAÇA UM SNIPER RIR!",
         "pl": "ROZŚMIESZ SNAJPERÓW!",
-        "de": "BRING DIE SNIPER ZUM LACHEN"
+        "de": "BRING DIE SNIPER ZUM LACHEN!"
       },
       "ignoreEmptyValue": false
     },
@@ -2086,7 +2086,7 @@
         "pt_p": "ACERTE UM INIMIGO!",
         "pt": "ACERTE UM INIMIGO!",
         "pl": "UDERZ WROGA!",
-        "de": "ERSCHIESSE EINEN GEGNER"
+        "de": "ERSCHIESSE EINEN GEGNER!"
       },
       "ignoreEmptyValue": false
     },
@@ -2450,7 +2450,7 @@
         "es": "Ronda Extendida",
         "jp": null,
         "pl": "Wydłużona Runda",
-        "de": "Runde wurde Verlängert"
+        "de": "Verlängerte Runde"
       },
       "ignoreEmptyValue": false
     },
@@ -2468,7 +2468,7 @@
         "es": "Se jugaran 30 microjuegos antes del jefe!",
         "jp": null,
         "pl": "Przed bossgrą odbędzie się 30 mikrogier!",
-        "de": "30 Minispiele werden vor dem Bossspiel gespielt!"
+        "de": "30 Minispiele werden vor dem Boss gespielt!"
       },
       "ignoreEmptyValue": false
     },
@@ -2738,7 +2738,7 @@
         "es": "Jefe Doble",
         "jp": null,
         "pl": "Dwie Walki z Bossem",
-        "de": "Zwei Bosskämpfe!"
+        "de": "Zwei Bosskämpfe"
       },
       "ignoreEmptyValue": false
     },
@@ -2756,7 +2756,7 @@
         "es": "Se jugaran dos jefes antes de que termine el juego!",
         "jp": null,
         "pl": "Przed końcem gry odbędą się dwie bossgry!",
-        "de": "Zwei Bossspiele werden gespielt bevor das Spiel endet!"
+        "de": "Zwei Bosse werden gespielt bevor das Spiel endet!"
       },
       "ignoreEmptyValue": false
     },
