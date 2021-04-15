@@ -57,6 +57,7 @@ We'd love to have you on board! If you are interested in contributing translatio
 - [X] Portuguese
 - [X] Brazilian Portuguese
 - [X] Polish
+- [X] German
 
 ## Credits
 
