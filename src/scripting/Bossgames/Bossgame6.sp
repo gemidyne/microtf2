@@ -206,7 +206,9 @@ public void Bossgame6_DoEntitySpawns()
 {
 	float positions[BOSSGAME6_ENTITYSPAWN_COUNT][3];
 	int barrelCount = 0;
-	int minimumBarrelCount = g_iBossgame6ParticipatingPlayerCount / 2;
+	int minimumBarrelCount = GetRandomInt(1, 2) == 2
+		? g_iBossgame6ParticipatingPlayerCount / 2
+		: g_iBossgame6ParticipatingPlayerCount;
 
 	if (minimumBarrelCount < 1)
 	{
