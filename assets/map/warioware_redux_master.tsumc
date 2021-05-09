@@ -1,5 +1,5 @@
 {
-  "vmfPath": "S:\\microtf2\\assets\\map\\warioware_redux_master.vmf",
+  "vmfPath": "D:\\src\\gemidyne\\microtf2\\assets\\map\\warioware_redux_master.vmf",
   "compressToBZip2": false,
   "copyToGameMapsOnComplete": true,
   "vbsp": {
@@ -35,23 +35,23 @@
     "repackCompress": true,
     "folders": [
       {
-        "path": "s:\\microtf2\\assets\\datapacks\\warioware_general",
+        "path": "D:\\src\\gemidyne\\microtf2\\assets\\datapacks\\warioware_general",
         "intelligent": false
       },
       {
-        "path": "s:\\microtf2\\assets\\datapacks\\warioware_mapassets",
+        "path": "D:\\src\\gemidyne\\microtf2\\assets\\datapacks\\warioware_mapassets",
         "intelligent": true
       },
       {
-        "path": "s:\\microtf2\\assets\\datapacks\\warioware_overlay",
+        "path": "D:\\src\\gemidyne\\microtf2\\assets\\datapacks\\warioware_overlay",
         "intelligent": false
       },
       {
-        "path": "s:\\microtf2\\assets\\datapacks\\warioware_particles",
+        "path": "D:\\src\\gemidyne\\microtf2\\assets\\datapacks\\warioware_particles",
         "intelligent": false
       },
       {
-        "path": "s:\\microtf2\\assets\\datapacks\\warioware_sounds",
+        "path": "D:\\src\\gemidyne\\microtf2\\assets\\datapacks\\warioware_sounds",
         "intelligent": false
       }
     ]

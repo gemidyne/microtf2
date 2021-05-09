@@ -4,15 +4,26 @@
  * Target Practice
  */
 
-#define BOSSGAME6_ENTITYSPAWN_COUNT 32
-#define BOSSGAME6_RNGMODELS_COUNT 10
+#define BOSSGAME6_ENTITYSPAWN_COUNT 16
 
 int g_iBossgame6Entities[BOSSGAME6_ENTITYSPAWN_COUNT];
 bool g_bBossgame6IsEntityBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
 
-int g_iBossgame6Timer;
+int g_iBossgame6Timer = 6;
+int g_iBossgame6ParticipatingPlayerCount;
 int g_iBossgame6PlayerScore[MAXPLAYERS+1] = 0;
-char g_sBossgame6EntityModels[BOSSGAME6_RNGMODELS_COUNT][64];
+char g_sBossgame6EntityModels[][] =
+{
+	"models/props_hydro/keg_large.mdl",
+	"models/props_gameplay/orange_cone001.mdl",
+	"models/props_farm/tractor_tire001.mdl",
+	"models/props_farm/spool_rope.mdl",
+	"models/props_farm/spool_wire.mdl",
+	"models/props_gameplay/haybale.mdl",
+	"models/props_2fort/milkjug001.mdl",
+	"models/props_spytech/watercooler.mdl",
+	"models/props_mvm/clipboard.mdl"
+};
 
 public void Bossgame6_EntryPoint()
 {
@@ -26,18 +37,7 @@ public void Bossgame6_EntryPoint()
 
 public void Bossgame6_OnMapStart()
 {
-	g_sBossgame6EntityModels[0] = "models/props_hydro/keg_large.mdl";
-	g_sBossgame6EntityModels[1] = "models/props_gameplay/orange_cone001.mdl";
-	g_sBossgame6EntityModels[2] = "models/props_gameplay/ball001.mdl";
-	g_sBossgame6EntityModels[3] = "models/props_farm/tractor_tire001.mdl";
-	g_sBossgame6EntityModels[4] = "models/props_farm/spool_rope.mdl";
-	g_sBossgame6EntityModels[5] = "models/props_farm/spool_wire.mdl";
-	g_sBossgame6EntityModels[6] = "models/props_gameplay/haybale.mdl";
-	g_sBossgame6EntityModels[7] = "models/props_2fort/milkjug001.mdl";
-	g_sBossgame6EntityModels[8] = "models/props_spytech/watercooler.mdl";
-	g_sBossgame6EntityModels[9] = "models/props_mvm/clipboard.mdl";
-
-	for (int i = 0; i < BOSSGAME6_RNGMODELS_COUNT; i++)
+	for (int i = 0; i < sizeof(g_sBossgame6EntityModels); i++)
 	{
 		PrecacheModel(g_sBossgame6EntityModels[i]);
 	}
@@ -62,13 +62,25 @@ public void Bossgame6_OnMinigameSelectedPre()
 			g_iBossgame6PlayerScore[i] = 0;
 		}
 
+		g_iBossgame6ParticipatingPlayerCount = 0;
+		
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			Player player = new Player(i);
+
+			if (player.IsValid && player.IsParticipating)
+			{
+				g_iBossgame6ParticipatingPlayerCount++;
+			}
+		}
+		
 		g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 		g_bIsBlockingKillCommands = true;
 
 		Bossgame6_SendDoorInput("Close");
 
-		g_iBossgame6Timer = 9;
-		CreateTimer(0.5, Bossgame6_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+		g_iBossgame6Timer = 5;
+		CreateTimer(1.0, Bossgame6_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
 
@@ -100,25 +112,17 @@ public void Bossgame6_OnMinigameSelected(int client)
 	player.SetAmmo(2);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 0.0, 0.0 };
+	int posa = 360 / g_iBossgame6ParticipatingPlayerCount * (client - 1);
 	float pos[3];
+	float ang[3];
 
-	int column = client;
-	int row = 0;
+	pos[0] = -2943.0 + (Cosine(DegToRad(float(posa))) * 768.0);
+	pos[1] = 1791.0 - (Sine(DegToRad(float(posa))) * 768.0);
+	pos[2] = -1098.0;
 
-	if (player.Team == TFTeam_Red)
-	{
-		pos[0] = -4015.0 + float(column*60); 
-		pos[1] = 959.0 - float(row*100);
-		pos[2] = -1093.0;
-		ang[1] = 90.0;
-	}
-	else if (player.Team == TFTeam_Blue)
-	{
-		pos[0] = -4052.0 + float(column*60); 
-		pos[1] = 2783.0 - float(row*100);
-		pos[2] = -1093.0;
-	}
+	ang[0] = 0.0;
+	ang[1] = float(360 - posa);
+	ang[2] = 0.0;
 
 	TeleportEntity(client, pos, ang, vel);
 }
@@ -155,13 +159,13 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 	{
 		switch (g_iBossgame6Timer)
 		{
-			case 8: 
+			case 5: 
 			{
 				Bossgame6_SendDoorInput("Close");
 				Bossgame6_ShowPlayerScores();
 			}
 				
-			case 7: 
+			case 4: 
 			{
 				Bossgame6_CleanupEntities();
 
@@ -179,14 +183,14 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 				Bossgame6_DoEntitySpawns();
 			}
 
-			case 5: 
+			case 3: 
 			{
 				Bossgame6_SendDoorInput("Open");
 			}
 
 			case 0:
 			{
-				g_iBossgame6Timer = 9;
+				g_iBossgame6Timer = 6;
 			}
 		}
 
@@ -194,19 +198,28 @@ public Action Bossgame6_SwitchTimer(Handle timer)
 		return Plugin_Continue;
 	}
 
-	g_iBossgame6Timer = 9;
+	g_iBossgame6Timer = 6;
 	return Plugin_Stop; 
 }
 
 public void Bossgame6_DoEntitySpawns()
 {
-	float Bossgame6_SpawnedEntityPositions[BOSSGAME6_ENTITYSPAWN_COUNT][3];
-	int count = GetRandomInt(1, BOSSGAME6_ENTITYSPAWN_COUNT);
+	float positions[BOSSGAME6_ENTITYSPAWN_COUNT][3];
+	int barrelCount = 0;
+	int minimumBarrelCount = g_iBossgame6ParticipatingPlayerCount / 2;
+
+	if (minimumBarrelCount < 1)
+	{
+		minimumBarrelCount = 1;
+	}
+
+	int count = GetRandomInt(minimumBarrelCount, BOSSGAME6_ENTITYSPAWN_COUNT);
 
 	for (int i = 0; i < count; i++)
 	{
 		bool validPosition = false;
 		float position[3];
+		float angle[3];
 		int calculationAttempts = 0;
 
 		while (!validPosition)
@@ -219,20 +232,27 @@ public void Bossgame6_DoEntitySpawns()
 				return;
 			}
 
-			position[0] = GetRandomFloat(-1807.0, -4063.0);
-			position[1] = GetRandomFloat(2495.0, 1199.0);
-			position[2] = -1350.0;
+			int posa = 360 / BOSSGAME6_ENTITYSPAWN_COUNT * GetRandomInt(1, 32);
+			float outer = GetRandomFloat(64.0, 512.0);
 
-			for (int j = 0; j < 32; j++)
+			position[0] = -2943.0 + (Cosine(DegToRad(float(posa))) * outer);
+			position[1] = 1791.0 - (Sine(DegToRad(float(posa))) * outer);
+			position[2] = -1381.0;
+
+			angle[0] = 0.0;
+			angle[1] = float(180 - posa);
+			angle[2] = 0.0;
+
+			for (int j = 0; j < BOSSGAME6_ENTITYSPAWN_COUNT; j++)
 			{
 				if (j == i)
 				{
 					continue;
 				}
 
-				float distance = GetVectorDistance(position, Bossgame6_SpawnedEntityPositions[j]);
+				float distance = GetVectorDistance(position, positions[j]);
 
-				if (distance <= 100)
+				if (distance <= 100.0)
 				{
 					validPosition = false;
 				}
@@ -243,26 +263,26 @@ public void Bossgame6_DoEntitySpawns()
 
 		if (IsValidEdict(entity))
 		{
-			// TODO: Random model here
-
 			char buffer[64];
 			bool hook = false;
 			
-			if (GetRandomInt(0, 2) == 2)
+			if (barrelCount < minimumBarrelCount)
 			{
 				strcopy(buffer, sizeof(buffer), "models/props_farm/wooden_barrel.mdl");
 				hook = true;
+				barrelCount++;
 			}
 			else
 			{
-				strcopy(buffer, sizeof(buffer), g_sBossgame6EntityModels[GetRandomInt(0, BOSSGAME6_RNGMODELS_COUNT-1)]);
+				strcopy(buffer, sizeof(buffer), g_sBossgame6EntityModels[GetRandomInt(0, sizeof(g_sBossgame6EntityModels)-1)]);
 			}
 			
 			DispatchKeyValue(entity, "model", buffer);
 			DispatchSpawn(entity);
 
-			TeleportEntity(entity, position, NULL_VECTOR, NULL_VECTOR);
+			TeleportEntity(entity, position, angle, NULL_VECTOR);
 
+			positions[i] = position;
 			g_bBossgame6IsEntityBarrel[i] = hook;
 
 			if (hook)
@@ -319,7 +339,7 @@ public void Bossgame6_SendDoorInput(const char[] input)
 {
 	int entity = -1;
 	char entityName[32];
-	
+
 	while ((entity = FindEntityByClassname(entity, "func_door")) != INVALID_ENT_REFERENCE)
 	{
 		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
@@ -327,7 +347,6 @@ public void Bossgame6_SendDoorInput(const char[] input)
 		if (strcmp(entityName, "plugin_TPBoss_Door") == 0)
 		{
 			AcceptEntityInput(entity, input, -1, -1, -1);
-			//break;
 		}
 	}
 }
