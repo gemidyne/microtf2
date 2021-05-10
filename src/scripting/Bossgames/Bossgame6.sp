@@ -112,7 +112,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 	player.SetAmmo(2);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	int posa = 360 / g_iBossgame6ParticipatingPlayerCount * (client - 1);
+	int posa = 360 / g_iBossgame6ParticipatingPlayerCount * client;
 	float pos[3];
 	float ang[3];
 
@@ -121,7 +121,7 @@ public void Bossgame6_OnMinigameSelected(int client)
 	pos[2] = -1098.0;
 
 	ang[0] = 0.0;
-	ang[1] = float(360 - posa);
+	ang[1] = float(180 - posa);
 	ang[2] = 0.0;
 
 	TeleportEntity(client, pos, ang, vel);
