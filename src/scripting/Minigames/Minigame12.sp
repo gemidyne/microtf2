@@ -46,9 +46,24 @@ public void Minigame12_OnMinigameSelected(int client)
 				player.Class = TFClass_Pyro;
 			}
 
+			case TFClass_Soldier:
+			{
+				player.Class = TFClass_Pyro;
+			}
+
+			case TFClass_DemoMan:
+			{
+				player.Class = TFClass_Engineer;
+			}
+
 			case TFClass_Heavy:
 			{
-				player.Class = TFClass_DemoMan;
+				player.Class = TFClass_Engineer;
+			}
+
+			case TFClass_Medic:
+			{
+				player.Class = TFClass_Sniper;
 			}
 
 			case TFClass_Spy:
@@ -59,7 +74,7 @@ public void Minigame12_OnMinigameSelected(int client)
 
 		player.ResetWeapon(false);
 		player.SetGodMode(false);
-		player.SetHealth(3000);
+		player.ResetHealth();
 	}
 }
 

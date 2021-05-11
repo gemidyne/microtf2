@@ -58,7 +58,6 @@ public void Minigame11_GetDynamicCaption(int client)
 
 	if (player.IsValid)
 	{
-		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
 		if (g_iMinigame11Mode == 2)
