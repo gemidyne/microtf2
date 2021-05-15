@@ -4,7 +4,7 @@
  * Target Practice
  */
 
-#define BOSSGAME6_ENTITYSPAWN_COUNT 16
+#define BOSSGAME6_ENTITYSPAWN_COUNT 32
 
 int g_iBossgame6Entities[BOSSGAME6_ENTITYSPAWN_COUNT];
 bool g_bBossgame6IsEntityBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
@@ -206,9 +206,9 @@ public void Bossgame6_DoEntitySpawns()
 {
 	float positions[BOSSGAME6_ENTITYSPAWN_COUNT][3];
 	int barrelCount = 0;
-	int minimumBarrelCount = GetRandomInt(1, 2) == 2
-		? g_iBossgame6ParticipatingPlayerCount / 2
-		: g_iBossgame6ParticipatingPlayerCount;
+	int minimumBarrelCount = GetRandomInt(1, 3) == 2 && g_iBossgame6ParticipatingPlayerCount < BOSSGAME6_ENTITYSPAWN_COUNT
+		? g_iBossgame6ParticipatingPlayerCount
+		: g_iBossgame6ParticipatingPlayerCount / 2;
 
 	if (minimumBarrelCount < 1)
 	{
