@@ -369,7 +369,7 @@
         "ru": null,
         "es": "¡MÁS RÁPIDO!",
         "jp": null,
-        "pl": null,
+        "pl": "SZYBCIEJ!",
         "de": "GESCHWINDIGKEIT ERHÖHT!"
       },
       "ignoreEmptyValue": false
@@ -387,7 +387,7 @@
         "ru": null,
         "es": "¡MÁS LENTO!",
         "jp": null,
-        "pl": null,
+        "pl": "WOLNIEJ!",
         "de": "GESCHWINDIGKEIT VERLANGSAMT!"
       },
       "ignoreEmptyValue": false
@@ -405,7 +405,7 @@
         "ru": null,
         "es": "¡FALLASTE!",
         "jp": null,
-        "pl": null,
+        "pl": "PORAŻKA!",
         "de": "FEHLGESCHLAGEN!"
       },
       "ignoreEmptyValue": false
@@ -423,7 +423,7 @@
         "ru": null,
         "es": "¡GANASTE!",
         "jp": null,
-        "pl": null,
+        "pl": "SUKCES!",
         "de": "ERFOLG!"
       },
       "ignoreEmptyValue": false
@@ -441,7 +441,7 @@
         "ru": null,
         "es": "¡JEFE FINAL!",
         "jp": null,
-        "pl": null,
+        "pl": "CZAS NA BOSSA!",
         "de": "BOSSKAMPF!"
       },
       "ignoreEmptyValue": false
@@ -459,7 +459,7 @@
         "ru": null,
         "es": "¡FIN DEL JUEGO!",
         "jp": null,
-        "pl": null,
+        "pl": "KONIEC GRY!",
         "de": "SPIEL VORBEI!"
       },
       "ignoreEmptyValue": false
@@ -477,7 +477,7 @@
         "ru": null,
         "es": "¡RONDA ESPECIAL!",
         "jp": null,
-        "pl": null,
+        "pl": "RUNDA SPECJALNA!",
         "de": "SPEZIAL RUNDE!"
       },
       "ignoreEmptyValue": false
@@ -807,7 +807,7 @@
         "ru": null,
         "es": "¡QUEDATE EN EL BLOQUE VERDE!",
         "jp": null,
-        "pl": null,
+        "pl": "ZOSTAŃ NA ZIELONYM BLOKU!",
         "de": "BLEIBE AUF DEM GRÜNEN BLOCK!"
       },
       "ignoreEmptyValue": false
@@ -2102,7 +2102,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null,
+        "pl": "WKOCZ NA PLATFORMĘ GRANATEM!",
         "de": "BOMB JUMP AUF DIE PLATTFORM!"
       },
       "ignoreEmptyValue": false
@@ -2119,7 +2119,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null,
+        "pl": "NIKOGO NIE DOTYKAJ!",
         "de": "BERÜHRE NIEMANDEN!"
       },
       "ignoreEmptyValue": false
@@ -2137,7 +2137,7 @@
         "ru": null,
         "es": "¡ESCRIBE LAS PALABRAS!",
         "jp": null,
-        "pl": null,
+        "pl": "NAPISZ SŁOWA!",
         "de": "SCHREIB DIE WÖRTER!"
       },
       "ignoreEmptyValue": false

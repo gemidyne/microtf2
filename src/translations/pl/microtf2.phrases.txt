@@ -72,31 +72,31 @@
 	}
 	"General_SpeedUp"
 	{
-		"pl"		""
+		"pl"		"SZYBCIEJ!"
 	}
 	"General_SpeedDown"
 	{
-		"pl"		""
+		"pl"		"WOLNIEJ!"
 	}
 	"General_Failure"
 	{
-		"pl"		""
+		"pl"		"PORAŻKA!"
 	}
 	"General_Success"
 	{
-		"pl"		""
+		"pl"		"SUKCES!"
 	}
 	"General_BossTime"
 	{
-		"pl"		""
+		"pl"		"CZAS NA BOSSA!"
 	}
 	"General_GameOver"
 	{
-		"pl"		""
+		"pl"		"KONIEC GRY!"
 	}
 	"General_SpecialRound"
 	{
-		"pl"		""
+		"pl"		"RUNDA SPECJALNA!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"pl"		""
+		"pl"		"ZOSTAŃ NA ZIELONYM BLOKU!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -456,15 +456,15 @@
 	}
 	"Minigame28_Caption"
 	{
-		"pl"		""
+		"pl"		"WKOCZ NA PLATFORMĘ GRANATEM!"
 	}
 	"Minigame29_Caption"
 	{
-		"pl"		""
+		"pl"		"NIKOGO NIE DOTYKAJ!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"pl"		""
+		"pl"		"NAPISZ SŁOWA!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
