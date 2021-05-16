@@ -456,7 +456,7 @@
 	}
 	"Minigame28_Caption"
 	{
-		"pl"		"WKOCZ NA PLATFORMĘ GRANATEM!"
+		"pl"		"WSKOCZ NA PLATFORMĘ GRANATEM!"
 	}
 	"Minigame29_Caption"
 	{
