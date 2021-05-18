@@ -16,6 +16,147 @@ char g_sMinigame18TargetModels[][] =
 	"models/props_training/target_sniper.mdl",
 	"models/props_training/target_spy.mdl"
 };
+
+char g_sMinigame18ScoutHurtSfx[][] =
+{
+	"vo/scout_painsharp01.mp3",
+	"vo/scout_painsharp02.mp3",
+	"vo/scout_painsharp03.mp3",
+	"vo/scout_painsharp04.mp3",
+	"vo/scout_painsharp05.mp3",
+	"vo/scout_painsharp06.mp3",
+	"vo/scout_painsharp07.mp3",
+	"vo/scout_painsharp08.mp3",
+	"vo/scout_painsevere01.mp3",
+	"vo/scout_painsevere02.mp3",
+	"vo/scout_painsevere03.mp3",
+	"vo/scout_painsevere04.mp3",
+	"vo/scout_painsevere05.mp3",
+	"vo/scout_painsevere06.mp3"
+};
+
+char g_sMinigame18SoldierHurtSfx[][] =
+{
+	"vo/soldier_painsharp01.mp3",
+	"vo/soldier_painsharp02.mp3",
+	"vo/soldier_painsharp03.mp3",
+	"vo/soldier_painsharp04.mp3",
+	"vo/soldier_painsharp05.mp3",
+	"vo/soldier_painsharp06.mp3",
+	"vo/soldier_painsharp07.mp3",
+	"vo/soldier_painsharp08.mp3",
+	"vo/soldier_painsevere01.mp3",
+	"vo/soldier_painsevere02.mp3",
+	"vo/soldier_painsevere03.mp3",
+	"vo/soldier_painsevere04.mp3",
+	"vo/soldier_painsevere05.mp3",
+	"vo/soldier_painsevere06.mp3"
+};
+
+char g_sMinigame18PyroHurtSfx[][] =
+{
+	"vo/pyro_painsevere01.mp3",
+	"vo/pyro_painsevere02.mp3",
+	"vo/pyro_painsevere03.mp3",
+	"vo/pyro_painsevere04.mp3",
+	"vo/pyro_painsevere05.mp3",
+	"vo/pyro_painsevere06.mp3",
+	"vo/pyro_painsharp01.mp3",
+	"vo/pyro_painsharp02.mp3",
+	"vo/pyro_painsharp03.mp3",
+	"vo/pyro_painsharp04.mp3",
+	"vo/pyro_painsharp05.mp3",
+	"vo/pyro_painsharp06.mp3",
+	"vo/pyro_painsharp07.mp3"
+};
+
+char g_sMinigame18DemoManHurtSfx[][] =
+{
+	"vo/demoman_painsharp01.mp3",
+	"vo/demoman_painsharp02.mp3",
+	"vo/demoman_painsharp03.mp3",
+	"vo/demoman_painsharp04.mp3",
+	"vo/demoman_painsharp05.mp3",
+	"vo/demoman_painsharp06.mp3",
+	"vo/demoman_painsharp07.mp3",
+	"vo/demoman_painsevere01.mp3",
+	"vo/demoman_painsevere02.mp3",
+	"vo/demoman_painsevere03.mp3",
+	"vo/demoman_painsevere04.mp3"
+};
+
+char g_sMinigame18HeavyHurtSfx[][] =
+{
+	"vo/heavy_painsevere01.mp3",
+	"vo/heavy_painsevere02.mp3",
+	"vo/heavy_painsevere03.mp3",
+	"vo/heavy_painsharp01.mp3",
+	"vo/heavy_painsharp02.mp3",
+	"vo/heavy_painsharp03.mp3",
+	"vo/heavy_painsharp04.mp3",
+	"vo/heavy_painsharp05.mp3",
+};
+
+char g_sMinigame18EngineerHurtSfx[][] =
+{
+	"vo/engineer_painsevere01.mp3",
+	"vo/engineer_painsevere02.mp3",
+	"vo/engineer_painsevere03.mp3",
+	"vo/engineer_painsevere04.mp3",
+	"vo/engineer_painsevere05.mp3",
+	"vo/engineer_painsevere06.mp3",
+	"vo/engineer_painsevere07.mp3",
+	"vo/engineer_painsharp01.mp3",
+	"vo/engineer_painsharp02.mp3",
+	"vo/engineer_painsharp03.mp3",
+	"vo/engineer_painsharp04.mp3",
+	"vo/engineer_painsharp05.mp3",
+	"vo/engineer_painsharp06.mp3",
+	"vo/engineer_painsharp07.mp3",
+	"vo/engineer_painsharp08.mp3"
+};
+
+char g_sMinigame18SniperHurtSfx[][] =
+{
+	"vo/sniper_painsharp01.mp3",
+	"vo/sniper_painsharp02.mp3",
+	"vo/sniper_painsharp03.mp3",
+	"vo/sniper_painsharp04.mp3",
+	"vo/sniper_painsevere01.mp3",
+	"vo/sniper_painsevere02.mp3",
+	"vo/sniper_painsevere03.mp3",
+	"vo/sniper_painsevere04.mp3"
+};
+
+char g_sMinigame18MedicHurtSfx[][] = 
+{
+	"vo/medic_painsharp01.mp3",
+	"vo/medic_painsharp02.mp3",
+	"vo/medic_painsharp03.mp3",
+	"vo/medic_painsharp04.mp3",
+	"vo/medic_painsharp05.mp3",
+	"vo/medic_painsharp06.mp3",
+	"vo/medic_painsharp07.mp3",
+	"vo/medic_painsharp08.mp3",
+	"vo/medic_painsevere01.mp3",
+	"vo/medic_painsevere02.mp3",
+	"vo/medic_painsevere03.mp3",
+	"vo/medic_painsevere04.mp3"
+};
+
+char g_sMinigame18SpyHurtSfx[][] =
+{
+	"vo/spy_painsevere01.mp3",
+	"vo/spy_painsevere02.mp3",
+	"vo/spy_painsevere03.mp3",
+	"vo/spy_painsevere04.mp3",
+	"vo/spy_painsevere05.mp3",
+	"vo/spy_painsharp01.mp3",
+	"vo/spy_painsharp02.mp3",
+	"vo/spy_painsharp03.mp3",
+	"vo/spy_painsharp04.mp3",
+};
+
 int g_iMinigame18TargetEntity = -1;
 int g_iMinigame18SelectedTargetModel = 0;
 
@@ -29,47 +170,54 @@ public void Minigame18_EntryPoint()
 
 public void Minigame18_OnMapStart()
 {
-	for (int i = 0; i < 4; i++)
+	for (int i = 0; i < sizeof(g_sMinigame18TargetModels); i++)
 	{
 		PrecacheModel(g_sMinigame18TargetModels[i], true);
 	}
 
-	char buffer[32];
-
-	for (int i = 1; i < 9; i++)
+	for (int i = 0; i < sizeof(g_sMinigame18ScoutHurtSfx); i++)
 	{
-		Format(buffer, sizeof(buffer), "vo/scout_painsharp0%d.mp3", i);
-		PrecacheSound(buffer, true);
-
-		Format(buffer, sizeof(buffer), "vo/medic_painsharp0%d.mp3", i);
-		PrecacheSound(buffer, true);
+		PrecacheSound(g_sMinigame18ScoutHurtSfx[i], true);
 	}
 
-	for (int i = 1; i < 8; i++)
+	for (int i = 0; i < sizeof(g_sMinigame18SoldierHurtSfx); i++)
 	{
-		Format(buffer, sizeof(buffer), "vo/demoman_painsharp0%d.mp3", i);
-		PrecacheSound(buffer, true);
+		PrecacheSound(g_sMinigame18SoldierHurtSfx[i], true);
 	}
 
-	for (int i = 1; i < 7; i++)
+	for (int i = 0; i < sizeof(g_sMinigame18PyroHurtSfx); i++)
 	{
-		Format(buffer, sizeof(buffer), "vo/scout_painsevere0%d.mp3", i);
-		PrecacheSound(buffer, true);
+		PrecacheSound(g_sMinigame18PyroHurtSfx[i], true);
 	}
 
-	for (int i = 1; i < 5; i++)
+	for (int i = 0; i < sizeof(g_sMinigame18DemoManHurtSfx); i++)
 	{
-		Format(buffer, sizeof(buffer), "vo/demoman_painsevere0%d.mp3", i);
-		PrecacheSound(buffer, true);
+		PrecacheSound(g_sMinigame18DemoManHurtSfx[i], true);
+	}
 
-		Format(buffer, sizeof(buffer), "vo/sniper_painsharp0%d.mp3", i);
-		PrecacheSound(buffer, true);
+	for (int i = 0; i < sizeof(g_sMinigame18HeavyHurtSfx); i++)
+	{
+		PrecacheSound(g_sMinigame18HeavyHurtSfx[i], true);
+	}
 
-		Format(buffer, sizeof(buffer), "vo/sniper_painsevere0%d.mp3", i);
-		PrecacheSound(buffer, true);
+	for (int i = 0; i < sizeof(g_sMinigame18EngineerHurtSfx); i++)
+	{
+		PrecacheSound(g_sMinigame18EngineerHurtSfx[i], true);
+	}
 
-		Format(buffer, sizeof(buffer), "vo/medic_painsevere0%d.mp3", i);
-		PrecacheSound(buffer, true);
+	for (int i = 0; i < sizeof(g_sMinigame18SniperHurtSfx); i++)
+	{
+		PrecacheSound(g_sMinigame18SniperHurtSfx[i], true);
+	}
+
+	for (int i = 0; i < sizeof(g_sMinigame18MedicHurtSfx); i++)
+	{
+		PrecacheSound(g_sMinigame18MedicHurtSfx[i], true);
+	}
+
+	for (int i = 0; i < sizeof(g_sMinigame18SpyHurtSfx); i++)
+	{
+		PrecacheSound(g_sMinigame18SpyHurtSfx[i], true);
 	}
 }
 
@@ -81,7 +229,7 @@ public void Minigame18_OnMinigameSelectedPre()
 
 		if (IsValidEntity(g_iMinigame18TargetEntity))
 		{
-			g_iMinigame18SelectedTargetModel = GetRandomInt(0,3);
+			g_iMinigame18SelectedTargetModel = GetRandomInt(0, sizeof(g_sMinigame18TargetModels)-1);
 
 			char skin[4];
 			Format(skin, sizeof(skin), "%i", GetRandomInt(0, 1));
@@ -199,85 +347,62 @@ public void Minigame18_HitTarget(int attacker)
 
 		switch (g_iMinigame18SelectedTargetModel)
 		{
-			case 0: PlayScoutHurtSound(attacker);
-			case 1: PlayDemoHurtSound(attacker);
-			case 2: PlaySniperHurtSound(attacker);
-			case 3: PlayMedicHurtSound(attacker);
+			case 0: Minigame18_PlayScoutHurtSfx(attacker);
+			case 1: Minigame18_PlaySoldierHurtSfx(attacker);
+			case 2: Minigame18_PlayPyroHurtSfx(attacker);
+			case 3: Minigame18_PlayDemoHurtSfx(attacker);
+			case 4: Minigame18_PlayHeavyHurtSfx(attacker);
+			case 5: Minigame18_PlayEngineerHurtSfx(attacker);
+			case 6: Minigame18_PlayMedicHurtSfx(attacker);
+			case 7: Minigame18_PlaySniperHurtSfx(attacker);
+			case 8: Minigame18_PlaySpyHurtSfx(attacker);
 		}
 	}
 }
 
-public void PlayScoutHurtSound(int attacker)
+void Minigame18_PlayScoutHurtSfx(int attacker)
 {
-	switch (GetRandomInt(0, 13))
-	{
-		case 0: EmitSoundToClient(attacker, "vo/scout_painsharp01.mp3");
-		case 1: EmitSoundToClient(attacker, "vo/scout_painsharp02.mp3");
-		case 2: EmitSoundToClient(attacker, "vo/scout_painsharp03.mp3");
-		case 3: EmitSoundToClient(attacker, "vo/scout_painsharp04.mp3");
-		case 4: EmitSoundToClient(attacker, "vo/scout_painsharp05.mp3");
-		case 5: EmitSoundToClient(attacker, "vo/scout_painsharp06.mp3");
-		case 6: EmitSoundToClient(attacker, "vo/scout_painsharp07.mp3");
-		case 7: EmitSoundToClient(attacker, "vo/scout_painsharp08.mp3");
-		case 8: EmitSoundToClient(attacker, "vo/scout_painsevere01.mp3");
-		case 9: EmitSoundToClient(attacker, "vo/scout_painsevere02.mp3");
-		case 10: EmitSoundToClient(attacker, "vo/scout_painsevere03.mp3");
-		case 11: EmitSoundToClient(attacker, "vo/scout_painsevere04.mp3");
-		case 12: EmitSoundToClient(attacker, "vo/scout_painsevere05.mp3");
-		case 13: EmitSoundToClient(attacker, "vo/scout_painsevere06.mp3");
-	}
+	EmitSoundToClient(attacker, g_sMinigame18ScoutHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18ScoutHurtSfx)-1)]);
 }
 
-public void PlayDemoHurtSound(int attacker)
+void Minigame18_PlaySoldierHurtSfx(int attacker)
 {
-	switch (GetRandomInt(0, 10))
-	{
-		case 0: EmitSoundToClient(attacker, "vo/demoman_painsharp01.mp3");
-		case 1: EmitSoundToClient(attacker, "vo/demoman_painsharp02.mp3");
-		case 2: EmitSoundToClient(attacker, "vo/demoman_painsharp03.mp3");
-		case 3: EmitSoundToClient(attacker, "vo/demoman_painsharp04.mp3");
-		case 4: EmitSoundToClient(attacker, "vo/demoman_painsharp05.mp3");
-		case 5: EmitSoundToClient(attacker, "vo/demoman_painsharp06.mp3");
-		case 6: EmitSoundToClient(attacker, "vo/demoman_painsharp07.mp3");
-		case 7: EmitSoundToClient(attacker, "vo/demoman_painsevere01.mp3");
-		case 8: EmitSoundToClient(attacker, "vo/demoman_painsevere02.mp3");
-		case 9: EmitSoundToClient(attacker, "vo/demoman_painsevere03.mp3");
-		case 10: EmitSoundToClient(attacker, "vo/demoman_painsevere04.mp3");
-	}
+	EmitSoundToClient(attacker, g_sMinigame18SoldierHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SoldierHurtSfx)-1)]);
 }
 
-public void PlaySniperHurtSound(int attacker)
+void Minigame18_PlayPyroHurtSfx(int attacker)
 {
-	switch (GetRandomInt(0, 7))
-	{
-		case 0: EmitSoundToClient(attacker, "vo/sniper_painsharp01.mp3");
-		case 1: EmitSoundToClient(attacker, "vo/sniper_painsharp02.mp3");
-		case 2: EmitSoundToClient(attacker, "vo/sniper_painsharp03.mp3");
-		case 3: EmitSoundToClient(attacker, "vo/sniper_painsharp04.mp3");
-		case 4: EmitSoundToClient(attacker, "vo/sniper_painsevere01.mp3");
-		case 5: EmitSoundToClient(attacker, "vo/sniper_painsevere02.mp3");
-		case 6: EmitSoundToClient(attacker, "vo/sniper_painsevere03.mp3");
-		case 7: EmitSoundToClient(attacker, "vo/sniper_painsevere04.mp3");
-	}
+	EmitSoundToClient(attacker, g_sMinigame18PyroHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18PyroHurtSfx)-1)]);
 }
 
-public void PlayMedicHurtSound(int attacker)
+void Minigame18_PlayDemoHurtSfx(int attacker)
 {
-	switch (GetRandomInt(0, 11))
-	{
-		case 0: EmitSoundToClient(attacker, "vo/medic_painsharp01.mp3");
-		case 1: EmitSoundToClient(attacker, "vo/medic_painsharp02.mp3");
-		case 2: EmitSoundToClient(attacker, "vo/medic_painsharp03.mp3");
-		case 3: EmitSoundToClient(attacker, "vo/medic_painsharp04.mp3");
-		case 4: EmitSoundToClient(attacker, "vo/medic_painsharp05.mp3");
-		case 5: EmitSoundToClient(attacker, "vo/medic_painsharp06.mp3");
-		case 6: EmitSoundToClient(attacker, "vo/medic_painsharp07.mp3");
-		case 7: EmitSoundToClient(attacker, "vo/medic_painsharp08.mp3");
-		case 8: EmitSoundToClient(attacker, "vo/medic_painsevere01.mp3");
-		case 9: EmitSoundToClient(attacker, "vo/medic_painsevere02.mp3");
-		case 10: EmitSoundToClient(attacker, "vo/medic_painsevere03.mp3");
-		case 11: EmitSoundToClient(attacker, "vo/medic_painsevere04.mp3");
-	}
+	EmitSoundToClient(attacker, g_sMinigame18DemoManHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18DemoManHurtSfx)-1)]);
+}
+
+void Minigame18_PlayHeavyHurtSfx(int attacker)
+{
+	EmitSoundToClient(attacker, g_sMinigame18HeavyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18HeavyHurtSfx)-1)]);
+}
+
+void Minigame18_PlayEngineerHurtSfx(int attacker)
+{
+	EmitSoundToClient(attacker, g_sMinigame18EngineerHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18EngineerHurtSfx)-1)]);
+}
+
+void Minigame18_PlayMedicHurtSfx(int attacker)
+{
+	EmitSoundToClient(attacker, g_sMinigame18MedicHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18MedicHurtSfx)-1)]);
+}
+
+void Minigame18_PlaySniperHurtSfx(int attacker)
+{
+	EmitSoundToClient(attacker, g_sMinigame18SniperHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SniperHurtSfx)-1)]);
+}
+
+void Minigame18_PlaySpyHurtSfx(int attacker)
+{
+	EmitSoundToClient(attacker, g_sMinigame18SpyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SpyHurtSfx)-1)]);
 }
 
 public void DoSniperDamageCheck(int client, int weapon, char[] weaponname)
