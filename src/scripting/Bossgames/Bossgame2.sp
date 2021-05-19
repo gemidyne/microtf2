@@ -97,7 +97,7 @@ public void Bossgame2_OnTfRoundStart()
 
 public Action Bossgame2_OnTriggerTouched(int entity, int other)
 {
-	if (!g_bBossgame2CanCheckWinArea)
+	if (!g_bBossgame2CanCheckWinArea || g_iActiveBossgameId != 2 || !g_bIsMinigameActive)
 	{
 		return Plugin_Continue;
 	}
