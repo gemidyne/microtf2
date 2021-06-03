@@ -167,20 +167,20 @@ public void Bossgame5_OnTfRoundStart()
 
 		if (strcmp(entityName, "plugin_Bossgame5_WinArea") == 0)
 		{
-			HookSingleEntityOutput(entity, "OnStartTouch", Bossgame5_OnTriggerTouched, false);
+			SDKHook(entity, SDKHook_StartTouch, Bossgame5_OnTriggerTouched);
 			break;
 		}
 	}
 }
 
-public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int activator, float delay)
+public Action Bossgame5_OnTriggerTouched(int entity, int other)
 {
 	if (!g_bBossgame5CanCheckWinArea)
 	{
-		return;
+		return Plugin_Continue;
 	}
 
-	Player player = new Player(activator);
+	Player player = new Player(other);
 
 	if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 	{
@@ -194,6 +194,8 @@ public void Bossgame5_OnTriggerTouched(const char[] output, int caller, int acti
 			g_bBossgame5HasAnyPlayerWon = true;
 		}
 	}
+
+	return Plugin_Continue;
 }
 
 public Action Bossgame5_SwitchTimer(Handle timer)
