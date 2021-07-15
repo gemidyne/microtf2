@@ -189,6 +189,10 @@
 	{
 		"pt_p"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"pt_p"		""
+	}
 	"Minigame1_Caption"
 	{
 		"pt_p"		"CHEGUE NO FINAL SE FOR CAPAZ!"
