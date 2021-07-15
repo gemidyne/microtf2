@@ -189,6 +189,10 @@
 	{
 		"de"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"de"		""
+	}
 	"Minigame1_Caption"
 	{
 		"de"		"BEGIB DICH ZUM ENDE!"
