@@ -189,6 +189,10 @@
 	{
 		"fr"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"fr"		""
+	}
 	"Minigame1_Caption"
 	{
 		"fr"		"REJOIGNEZ L'AUTRE BOUT !"
