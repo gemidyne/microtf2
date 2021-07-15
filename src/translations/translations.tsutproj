@@ -908,6 +908,24 @@
       "ignoreEmptyValue": true
     },
     {
+      "key": "Bossgame8_Caption",
+      "description": "Do not set any text for this bossgame.",
+      "text": "",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": true
+    },
+    {
       "key": "Minigame1_Caption",
       "description": null,
       "text": "GET TO THE END!",
