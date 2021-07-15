@@ -189,6 +189,10 @@
 	{
 		"pl"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"pl"		""
+	}
 	"Minigame1_Caption"
 	{
 		"pl"		"DOTRZYJ DO KOŃCA!"
