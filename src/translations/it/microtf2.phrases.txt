@@ -191,7 +191,7 @@
 	}
 	"Bossgame8_Caption"
 	{
-		"it"		"."
+		"it"		""
 	}
 	"Minigame1_Caption"
 	{
