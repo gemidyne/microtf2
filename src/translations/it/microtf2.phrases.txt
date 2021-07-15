@@ -189,6 +189,10 @@
 	{
 		"it"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"it"		"."
+	}
 	"Minigame1_Caption"
 	{
 		"it"		"RAGGIUNGI LA META!"
