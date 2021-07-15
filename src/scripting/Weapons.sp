@@ -36,7 +36,7 @@ void Weapons_EquipWeaponByItemIndex(int client, int weaponLookupIndex)
 		return;
 	}
 
-	int weaponSlot = TF2Econ_GetItemSlot(weaponLookupIndex, player.Class);
+	int weaponSlot = TF2Econ_GetItemLoadoutSlot(weaponLookupIndex, player.Class);
 	int weaponQuality = TF2Econ_GetItemQuality(weaponLookupIndex);
 	char weaponClassname[64];
 	int minWeaponLevel;
