@@ -143,3 +143,22 @@ forward void WarioWare_Event_OnSpeedChange(float speed);
  * @noreturn
  */
 forward void WarioWare_Event_OnSpecialRoundSelected(int id);
+
+public SharedPlugin __pl_warioware =
+{
+	name = "warioware",
+	file = "AS-MicroTF2.smx",
+#if defined REQUIRE_PLUGIN
+	required = 1,
+#else
+	required = 0,
+#endif
+};
+
+#if !defined REQUIRE_PLUGIN
+public __pl_warioware_SetNTVOptional()
+{
+	MarkNativeAsOptional("WarioWare_GetMaxRounds");
+	MarkNativeAsOptional("WarioWare_SetMaxRounds");
+}
+#endif
