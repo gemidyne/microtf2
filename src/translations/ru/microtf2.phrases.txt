@@ -189,6 +189,10 @@
 	{
 		"ru"		""
 	}
+	"Bossgame8_Caption"
+	{
+		"ru"		""
+	}
 	"Minigame1_Caption"
 	{
 		"ru"		"ДОЙДИТЕ ДО КОНЦА!"
