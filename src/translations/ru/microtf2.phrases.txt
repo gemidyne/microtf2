@@ -88,15 +88,15 @@
 	}
 	"General_BossTime"
 	{
-		"ru"		""
+		"ru"		"БОСС РАУНД!"
 	}
 	"General_GameOver"
 	{
-		"ru"		""
+		"ru"		"ИГРА ОКОНЧЕНА!"
 	}
 	"General_SpecialRound"
 	{
-		"ru"		""
+		"ru"		"ОСОБЫЙ РАУНД!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"ru"		""
+		"ru"		"СТОЙ НА ЗЕЛЕНОМ БЛОКЕ!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -460,15 +460,15 @@
 	}
 	"Minigame28_Caption"
 	{
-		"ru"		""
+		"ru"		"С ПОМОЩЬЮ БОМБ ЗАПРЫГНИТЕ НА ПЛАТФОРМУ!"
 	}
 	"Minigame29_Caption"
 	{
-		"ru"		""
+		"ru"		"НЕ ПРИКАСАЙТЕСЬ!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"ru"		""
+		"ru"		"НАПИЩИТЕ СЛОВА!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
