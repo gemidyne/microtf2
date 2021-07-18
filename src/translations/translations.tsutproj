@@ -44,7 +44,7 @@
         "it": "Stai giocando a WarioWare! Versione {1}. Scrivi !credits in chat per i riconoscimenti.",
         "pt_p": "Você está jogando WARIO WARE! Versão {1}. Tecle !credits no chat e saiba quem são os desenvolvedores.",
         "ru": "Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима.",
-        "es": "Estas jugando a WarioWare! Version {1}. Di !credits en el chat para ver los creditos.",
+        "es": "Estas jugando a WarioWare! Versión {1}. Di !credits en el chat para ver los créditos.",
         "jp": null,
         "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów.",
         "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen."
@@ -67,7 +67,7 @@
         "it": "Punti: {1}",
         "pt_p": "Pontos: {1}",
         "ru": "Очков: {1}",
-        "es": "Puntuacion: {1}",
+        "es": "Puntuación: {1}",
         "jp": null,
         "pl": "Wynik: {1}",
         "de": "Punkte: {1}"
@@ -113,7 +113,7 @@
         "it": "Punti Squadra: {1}",
         "pt_p": "Placar do Time: {1}",
         "ru": "Очки комманды: {1}",
-        "es": "Puntuacion del Equipo: {1}",
+        "es": "Puntuación del Equipo: {1}",
         "jp": null,
         "pl": "Wynik Drużyny: {1}",
         "de": "Team Punkte: {1}"
@@ -232,7 +232,7 @@
         "it": "ROUND SPECIALE: {1}!",
         "pt_p": "RODADA ESPECIAL: {1}!",
         "ru": "ОСОБЫЙ РАУНД: {1}!",
-        "es": "RONDA ESPECIAL: {1}!",
+        "es": "RONDA ESPECIAL: ¡{1}!",
         "jp": null,
         "pl": "RUNDA SPECJALNA: {1}!",
         "de": "SPEZIAL RUNDE: {1}!"
@@ -259,7 +259,7 @@
         "it": "Il round speciale scelto è... {1}!\n{2}",
         "pt_p": "Rodada especial. Na condição... {1}!\n{2}",
         "ru": "Условие особого раунда... {1}!\n{2}",
-        "es": "La condicion de la ronda especial es... {1}!\n{2}",
+        "es": "La condición de la ronda especial es... ¡{1}!\n{2}",
         "jp": null,
         "pl": "Warunek rundy specjalnej to... {1}!\n{2}",
         "de": "Die Bedingung für diese Spezial Runde ist... {1}!\n{2}"
@@ -277,7 +277,7 @@
         "it": "Tornerai in gioco non appena il minigioco o boss corrente sarà terminato.",
         "pt_p": "Você renascerá assim que o microgame ou o 'bossgame' forem finalizados.",
         "ru": "Вы вернетесь в игру после окончания раунда или босс раунда.",
-        "es": "Reapareceras cuando el minijuego o jefe actual termine.",
+        "es": "Reaparecerás cuando el minijuego o jefe actual termine.",
         "jp": null,
         "pl": "Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca.",
         "de": "Du wirst wiederbelebt sobald das derzeitige Mini- oder Bossspiel beendet wurde."
@@ -295,7 +295,7 @@
         "it": "SEI STATO ELIMINATO!",
         "pt_p": "VOCÊ FOI ELIMINADO!",
         "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
-        "es": "HAS SIDO ELIMINADO!",
+        "es": "¡HAS SIDO ELIMINADO!",
         "jp": null,
         "pl": "ZOSTAŁEŚ WYELIMINOWANY!",
         "de": "DU WURDEST AUSSER GEFECHT GESETZT!"
@@ -313,7 +313,7 @@
         "it": "Non è permesso cambiare classe durante questo round speciale! Un punto di penalità è stato aggiunto al tuo totale.",
         "pt_p": "A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar.",
         "ru": "Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет.",
-        "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuacion.",
+        "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuación.",
         "jp": null,
         "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku.",
         "de": "Es ist nicht erlaubt die Klasse währen dieser Spezial Runde zu wechseln! 1 Punkt wurde zu deinem Punktestand hinzugefügt."
@@ -331,7 +331,7 @@
         "it": "Perso!",
         "pt_p": "Perdedor!",
         "ru": "Неудачник!",
-        "es": "Perdedor!",
+        "es": "¡Perdedor!",
         "jp": null,
         "pl": "Przegrany!",
         "de": "Verlierer!"
@@ -349,7 +349,7 @@
         "it": "Vinto!",
         "pt_p": "Vencedor!",
         "ru": "Победитель!",
-        "es": "Ganador!",
+        "es": "¡Ganador!",
         "jp": null,
         "pl": "Zwycięzca!",
         "de": "Gewinner!"
@@ -438,7 +438,7 @@
         "fr": null,
         "it": "ORA DEL BOSS!",
         "pt_p": null,
-        "ru": null,
+        "ru": "БОСС РАУНД!",
         "es": "¡JEFE FINAL!",
         "jp": null,
         "pl": "CZAS NA BOSSA!",
@@ -456,7 +456,7 @@
         "fr": null,
         "it": "FINE DELLA PARTITA!",
         "pt_p": null,
-        "ru": null,
+        "ru": "ИГРА ОКОНЧЕНА!",
         "es": "¡FIN DEL JUEGO!",
         "jp": null,
         "pl": "KONIEC GRY!",
@@ -474,7 +474,7 @@
         "fr": null,
         "it": "ROUND SPECIALE!",
         "pt_p": null,
-        "ru": null,
+        "ru": "ОСОБЫЙ РАУНД!",
         "es": "¡RONDA ESPECIAL!",
         "jp": null,
         "pl": "RUNDA SPECJALNA!",
@@ -493,7 +493,7 @@
         "it": "== IL ROUND SPECIALE È TERMINATO! ==",
         "pt_p": "== A RODADA ESPECIAL FOI ENCERRADA! ==",
         "ru": "== ОСОБЫЙ РАУНД ЗАКОНЧИЛСЯ! ==",
-        "es": "== LA RONDA ESPECIAL A TERMINADO! ==",
+        "es": "== ¡LA RONDA ESPECIAL A TERMINADO! ==",
         "jp": null,
         "pl": "== RUNDA SPECJALNA DOBIEGŁA KOŃCA! ==",
         "de": "== DIE SPEZIAL RUNDE IST VORBEI! =="
@@ -574,7 +574,7 @@
         "it": "Nessuno ha vinto!",
         "pt_p": "Sem vencedores desta vez!",
         "ru": "Победителей нету!",
-        "es": "No hay ganadores!",
+        "es": "¡No hay ganadores!",
         "jp": null,
         "pl": "Nie ma zwycięzców!",
         "de": "Es gibt keinen Gewinner!"
@@ -605,7 +605,7 @@
         "it": "{1} {2} {default}con {3} punti!",
         "pt_p": "{1} {2} {default}com {3} pontos!",
         "ru": "{1} {2} {default}с {3} очками!",
-        "es": "{1} {2} {default}con {3} puntos!",
+        "es": "¡{1} {2} {default}con {3} puntos!",
         "jp": null,
         "pl": "{1} {2} {default}z wynikiem {3}!",
         "de": "{1} {2} {default}mit {3} Punkte!"
@@ -628,7 +628,7 @@
         "it": "Vince la squadra RED, con {1} punti!",
         "pt_p": "O TIME VERMELHO foi o time vencedor com {1} pontos!",
         "ru": "КРАСНАЯ комманда побеждает с {1} очками!",
-        "es": "El equipo ganador es RED con {1} puntos!",
+        "es": "¡El equipo ganador es RED con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna RED z wynikiem {1}!",
         "de": "Das Gewinner Team ist Team RED mit {1} Punkte!"
@@ -651,7 +651,7 @@
         "it": "Vince la squadra BLU, con {1} punti!",
         "pt_p": "O TIME AZUL foi o time vencedor com {1} pontos!",
         "ru": "СИНЯЯ комманда побеждает с {1} очками!",
-        "es": "El equipo ganador es BLU con {1} puntos!",
+        "es": "¡El equipo ganador es BLU con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna BLU z wynikiem {1}!",
         "de": "Das Gewinner Team ist Team BLU mit {1} Punkte!"
@@ -669,7 +669,7 @@
         "it": "Pareggio! Entrambe le squadre hanno lo stesso punteggio!",
         "pt_p": "Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
         "ru": "Ничья! Обе комманды имеют одинаковое кол-во очков!",
-        "es": "Tablas! Ambos equipos tienen los mismos puntos!",
+        "es": "¡Tablas! ¡Ambos equipos tienen los mismos puntos!",
         "jp": null,
         "pl": "Impas! Obie drużyny mają tyle samo punktów!",
         "de": "Unentschieden! Beide Teams haben die gleiche Punktezahl!"
@@ -687,7 +687,7 @@
         "it": "Intervallo!",
         "pt_p": "Hora do Intervalo!",
         "ru": "Пауза!",
-        "es": "Intermedio!",
+        "es": "¡Intermedio!",
         "jp": null,
         "pl": "Przerwa!",
         "de": "Unterbrechung!"
@@ -705,7 +705,7 @@
         "it": "Pausa! È ora di votare per la prossima mappa.",
         "pt_p": "Uma pequena parada para votar o próximo mapa.",
         "ru": "Время перерыва! Голосование следующей карты началась.",
-        "es": "Descanso! Hora de votar el siguiente mapa.",
+        "es": "¡Descanso! Hora de votar el siguiente mapa.",
         "jp": null,
         "pl": "Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę.",
         "de": "Pause! Zeit um die nächste Karte zu wählen."
@@ -723,7 +723,7 @@
         "it": "ARRIVA IN CIMA CON I SALTI RAZZO!",
         "pt_p": "CHEGUE AO FINAL COM ROCKET JUMPS!",
         "ru": "ДОПРЫГАЙТЕ ДО КОНЦА С ПОМОЩЬЮ РАКЕТ!",
-        "es": "SALTA CON COHETES HASTA EL FINAL!",
+        "es": "¡SALTA CON COHETES HASTA EL FINAL!",
         "jp": null,
         "pl": "UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!",
         "de": "ROCKET JUMP BIS ZUM ENDE!"
@@ -746,7 +746,7 @@
         "it": "{1} è arrivato in cima per primo e ha vinto un punto bonus!",
         "pt_p": "{1} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)",
         "ru": "{1} достал до вершины первым! (Доп. очко!)",
-        "es": "{1} alcanzó el objetivo primero! (+1 puntaje!)",
+        "es": "¡{1} llegó hasta la cima primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)",
         "de": "{1} hat als erstes die Spitze erreicht! (Bonus Punkt!)"
@@ -764,7 +764,7 @@
         "it": "FUGGI DALLA FABBRICA!",
         "pt_p": "FUJA DA FÁBRICA!",
         "ru": "СБЕЖИТЕ ИЗ ЗАВОДА!",
-        "es": "ESCAPA DE LA FABRICA!",
+        "es": "¡ESCAPA DE LA FABRICA!",
         "jp": null,
         "pl": "UCIEKNIJ Z FABRYKI!",
         "de": "FLÜCHTE AUS DER FABRIK!"
@@ -787,7 +787,7 @@
         "it": "{1} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": "{1} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "ru": "{1} сбежал из завода первым! (Доп. очко!)",
-        "es": "{1} alcanzó el objetivo primero! (¡Punto extra!)",
+        "es": "¡{1}{2} escapó de la fabrica primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)",
         "de": "{1}{2} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
@@ -804,8 +804,8 @@
         "fr": null,
         "it": "STAI SUL BLOCCO VERDE!",
         "pt_p": null,
-        "ru": null,
-        "es": "¡QUEDATE EN EL BLOQUE VERDE!",
+        "ru": "СТОЙ НА ЗЕЛЕНОМ БЛОКЕ!",
+        "es": "¡QUÉDATE EN EL BLOQUE VERDE!",
         "jp": null,
         "pl": "ZOSTAŃ NA ZIELONYM BLOKU!",
         "de": "BLEIBE AUF DEM GRÜNEN BLOCK!"
@@ -864,7 +864,7 @@
         "it": "{1} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!",
         "pt_p": "{1} chegou até o final do percurso primeiro! (Pontos de Bônus!)",
         "ru": "{1} дошел до конца первым! (Доп. очко!)",
-        "es": "{1} alcanzó el objetivo primero! (¡Punto extra!)",
+        "es": "¡{1} alcanzó el objetivo primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)",
         "de": "{1} erreichte das Ziel als erstes! (Bonus Punkt!)"
@@ -936,7 +936,7 @@
         "it": "RAGGIUNGI LA META!",
         "pt_p": "CHEGUE NO FINAL SE FOR CAPAZ!",
         "ru": "ДОЙДИТЕ ДО КОНЦА!",
-        "es": "LLEGA HASTA EL FINAL!",
+        "es": "¡LLEGA HASTA EL FINAL!",
         "jp": null,
         "pl": "DOTRZYJ DO KOŃCA!",
         "de": "BEGIB DICH ZUM ENDE!"
@@ -954,7 +954,7 @@
         "it": "UCCIDI UN NEMICO!",
         "pt_p": "MATE UM INIMIGO!",
         "ru": "УБЕЙТЕ ВРАГА!",
-        "es": "MATA A UN ENEMIGO!",
+        "es": "¡MATA A UN ENEMIGO!",
         "jp": null,
         "pl": "ZABIJ WROGA!",
         "de": "TÖTE EINEN GEGNER!"
@@ -972,7 +972,7 @@
         "it": "ROMPI I BARILI!",
         "pt_p": "QUEBRE OS BARRIS!",
         "ru": "СЛОМАЙТЕ БОЧКУ!",
-        "es": "ROMPE LOS BARRILES!",
+        "es": "¡ROMPE LOS BARRILES!",
         "jp": null,
         "pl": "ZNISZCZ BECZKI!",
         "de": "ZERBRICH DIE FÄSSER!"
@@ -990,7 +990,7 @@
         "it": "SPINGI COL COMPRESSORE!",
         "pt_p": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
         "ru": "ТОЛКАЙТЕ И ВЫЖИВИТЕ!",
-        "es": "EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
+        "es": "¡EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
         "jp": null,
         "pl": "ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!",
         "de": "AIRBLAST UND AM LEBEN BLEIBEN!"
@@ -1008,7 +1008,7 @@
         "it": "SALTO ADESIVO!",
         "pt_p": "STICKY JUMP!",
         "ru": "ПРЫЖОК НА ЛЕПУЧКЕ!",
-        "es": "SALTO CON BOMBAS!",
+        "es": "¡SALTO CON BOMBAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!",
         "de": "STICKY JUMP!"
@@ -1031,7 +1031,7 @@
         "it": "SCRIVI LA PAROLA!\n{1}",
         "pt_p": "DIGITE A PALAVRA!\n{1}",
         "ru": "НАПИШИТЕ СЛОВО!\n{1}",
-        "es": "DI LA PALABRA!\n{1}",
+        "es": "¡DI LA PALABRA!\n{1}",
         "jp": null,
         "pl": "NAPISZ SŁOWO!\n{1}",
         "de": "SCHREIB DAS WORT!\n{1}"
@@ -1054,7 +1054,7 @@
         "it": "{1} ha scritto la parola per primo e ha vinto un punto bonus!",
         "pt_p": "{1} foi o primeiro a digitar a palavra! (Pontos de Bônus!)",
         "ru": "{1} сказал слово первым! (Доп. очко!)",
-        "es": "{1} dijo la palabra primero! (Punto extra!)",
+        "es": "¡{1} dijo la palabra primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)",
         "de": "{1} schrieb das Wort als erstes! (Bonus Punkt!)"
@@ -1072,7 +1072,7 @@
         "it": "SALTO RAZZO!",
         "pt_p": "ROCKET JUMP!",
         "ru": "ПРЫЖОК НА РАКЕТЕ!",
-        "es": "SALTO CON COHETES!",
+        "es": "¡SALTO CON COHETES!",
         "jp": null,
         "pl": "WYKONAJ RAKIETOWY SKOK!",
         "de": "ROCKET JUMP!"
@@ -1095,7 +1095,7 @@
         "it": "RISPONDI ALLA DOMANDA!\n{1} = ?",
         "pt_p": "RESPONDA A PERGUNTA!\n{1} = ?",
         "ru": "ОТВЕТЬТЕ НА ВОПРОС!\n{1} = ?",
-        "es": "RESPONDE LA PREGUNTA!\n{1} = ?",
+        "es": "¡RESPONDE LA PREGUNTA!\n{1} = ?",
         "jp": null,
         "pl": "ODPOWIEDZ NA PYTANIE!\n{1} = ?",
         "de": "BEANTWORTE DIE FRAGE!\n{1} = ?"
@@ -1118,7 +1118,7 @@
         "it": "La risposta corretta era {1}!",
         "pt_p": "A reposta correta foi {1}!",
         "ru": "Правильным ответом было {1}!",
-        "es": "La respuesta correcta era {1}!",
+        "es": "¡La respuesta correcta era {1}!",
         "jp": null,
         "pl": "Poprawna odpowiedź to {1}!",
         "de": "Die richtige Antwort war {1}!"
@@ -1141,7 +1141,7 @@
         "it": "{1} ha risposto correttamente per primo e ha vinto un punto bonus!",
         "pt_p": "{1} respondeu corretamente primeiro! (Pontos de Bônus!)",
         "ru": "{1} написал правильный ответ первым! (Доп. очко!)",
-        "es": "{1} dijo la respuesta primero! (Punto extra!)",
+        "es": "¡{1} dijo la respuesta primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)",
         "de": "{1} hat als erstes die richtige Antwort erraten! (Bonus Punkt!)"
@@ -1159,7 +1159,7 @@
         "it": "SIMONE DICE: PROVOCA!",
         "pt_p": "O MESTRE MANDOU: TAUNT!",
         "ru": "САЙМОН ГОВОРИТ: НАСМЕШКА!",
-        "es": "SIMON DICE: BURLATE!",
+        "es": "SIMON DICE: ¡BÚRLATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: DRWINA!",
         "de": "SIMON SAYS: VERSPOTTEN!"
@@ -1177,7 +1177,7 @@
         "it": "SIMONE DICE: SALTA!",
         "pt_p": "O MESTRE MANDOU: PULE!",
         "ru": "САЙМОН ГОВОРИТ: ПРЫЖОК!",
-        "es": "SIMON DICE: SALTA!",
+        "es": "SIMON DICE: ¡SALTA!",
         "jp": null,
         "pl": "SZYMON MÓWI: SKACZ!",
         "de": "SIMON SAYS: SPRINGEN!"
@@ -1195,7 +1195,7 @@
         "it": "SIMONE DICE: ABBASSATI!",
         "pt_p": "O MESTRE MANDOU: ABAIXE!",
         "ru": "САЙМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
-        "es": "SIMON DICE: AGACHATE!",
+        "es": "SIMON DICE: ¡AGÁCHATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: KUCNIJ!",
         "de": "SIMON SAYS: DUCKEN!"
@@ -1213,7 +1213,7 @@
         "it": "SALMONE DICE: PROVOCA!",
         "pt_p": "O MESTRE NÃO MANDOU: TAUNT!",
         "ru": "САУМОН ГОВОРИТ: НАСМЕШКА!",
-        "es": "ALGUIEN DICE: BURLATE!",
+        "es": "ALGUIEN DICE: ¡BÚRLATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: DRWINA!",
         "de": "JEMAND SAGT: VERSPOTTEN!"
@@ -1231,7 +1231,7 @@
         "it": "SALMONE DICE: SALTA!",
         "pt_p": "O MESTRE NÃO MANDOU: PULE!",
         "ru": "САУМОН ГОВОРИТ: ПРЫЖОК!",
-        "es": "ALGUIEN DICE: SALTA!",
+        "es": "ALGUIEN DICE: ¡SALTA!",
         "jp": null,
         "pl": "KTOŚ MÓWI: SKACZ!",
         "de": "JEMAND SAGT: SPRINGEN!"
@@ -1249,7 +1249,7 @@
         "it": "SALMONE DICE: ABBASSATI!",
         "pt_p": "O MESTRE NÃO MANDOU: ABAIXE!",
         "ru": "САУМОН ГОВОРИТ: ПРИСЯДЬТЕ!",
-        "es": "ALGUIEN DICE: AGACHATE!",
+        "es": "ALGUIEN DICE: ¡AGÁCHATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: KUCNIJ!",
         "de": "JEMAND SAGT: DUCKEN!"
@@ -1285,7 +1285,7 @@
         "it": "Il kamikaze è qui!",
         "pt_p": "O Kamikaze chegou!",
         "ru": "Камикадзе здесь!",
-        "es": "El Kamikaze esta por aqui!",
+        "es": "¡El Kamikaze está por aquí!",
         "jp": null,
         "pl": "Kamikaze jest tutaj!",
         "de": "Kamikaze ist hier!"
@@ -1303,7 +1303,7 @@
         "it": "FAI ESPLODERE PIU' GIOCATORI CHE PUOI!",
         "pt_p": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
         "ru": "ВЗОРВИТЕ КАК МОЖНО БОЛЬШЕ ИГРОКОВ!",
-        "es": "EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
+        "es": "¡EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
         "jp": null,
         "pl": "ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!",
         "de": "SPRENGE SO VIELE SPIELER WIE MÖGLICH IN DIE LUFT!"
@@ -1321,7 +1321,7 @@
         "it": "SCAPPA DAL KAMIKAZE!",
         "pt_p": "FUJA PARA LONGE DO KAMIKAZE!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
-        "es": "HUYE DEL KAMIKAZE!",
+        "es": "¡HUYE DEL KAMIKAZE!",
         "jp": null,
         "pl": "UCIEKNIJ OD KAMIKAZE!",
         "de": "RENN VON DER KAMIKAZE WEG!"
@@ -1339,7 +1339,7 @@
         "it": "CONTINUA A MUOVERTI!",
         "pt_p": "NÃO PARE DE SE MOVIMENTAR!",
         "ru": "ДВИГАЙТЕСЬ!",
-        "es": "NO PARES DE MOVERTE!",
+        "es": "¡NO PARES DE MOVERTE!",
         "jp": null,
         "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!",
         "de": "BLEIB IN BEWEGUNG!"
@@ -1357,7 +1357,7 @@
         "it": "NON MUOVERTI!",
         "pt_p": "NÃO SE MOVA!",
         "ru": "НЕ ДВИГАТЬСЯ!",
-        "es": "NO TE MUEVAS!",
+        "es": "¡NO TE MUEVAS!",
         "jp": null,
         "pl": "NIE RUSZAJ SIĘ!",
         "de": "NICHT BEWEGEN!"
@@ -1375,7 +1375,7 @@
         "it": "SALI SU UNA PIATTAFORMA!",
         "pt_p": "SUBA EM ALGUMA PLATAFORMA!",
         "ru": "ВСТАНЬТЕ НА ПЛАТФОРМУ!",
-        "es": "SUBE A UNA PLATAFORMA!",
+        "es": "¡SUBE A UNA PLATAFORMA!",
         "jp": null,
         "pl": "DOSTAŃ SIĘ NA PLATFORMĘ!",
         "de": "SPRING AUF EINE PLATFORM!"
@@ -1393,7 +1393,7 @@
         "it": "FAI LO SPYCRAB!",
         "pt_p": "SPYCRAB!",
         "ru": "СПАЙКРАБ!",
-        "es": "SPYCRAB!",
+        "es": "¡SPYCRAB!",
         "jp": null,
         "pl": "SZPIEGOKRAB!",
         "de": "SPYCRAB!"
@@ -1411,7 +1411,7 @@
         "it": "Gli Spycrab devono abbassarsi e guardare in alto!",
         "pt_p": "Spycrabs precisam abaixar olhando para cima!",
         "ru": "Спайкрабы должны присесть и посмотреть вверх!",
-        "es": "Los Spycrabs deben agacharse y mirar hacia arriba!",
+        "es": "¡Los Spycrabs deben agacharse y mirar hacia arriba!",
         "jp": null,
         "pl": "Szpiegokraby muszą kucać i patrzeć w górę!",
         "de": "Spycrabs müssen sich Ducken und nach oben schauen!"
@@ -1429,7 +1429,7 @@
         "it": "SABOTA UNA COSTRUZIONE!",
         "pt_p": "SABOTE UMA CONSTRUÇÃO!",
         "ru": "ПОСТАВЬТЕ ЖУЧОК!",
-        "es": "DESTRUYE UNA CONSTRUCCION!",
+        "es": "¡DESTRUYE UNA CONSTRUCCIÓN!",
         "jp": null,
         "pl": "ZNISZCZ KONSTRUKCJĘ SAPEREM!",
         "de": "SABOTIERE EIN GEBÄUDE!"
@@ -1447,7 +1447,7 @@
         "it": "FATTI SABOTARE UNA COSTRUZIONE!",
         "pt_p": "CONSTRUA ALGO PARA O SPY SABOTAR!",
         "ru": "ПОЛУЧИТЕ ЖУЧОК НА ВАШЕЙ ПОСТРОЙКЕ!",
-        "es": "HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
+        "es": "¡HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
         "jp": null,
         "pl": "POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!",
         "de": "LASS EIN GEBÄUDE SABOTIERT WERDEN!"
@@ -1465,7 +1465,7 @@
         "it": "COSTRUISCI QUALCOSA!",
         "pt_p": "CONSTRUA QUALQUER COISA!",
         "ru": "ПОСТРОЙТЕ ЧТО-НИБУДЬ!",
-        "es": "CONSTRUYE ALGO!",
+        "es": "¡CONSTRUYE ALGO!",
         "jp": null,
         "pl": "ZBUDUJ COKOLWIEK!",
         "de": "BAUE ETWAS!"
@@ -1483,7 +1483,7 @@
         "it": "COSTRUISCI UN DISPENSER!",
         "pt_p": "CONSTRUA UM FORNECEDOR!",
         "ru": "ПОСТРОЙТЕ РАЗДАТЧИК!",
-        "es": "CONSTRUYE UN DISPENSADOR!",
+        "es": "¡CONSTRUYE UN DISPENSADOR!",
         "jp": null,
         "pl": "ZBUDUJ ZASOBNIK!",
         "de": "BAUE EINEN DISPENSER!"
@@ -1501,7 +1501,7 @@
         "it": "COSTRUISCI UN TELETRASPORTO!",
         "pt_p": "CONSTRUA UM TELEPORTE!",
         "ru": "ПОСТРОЙТЕ ТЕЛЕПОРТ!",
-        "es": "CONSTRUYE UN TELETRANSPORTADOR!",
+        "es": "¡CONSTRUYE UN TELETRANSPORTADOR!",
         "jp": null,
         "pl": "ZBUDUJ TELEPORT!",
         "de": "BAUE EINEN TELEPORTER!"
@@ -1519,7 +1519,7 @@
         "it": "COSTRUSICI UNA TORRETTA!",
         "pt_p": "CONSTRUA UMA SENTINELA!",
         "ru": "ПОСТРОЙТЕ ТУРЕЛЬ!",
-        "es": "CONSTRUYE UN CENTINELA!",
+        "es": "¡CONSTRUYE UN CENTINELA!",
         "jp": null,
         "pl": "ZBUDUJ DZIAŁKO STRAŻNICZE!",
         "de": "BAUE EINE SENTRY!"
@@ -1537,7 +1537,7 @@
         "it": "COPRI UN NEMICO DI GIARATE!",
         "pt_p": "JOGUE O JARATE NOS INIMIGOS!",
         "ru": "ОБМОЧИТЕ ВРАГА!",
-        "es": "LANZA JARATE A UN ENEMIGO!",
+        "es": "¡LANZA JARATE A UN ENEMIGO!",
         "jp": null,
         "pl": "TRAF WROGA SIKWONDEM!",
         "de": "WIRF JARATE AUF EINEN GEGNER!"
@@ -1555,7 +1555,7 @@
         "it": "COLPISCI UN GROSSO!",
         "pt_p": "ACERTE O HEAVY!",
         "ru": "УДАРЬТЕ ПУЛЕМЕТЧИКА!",
-        "es": "GOLPEA A UN HEAVY!",
+        "es": "¡GOLPEA A UN HEAVY!",
         "jp": null,
         "pl": "UDERZ GRUBEGO!",
         "de": "SCHLAGE EINEN HEAVY!"
@@ -1573,7 +1573,7 @@
         "it": "FATTI COLPIRE DA UN MEDICO!",
         "pt_p": "SEJA ATINGIDO POR UM MÉDICO!",
         "ru": "ПОЛУЧИТЕ УДАР ОТ МЕДИКА!",
-        "es": "HAZ QUE TE GOLPEE UN MEDICO!",
+        "es": "¡HAZ QUE TE GOLPEE UN MEDICO!",
         "jp": null,
         "pl": "ZOSTAŃ UDERZONYM PRZEZ MEDYKA!",
         "de": "WERDE VON EINEM MEDIC GESCHLAGEN!"
@@ -1591,7 +1591,7 @@
         "it": "COLPISCI IL BERSAGLIO!",
         "pt_p": "ACERTE O ALVO!",
         "ru": "ПОПОДИТЕ ПО МИШЕНИ!",
-        "es": "DALE AL OBJETIVO!",
+        "es": "¡DALE AL OBJETIVO!",
         "jp": null,
         "pl": "TRAF W CEL!",
         "de": "TRIFF DAS ZIEL!"
@@ -1609,7 +1609,7 @@
         "it": "CAMBIA CLASSE!",
         "pt_p": "MUDE DE CLASSE!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС!",
-        "es": "CAMBIA DE CLASE!",
+        "es": "¡CAMBIA DE CLASE!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ!",
         "de": "WECHSLE DIE KLASSE!"
@@ -1627,7 +1627,7 @@
         "it": "CAMBIA CLASSE IN ESPLORATORE!",
         "pt_p": "MUDE A CLASSE PARA SCOUT!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!",
-        "es": "CAMBIA DE CLASE A SCOUT!",
+        "es": "¡CAMBIA DE CLASE A SCOUT!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SKAUTA!",
         "de": "WECHSLE DIE KLASSE ZU SCOUT!"
@@ -1645,7 +1645,7 @@
         "it": "CAMBIA CLASSE IN SOLDATO!",
         "pt_p": "MUDE A CLASSE PARA SOLDIER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!",
-        "es": "CAMBIA DE CLASE A SOLDADO!",
+        "es": "¡CAMBIA DE CLASE A SOLDADO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA ŻOŁNIERZA!",
         "de": "WECHSLE DIE KLASSE ZU SOLDIER!"
@@ -1663,7 +1663,7 @@
         "it": "CAMBIA CLASSE IN PIRO!",
         "pt_p": "MUDE A CLASSE PARA PYRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!",
-        "es": "CAMBIA DE CLASE A PYRO!",
+        "es": "¡CAMBIA DE CLASE A PYRO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA PYRO!",
         "de": "WECHSLE DIE KLASSE ZU PYRO!"
@@ -1681,7 +1681,7 @@
         "it": "CAMBIA CLASSE IN DEMOLITORE!",
         "pt_p": "MUDE A CLASSE PARA DEMOMAN!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!",
-        "es": "CAMBIA DE CLASE A DEMOMAN!",
+        "es": "¡CAMBIA DE CLASE A DEMOMAN!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA DEMOMANA!",
         "de": "WECHSLE DIE KLASSE ZU DEMOMAN!"
@@ -1699,7 +1699,7 @@
         "it": "CAMBIA CLASSE IN GROSSO!",
         "pt_p": "MUDE A CLASSE PARA HEAVY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!",
-        "es": "CAMBIA DE CLASE A HEAVY!",
+        "es": "¡CAMBIA DE CLASE A HEAVY!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA GRUBEGO!",
         "de": "WECHSLE DIE KLASSE ZU HEAVY!"
@@ -1717,7 +1717,7 @@
         "it": "CAMBIA CLASSE IN INGEGNERE!",
         "pt_p": "MUDE A CLASSE PARA ENGENHEIRO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!",
-        "es": "CAMBIA DE CLASE A INGENIERO!",
+        "es": "¡CAMBIA DE CLASE A INGENIERO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA INŻYNIERA!",
         "de": "WECHSLE DIE KLASSE ZU ENGINEER!"
@@ -1735,7 +1735,7 @@
         "it": "CAMBIA CLASSE IN MEDICO!",
         "pt_p": "MUDE A CLASSE PARA MÉDICO!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!",
-        "es": "CAMBIA DE CLASE A MEDICO!",
+        "es": "¡CAMBIA DE CLASE A MEDICO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA MEDYKA!",
         "de": "WECHLSE DIE KLASSE ZU MEDIC!"
@@ -1753,7 +1753,7 @@
         "it": "CAMBIA CLASSE IN CECCHINO!",
         "pt_p": "MUDE A CLASSE PARA SNIPER!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!",
-        "es": "CAMBIA DE CLASE A FRANCOTIRADOR!",
+        "es": "¡CAMBIA DE CLASE A FRANCOTIRADOR!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SNAJPERA!",
         "de": "WECHSLE DIE KLASSE ZU SNIPER!"
@@ -1771,7 +1771,7 @@
         "it": "CAMBIA CLASSE IN SPIA!",
         "pt_p": "MUDE A CLASSE PARA SPY!",
         "ru": "ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!",
-        "es": "CAMBIA DE CLASE A ESPIA!",
+        "es": "¡CAMBIA DE CLASE A ESPIA!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SZPIEGA!",
         "de": "WECHSLE DIE KLASSE ZU SPY!"
@@ -1789,7 +1789,7 @@
         "it": "BEVI!",
         "pt_p": "BEBA RÁPIDO!",
         "ru": "ВЫПЕЙТЕ!",
-        "es": "BEBE!",
+        "es": "¡BEBE!",
         "jp": null,
         "pl": "PIJ!",
         "de": "TRINK!"
@@ -1803,7 +1803,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON BERE!",
-        "es": "NO BEBAS!",
+        "es": "¡NO BEBAS!",
         "fr": "NE BUVEZ PAS !",
         "ru": "НЕ ПЕЙТЕ!",
         "pt_p": "NÃO BEBA!",
@@ -1824,7 +1824,7 @@
         "it": "MANGIA!",
         "pt_p": "COMA, RÁPIDO!",
         "ru": "ПОЕШЬТЕ!",
-        "es": "COME!",
+        "es": "¡COME!",
         "jp": null,
         "pl": "JEDZ!",
         "de": "ISS!"
@@ -1838,7 +1838,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON MANGIARE!",
-        "es": "NO COMAS!",
+        "es": "¡NO COMAS!",
         "fr": "NE MANGEZ PAS !",
         "ru": "НЕ ЕШЬТЕ!",
         "pt_p": "NÃO COMA!",
@@ -1859,7 +1859,7 @@
         "it": "STORDISCI UN NEMICO!",
         "pt_p": "ATORDOE UM INIMIGO!",
         "ru": "ОГЛУШИТЕ ПРОТИВНИКА!",
-        "es": "ATURDE A UN ENEMIGO!",
+        "es": "¡ATURDE A UN ENEMIGO!",
         "jp": null,
         "pl": "OGŁUSZ WROGA!",
         "de": "BETÄUBE EINEN GEGNER!"
@@ -1877,7 +1877,7 @@
         "it": "RIMANI A TERRA!",
         "pt_p": "PERMANEÇA NO CHÃO!",
         "ru": "ОСТАНТЕСЬ НА ЗЕМЛЕ!",
-        "es": "QUEDATE EN EL SUELO!",
+        "es": "¡QUÉDATE EN EL SUELO!",
         "jp": null,
         "pl": "UTRZYMAJ SIĘ NA ZIEMI!",
         "de": "BLEIB AUF DEM BODEN!"
@@ -1895,7 +1895,7 @@
         "it": "DOPPIO SALTO!",
         "pt_p": "SALTO DUPLO!",
         "ru": "ДВОЙНОЙ ПРЫЖОК!",
-        "es": "SALTO DOBLE!",
+        "es": "¡SALTO DOBLE!",
         "jp": null,
         "pl": "WYKONAJ PODWÓJNY SKOK!",
         "de": "DOPPEL SPRUNG!"
@@ -1913,7 +1913,7 @@
         "it": "SALTO AGO!",
         "pt_p": "PULE ATIRANDO NO CHÃO!",
         "ru": "ПРЫЖОК ШПРИЦЕМЕТОМ!",
-        "es": "SALTO CON AGUJAS!",
+        "es": "¡SALTO CON AGUJAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK STRZYKAWKAMI!",
         "de": "NEEDLEJUMP!"
@@ -1931,7 +1931,7 @@
         "it": "PROPULSORE!",
         "pt_p": "USE O JETPACK!",
         "ru": "ИСПОЛЬЗУЙТЕ РАНЕЦ!",
-        "es": "JETPACK!",
+        "es": "¡JETPACK!",
         "jp": null,
         "pl": "UŻYJ PLECAKA ODRZUTOWEGO!",
         "de": "JETPACK!"
@@ -1945,7 +1945,7 @@
       "formatArguments": [],
       "translations": {
         "it": "NON RIDERE!",
-        "es": "NO TE RIAS!",
+        "es": "¡NO TE RÍAS!",
         "fr": "NE RIEZ PAS !",
         "ru": "НЕ СМЕЙТЕСЬ!",
         "pt_p": "NÃO VALE RIR!",
@@ -1962,7 +1962,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI ESPLORATORI!",
-        "es": "HAZ QUE LOS SCOUTS RIAN!",
+        "es": "¡HAZ QUE LOS SCOUTS RÍAN!",
         "fr": "FAITES RIRE LE SCOUT !",
         "ru": "НАСМЕШИТЕ РАЗВЕДЧИКА!",
         "pt_p": "FAÇA UM SCOUT RIR!",
@@ -1979,7 +1979,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I SOLDATI!",
-        "es": "HAZ QUE LOS SOLDADOS RIAN!",
+        "es": "¡HAZ QUE LOS SOLDADOS RÍAN!",
         "fr": "FAITES RIRE LE SOLDIER !",
         "ru": "РАССМЕШИТЕ СОЛДАТА!",
         "pt_p": "FAÇA UM SOLDIER RIR!",
@@ -1996,7 +1996,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I PIRO!",
-        "es": "HAZ QUE LOS PYROS RIAN!",
+        "es": "¡HAZ QUE LOS PYROS RÍAN!",
         "fr": "FAITES RIRE LE PYRO !",
         "ru": "РАССМЕШИТЕ ПОДЖИГАТЕЛЯ!",
         "pt_p": "FAÇA UM PYRO RIR!",
@@ -2013,7 +2013,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I DEMOLITORI!",
-        "es": "HAZ QUE LOS DEMOMAN RIAN!",
+        "es": "¡HAZ QUE LOS DEMOMAN RÍAN!",
         "fr": "FAITES RIRE LE DEMOMAN !",
         "ru": "РАССМЕШИТЕ ПОДРЫВНИКА!",
         "pt_p": "FAÇA UM DEMOMAN RIR!",
@@ -2030,7 +2030,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI INGEGNERI!",
-        "es": "HAZ QUE LOS INGENIEROS RIAN!",
+        "es": "¡HAZ QUE LOS INGENIEROS RÍAN!",
         "fr": "FAITES RIRE L'HEAVY !",
         "ru": "РАССМЕШИТЕ ИНЖЕНЕРА!",
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
@@ -2047,7 +2047,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I MEDICI!",
-        "es": "HAZ QUE LOS MEDICOS RIAN!",
+        "es": "¡HAZ QUE LOS MEDICOS RÍAN!",
         "fr": "FAITES RIRE LE MEDIC !",
         "ru": "РАССМЕШИТЕ МЕДИКА!",
         "pt_p": "FAÇA UM MÉDICO RIR!",
@@ -2064,7 +2064,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I CECCHINI!",
-        "es": "HAZ QUE LOS FRANCOTIRADORES RIAN!",
+        "es": "¡HAZ QUE LOS FRANCOTIRADORES RÍAN!",
         "fr": "FAITES RIRE LE SNIPER !",
         "ru": "РАССМЕШИТЕ СНАЙПЕРА!",
         "pt_p": "FAÇA UM SNIPER RIR!",
@@ -2081,7 +2081,7 @@
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE LE SPIE!",
-        "es": "HAZ QUE LOS ESPIAS RIAN!",
+        "es": "¡HAZ QUE LOS ESPIAS RÍAN!",
         "fr": "FAITES RIRE LE SPY !",
         "ru": "РАССМЕШИТЕ ШПИОНА!",
         "pt_p": "FAÇA UM SPY RIR!",
@@ -2098,7 +2098,7 @@
       "formatArguments": [],
       "translations": {
         "it": "COLPISCI UN NEMICO!",
-        "es": "GOLPEA A UN ENEMIGO!",
+        "es": "¡GOLPEA A UN ENEMIGO!",
         "fr": "FRAPPEZ UN ENNEMI !",
         "ru": "УДАРЬТЕ ВРАГА!",
         "pt_p": "ACERTE UM INIMIGO!",
@@ -2117,7 +2117,7 @@
         "it": "SALTO BOMBA SULLA PIATTAFORMA!",
         "es": "¡SALTA CON BOMBAS HASTA LA PLATAFORMA!",
         "fr": null,
-        "ru": null,
+        "ru": "С ПОМОЩЬЮ БОМБ ЗАПРЫГНИТЕ НА ПЛАТФОРМУ!",
         "pt_p": null,
         "pt": null,
         "pl": "WSKOCZ NA PLATFORMĘ GRANATEM!",
@@ -2134,7 +2134,7 @@
         "it": "NON TOCCARE NESSUNO!",
         "es": "¡NO TOQUES A NADIE!",
         "fr": null,
-        "ru": null,
+        "ru": "НЕ ПРИКАСАЙТЕСЬ!",
         "pt_p": null,
         "pt": null,
         "pl": "NIKOGO NIE DOTYKAJ!",
@@ -2152,7 +2152,7 @@
         "fr": null,
         "it": "SCRIVI LE PAROLE!",
         "pt_p": null,
-        "ru": null,
+        "ru": "НАПИЩИТЕ СЛОВА!",
         "es": "¡ESCRIBE LAS PALABRAS!",
         "jp": null,
         "pl": "NAPISZ SŁOWA!",
@@ -2171,7 +2171,7 @@
         "it": "Scrivi le parole nella chat il più velocemente che puoi per sopravvivere!",
         "pt_p": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
         "ru": "Напишите каждое слово как можно скорее чтобы выжить!",
-        "es": "¡Di cada palabra en el chat lo mas rapido que puedas para sobrevivir!",
+        "es": "¡Di cada palabra en el chat lo mas rápido que puedas para sobrevivir!",
         "jp": null,
         "pl": "Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!",
         "de": "Schreib jedes Wort so schnell wie die kannst in den Chat um zu Überleben!"
@@ -2266,7 +2266,7 @@
         "it": "== ANNUNCIO ==\n\nIl vincitore è...\n{1}!",
         "pt_p": "== ANÚNCIO ==\n\nO vencedor é...\n{1}!",
         "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!",
-        "es": "== ANUNCIO ==\n\nEl ganador es...\n{1}!",
+        "es": "== ANUNCIO ==\n\nEl ganador es...\n¡{1}!",
         "jp": null,
         "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!",
         "de": "== ANKÜNDIGUNG ==\n\nDer Gewinner ist...\n{1}!"
@@ -2357,7 +2357,7 @@
         "it": "{1}Nessuno!\n\nTutti sopravvivono per un altro round!",
         "pt_p": "{1}ninguém!\n\nTodos sobreviveram!",
         "ru": "{1}Никто!\n\nВсе выжили в этом раунде!",
-        "es": "{1}¡nadie!\n\nTodo el mundo sobrevive otra ronda!",
+        "es": "{1}¡nadie!\n\n¡Todo el mundo sobrevive otra ronda!",
         "jp": null,
         "pl": "{1}nikt!\n\nWszyscy przeżyli kolejną rundę!",
         "de": "{1}niemand!\n\nJeder Überlebt die Runde!"
@@ -2411,7 +2411,7 @@
         "it": "Guarda il mondo da un'altra prospettiva!",
         "pt_p": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
         "ru": "Все игроки играют с новой точкой зрения!",
-        "es": "Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
+        "es": "¡Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
         "jp": null,
         "pl": "Wszyscy gracze w tej rundzie grają w nowej perspektywie!",
         "de": "Alle Spieler spielen diese Runde in einer komplett neuen Perspektive!"
@@ -2447,7 +2447,7 @@
         "it": "Il round comincia veloce e poi va a rallentare!",
         "pt_p": "O rodada inicia em velocidade alta e diminui a cada microgame.",
         "ru": "Раунды сразу быстрые! Но теряют скорость со временнем!",
-        "es": "La ronda comienza rapido! Y despues se ralentiza!",
+        "es": "¡La ronda comienza rápido! ¡Y después se ralentiza!",
         "jp": null,
         "pl": "Runda szybko się rozpoczyna, a następnie zwalnia!",
         "de": "Die Runde beginnt schnell! Wird anschließend stetig langsamer!"
@@ -2483,7 +2483,7 @@
         "it": "Ben 30 minigiochi saranno giocati prima del gioco boss!",
         "pt_p": "30 microgames serão jogados e depois o 'bossgame'!",
         "ru": "30 игр будет сыгранно перед босс раундом!",
-        "es": "Se jugaran 30 microjuegos antes del jefe!",
+        "es": "¡Se jugaran 30 microjuegos antes del jefe!",
         "jp": null,
         "pl": "Przed bossgrą odbędzie się 30 mikrogier!",
         "de": "30 Minispiele werden vor dem Boss gespielt!"
@@ -2519,7 +2519,7 @@
         "it": "Spazio? SPAZIO! SPAAAAAAAAAAAAAAAZIOOOOO!",
         "pt_p": "Ei ? Parece que estou na lua! E a gravidade?",
         "ru": "Космос? КОСМОС! КОООСМООООООООС!",
-        "es": "Espacio? ESPACIO! ESPAAAAAACIIIOOOOOOOO!",
+        "es": "¿Espacio? ¡ESPACIO! ¡ESPAAAAAACIIIOOOOOOOO!",
         "jp": null,
         "pl": "Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!",
         "de": "Weltraum? WELTRAUM! WELTRAAAAAAAAUUUUUUUM!"
@@ -2555,7 +2555,7 @@
         "it": "La velocità dei minigiochi non aumenterà in questo round!",
         "pt_p": "Nenhuma mudança de velocidade nesta rodada!",
         "ru": "Скорость игр не будет меняться!",
-        "es": "No habra cambios de velocidad en esta ronda!",
+        "es": "¡No habrá cambios de velocidad en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie będzie zmian prędkości!",
         "de": "Keine Geschwindigkeitsveränderungen werden in dieser Runde auftreten!"
@@ -2573,7 +2573,7 @@
         "it": "Adrenalina Pura!",
         "pt_p": "Agora vai ficar sério! Atenção !",
         "ru": "Скоростные игры",
-        "es": "Super-Velocidad",
+        "es": "Súper-Velocidad",
         "jp": null,
         "pl": "Czas Nagli",
         "de": "Spielzeit Attacke"
@@ -2591,7 +2591,7 @@
         "it": "Il round si farà più veloce dopo ogni minigioco!",
         "pt_p": "Nesta rodada, cada microgame terá a velocidade aumentada!",
         "ru": "Скорость игр будет увеличиваться с каждым раундом!",
-        "es": "La ronda acelerara despues de cada microjuego!",
+        "es": "¡La ronda acelerara después de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale przyspieszać po każdej mikrogrze!",
         "de": "Diese Runde wird nach jedem Minispiel schneller!"
@@ -2627,7 +2627,7 @@
         "it": "La velocità cambierà casualmente dopo ogni minigioco!",
         "pt_p": "Em cada microgame, será escolhida uma velocidade aleatória!",
         "ru": "Скорость каждого раунда будет случайной!",
-        "es": "Despues de cada microjuego, se elegira una velocidad aleatoria!",
+        "es": "¡Después de cada microjuego, se elegirá una velocidad aleatoria!",
         "jp": null,
         "pl": "Po każdej mikrogrze zostanie dobrana losowa szybkość!",
         "de": "Nach jedem Minispiel wird eine zufällige Geschwindigkeit gewählt!"
@@ -2645,7 +2645,7 @@
         "it": "Moviola",
         "pt_p": "Eu amo tartarugas, e você?",
         "ru": "Слоу мо",
-        "es": "Camara Lenta",
+        "es": "Cámara Lenta",
         "jp": null,
         "pl": "Spowolnienie",
         "de": "Zeitlupe"
@@ -2663,7 +2663,7 @@
         "it": "Il round si farà più lento dopo ogni minigioco!",
         "pt_p": "Nesta rodada, a cada microgame a velocidade será diminuída!",
         "ru": "Игры становяться медленее с каждым раундом!",
-        "es": "La ronda se ralentizara despues de cada microjuego!",
+        "es": "¡La ronda se ralentizara después de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale zwalniać po każdej mikrogrze!",
         "de": "Diese Runde wird nach jedem Minispiel langsamer!"
@@ -2681,7 +2681,7 @@
         "it": "Incubo Matematico",
         "pt_p": "Que tal... Matemática?",
         "ru": "Математика",
-        "es": "Solo Matematicas",
+        "es": "Solo Matemáticas",
         "jp": null,
         "pl": "Tylko Matematyka",
         "de": "Nur Mathematik!"
@@ -2699,7 +2699,7 @@
         "it": "Ci sai fare con i numeri?",
         "pt_p": "Hora de testar sua habilidade com as operações matemáticas!",
         "ru": "Пришло время потренироваться в математику!",
-        "es": "Hora de poner a prueba tus habilidades matematicas!",
+        "es": "¡Hora de poner a prueba tus habilidades matemáticas!",
         "jp": null,
         "pl": "Czas sprawdzić Twoją wiedzę z matematyki!",
         "de": "Zeit um dein Mathe können zu testen!"
@@ -2717,7 +2717,7 @@
         "it": "Potere ai Poveri",
         "pt_p": "Dia do Contra",
         "ru": "День Наоборот",
-        "es": "Dia Opuesto",
+        "es": "Día Opuesto",
         "jp": null,
         "pl": "Dzień na Opak",
         "de": "Gegenteiltag"
@@ -2735,7 +2735,7 @@
         "it": "Vince il giocatore con il punteggio più basso!",
         "pt_p": "O jogador com o menor número de pontos vencerá!",
         "ru": "Игрок с наименшим кол-ом очков выигрывает!",
-        "es": "El jugador con la puntuacion mas baja gana la ronda!",
+        "es": "¡El jugador con la puntuación mas baja gana la ronda!",
         "jp": null,
         "pl": "Gracz z najmniejszą liczbą punktów wygrywa rundę!",
         "de": "Der Spieler mit der geringsten Punktezahl gewinnt!"
@@ -2771,7 +2771,7 @@
         "it": "Il round avrà due giochi boss!",
         "pt_p": "Dois 'bossgames' serão disputados antes da partida acabar!",
         "ru": "Два босс раунда играется перед концом игры!",
-        "es": "Se jugaran dos jefes antes de que termine el juego!",
+        "es": "¡Se jugaran dos jefes antes de que termine el juego!",
         "jp": null,
         "pl": "Przed końcem gry odbędą się dwie bossgry!",
         "de": "Zwei Bosse werden gespielt bevor das Spiel endet!"
@@ -2807,7 +2807,7 @@
         "it": "Se vinci un minigioco, un punto verrà aggiunto al totale della tua squadra! La squadra con il punteggio totale più alto vince il round!",
         "pt_p": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
         "ru": "При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!",
-        "es": "Si ganas un microjuego, se agrega un punto a la puntuacion de tu equipo! El equipo con mas puntos al final gana!",
+        "es": "¡Si ganas un microjuego, se agrega un punto a la puntuación de tu equipo! ¡El equipo con mas puntos al final gana!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!",
         "de": "Jedes Minispiel, dass du gewinnst wird einen Punkt zu deinem Team hinzufügen! Das Team, dass die meisten Punkte am Ende hat gewinnt!"
@@ -2843,7 +2843,7 @@
         "it": "Ehi... Dove sono finiti tutti?",
         "pt_p": "Alô? Ei ... Para onde foi todo mundo?",
         "ru": "Ой... а куда все делись?",
-        "es": "Hey... donde estan todos?",
+        "es": "Hey... ¿donde están todos?",
         "jp": null,
         "pl": "Hej... Gdzie są wszyscy?",
         "de": "Hey... wo sind alle?"
@@ -2879,7 +2879,7 @@
         "it": "Muscoli? Pelle? A che servono?",
         "pt_p": "Nenhuma pele está permitida nessa rodada!",
         "ru": "Кожа и мясо на выброс!",
-        "es": "No se permite piel en esta ronda!",
+        "es": "¡No se permite piel en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie posiadanie skóry jest zabronione!",
         "de": "Keine Haut erlaubt in dieser Runde!"
@@ -2915,7 +2915,7 @@
         "it": "Tutti i giocatori diventano alti due mele o poco più!",
         "pt_p": "Dessa vez todos ficarão minúsculos!",
         "ru": "Все становяться маленькими-прималенькими мужичками!",
-        "es": "Todos se convierten en hombres pequeñitos!",
+        "es": "¡Todos se convierten en hombres pequeñitos!",
         "jp": null,
         "pl": "Każdy gracz staje się tyciusieńki!",
         "de": "Jeder wird winzig!"
@@ -2951,7 +2951,7 @@
         "it": "Tutti i giocatori sviluppano un intelletto superiore!",
         "pt_p": "Mas em que todos foram transformados? Loucos?",
         "ru": "Все головы становяться огромными!",
-        "es": "Todos se convierten en un montón de cabezas huecas!",
+        "es": "¡Todos se convierten en un montón de cabezas huecas!",
         "jp": null,
         "pl": "Każda głowa pęcznieje!",
         "de": "Jeder wird zum Hohlkopf!"
@@ -2969,7 +2969,7 @@
         "it": "Punteggi casuali",
         "pt_p": "Pontuação Aleatória",
         "ru": "Рандомные очки",
-        "es": "Puntuacion Aleatoria",
+        "es": "Puntuación Aleatoria",
         "jp": null,
         "pl": "Losowe Punkty",
         "de": "Punkte Zufallsgenerator"
@@ -2987,7 +2987,7 @@
         "it": "I minigiochi vinti danno un numero causale di punti!",
         "pt_p": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "ru": "При победе, вы получаете случайное кол-во очков!",
-        "es": "Si ganas un microjuego, recibiras una cantidad aleatoria de puntos!",
+        "es": "¡Si ganas un microjuego, recibirás una cantidad aleatoria de puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!",
         "de": "Wenn du ein Minispiel gewinnst bekommst du eine zufällige Anzahl an Punkte!"
@@ -3010,7 +3010,7 @@
         "it": "Vinci questo minigioco per ottenere {1} punti!",
         "pt_p": "Se você vencer este microgame, sua recompensa será de {1} pontos!",
         "ru": "Если вы победите, вы получите {1} очков!",
-        "es": "Si ganas este microjuego, recibiras {1} puntos!",
+        "es": "¡Si ganas este microjuego, recibirás {1} puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!",
         "de": "Wenn du dieses Minispiel gewinnst, bekommst du {1} Punkte!"
@@ -3028,7 +3028,7 @@
         "it": "Scontro Finale!",
         "pt_p": "Morte Súbita",
         "ru": "Внезапная Смерть",
-        "es": "Muerte Subita",
+        "es": "Muerte Súbita",
         "jp": null,
         "pl": "Nagła Śmierć",
         "de": "Plötzlicher Tot"
@@ -3046,7 +3046,7 @@
         "it": "Un errore e sei fuori! Vince l'ultimo giocatore rimasto!",
         "pt_p": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
         "ru": "При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!",
-        "es": "Si pierdes un microjuego, seras noqueado! El ultimo jugador que no haya fallado gana la ronda!",
+        "es": "¡Si pierdes un microjuego, serás noqueado! ¡El ultimo jugador que no haya fallado gana la ronda!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!",
         "de": "Wenn du ein Minispiel verlierst, wirst du außer Gefecht gesetzt! Letzter Spieler welcher keinen Fehler gemacht hat gewinnt die Runde!"
@@ -3140,7 +3140,7 @@
         "it": "Perdi un minigioco e dì addio a TUTTI i tuoi punti!",
         "pt_p": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
         "ru": "При проигрыше, вы теряете ВСЕ очки!",
-        "es": "Si pierdes un microjuego, perderas TODOS tus puntos!",
+        "es": "¡Si pierdes un microjuego, perderás TODOS tus puntos!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!",
         "de": "Wenn du ein Minispiel verlierst, verlierst du ALLE deine Punkte!"
@@ -3176,7 +3176,7 @@
         "it": "!oirartnoc la onos ihcoiginim ied inoizircsed eL",
         "pt_p": "!oirártnoc oa oãtse seõçurtsni sA",
         "ru": "!нелакрезто тедуб харги в тскеТ",
-        "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL",
+        "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL¡",
         "jp": null,
         "pl": "!kapsw enasip ąs reigorkim od ejckurtsnI",
         "de": "!sträwkcür dnis eleipsiniM rüf negnusiewnA"
@@ -3212,7 +3212,7 @@
         "it": "Nessuna pausa fra i minigiochi!",
         "pt_p": "Não haverá intervalos entre os microgames nesta rodada.",
         "ru": "Без пауз между раундами!",
-        "es": "No hay descanso entre microjuegos en esta ronda!",
+        "es": "¡No hay descanso entre microjuegos en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie ma przerw pomiędzy mikrogrami!",
         "de": "Es gibt keine Pause zwischen den Minispielen in dieser Runde!"
@@ -3248,7 +3248,7 @@
         "it": "Come ai vecchi tempi!",
         "pt_p": "Ei!? Onde foram parar meus polígonos?",
         "ru": "Ой! Куда делись мои полигоны?",
-        "es": "Hey! Donde han ido mis poligonos?",
+        "es": "¡Hey! ¿Donde han ido mis polígonos?",
         "jp": null,
         "pl": "Hej! Gdzie się podziały moje wielokąty?",
         "de": "Hey! Wo sind meine Polygons?"
