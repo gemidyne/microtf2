@@ -926,6 +926,191 @@
       "ignoreEmptyValue": true
     },
     {
+      "key": "Bossgame8_Caption_CountTheProps",
+      "description": "Displayed when players need to count the props.",
+      "text": "COUNT THE PROPS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Caption_GetReady",
+      "description": "Displayed when the answer rooms are opening for players to go and count the next set of props.",
+      "text": "GET READY...",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Caption_CorrectAnswerWas_Hidden",
+      "description": "Displayed when players need to count the props.",
+      "text": "THE CORRECT ANSWER WAS...\n???",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Caption_CorrectAnswerWas_Visible",
+      "description": "Displayed when players need to count the props.",
+      "text": "THE CORRECT ANSWER WAS...\n{1}!",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The correct answer."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Caption_ChooseARoom",
+      "description": "Displayed when its time for players to enter a room to select their answer.",
+      "text": "How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "description": "The type of prop. This string will be referred to from a different translation."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for Room A. This number is randomly chosen by the plugin."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for Room B. This number is randomly chosen by the plugin."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for Room C. This number is randomly chosen by the plugin."
+        },
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "Time remaining before the doors close."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Annotation_AnswerRoomA",
+      "description": "Displayed in an annotation box within an answer room.",
+      "text": "Room A: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for this room."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Annotation_AnswerRoomB",
+      "description": "Displayed in an annotation box within an answer room.",
+      "text": "Room B: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for this room."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_Annotation_AnswerRoomC",
+      "description": "Displayed in an annotation box within an answer room.",
+      "text": "Room C: {1}",
+      "formatArguments": [
+        {
+          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "description": "The answer for this room."
+        }
+      ],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Minigame1_Caption",
       "description": null,
       "text": "GET TO THE END!",
