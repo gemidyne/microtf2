@@ -193,6 +193,43 @@
 	{
 		"pt"		""
 	}
+	"Bossgame8_Caption_CountTheProps"
+	{
+		"pt"		""
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"pt"		""
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"pt"		""
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"pt"		""
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"pt"		""
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"pt"		""
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"pt"		""
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"pt"		""
+	}
 	"Minigame1_Caption"
 	{
 		"pt"		"CHEGUE NO FINAL SE FOR CAPAZ!"
