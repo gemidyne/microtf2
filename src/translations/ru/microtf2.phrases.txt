@@ -13,17 +13,17 @@
 	"Hud_Score_Minigames"
 	{
 		"#format"		"{1:i}"
-		"ru"		"Миниигры: {1}"
+		"ru"		"Мини-игр: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
 		"#format"		"{1:i}"
-		"ru"		"Очки комманды: {1}"
+		"ru"		"Очков команды: {1}"
 	}
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"ru"		"Бочки: {1}"
+		"ru"		"Бочек: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
@@ -52,7 +52,7 @@
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
-		"ru"		"Вы вернетесь в игру после окончания раунда или босс раунда."
+		"ru"		"Вы вернетесь в игру после окончания текущей мини-игры или босс-игры."
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
@@ -60,35 +60,35 @@
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
-		"ru"		"Смена класса невозможно во время этого особого раунда! 1 очко было добавлено в счет."
+		"ru"		"Смена класса невозможна во время этого особого раунда! К вашему счёту было добавлено 1 очко."
 	}
 	"General_Loser"
 	{
-		"ru"		"Неудачник!"
+		"ru"		"Проиграл!"
 	}
 	"General_Winner"
 	{
-		"ru"		"Победитель!"
+		"ru"		"Выиграл!"
 	}
 	"General_SpeedUp"
 	{
-		"ru"		""
+		"ru"		"УСКОРЕНИЕ!"
 	}
 	"General_SpeedDown"
 	{
-		"ru"		""
+		"ru"		"ЗАМЕДЛЕНИЕ!"
 	}
 	"General_Failure"
 	{
-		"ru"		""
+		"ru"		"ПРОВАЛ!"
 	}
 	"General_Success"
 	{
-		"ru"		""
+		"ru"		"УСПЕХ!"
 	}
 	"General_BossTime"
 	{
-		"ru"		"БОСС РАУНД!"
+		"ru"		"БОСС-ИГРА!"
 	}
 	"General_GameOver"
 	{
@@ -117,7 +117,7 @@
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
-		"ru"		"Победителей нету!"
+		"ru"		"Победителей нет!"
 	}
 	"GameOver_WinnerSuffix"
 	{
@@ -127,24 +127,24 @@
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"		"{1:i}"
-		"ru"		"КРАСНАЯ комманда побеждает с {1} очками!"
+		"ru"		"Побеждает команда КРС с {1} очками!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"		"{1:i}"
-		"ru"		"СИНЯЯ комманда побеждает с {1} очками!"
+		"ru"		"Побеждает команда СИН с {1} очками!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"ru"		"Ничья! Обе комманды имеют одинаковое кол-во очков!"
+		"ru"		"Ничья! Обе команды имеют одинаковое кол-во очков!"
 	}
 	"System_Intermission_Header"
 	{
-		"ru"		"Пауза!"
+		"ru"		"Перерыв!"
 	}
 	"System_Intermission_Body"
 	{
-		"ru"		"Время перерыва! Голосование следующей карты началась."
+		"ru"		"Перерыв! Голосование за следующую карту началось."
 	}
 	"Bossgame1_Caption"
 	{
@@ -153,7 +153,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"ru"		"{1} достал до вершины первым! (Доп. очко!)"
+		"ru"		"{1} достиг вершины первым! (Доп. очко!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -183,7 +183,7 @@
 	}
 	"Bossgame6_Caption"
 	{
-		"ru"		"УНИЧТОЖТЕ БОЧКИ!"
+		"ru"		"ПОДСТРЕЛИТЕ БОЛЬШЕ ВСЕГО БОЧЕК!"
 	}
 	"Bossgame7_Caption"
 	{
@@ -193,9 +193,46 @@
 	{
 		"ru"		""
 	}
+	"Bossgame8_Caption_CountTheProps"
+	{
+		"ru"		"ПОСЧИТАЙТЕ ПРЕДМЕТЫ!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"ru"		"ПРИГОТОВЬТЕСЬ..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"ru"		"ПРАВИЛЬНЫЙ ОТВЕТ - ...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"ru"		"ПРАВИЛЬНЫЙ ОТВЕТ - ...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"ru"		"Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"ru"		"Комната A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"ru"		"Комната B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"ru"		"Комната C: {1}"
+	}
 	"Minigame1_Caption"
 	{
-		"ru"		"ДОЙДИТЕ ДО КОНЦА!"
+		"ru"		"ДОБЕРИТЕСЬ ДО КОНЦА!"
 	}
 	"Minigame2_Caption"
 	{
@@ -207,11 +244,11 @@
 	}
 	"Minigame4_Caption"
 	{
-		"ru"		"ТОЛКАЙТЕ И ВЫЖИВИТЕ!"
+		"ru"		"ИСПОЛЬЗУЙТЕ СЖАТЫЙ ВОЗДУХ И ВЫЖИВИТЕ!"
 	}
 	"Minigame5_Caption"
 	{
-		"ru"		"ПРЫЖОК НА ЛЕПУЧКЕ!"
+		"ru"		"ПРЫГНИТЕ НА ЛИПУЧКЕ!"
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
@@ -221,11 +258,11 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s}"
-		"ru"		"{1} сказал слово первым! (Доп. очко!)"
+		"ru"		"{1} написал слово первым! (Доп. очко!)"
 	}
 	"Minigame7_Caption"
 	{
-		"ru"		"ПРЫЖОК НА РАКЕТЕ!"
+		"ru"		"ПРЫГНИТЕ НА РАКЕТЕ!"
 	}
 	"Minigame8_CaptionFormatted"
 	{
@@ -248,7 +285,7 @@
 	}
 	"Minigame9_Caption_SimonSaysJump"
 	{
-		"ru"		"САЙМОН ГОВОРИТ: ПРЫЖОК!"
+		"ru"		"САЙМОН ГОВОРИТ: ПРЫГНИТЕ!"
 	}
 	"Minigame9_Caption_SimonSaysCrouch"
 	{
@@ -260,7 +297,7 @@
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"ru"		"САУМОН ГОВОРИТ: ПРЫЖОК!"
+		"ru"		"САУМОН ГОВОРИТ: ПРЫГНИТЕ!"
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
@@ -288,7 +325,7 @@
 	}
 	"Minigame11_Caption_DontMove"
 	{
-		"ru"		"НЕ ДВИГАТЬСЯ!"
+		"ru"		"НЕ ДВИГАЙТЕСЬ!"
 	}
 	"Minigame12_Caption"
 	{
@@ -340,47 +377,47 @@
 	}
 	"Minigame18_Caption"
 	{
-		"ru"		"ПОПОДИТЕ ПО МИШЕНИ!"
+		"ru"		"ПОПАДИТЕ ПО МИШЕНИ!"
 	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС!"
+		"ru"		"СМЕНИТЕ КЛАСС!"
 	}
 	"Minigame19_Caption_ChangeClassScout"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА РАЗВЕДЧИКА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА РАЗВЕДЧИКА!"
 	}
 	"Minigame19_Caption_ChangeClassSoldier"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА СОЛДАТА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА СОЛДАТА!"
 	}
 	"Minigame19_Caption_ChangeClassPyro"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!"
+		"ru"		"СМЕНИТЕ КЛАСС НА ПОДЖИГАТЕЛЯ!"
 	}
 	"Minigame19_Caption_ChangeClassDemoman"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПОДРЫВНИКА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА ПОДРЫВНИКА!"
 	}
 	"Minigame19_Caption_ChangeClassHeavy"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ПУЛЕМЕТЧИКА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА ПУЛЕМЕТЧИКА!"
 	}
 	"Minigame19_Caption_ChangeClassEngineer"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ИНЖЕНЕРА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА ИНЖЕНЕРА!"
 	}
 	"Minigame19_Caption_ChangeClassMedic"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА МЕДИКА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА МЕДИКА!"
 	}
 	"Minigame19_Caption_ChangeClassSniper"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА СНАЙПЕРА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА СНАЙПЕРА!"
 	}
 	"Minigame19_Caption_ChangeClassSpy"
 	{
-		"ru"		"ПОМЕНЯЙТЕ КЛАСС НА ШПИОНА!"
+		"ru"		"СМЕНИТЕ КЛАСС НА ШПИОНА!"
 	}
 	"Minigame20_Caption_Drink"
 	{
@@ -404,7 +441,7 @@
 	}
 	"Minigame22_Caption"
 	{
-		"ru"		"ОСТАНТЕСЬ НА ЗЕМЛЕ!"
+		"ru"		"ОСТАНЬТЕСЬ НА ЗЕМЛЕ!"
 	}
 	"Minigame23_Caption"
 	{
@@ -412,7 +449,7 @@
 	}
 	"Minigame24_Caption"
 	{
-		"ru"		"ПРЫЖОК ШПРИЦЕМЕТОМ!"
+		"ru"		"ПРЫГНИТЕ С ШПРИЦЕМЁТОМ!"
 	}
 	"Minigame25_Caption"
 	{
@@ -424,35 +461,35 @@
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"ru"		"НАСМЕШИТЕ РАЗВЕДЧИКА!"
+		"ru"		"РАССМЕШИТЕ РАЗВЕДЧИКОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"ru"		"РАССМЕШИТЕ СОЛДАТА!"
+		"ru"		"РАССМЕШИТЕ СОЛДАТОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"ru"		"РАССМЕШИТЕ ПОДЖИГАТЕЛЯ!"
+		"ru"		"РАССМЕШИТЕ ПОДЖИГАТЕЛЕЙ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"ru"		"РАССМЕШИТЕ ПОДРЫВНИКА!"
+		"ru"		"РАССМЕШИТЕ ПОДРЫВНИКОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"ru"		"РАССМЕШИТЕ ИНЖЕНЕРА!"
+		"ru"		"РАССМЕШИТЕ ИНЖЕНЕРОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"ru"		"РАССМЕШИТЕ МЕДИКА!"
+		"ru"		"РАССМЕШИТЕ МЕДИКОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"ru"		"РАССМЕШИТЕ СНАЙПЕРА!"
+		"ru"		"РАССМЕШИТЕ СНАЙПЕРОВ!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"ru"		"РАССМЕШИТЕ ШПИОНА!"
+		"ru"		"РАССМЕШИТЕ ШПИОНОВ!"
 	}
 	"Minigame27_Caption"
 	{
@@ -460,7 +497,7 @@
 	}
 	"Minigame28_Caption"
 	{
-		"ru"		"С ПОМОЩЬЮ БОМБ ЗАПРЫГНИТЕ НА ПЛАТФОРМУ!"
+		"ru"		"ЗАПРЫГНИТЕ НА ПЛАТФОРМУ С ПОМОЩЬЮ БОМБ!"
 	}
 	"Minigame29_Caption"
 	{
@@ -468,11 +505,11 @@
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"ru"		"НАПИЩИТЕ СЛОВА!"
+		"ru"		"НАПИШИТЕ СЛОВА!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"ru"		"Напишите каждое слово как можно скорее чтобы выжить!"
+		"ru"		"Напишите каждое слово как можно быстрее чтобы выжить!"
 	}
 	"Bossgame7_Caption_Start"
 	{
@@ -481,17 +518,17 @@
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"		"{1:i}"
-		"ru"		"== НАБЛЮДЕНИЕ ==\n\nВремя: {1} секунд"
+		"ru"		"== НАБЛЮДЕНИЕ ==\n\nОставшееся время: {1} секунд"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"ru"		"== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nВремя: {3} секунд"
+		"ru"		"== НАПИШИТЕ СЛОВО! ==\n\n{1}\n\nСлед. слово: {2}\nОставшееся время: {3} секунд"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"		"{1:s}"
-		"ru"		"== ОБЪЯВЛЕНИЕ ==\n\nПОБЕДИТЕЛЯМИ СТАЛИ...\n{1}!"
+		"ru"		"== ОБЪЯВЛЕНИЕ ==\n\nПобедителем стал...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
@@ -500,12 +537,12 @@
 	"Bossgame7_Caption_RoundReview"
 	{
 		"#format"		"{1:s}"
-		"ru"		"== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-ом очков стали...\n{1}"
+		"ru"		"== ОБЗОР РАУНДА == \n\nИгроки с наименьшим кол-вом напечатанных слов - ...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
 		"#format"		"{1:s},{2:i}"
-		"ru"		"{1}\nи {2} и другие..."
+		"ru"		"{1}\nи ещё {2}..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
@@ -514,7 +551,7 @@
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"ru"		"Смена класса запрещена во время босс раунда!"
+		"ru"		"Смена класса запрещена во время босс-игры!"
 	}
 	"SpecialRound0_Name"
 	{
@@ -534,15 +571,15 @@
 	}
 	"SpecialRound2_Name"
 	{
-		"ru"		"Бонусные Раунды"
+		"ru"		"Продленный раунд"
 	}
 	"SpecialRound2_Description"
 	{
-		"ru"		"30 игр будет сыгранно перед босс раундом!"
+		"ru"		"Перед босс-игрой будет сыграно 30 мини-игр!"
 	}
 	"SpecialRound3_Name"
 	{
-		"ru"		"Низкая Гравитация"
+		"ru"		"Низкая гравитация"
 	}
 	"SpecialRound3_Description"
 	{
@@ -554,7 +591,7 @@
 	}
 	"SpecialRound4_Description"
 	{
-		"ru"		"Скорость игр не будет меняться!"
+		"ru"		"В этом раунде скорость останется неизменной!"
 	}
 	"SpecialRound5_Name"
 	{
@@ -562,7 +599,7 @@
 	}
 	"SpecialRound5_Description"
 	{
-		"ru"		"Скорость игр будет увеличиваться с каждым раундом!"
+		"ru"		"Скорость раунда будет увеличиваться после каждой мини-игры!"
 	}
 	"SpecialRound6_Name"
 	{
@@ -570,15 +607,15 @@
 	}
 	"SpecialRound6_Description"
 	{
-		"ru"		"Скорость каждого раунда будет случайной!"
+		"ru"		"После каждой мини-игры, скорость раунда будет становиться случайной!"
 	}
 	"SpecialRound7_Name"
 	{
-		"ru"		"Слоу мо"
+		"ru"		"Слоу-мо"
 	}
 	"SpecialRound7_Description"
 	{
-		"ru"		"Игры становяться медленее с каждым раундом!"
+		"ru"		"Скорость раунда будет уменьшаться после каждой мини-игры!"
 	}
 	"SpecialRound8_Name"
 	{
@@ -586,43 +623,43 @@
 	}
 	"SpecialRound8_Description"
 	{
-		"ru"		"Пришло время потренироваться в математику!"
+		"ru"		"Время проверить ваши навыки в математике!"
 	}
 	"SpecialRound9_Name"
 	{
-		"ru"		"День Наоборот"
+		"ru"		"День наоборот"
 	}
 	"SpecialRound9_Description"
 	{
-		"ru"		"Игрок с наименшим кол-ом очков выигрывает!"
+		"ru"		"Победит игрок с наименьшим кол-вом очков!"
 	}
 	"SpecialRound10_Name"
 	{
-		"ru"		"Два Босс Раунда"
+		"ru"		"Две босс-игры"
 	}
 	"SpecialRound10_Description"
 	{
-		"ru"		"Два босс раунда играется перед концом игры!"
+		"ru"		"Перед концом раунда будет сыграно две босс-игры!"
 	}
 	"SpecialRound11_Name"
 	{
-		"ru"		"Битва комманд"
+		"ru"		"Битва команд"
 	}
 	"SpecialRound11_Description"
 	{
-		"ru"		"При победе, вы добавляете очко своей комманде! Комманда с наибольшим кол-ом очков выигрывает!"
+		"ru"		"Победа приносит вашей команде одно очко! Команда с наибольшим кол-вом очков в конце игры победит!"
 	}
 	"SpecialRound12_Name"
 	{
-		"ru"		"Одиночная Игра"
+		"ru"		"Одиночная игра"
 	}
 	"SpecialRound12_Description"
 	{
-		"ru"		"Ой... а куда все делись?"
+		"ru"		"Эй... а куда все делись?"
 	}
 	"SpecialRound13_Name"
 	{
-		"ru"		"Вечеринка Скелетов"
+		"ru"		"Вечеринка скелетов"
 	}
 	"SpecialRound13_Description"
 	{
@@ -634,7 +671,7 @@
 	}
 	"SpecialRound14_Description"
 	{
-		"ru"		"Все становяться маленькими-прималенькими мужичками!"
+		"ru"		"Все становятся малышами!"
 	}
 	"SpecialRound15_Name"
 	{
@@ -642,15 +679,15 @@
 	}
 	"SpecialRound15_Description"
 	{
-		"ru"		"Все головы становяться огромными!"
+		"ru"		"Все головы становятся огромными!"
 	}
 	"SpecialRound16_Name"
 	{
-		"ru"		"Рандомные очки"
+		"ru"		"Случайные очки"
 	}
 	"SpecialRound16_Description"
 	{
-		"ru"		"При победе, вы получаете случайное кол-во очков!"
+		"ru"		"При победе, вы получите случайное кол-во очков!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
@@ -659,16 +696,16 @@
 	}
 	"SpecialRound17_Name"
 	{
-		"ru"		"Внезапная Смерть"
+		"ru"		"Внезапная смерть"
 	}
 	"SpecialRound17_Description"
 	{
-		"ru"		"При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает игру!"
+		"ru"		"При проигрыше, вы выбываете из игры! Последний выживший игрок выигрывает раунд!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
 		"#format"		"{1:i},{2:i},{3:s}"
-		"ru"		"Данное кол-во игроков ({1} of {2})\n{3}"
+		"ru"		"Оставшиеся игроки ({1} of {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
@@ -677,7 +714,7 @@
 	}
 	"SpecialRound18_Name"
 	{
-		"ru"		"Игра на все"
+		"ru"		"Ва-банк"
 	}
 	"SpecialRound18_Description"
 	{
@@ -689,7 +726,7 @@
 	}
 	"SpecialRound19_Description"
 	{
-		"ru"		"!нелакрезто тедуб харги в тскеТ"
+		"ru"		"!нелакрезто тедуб харги-иним в тскеТ"
 	}
 	"SpecialRound20_Name"
 	{
@@ -697,7 +734,7 @@
 	}
 	"SpecialRound20_Description"
 	{
-		"ru"		"Без пауз между раундами!"
+		"ru"		"В этом раунде не будет пауз между мини-играми!"
 	}
 	"SpecialRound21_Name"
 	{
@@ -705,6 +742,6 @@
 	}
 	"SpecialRound21_Description"
 	{
-		"ru"		"Ой! Куда делись мои полигоны?"
+		"ru"		"Эй! Куда делись мои полигоны?"
 	}
 }
