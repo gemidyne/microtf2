@@ -117,11 +117,6 @@ int BuildBitStringExcludingClient(int client)
 	return bitfield;
 }
 
-void AddClientToBitString(int bitfield, int client)
-{
-	bitfield |= (1 << client);
-}
-
 stock void RemoveAllStunballEntities()
 {
 	int entity = -1;
