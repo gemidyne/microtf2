@@ -19,27 +19,39 @@ int g_iBossgame8Timer = 13;
 
 char g_sBossgame8Group1Models[][] = 
 {
-	"models/props_gameplay/haybale.mdl",
+	"models/buildables/dispenser_light.mdl",
+	"models/buildables/dispenser_lvl2_light.mdl",
+	"models/buildables/dispenser_lvl3_light.mdl"
 };
 
 char g_sBossgame8Group2Models[][] = 
 {
-	"models/props_hydro/keg_large.mdl",
+	"models/items/ammopack_large.mdl",
+	"models/items/ammopack_large_bday.mdl",
+	"models/items/ammopack_medium.mdl",
+	"models/items/ammopack_medium_bday.mdl"
 };
 
 char g_sBossgame8Group3Models[][] = 
 {
-	"models/props_gameplay/orange_cone001.mdl",
+	"models/props_badlands/barrel01.mdl",
+	"models/props_badlands/barrel02.mdl",
+	"models/props_badlands/barrel03.mdl",
 };
 
 char g_sBossgame8Group4Models[][] = 
 {
-	"models/props_farm/tractor_tire001.mdl",
+	"models/props_manor/chair_01.mdl",
+	"models/props_spytech/chair.mdl",
+	"models/props_spytech/terminal_chair.mdl"
 };
 
 int g_iBossgame8Entities[BOSSGAME8_ENTITYSPAWN_COUNT];
 int g_iBossgame8EntityCount[BOSSGAME8_ENTITYSPAWN_GROUPCOUNT];
 int g_iBossgame8CorrectRoomNumber = 0;
+int g_iBossgame8CorrectAnswer = -999999;
+int g_iBossgame8CorrectAnswerGroupType;
+int g_iBossgame8RoomAnswers[3];
 
 public void Bossgame8_EntryPoint()
 {
@@ -509,64 +521,61 @@ void Bossgame8_ResetAllState()
 
 void Bossgame8_GenerateQuestionnaire()
 {
-	int correctAnswerGroupType = GetRandomInt(1, 4);
-
-	int correctAnswer = g_iBossgame8EntityCount[correctAnswerGroupType-1];
+	g_iBossgame8CorrectAnswerGroupType = GetRandomInt(1, 4);
+	g_iBossgame8CorrectAnswer = g_iBossgame8EntityCount[g_iBossgame8CorrectAnswerGroupType-1];
 
 	// L: 1, M: 2, R: 3
 	g_iBossgame8CorrectRoomNumber = GetRandomInt(1, 3);
-
-	int roomAnswers[3];
 
 	for (int i = 1; i <= 3; i++)
 	{
 		if (i == g_iBossgame8CorrectRoomNumber)
 		{
-			roomAnswers[i-1] = correctAnswer;
+			g_iBossgame8RoomAnswers[i-1] = g_iBossgame8CorrectAnswer;
 		}
 		else
 		{
-			roomAnswers[i-1] = GetRandomInt(1, 2) == 2 
-				? correctAnswer - GetRandomInt(1, 4)
-				: correctAnswer + GetRandomInt(1, 4);
+			g_iBossgame8RoomAnswers[i-1] = GetRandomInt(1, 2) == 2 
+				? g_iBossgame8CorrectAnswer - GetRandomInt(1, 4)
+				: g_iBossgame8CorrectAnswer + GetRandomInt(1, 4);
 		}
 	}
 
-	switch (correctAnswerGroupType)
+	Bossgame8_ShowHudQuestionnaire();
+	// TODO: Spawn annotations at a point in each room.
+	//float roomAHintPosition[3] = { -1824.0, 2392.0, -1096.0 };
+	//float roomBHintPosition[3] = { -1824.0, 1856.0, -1096.0 };
+	//float roomBHintPosition[3] = { -1824.0, 1312.0, -1096.0 };
+}
+
+void Bossgame8_ShowHudQuestionnaire()
+{
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		case 1: 
-			PrintToChatAll("TODO: CHOOSE A ROOM, HOW MANY haybale");
+		Player player = new Player(i);
 
-		case 2: 
-			PrintToChatAll("TODO: CHOOSE A ROOM, HOW MANY kegs");
-
-		case 3: 
-			PrintToChatAll("TODO: CHOOSE A ROOM, HOW MANY orange kones");
-
-		case 4: 
-			PrintToChatAll("TODO: CHOOSE A ROOM, HOW MANY tires");
-	}
-
-
-	for (int i = 1; i <= 3; i++)
-	{
-		switch (i)
+		if (player.IsValid && player.IsParticipating)
 		{
-			case 1:
+			char typeOfProp[64];
+
+			switch (g_iBossgame8CorrectAnswerGroupType)
 			{
-				PrintToChatAll("LEFT ROOM: %i", roomAnswers[i-1]);
+				case 1: 
+					Format(typeOfProp, sizeof(typeOfProp), "%T", "Bossgame8_PropType_Dispensers", player.ClientId);
+
+				case 2: 
+					Format(typeOfProp, sizeof(typeOfProp), "%T", "Bossgame8_PropType_AmmoPacks", player.ClientId);
+
+				case 3: 
+					Format(typeOfProp, sizeof(typeOfProp), "%T", "Bossgame8_PropType_Barrels", player.ClientId);
+
+				case 4: 
+					Format(typeOfProp, sizeof(typeOfProp), "%T", "Bossgame8_PropType_Chairs", player.ClientId);
 			}
 
-			case 2:
-			{
-				PrintToChatAll("MIDDLE ROOM: %i", roomAnswers[i-1]);
-			}
-
-			case 3:
-			{
-				PrintToChatAll("RIGHT ROOM: %i", roomAnswers[i-1]);
-			}
+			char text[128];
+			Format(text, sizeof(text), "%T", "Bossgame8_Caption_ChooseARoom", player.ClientId, typeOfProp, g_iBossgame8RoomAnswers[0], g_iBossgame8RoomAnswers[1], g_iBossgame8RoomAnswers[2], g_iBossgame8Timer);
+			player.SetCaption(text);
 		}
 	}
-
 }

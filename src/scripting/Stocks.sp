@@ -47,6 +47,18 @@ public Action Timer_Respawn(Handle timer, int client)
 	return Plugin_Handled;
 }
 
+int GetNextAnnotationId()
+{
+	if (g_iAnnotationEventId > 9999)
+	{
+		g_iAnnotationEventId = 0;
+	}
+
+	g_iAnnotationEventId++;
+
+	return g_iAnnotationEventId;
+}
+
 stock void ShowAnnotation(int client, int attachToEntity, float lifetime, char text[32])
 {
 	int bitfield = BuildBitStringExcludingClient(attachToEntity);
@@ -75,7 +87,10 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 		strcopy(text, sizeof(text), rewritten);
 	}
 
-	//https://forums.alliedmods.net/showpost.php?p=1996379&postcount=14
+	Annotation instance = new Annotation();
+
+	instance.Id = g_iAnnotationEventId;
+
 	event.SetInt("id", g_iAnnotationEventId);
 	event.SetInt("follow_entindex", attachToEntity);
 	event.SetFloat("lifetime", lifetime);
@@ -89,7 +104,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 	g_iAnnotationEventId++;
 }
 
-public int BuildBitStringExcludingClient(int client)
+int BuildBitStringExcludingClient(int client)
 {
 	int bitfield = 0;
 
@@ -111,7 +126,7 @@ public int BuildBitStringExcludingClient(int client)
 	return bitfield;
 }
 
-public void AddClientToBitString(int bitfield, int client)
+void AddClientToBitString(int bitfield, int client)
 {
 	bitfield |= (1 << client);
 }

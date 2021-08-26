@@ -1042,6 +1042,78 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Bossgame8_PropType_Dispensers",
+      "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
+      "text": "Dispensers",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_PropType_AmmoPacks",
+      "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
+      "text": "Ammo Packs",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_PropType_Barrels",
+      "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
+      "text": "Barrels",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Bossgame8_PropType_Chairs",
+      "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
+      "text": "Chairs",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame8_Annotation_AnswerRoomA",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room A: {1}",

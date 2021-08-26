@@ -215,6 +215,22 @@
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
 		"de"		""
 	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"de"		""
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"de"		""
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"de"		""
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"de"		""
+	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
