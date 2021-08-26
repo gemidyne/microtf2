@@ -75,10 +75,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 		return;
 	}
 
-	if (g_iAnnotationEventId > 9999)
-	{
-		g_iAnnotationEventId = 0;
-	}
+	int id = GetNextAnnotationId();
 
 	if (g_iSpecialRoundId == 19)
 	{
@@ -87,11 +84,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 		strcopy(text, sizeof(text), rewritten);
 	}
 
-	Annotation instance = new Annotation();
-
-	instance.Id = g_iAnnotationEventId;
-
-	event.SetInt("id", g_iAnnotationEventId);
+	event.SetInt("id", id);
 	event.SetInt("follow_entindex", attachToEntity);
 	event.SetFloat("lifetime", lifetime);
 	event.SetString("text", text);
@@ -100,8 +93,6 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 	event.SetInt("visibilityBitfield", bitfield);
 	event.FireToClient(client);
 	event.Cancel();	//Free the handle memory
-	
-	g_iAnnotationEventId++;
 }
 
 int BuildBitStringExcludingClient(int client)
