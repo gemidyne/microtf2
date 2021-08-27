@@ -242,15 +242,6 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 			{
 				Bossgame8_CleanupEntities();
 				Bossgame8_DoEntitySpawns();
-			}
-
-			case 10: 
-			{
-				Bossgame8_SendHatchDoorOpen(true);
-			}
-
-			case 5:
-			{
 				Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
 				Bossgame8_DecisionRoom_SetHurtActive(1, false);
 				Bossgame8_DecisionRoom_SetHurtActive(2, false);
@@ -258,6 +249,17 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 				Bossgame8_DecisionRoom_SetDoorOpen(1, true);
 				Bossgame8_DecisionRoom_SetDoorOpen(2, true);
 				Bossgame8_DecisionRoom_SetDoorOpen(3, true);
+			}
+
+			case 10: 
+			{
+				Bossgame8_SendHatchDoorOpen(true);
+				Bossgame8_GenerateQuestionnaire();
+			}
+
+			case 5:
+			{
+
 				Bossgame8_SendHatchDoorOpen(false);
 				Bossgame8_GenerateQuestionnaire();
 			}
@@ -310,6 +312,11 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 
 			case 1:
 				EmitSoundToAll(BOSSGAME7_VO_1SEC);
+		}
+
+		if (g_iBossgame8Timer >= 0 && g_iBossgame8Timer <= 13)
+		{
+			Bossgame8_ShowHudQuestionnaire();
 		}
 
 		g_iBossgame8Timer--;
