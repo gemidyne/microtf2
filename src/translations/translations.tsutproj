@@ -939,7 +939,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "ZÄHLE DIE REQUISITEN"
       },
       "ignoreEmptyValue": false
     },
@@ -957,7 +957,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "MACH DICH BEREIT"
       },
       "ignoreEmptyValue": false
     },
@@ -975,7 +975,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "DIE RICHTIGE ANTWORT WAR... ???"
       },
       "ignoreEmptyValue": false
     },
@@ -998,7 +998,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "DIE RICHTIGE ANTWORT WAR...\n{1}!"
       },
       "ignoreEmptyValue": false
     },
@@ -1037,7 +1037,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}"
       },
       "ignoreEmptyValue": false
     },
@@ -1055,7 +1055,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Dispenser"
       },
       "ignoreEmptyValue": false
     },
@@ -1073,7 +1073,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Munitionspackung"
       },
       "ignoreEmptyValue": false
     },
@@ -1091,7 +1091,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Fässer"
       },
       "ignoreEmptyValue": false
     },
@@ -1109,7 +1109,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Stühle"
       },
       "ignoreEmptyValue": false
     },
@@ -1132,7 +1132,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Raum A: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1155,7 +1155,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Raum B: {2}"
       },
       "ignoreEmptyValue": false
     },
@@ -1178,7 +1178,7 @@
         "es": null,
         "jp": null,
         "pl": null,
-        "de": null
+        "de": "Raum C: {1}"
       },
       "ignoreEmptyValue": false
     },

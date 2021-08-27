@@ -195,56 +195,56 @@
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"de"		""
+		"de"		"ZÄHLE DIE REQUISITEN"
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"de"		""
+		"de"		"MACH DICH BEREIT"
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"de"		""
+		"de"		"DIE RICHTIGE ANTWORT WAR... ???"
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"de"		""
+		"de"		"DIE RICHTIGE ANTWORT WAR...\n{1}!"
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"de"		""
+		"de"		"Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"de"		""
+		"de"		"Dispenser"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"de"		""
+		"de"		"Munitionspackung"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"de"		""
+		"de"		"Fässer"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"de"		""
+		"de"		"Stühle"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"de"		""
+		"de"		"Raum A: {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"de"		""
+		"de"		"Raum B: {2}"
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"de"		""
+		"de"		"Raum C: {1}"
 	}
 	"Minigame1_Caption"
 	{
