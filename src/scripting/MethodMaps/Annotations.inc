@@ -87,6 +87,28 @@ methodmap Annotation < Event
 			this.VisibilityBits &= ~(1 << client);
 		}
 	}
+
+	public void SetVisibleForAllExcluding(int client)
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			if (IsClientInGame(i))
+			{
+				this.SetClientVisibility(client, client != i);
+			}
+		}
+	}
+
+	public void SetInvisibleForAllExcluding(int client)
+	{
+		for (int i = 1; i <= MaxClients; i++)
+		{
+			if (IsClientInGame(i))
+			{
+				this.SetClientVisibility(client, client == i);
+			}
+		}
+	}
 	
 	public void SetSound(const char[] sound)
     {

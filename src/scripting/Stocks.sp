@@ -49,7 +49,7 @@ public Action Timer_Respawn(Handle timer, int client)
 
 int GetNextAnnotationId()
 {
-	if (g_iAnnotationEventId > 9999)
+	if (g_iAnnotationEventId > 999)
 	{
 		g_iAnnotationEventId = 0;
 	}
@@ -68,9 +68,9 @@ stock void ShowAnnotation(int client, int attachToEntity, float lifetime, char t
 
 stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float lifetime, char text[32], int bitfield)
 {
-	Event event = CreateEvent("show_annotation");
+	Annotation annotation = new Annotation();
 
-	if (event == INVALID_HANDLE)
+	if (annotation == INVALID_HANDLE)
 	{
 		return;
 	}
@@ -84,15 +84,43 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 		strcopy(text, sizeof(text), rewritten);
 	}
 
-	event.SetInt("id", id);
-	event.SetInt("follow_entindex", attachToEntity);
-	event.SetFloat("lifetime", lifetime);
-	event.SetString("text", text);
-	event.SetString("play_sound", "misc/null.wav");
-	event.SetBool("show_effect", false);
-	event.SetInt("visibilityBitfield", bitfield);
-	event.FireToClient(client);
-	event.Cancel();	//Free the handle memory
+	annotation.Id = id;
+	annotation.FollowEntity = attachToEntity;
+	annotation.Lifetime = lifetime;
+	annotation.ShowEffect = false;
+	annotation.SetText(text);
+	annotation.VisibilityBits = bitfield;
+	annotation.FireToClient(client);
+	annotation.Cancel();	//Free the handle memory
+}
+
+stock void ShowPositionalAnnotation(int client, float[3] position, float lifetime, char text[32], bool showDistance)
+{
+	Annotation annotation = new Annotation();
+
+	if (annotation == INVALID_HANDLE)
+	{
+		return;
+	}
+
+	int id = GetNextAnnotationId();
+
+	if (g_iSpecialRoundId == 19)
+	{
+		char rewritten[32];
+		ReverseString(text, sizeof(text), rewritten);
+		strcopy(text, sizeof(text), rewritten);
+	}
+
+	annotation.Id = id;
+	annotation.Lifetime = lifetime;
+	annotation.ShowEffect = true;
+	annotation.ShowDistance = showDistance;
+	annotation.SetText(text);
+	annotation.SetPosition(position);
+	annotation.SetInvisibleForAllExcluding(client);
+	annotation.FireToClient(client);
+	annotation.Cancel();	//Free the handle memory
 }
 
 int BuildBitStringExcludingClient(int client)
