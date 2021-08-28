@@ -195,8 +195,6 @@ public void Bossgame8_OnMinigameSelected(int client)
 
 public void Bossgame8_OnBossStopAttempt()
 {
-	return;
-
 	if (g_iActiveBossgameId != 8)
 	{
 		return;
