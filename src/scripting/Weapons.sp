@@ -127,7 +127,7 @@ int Weapons_CreateNamedItem(int client, int itemindex, const char[] classname, i
 	return weapon;
 } 
 
-void Weapon_ResetToMelee(int client, bool viewModelVisible)
+void Weapons_ResetToMelee(int client, bool viewModelVisible)
 {
 	Player player = new Player(client);
 
