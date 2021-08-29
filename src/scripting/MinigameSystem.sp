@@ -395,7 +395,7 @@ public void DoSelectBossgame()
 	int forcedBossgameId = g_hConVarPluginForceBossgame.IntValue;
 	int rollCount = 0;
 
-	if (forcedBossgameId > 0)
+	if (forcedBossgameId > 0 && forcedBossgameId <= g_iBossgamesLoadedCount)
 	{
 		g_iLastPlayedBossgameId = 0;
 		g_iActiveBossgameId = forcedBossgameId;
