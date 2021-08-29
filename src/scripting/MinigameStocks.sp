@@ -85,6 +85,39 @@ stock void CreateParticle(int client, const char[] effect, float time, bool atta
 	}
 }
 
+stock int CreateGlow(int target, int color[4] = {255, 255, 255, 255}, float duration)
+{
+	// Credit to Drixevel for this. Original version @ https://github.com/Drixevel/SM-Resources/blob/master/includes/misc-tf.inc
+	char classname[64];
+	GetEntityClassname(target, classname, sizeof(classname));
+
+	char targetName[128];
+	Format(targetName, sizeof(targetName), "%s%i", classname, target);
+	DispatchKeyValue(target, "targetname", targetName);
+
+	int entity = CreateEntityByName("tf_glow");
+
+	if (IsValidEntity(entity))
+	{
+		char colour[64];
+		Format(colour, sizeof(colour), "%i %i %i %i", color[0], color[1], color[2], color[3]);
+
+		DispatchKeyValue(entity, "target", targetName);
+		DispatchKeyValue(entity, "Mode", "1"); //Mode is currently broken.
+		DispatchKeyValue(entity, "GlowColor", colour);
+		DispatchSpawn(entity);
+		
+		SetVariantString("!activator");
+		AcceptEntityInput(entity, "SetParent", target, entity);
+		AcceptEntityInput(entity, "Enable");
+
+		// We don't want to leak; so remove after this time
+		CreateTimer(duration, Timer_RemoveEntity, entity);
+	}
+
+	return entity;
+}
+
 public Action Timer_RemoveEntity(Handle timer, int entity) 
 {
     if (IsValidEntity(entity)) 

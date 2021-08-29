@@ -23,6 +23,9 @@
 #define BOSSGAME8_SFX_ANSWER_ANTICIPATION "ui/vote_started.wav"
 #define BOSSGAME8_SFX_ANSWER_REVEAL "ui/trade_success.wav"
 
+// Feature: use outlines on the props
+#define BOSSGAME8_USE_OUTLINES
+
 enum EBossgame8_Phases
 {
 	EBossgame8_Phase_Waiting = 0,
@@ -63,6 +66,13 @@ char g_sBossgame8Group4Models[][] =
 	"models/props_spytech/chair.mdl",
 	"models/props_spytech/terminal_chair.mdl"
 };
+
+#if defined BOSSGAME8_USE_OUTLINES
+int g_iBossgame8Group1OutlineColour[] = { 0, 255, 255, 255 };
+int g_iBossgame8Group2OutlineColour[] = { 255, 0, 255, 255 };
+int g_iBossgame8Group3OutlineColour[] = { 255, 255, 0, 255 };
+int g_iBossgame8Group4OutlineColour[] = { 255, 0, 0, 255 };
+#endif
 
 int g_iBossgame8Entities[BOSSGAME8_ENTITYSPAWN_COUNT];
 int g_iBossgame8EntityCount[BOSSGAME8_ENTITYSPAWN_GROUPCOUNT];
@@ -280,7 +290,6 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 				}
 
 				Bossgame8_SendHatchDoorOpen(false);
-				Bossgame8_HideEntities();
 				PlaySoundToAll(BOSSGAME8_SFX_ANSWER_ANTICIPATION);
 				g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
 			}
@@ -432,25 +441,40 @@ void Bossgame8_DoEntitySpawns()
 			DispatchSpawn(entity);
 
 			TeleportEntity(entity, position, angle, NULL_VECTOR);
-			// SetEntProp(entity, Prop_Send, "m_bGlowEnabled", 1);
+			
+			#if defined BOSSGAME8_USE_OUTLINES
+			int outlineColour[4];
+
+			switch (groupType)
+			{
+				case 1:
+				{
+					outlineColour = g_iBossgame8Group1OutlineColour;
+				}
+
+				case 2:
+				{
+					outlineColour = g_iBossgame8Group2OutlineColour;
+				}
+
+				case 3:
+				{
+					outlineColour = g_iBossgame8Group3OutlineColour;
+				}
+
+				case 4:
+				{
+					outlineColour = g_iBossgame8Group4OutlineColour;
+				}
+			}
+
+			CreateGlow(entity, outlineColour, 10.0);
+			#endif
 
 			positions[i] = position;
 		}
 
 		g_iBossgame8Entities[i] = entity;
-	}
-}
-
-void Bossgame8_HideEntities()
-{
-	for (int i = 0; i < BOSSGAME8_ENTITYSPAWN_COUNT; i++)
-	{
-		int entity = g_iBossgame8Entities[i];
-
-		if (IsValidEdict(entity) && entity > MaxClients)
-		{
-			// SetEntProp(entity, Prop_Send, "m_bGlowEnabled", 0);
-		}
 	}
 }
 
