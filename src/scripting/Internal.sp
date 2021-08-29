@@ -65,7 +65,7 @@ stock int CalculateTeamScore(TFTeam team)
 	return threshold;
 }
 
-stock void EndGame()
+void EndGame()
 {
 	int entity = FindEntityByClassname(-1, "game_end");
 

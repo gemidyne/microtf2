@@ -78,21 +78,15 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 		return Plugin_Stop;
 	}
 
-	if (g_iSpecialRoundId == 14 || g_iSpecialRoundId == 15)
+	if ((g_iSpecialRoundId == 14 || g_iSpecialRoundId == 15) && isVoiceSound)
 	{
-		if (isVoiceSound)
-		{
-			pitch = (g_iSpecialRoundId == 14 ? SNDPITCH_HIGH : SNDPITCH_LOW);
-			return Plugin_Changed;
-		}
+		pitch = (g_iSpecialRoundId == 14 ? SNDPITCH_HIGH : SNDPITCH_LOW);
+		return Plugin_Changed;
 	}
-	else
+	else if (isVoiceSound)
 	{
-		if (isVoiceSound)
-		{
-			pitch = GetSoundMultiplier();
-			return Plugin_Changed;
-		}
+		pitch = GetSoundMultiplier();
+		return Plugin_Changed;
 	}
 
 	return Plugin_Continue;
