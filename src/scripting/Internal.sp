@@ -14,21 +14,6 @@ stock int FindEntityByClassname2(int startEntityId, const char[] classname)
 	return FindEntityByClassname(startEntityId, classname);
 }
 
-stock bool IsWarioWareMap()
-{
-	char map[32];
-	GetCurrentMap(map, sizeof(map));
-	
-	return strncmp(PLUGIN_MAPPREFIX, map, strlen(PLUGIN_MAPPREFIX), false) == 0;
-}
-
-stock void UnloadPlugin()
-{
-	char fileName[244];
-	GetPluginFilename(GetMyHandle(), fileName, sizeof(fileName));
-	ServerCommand("sm plugins unload %s", fileName);
-}
-
 stock int GetHighestScore()
 {
 	int threshold = 0;

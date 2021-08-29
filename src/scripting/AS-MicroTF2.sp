@@ -141,7 +141,10 @@ public void OnMapStart()
 	AddServerTag("microgames");
 	AddServerTag("micro games");
 
-	g_bIsPluginEnabled = IsWarioWareMap();
+	char map[32];
+	GetCurrentMap(map, sizeof(map));
+
+	g_bIsPluginEnabled = strncmp(PLUGIN_MAPPREFIX, map, strlen(PLUGIN_MAPPREFIX), false) == 0;
 
 	if (g_bIsPluginEnabled)
 	{
