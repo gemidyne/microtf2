@@ -33,6 +33,7 @@ char g_sGamemodeThemeName[TOTAL_GAMEMODES+1][32];
 char g_sGamemodeThemeBgm[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
 int g_iGamemodeThemeBgmCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
 float g_fGamemodeThemeBgmLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
+bool g_bGamemodeThemeAllowVoices[TOTAL_GAMEMODES+1];
 
 int g_iActiveGamemodeId = 0;
 int g_iLoadedGamemodeCount = 0;
@@ -131,6 +132,7 @@ public void LoadGamemodeInfo()
 			g_iGamemodeThemeBgmCount[gamemodeId][SYSMUSIC_WINNER]++;
 
 			kv.GetString("FriendlyName", g_sGamemodeThemeName[gamemodeId], 32);
+			g_bGamemodeThemeAllowVoices[gamemodeId] = kv.GetNum("AllowVoices", 1) == 1;
 
 			if (kv.GetNum("Selectable", 0) == 1)
 			{
@@ -212,7 +214,7 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 	kv.GoBack();
 }
 
-stock void LoadOffsets()
+void LoadOffsets()
 {
 	g_oCollisionGroup = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
 	g_oWeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
@@ -220,7 +222,7 @@ stock void LoadOffsets()
 	g_oPlayerAmmo = TryFindSendPropInfo("CTFPlayer", "m_iAmmo");
 }
 
-stock void PrecacheMaterial(const char[] material)
+void PrecacheMaterial(const char[] material)
 {
 	char path[128];
 
@@ -228,7 +230,7 @@ stock void PrecacheMaterial(const char[] material)
 	PrecacheGeneric(path, true);
 }
 
-stock int TryFindSendPropInfo(const char[] cls, const char[] prop)
+int TryFindSendPropInfo(const char[] cls, const char[] prop)
 {
 	int offset = FindSendPropInfo(cls, prop);
 

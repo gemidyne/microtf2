@@ -620,7 +620,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
 				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
-				PlayNegativeVoice(i);
+
+				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+				{
+					PlayNegativeVoice(i);
+				}
 
 				bool showFailure = ((g_iSpecialRoundId == 17 && player.IsParticipating) || g_iSpecialRoundId != 17);
 
@@ -713,7 +717,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				}
 
 				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
-				PlayPositiveVoice(i);
+
+				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+				{
+					PlayPositiveVoice(i);
+				}
 
 				if (player.IsUsingLegacyDirectX)
 				{
