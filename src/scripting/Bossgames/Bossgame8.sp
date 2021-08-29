@@ -91,6 +91,7 @@ public void Bossgame8_EntryPoint()
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame8_OnMinigameSelected);
 	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame8_OnMinigameFinish);
 	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame8_OnBossStopAttempt);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame8_OnPlayerDeath);
 }
 
 public void Bossgame8_OnMapStart()
@@ -203,6 +204,28 @@ public void Bossgame8_OnMinigameSelected(int client)
 	ang[2] = 0.0;
 
 	TeleportEntity(client, pos, ang, vel);
+}
+
+public void Bossgame8_OnPlayerDeath(int client, int attacker)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return;
+	}
+
+	Player player = new Player(client);
+
+	if (!player.IsValid)
+	{
+		return;
+	}
+
+	player.Status = PlayerStatus_Failed;
 }
 
 public void Bossgame8_OnBossStopAttempt()
