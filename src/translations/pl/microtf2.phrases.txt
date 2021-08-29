@@ -195,56 +195,56 @@
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"pl"		""
+		"pl"		"POLICZ PRZEDMIOTY!"
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"pl"		""
+		"pl"		"NA MIEJSCA..."
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"pl"		""
+		"pl"		"POPRAWNA ODPOWIEDŹ TO...\n???"
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"pl"		""
+		"pl"		"POPRAWNA ODPOWIEDŹ TO...\n{1}!"
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"pl"		""
+		"pl"		"Ile tam było {1}? Wejdź do odpowiedniego pomieszczenia!\nPokój A: {2}   Pokój B: {3}   Pokój C: {4}\nPozostały czas: {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"pl"		""
+		"pl"		"Zasobników"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"pl"		""
+		"pl"		"Paczek z Amunicją"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"pl"		""
+		"pl"		"Beczek"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"pl"		""
+		"pl"		"Krzeseł"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"pl"		""
+		"pl"		"Pokój A: {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"pl"		""
+		"pl"		"Pokój B: {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"pl"		""
+		"pl"		"Pokój C: {1}"
 	}
 	"Minigame1_Caption"
 	{
