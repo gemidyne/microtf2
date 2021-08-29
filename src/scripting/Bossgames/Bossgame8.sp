@@ -10,6 +10,7 @@
 #define BOSSGAME8_TIMER_VIEWING_BEGIN 15
 #define BOSSGAME8_TIMER_VIEWING_ROOMS 10
 #define BOSSGAME8_TIMER_VIEWING_END 0
+
 #define BOSSGAME8_TIMER_ANSWER_ANTICIPATION -1
 #define BOSSGAME8_TIMER_ANSWER_REVEALED -4
 #define BOSSGAME8_TIMER_VIEWING_RESET -7
@@ -240,6 +241,12 @@ public void Bossgame8_OnBossStopAttempt()
 		return;
 	}
 
+	if (g_eBossgame8CurrentPhase != EBossgame8_Phase_AnswerRevealed)
+	{
+		// Only allow the boss to end early when the answer is revealed.
+		return;
+	}
+
 	int alivePlayers = 0;
 
 	for (int i = 1; i <= MaxClients; i++)
@@ -262,7 +269,7 @@ public void Bossgame8_OnMinigameFinish()
 {
 	if (g_iActiveBossgameId == 8 && g_bIsMinigameActive) 
 	{
-		Bossgame8_CleanupEntities();
+		Bossgame8_CleanupEntities(true);
 		Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
 		Bossgame8_DecisionRoom_SetHurtActive(1, false);
 		Bossgame8_DecisionRoom_SetHurtActive(2, false);
@@ -309,9 +316,11 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 			case BOSSGAME8_TIMER_VIEWING_ROOMS:
 			{
 				PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
+				Bossgame8_SendHatchDoorOpen(false);
 
 				g_eBossgame8CurrentPhase = EBossgame8_Phase_ViewingRoomsOpen;
 				Bossgame8_GenerateQuestionnaire();
+				Bossgame8_CleanupEntities(false);
 			}
 
 			case BOSSGAME8_TIMER_VIEWING_END:
@@ -328,7 +337,7 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 
 			case BOSSGAME8_TIMER_ANSWER_ANTICIPATION:
 			{
-				Bossgame8_CleanupEntities();
+				Bossgame8_CleanupEntities(true);
 				Bossgame8_DecisionRoom_SetOutsideHurtActive(true);
 				g_eBossgame8CurrentPhase = EBossgame8_Phase_WaitingOnAnswer;
 			}
@@ -500,7 +509,7 @@ void Bossgame8_DoEntitySpawns()
 				}
 			}
 
-			CreateGlow(entity, outlineColour, 10.0);
+			CreateGlow(entity, outlineColour, 5.0);
 			#endif
 
 			positions[i] = position;
@@ -510,11 +519,14 @@ void Bossgame8_DoEntitySpawns()
 	}
 }
 
-void Bossgame8_CleanupEntities()
+void Bossgame8_CleanupEntities(bool resetCounts)
 {
-	for (int i = 0; i < BOSSGAME8_ENTITYSPAWN_GROUPCOUNT; i++)
+	if (resetCounts)
 	{
-		g_iBossgame8EntityCount[i] = 0;
+		for (int i = 0; i < BOSSGAME8_ENTITYSPAWN_GROUPCOUNT; i++)
+		{
+			g_iBossgame8EntityCount[i] = 0;
+		}
 	}
 
 	for (int i = 0; i < BOSSGAME8_ENTITYSPAWN_COUNT; i++)
@@ -603,7 +615,7 @@ void Bossgame8_DecisionRoom_SetOutsideHurtActive(bool active)
 
 void Bossgame8_ResetAllState()
 {
-	Bossgame8_CleanupEntities();
+	Bossgame8_CleanupEntities(true);
 	Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
 	Bossgame8_DecisionRoom_SetHurtActive(1, false);
 	Bossgame8_DecisionRoom_SetHurtActive(2, false);
