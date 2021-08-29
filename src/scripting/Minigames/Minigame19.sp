@@ -49,6 +49,8 @@ public void Minigame19_OnMinigameSelected(int client)
 				playerClass = player.Class;
 			}
 		}
+
+		player.ResetWeapon(false);
 	}
 }
 
