@@ -933,7 +933,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "CONTA GLI OGGETTI!",
         "pt_p": null,
         "ru": "ПОСЧИТАЙТЕ ПРЕДМЕТЫ!",
         "es": null,
@@ -951,7 +951,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "PREPARATI...",
         "pt_p": null,
         "ru": "ПРИГОТОВЬТЕСЬ...",
         "es": null,
@@ -969,7 +969,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "LA RISPOSTA ESATTA ERA...\n???",
         "pt_p": null,
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n???",
         "es": null,
@@ -992,7 +992,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "LA RISPOSTA ESATTA ERA...\n{1}!",
         "pt_p": null,
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n{1}!",
         "es": null,
@@ -1031,7 +1031,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}",
         "pt_p": null,
         "ru": "Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}",
         "es": null,
@@ -1049,7 +1049,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Dispenser",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -1067,7 +1067,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Pacchi di Munizioni",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -1085,7 +1085,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Barili",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -1103,7 +1103,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Sedie",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -1126,7 +1126,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Stanza A: {1}",
         "pt_p": null,
         "ru": "Комната A: {1}",
         "es": null,
@@ -1149,7 +1149,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Stanza B: {1}",
         "pt_p": null,
         "ru": "Комната B: {1}",
         "es": null,
@@ -1172,7 +1172,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "Stanza C: {1}",
         "pt_p": null,
         "ru": "Комната C: {1}",
         "es": null,
