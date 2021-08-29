@@ -128,7 +128,7 @@ void PrepareConVars()
 	if (!g_hConVarPluginUseServerMapTimelimit.BoolValue)
 	{
 		// If not using mp_timelimit mode, set to 0.
-	 	SetConVarInt(FindConVar("mp_timelimit"), 0);
+		g_hConVarServerTimelimit.IntValue = 0;
 	}
 
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
