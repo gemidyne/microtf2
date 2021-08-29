@@ -938,7 +938,7 @@
         "ru": "ПОСЧИТАЙТЕ ПРЕДМЕТЫ!",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POLICZ PRZEDMIOTY!",
         "de": "ZÄHLE DIE REQUISITEN"
       },
       "ignoreEmptyValue": false
@@ -956,7 +956,7 @@
         "ru": "ПРИГОТОВЬТЕСЬ...",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "NA MIEJSCA...",
         "de": "MACH DICH BEREIT"
       },
       "ignoreEmptyValue": false
@@ -974,7 +974,7 @@
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n???",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POPRAWNA ODPOWIEDŹ TO...\n???",
         "de": "DIE RICHTIGE ANTWORT WAR... ???"
       },
       "ignoreEmptyValue": false
@@ -997,7 +997,7 @@
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n{1}!",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POPRAWNA ODPOWIEDŹ TO...\n{1}!",
         "de": "DIE RICHTIGE ANTWORT WAR...\n{1}!"
       },
       "ignoreEmptyValue": false
@@ -1036,7 +1036,7 @@
         "ru": "Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Ile tam było {1}? Wejdź do odpowiedniego pomieszczenia!\nPokój A: {2}   Pokój B: {3}   Pokój C: {4}\nPozostały czas: {5}",
         "de": "Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}"
       },
       "ignoreEmptyValue": false
@@ -1054,7 +1054,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Zasobników",
         "de": "Dispenser"
       },
       "ignoreEmptyValue": false
@@ -1072,7 +1072,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Paczek z Amunicją",
         "de": "Munitionspackung"
       },
       "ignoreEmptyValue": false
@@ -1090,7 +1090,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Beczek",
         "de": "Fässer"
       },
       "ignoreEmptyValue": false
@@ -1108,7 +1108,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Krzeseł",
         "de": "Stühle"
       },
       "ignoreEmptyValue": false
@@ -1131,7 +1131,7 @@
         "ru": "Комната A: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój A: {1}",
         "de": "Raum A: {1}"
       },
       "ignoreEmptyValue": false
@@ -1154,7 +1154,7 @@
         "ru": "Комната B: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój B: {1}",
         "de": "Raum B: {2}"
       },
       "ignoreEmptyValue": false
@@ -1177,7 +1177,7 @@
         "ru": "Комната C: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój C: {1}",
         "de": "Raum C: {1}"
       },
       "ignoreEmptyValue": false
