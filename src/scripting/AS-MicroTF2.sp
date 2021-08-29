@@ -773,7 +773,11 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
 			PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
-			PlayNegativeVoice(i);
+			
+			if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+			{
+				PlayNegativeVoice(i);
+			}
 
 			player.DisplayOverlay(OVERLAY_BLANK);
 		}
