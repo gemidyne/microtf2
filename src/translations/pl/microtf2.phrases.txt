@@ -56,7 +56,7 @@
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
-		"pl"		"ZOSTAŁEŚ WYELIMINOWANY!"
+		"pl"		"NOKAUT! ODPADASZ!"
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
@@ -64,11 +64,11 @@
 	}
 	"General_Loser"
 	{
-		"pl"		"Przegrany!"
+		"pl"		"Przegrywasz!"
 	}
 	"General_Winner"
 	{
-		"pl"		"Zwycięzca!"
+		"pl"		"Wygrywasz!"
 	}
 	"General_SpeedUp"
 	{
@@ -104,7 +104,7 @@
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"pl"		"Zwycięzcą został..."
+		"pl"		"Zwycięzcą został(a)..."
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
@@ -136,7 +136,7 @@
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"pl"		"Impas! Obie drużyny mają tyle samo punktów!"
+		"pl"		"Pat! Obie drużyny mają tyle samo punktów!"
 	}
 	"System_Intermission_Header"
 	{
@@ -153,7 +153,7 @@
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"pl"		"{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
+		"pl"		"{1} jest pierwszą osobą, która dotarła na szczyt! (Bonusowy punkt!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -162,7 +162,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"pl"		"{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
+		"pl"		"{1} jest pierwszą osobą, która uciekła z fabryki! (Bonusowy punkt!)"
 	}
 	"Bossgame3_Caption"
 	{
@@ -179,7 +179,7 @@
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"pl"		"{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
+		"pl"		"{1} jest pierwszą osobą, która dotarła do celu! (Bonusowy punkt!)"
 	}
 	"Bossgame6_Caption"
 	{
@@ -274,7 +274,7 @@
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s}"
-		"pl"		"{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
+		"pl"		"{1} jest pierwszą osobą, która napisała podane słowo! (Bonusowy punkt!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -293,7 +293,7 @@
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s}"
-		"pl"		"{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
+		"pl"		"{1} jest pierwszą osobą, która podała poprawną odpowiedź! (Bonusowy punkt!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -544,7 +544,7 @@
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"		"{1:s}"
-		"pl"		"== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!"
+		"pl"		"== OGŁOSZENIE ==\n\nZwycięzcą został(a)...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
