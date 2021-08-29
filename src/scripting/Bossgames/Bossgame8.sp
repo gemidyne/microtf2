@@ -297,6 +297,8 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 				for (int i = 1; i <= 3; i++)
 				{
 					Bossgame8_DecisionRoom_SetHurtActive(i, false);
+					Bossgame8_DecisionRoom_SetDoorOpen(i, true);
+
 				}
 
 				Bossgame8_SendHatchDoorOpen(true);
@@ -307,11 +309,6 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 			case BOSSGAME8_TIMER_VIEWING_ROOMS:
 			{
 				PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
-
-				for (int i = 1; i <= 3; i++)
-				{
-					Bossgame8_DecisionRoom_SetDoorOpen(i, true);
-				}
 
 				g_eBossgame8CurrentPhase = EBossgame8_Phase_ViewingRoomsOpen;
 				Bossgame8_GenerateQuestionnaire();
