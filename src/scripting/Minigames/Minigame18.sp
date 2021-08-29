@@ -362,47 +362,47 @@ public void Minigame18_HitTarget(int attacker)
 
 void Minigame18_PlayScoutHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18ScoutHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18ScoutHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18ScoutHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18ScoutHurtSfx)-1)]);
 }
 
 void Minigame18_PlaySoldierHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18SoldierHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SoldierHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18SoldierHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SoldierHurtSfx)-1)]);
 }
 
 void Minigame18_PlayPyroHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18PyroHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18PyroHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18PyroHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18PyroHurtSfx)-1)]);
 }
 
 void Minigame18_PlayDemoHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18DemoManHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18DemoManHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18DemoManHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18DemoManHurtSfx)-1)]);
 }
 
 void Minigame18_PlayHeavyHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18HeavyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18HeavyHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18HeavyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18HeavyHurtSfx)-1)]);
 }
 
 void Minigame18_PlayEngineerHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18EngineerHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18EngineerHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18EngineerHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18EngineerHurtSfx)-1)]);
 }
 
 void Minigame18_PlayMedicHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18MedicHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18MedicHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18MedicHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18MedicHurtSfx)-1)]);
 }
 
 void Minigame18_PlaySniperHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18SniperHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SniperHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18SniperHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SniperHurtSfx)-1)]);
 }
 
 void Minigame18_PlaySpyHurtSfx(int attacker)
 {
-	EmitSoundToClient(attacker, g_sMinigame18SpyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SpyHurtSfx)-1)]);
+	PlaySoundToPlayer(attacker, g_sMinigame18SpyHurtSfx[GetRandomInt(0, sizeof(g_sMinigame18SpyHurtSfx)-1)]);
 }
 
 public void DoSniperDamageCheck(int client, int weapon, char[] weaponname)
