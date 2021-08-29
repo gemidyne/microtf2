@@ -82,8 +82,6 @@ stock int CalculateTeamScore(TFTeam team)
 
 stock void EndGame()
 {
-	SetConVarInt(FindConVar("mp_timelimit"), 1);
-
 	int entity = FindEntityByClassname(-1, "game_end");
 
 	if (entity == -1)
