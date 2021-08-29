@@ -12,6 +12,7 @@ ConVar g_hConVarTFCheapObjects;
 ConVar g_hConVarTFFastBuild;
 ConVar g_hConVarTFWeaponSpreads;
 ConVar g_hConVarFriendlyFire;
+ConVar g_hConVarServerTimelimit;
 
 // Plugin specific ConVars: 
 ConVar g_hConVarPluginBonusPoints;
@@ -36,6 +37,7 @@ void InitializeConVars()
 	g_hConVarTFFastBuild = FindConVar("tf_fastbuild");
 	g_hConVarTFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
 	g_hConVarFriendlyFire = FindConVar("mp_friendlyfire");
+	g_hConVarServerTimelimit = FindConVar("mp_timelimit");
 
 	g_hConVarPluginMaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	g_hConVarPluginIntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
@@ -87,7 +89,7 @@ void ResetConVars()
 	
 	if (!g_hConVarPluginUseServerMapTimelimit.BoolValue)
 	{
-		ResetConVar(FindConVar("mp_timelimit"));
+		g_hConVarServerTimelimit.RestoreDefault();
 	}
 
 	// TeamFortress ConVars
