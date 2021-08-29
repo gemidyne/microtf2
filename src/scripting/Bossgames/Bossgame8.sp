@@ -8,6 +8,7 @@
 #define BOSSGAME8_ENTITYSPAWN_GROUPCOUNT 4
 
 #define BOSSGAME8_TIMER_VIEWING_BEGIN 15
+#define BOSSGAME8_TIMER_VIEWING_ROOMS 10
 #define BOSSGAME8_TIMER_VIEWING_END 0
 #define BOSSGAME8_TIMER_ANSWER_ANTICIPATION -1
 #define BOSSGAME8_TIMER_ANSWER_REVEALED -4
@@ -32,6 +33,7 @@ enum EBossgame8_Phases
 	EBossgame8_Phase_WaitingOnAnswer,
 	EBossgame8_Phase_AnswerRevealed,
 	EBossgame8_Phase_Viewing,
+	EBossgame8_Phase_ViewingRoomsOpen,
 }
 
 int g_iBossgame8ParticipatingPlayerCount;
@@ -267,19 +269,29 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 		{
 			case BOSSGAME8_TIMER_VIEWING_BEGIN: 
 			{
-				PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
 				Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
 
 				for (int i = 1; i <= 3; i++)
 				{
 					Bossgame8_DecisionRoom_SetHurtActive(i, false);
-					Bossgame8_DecisionRoom_SetDoorOpen(i, true);
 				}
 
 				Bossgame8_SendHatchDoorOpen(true);
-				Bossgame8_GenerateQuestionnaire();
 
 				g_eBossgame8CurrentPhase = EBossgame8_Phase_Viewing;
+			}
+
+			case BOSSGAME8_TIMER_VIEWING_ROOMS:
+			{
+				PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
+
+				for (int i = 1; i <= 3; i++)
+				{
+					Bossgame8_DecisionRoom_SetDoorOpen(i, true);
+				}
+
+				g_eBossgame8CurrentPhase = EBossgame8_Phase_ViewingRoomsOpen;
+				Bossgame8_GenerateQuestionnaire();
 			}
 
 			case BOSSGAME8_TIMER_VIEWING_END:
@@ -630,11 +642,22 @@ void Bossgame8_ShowHudQuestionnaire()
 		{
 			if (g_eBossgame8CurrentPhase == EBossgame8_Phase_Waiting)
 			{
-				player.SetCaption("");
+				char text[128];
+				Format(text, sizeof(text), "%T", "Bossgame8_Caption_GetReady", player.ClientId);
+				player.SetCaption(text);
 				continue;
 			}
 
+
 			if (g_eBossgame8CurrentPhase == EBossgame8_Phase_Viewing)
+			{
+				char text[128];
+				Format(text, sizeof(text), "%T", "Bossgame8_Caption_CountTheProps", player.ClientId);
+				player.SetCaption(text);
+				continue;
+			}
+
+			if (g_eBossgame8CurrentPhase == EBossgame8_Phase_ViewingRoomsOpen)
 			{
 				char typeOfProp[64];
 
