@@ -41,7 +41,7 @@
 #include "Forwards.sp"
 #include "Sounds.sp"
 #include "MethodMaps/Player.inc"
-#include "MethodMaps/Annotations.inc"
+#include "MethodMaps/Annotation.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
 #include "ConVars.sp"
