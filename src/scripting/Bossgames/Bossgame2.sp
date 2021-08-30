@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 2
  * 
- * Escape route
+ * Escape from the Factory
  */
 
 bool g_bBossgame2CanCheckWinArea = false;

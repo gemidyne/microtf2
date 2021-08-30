@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 6
  * 
- * Target Practice
+ * Target Practice Arena
  */
 
 #define BOSSGAME6_ENTITYSPAWN_COUNT 32

@@ -2,6 +2,7 @@
 {
 	"1"
 	{
+		"Name"			"Acid Pit Escape"
 		"Enabled"		"1"
 		"Duration"		"58.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/rocketjump.mp3"
@@ -9,6 +10,7 @@
 	}
 	"2"
 	{
+		"Name"			"Escape from the Factory"
 		"Enabled"		"1"
 		"Duration"		"80.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/escape.mp3"
@@ -17,6 +19,7 @@
 	}
 	"3"
 	{
+		"Name"			"Disappearing Blocks"
 		"Enabled"		"1"
 		"Duration"		"80.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/disappearingblocks.mp3"
@@ -26,6 +29,7 @@
 	}
 	"4"
 	{
+		"Name"			"Smash Arena"
 		"Enabled"		"1"
 		"Duration"		"81.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/fallingfloor.mp3"
@@ -35,6 +39,7 @@
 	}
 	"5"
 	{
+		"Name"			"BeatBlock Galaxy"
 		"Enabled"		"1"
 		"Duration"		"120.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/beatblock.mp3"
@@ -43,6 +48,7 @@
 	}
 	"6"
 	{
+		"Name"			"Target Practice Arena"
 		"Enabled"		"1"
 		"Duration"		"60.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/targetpractice.mp3"
@@ -52,6 +58,7 @@
 	}
 	"7"
 	{
+		"Name"			"Super TypingAttack 2: Goodbye Keyboard"
 		"Enabled"		"1"
 		"Duration"		"300.0"
 		"BackgroundMusic"	""
@@ -61,6 +68,7 @@
 	}
 	"8"
 	{
+		"Name"			"Inventory Day"
 		"Enabled"		"1"
 		"Duration"		"120.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/propcount.mp3"

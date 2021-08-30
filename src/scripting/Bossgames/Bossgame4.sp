@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 4
  * 
- * Don't fall off!
+ * Smash Arena
  */
 
 float g_fBossgame4PlayerDamageAccumulated[MAXPLAYERS];

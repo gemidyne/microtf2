@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 3
  * 
- * Floor Break boss
+ * Disappearing Blocks
  */
 
 #define BOSSGAME3_STARTING_COUNTDOWN_DURATION 2.5

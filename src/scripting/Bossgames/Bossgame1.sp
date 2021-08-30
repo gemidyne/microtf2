@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 1
  * 
- * Get to the top 
+ * Acid Pit Escape
  */
 
 bool g_bBossgame1CanCheckWinArea = false;

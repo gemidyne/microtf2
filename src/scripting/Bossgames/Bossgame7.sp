@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 7
  * 
- * Say the Words
+ * Super TypingAttack 2: Goodbye Keyboard
  */
 
 #define BOSSGAME7_SAYTEXTANSWERS_CAPACITY 512

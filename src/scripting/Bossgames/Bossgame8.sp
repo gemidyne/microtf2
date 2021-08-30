@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Bossgame 8
  * 
- * Count the Props (unfinished)
+ * Inventory Day
  */
 
 #define BOSSGAME8_ENTITYSPAWN_COUNT 16
