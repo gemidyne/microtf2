@@ -297,7 +297,7 @@
         "ru": "ВАС ВЫБИЛИ ИЗ ИГРЫ!",
         "es": "¡HAS SIDO ELIMINADO!",
         "jp": null,
-        "pl": "ZOSTAŁEŚ WYELIMINOWANY!",
+        "pl": "NOKAUT! ODPADASZ!",
         "de": "DU WURDEST AUSSER GEFECHT GESETZT!"
       },
       "ignoreEmptyValue": false
@@ -333,7 +333,7 @@
         "ru": "Проиграл!",
         "es": "¡Perdedor!",
         "jp": null,
-        "pl": "Przegrany!",
+        "pl": "Przegrywasz!",
         "de": "Verlierer!"
       },
       "ignoreEmptyValue": false
@@ -351,7 +351,7 @@
         "ru": "Выиграл!",
         "es": "¡Ganador!",
         "jp": null,
-        "pl": "Zwycięzca!",
+        "pl": "Wygrywasz!",
         "de": "Gewinner!"
       },
       "ignoreEmptyValue": false
@@ -513,7 +513,7 @@
         "ru": "Победителем стал...",
         "es": "El ganador es...",
         "jp": null,
-        "pl": "Zwycięzcą został...",
+        "pl": "Zwycięzcą został(a)...",
         "de": "Der Gewinner ist..."
       },
       "ignoreEmptyValue": false
@@ -671,7 +671,7 @@
         "ru": "Ничья! Обе команды имеют одинаковое кол-во очков!",
         "es": "¡Tablas! ¡Ambos equipos tienen los mismos puntos!",
         "jp": null,
-        "pl": "Impas! Obie drużyny mają tyle samo punktów!",
+        "pl": "Pat! Obie drużyny mają tyle samo punktów!",
         "de": "Unentschieden! Beide Teams haben die gleiche Punktezahl!"
       },
       "ignoreEmptyValue": false
@@ -748,7 +748,7 @@
         "ru": "{1} достиг вершины первым! (Доп. очко!)",
         "es": "¡{1} llegó hasta la cima primero! (¡Punto extra!)",
         "jp": null,
-        "pl": "{1} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)",
+        "pl": "{1} jest pierwszą osobą, która dotarła na szczyt! (Bonusowy punkt!)",
         "de": "{1} hat als erstes die Spitze erreicht! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
@@ -789,7 +789,7 @@
         "ru": "{1} сбежал из завода первым! (Доп. очко!)",
         "es": "¡{1}{2} escapó de la fabrica primero! (¡Punto extra!)",
         "jp": null,
-        "pl": "{1} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)",
+        "pl": "{1} jest pierwszą osobą, która uciekła z fabryki! (Bonusowy punkt!)",
         "de": "{1}{2} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
@@ -866,7 +866,7 @@
         "ru": "{1} дошел до конца первым! (Доп. очко!)",
         "es": "¡{1} alcanzó el objetivo primero! (¡Punto extra!)",
         "jp": null,
-        "pl": "{1} jako pierwszy dotarł do celu! (Bonusowy punkt!)",
+        "pl": "{1} jest pierwszą osobą, która dotarła do celu! (Bonusowy punkt!)",
         "de": "{1} erreichte das Ziel als erstes! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
@@ -938,7 +938,7 @@
         "ru": "ПОСЧИТАЙТЕ ПРЕДМЕТЫ!",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POLICZ PRZEDMIOTY!",
         "de": "ZÄHLE DIE REQUISITEN"
       },
       "ignoreEmptyValue": false
@@ -956,7 +956,7 @@
         "ru": "ПРИГОТОВЬТЕСЬ...",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "NA MIEJSCA...",
         "de": "MACH DICH BEREIT"
       },
       "ignoreEmptyValue": false
@@ -974,7 +974,7 @@
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n???",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POPRAWNA ODPOWIEDŹ TO...\n???",
         "de": "DIE RICHTIGE ANTWORT WAR... ???"
       },
       "ignoreEmptyValue": false
@@ -997,7 +997,7 @@
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n{1}!",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "POPRAWNA ODPOWIEDŹ TO...\n{1}!",
         "de": "DIE RICHTIGE ANTWORT WAR...\n{1}!"
       },
       "ignoreEmptyValue": false
@@ -1036,7 +1036,7 @@
         "ru": "Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Ile tam było {1}? Wejdź do odpowiedniego pomieszczenia!\nPokój A: {2}   Pokój B: {3}   Pokój C: {4}\nPozostały czas: {5}",
         "de": "Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}"
       },
       "ignoreEmptyValue": false
@@ -1054,7 +1054,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Zasobników",
         "de": "Dispenser"
       },
       "ignoreEmptyValue": false
@@ -1072,7 +1072,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Paczek z Amunicją",
         "de": "Munitionspackung"
       },
       "ignoreEmptyValue": false
@@ -1090,7 +1090,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Beczek",
         "de": "Fässer"
       },
       "ignoreEmptyValue": false
@@ -1108,7 +1108,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Krzeseł",
         "de": "Stühle"
       },
       "ignoreEmptyValue": false
@@ -1131,7 +1131,7 @@
         "ru": "Комната A: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój A: {1}",
         "de": "Raum A: {1}"
       },
       "ignoreEmptyValue": false
@@ -1154,7 +1154,7 @@
         "ru": "Комната B: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój B: {1}",
         "de": "Raum B: {2}"
       },
       "ignoreEmptyValue": false
@@ -1177,7 +1177,7 @@
         "ru": "Комната C: {1}",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "Pokój C: {1}",
         "de": "Raum C: {1}"
       },
       "ignoreEmptyValue": false
@@ -1313,7 +1313,7 @@
         "ru": "{1} написал слово первым! (Доп. очко!)",
         "es": "¡{1} dijo la palabra primero! (¡Punto extra!)",
         "jp": null,
-        "pl": "{1} jako pierwszy napisał podane słowo! (Bonusowy punkt!)",
+        "pl": "{1} jest pierwszą osobą, która napisała podane słowo! (Bonusowy punkt!)",
         "de": "{1} schrieb das Wort als erstes! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
@@ -1400,7 +1400,7 @@
         "ru": "{1} написал правильный ответ первым! (Доп. очко!)",
         "es": "¡{1} dijo la respuesta primero! (¡Punto extra!)",
         "jp": null,
-        "pl": "{1} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)",
+        "pl": "{1} jest pierwszą osobą, która podała poprawną odpowiedź! (Bonusowy punkt!)",
         "de": "{1} hat als erstes die richtige Antwort erraten! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
@@ -2525,7 +2525,7 @@
         "ru": "== ОБЪЯВЛЕНИЕ ==\n\nПобедителем стал...\n{1}!",
         "es": "== ANUNCIO ==\n\nEl ganador es...\n¡{1}!",
         "jp": null,
-        "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!",
+        "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został(a)...\n{1}!",
         "de": "== ANKÜNDIGUNG ==\n\nDer Gewinner ist...\n{1}!"
       },
       "ignoreEmptyValue": false
