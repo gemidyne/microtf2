@@ -64,39 +64,39 @@
 	}
 	"General_Loser"
 	{
-		"fr"		"Perdu !"
+		"fr"		"Perdant !"
 	}
 	"General_Winner"
 	{
-		"fr"		"Gagné !"
+		"fr"		"Gagnant !"
 	}
 	"General_SpeedUp"
 	{
-		"fr"		""
+		"fr"		"ON ACCÉLÈRE !"
 	}
 	"General_SpeedDown"
 	{
-		"fr"		""
+		"fr"		"ON RALENTIT !"
 	}
 	"General_Failure"
 	{
-		"fr"		""
+		"fr"		"ÉCHEC !"
 	}
 	"General_Success"
 	{
-		"fr"		""
+		"fr"		"RÉUSSITE !"
 	}
 	"General_BossTime"
 	{
-		"fr"		""
+		"fr"		"MOMENT DU BOSS !"
 	}
 	"General_GameOver"
 	{
-		"fr"		""
+		"fr"		"FIN DE LA MANCHE !"
 	}
 	"General_SpecialRound"
 	{
-		"fr"		""
+		"fr"		"MANCHE SPÉCIALE !"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"fr"		""
+		"fr"		"RESTEZ SUR LE BLOC VERT !"
 	}
 	"Bossgame4_Caption"
 	{
@@ -195,56 +195,56 @@
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"fr"		""
+		"fr"		"COMPTEZ LES ACCESSOIRES !"
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"fr"		""
+		"fr"		"SOYEZ PRÊTS..."
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"fr"		""
+		"fr"		"LA RÉPONSE CORRECTE ÉTAIT...\n???"
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"fr"		""
+		"fr"		"LA RÉPONSE CORRECTE ÉTAIT...\n{1} !"
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"fr"		""
+		"fr"		"Combien de {1} il y avait ? Rentrez dans la bonne pièce !\nPièce A : {2}   Pièce B : {3}   Pièce C : {4}\nTemps restant : {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"fr"		""
+		"fr"		"Distributeurs"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"fr"		""
+		"fr"		"Boîtes de Munitions"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"fr"		""
+		"fr"		"Tonneaux"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"fr"		""
+		"fr"		"Chaises"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"fr"		""
+		"fr"		"Pièce A : {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"fr"		""
+		"fr"		"Pièce B : {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"fr"		""
+		"fr"		"Pièce C : {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -513,15 +513,15 @@
 	}
 	"Minigame28_Caption"
 	{
-		"fr"		""
+		"fr"		"BOMB JUMP SUR LA PLATEFORME !"
 	}
 	"Minigame29_Caption"
 	{
-		"fr"		""
+		"fr"		"NE TOUCHEZ PERSONNE !"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"fr"		""
+		"fr"		"ÉCRIVEZ LES MOTS !"
 	}
 	"Bossgame7_Caption_Explain"
 	{
