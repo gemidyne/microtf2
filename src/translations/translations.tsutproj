@@ -327,7 +327,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "Perdedor!",
-        "fr": "Perdu !",
+        "fr": "Perdant !",
         "it": "Perso!",
         "pt_p": "Perdedor!",
         "ru": "Проиграл!",
@@ -345,7 +345,7 @@
       "formatArguments": [],
       "translations": {
         "pt": "Vencedor!",
-        "fr": "Gagné !",
+        "fr": "Gagnant !",
         "it": "Vinto!",
         "pt_p": "Vencedor!",
         "ru": "Выиграл!",
@@ -363,7 +363,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "ON ACCÉLÈRE !",
         "it": "PIU' VELOCE!",
         "pt_p": null,
         "ru": "УСКОРЕНИЕ!",
@@ -381,7 +381,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "ON RALENTIT !",
         "it": "PIU' LENTO!",
         "pt_p": null,
         "ru": "ЗАМЕДЛЕНИЕ!",
@@ -399,7 +399,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "ÉCHEC !",
         "it": "HAI PERSO!",
         "pt_p": null,
         "ru": "ПРОВАЛ!",
@@ -417,7 +417,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "RÉUSSITE !",
         "it": "HAI VINTO!",
         "pt_p": null,
         "ru": "УСПЕХ!",
@@ -435,7 +435,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "MOMENT DU BOSS !",
         "it": "ORA DEL BOSS!",
         "pt_p": null,
         "ru": "БОСС-ИГРА!",
@@ -453,7 +453,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "FIN DE LA MANCHE !",
         "it": "FINE DELLA PARTITA!",
         "pt_p": null,
         "ru": "ИГРА ОКОНЧЕНА!",
@@ -471,7 +471,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "MANCHE SPÉCIALE !",
         "it": "ROUND SPECIALE!",
         "pt_p": null,
         "ru": "ОСОБЫЙ РАУНД!",
@@ -801,7 +801,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "RESTEZ SUR LE BLOC VERT !",
         "it": "STAI SUL BLOCCO VERDE!",
         "pt_p": null,
         "ru": "СТОЙ НА ЗЕЛЕНОМ БЛОКЕ!",
@@ -932,7 +932,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "COMPTEZ LES ACCESSOIRES !",
         "it": "CONTA GLI OGGETTI!",
         "pt_p": null,
         "ru": "ПОСЧИТАЙТЕ ПРЕДМЕТЫ!",
@@ -950,7 +950,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "SOYEZ PRÊTS...",
         "it": "PREPARATI...",
         "pt_p": null,
         "ru": "ПРИГОТОВЬТЕСЬ...",
@@ -968,7 +968,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "LA RÉPONSE CORRECTE ÉTAIT...\n???",
         "it": "LA RISPOSTA ESATTA ERA...\n???",
         "pt_p": null,
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n???",
@@ -991,7 +991,7 @@
       ],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "LA RÉPONSE CORRECTE ÉTAIT...\n{1} !",
         "it": "LA RISPOSTA ESATTA ERA...\n{1}!",
         "pt_p": null,
         "ru": "ПРАВИЛЬНЫЙ ОТВЕТ - ...\n{1}!",
@@ -1030,7 +1030,7 @@
       ],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Combien de {1} il y avait ? Rentrez dans la bonne pièce !\nPièce A : {2}   Pièce B : {3}   Pièce C : {4}\nTemps restant : {5}",
         "it": "Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}",
         "pt_p": null,
         "ru": "Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}",
@@ -1048,7 +1048,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Distributeurs",
         "it": "Dispenser",
         "pt_p": null,
         "ru": null,
@@ -1066,7 +1066,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Boîtes de Munitions",
         "it": "Pacchi di Munizioni",
         "pt_p": null,
         "ru": null,
@@ -1084,7 +1084,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Tonneaux",
         "it": "Barili",
         "pt_p": null,
         "ru": null,
@@ -1102,7 +1102,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Chaises",
         "it": "Sedie",
         "pt_p": null,
         "ru": null,
@@ -1125,7 +1125,7 @@
       ],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Pièce A : {1}",
         "it": "Stanza A: {1}",
         "pt_p": null,
         "ru": "Комната A: {1}",
@@ -1148,7 +1148,7 @@
       ],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Pièce B : {1}",
         "it": "Stanza B: {1}",
         "pt_p": null,
         "ru": "Комната B: {1}",
@@ -1171,7 +1171,7 @@
       ],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "Pièce C : {1}",
         "it": "Stanza C: {1}",
         "pt_p": null,
         "ru": "Комната C: {1}",
@@ -2373,7 +2373,7 @@
       "translations": {
         "it": "SALTO BOMBA SULLA PIATTAFORMA!",
         "es": "¡SALTA CON BOMBAS HASTA LA PLATAFORMA!",
-        "fr": null,
+        "fr": "BOMB JUMP SUR LA PLATEFORME !",
         "ru": "ЗАПРЫГНИТЕ НА ПЛАТФОРМУ С ПОМОЩЬЮ БОМБ!",
         "pt_p": null,
         "pt": null,
@@ -2390,7 +2390,7 @@
       "translations": {
         "it": "NON TOCCARE NESSUNO!",
         "es": "¡NO TOQUES A NADIE!",
-        "fr": null,
+        "fr": "NE TOUCHEZ PERSONNE !",
         "ru": "НЕ ПРИКАСАЙТЕСЬ!",
         "pt_p": null,
         "pt": null,
@@ -2406,7 +2406,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "ÉCRIVEZ LES MOTS !",
         "it": "SCRIVI LE PAROLE!",
         "pt_p": null,
         "ru": "НАПИШИТЕ СЛОВА!",
