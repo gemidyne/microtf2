@@ -320,27 +320,6 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 	}
 }
 
-public Action TF2_CalcIsAttackCritical(int client, int weapon, char[] weaponname, bool &result)
-{
-	if (!IsPluginEnabled)
-	{
-		return Plugin_Continue;
-	}
-
-	if (GlobalForward_OnPlayerCalculateCritical != INVALID_HANDLE && IsPlayerParticipant[client])
-	{
-		Call_StartForward(GlobalForward_OnPlayerCalculateCritical);
-		Call_PushCell(client);
-		Call_PushCell(weapon);
-		Call_PushString(weaponname);
-		Call_Finish();
-	}
-	
-	result = ForceCalculationCritical;
-	return Plugin_Changed;
-}
-
-
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
 	if (!IsPluginEnabled)
@@ -572,7 +551,8 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Taunting,
 			TFCond_Bleeding,
 			TFCond_RuneHaste,
-			TFCond_CritCola:
+			TFCond_CritCola,
+			TFCond_HalloweenCritCandy:
 		{
 			removeCondition = false;
 		}
