@@ -218,16 +218,6 @@ Handle GlobalForward_OnPlayerStunned;
 Handle GlobalForward_OnPlayerSappedObject;
 
 /**
- * Forward is called when a Player's Critical Chance is calculated.
- *
- * @param Client that this is being calculated for
- * @param Weapon Entity Index
- * @param Weapon Name 
- * @noreturn
- */
-Handle GlobalForward_OnPlayerCalculateCritical;
-
-/**
  * Forward is called when a Player runs a command.
  *
  * @param Client who is running command
@@ -321,7 +311,6 @@ stock void InitializeForwards()
 	GlobalForward_OnPlayerClassChange = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerStunned = CreateForward(ET_Ignore, Param_Any, Param_Any);
 	GlobalForward_OnPlayerSappedObject = CreateForward(ET_Ignore, Param_Any, Param_Any);
-	GlobalForward_OnPlayerCalculateCritical = CreateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
 	GlobalForward_OnPlayerRunCmd = CreateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	GlobalForward_OnBossStopAttempt = CreateForward(ET_Single);
 	GlobalForward_OnTfRoundStart = CreateForward(ET_Ignore);
@@ -357,7 +346,6 @@ stock void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerClassChange);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerStunned);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerSappedObject);
-	SafelyRemoveAllFromForward(GlobalForward_OnPlayerCalculateCritical);
 	SafelyRemoveAllFromForward(GlobalForward_OnPlayerRunCmd);
 	SafelyRemoveAllFromForward(GlobalForward_OnBossStopAttempt);
 	SafelyRemoveAllFromForward(GlobalForward_OnTfRoundStart);

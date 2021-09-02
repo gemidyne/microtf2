@@ -57,7 +57,6 @@ public void Minigame26_OnMinigameSelectedPre()
 		while (Minigame26_VictimClass == TFClass_Heavy);
 
 		IsBlockingDamage = true;
-		ForceCalculationCritical = true;
 	}
 }
 
@@ -224,6 +223,7 @@ void Minigame26_SetupAttacker(Player player)
 	player.Status = PlayerStatus_NotWon;
 
 	player.AddCondition(TFCond_CritCola, 4.0);
+	player.AddCondition(TFCond_HalloweenCritCandy, 4.0);
 	player.AddCondition(TFCond_RuneHaste, 4.0);
 }
 
