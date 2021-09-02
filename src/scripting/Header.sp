@@ -69,7 +69,6 @@ bool g_bIsPlayerParticipant[MAXPLAYERS+1] = false;
 bool g_bIsPlayerWinner[MAXPLAYERS+1] = false;
 bool g_bHideHudGamemodeText = false;
 bool g_bAllowCosmetics = false;
-bool g_bForceCalculationCritical = false;
 bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
 /**

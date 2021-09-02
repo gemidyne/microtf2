@@ -443,6 +443,7 @@ methodmap Player __nullable__
         this.RemoveCondition(TFCond_Bleeding);
         this.RemoveCondition(TFCond_RuneHaste);
         this.RemoveCondition(TFCond_CritCola);
+        this.RemoveCondition(TFCond_HalloweenCritCandy);
         this.RemoveCondition(TFCond_Taunting);
     }
 

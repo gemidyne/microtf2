@@ -226,16 +226,6 @@ PrivateForward g_pfOnPlayerStunned;
 PrivateForward g_pfOnPlayerSappedObject;
 
 /**
- * Forward is called when a Player's Critical Chance is calculated.
- *
- * @param Client that this is being calculated for
- * @param Weapon Entity Index
- * @param Weapon Name 
- * @noreturn
- */
-PrivateForward g_pfOnPlayerCalculateCritical;
-
-/**
  * Forward is called when a Player runs a command.
  *
  * @param Client who is running command
@@ -349,7 +339,6 @@ void InitializeForwards()
 	g_pfOnPlayerClassChange = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerStunned = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerSappedObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
-	g_pfOnPlayerCalculateCritical = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_String);
 	g_pfOnPlayerRunCmd = new PrivateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	g_pfOnBossStopAttempt = new PrivateForward(ET_Single);
 	g_pfOnTfRoundStart = new PrivateForward(ET_Ignore);
@@ -388,7 +377,6 @@ void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(g_pfOnPlayerClassChange);
 	SafelyRemoveAllFromForward(g_pfOnPlayerStunned);
 	SafelyRemoveAllFromForward(g_pfOnPlayerSappedObject);
-	SafelyRemoveAllFromForward(g_pfOnPlayerCalculateCritical);
 	SafelyRemoveAllFromForward(g_pfOnPlayerRunCmd);
 	SafelyRemoveAllFromForward(g_pfOnBossStopAttempt);
 	SafelyRemoveAllFromForward(g_pfOnTfRoundStart);

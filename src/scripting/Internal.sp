@@ -104,7 +104,7 @@ stock int GetActivePlayers(int team = 0, bool mustbealive = false)
     return output;
 }
 
-stock void ResetGamemode()
+void ResetGamemode()
 {
 	g_eGamemodeStatus = GameStatus_WaitingForPlayers;
 
@@ -126,7 +126,6 @@ stock void ResetGamemode()
 	g_eDamageBlockMode = EDamageBlockMode_All;
 	g_bIsBlockingKillCommands = true;
 	g_bIsBlockingTaunts = true;
-	g_bForceCalculationCritical = false;
 
 	SetTeamScore(view_as<int>(TFTeam_Red), 0);
 	SetTeamScore(view_as<int>(TFTeam_Blue), 0);
