@@ -230,8 +230,6 @@ public void Bossgame8_OnPlayerDeath(int client, int attacker)
 
 public void Bossgame8_OnBossStopAttempt()
 {
-	return;
-
 	if (g_iActiveBossgameId != 8)
 	{
 		return;
