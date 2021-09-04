@@ -156,7 +156,7 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 			Call_Finish();
 		}
 
-		g_hBossCheckTimer = CreateTimer(2.0, Timer_CheckBossEnd);
+		g_hBossCheckTimer = CreateTimer(2.5, Timer_CheckBossEnd);
 	}
 
 	return Plugin_Handled;

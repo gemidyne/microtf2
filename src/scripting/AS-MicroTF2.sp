@@ -430,7 +430,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	Minigame minigame = new Minigame(g_iActiveMinigameId);
 	Bossgame bossgame = new Bossgame(g_iActiveBossgameId);
 
-	if (minigame.HasDynamicCaption || bossgame.HasDynamicCaption)
+	if (minigame.HasDynamicCaption || (bossgame.UsesCaption && bossgame.HasDynamicCaption))
 	{
 		char funcName[64];
 
@@ -459,7 +459,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 		{
 			if (g_iActiveBossgameId > 0) 
 			{
-				if (dynamicCaptionFunction == INVALID_FUNCTION)
+				if (bossgame.UsesCaption && dynamicCaptionFunction == INVALID_FUNCTION)
 				{
 					char text[64];
 					char translationKey[32];
@@ -533,8 +533,12 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 	else if (g_iActiveBossgameId > 0)
 	{
 		g_hActiveGameTimer = CreateTimer(bossgame.Duration, Timer_GameLogic_EndMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
-		CreateTimer(10.0, Timer_RemoveBossOverlay, _, TIMER_FLAG_NO_MAPCHANGE);
 		g_hBossCheckTimer = CreateTimer(5.0, Timer_CheckBossEnd, _, TIMER_FLAG_NO_MAPCHANGE);
+
+		if (bossgame.UsesCaption)
+		{
+			CreateTimer(10.0, Timer_RemoveBossOverlay, _, TIMER_FLAG_NO_MAPCHANGE);
+		}
 	}
 	else
 	{
