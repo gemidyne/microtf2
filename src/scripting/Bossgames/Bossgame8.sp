@@ -7,12 +7,10 @@
 #define BOSSGAME8_ENTITYSPAWN_COUNT 16
 #define BOSSGAME8_ENTITYSPAWN_GROUPCOUNT 4
 
-#define BOSSGAME8_TIMER_VIEWING_BEGIN 15
-#define BOSSGAME8_TIMER_VIEWING_ROOMS 10
-#define BOSSGAME8_TIMER_VIEWING_END 0
+#define BOSSGAME8_TIMER_VIEWING_TIME_MAX 5.0
+#define BOSSGAME8_TIMER_VIEWING_TIME_MIN 2.0
+#define BOSSGAME8_TIMER_VIEWING_TIME_DECAY 0.5
 
-#define BOSSGAME8_TIMER_ANSWER_ANTICIPATION -1
-#define BOSSGAME8_TIMER_ANSWER_REVEALED -4
 #define BOSSGAME8_TIMER_VIEWING_RESET -7
 
 #define BOSSGAME8_VO_10SEC "vo/announcer_ends_10sec.mp3"
@@ -38,7 +36,7 @@ enum EBossgame8_Phases
 }
 
 int g_iBossgame8ParticipatingPlayerCount;
-int g_iBossgame8Timer = BOSSGAME8_TIMER_VIEWING_RESET+1;
+int g_iBossgame8Timer = 10;
 EBossgame8_Phases g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
 
 char g_sBossgame8Group1Models[][] = 
@@ -83,6 +81,7 @@ int g_iBossgame8CorrectRoomNumber = 0;
 int g_iBossgame8CorrectAnswer = -999999;
 int g_iBossgame8CorrectAnswerGroupType;
 int g_iBossgame8RoomAnswers[3];
+float g_fBossgame8ViewingTime = BOSSGAME8_TIMER_VIEWING_TIME_MAX;
 
 public void Bossgame8_EntryPoint()
 {
@@ -158,10 +157,10 @@ public void Bossgame8_OnMinigameSelectedPre()
 		g_bIsBlockingKillCommands = true;
 
 		Bossgame8_ResetAllState();
-
-		g_iBossgame8Timer = BOSSGAME8_TIMER_VIEWING_RESET + 1;
 		g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
-		CreateTimer(1.0, Bossgame8_SwitchTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
+
+		g_fBossgame8ViewingTime = BOSSGAME8_TIMER_VIEWING_TIME_MAX;
+		CreateTimer(1.0, Bossgame8_PrepareForViewing, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 }
 
@@ -231,6 +230,8 @@ public void Bossgame8_OnPlayerDeath(int client, int attacker)
 
 public void Bossgame8_OnBossStopAttempt()
 {
+	return;
+
 	if (g_iActiveBossgameId != 8)
 	{
 		return;
@@ -291,78 +292,216 @@ public void Bossgame8_OnMinigameFinish()
 	}
 }
 
-public Action Bossgame8_SwitchTimer(Handle timer)
+public Action Bossgame8_BeginViewing(Handle timer)
 {
-	if (g_iActiveBossgameId == 8 && g_bIsMinigameActive && !g_bIsMinigameEnding) 
+	if (g_iActiveBossgameId != 8)
 	{
-		switch (g_iBossgame8Timer)
-		{
-			case BOSSGAME8_TIMER_VIEWING_BEGIN: 
-			{
-				Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
+		return Plugin_Handled;
+	}
 
-				for (int i = 1; i <= 3; i++)
-				{
-					Bossgame8_DecisionRoom_SetHurtActive(i, false);
-					Bossgame8_DecisionRoom_SetDoorOpen(i, true);
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
 
-				}
+	Bossgame8_DecisionRoom_SetOutsideHurtActive(false);
 
-				Bossgame8_SendHatchDoorOpen(true);
+	for (int i = 1; i <= 3; i++)
+	{
+		Bossgame8_DecisionRoom_SetHurtActive(i, false);
+		Bossgame8_DecisionRoom_SetDoorOpen(i, true);
+	}
 
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_Viewing;
-			}
+	Bossgame8_SendHatchDoorOpen(true);
 
-			case BOSSGAME8_TIMER_VIEWING_ROOMS:
-			{
-				PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
-				Bossgame8_SendHatchDoorOpen(false);
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_Viewing;
 
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_ViewingRoomsOpen;
-				Bossgame8_GenerateQuestionnaire();
-				Bossgame8_CleanupEntities(false);
-			}
+	CreateTimer(g_fBossgame8ViewingTime, Bossgame8_EndViewingOpenAnswerRooms, _, TIMER_FLAG_NO_MAPCHANGE);
 
-			case BOSSGAME8_TIMER_VIEWING_END:
-			{
-				for (int i = 1; i <= 3; i++)
-				{
-					Bossgame8_DecisionRoom_SetDoorOpen(i, false);
-				}
+	return Plugin_Handled;
+}
 
-				Bossgame8_SendHatchDoorOpen(false);
-				PlaySoundToAll(BOSSGAME8_SFX_ANSWER_ANTICIPATION);
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
-			}
+public Action Bossgame8_EndViewingOpenAnswerRooms(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Handled;
+	}
 
-			case BOSSGAME8_TIMER_ANSWER_ANTICIPATION:
-			{
-				Bossgame8_CleanupEntities(true);
-				Bossgame8_DecisionRoom_SetOutsideHurtActive(true);
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_WaitingOnAnswer;
-			}
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
 
-			case BOSSGAME8_TIMER_ANSWER_REVEALED:
-			{
-				PlaySoundToAll(BOSSGAME8_SFX_ANSWER_REVEAL);
+	g_fBossgame8ViewingTime -= BOSSGAME8_TIMER_VIEWING_TIME_DECAY;
 
-				for (int i = 1; i <= 3; i++)
-				{
-					Bossgame8_DecisionRoom_SetHurtActive(i, g_iBossgame8CorrectRoomNumber != i);
-				}
+	if (g_fBossgame8ViewingTime < BOSSGAME8_TIMER_VIEWING_TIME_MIN)
+	{
+		g_fBossgame8ViewingTime = BOSSGAME8_TIMER_VIEWING_TIME_MIN;
+	}
 
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_AnswerRevealed;
-			}
+	PlaySoundToAll(BOSSGAME8_SFX_QUESTION_PROMPT);
+	Bossgame8_SendHatchDoorOpen(false);
 
-			case BOSSGAME8_TIMER_VIEWING_RESET:
-			{
-				Bossgame8_DoEntitySpawns();
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_ViewingRoomsOpen;
+	Bossgame8_GenerateQuestionnaire();
+	Bossgame8_CleanupEntities(false);
 
-				g_iBossgame8Timer = BOSSGAME8_TIMER_VIEWING_BEGIN + 1;
-				g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
-			}
-		}
+	CreateTimer(11.0, Bossgame8_CloseAnswerRooms, _, TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(1.0, Bossgame8_ViewingTimer, _, TIMER_REPEAT|TIMER_FLAG_NO_MAPCHANGE);
 
+	return Plugin_Handled;
+}
+
+public Action Bossgame8_CloseAnswerRooms(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
+
+	for (int i = 1; i <= 3; i++)
+	{
+		Bossgame8_DecisionRoom_SetDoorOpen(i, false);
+	}
+
+	Bossgame8_SendHatchDoorOpen(false);
+	PlaySoundToAll(BOSSGAME8_SFX_ANSWER_ANTICIPATION);
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
+
+	CreateTimer(2.0, Bossgame8_PrepareAnswer, _, TIMER_FLAG_NO_MAPCHANGE);
+	Bossgame8_ShowHudQuestionnaire();
+
+	return Plugin_Handled;
+}
+
+public Action Bossgame8_PrepareAnswer(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
+
+	Bossgame8_CleanupEntities(true);
+	Bossgame8_DecisionRoom_SetOutsideHurtActive(true);
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_WaitingOnAnswer;
+
+	CreateTimer(3.0, Bossgame8_RevealAnswer, _, TIMER_FLAG_NO_MAPCHANGE);
+	Bossgame8_ShowHudQuestionnaire();
+
+	return Plugin_Handled;
+}
+
+public Action Bossgame8_RevealAnswer(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
+
+	PlaySoundToAll(BOSSGAME8_SFX_ANSWER_REVEAL);
+
+	for (int i = 1; i <= 3; i++)
+	{
+		Bossgame8_DecisionRoom_SetHurtActive(i, g_iBossgame8CorrectRoomNumber != i);
+	}
+
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_AnswerRevealed;
+	
+	CreateTimer(3.0, Bossgame8_PrepareForViewing, _, TIMER_FLAG_NO_MAPCHANGE);
+	Bossgame8_ShowHudQuestionnaire();
+
+	return Plugin_Handled;
+}
+
+public Action Bossgame8_PrepareForViewing(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Handled;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Handled;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Handled;
+	}
+
+	Bossgame8_DoEntitySpawns();
+
+	g_iBossgame8Timer = 10;
+	g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
+
+	Bossgame8_ShowHudQuestionnaire();
+
+	CreateTimer(1.0, Bossgame8_BeginViewing, _, TIMER_FLAG_NO_MAPCHANGE);
+
+	return Plugin_Handled;
+}
+
+public Action Bossgame8_ViewingTimer(Handle timer)
+{
+	if (g_iActiveBossgameId != 8)
+	{
+		return Plugin_Stop;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Stop;
+	}
+	
+	if (g_bIsMinigameEnding)
+	{
+		return Plugin_Stop;
+	}
+
+	if (g_iBossgame8Timer >= 0)
+	{
 		switch (g_iBossgame8Timer)
 		{
 			case 10:
@@ -385,14 +524,12 @@ public Action Bossgame8_SwitchTimer(Handle timer)
 		}
 
 		Bossgame8_ShowHudQuestionnaire();
-
 		g_iBossgame8Timer--;
+
 		return Plugin_Continue;
 	}
 
-	g_iBossgame8Timer = BOSSGAME8_TIMER_VIEWING_RESET + 1;
-	g_eBossgame8CurrentPhase = EBossgame8_Phase_Waiting;
-	return Plugin_Stop; 
+	return Plugin_Stop;
 }
 
 void Bossgame8_DoEntitySpawns()

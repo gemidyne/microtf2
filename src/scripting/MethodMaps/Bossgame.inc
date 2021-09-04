@@ -13,6 +13,14 @@ methodmap Bossgame __nullable__
         }
     }
 
+    property bool UsesCaption
+    {
+        public get()
+        {
+            return g_bBossgameUsesCaption[this.Id];
+        }
+    }
+
     property bool HasDynamicCaption
     {
         public get()
