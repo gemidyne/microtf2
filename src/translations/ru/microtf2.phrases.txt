@@ -185,14 +185,6 @@
 	{
 		"ru"		"ПОДСТРЕЛИТЕ БОЛЬШЕ ВСЕГО БОЧЕК!"
 	}
-	"Bossgame7_Caption"
-	{
-		"ru"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"ru"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"ru"		"ПОСЧИТАЙТЕ ПРЕДМЕТЫ!"

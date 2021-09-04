@@ -185,14 +185,6 @@
 	{
 		"es"		"¡DISPARA A LOS BARRILES!"
 	}
-	"Bossgame7_Caption"
-	{
-		"es"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"es"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"es"		""

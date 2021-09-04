@@ -185,14 +185,6 @@
 	{
 		"pl"		"TRAF W JAK NAJWIĘCEJ BECZEK!"
 	}
-	"Bossgame7_Caption"
-	{
-		"pl"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"pl"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"pl"		"POLICZ PRZEDMIOTY!"

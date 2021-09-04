@@ -185,14 +185,6 @@
 	{
 		"en"		"SHOOT THE MOST BARRELS!"
 	}
-	"Bossgame7_Caption"
-	{
-		"en"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"en"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"en"		"COUNT THE PROPS!"

@@ -185,14 +185,6 @@
 	{
 		"pt_p"		"ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!"
 	}
-	"Bossgame7_Caption"
-	{
-		"pt_p"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"pt_p"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"pt_p"		""

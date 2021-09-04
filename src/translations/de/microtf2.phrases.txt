@@ -185,14 +185,6 @@
 	{
 		"de"		"SCHIESSE DIE MEISTEN FÄSSER AB!"
 	}
-	"Bossgame7_Caption"
-	{
-		"de"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"de"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"de"		"ZÄHLE DIE REQUISITEN"

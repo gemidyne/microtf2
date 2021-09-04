@@ -185,14 +185,6 @@
 	{
 		"fr"		"DÉTRUISEZ LE PLUS DE TONNEAUX !"
 	}
-	"Bossgame7_Caption"
-	{
-		"fr"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"fr"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"fr"		"COMPTEZ LES ACCESSOIRES !"

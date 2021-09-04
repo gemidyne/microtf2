@@ -185,14 +185,6 @@
 	{
 		"it"		"SPARA A PIU' BARILI CHE PUOI!"
 	}
-	"Bossgame7_Caption"
-	{
-		"it"		""
-	}
-	"Bossgame8_Caption"
-	{
-		"it"		""
-	}
 	"Bossgame8_Caption_CountTheProps"
 	{
 		"it"		"CONTA GLI OGGETTI!"
