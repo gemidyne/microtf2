@@ -612,10 +612,10 @@ methodmap Player __nullable__
         {
             char rewritten[MAX_BUFFER_LENGTH];
             ReverseString(buffer2, sizeof(buffer2), rewritten);
-            ReplaceString(buffer2, sizeof(buffer2), "}tluafed{", "{default}");
-            ReplaceString(buffer2, sizeof(buffer2), "}der{", "{red}");
-            ReplaceString(buffer2, sizeof(buffer2), "}eulb{", "{blue}");
-            ReplaceString(buffer2, sizeof(buffer2), "}etihw{", "{white}");
+            ReplaceString(rewritten, sizeof(rewritten), "}tluafed{", "{default}");
+            ReplaceString(rewritten, sizeof(rewritten), "}der{", "{red}");
+            ReplaceString(rewritten, sizeof(rewritten), "}eulb{", "{blue}");
+            ReplaceString(rewritten, sizeof(rewritten), "}etihw{", "{white}");
 
             strcopy(buffer2, sizeof(buffer2), rewritten);
         }
