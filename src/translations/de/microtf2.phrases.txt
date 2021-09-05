@@ -162,7 +162,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"de"		"{1}{2} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
+		"de"		"{1} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
 	}
 	"Bossgame3_Caption"
 	{

@@ -162,7 +162,7 @@
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"es"		"¡{1}{2} escapó de la fabrica primero! (¡Punto extra!)"
+		"es"		"¡{1} escapó de la fabrica primero! (¡Punto extra!)"
 	}
 	"Bossgame3_Caption"
 	{

@@ -774,7 +774,7 @@
     {
       "key": "Bossgame2_PlayerReachedEndFirst",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
-      "text": "{1}{2} escaped the factory first! (Bonus point!)",
+      "text": "{1} escaped the factory first! (Bonus point!)",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
@@ -787,10 +787,10 @@
         "it": "{1} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!",
         "pt_p": "{1} escapou da fábrica primeiro! (Pontos de Bônus!)",
         "ru": "{1} сбежал из завода первым! (Доп. очко!)",
-        "es": "¡{1}{2} escapó de la fabrica primero! (¡Punto extra!)",
+        "es": "¡{1} escapó de la fabrica primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która uciekła z fabryki! (Bonusowy punkt!)",
-        "de": "{1}{2} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
+        "de": "{1} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
       },
       "ignoreEmptyValue": false
     },
