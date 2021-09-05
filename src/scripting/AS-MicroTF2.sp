@@ -986,6 +986,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 	g_eDamageBlockMode = EDamageBlockMode_WinnersOnly;
 	g_bIsGameOver = true;
 	g_fActiveGameSpeed = 1.0;
+
 	SetSpeed();
 
 	g_hConVarTFFastBuild.BoolValue = true;
