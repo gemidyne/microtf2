@@ -209,19 +209,19 @@
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"ru"		""
+		"ru"		"Dispensers"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"ru"		""
+		"ru"		"Ammo Packs"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"ru"		""
+		"ru"		"Barrels"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"ru"		""
+		"ru"		"Chairs"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
