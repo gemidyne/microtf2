@@ -282,7 +282,7 @@ public void Bossgame8_OnMinigameFinish()
 		{
 			Player player = new Player(i);
 
-			if (player.IsValid && player.IsParticipating && player.IsAlive)
+			if (player.IsValid && player.IsParticipating && player.Status == PlayerStatus_NotWon)
 			{
 				player.Status = PlayerStatus_Winner;
 			}
