@@ -1,20 +1,20 @@
 /**
  * MicroTF2 - Bossgame 4
  * 
- * Don't fall off!
+ * Smash Arena
  */
 
-float Bossgame4_DamageAccumlated[MAXPLAYERS];
+float g_fBossgame4PlayerDamageAccumulated[MAXPLAYERS];
 
 public void Bossgame4_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Bossgame4_OnMapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame4_OnMapStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame4_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame4_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame4_OnMinigameFinish);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame4_OnPlayerDeath);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Bossgame4_OnPlayerTakeDamage);
+	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame4_OnBossStopAttempt);
 }
 
 public void Bossgame4_OnMapStart()
@@ -29,24 +29,23 @@ public void Bossgame4_OnMapStart()
 
 public void Bossgame4_OnMinigameSelectedPre()
 {
-	if (BossgameID != 4)
+	if (g_iActiveBossgameId != 4)
 	{
 		return;
 	}
 
-	IsBlockingDamage = false;
-	IsBlockingDeathCommands = true;
-	IsOnlyBlockingDamageByPlayers = true;
+	g_bIsBlockingKillCommands = true;
+	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
 }
 
 public void Bossgame4_OnMinigameSelected(int client)
 {
-	if (BossgameID != 4)
+	if (g_iActiveBossgameId != 4)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -69,7 +68,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 	player.SetHealth(1000);
 	player.ResetWeapon(true);
 
-	Bossgame4_DamageAccumlated[player.ClientId] = 175.0;
+	g_fBossgame4PlayerDamageAccumulated[player.ClientId] = 175.0;
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
 	float pos[3];
@@ -106,12 +105,12 @@ public void Bossgame4_OnMinigameSelected(int client)
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 {
-	if (BossgameID != 4)
+	if (g_iActiveBossgameId != 4)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -128,12 +127,12 @@ public void Bossgame4_OnPlayerDeath(int victim, int attacker)
 
 public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 {
-	if (BossgameID != 4)
+	if (g_iActiveBossgameId != 4)
 	{
 		return Plugin_Handled;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Handled;
 	}
@@ -167,12 +166,12 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 
 public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (BossgameID != 4)
+	if (g_iActiveBossgameId != 4)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -192,7 +191,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 			}
 		}
 
-		Bossgame4_DamageAccumlated[victim.ClientId] += damage;
+		g_fBossgame4PlayerDamageAccumulated[victim.ClientId] += damage;
 
 		float ang[3];
 		float vel[3];
@@ -200,8 +199,8 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		GetClientEyeAngles(attackerId, ang);
 		GetEntPropVector(victimId, Prop_Data, "m_vecVelocity", vel);
 
-		float baseVelocity = Bossgame4_DamageAccumlated[victim.ClientId];
-		float baseVelocityZ = Bossgame4_DamageAccumlated[victim.ClientId];
+		float baseVelocity = g_fBossgame4PlayerDamageAccumulated[victim.ClientId];
+		float baseVelocityZ = g_fBossgame4PlayerDamageAccumulated[victim.ClientId];
 
 		vel[0] -= baseVelocity * Cosine(DegToRad(ang[1])) * -1.0 * damage*0.01;
 		vel[1] -= baseVelocity * Sine(DegToRad(ang[1])) * -1.0 * damage*0.01;
@@ -211,11 +210,11 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 		char path[64];
 
-		if (Bossgame4_DamageAccumlated[victim.ClientId] < 300.0)
+		if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 300.0)
 		{
 			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_small%d.mp3", GetRandomInt(1, 2));
 		}
-		else if (Bossgame4_DamageAccumlated[victim.ClientId] >= 300.0 && Bossgame4_DamageAccumlated[victim.ClientId] < 450.0)
+		else if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] >= 300.0 && g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 450.0)
 		{
 			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_mod%d.mp3", GetRandomInt(1, 2));
 		}
@@ -230,7 +229,7 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 public void Bossgame4_OnMinigameFinish()
 {
-	if (IsMinigameActive && BossgameID == 4)
+	if (g_bIsMinigameActive && g_iActiveBossgameId == 4)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -246,7 +245,7 @@ public void Bossgame4_OnMinigameFinish()
 
 public void Bossgame4_OnBossStopAttempt()
 {
-	if (IsMinigameActive && BossgameID == 4)
+	if (g_bIsMinigameActive && g_iActiveBossgameId == 4)
 	{
 		int alivePlayers = 0;
 

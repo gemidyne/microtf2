@@ -4,28 +4,26 @@
  * Sap a building! / Get sapped!
  */
 
-TFTeam Minigame14_SpyTeam;
+TFTeam g_tMinigame14SpyTeam;
 
 public void Minigame14_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
-	AddToForward(GlobalForward_OnBuildObject, INVALID_HANDLE, Minigame14_OnBuildObject);
-	AddToForward(GlobalForward_OnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame14_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame14_OnMinigameSelected);
+	AddToForward(g_pfOnBuildObject, INVALID_HANDLE, Minigame14_OnBuildObject);
+	AddToForward(g_pfOnPlayerSappedObject, INVALID_HANDLE, Minigame14_OnPlayerSappedObject);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame14_OnMinigameFinish);
 }
 
 public void Minigame14_OnMinigameSelectedPre()
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
 	
-	IsBlockingDamage = false;
-	IsOnlyBlockingDamageByPlayers = true;
-
-	Minigame14_SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
+	g_eDamageBlockMode = EDamageBlockMode_AllPlayers;
+	g_tMinigame14SpyTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 }
 
 public void Minigame14_GetDynamicCaption(int client)
@@ -36,7 +34,7 @@ public void Minigame14_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		if (player.Team == Minigame14_SpyTeam)
+		if (player.Team == g_tMinigame14SpyTeam)
 		{
 			Format(text, sizeof(text), "%T", "Minigame14_Caption_Spies", client);
 		}
@@ -51,12 +49,12 @@ public void Minigame14_GetDynamicCaption(int client)
 
 public void Minigame14_OnMinigameSelected(int client)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -65,7 +63,7 @@ public void Minigame14_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		if (player.Team == Minigame14_SpyTeam)
+		if (player.Team == g_tMinigame14SpyTeam)
 		{
 			player.Class = TFClass_Spy;
 			player.RemoveAllWeapons();
@@ -90,12 +88,12 @@ public void Minigame14_OnMinigameSelected(int client)
 
 public void Minigame14_OnBuildObject(int client, int entity)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -104,29 +102,32 @@ public void Minigame14_OnBuildObject(int client, int entity)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		SetEntData(entity, Offset_Collision, 2, 4, true);
+		SetEntData(entity, g_oCollisionGroup, 2, 4, true);
 	}
 }
 
 public void Minigame14_OnPlayerSappedObject(int attackerId, int buildingOwnerId)
 {
-	if (MinigameID != 14)
+	if (g_iActiveMinigameId != 14)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
 
-	ClientWonMinigame(attackerId);
-	ClientWonMinigame(buildingOwnerId);
+	Player attacker = new Player(attackerId);
+	Player owner = new Player(buildingOwnerId);
+
+	attacker.TriggerSuccess();
+	owner.TriggerSuccess();
 }
 
 public void Minigame14_OnMinigameFinish()
 {
-	if (MinigameID == 14)
+	if (g_iActiveMinigameId == 14)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

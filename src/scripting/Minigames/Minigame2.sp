@@ -4,36 +4,35 @@
  * Kill an Enemy
  */
 
-TFClassType Minigame2_Class;
+TFClassType g_cMinigame2ClassType;
 
 public void Minigame2_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame2_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame2_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame2_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame2_OnPlayerDeath);
 }
 
 public void Minigame2_OnMinigameSelectedPre()
 {
-	if (MinigameID == 2)
+	if (g_iActiveMinigameId == 2)
 	{
-		SetConVarInt(ConVar_FriendlyFire, 1);
+		g_hConVarFriendlyFire.BoolValue = true;
 
-		Minigame2_Class = view_as<TFClassType>(GetRandomInt(1, 9));
-		IsBlockingDamage = false;
-		IsOnlyBlockingDamageByPlayers = false;
-		IsBlockingDeathCommands = true;
+		g_cMinigame2ClassType = view_as<TFClassType>(GetRandomInt(1, 9));
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
+		g_bIsBlockingKillCommands = true;
 	}
 }
 
 public void Minigame2_OnMinigameSelected(int client)
 {
-	if (MinigameID != 2)
+	if (g_iActiveMinigameId != 2)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -45,7 +44,7 @@ public void Minigame2_OnMinigameSelected(int client)
 		int weapon = 0;
 		int ammo = -1;
 
-		switch (Minigame2_Class)
+		switch (g_cMinigame2ClassType)
 		{
 			case TFClass_Scout:
 			{
@@ -102,7 +101,7 @@ public void Minigame2_OnMinigameSelected(int client)
 
 		player.RemoveAllWeapons();
 
-		player.Class = Minigame2_Class;
+		player.Class = g_cMinigame2ClassType;
 		player.SetHealth(1);
 		player.SetGodMode(false);
 		player.GiveWeapon(weapon);
@@ -116,12 +115,12 @@ public void Minigame2_OnMinigameSelected(int client)
 
 public void Minigame2_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (MinigameID != 2)
+	if (g_iActiveMinigameId != 2)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

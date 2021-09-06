@@ -16,82 +16,80 @@ enum PlayerStatuses
 	PlayerStatus_Winner
 }
 
+enum DamageBlockModes
+{
+	EDamageBlockMode_Nothing = 0,
+	EDamageBlockMode_OtherPlayersOnly,
+	EDamageBlockMode_AllPlayers,
+	EDamageBlockMode_WinnersOnly,
+	EDamageBlockMode_All
+}
+
 /**
  * Integers
  */
 
-int MinigameID = 0;
-int BossgameID = 0;
-int PreviousMinigameID = 0;
-int PreviousBossgameID = 0;
-int SpecialRoundID = 0;
-int ScoreAmount = 1;
-int MinigamesPlayed = 0;
-int NextMinigamePlayedSpeedTestThreshold = 0;
-int BossGameThreshold = 20;
-int MaxRounds = 4;
-int RoundsPlayed = 0;
-int PlayerScore[MAXPLAYERS+1] = 0;
-int PlayerMinigamesLost[MAXPLAYERS+1] = 0;
-int PlayerMinigamesWon[MAXPLAYERS+1] = 0;
-int PlayerIndex[MAXPLAYERS+1] = 0;
-int ActiveParticipantCount = 0;
-int ActiveRedParticipantCount = 0;
-int ActiveBlueParticipantCount = 0;
+int g_iActiveMinigameId = 0;
+int g_iActiveBossgameId = 0;
+int g_iLastPlayedMinigameId = 0;
+int g_iLastPlayedBossgameId = 0;
+int g_iSpecialRoundId = 0;
+int g_iWinnerScorePointsAmount = 1;
+int g_iMinigamesPlayedCount = 0;
+int g_iNextMinigamePlayedSpeedTestThreshold = 0;
+int g_iBossGameThreshold = 20;
+int g_iMaxRoundsPlayable = 4;
+int g_iTotalRoundsPlayed = 0;
+int g_iPlayerScore[MAXPLAYERS+1] = 0;
+int g_iPlayerMinigamesLost[MAXPLAYERS+1] = 0;
+int g_iPlayerMinigamesWon[MAXPLAYERS+1] = 0;
+int g_iActiveParticipantCount = 0;
+int g_iActiveRedParticipantCount = 0;
+int g_iActiveBlueParticipantCount = 0;
 int g_iAnnotationEventId = 0;
 
 /**
  * Floats
  */
 
-float SpeedLevel = 1.0;
-#if defined USE_MAXSPEED_HOOK
-float MaxSpeedDefaults[MAXPLAYERS+1] = 0.0;
-float MaxSpeedOverride[MAXPLAYERS+1] = 0.0;
-#endif
+float g_fActiveGameSpeed = 1.0;
 
 /**
  * Booleans
  */
 
-bool IsPluginEnabled = false;
-bool IsMinigameActive = false;
-bool IsMinigameEnding = false;
-bool IsMapEnding = false;
-bool IsBonusRound = false;
-bool IsBlockingTaunts = true;
-bool IsBlockingDeathCommands = true;
-bool IsBlockingDamage = true;
-bool IsOnlyBlockingDamageByPlayers = false;
-bool IsPlayerParticipant[MAXPLAYERS+1] = false;
-bool IsPlayerWinner[MAXPLAYERS+1] = false;
-bool HideHudGamemodeText = false;
-bool AllowCosmetics = false;
-bool IsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
-
-#if defined USE_MAXSPEED_HOOK
-bool ApplyMaxSpeedOverrides = false;
-#endif
+bool g_bIsPluginEnabled = false;
+bool g_bIsMinigameActive = false;
+bool g_bIsMinigameEnding = false;
+bool g_bIsMapEnding = false;
+bool g_bIsGameOver = false;
+bool g_bIsBlockingTaunts = true;
+bool g_bIsBlockingKillCommands = true;
+bool g_bIsPlayerParticipant[MAXPLAYERS+1] = false;
+bool g_bIsPlayerWinner[MAXPLAYERS+1] = false;
+bool g_bHideHudGamemodeText = false;
+bool g_bAllowCosmetics = false;
+bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
 
 /**
  * Enums
  */
 
-GameStatus GamemodeStatus = GameStatus_Unknown;
-PlayerStatuses PlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+GameStatus g_eGamemodeStatus = GameStatus_Unknown;
+PlayerStatuses g_ePlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+DamageBlockModes g_eDamageBlockMode = EDamageBlockMode_All;
 
 /**
  * Handles
  */
 
-Handle ConVar_MTF2MaxRounds = INVALID_HANDLE;
-Handle Handle_BossCheckTimer = INVALID_HANDLE;
-Handle Handle_ActiveGameTimer = INVALID_HANDLE;
+Handle g_hBossCheckTimer = INVALID_HANDLE;
+Handle g_hActiveGameTimer = INVALID_HANDLE;
 
 /**
  * Offsets
  */
-int Offset_Collision;
-int Offset_WeaponBaseClip1;
-int Offset_PlayerActiveWeapon;
-int Offset_PlayerAmmo;
+int g_oCollisionGroup;
+int g_oWeaponBaseClip1;
+int g_oPlayerActiveWeapon;
+int g_oPlayerAmmo;

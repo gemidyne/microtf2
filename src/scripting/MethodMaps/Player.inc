@@ -17,7 +17,7 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return this.ClientId > 0 && this.ClientId <= MaxClients && IsClientInGame(this.ClientId);
+            return this.ClientId > 0 && this.ClientId <= MaxClients && IsClientInGame(this.ClientId) && !IsClientSourceTV(this.ClientId) && !IsClientInKickQueue(this.ClientId);
         }
     }
 
@@ -142,11 +142,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return IsPlayerParticipant[this.ClientId];
+            return g_bIsPlayerParticipant[this.ClientId];
         }
         public set(bool value)
         {
-            IsPlayerParticipant[this.ClientId] = value;
+            g_bIsPlayerParticipant[this.ClientId] = value;
         }
     }
 
@@ -154,11 +154,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerScore[this.ClientId];
+            return g_iPlayerScore[this.ClientId];
         }
         public set(int value)
         {
-            PlayerScore[this.ClientId] = value;
+            g_iPlayerScore[this.ClientId] = value;
         }
     }
 
@@ -166,11 +166,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerStatus[this.ClientId];
+            return g_ePlayerStatus[this.ClientId];
         }
         public set(PlayerStatuses value)
         {
-            PlayerStatus[this.ClientId] = value;
+            g_ePlayerStatus[this.ClientId] = value;
         }
     }
 
@@ -178,11 +178,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerMinigamesWon[this.ClientId];
+            return g_iPlayerMinigamesWon[this.ClientId];
         }
         public set(int value)
         {
-            PlayerMinigamesWon[this.ClientId] = value;
+            g_iPlayerMinigamesWon[this.ClientId] = value;
         }
     }
 
@@ -190,11 +190,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return PlayerMinigamesLost[this.ClientId];
+            return g_iPlayerMinigamesLost[this.ClientId];
         }
         public set(int value)
         {
-            PlayerMinigamesLost[this.ClientId] = value;
+            g_iPlayerMinigamesLost[this.ClientId] = value;
         }
     }
 
@@ -202,11 +202,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return IsPlayerWinner[this.ClientId];
+            return g_bIsPlayerWinner[this.ClientId];
         }
         public set(bool value)
         {
-            IsPlayerWinner[this.ClientId] = value;
+            g_bIsPlayerWinner[this.ClientId] = value;
         }
     }
 
@@ -214,7 +214,11 @@ methodmap Player __nullable__
     {
         public get()
         {
-            return IsPlayerUsingLegacyDirectX[this.ClientId];
+            return g_bIsPlayerUsingLegacyDirectX[this.ClientId];
+        }
+        public set(bool value)
+        {
+            g_bIsPlayerUsingLegacyDirectX[this.ClientId] = value;
         }
     }
 
@@ -252,7 +256,7 @@ methodmap Player __nullable__
 
     public void SetCollisionsEnabled(bool enabled)
     {
-        SetEntData(this.ClientId, Offset_Collision, enabled ? 5 : 2, 4, true);
+        SetEntData(this.ClientId, g_oCollisionGroup, enabled ? 5 : 2, 4, true);
     }
 
     public void SetGravity(float gravity)
@@ -310,7 +314,7 @@ methodmap Player __nullable__
         public get()
         {
             //Credit to Tylerst & Powerlord for this code.
-            int weapon = GetEntDataEnt2(this.ClientId, Offset_PlayerActiveWeapon);
+            int weapon = GetEntDataEnt2(this.ClientId, g_oPlayerActiveWeapon);
 
             if (IsValidEntity(weapon))
             {
@@ -521,7 +525,7 @@ methodmap Player __nullable__
 
         int offset = GetEntProp(entity, Prop_Send, "m_iPrimaryAmmoType", 1)*4;
 
-        SetEntData(this.ClientId, Offset_PlayerAmmo+offset, count, 4, true);
+        SetEntData(this.ClientId, g_oPlayerAmmo+offset, count, 4, true);
     }
 
     public void SetWeaponClipAmmoCount(int count)
@@ -566,7 +570,7 @@ methodmap Player __nullable__
 
     public void RemoveWearables()
     {
-        if (AllowCosmetics) 
+        if (g_bAllowCosmetics) 
         {
             return;
         }
@@ -595,9 +599,28 @@ methodmap Player __nullable__
         PrintCenterText(this.ClientId, "%T", translationKey, this.ClientId);
     }
 
-    public void PrintChatText(const char[] text)
+    public void PrintChatText(const char[] text, any ...)
     {
-        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, text);
+        char buffer[MAX_BUFFER_LENGTH];
+        char buffer2[MAX_BUFFER_LENGTH];
+        
+        SetGlobalTransTarget(this.ClientId);
+        Format(buffer, sizeof(buffer), "%s", text);
+        VFormat(buffer2, sizeof(buffer2), buffer, 3);
+
+        if (g_iSpecialRoundId == 19)
+        {
+            char rewritten[MAX_BUFFER_LENGTH];
+            ReverseString(buffer2, sizeof(buffer2), rewritten);
+            ReplaceString(rewritten, sizeof(rewritten), "}tluafed{", "{default}");
+            ReplaceString(rewritten, sizeof(rewritten), "}der{", "{red}");
+            ReplaceString(rewritten, sizeof(rewritten), "}eulb{", "{blue}");
+            ReplaceString(rewritten, sizeof(rewritten), "}etihw{", "{white}");
+
+            strcopy(buffer2, sizeof(buffer2), rewritten);
+        }
+
+        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer2);
     }
 
     public void ShowAnnotation(int attachToEntity, float lifetime, char text[32])
@@ -641,7 +664,32 @@ methodmap Player __nullable__
 
     public void TriggerSuccess()
     {
-        ClientWonMinigame(this.ClientId);
+        bool valid = this.IsValid && this.IsParticipating && this.Status == PlayerStatus_NotWon;
+
+        if (!valid)
+        {
+            return;
+        }
+
+        this.Status = PlayerStatus_Winner;
+
+        if (g_iActiveParticipantCount > 12)
+        {
+            EmitSoundToClient(this.ClientId, SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+        }
+        else
+        {
+            EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+        }
+
+        if (this.Team == TFTeam_Blue)
+        {
+            CreateParticle(this.ClientId, "Micro_Win_Blue", 6.0);
+        }
+        else if (this.Team == TFTeam_Red)
+        {
+            CreateParticle(this.ClientId, "Micro_Win_Red", 6.0);
+        }
     }
 
     public void GiveWeapon(int weaponItemIndex)
@@ -651,6 +699,6 @@ methodmap Player __nullable__
 
     public void ResetWeapon(bool viewModel)
     {
-        Weapon_ResetToMelee(this.ClientId, viewModel);
+        Weapons_ResetToMelee(this.ClientId, viewModel);
     }
 }

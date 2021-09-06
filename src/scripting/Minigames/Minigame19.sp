@@ -4,33 +4,33 @@
  * Change Class!
  */
 
-TFClassType Minigame19_ClassMode = TFClass_Unknown;
+TFClassType g_cMinigame19ExpectedClass = TFClass_Unknown;
 
 public void Minigame19_EntryPoint()
 {
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, Minigame19_OnPlayerClassChange);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame19_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame19_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, Minigame19_OnPlayerClassChange);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame19_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame19_OnMinigameSelected);
 }
 
 public void Minigame19_OnMinigameSelectedPre()
 {
-	if (MinigameID == 19)
+	if (g_iActiveMinigameId == 19)
 	{
-		Minigame19_ClassMode = view_as<TFClassType>(GetRandomInt(0, 9));
+		g_cMinigame19ExpectedClass = view_as<TFClassType>(GetRandomInt(0, 9));
 
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 	}
 }
 
 public void Minigame19_OnMinigameSelected(int client)
 {
-	if (MinigameID != 19)
+	if (g_iActiveMinigameId != 19)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -41,14 +41,16 @@ public void Minigame19_OnMinigameSelected(int client)
 	{
 		TFClassType playerClass = player.Class;
 
-		if (Minigame19_ClassMode != TFClass_Unknown && playerClass == Minigame19_ClassMode)
+		if (g_cMinigame19ExpectedClass != TFClass_Unknown && playerClass == g_cMinigame19ExpectedClass)
 		{
-			while (playerClass == Minigame19_ClassMode)
+			while (playerClass == g_cMinigame19ExpectedClass)
 			{
 				player.SetRandomClass();
 				playerClass = player.Class;
 			}
 		}
+
+		player.ResetWeapon(false);
 	}
 }
 
@@ -60,7 +62,7 @@ public void Minigame19_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		switch (Minigame19_ClassMode)
+		switch (g_cMinigame19ExpectedClass)
 		{
 			case TFClass_Unknown:
 			{
@@ -119,12 +121,12 @@ public void Minigame19_GetDynamicCaption(int client)
 
 public void Minigame19_OnPlayerClassChange(int client, int class)
 {
-	if (MinigameID != 19)
+	if (g_iActiveMinigameId != 19)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -135,15 +137,15 @@ public void Minigame19_OnPlayerClassChange(int client, int class)
 	{
 		TFClassType playerClass = view_as<TFClassType>(class);
 
-		if (Minigame19_ClassMode == TFClass_Unknown)
+		if (g_cMinigame19ExpectedClass == TFClass_Unknown)
 		{
 			// Any class is acceptable
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
-		else if (playerClass == Minigame19_ClassMode)
+		else if (playerClass == g_cMinigame19ExpectedClass)
 		{
 			// Must match expected class.
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 		else
 		{

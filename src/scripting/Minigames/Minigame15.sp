@@ -4,58 +4,58 @@
  * Build! 
  */
 
-bool Minigame15_AssertObject = false;
-TFObjectType Minigame15_ExpectedObject;
+bool g_bMinigame15ShouldAssertObject = false;
+TFObjectType g_oMinigame15ExpectedObjectType;
 
 public void Minigame15_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame15_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame15_OnMinigameSelected);
-	AddToForward(GlobalForward_OnBuildObject, INVALID_HANDLE, Minigame15_OnBuildObject);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame15_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame15_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame15_OnMinigameSelected);
+	AddToForward(g_pfOnBuildObject, INVALID_HANDLE, Minigame15_OnBuildObject);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame15_OnMinigameFinish);
 }
 
 public void Minigame15_OnMinigameSelectedPre()
 {
-	if (MinigameID == 15)
+	if (g_iActiveMinigameId == 15)
 	{
-		Minigame15_AssertObject = GetRandomInt(0, 1) == 1;
+		g_bMinigame15ShouldAssertObject = GetRandomInt(0, 1) == 1;
 
-		if (Minigame15_AssertObject)
+		if (g_bMinigame15ShouldAssertObject)
 		{
 			switch (GetRandomInt(0, 2))
 			{
 				case 0:
 				{
-					Minigame15_ExpectedObject = TFObject_Dispenser;
+					g_oMinigame15ExpectedObjectType = TFObject_Dispenser;
 				}
 
 				case 1:
 				{
-					Minigame15_ExpectedObject = TFObject_Teleporter;
+					g_oMinigame15ExpectedObjectType = TFObject_Teleporter;
 				}
 
 				case 2:
 				{
-					Minigame15_ExpectedObject = TFObject_Sentry;
+					g_oMinigame15ExpectedObjectType = TFObject_Sentry;
 				}
 			}
 		}
 		else
 		{
-			SetConVarInt(ConVar_TFCheapObjects, 1); // Buildings dont cost metal to build. 
+			g_hConVarTFCheapObjects.BoolValue = true;
 		}
 	}
 }
 
 public void Minigame15_OnMinigameSelected(int client)
 {
-	if (MinigameID != 15)
+	if (g_iActiveMinigameId != 15)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -92,9 +92,9 @@ public void Minigame15_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame15_AssertObject)
+		if (g_bMinigame15ShouldAssertObject)
 		{
-			switch (Minigame15_ExpectedObject)
+			switch (g_oMinigame15ExpectedObjectType)
 			{
 				case TFObject_Dispenser:
 				{
@@ -121,12 +121,12 @@ public void Minigame15_GetDynamicCaption(int client)
 
 public void Minigame15_OnBuildObject(int client, int entity)
 {
-	if (MinigameID != 15)
+	if (g_iActiveMinigameId != 15)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -137,7 +137,7 @@ public void Minigame15_OnBuildObject(int client, int entity)
 	{
 		bool winner = false;
 
-		if (!Minigame15_AssertObject)
+		if (!g_bMinigame15ShouldAssertObject)
 		{
 			winner = true;
 		}
@@ -145,21 +145,21 @@ public void Minigame15_OnBuildObject(int client, int entity)
 		{
 			TFObjectType entityType = TF2_GetObjectType(entity);
 
-			winner = entityType == Minigame15_ExpectedObject;
+			winner = entityType == g_oMinigame15ExpectedObjectType;
 		}
 
 		if (winner)
 		{
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 	}
 }
 
 public void Minigame15_OnMinigameFinish()
 {
-	if (MinigameID == 15)
+	if (g_iActiveMinigameId == 15)
 	{
-		SetConVarInt(ConVar_TFCheapObjects, 0);
+		g_hConVarTFCheapObjects.BoolValue = false;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{

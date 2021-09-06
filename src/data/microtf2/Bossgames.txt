@@ -2,67 +2,86 @@
 {
 	"1"
 	{
+		"Name"			"Acid Pit Escape"
 		"Enabled"		"1"
 		"Duration"		"58.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/rocketjump.mp3"
 		"EntryPoint"		"Bossgame1_EntryPoint"
-		"Caption"		"ROCKET JUMP TO THE TOP!"
+		"UsesCaption"	"1"
 	}
 	"2"
 	{
+		"Name"			"Escape from the Factory"
 		"Enabled"		"1"
 		"Duration"		"80.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/escape.mp3"
 		"EntryPoint"		"Bossgame2_EntryPoint"
-		"Caption"		"ESCAPE THE FACTORY!"
 		"BlockedSpecialRounds" "1,3,5,6,7,12,14"
+		"UsesCaption"	"1"
 	}
 	"3"
 	{
+		"Name"			"Disappearing Blocks"
 		"Enabled"		"1"
-		"Duration"		"60.0"
-		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/boxing.mp3"
+		"Duration"		"80.0"
+		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/disappearingblocks.mp3"
 		"EntryPoint"		"Bossgame3_EntryPoint"
-		"Caption"		"DEFEAT THE ENEMY TEAM!"
-		"BlockedSpecialRounds" "12,14"
+		"BlockedSpecialRounds" "1,3,5,6,7,12"
 		"RequiresMultiplePlayers"	"1"
+		"UsesCaption"	"1"
 	}
 	"4"
 	{
+		"Name"			"Smash Arena"
 		"Enabled"		"1"
 		"Duration"		"81.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/fallingfloor.mp3"
 		"EntryPoint"		"Bossgame4_EntryPoint"
-		"Caption"		"DON'T FALL INTO THE WATER!"
 		"BlockedSpecialRounds" "12"
 		"RequiresMultiplePlayers"	"1"
+		"UsesCaption"	"1"
 	}
 	"5"
 	{
+		"Name"			"BeatBlock Galaxy"
 		"Enabled"		"1"
 		"Duration"		"120.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/beatblock.mp3"
 		"EntryPoint"		"Bossgame5_EntryPoint"
-		"Caption"		"REACH THE GOAL!"
 		"BlockedSpecialRounds" "1,5,6,7"
+		"UsesCaption"	"1"
 	}
 	"6"
 	{
+		"Name"			"Target Practice Arena"
 		"Enabled"		"1"
 		"Duration"		"60.0"
 		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/targetpractice.mp3"
 		"EntryPoint"		"Bossgame6_EntryPoint"
-		"Caption"		"SHOOT THE MOST BARRELS!"
 		"RequiresMultiplePlayers"	"1"
+		"BlockedSpecialRounds" "0,1,3,5,6,7,11,12,14"
+		"UsesCaption"	"1"
 	}
 	"7"
 	{
+		"Name"			"Super TypingAttack 2: Goodbye Keyboard"
 		"Enabled"		"1"
 		"Duration"		"300.0"
 		"BackgroundMusic"	""
 		"EntryPoint"		"Bossgame7_EntryPoint"
-		"Caption"		""
 		"RequiresMultiplePlayers"	"1"
-		"BlockedSpecialRounds" "0,1,3,5,6,7,11,12,13,14"
+		"BlockedSpecialRounds" "0,1,3,5,6,7,11,12,14"
+		"UsesCaption"	"0"
+	}
+	"8"
+	{
+		"Name"			"Inventory Day"
+		"Enabled"		"1"
+		"Duration"		"120.0"
+		"BackgroundMusic"	"gemidyne/warioware/bosses/bgm/propcount.mp3"
+		"EntryPoint"		"Bossgame8_EntryPoint"
+		"RequiresMultiplePlayers"	"1"
+		"BlockedSpecialRounds" "0,1,3,5,6,7,11,12,14"
+		"UsesCaption"	"0"
 	}
 }

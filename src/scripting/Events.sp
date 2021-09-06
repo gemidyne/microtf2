@@ -6,7 +6,7 @@
 
 public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -26,7 +26,7 @@ public void Event_PlayerSpawn(Handle event, const char[] name, bool dontBroadcas
 
 public Action Timer_PlayerSpawn(Handle timer, int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -37,35 +37,35 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 	{
 		player.RemoveWearables();
 
-		if (IsBonusRound)
+		if (g_bIsGameOver)
 		{
 			player.SetThirdPersonMode(true);
 							
 			TF2_StunPlayer(player.ClientId, 8.0, 0.0, TF_STUNFLAGS_LOSERSTATE, 0);
 			player.SetHealth(1);
 		}
-		else if (!IsBonusRound)
+		else if (!g_bIsGameOver)
 		{
 			player.SetGodMode(true);
 		}
-		else if (MinigamesPlayed == 999 || !IsPlayerParticipant[client])
+		else if (g_iMinigamesPlayedCount == 999 || !g_bIsPlayerParticipant[client])
 		{
 			player.SetGodMode(false);
 		}
 
 		player.ResetWeapon(false);
 
-		if (GlobalForward_OnPlayerSpawn != INVALID_HANDLE)
+		if (g_pfOnPlayerSpawn != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnPlayerSpawn);
+			Call_StartForward(g_pfOnPlayerSpawn);
 			Call_PushCell(client);
 			Call_Finish();
 		}
 
-		if (IsMinigameActive && !player.IsParticipating && SpecialRoundID != 17)
+		if (g_bIsMinigameActive && !player.IsParticipating && g_iSpecialRoundId != 17)
 		{
 			//Someone joined during a Minigame, & isn't a Participant, so lets notify them.
-			CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "System_PlayerSpawn_RespawnNotice", client);
+			player.PrintChatText("%T", "System_PlayerSpawn_RespawnNotice", player.ClientId);
 		}
 	}
 
@@ -74,23 +74,24 @@ public Action Timer_PlayerSpawn(Handle timer, int client)
 
 public void Event_PlayerTeam(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
+	Player player = new Player(client);
 
-	if (IsClientInGame(client))
+	if (player.IsInGame)
 	{
-		IsPlayerParticipant[client] = false;
-		PlayerStatus[client] = PlayerStatus_NotWon;
+		player.IsParticipating = false;
+		player.Status = PlayerStatus_NotWon;
 	}
 }
 
 public Action Event_Regenerate(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -103,7 +104,7 @@ public Action Event_Regenerate(Handle event, const char[] name, bool dontBroadca
 
 public Action Timer_LockerWeaponReset(Handle timer, int userid)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Handled;
 	}
@@ -111,7 +112,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 	int client = GetClientOfUserId(userid);
 	Player player = new Player(client);
 
-	if (player.IsValid && !IsMinigameActive && !IsBonusRound)
+	if (player.IsValid && !g_bIsMinigameActive && !g_bIsGameOver)
 	{
 		player.RemoveWearables();
 		player.ResetWeapon(false);
@@ -122,7 +123,7 @@ public Action Timer_LockerWeaponReset(Handle timer, int userid)
 
 public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -131,15 +132,15 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 	
 	if (IsClientInGame(client))
 	{
-		if (IsMinigameActive)
+		if (g_bIsMinigameActive)
 		{
-			if (IsPlayerParticipant[client])
+			if (g_bIsPlayerParticipant[client])
 			{
-				if (GlobalForward_OnPlayerDeath != INVALID_HANDLE)
+				if (g_pfOnPlayerDeath != INVALID_HANDLE)
 				{
 					int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
-					Call_StartForward(GlobalForward_OnPlayerDeath);
+					Call_StartForward(g_pfOnPlayerDeath);
 					Call_PushCell(client);
 					Call_PushCell(attacker);
 					Call_Finish();
@@ -155,7 +156,7 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 
 public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -163,9 +164,9 @@ public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 
-	if (GlobalForward_OnPlayerHurt != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[attacker])
+	if (g_pfOnPlayerHurt != INVALID_HANDLE && g_bIsPlayerParticipant[client] && g_bIsPlayerParticipant[attacker])
 	{
-		Call_StartForward(GlobalForward_OnPlayerHurt);
+		Call_StartForward(g_pfOnPlayerHurt);
 		Call_PushCell(client);
 		Call_PushCell(attacker);
 		Call_Finish();
@@ -174,7 +175,7 @@ public void Event_PlayerHurt(Handle event, const char[] name, bool dontBroadcast
 
 public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -182,9 +183,9 @@ public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int entity = GetEventInt(event, "index");
 
-	if (GlobalForward_OnBuildObject != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnBuildObject != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnBuildObject);
+		Call_StartForward(g_pfOnBuildObject);
 		Call_PushCell(client);
 		Call_PushCell(entity);
 		Call_Finish();
@@ -193,16 +194,16 @@ public void Event_PlayerBuiltObject(Handle event, const char[] name, bool dontBr
 
 public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnStickyJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnStickyJump != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnStickyJump);
+		Call_StartForward(g_pfOnStickyJump);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -210,7 +211,7 @@ public void Event_PlayerStickyJump(Handle event, const char[] name, bool dontBro
 
 public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players, int playersNum, bool reliable, bool init)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
@@ -218,9 +219,9 @@ public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players
 	int client = BfReadByte(bf);
 	int victim = BfReadByte(bf);
 
-	if (GlobalForward_OnPlayerJarated != INVALID_HANDLE && IsPlayerParticipant[client] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerJarated != INVALID_HANDLE && g_bIsPlayerParticipant[client] && g_bIsPlayerParticipant[victim])
 	{
-		Call_StartForward(GlobalForward_OnPlayerJarated);
+		Call_StartForward(g_pfOnPlayerJarated);
 		Call_PushCell(client);
 		Call_PushCell(victim);
 		Call_Finish();
@@ -231,16 +232,16 @@ public Action Event_PlayerJarated(UserMsg msg_id, Handle bf, const int[] players
 
 public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnRocketJump != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnRocketJump != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnRocketJump);
+		Call_StartForward(g_pfOnRocketJump);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -248,16 +249,16 @@ public void Event_PlayerRocketJump(Handle event, const char[] name, bool dontBro
 
 public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 
-	if (GlobalForward_OnPropBroken != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPropBroken != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnPropBroken);
+		Call_StartForward(g_pfOnPropBroken);
 		Call_PushCell(client);
 		Call_Finish();
 	}
@@ -265,7 +266,7 @@ public void Event_PropBroken(Handle event, const char[] name, bool dontBroadcast
 
 public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -273,9 +274,9 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 	int client = GetClientOfUserId(GetEventInt(event, "userid"));
 	int newClass = GetEventInt(event, "class");
 
-	if (GlobalForward_OnPlayerClassChange != INVALID_HANDLE && IsPlayerParticipant[client])
+	if (g_pfOnPlayerClassChange != INVALID_HANDLE && g_bIsPlayerParticipant[client])
 	{
-		Call_StartForward(GlobalForward_OnPlayerClassChange);
+		Call_StartForward(g_pfOnPlayerClassChange);
 		Call_PushCell(client);
 		Call_PushCell(newClass);
 		Call_Finish();
@@ -284,7 +285,7 @@ public void Event_PlayerChangeClass(Handle event, const char[] name, bool dontBr
 
 public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -292,9 +293,9 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 	int stunner = GetClientOfUserId(GetEventInt(event, "stunner"));
 	int victim = GetClientOfUserId(GetEventInt(event, "victim"));
 
-	if (GlobalForward_OnPlayerStunned != INVALID_HANDLE && IsPlayerParticipant[stunner] && IsPlayerParticipant[victim])
+	if (g_pfOnPlayerStunned != INVALID_HANDLE && g_bIsPlayerParticipant[stunner] && g_bIsPlayerParticipant[victim])
 	{
-		Call_StartForward(GlobalForward_OnPlayerStunned);
+		Call_StartForward(g_pfOnPlayerStunned);
 		Call_PushCell(stunner);
 		Call_PushCell(victim);
 		Call_Finish();
@@ -303,7 +304,7 @@ public void Event_PlayerStunned(Handle event, const char[] name, bool dontBroadc
 
 public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -311,9 +312,9 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 	Player attacker = new Player(GetClientOfUserId(GetEventInt(event, "userid")));
 	Player buildingOwner = new Player(GetClientOfUserId(GetEventInt(event, "ownerid")));
 
-	if (GlobalForward_OnPlayerSappedObject != INVALID_HANDLE && attacker.IsParticipating && buildingOwner.IsParticipating)
+	if (g_pfOnPlayerSappedObject != INVALID_HANDLE && attacker.IsParticipating && buildingOwner.IsParticipating)
 	{
-		Call_StartForward(GlobalForward_OnPlayerSappedObject);
+		Call_StartForward(g_pfOnPlayerSappedObject);
 		Call_PushCell(attacker.ClientId);
 		Call_PushCell(buildingOwner.ClientId);
 		Call_Finish();
@@ -322,10 +323,12 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 
 public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
+
+	Player player = new Player(client);
 
 	if (impulse != 0)
 	{
@@ -339,9 +342,9 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 		}
 	}
 
-	if (GlobalForward_OnPlayerRunCmd != INVALID_HANDLE)
+	if (g_pfOnPlayerRunCmd != INVALID_HANDLE && player.IsValid && player.IsParticipating)
 	{
-		Call_StartForward(GlobalForward_OnPlayerRunCmd);
+		Call_StartForward(g_pfOnPlayerRunCmd);
 		Call_PushCell(client);
 		Call_PushCellRef(buttons);
 		Call_PushCellRef(impulse);
@@ -356,14 +359,14 @@ public Action OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3
 
 public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
-	if (GlobalForward_OnTfRoundStart != INVALID_HANDLE)
+	if (g_pfOnTfRoundStart != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnTfRoundStart);
+		Call_StartForward(g_pfOnTfRoundStart);
 		Call_Finish();
 	}
 
@@ -372,15 +375,15 @@ public Action Event_RoundStart(Handle event, const char[] name, bool dontBroadca
 
 public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
-	if (GamemodeStatus != GameStatus_WaitingForPlayers)
+	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
-		IsMapEnding = true;
-		SpeedLevel = 1.0;
+		g_bIsMapEnding = true;
+		g_fActiveGameSpeed = 1.0;
 	}
 
 	return Plugin_Continue;
@@ -388,21 +391,21 @@ public Action Event_RoundEnd(Handle event, const char[] name, bool dontBroadcast
 
 public void OnEntityCreated(int entity, const char[] classname)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
-	if (!AllowCosmetics && StrEqual(classname, "tf_wearable"))
+	if (!g_bAllowCosmetics && StrEqual(classname, "tf_wearable"))
 	{
 		// Delay is present so m_ModelName is set 
 		CreateTimer(0.1, Timer_HatRemove, entity);
 	}
 	else
 	{
-		if (GlobalForward_OnEntityCreated != INVALID_HANDLE)
+		if (g_pfOnEntityCreated != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnEntityCreated);
+			Call_StartForward(g_pfOnEntityCreated);
 			Call_PushCell(entity);
 			Call_PushString(classname);
 			Call_Finish();
@@ -412,7 +415,7 @@ public void OnEntityCreated(int entity, const char[] classname)
 
 public Action Timer_HatRemove(Handle timer, int entity)
 {
-	if (!IsPluginEnabled || AllowCosmetics)
+	if (!g_bIsPluginEnabled || g_bAllowCosmetics)
 	{
 		return Plugin_Handled;
 	}
@@ -445,14 +448,14 @@ public Action Transmit_HatRemove(int entity, int client)
 
 public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDefinitionIndex, Handle &hItem)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
 	bool isCosmeticItem = StrEqual(classname, "tf_wearable", false) || StrEqual(classname, "tf_wearable_demoshield", false) || StrEqual(classname, "tf_powerup_bottle", false) || StrEqual(classname, "tf_weapon_spellbook", false);
 
-	if (!AllowCosmetics && isCosmeticItem) 
+	if (!g_bAllowCosmetics && isCosmeticItem) 
 	{
 		return Plugin_Stop;
 	}
@@ -462,26 +465,26 @@ public Action TF2Items_OnGiveNamedItem(int client, char[] classname, int iItemDe
 
 public void OnGameFrame()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
-	if (GlobalForward_OnGameFrame != INVALID_HANDLE)
+	if (g_pfOnGameFrame != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnGameFrame);
+		Call_StartForward(g_pfOnGameFrame);
 		Call_Finish();
 	}
 
-	if (GameRules_GetRoundState() == RoundState_Pregame && GamemodeStatus != GameStatus_WaitingForPlayers)
+	if (GameRules_GetRoundState() == RoundState_Pregame && g_eGamemodeStatus != GameStatus_WaitingForPlayers)
 	{
-		GamemodeStatus = GameStatus_WaitingForPlayers;
+		g_eGamemodeStatus = GameStatus_WaitingForPlayers;
 	}
 }
 
 public void TF2_OnWaitingForPlayersStart()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -491,14 +494,14 @@ public void TF2_OnWaitingForPlayersStart()
 
 public void TF2_OnWaitingForPlayersEnd()
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
 	PrepareConVars();
 
-	GamemodeStatus = GameStatus_Tutorial;
+	g_eGamemodeStatus = GameStatus_Tutorial;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -524,14 +527,14 @@ public void TF2_OnWaitingForPlayersEnd()
 
 public void TF2_OnConditionAdded(int client, TFCond condition)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
-	if (GlobalForward_OnPlayerConditionAdded != INVALID_HANDLE)
+	if (g_pfOnPlayerConditionAdded != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerConditionAdded);
+		Call_StartForward(g_pfOnPlayerConditionAdded);
 		Call_PushCell(client);
 		Call_PushCell(view_as<int>(condition));
 		Call_Finish();
@@ -566,23 +569,46 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 
 public void TF2_OnConditionRemoved(int client, TFCond condition)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
-	if (GlobalForward_OnPlayerConditionRemoved != INVALID_HANDLE)
+	if (g_pfOnPlayerConditionRemoved != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerConditionRemoved);
+		Call_StartForward(g_pfOnPlayerConditionRemoved);
 		Call_PushCell(client);
 		Call_PushCell(view_as<int>(condition));
 		Call_Finish();
 	}
 }
 
+public Action OnClientSayCommand(int client, const char[] command, const char[] sArgs)
+{
+	if (IsChatTrigger())
+	{
+		return Plugin_Continue;
+	}
+
+	if (g_pfOnPlayerChatMessage != INVALID_HANDLE)
+	{
+		Action result;
+
+		Call_StartForward(g_pfOnPlayerChatMessage);
+		Call_PushCell(client);
+		Call_PushString(sArgs);
+		Call_PushCell(strcmp(command, "say_team", false));
+		Call_Finish(result);
+
+		return result;
+	}
+
+	return Plugin_Continue;
+}
+
 public void OnClientPostAdminCheck(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -595,21 +621,21 @@ public void OnClientPostAdminCheck(int client)
 		{
 			SendConVarValue(client, FindConVar("sv_cheats"), "1");
 			QueryClientConVar(client, "mat_dxlevel", OnQueryClientConVarCallback);
-
-			if (GamemodeStatus == GameStatus_WaitingForPlayers)
+		
+			if (g_eGamemodeStatus == GameStatus_WaitingForPlayers)
 			{
 				player.DisplayOverlay(OVERLAY_WELCOME);
 				EmitSoundToClient(client, SYSBGM_WAITING);
 			}
 		}
 
-		if (GamemodeStatus != GameStatus_WaitingForPlayers && SpecialRoundID == 9)
+		if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && g_iSpecialRoundId == 9)
 		{
 			player.Score = 4;
 			player.Status = PlayerStatus_NotWon;
 		}
 
-		if (SpecialRoundID != 17)
+		if (g_iSpecialRoundId != 17)
 		{
 			player.IsParticipating = true;
 		}
@@ -618,7 +644,7 @@ public void OnClientPostAdminCheck(int client)
 
 public void OnClientPutInServer(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -628,7 +654,7 @@ public void OnClientPutInServer(int client)
 
 public void OnClientDisconnect(int client)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
@@ -639,6 +665,8 @@ public void OnClientDisconnect(int client)
 	{
 		player.Score = 0;
 		player.Status = PlayerStatus_NotWon;
+		player.IsUsingLegacyDirectX = false;
+		player.SetCaption("");
 
 		DetachPlayerHooks(player.ClientId);
 	}
@@ -670,6 +698,6 @@ public void OnQueryClientConVarCallback(QueryCookie cookie, int client, ConVarQu
 	{
 		int dxLevel = StringToInt(cvarValue);
 
-		IsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
+		g_bIsPlayerUsingLegacyDirectX[client] = dxLevel == 80 || dxLevel == 81;
 	}
 }

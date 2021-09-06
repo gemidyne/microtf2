@@ -4,6 +4,7 @@
 	{
 		"FriendlyName"		"Wario"
 		"selectable"		"1"
+		"AllowVoices"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -44,7 +45,8 @@
 	"1"
 	{
 		"FriendlyName"		"Mona"
-		"selectable"		"1"
+		"Selectable"		"1"
+		"AllowVoices"		"0"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -85,7 +87,8 @@
 	"2"
 	{
 		"FriendlyName"		"Orbulon"
-		"selectable"		"1"
+		"Selectable"		"1"
+		"AllowVoices"		"0"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -126,7 +129,8 @@
 	"3"
 	{
 		"FriendlyName"		"Jimmy T"
-		"selectable"		"1"
+		"Selectable"		"1"
+		"AllowVoices"		"0"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -167,7 +171,8 @@
 	"4"
 	{
 		"FriendlyName"		"Wario"
-		"selectable"		"1"
+		"Selectable"		"1"
+		"AllowVoices"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -208,7 +213,8 @@
 	"5"
 	{
 		"FriendlyName"		"WarioMan"
-		"selectable"		"1"
+		"Selectable"		"1"
+		"AllowVoices"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"
@@ -249,6 +255,7 @@
 	"99"
 	{
 		"FriendlyName"		"Special Round"
+		"AllowVoices"		"1"
 		"SysMusic_PreMinigame"
 		{
 			"0"

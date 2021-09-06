@@ -13,11 +13,19 @@ methodmap Bossgame __nullable__
         }
     }
 
+    property bool UsesCaption
+    {
+        public get()
+        {
+            return g_bBossgameUsesCaption[this.Id];
+        }
+    }
+
     property bool HasDynamicCaption
     {
         public get()
         {
-            return BossgameCaptionIsDynamic[this.Id];
+            return g_bBossgameHasDynamicCaption[this.Id];
         }
     }
 
@@ -25,17 +33,17 @@ methodmap Bossgame __nullable__
     {
         public get()
         {
-            return BossgameLength[this.Id];
+            return g_fBossgameBgmLength[this.Id];
         }
     }
 
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
-        strcopy(buffer, size, BossgameDynamicCaptionFunctions[this.Id]);
+        strcopy(buffer, size, g_sBossgameDynamicCaptionFunctionName[this.Id]);
     }
 
     public void GetBgmPath(char[] buffer, int size)
     {
-        strcopy(buffer, size, BossgameMusic[this.Id]);
+        strcopy(buffer, size, g_sBossgameBgm[this.Id]);
     }
 }

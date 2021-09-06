@@ -12,8 +12,8 @@ stock int CreatePropEntity(float position[3], char[] modelPath, int health, floa
 	
 	if (IsValidEntity(entity))
 	{
-		SetEntityModel(entity, modelPath);
-		
+		DispatchKeyValue(entity, "model", modelPath);
+
 		DispatchKeyValue(entity, "disableshadows", "1");
 		DispatchKeyValue(entity, "disablereceiveshadows", "1");
 		DispatchKeyValue(entity, "massScale", "70");
@@ -85,6 +85,39 @@ stock void CreateParticle(int client, const char[] effect, float time, bool atta
 	}
 }
 
+stock int CreateGlow(int target, int color[4] = {255, 255, 255, 255}, float duration)
+{
+	// Credit to Drixevel for this. Original version @ https://github.com/Drixevel/SM-Resources/blob/master/includes/misc-tf.inc
+	char classname[64];
+	GetEntityClassname(target, classname, sizeof(classname));
+
+	char targetName[128];
+	Format(targetName, sizeof(targetName), "%s%i", classname, target);
+	DispatchKeyValue(target, "targetname", targetName);
+
+	int entity = CreateEntityByName("tf_glow");
+
+	if (IsValidEntity(entity))
+	{
+		char colour[64];
+		Format(colour, sizeof(colour), "%i %i %i %i", color[0], color[1], color[2], color[3]);
+
+		DispatchKeyValue(entity, "target", targetName);
+		DispatchKeyValue(entity, "Mode", "1"); //Mode is currently broken.
+		DispatchKeyValue(entity, "GlowColor", colour);
+		DispatchSpawn(entity);
+		
+		SetVariantString("!activator");
+		AcceptEntityInput(entity, "SetParent", target, entity);
+		AcceptEntityInput(entity, "Enable");
+
+		// We don't want to leak; so remove after this time
+		CreateTimer(duration, Timer_RemoveEntity, entity);
+	}
+
+	return entity;
+}
+
 public Action Timer_RemoveEntity(Handle timer, int entity) 
 {
     if (IsValidEntity(entity)) 
@@ -109,21 +142,21 @@ public Action Timer_RemoveBossOverlay(Handle timer)
 
 public Action Timer_CheckBossEnd(Handle timer, int client)
 { 
-	if (GamemodeStatus != GameStatus_Playing)
+	if (g_eGamemodeStatus != GameStatus_Playing)
 	{
 		ResetGamemode();
 		return Plugin_Stop;
 	}
 
-	if (IsMinigameActive && BossgameID > 0)
+	if (g_bIsMinigameActive && g_iActiveBossgameId > 0)
 	{
-		if (GlobalForward_OnBossStopAttempt != INVALID_HANDLE)
+		if (g_pfOnBossStopAttempt != INVALID_HANDLE)
 		{
-			Call_StartForward(GlobalForward_OnBossStopAttempt);
+			Call_StartForward(g_pfOnBossStopAttempt);
 			Call_Finish();
 		}
 
-		Handle_BossCheckTimer = CreateTimer(2.0, Timer_CheckBossEnd);
+		g_hBossCheckTimer = CreateTimer(2.5, Timer_CheckBossEnd);
 	}
 
 	return Plugin_Handled;
@@ -131,14 +164,14 @@ public Action Timer_CheckBossEnd(Handle timer, int client)
 
 public void EndBoss()
 {
-	if (IsMinigameActive && BossgameID > 0 && MinigameID == 0)
+	if (g_bIsMinigameActive && g_iActiveBossgameId > 0 && g_iActiveMinigameId == 0)
 	{
-		SetConVarInt(ConVar_FriendlyFire, 1);
+		g_hConVarFriendlyFire.BoolValue = true;
 
-		if (MinigamesPlayed != BossGameThreshold)
+		if (g_iMinigamesPlayedCount != g_iBossGameThreshold)
 		{
-			SpeedLevel = 1.0;
-			MinigamesPlayed = 999;
+			g_fActiveGameSpeed = 1.0;
+			g_iMinigamesPlayedCount = 999;
 		}
 
 		for (int i = 1; i <= MaxClients; i++)
@@ -149,7 +182,7 @@ public void EndBoss()
 			{
                 for (int a = 0; a < 10; a++)
                 {
-                    StopSound(i, SNDCHAN_AUTO, BossgameMusic[BossgameID]);
+                    StopSound(i, SNDCHAN_AUTO, g_sBossgameBgm[g_iActiveBossgameId]);
                 }
 
                 if (player.IsParticipating)
@@ -159,10 +192,10 @@ public void EndBoss()
 			}
 		}
 
-		if (Handle_ActiveGameTimer != INVALID_HANDLE)
+		if (g_hActiveGameTimer != INVALID_HANDLE)
 		{
-			KillTimer(Handle_ActiveGameTimer);
-			Handle_ActiveGameTimer = INVALID_HANDLE;
+			KillTimer(g_hActiveGameTimer);
+			g_hActiveGameTimer = INVALID_HANDLE;
 		}
 
 		CreateTimer(0.0, Timer_GameLogic_EndMinigame);

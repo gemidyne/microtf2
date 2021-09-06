@@ -6,18 +6,18 @@
 
 public void Minigame12_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame12_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame12_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame12_OnPlayerTakeDamage);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame12_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame12_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame12_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame12_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame12_OnMinigameFinish);
 }
 
 public void Minigame12_OnMinigameSelectedPre()
 {
-	if (MinigameID == 12)
+	if (g_iActiveMinigameId == 12)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
+		g_bIsBlockingKillCommands = false;
 
 		CreateTimer(0.15, Timer_Minigame12_TriggerWater);
 	}
@@ -25,12 +25,12 @@ public void Minigame12_OnMinigameSelectedPre()
 
 public void Minigame12_OnMinigameSelected(int client)
 {
-	if (MinigameID != 12)
+	if (g_iActiveMinigameId != 12)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -46,9 +46,24 @@ public void Minigame12_OnMinigameSelected(int client)
 				player.Class = TFClass_Pyro;
 			}
 
+			case TFClass_Soldier:
+			{
+				player.Class = TFClass_Pyro;
+			}
+
+			case TFClass_DemoMan:
+			{
+				player.Class = TFClass_Engineer;
+			}
+
 			case TFClass_Heavy:
 			{
-				player.Class = TFClass_DemoMan;
+				player.Class = TFClass_Engineer;
+			}
+
+			case TFClass_Medic:
+			{
+				player.Class = TFClass_Sniper;
 			}
 
 			case TFClass_Spy:
@@ -59,18 +74,18 @@ public void Minigame12_OnMinigameSelected(int client)
 
 		player.ResetWeapon(false);
 		player.SetGodMode(false);
-		player.SetHealth(3000);
+		player.ResetHealth();
 	}
 }
 
 public void Minigame12_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (MinigameID != 12)
+	if (g_iActiveMinigameId != 12)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -96,7 +111,7 @@ public void Minigame12_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 public void Minigame12_OnMinigameFinish()
 {
-	if (MinigameID == 12)
+	if (g_iActiveMinigameId == 12)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

@@ -1,42 +1,68 @@
-//#define USE_MAXSPEED_HOOK
-
 public void AttachPlayerHooks(int client)
 {
-    SDKHook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
-
-	#if defined USE_MAXSPEED_HOOK
-    SDKHook(client, SDKHook_PreThink, Hooks_OnPreThink);
-	#endif
+	SDKHook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
+	SDKHook(client, SDKHook_Touch, Hooks_OnTouch);
 }
 
 public void DetachPlayerHooks(int client)
 {
 	SDKUnhook(client, SDKHook_OnTakeDamage, Hooks_OnTakeDamage);
-
-	#if defined USE_MAXSPEED_HOOK
-	SDKUnhook(client, SDKHook_PreThink, Hooks_OnPreThink);
-	#endif
+	SDKUnhook(client, SDKHook_Touch, Hooks_OnTouch);
 }
 
 public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
 {
-	if (!IsPluginEnabled)
+	if (!g_bIsPluginEnabled)
 	{
 		return Plugin_Continue;
 	}
 
-	if (GlobalForward_OnPlayerTakeDamage != INVALID_HANDLE)
+	if (g_pfOnPlayerTakeDamage != INVALID_HANDLE)
 	{
-		Call_StartForward(GlobalForward_OnPlayerTakeDamage);
+		Call_StartForward(g_pfOnPlayerTakeDamage);
 		Call_PushCell(victim);
 		Call_PushCell(attackerId);
 		Call_PushFloat(damage);
 		Call_Finish();
 	}
 
-	Player attacker = new Player(inflictor);
+	bool doBlock = false;
 
-	if (IsBlockingDamage || (IsBonusRound && !IsPlayerWinner[attackerId]) || !IsBlockingDamage && IsOnlyBlockingDamageByPlayers && attacker.IsValid && attacker.IsParticipating)
+	switch (g_eDamageBlockMode)
+	{
+		case EDamageBlockMode_Nothing:
+		{
+			doBlock = false;
+		}
+
+		case EDamageBlockMode_OtherPlayersOnly:
+		{
+			Player player = new Player(attackerId);
+
+			doBlock = attackerId != victim && player.IsValid && player.IsParticipating;
+		}
+
+		case EDamageBlockMode_AllPlayers:
+		{
+			Player player = new Player(inflictor);
+
+			doBlock = player.IsValid && player.IsParticipating;
+		}
+
+		case EDamageBlockMode_WinnersOnly:
+		{
+			Player player = new Player(victim);
+
+			doBlock = g_bIsGameOver && player.IsWinner;
+		}
+
+		case EDamageBlockMode_All:
+		{
+			doBlock = true;
+		}
+	}
+
+	if (doBlock)
 	{
 		damage = 0.0;
 
@@ -51,23 +77,25 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 	return Plugin_Continue;
 }
 
-#if defined USE_MAXSPEED_HOOK
-public void Hooks_OnPreThink(int client)
+public Action Hooks_OnTouch(int entity, int other)
 {
-    if (!IsPluginEnabled)
-    {
-        return;
-    }
-    
-    Player player = new Player(client);
+	char entityClassName[64];
+	char otherClassName[64];
 
-    if (ApplyMaxSpeedOverrides)
-    {
-        player.MaxSpeed = MaxSpeedOverride[player.ClientId];
-    }
-    // else if (MaxSpeedDefaults[player.ClientId] == 0)
-    // {
-    //     MaxSpeedDefaults
-    // }
+	GetEdictClassname(entity, entityClassName, sizeof(entityClassName));
+	GetEdictClassname(other, otherClassName, sizeof(otherClassName));
+
+	if (g_pfOnPlayerCollisionWithPlayer != INVALID_HANDLE && StrEqual(entityClassName, "player") && StrEqual(otherClassName, "player")) 
+	{
+		Player player1 = new Player(entity);
+		Player player2 = new Player(other);
+
+		if (player1.IsValid && player2.IsValid && player1.IsAlive && player2.IsAlive && player1.Team != player2.Team)
+		{
+			Call_StartForward(g_pfOnPlayerCollisionWithPlayer);
+			Call_PushCell(entity);
+			Call_PushCell(other);
+			Call_Finish();
+		}
+	}
 }
-#endif

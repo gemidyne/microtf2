@@ -6,29 +6,29 @@
 
 public void Minigame1_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame1_OnSelectionPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame1_OnSelection);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame1_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame1_OnFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame1_OnSelectionPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame1_OnSelection);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Minigame1_OnGameFrame);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame1_OnFinish);
 }
 
 public void Minigame1_OnSelectionPre()
 {
-	if (MinigameID == 1)
+	if (g_iActiveMinigameId == 1)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_bIsBlockingKillCommands = false;
 	}
 }
 
 public void Minigame1_OnSelection(int client)
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -65,12 +65,12 @@ public void Minigame1_OnSelection(int client)
 
 public void Minigame1_OnGameFrame()
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -94,12 +94,12 @@ public void Minigame1_OnGameFrame()
 
 public void Minigame1_OnFinish()
 {
-	if (MinigameID != 1)
+	if (g_iActiveMinigameId != 1)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

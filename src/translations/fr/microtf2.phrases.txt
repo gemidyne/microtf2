@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"fr"		"{1}La manche spéciale est... {2} !\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"fr"		"La manche spéciale est... {1} !\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -64,39 +64,39 @@
 	}
 	"General_Loser"
 	{
-		"fr"		"Perdu !"
+		"fr"		"Perdant !"
 	}
 	"General_Winner"
 	{
-		"fr"		"Gagné !"
+		"fr"		"Gagnant !"
 	}
 	"General_SpeedUp"
 	{
-		"fr"		"SPEED UP!"
+		"fr"		"ON ACCÉLÈRE !"
 	}
 	"General_SpeedDown"
 	{
-		"fr"		"SPEED DOWN!"
+		"fr"		"ON RALENTIT !"
 	}
 	"General_Failure"
 	{
-		"fr"		"FAILURE!"
+		"fr"		"ÉCHEC !"
 	}
 	"General_Success"
 	{
-		"fr"		"SUCCESS!"
+		"fr"		"RÉUSSITE !"
 	}
 	"General_BossTime"
 	{
-		"fr"		"BOSS TIME!"
+		"fr"		"MOMENT DU BOSS !"
 	}
 	"General_GameOver"
 	{
-		"fr"		"GAME OVER!"
+		"fr"		"FIN DE LA MANCHE !"
 	}
 	"General_SpecialRound"
 	{
-		"fr"		"SPECIAL ROUND!"
+		"fr"		"MANCHE SPÉCIALE !"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"fr"		"et"
+		"#format"		"{1:s},{2:s}"
+		"fr"		"{1} et {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -120,23 +121,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"fr"		"{1}{2} {3} {green}avec {4} points !"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"fr"		"{1} {2} {default}avec {3} points !"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"fr"		"{1}L'équipe gagnante est RED avec {2} points !"
+		"#format"		"{1:i}"
+		"fr"		"L'équipe gagnante est RED avec {1} points !"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"fr"		"{1}L'équipe gagnante est BLU avec {2} points !"
+		"#format"		"{1:i}"
+		"fr"		"L'équipe gagnante est BLU avec {1} points !"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"fr"		"{1}Égalité ! Les deux équipes ont le même nombre de points !"
+		"fr"		"Égalité ! Les deux équipes ont le même nombre de points !"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +152,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"fr"		"{1}{2} a atteint la fin en premier ! (Point bonus !)"
+		"#format"		"{1:s}"
+		"fr"		"{1} a atteint la fin en premier ! (Point bonus !)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,12 +161,12 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"fr"		"{1}{2} s'est échappé de l'usine en premier ! (Point bonus !)"
+		"#format"		"{1:s}"
+		"fr"		"{1} s'est échappé de l'usine en premier ! (Point bonus !)"
 	}
 	"Bossgame3_Caption"
 	{
-		"fr"		"BATTEZ L'AUTRE ÉQUIPE !"
+		"fr"		"RESTEZ SUR LE BLOC VERT !"
 	}
 	"Bossgame4_Caption"
 	{
@@ -178,16 +178,65 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"fr"		"{1}{2} a atteint l'objectif en premier ! (Point bonus !)"
+		"#format"		"{1:s}"
+		"fr"		"{1} a atteint l'objectif en premier ! (Point bonus !)"
 	}
 	"Bossgame6_Caption"
 	{
 		"fr"		"DÉTRUISEZ LE PLUS DE TONNEAUX !"
 	}
-	"Bossgame7_Caption"
+	"Bossgame8_Caption_CountTheProps"
 	{
-		"fr"		""
+		"fr"		"COMPTEZ LES ACCESSOIRES !"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"fr"		"SOYEZ PRÊTS..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"fr"		"LA RÉPONSE CORRECTE ÉTAIT...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"fr"		"LA RÉPONSE CORRECTE ÉTAIT...\n{1} !"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"fr"		"Combien de {1} il y avait ? Rentrez dans la bonne pièce !\nPièce A : {2}   Pièce B : {3}   Pièce C : {4}\nTemps restant : {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"fr"		"Distributeurs"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"fr"		"Boîtes de Munitions"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"fr"		"Tonneaux"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"fr"		"Chaises"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"fr"		"Pièce A : {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"fr"		"Pièce B : {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"fr"		"Pièce C : {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -216,8 +265,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"fr"		"{1}{2} a dit le mot en premier ! (Point bonus !)"
+		"#format"		"{1:s}"
+		"fr"		"{1} a dit le mot en premier ! (Point bonus !)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +279,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"fr"		"{1}La bonne réponse était {2} !"
+		"#format"		"{1:i}"
+		"fr"		"La bonne réponse était {1} !"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"fr"		"{1}{2} a repondu correctement en premier ! (Point bonus !)"
+		"#format"		"{1:s}"
+		"fr"		"{1} a repondu correctement en premier ! (Point bonus !)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -454,9 +503,17 @@
 	{
 		"fr"		"FRAPPEZ UN ENNEMI !"
 	}
+	"Minigame28_Caption"
+	{
+		"fr"		"BOMB JUMP SUR LA PLATEFORME !"
+	}
+	"Minigame29_Caption"
+	{
+		"fr"		"NE TOUCHEZ PERSONNE !"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"fr"		"TYPE THE WORDS!"
+		"fr"		"ÉCRIVEZ LES MOTS !"
 	}
 	"Bossgame7_Caption_Explain"
 	{

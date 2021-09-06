@@ -4,42 +4,31 @@
  * Hit a Heavy / Get Hit by a Medic
  */
 
-int Minigame17_Selected[MAXPLAYERS+1];
-TFTeam Minigame17_ClientTeam;
+TFTeam g_tMinigame17MedicTeam;
 
 public void Minigame17_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame17_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame17_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame17_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame17_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame17_OnPlayerTakeDamage);
 }
 
 public void Minigame17_OnMinigameSelectedPre()
 {
-	if (MinigameID == 17)
+	if (g_iActiveMinigameId == 17)
 	{
-		Minigame17_ClientTeam = view_as<TFTeam>(GetRandomInt(2, 3));
-
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid)
-			{
-				Minigame17_Selected[i] = 0;
-			}
-		}
+		g_tMinigame17MedicTeam = view_as<TFTeam>(GetRandomInt(2, 3));
 	}
 }
 
 public void Minigame17_OnMinigameSelected(int client)
 {
-	if (MinigameID != 17)
+	if (g_iActiveMinigameId != 17)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -48,12 +37,11 @@ public void Minigame17_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		if (player.Team == Minigame17_ClientTeam)	//Selected Team Has to Hit 
+		if (player.Team == g_tMinigame17MedicTeam)
 		{
 			player.Class = TFClass_Medic;
 			player.SetGodMode(true);
 			player.ResetWeapon(true);
-			Minigame17_Selected[client] = 1;
 		}
 		else
 		{
@@ -61,7 +49,6 @@ public void Minigame17_OnMinigameSelected(int client)
 			player.SetGodMode(false);
 			player.SetHealth(1000);
 			player.ResetWeapon(false);
-			Minigame17_Selected[client] = 0;
 		}
 	}
 }
@@ -74,7 +61,7 @@ public void Minigame17_GetDynamicCaption(int client)
 	{
 		char text[64];
 
-		if (player.Team == Minigame17_ClientTeam)
+		if (player.Team == g_tMinigame17MedicTeam)
 		{
 			Format(text, sizeof(text), "%T", "Minigame17_Caption_HitAHeavy", client);
 		}
@@ -89,18 +76,18 @@ public void Minigame17_GetDynamicCaption(int client)
 
 public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (IsMinigameActive && MinigameID == 17)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 17)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);
 
-		if (attacker.IsValid && attacker.IsParticipating && victim.IsValid && victim.IsParticipating)
+		bool attackerValid = attacker.IsValid && attacker.IsParticipating;
+		bool victimValid = victim.IsValid && victim.IsParticipating;
+
+		if (attackerValid && victimValid && attacker.Team == g_tMinigame17MedicTeam && victim.Team != g_tMinigame17MedicTeam)
 		{
-			if (Minigame17_Selected[attackerId] == 1 && Minigame17_Selected[victimId] == 0)
-			{
-				ClientWonMinigame(attackerId);
-				ClientWonMinigame(victimId);
-			}
+			attacker.TriggerSuccess();
+			victim.TriggerSuccess();
 		}
 	}
 }

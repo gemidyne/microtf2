@@ -4,25 +4,22 @@
  * Maths
  */
 
-char Minigame8_SayTextQuestion[64];
-bool Minigame8_HasBeenAnswered = false;
-int Minigame8_SayTextAnswer = 0;
+char g_sMinigame8SayTextQuestion[64];
+bool g_bMinigame8HasAnyPlayerWon = false;
+int g_iMinigame8SayTextAnswer = 0;
 
 public void Minigame8_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame8_OnMinigameFinish);
-
-	// TODO: This should probably rely on forwards in the future
-	RegConsoleCmd("say", Command_Minigame8Say);
-	RegConsoleCmd("say_team", Command_Minigame8Say);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Minigame8_OnMinigameSelectedPre);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Minigame8_OnMinigameFinish);
+	g_pfOnPlayerChatMessage.AddFunction(INVALID_HANDLE, Minigame8_OnChatMessage);
 }
 
 public void Minigame8_OnMinigameSelectedPre()
 {
-	if (MinigameID == 8)
+	if (g_iActiveMinigameId == 8)
 	{
-		Minigame8_HasBeenAnswered = false;
+		g_bMinigame8HasAnyPlayerWon = false;
 
 		int int1 = GetRandomInt(3, 15);
 		int int2 = GetRandomInt(3, 15);
@@ -38,7 +35,7 @@ public void Minigame8_OnMinigameSelectedPre()
 					int2 = 9001 - int1;
 				}
 
-				Minigame8_SayTextAnswer = int1 + int2;
+				g_iMinigame8SayTextAnswer = int1 + int2;
 				Format(form, sizeof(form), "+");
 			}
 
@@ -50,7 +47,7 @@ public void Minigame8_OnMinigameSelectedPre()
 					int2 = 1;
 				}
 
-				Minigame8_SayTextAnswer = int1 - int2;
+				g_iMinigame8SayTextAnswer = int1 - int2;
 				Format(form, sizeof(form), "-");
 			}
 
@@ -60,11 +57,11 @@ public void Minigame8_OnMinigameSelectedPre()
 
 				int1 = GetRandomInt(2, 10);
 				int2 = GetRandomInt(2, 10);
-				Minigame8_SayTextAnswer = int1 * int2;
+				g_iMinigame8SayTextAnswer = int1 * int2;
 			}
 		}
 
-		Format(Minigame8_SayTextQuestion, sizeof(Minigame8_SayTextQuestion), "%d %s %d", int1, form, int2);
+		Format(g_sMinigame8SayTextQuestion, sizeof(g_sMinigame8SayTextQuestion), "%d %s %d", int1, form, int2);
 	}
 }
 
@@ -75,26 +72,19 @@ public void Minigame8_GetDynamicCaption(int client)
 	if (player.IsInGame)
 	{
 		char text[64];
-		Format(text, sizeof(text), "%T", "Minigame8_CaptionFormatted", client, Minigame8_SayTextQuestion);
+		Format(text, sizeof(text), "%T", "Minigame8_CaptionFormatted", client, g_sMinigame8SayTextQuestion);
 		player.SetCaption(text);
 	}
 }
 
-
-public Action Command_Minigame8Say(int client, int args)
+public Action Minigame8_OnChatMessage(int client, const char[] messageText, bool isTeamMessage)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return Plugin_Continue;
 	}
 
-	if (MinigameID != 8)
-	{
-		return Plugin_Continue;
-	}
-
-	char text[192];
-	if (GetCmdArgString(text, sizeof(text)) < 1)
+	if (g_iActiveMinigameId != 8)
 	{
 		return Plugin_Continue;
 	}
@@ -106,35 +96,21 @@ public Action Command_Minigame8Say(int client, int args)
 		return Plugin_Continue;
 	}
 
-	int startidx;
-	if (text[strlen(text)-1] == '"')
-	{
-		text[strlen(text)-1] = '\0';
-	}
-
-	startidx = 1;
-
-	char message[192];
-	BreakString(text[startidx], message, sizeof(message));
-
-	char argument[64];
-	GetCmdArg(1, argument, sizeof(argument));
-		
-	if (!IsStringInt(argument)) 
+	if (!IsStringInt(messageText)) 
 	{
 		return Plugin_Continue;
 	}
 
-	int guess = StringToInt(argument);
+	int guess = StringToInt(messageText);
 
-	if (guess == Minigame8_SayTextAnswer)
+	if (guess == g_iMinigame8SayTextAnswer)
 	{
 		invoker.TriggerSuccess();
 
-		if (!Minigame8_HasBeenAnswered && Config_BonusPointsEnabled())
+		if (!g_bMinigame8HasAnyPlayerWon && Config_BonusPointsEnabled())
 		{
 			invoker.Score++;
-			Minigame8_HasBeenAnswered = true;
+			g_bMinigame8HasAnyPlayerWon = true;
 
 			Minigame8_NotifyPlayerComplete(invoker);
 		}
@@ -147,8 +123,20 @@ public Action Command_Minigame8Say(int client, int args)
 
 void Minigame8_NotifyPlayerComplete(Player invoker)
 {
-	char name[32];
-	GetClientName(invoker.ClientId, name, sizeof(name));
+	char name[64];
+	
+	if (invoker.Team == TFTeam_Red)
+	{
+		Format(name, sizeof(name), "{red}%N{default}", invoker.ClientId);
+	}
+	else if (invoker.Team == TFTeam_Blue)
+	{
+		Format(name, sizeof(name), "{blue}%N{default}", invoker.ClientId);
+	}
+	else
+	{
+		Format(name, sizeof(name), "{white}%N{default}", invoker.ClientId);
+	}
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -156,14 +144,14 @@ void Minigame8_NotifyPlayerComplete(Player invoker)
 
 		if (player.IsValid && !player.IsBot)
 		{
-			CPrintToChat(i, "%T", "Minigame8_PlayerAnsweredFirst", i, PLUGIN_PREFIX, name);
+			player.PrintChatText("%T", "Minigame8_PlayerAnsweredFirst", i, name);
 		}
 	}
 }
 
 public void Minigame8_OnMinigameFinish()
 {
-	if (MinigameID == 8)
+	if (g_iActiveMinigameId == 8)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -171,7 +159,7 @@ public void Minigame8_OnMinigameFinish()
 
 			if (player.IsValid)
 			{
-				CPrintToChat(i, "%T", "Minigame8_CorrectAnswerWas", i, PLUGIN_PREFIX, Minigame8_SayTextAnswer);
+				player.PrintChatText("%T", "Minigame8_CorrectAnswerWas", i, g_iMinigame8SayTextAnswer);
 			}
 		}
 	}

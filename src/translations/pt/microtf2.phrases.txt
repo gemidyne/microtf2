@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"pt"		"{1}Rodada especial. Na condição... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"pt"		"Rodada especial. Na condição... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"pt"		"e"
+		"#format"		"{1:s},{2:s}"
+		"pt"		"{1} e {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -120,23 +121,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"pt"		"{1}{2} {3} {green}com {4} pontos!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pt"		"{1} {2} {default}com {3} pontos!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt"		"{1}O TIME VERMELHO foi o time vencedor com {2} pontos!"
+		"#format"		"{1:i}"
+		"pt"		"O TIME VERMELHO foi o time vencedor com {1} pontos!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt"		"{1}O TIME AZUL foi o time vencedor com {2} pontos!"
+		"#format"		"{1:i}"
+		"pt"		"O TIME AZUL foi o time vencedor com {1} pontos!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"pt"		"{1}Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
+		"pt"		"Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +152,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt"		"{1}{2} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt"		"{1} foi o primeiro a alcançar o objetivo! (Pontos de Bônus!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,12 +161,12 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt"		"{1}{2} escapou da fábrica primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt"		"{1} escapou da fábrica primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame3_Caption"
 	{
-		"pt"		"ELIMINE O TIME INIMIGO!"
+		"pt"		"STAY ON THE GREEN BLOCK!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -178,16 +178,65 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt"		"{1}{2} chegou até o final do percurso primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt"		"{1} chegou até o final do percurso primeiro! (Pontos de Bônus!)"
 	}
 	"Bossgame6_Caption"
 	{
 		"pt"		"ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!"
 	}
-	"Bossgame7_Caption"
+	"Bossgame8_Caption_CountTheProps"
 	{
-		"pt"		""
+		"pt"		"COUNT THE PROPS!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"pt"		"GET READY..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"pt"		"THE CORRECT ANSWER WAS...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"pt"		"THE CORRECT ANSWER WAS...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"pt"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"pt"		"Dispensers"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"pt"		"Ammo Packs"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"pt"		"Barrels"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"pt"		"Chairs"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"pt"		"Room A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"pt"		"Room B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"pt"		"Room C: {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -216,8 +265,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt"		"{1}{2} foi o primeiro a digitar a palavra! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt"		"{1} foi o primeiro a digitar a palavra! (Pontos de Bônus!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +279,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pt"		"{1}A reposta correta foi {2}!"
+		"#format"		"{1:i}"
+		"pt"		"A reposta correta foi {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pt"		"{1}{2} respondeu corretamente primeiro! (Pontos de Bônus!)"
+		"#format"		"{1:s}"
+		"pt"		"{1} respondeu corretamente primeiro! (Pontos de Bônus!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -453,6 +502,14 @@
 	"Minigame27_Caption"
 	{
 		"pt"		"ACERTE UM INIMIGO!"
+	}
+	"Minigame28_Caption"
+	{
+		"pt"		"BOMB JUMP ONTO THE PLATFORM!"
+	}
+	"Minigame29_Caption"
+	{
+		"pt"		"DON'T TOUCH ANYONE!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

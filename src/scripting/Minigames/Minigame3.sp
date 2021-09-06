@@ -8,10 +8,10 @@
 
 public void Minigame3_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Minigame3_MapStart);
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame3_OnSelectionPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame3_OnSelection);
-	AddToForward(GlobalForward_OnPropBroken, INVALID_HANDLE, Minigame3_OnPropBroken);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame3_MapStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame3_OnSelectionPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame3_OnSelection);
+	AddToForward(g_pfOnPropBroken, INVALID_HANDLE, Minigame3_OnPropBroken);
 }
 
 public void Minigame3_MapStart()
@@ -21,7 +21,7 @@ public void Minigame3_MapStart()
 
 public void Minigame3_OnSelectionPre()
 {
-	if (MinigameID == 3)
+	if (g_iActiveMinigameId == 3)
 	{
 		int count = 0;
 
@@ -58,12 +58,12 @@ public void Minigame3_OnSelectionPre()
 
 public void Minigame3_OnSelection(int client)
 {
-	if (MinigameID != 3)
+	if (g_iActiveMinigameId != 3)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -79,12 +79,12 @@ public void Minigame3_OnSelection(int client)
 
 public void Minigame3_OnPropBroken(int client)
 {
-	if (MinigameID != 3)
+	if (g_iActiveMinigameId != 3)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}

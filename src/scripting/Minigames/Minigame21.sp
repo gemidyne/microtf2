@@ -6,19 +6,19 @@
 
 public void Minigame21_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame21_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerStunned, INVALID_HANDLE, Minigame21_OnPlayerStunned);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame21_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame21_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerStunned, INVALID_HANDLE, Minigame21_OnPlayerStunned);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame21_OnMinigameFinish);
 }
 
 public void Minigame21_OnMinigameSelected(int client)
 {
-	if (MinigameID != 21)
+	if (g_iActiveMinigameId != 21)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -42,7 +42,7 @@ public void Minigame21_OnMinigameSelected(int client)
 
 public void Minigame21_OnPlayerStunned(int stunner, int victim)
 {
-	if (!IsMinigameActive || MinigameID != 21)
+	if (!g_bIsMinigameActive || g_iActiveMinigameId != 21)
 	{
 		return;
 	}
@@ -58,7 +58,7 @@ public void Minigame21_OnPlayerStunned(int stunner, int victim)
 
 public void Minigame21_OnMinigameFinish()
 {
-	if (IsMinigameActive && MinigameID == 21)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 21)
 	{
 		RemoveAllStunballEntities();
 	}

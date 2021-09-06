@@ -4,45 +4,34 @@
  * Airblast!
  */
 
-int Minigame4_TotalPlayers;
-int Minigame4_PlayerIndex;
+int g_iMinigame4PlayerIndex;
 
 public void Minigame4_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame4_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame4_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Minigame4_OnPlayerDeath);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame4_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame4_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame4_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame4_OnPlayerDeath);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame4_OnMinigameFinish);
 }
 
 public void Minigame4_OnMinigameSelectedPre()
 {
-	if (MinigameID == 4)
+	if (g_iActiveMinigameId == 4)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
-		Minigame4_TotalPlayers = 0;
-
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid && player.IsParticipating)
-			{
-				Minigame4_TotalPlayers++;
-			}
-		}
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_bIsBlockingKillCommands = false;
+		g_iMinigame4PlayerIndex = 0;
 	}
 }
 
 public void Minigame4_OnMinigameSelected(int client)
 {
-	if (MinigameID != 4)
+	if (g_iActiveMinigameId != 4)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -60,13 +49,13 @@ public void Minigame4_OnMinigameSelected(int client)
 
 		player.Status = PlayerStatus_Winner;
 
-		Minigame4_PlayerIndex++;
+		g_iMinigame4PlayerIndex++;
 
 		player.GiveWeapon(21);
 		player.SetWeaponPrimaryAmmoCount(200);
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		int posa = 360 / Minigame4_TotalPlayers * (Minigame4_PlayerIndex-1);
+		int posa = 360 / g_iActiveParticipantCount * (g_iMinigame4PlayerIndex-1);
 		float pos[3];
 		float ang[3];
 
@@ -85,12 +74,12 @@ public void Minigame4_OnMinigameSelected(int client)
 
 public void Minigame4_OnPlayerDeath(int client, int attacker)
 {
-	if (MinigameID != 4)
+	if (g_iActiveMinigameId != 4)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -112,7 +101,7 @@ public void Minigame4_OnPlayerDeath(int client, int attacker)
 
 public void Minigame4_OnMinigameFinish()
 {
-	if (IsMinigameActive && MinigameID == 4)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 4)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

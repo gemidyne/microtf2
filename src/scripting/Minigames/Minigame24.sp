@@ -5,22 +5,22 @@
  * Requested by some. Credit to those responsible for the needlejump code.
  */
 
-int Minigame24_NeedleFireDelay[MAXPLAYERS+1];
+int g_iMinigame24NeedleFireDelay[MAXPLAYERS+1];
 
 public void Minigame24_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame24_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame24_OnMinigameSelected);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Minigame24_OnGameFrame);
 }
 
 public void Minigame24_OnMinigameSelected(int client)
 {
-	if (MinigameID != 24)
+	if (g_iActiveMinigameId != 24)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -34,13 +34,13 @@ public void Minigame24_OnMinigameSelected(int client)
 		player.GiveWeapon(17);
 		player.SetWeaponPrimaryAmmoCount(150);
 
-		Minigame24_NeedleFireDelay[client] = 50;
+		g_iMinigame24NeedleFireDelay[client] = 50;
 	}
 }
 
 public void Minigame24_OnGameFrame()
 {
-	if (IsMinigameActive && MinigameID == 24)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 24)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -68,16 +68,16 @@ public void Minigame24_PerformNeedlejump(int i)
 	float fEyeAngle[3];
 	float fVelocity[3];
 
-	if (Minigame24_NeedleFireDelay[i] > 0) 
+	if (g_iMinigame24NeedleFireDelay[i] > 0) 
 	{
-		Minigame24_NeedleFireDelay[i] -= 1;
+		g_iMinigame24NeedleFireDelay[i] -= 1;
 	}
 
-	if ((GetClientButtons(i) & IN_ATTACK) && (Minigame24_NeedleFireDelay[i] <= 0))
+	if ((GetClientButtons(i) & IN_ATTACK) && (g_iMinigame24NeedleFireDelay[i] <= 0))
 	{
 		int iWeapon = GetPlayerWeaponSlot(i, 0);
 
-		if (IsValidEdict(iWeapon) && GetEntData(iWeapon, Offset_WeaponBaseClip1) != 0)
+		if (IsValidEdict(iWeapon) && GetEntData(iWeapon, g_oWeaponBaseClip1) != 0)
 		{
 			GetClientEyeAngles(i, fEyeAngle);
 			GetEntPropVector(i, Prop_Data, "m_vecVelocity", fVelocity);
@@ -107,7 +107,7 @@ public void Minigame24_PerformNeedlejump(int i)
 			}
 
 			TeleportEntity(i, NULL_VECTOR, NULL_VECTOR, fVelocity);
-			Minigame24_NeedleFireDelay[i] = 3;
+			g_iMinigame24NeedleFireDelay[i] = 3;
         }
     }
 }

@@ -1,38 +1,82 @@
 /**
  * MicroTF2 - Bossgame 1
  * 
- * Get to the top 
+ * Acid Pit Escape
  */
 
-bool Bossgame1_Completed;
+bool g_bBossgame1CanCheckWinArea = false;
+bool g_bBossgame1HasAnyPlayerWon;
 
 public void Bossgame1_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Bossgame1_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Bossgame1_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Bossgame1_OnGameFrame);
-	AddToForward(GlobalForward_OnPlayerDeath, INVALID_HANDLE, Bossgame1_OnPlayerDeath);
-	AddToForward(GlobalForward_OnBossStopAttempt, INVALID_HANDLE, Bossgame1_BossCheck);
+	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame1_OnTfRoundStart);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame1_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame1_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame1_OnPlayerDeath);
+	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame1_BossCheck);
+}
+
+public void Bossgame1_OnTfRoundStart()
+{
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, "trigger_multiple")) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, "plugin_Bossgame1_WinArea") == 0)
+		{
+			SDKHook(entity, SDKHook_StartTouch, Bossgame1_OnTriggerTouched);
+			break;
+		}
+	}
+}
+
+public Action Bossgame1_OnTriggerTouched(int entity, int other)
+{
+	if (!g_bBossgame1CanCheckWinArea || g_iActiveBossgameId != 1 || !g_bIsMinigameActive)
+	{
+		return Plugin_Continue;
+	}
+
+	Player activator = new Player(other);
+
+	if (activator.IsValid && activator.IsAlive && activator.IsParticipating && activator.Status == PlayerStatus_NotWon)
+	{
+		activator.TriggerSuccess();
+
+		if (!g_bBossgame1HasAnyPlayerWon && Config_BonusPointsEnabled())
+		{
+			activator.Score++;
+
+			Bossgame1_NotifyPlayerComplete(activator);
+			g_bBossgame1HasAnyPlayerWon = true;
+		}
+	}
+
+	return Plugin_Continue;
 }
 
 public void Bossgame1_OnMinigameSelectedPre()
 {
-	if (BossgameID == 1)
+	if (g_iActiveBossgameId == 1)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = true;
-		Bossgame1_Completed = false;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_bIsBlockingKillCommands = true;
+		g_bBossgame1HasAnyPlayerWon = false;
+		g_bBossgame1CanCheckWinArea = false;
 	}
 }
 
 public void Bossgame1_OnMinigameSelected(int client)
 {
-	if (BossgameID != 1)
+	if (g_iActiveBossgameId != 1)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -71,56 +115,14 @@ public void Bossgame1_OnMinigameSelected(int client)
 	}
 }
 
-public void Bossgame1_OnGameFrame()
-{
-	if (BossgameID != 1)
-	{
-		return;
-	}
-
-	if (!IsMinigameActive)
-	{
-		return;
-	}
-
-	if (IsMinigameEnding)
-	{
-		return;
-	}
-	
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsValid && player.IsAlive && player.IsParticipating && player.Status == PlayerStatus_NotWon)
-		{
-			float pos[3];
-			GetClientAbsOrigin(player.ClientId, pos);
-
-			if (pos[2] > 2656.0) 
-			{
-				player.TriggerSuccess();
-
-				if (!Bossgame1_Completed && Config_BonusPointsEnabled())
-				{
-					player.Score++;
-					Bossgame1_NotifyPlayerComplete(player);
-
-					Bossgame1_Completed = true;
-				}
-			}
-		}
-	}
-}
-
 public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 {
-	if (BossgameID != 1)
+	if (g_iActiveBossgameId != 1)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -129,14 +131,16 @@ public void Bossgame1_OnPlayerDeath(int victim, int attacker)
 
 	if (player.IsValid)
 	{
-		PlayerStatus[victim] = PlayerStatus_Failed;
+		player.Status = PlayerStatus_Failed;
 	}
 }
 
 public void Bossgame1_BossCheck()
 {
-	if (IsMinigameActive && BossgameID == 1)
+	if (g_bIsMinigameActive && g_iActiveBossgameId == 1)
 	{
+		g_bBossgame1CanCheckWinArea = true;
+
 		int alivePlayers = 0;
 		int successfulPlayers = 0;
 		int pendingPlayers = 0;
@@ -175,8 +179,20 @@ public void Bossgame1_BossCheck()
 
 void Bossgame1_NotifyPlayerComplete(Player invoker)
 {
-	char name[32];
-	GetClientName(invoker.ClientId, name, sizeof(name));
+	char name[64];
+	
+	if (invoker.Team == TFTeam_Red)
+	{
+		Format(name, sizeof(name), "{red}%N{default}", invoker.ClientId);
+	}
+	else if (invoker.Team == TFTeam_Blue)
+	{
+		Format(name, sizeof(name), "{blue}%N{default}", invoker.ClientId);
+	}
+	else
+	{
+		Format(name, sizeof(name), "{white}%N{default}", invoker.ClientId);
+	}
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -184,7 +200,7 @@ void Bossgame1_NotifyPlayerComplete(Player invoker)
 
 		if (player.IsValid && !player.IsBot)
 		{
-			CPrintToChat(i, "%T", "Bossgame1_PlayerReachedEndFirst", i, PLUGIN_PREFIX, name);
+			player.PrintChatText("%T", "Bossgame1_PlayerReachedEndFirst", i, name);
 		}
 	}
 }

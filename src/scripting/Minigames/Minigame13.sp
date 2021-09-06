@@ -4,22 +4,20 @@
  * Spycrab
  */
 
-float Minigame13_ClientEyePositionAngle[3];
-
 public void Minigame13_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, Minigame13_OnMinigameFinishPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame13_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinishPre, INVALID_HANDLE, Minigame13_OnMinigameFinishPre);
 }
 
 public void Minigame13_OnMinigameSelected(int client)
 {
-	if (MinigameID != 13)
+	if (g_iActiveMinigameId != 13)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -37,9 +35,9 @@ public void Minigame13_OnMinigameSelected(int client)
 
 public void Minigame13_OnMinigameFinishPre()
 {
-	if (MinigameID == 13)
+	if (g_iActiveMinigameId == 13)
 	{
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -49,22 +47,24 @@ public void Minigame13_OnMinigameFinishPre()
 			{
 				int button = GetClientButtons(i);
 				float min = 45.0 * -1;
+				float angle[3];
 
-				GetClientEyeAngles(i, Minigame13_ClientEyePositionAngle);
-				if (Minigame13_ClientEyePositionAngle[0] < min && (button & IN_DUCK) == IN_DUCK)
+				GetClientEyeAngles(i, angle);
+				
+				if (angle[0] < min && (button & IN_DUCK) == IN_DUCK)
 				{
 					player.TriggerSuccess();
+					continue;
 				}
 
-				if (Minigame13_ClientEyePositionAngle[0] > min || (button & IN_DUCK) != IN_DUCK)
-				{
-					SlapPlayer(i, 5000, false);
-					player.Status = PlayerStatus_Failed;
-					CPrintToChat(i, "%s%T", PLUGIN_PREFIX, "Minigame13_SpycrabsMustCrouchAndLookup", i);
-				}
+				player.SetGodMode(false);
+
+				SDKHooks_TakeDamage(player.ClientId, player.ClientId, player.ClientId, 5000.0, DMG_CLUB);
+				player.Status = PlayerStatus_Failed;
+				player.PrintChatText("%T", "Minigame13_SpycrabsMustCrouchAndLookup", i);
 			}
 		}
 
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 	}
 }

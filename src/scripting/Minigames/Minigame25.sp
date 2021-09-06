@@ -6,17 +6,17 @@
 
 public void Minigame25_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame25_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame25_OnMinigameSelected);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame25_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame25_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame25_OnMinigameSelected);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame25_OnMinigameFinish);
 }
 
 public void Minigame25_OnMinigameSelectedPre()
 {
-	if (MinigameID == 25)
+	if (g_iActiveMinigameId == 25)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = false;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_bIsBlockingKillCommands = false;
 
 		CreateTimer(0.15, Timer_Minigame25_TriggerWater);
 	}
@@ -24,12 +24,12 @@ public void Minigame25_OnMinigameSelectedPre()
 
 public void Minigame25_OnMinigameSelected(int client)
 {
-	if (MinigameID != 25)
+	if (g_iActiveMinigameId != 25)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -52,7 +52,7 @@ public void Minigame25_OnMinigameSelected(int client)
 
 public void Minigame25_OnMinigameFinish()
 {
-	if (MinigameID == 25)
+	if (g_iActiveMinigameId == 25)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

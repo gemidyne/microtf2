@@ -5,22 +5,22 @@
  */
 
 
-int Minigame11_Mode = -1;
-bool Minigame11_CanCheckConditions = false;
+int g_iMinigame11Mode = -1;
+bool g_iMinigame11CanCheckConditions = false;
 
 public void Minigame11_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame11_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame11_OnMinigameSelected);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Minigame11_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame11_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame11_OnMinigameSelected);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Minigame11_OnGameFrame);
 }
 
 public void Minigame11_OnMinigameSelectedPre()
 {
-	if (MinigameID == 11)
+	if (g_iActiveMinigameId == 11)
 	{
-		Minigame11_Mode = GetRandomInt(1, 2);
-		Minigame11_CanCheckConditions = false;
+		g_iMinigame11Mode = GetRandomInt(1, 2);
+		g_iMinigame11CanCheckConditions = false;
 
 		CreateTimer(2.0, Timer_Minigame11_AllowConditions);
 	}
@@ -28,18 +28,18 @@ public void Minigame11_OnMinigameSelectedPre()
 
 public Action Timer_Minigame11_AllowConditions(Handle timer)
 {
-	Minigame11_CanCheckConditions = true;
+	g_iMinigame11CanCheckConditions = true;
 	return Plugin_Handled;
 }
 
 public void Minigame11_OnMinigameSelected(int client)
 {
-	if (MinigameID != 11)
+	if (g_iActiveMinigameId != 11)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -58,10 +58,9 @@ public void Minigame11_GetDynamicCaption(int client)
 
 	if (player.IsValid)
 	{
-		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame11_Mode == 2)
+		if (g_iMinigame11Mode == 2)
 		{
 			Format(text, sizeof(text), "%T", "Minigame11_Caption_DontStopMoving", client);
 		}
@@ -76,17 +75,17 @@ public void Minigame11_GetDynamicCaption(int client)
 
 public void Minigame11_OnGameFrame()
 {
-	if (MinigameID != 11)
+	if (g_iActiveMinigameId != 11)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
 
-	if (Minigame11_CanCheckConditions)
+	if (g_iMinigame11CanCheckConditions)
 	{
 		float velocity[3];
 		float speed = 0.0;
@@ -102,21 +101,15 @@ public void Minigame11_OnGameFrame()
 				GetEntPropVector(i, Prop_Data, "m_vecVelocity", velocity);
 				speed = GetVectorLength(velocity);
 
-				if (Minigame11_Mode == 2)
+				if (g_iMinigame11Mode == 2 && speed < limit && player.Status == PlayerStatus_Winner)
 				{
-					if (speed < limit && player.Status == PlayerStatus_Winner) 
-					{
-						player.Status = PlayerStatus_Failed;
-						player.Kill();
-					}
+					player.Status = PlayerStatus_Failed;
+					player.Kill();
 				}
-				else if (Minigame11_Mode == 1)
+				else if (g_iMinigame11Mode == 1 && speed > 100.0 && player.Status == PlayerStatus_Winner)
 				{
-					if (speed > 100.0 && player.Status == PlayerStatus_Winner)
-					{
-						player.Status = PlayerStatus_Failed;
-						player.Kill();
-					}
+					player.Status = PlayerStatus_Failed;
+					player.Kill();
 				}
 			}
 		}

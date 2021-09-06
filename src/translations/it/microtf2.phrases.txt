@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"it"		"{1}Il round speciale scelto è... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"it"		"Il round speciale scelto è... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -72,31 +72,31 @@
 	}
 	"General_SpeedUp"
 	{
-		"it"		"SPEED UP!"
+		"it"		"PIU' VELOCE!"
 	}
 	"General_SpeedDown"
 	{
-		"it"		"SPEED DOWN!"
+		"it"		"PIU' LENTO!"
 	}
 	"General_Failure"
 	{
-		"it"		"FAILURE!"
+		"it"		"HAI PERSO!"
 	}
 	"General_Success"
 	{
-		"it"		"SUCCESS!"
+		"it"		"HAI VINTO!"
 	}
 	"General_BossTime"
 	{
-		"it"		"BOSS TIME!"
+		"it"		"ORA DEL BOSS!"
 	}
 	"General_GameOver"
 	{
-		"it"		"GAME OVER!"
+		"it"		"FINE DELLA PARTITA!"
 	}
 	"General_SpecialRound"
 	{
-		"it"		"SPECIAL ROUND!"
+		"it"		"ROUND SPECIALE!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"it"		"e"
+		"#format"		"{1:s},{2:s}"
+		"it"		"{1} e {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -120,23 +121,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"it"		"{1}{2} {3} {green}con {4} punti!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"it"		"{1} {2} {default}con {3} punti!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"it"		"{1}Vince la squadra RED, con {2} punti!"
+		"#format"		"{1:i}"
+		"it"		"Vince la squadra RED, con {1} punti!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"it"		"{1}Vince la squadra BLU, con {2} punti!"
+		"#format"		"{1:i}"
+		"it"		"Vince la squadra BLU, con {1} punti!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"it"		"{1}Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
+		"it"		"Pareggio! Entrambe le squadre hanno lo stesso punteggio!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +152,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} è arrivato in cima per primo e ha vinto un punto bonus!"
+		"#format"		"{1:s}"
+		"it"		"{1} è arrivato in cima per primo e ha vinto un punto bonus!"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,12 +161,12 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!"
+		"#format"		"{1:s}"
+		"it"		"{1} è fuggito dalla fabbrica per primo e ha vinto un punto bonus!"
 	}
 	"Bossgame3_Caption"
 	{
-		"it"		"SCONFIGGI LA SQUADRA NEMICA!"
+		"it"		"STAI SUL BLOCCO VERDE!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -178,16 +178,65 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!"
+		"#format"		"{1:s}"
+		"it"		"{1} ha raggiunto l'arrivo per primo e ha vinto un punto bonus!"
 	}
 	"Bossgame6_Caption"
 	{
 		"it"		"SPARA A PIU' BARILI CHE PUOI!"
 	}
-	"Bossgame7_Caption"
+	"Bossgame8_Caption_CountTheProps"
 	{
-		"it"		""
+		"it"		"CONTA GLI OGGETTI!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"it"		"PREPARATI..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"it"		"LA RISPOSTA ESATTA ERA...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"it"		"LA RISPOSTA ESATTA ERA...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"it"		"Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"it"		"Dispenser"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"it"		"Pacchi di Munizioni"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"it"		"Barili"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"it"		"Sedie"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"it"		"Stanza A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"it"		"Stanza B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"it"		"Stanza C: {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -216,8 +265,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha scritto la parola per primo e ha vinto un punto bonus!"
+		"#format"		"{1:s}"
+		"it"		"{1} ha scritto la parola per primo e ha vinto un punto bonus!"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +279,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"it"		"{1}La risposta corretta era {2}!"
+		"#format"		"{1:i}"
+		"it"		"La risposta corretta era {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"it"		"{1}{2} ha risposto correttamente per primo e ha vinto un punto bonus!"
+		"#format"		"{1:s}"
+		"it"		"{1} ha risposto correttamente per primo e ha vinto un punto bonus!"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -454,9 +503,17 @@
 	{
 		"it"		"COLPISCI UN NEMICO!"
 	}
+	"Minigame28_Caption"
+	{
+		"it"		"SALTO BOMBA SULLA PIATTAFORMA!"
+	}
+	"Minigame29_Caption"
+	{
+		"it"		"NON TOCCARE NESSUNO!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"it"		"TYPE THE WORDS!"
+		"it"		"SCRIVI LE PAROLE!"
 	}
 	"Bossgame7_Caption_Explain"
 	{

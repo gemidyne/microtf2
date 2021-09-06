@@ -17,7 +17,7 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameCaptionIsDynamic[this.Id];
+            return g_bMinigameHasDynamicCaption[this.Id];
         }
     }
 
@@ -25,17 +25,17 @@ methodmap Minigame __nullable__
     {
         public get()
         {
-            return MinigameMusicLength[this.Id];
+            return g_fMinigameBgmLength[this.Id];
         }
     }
 
     public void GetDynamicCaptionFunctionName(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameDynamicCaptionFunctions[this.Id]);
+        strcopy(buffer, size, g_sDynamicCaptionFunctionName[this.Id]);
     }
 
     public void GetBgmPath(char[] buffer, int size)
     {
-        strcopy(buffer, size, MinigameMusic[this.Id]);
+        strcopy(buffer, size, g_sMinigameBgm[this.Id]);
     }
 }

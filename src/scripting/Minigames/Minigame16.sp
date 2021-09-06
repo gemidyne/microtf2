@@ -6,19 +6,19 @@
 
 public void Minigame16_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame16_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerJarated, INVALID_HANDLE, Minigame16_OnPlayerJarated);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame16_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerJarated, INVALID_HANDLE, Minigame16_OnPlayerJarated);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame16_OnMinigameFinish);
 }
 
 public void Minigame16_OnMinigameSelected(int client)
 {
-	if (MinigameID != 16)
+	if (g_iActiveMinigameId != 16)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -36,12 +36,12 @@ public void Minigame16_OnMinigameSelected(int client)
 
 public void Minigame16_OnPlayerJarated(int client, int victimId)
 {
-	if (MinigameID != 16)
+	if (g_iActiveMinigameId != 16)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -51,13 +51,13 @@ public void Minigame16_OnPlayerJarated(int client, int victimId)
 
 	if (player.IsValid && player.IsParticipating && victim.IsValid && victim.IsParticipating)
 	{
-		ClientWonMinigame(client);
+		player.TriggerSuccess();
 	}
 }
 
 public void Minigame16_OnMinigameFinish()
 {
-	if (IsMinigameActive && MinigameID == 16)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 16)
 	{
 		RemoveAllJarateEntities();
 	}

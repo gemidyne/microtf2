@@ -4,38 +4,38 @@
  * Double jump!
  */
 
-bool Minigame23_CanCheckConditions = false;
+bool g_bMinigame23CanCheckConditions = false;
 
 public void Minigame23_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame23_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame23_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerRunCmd, INVALID_HANDLE, Minigame23_OnPlayerRunCmd);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame23_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame23_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerRunCmd, INVALID_HANDLE, Minigame23_OnPlayerRunCmd);
 }
 
 public void Minigame23_OnMinigameSelectedPre()
 {
-	if (MinigameID == 23)
+	if (g_iActiveMinigameId == 23)
 	{
-		Minigame23_CanCheckConditions = false;
+		g_bMinigame23CanCheckConditions = false;
 		CreateTimer(1.5, Timer_Minigame23_AllowConditions);
 	}
 }
 
 public Action Timer_Minigame23_AllowConditions(Handle timer)
 {
-	Minigame23_CanCheckConditions = true;
+	g_bMinigame23CanCheckConditions = true;
 	return Plugin_Handled;
 }
 
 public void Minigame23_OnMinigameSelected(int client)
 {
-	if (MinigameID != 23)
+	if (g_iActiveMinigameId != 23)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -51,17 +51,17 @@ public void Minigame23_OnMinigameSelected(int client)
 
 public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
 {
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
 
-	if (MinigameID != 23)
+	if (g_iActiveMinigameId != 23)
 	{
 		return;
 	}
 
-	if (!Minigame23_CanCheckConditions)
+	if (!g_bMinigame23CanCheckConditions)
 	{
 		return;
 	}
@@ -93,7 +93,7 @@ public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, fl
 		}
 		else
 		{
-			ClientWonMinigame(client);
+			player.TriggerSuccess();
 		}
 	}
 }

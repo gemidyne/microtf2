@@ -5,25 +5,24 @@
 #define SYSFX_VOCAL_POSITIVE 0
 #define SYSFX_VOCAL_NEGATIVE 1
 
-char SystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSFX_VOCAL_CAPACITY];
+char g_sSystemVocal[TOTAL_SYSFX_VOCAL_TYPES+1][TOTAL_SYSFX_VOCALS+1][SYSFX_VOCAL_CAPACITY];
+int g_iSystemVoicesPositiveCount = 0;
+int g_iSystemVoicesNegativeCount = 0;
 
-int SystemVoicesPositiveCount = 0;
-int SystemVoicesNegativeCount = 0;
-
-public void InitialiseVoices()
+void InitialiseVoices()
 {
 	LoadPositiveVoices();
 	LoadNegativeVoices();
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Voices_OnMapStart);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Voices_OnMapStart);
 }
 
-public void LoadPositiveVoices()
+void LoadPositiveVoices()
 {
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Positive.txt");
 
-	Handle file = OpenFile(path, "r"); 
+	File file = OpenFile(path, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -32,9 +31,9 @@ public void LoadPositiveVoices()
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
-		if (SystemVoicesPositiveCount >= TOTAL_SYSFX_VOCALS)
+		if (g_iSystemVoicesPositiveCount >= TOTAL_SYSFX_VOCALS)
 		{
 			break;
 		}
@@ -46,25 +45,25 @@ public void LoadPositiveVoices()
 			continue;
 		}
 
-		SystemVocal[SYSFX_VOCAL_POSITIVE][SystemVoicesPositiveCount] = line;
-		SystemVoicesPositiveCount++;
+		g_sSystemVocal[SYSFX_VOCAL_POSITIVE][g_iSystemVoicesPositiveCount] = line;
+		g_iSystemVoicesPositiveCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	#if defined LOGGING_STARTUP
-	LogMessage("System Voices: Loaded %i positive vocals", SystemVoicesPositiveCount);
+	LogMessage("System Voices: Loaded %i positive vocals", g_iSystemVoicesPositiveCount);
 	#endif
 
 	return;
 }
 
-public void LoadNegativeVoices()
+void LoadNegativeVoices()
 {
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/Voices.Negative.txt");
 
-	Handle file = OpenFile(path, "r"); 
+	File file = OpenFile(path, "r"); 
 
 	if (file == INVALID_HANDLE)
 	{
@@ -73,9 +72,9 @@ public void LoadNegativeVoices()
 
 	char line[64];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
-		if (SystemVoicesNegativeCount >= TOTAL_SYSFX_VOCALS)
+		if (g_iSystemVoicesNegativeCount >= TOTAL_SYSFX_VOCALS)
 		{
 			break;
 		}
@@ -87,20 +86,20 @@ public void LoadNegativeVoices()
 			continue;
 		}
 
-		SystemVocal[SYSFX_VOCAL_NEGATIVE][SystemVoicesNegativeCount] = line;
-		SystemVoicesNegativeCount++;
+		g_sSystemVocal[SYSFX_VOCAL_NEGATIVE][g_iSystemVoicesNegativeCount] = line;
+		g_iSystemVoicesNegativeCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 
 	#if defined LOGGING_STARTUP
-	LogMessage("System Voices: Loaded %i negative vocals", SystemVoicesNegativeCount);
+	LogMessage("System Voices: Loaded %i negative vocals", g_iSystemVoicesNegativeCount);
 	#endif
 
 	return;
 }
 
-public void Voices_OnMapStart()
+void Voices_OnMapStart()
 {
 	char buffer[192];
 
@@ -108,32 +107,32 @@ public void Voices_OnMapStart()
 	{
 		for (int i = 0; i < TOTAL_SYSFX_VOCALS; i++)
 		{
-			buffer = SystemVocal[t][i];
+			buffer = g_sSystemVocal[t][i];
 
 			if (strlen(buffer) > 0)
 			{
-				PreloadSound(SystemVocal[t][i]);
+				PreloadSound(g_sSystemVocal[t][i]);
 			}
 		}
 	}
 }
 
-stock void PlayNegativeVoice(int client)
+void PlayNegativeVoice(int client)
 {
-    if (SystemVoicesNegativeCount > 0)
+    if (g_iSystemVoicesNegativeCount <= 0)
     {
         return;
     }
 
-    PlaySoundToPlayer(client, SystemVocal[SYSFX_VOCAL_NEGATIVE][GetRandomInt(0, SystemVoicesNegativeCount)]);
+    PlaySoundToPlayer(client, g_sSystemVocal[SYSFX_VOCAL_NEGATIVE][GetRandomInt(0, g_iSystemVoicesNegativeCount)]);
 }
 
-stock void PlayPositiveVoice(int client)
+void PlayPositiveVoice(int client)
 {
-    if (SystemVoicesPositiveCount > 0)
+    if (g_iSystemVoicesPositiveCount <= 0)
     {
         return;
     }
 
-    PlaySoundToPlayer(client, SystemVocal[SYSFX_VOCAL_POSITIVE][GetRandomInt(0, SystemVoicesPositiveCount)]);
+    PlaySoundToPlayer(client, g_sSystemVocal[SYSFX_VOCAL_POSITIVE][GetRandomInt(0, g_iSystemVoicesPositiveCount)]);
 }

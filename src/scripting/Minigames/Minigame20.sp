@@ -4,34 +4,34 @@
  * Munch / Drink
  */
 
-int Minigame20_PlayerClass;
-bool Minigame20_InvertedMode;
+int g_iMinigame20PlayerClass;
+bool g_bMinigame20InvertConditions;
 
 public void Minigame20_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerConditionAdded, INVALID_HANDLE, Minigame20_OnPlayerConditionAdded);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame20_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame20_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerConditionAdded, INVALID_HANDLE, Minigame20_OnPlayerConditionAdded);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame20_OnMinigameFinish);
 }
 
 public void Minigame20_OnMinigameSelectedPre()
 {
-	if (MinigameID == 20)
+	if (g_iActiveMinigameId == 20)
 	{
-		Minigame20_PlayerClass = GetRandomInt(0, 3);
-		Minigame20_InvertedMode = GetRandomInt(0, 1) == 1;
+		g_iMinigame20PlayerClass = GetRandomInt(0, 3);
+		g_bMinigame20InvertConditions = GetRandomInt(0, 1) == 1;
 	}
 }
 
 public void Minigame20_OnMinigameSelected(int client)
 {
-	if (MinigameID != 20)
+	if (g_iActiveMinigameId != 20)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -43,7 +43,7 @@ public void Minigame20_OnMinigameSelected(int client)
 		return;
 	}
 
-	switch (Minigame20_PlayerClass)
+	switch (g_iMinigame20PlayerClass)
 	{
 		case 0:
 		{
@@ -73,7 +73,7 @@ public void Minigame20_OnMinigameSelected(int client)
 
 	player.SetWeaponPrimaryAmmoCount(1);
 
-	if (Minigame20_InvertedMode)
+	if (g_bMinigame20InvertConditions)
 	{
 		player.Status = PlayerStatus_Winner;
 	}
@@ -88,9 +88,9 @@ public void Minigame20_GetDynamicCaption(int client)
 		// HudTextParams are already set at this point. All we need to do is ShowSyncHudText.
 		char text[64];
 
-		if (Minigame20_InvertedMode)
+		if (g_bMinigame20InvertConditions)
 		{
-			switch (Minigame20_PlayerClass)
+			switch (g_iMinigame20PlayerClass)
 			{
 				case 0, 1:
 				{
@@ -105,7 +105,7 @@ public void Minigame20_GetDynamicCaption(int client)
 		}
 		else
 		{
-			switch (Minigame20_PlayerClass)
+			switch (g_iMinigame20PlayerClass)
 			{
 				case 0, 1:
 				{
@@ -125,12 +125,12 @@ public void Minigame20_GetDynamicCaption(int client)
 
 public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 {
-	if (MinigameID != 20)
+	if (g_iActiveMinigameId != 20)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -155,7 +155,7 @@ public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 		{
 			case 46, 163, 42, 311:
 			{
-				if (Minigame20_InvertedMode)
+				if (g_bMinigame20InvertConditions)
 				{
 					player.Status = PlayerStatus_Failed;
 				}
@@ -170,7 +170,7 @@ public void Minigame20_OnPlayerConditionAdded(int client, int conditionId)
 
 public void Minigame20_OnMinigameFinish()
 {
-	if (IsMinigameActive && MinigameID == 20)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 20)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

@@ -9,25 +9,24 @@
 #define SPR_FAKECOND_LENGTH 64
 #define SPR_FAKECOND_CAPACITY 256
 
-int SpecialRoundsLoaded = 0;
+int g_iLoadedSpecialRoundCount = 0;
 
-float SpecialRound_StartEffect = 1.0;
+bool g_bSpecialRoundSpeedEventsDisabled[SPR_MAX+1];
+bool g_bSpecialRoundMultiplePlayersOnly[SPR_MAX+1];
+int g_iSpecialRoundBossGameThreshold[SPR_MAX+1];
 
-bool SpecialRoundSpeedEventsDisabled[SPR_MAX+1];
-bool SpecialRoundMultiplePlayersOnly[SPR_MAX+1];
-int SpecialRoundBossGameThreshold[SPR_MAX+1];
+char g_sSpecialRoundFakeConditionNames[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
+int g_iSpecialRoundFakeConditionCount = 0;
 
-char SpecialRoundFakeConditions[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
-int SpecialRoundFakeConditionsCount = 0;
+bool g_bIsChoosingSpecialRound = false;
+bool g_bForceSpecialRound = false;
+int g_iForceSpecialRoundId = 0;
 
-bool IsChoosingSpecialRound = false;
-
-bool ForceNextSpecialRound = false;
-int ForceSpecialRound = 0;
+float g_fSpecialRoundScaleEffect = 1.0;
 
 #define SPECIALROUND_SKELETON_MODEL "models/gemidyne/warioware/skeleton.mdl"
 
-stock void InitializeSpecialRounds()
+void InitializeSpecialRounds()
 {
 	#if defined LOGGING_STARTUP
 	LogMessage("Initializing Special Rounds...");
@@ -36,44 +35,50 @@ stock void InitializeSpecialRounds()
 	char path[128];
 	BuildPath(Path_SM, path, sizeof(path), "data/microtf2/SpecialRounds.txt");
 
-	Handle kv = CreateKeyValues("SpecialRounds");
-	FileToKeyValues(kv, path);
+	KeyValues kv = new KeyValues("SpecialRounds");
+
+	if (!kv.ImportFromFile(path))
+	{
+		SetFailState("Unable to read SpecialRounds.txt from data/microtf2/");
+		kv.Close();
+		return;
+	}
  
-	if (KvGotoFirstSubKey(kv))
+	if (kv.GotoFirstSubKey())
 	{
 		int i = 0;
 
 		do
 		{
-			SpecialRoundSpeedEventsDisabled[i] = (KvGetNum(kv, "DisableSpeedEvents", 0) == 1);
-			SpecialRoundMultiplePlayersOnly[i] = (KvGetNum(kv, "MultiplePlayersOnly", 0) == 1);
-			SpecialRoundBossGameThreshold[i] = KvGetNum(kv, "BossGameThreshold", 0);
+			g_bSpecialRoundSpeedEventsDisabled[i] = (kv.GetNum("DisableSpeedEvents", 0) == 1);
+			g_bSpecialRoundMultiplePlayersOnly[i] = (kv.GetNum("MultiplePlayersOnly", 0) == 1);
+			g_iSpecialRoundBossGameThreshold[i] = kv.GetNum("g_iBossGameThreshold", 0);
 
 			i++;
 		}
-		while (KvGotoNextKey(kv));
+		while (kv.GotoNextKey());
 
-		SpecialRoundsLoaded = i;
+		g_iLoadedSpecialRoundCount = i;
 	}
  
-	CloseHandle(kv);
+	kv.Close();
 
 	Special_LoadFakeConditions();
 
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
-	AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
-	AddToForward(GlobalForward_OnMinigameSelectedPost, INVALID_HANDLE, SpecialRound_ApplyEffects);
-	AddToForward(GlobalForward_OnGameOverStart, INVALID_HANDLE, SpecialRound_ApplyEffects);
+	AddToForward(g_pfOnMapStart, INVALID_HANDLE, SpecialRound_OnMapStart);
+	AddToForward(g_pfOnGameFrame, INVALID_HANDLE, SpecialRound_OnGameFrame);
+	AddToForward(g_pfOnMinigameSelectedPost, INVALID_HANDLE, SpecialRound_ApplyEffects);
+	AddToForward(g_pfOnGameOverStart, INVALID_HANDLE, SpecialRound_ApplyEffects);
 
-	AddToForward(GlobalForward_OnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
-	AddToForward(GlobalForward_OnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
-	AddToForward(GlobalForward_OnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnMinigamePrepare, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnMinigameFinishPost, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
+	AddToForward(g_pfOnPlayerSpawn, INVALID_HANDLE, SpecialRound_ApplyPlayerEffects);
 
-	AddToForward(GlobalForward_OnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
-	AddToForward(GlobalForward_OnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
+	AddToForward(g_pfOnMinigamePreparePre, INVALID_HANDLE, SpecialRound_OnMinigamePreparePre);
+	AddToForward(g_pfOnPlayerClassChange, INVALID_HANDLE, SpecialRound_OnPlayerClassChange);
 
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, SpecialRound_SetupEnv);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, SpecialRound_SetupEnv);
 
 	RegAdminCmd("sm_setnextspecialround", Command_SetNextSpecialRound, ADMFLAG_VOTE, "Forces a specific special round to be selected after the current round completes.");
 	RegAdminCmd("sm_changespecialround", Command_ChangeSpecialRound, ADMFLAG_VOTE, "Changes the current special round. If the value is less than 0, or not found, the default gamemode is run.");
@@ -95,14 +100,14 @@ public void SpecialRound_OnMapStart()
 
 public void SpecialRound_OnGameFrame()
 {
-	if (GamemodeStatus == GameStatus_Playing)
+	if (g_eGamemodeStatus == GameStatus_Playing)
 	{
-		if (IsChoosingSpecialRound)
+		if (g_bIsChoosingSpecialRound)
 		{
 			SpecialRound_PrintRandomNameWhenChoosing();
 		}
 
-		if (GamemodeID == SPR_GAMEMODEID)
+		if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 		{
 			for (int i = 1; i <= MaxClients; i++)
 			{
@@ -110,7 +115,7 @@ public void SpecialRound_OnGameFrame()
 
 				if (player.IsValid && player.IsParticipating && player.IsAlive)
 				{
-					player.HeadScale = SpecialRoundID == 15 
+					player.HeadScale = g_iSpecialRoundId == 15 
 						? 2.0 
 						: 1.0;
 				}
@@ -121,7 +126,7 @@ public void SpecialRound_OnGameFrame()
 
 public void SpecialRound_OnMinigamePreparePre()
 {
-	if (!IsBonusRound)
+	if (!g_bIsGameOver)
 	{
 		SetSpeed_SpecialRound();
 	}
@@ -132,9 +137,9 @@ public void SpecialRound_OnMinigamePreparePre()
 public void SpecialRound_PrintRandomNameWhenChoosing()
 {
 	char buffer[128];
-	int index = GetRandomInt(0, SpecialRoundFakeConditionsCount);
+	int index = GetRandomInt(0, g_iSpecialRoundFakeConditionCount);
 
-	strcopy(buffer, sizeof(buffer), SpecialRoundFakeConditions[index]);
+	strcopy(buffer, sizeof(buffer), g_sSpecialRoundFakeConditionNames[index]);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -149,39 +154,39 @@ public void SpecialRound_PrintRandomNameWhenChoosing()
 
 public void SelectNewSpecialRound()
 {
-	IsChoosingSpecialRound = false;
-	HideHudGamemodeText = false;
+	g_bIsChoosingSpecialRound = false;
+	g_bHideHudGamemodeText = false;
 
-	if (!ForceNextSpecialRound)
+	if (!g_bForceSpecialRound)
 	{
 		do
 		{
-			SpecialRoundID = GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1);
+			g_iSpecialRoundId = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
 		}
 		while (!SpecialRound_IsAvailable());
 	}
 	else
 	{
-		SpecialRoundID = ForceSpecialRound;
-		ForceNextSpecialRound = false;
+		g_iSpecialRoundId = g_iForceSpecialRoundId;
+		g_bForceSpecialRound = false;
 	}
 
-	PluginForward_SendSpecialRoundSelected(SpecialRoundID);
+	PluginForward_SendSpecialRoundSelected(g_iSpecialRoundId);
 
 	// Setup the Boss game threshold.
-	if (SpecialRoundBossGameThreshold[SpecialRoundID] > 0)
+	if (g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId] > 0)
 	{
-		BossGameThreshold = SpecialRoundBossGameThreshold[SpecialRoundID];
+		g_iBossGameThreshold = g_iSpecialRoundBossGameThreshold[g_iSpecialRoundId];
 	}
 	else
 	{
-		BossGameThreshold = GetRandomInt(15, 26);
+		g_iBossGameThreshold = GetRandomInt(15, 26);
 	}
 }
 
 stock bool SpecialRound_IsAvailable()
 {
-	if (SpecialRoundMultiplePlayersOnly[SpecialRoundID])
+	if (g_bSpecialRoundMultiplePlayersOnly[g_iSpecialRoundId])
 	{
 		if (GetTeamClientCount(2) == 0 || GetTeamClientCount(3) == 0)
 		{
@@ -204,7 +209,7 @@ stock void PrintSelectedSpecialRound()
 		if (player.IsInGame && !player.IsBot)
 		{
 			char key[32];
-			Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+			Format(key, sizeof(key), "SpecialRound%i_Name", g_iSpecialRoundId);
 
 			char name[SPR_NAME_LENGTH];
 			char description[256];
@@ -217,28 +222,28 @@ stock void PrintSelectedSpecialRound()
 			// Restore name to normal casing
 			Format(name, sizeof(name), "%T", key, i);
 
-			Format(key, sizeof(key), "SpecialRound%i_Description", SpecialRoundID);
+			Format(key, sizeof(key), "SpecialRound%i_Description", g_iSpecialRoundId);
 			Format(description, sizeof(description), "%T", key, i);
 
-			CPrintToChat(i, "%T", "Hud_SpecialRound_ChatDisplay", i, PLUGIN_PREFIX, name, description);
+			player.PrintChatText("%T", "Hud_SpecialRound_ChatDisplay", i, name, description);
 		}
 	}
 
-	if (SpecialRoundID == 14)
+	if (g_iSpecialRoundId == 14)
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSixteenEffect);
 	}
-	else if (SpecialRoundID == 15)
+	else if (g_iSpecialRoundId == 15)
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 		CreateTimer(0.0, Timer_SpecialRoundSeventeenEffect);
 	}
 }
 
 public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 { 
-	if (SpecialRound_StartEffect > 0.3)
+	if (g_fSpecialRoundScaleEffect > 0.3)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -246,16 +251,16 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 
 			if (player.IsInGame && player.IsAlive)
 			{
-				player.Scale = SpecialRound_StartEffect;
+				player.Scale = g_fSpecialRoundScaleEffect;
 			}
 		}
 
-		SpecialRound_StartEffect -= 0.1;
+		g_fSpecialRoundScaleEffect -= 0.1;
 		CreateTimer(0.01, Timer_SpecialRoundSixteenEffect);
 	}
 	else
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 	}
 
 	return Plugin_Handled;
@@ -263,7 +268,7 @@ public Action Timer_SpecialRoundSixteenEffect(Handle timer, int client)
 
 public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 {
-	if (SpecialRound_StartEffect < 2.0)
+	if (g_fSpecialRoundScaleEffect < 2.0)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -271,16 +276,16 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 			if (player.IsInGame && player.IsAlive)
 			{
-				player.HeadScale = SpecialRound_StartEffect;
+				player.HeadScale = g_fSpecialRoundScaleEffect;
 			}
 		}
 
-		SpecialRound_StartEffect += 0.1;
+		g_fSpecialRoundScaleEffect += 0.1;
 		CreateTimer(0.01, Timer_SpecialRoundSeventeenEffect);
 	}
 	else
 	{
-		SpecialRound_StartEffect = 1.0;
+		g_fSpecialRoundScaleEffect = 1.0;
 	}
 
 	return Plugin_Handled;
@@ -288,7 +293,7 @@ public Action Timer_SpecialRoundSeventeenEffect(Handle timer, int client)
 
 stock void SpecialRound_SetupEnv()
 {
-	SetConVarInt(ConVar_ServerGravity, (SpecialRoundID == 3) ? 200 : 800);
+	g_hConVarServerGravity.IntValue = (g_iSpecialRoundId == 3) ? 200 : 800;
 }
 
 public void SpecialRound_ApplyEffects()
@@ -312,26 +317,26 @@ public void SpecialRound_ApplyPlayerEffects(int client)
 	{
 		Special_ApplyCustomModel(client);
 
-		player.Scale = SpecialRoundID == 14 
+		player.Scale = g_iSpecialRoundId == 14 
 			? 0.3 
 			: 1.0;
 
-		if (SpecialRoundID != 15)
+		if (g_iSpecialRoundId != 15)
 		{
 			player.HeadScale = 1.0;
 		}
 
-		if (GamemodeID == SPR_GAMEMODEID)
+		if (g_iActiveGamemodeId == SPR_GAMEMODEID)
 		{
-			player.SetThirdPersonMode(SpecialRoundID == 0);
+			player.SetThirdPersonMode(g_iSpecialRoundId == 0);
 
-			if (SpecialRoundID == 17 && !player.IsParticipating)
+			if (g_iSpecialRoundId == 17 && !player.IsParticipating)
 			{
 				player.SetCollisionsEnabled(false);
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);
 			}
-			else if (SpecialRoundID == 12 && !IsBonusRound)
+			else if (g_iSpecialRoundId == 12 && !g_bIsGameOver)
 			{
 				player.SetVisible(false);
 				player.SetWeaponVisible(false);
@@ -356,12 +361,12 @@ public void Special_ApplyCustomModel(int client)
 		return;
 	}
 
-	if (MinigameID == 10)
+	if (g_iActiveMinigameId == 10)
 	{
 		return;
 	}
 
-	switch (SpecialRoundID)
+	switch (g_iSpecialRoundId)
 	{
 		case 13:
 		{
@@ -406,36 +411,36 @@ public void Special_ApplyCustomModel(int client)
 
 stock void SetSpeed_SpecialRound()
 {
-	switch (SpecialRoundID)
+	switch (g_iSpecialRoundId)
 	{
 		case 1:
 		{
-			if (MinigamesPlayed == 0)
+			if (g_iMinigamesPlayedCount == 0)
 			{
-				SpeedLevel = 2.0;
+				g_fActiveGameSpeed = 2.0;
 			}
 		}
 
 		case 5: 
 		{
-			SpeedLevel += 0.1;
+			g_fActiveGameSpeed += 0.1;
 		}
 
 		case 6:
 		{
-			SpeedLevel = GetRandomFloat(1.0, 2.3);
+			g_fActiveGameSpeed = GetRandomFloat(1.0, 2.3);
 		}
 
 		case 7:
 		{
-			SpeedLevel -= 0.1;
+			g_fActiveGameSpeed -= 0.1;
 		}
 
 		case 8:
 		{
-			if (MinigamesPlayed % 2 == 0)
+			if (g_iMinigamesPlayedCount % 2 == 0)
 			{
-				SpeedLevel += 0.2;
+				g_fActiveGameSpeed += 0.2;
 			}
 		}
 	}
@@ -443,17 +448,17 @@ stock void SetSpeed_SpecialRound()
 
 stock bool Special_AreSpeedEventsEnabled()
 {
-	if (SpecialRoundID <= 0)
+	if (g_iSpecialRoundId <= 0)
 	{
 		return true;
 	}
 
-	if (SpecialRoundID > SPR_MAX)
+	if (g_iSpecialRoundId > SPR_MAX)
 	{
 		return true;
 	}
 
-	return !SpecialRoundSpeedEventsDisabled[SpecialRoundID];
+	return !g_bSpecialRoundSpeedEventsDisabled[g_iSpecialRoundId];
 }
 
 stock void Special_LoadFakeConditions()
@@ -465,7 +470,7 @@ stock void Special_LoadFakeConditions()
 	char manifestPath[128];
 	BuildPath(Path_SM, manifestPath, sizeof(manifestPath), "data/microtf2/SpecialRoundFakeConditions.txt");
 
-	Handle file = OpenFile(manifestPath, "r"); // Only need r for read
+	File file = OpenFile(manifestPath, "r"); // Only need r for read
 
 	if (file == INVALID_HANDLE)
 	{
@@ -475,9 +480,9 @@ stock void Special_LoadFakeConditions()
 
 	char line[SPR_FAKECOND_LENGTH];
 
-	while (ReadFileLine(file, line, sizeof(line)))
+	while (file.ReadLine(line, sizeof(line)))
 	{
-		if (SpecialRoundFakeConditionsCount >= SPR_FAKECOND_CAPACITY)
+		if (g_iSpecialRoundFakeConditionCount >= SPR_FAKECOND_CAPACITY)
 		{
 			LogError("Hit the hardcoded limit of Special Round fake conditions. If you really want to add more, recompile the plugin with the limit changed.");
 			break;
@@ -490,16 +495,16 @@ stock void Special_LoadFakeConditions()
 			continue;
 		}
 
-		SpecialRoundFakeConditions[SpecialRoundFakeConditionsCount] = line;
-		SpecialRoundFakeConditionsCount++;
+		g_sSpecialRoundFakeConditionNames[g_iSpecialRoundFakeConditionCount] = line;
+		g_iSpecialRoundFakeConditionCount++;
 	}
 
-	CloseHandle(file);
+	file.Close();
 }
 
 public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 {
-	if (SpeedLevel == 1.0)
+	if (g_fActiveGameSpeed == 1.0)
 	{
 		EmitSoundToAll(SYSBGM_SPECIAL);
 	}
@@ -514,7 +519,7 @@ public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 
 public Action Timer_GameLogic_SpecialRoundChoosingStartSelection(Handle timer)
 {
-	IsChoosingSpecialRound = true;
+	g_bIsChoosingSpecialRound = true;
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -552,12 +557,12 @@ public Action Timer_GameLogic_SpecialRoundChoosingDoSelect(Handle timer)
 
 public void SpecialRound_OnPlayerClassChange(int client, int class)
 {
-	if (SpecialRoundID != 9)
+	if (g_iSpecialRoundId != 9)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -567,7 +572,7 @@ public void SpecialRound_OnPlayerClassChange(int client, int class)
 	if (player.IsValid)
 	{
 		player.Score++;
-		CPrintToChat(client, "%s%T", PLUGIN_PREFIX, "System_SpecialRoundBlockClassChange", client);
+		player.PrintChatText("%T", "System_SpecialRoundBlockClassChange", client);
 	}
 }
 
@@ -589,13 +594,13 @@ public Action Command_SetNextSpecialRound(int client, int args)
 	}
 	else
 	{
-		id = GetRandomInt(SPR_MIN, SpecialRoundsLoaded - 1);
+		id = GetRandomInt(SPR_MIN, g_iLoadedSpecialRoundCount - 1);
 	}
 
-	if (id >= SPR_MIN && id < SpecialRoundsLoaded)
+	if (id >= SPR_MIN && id < g_iLoadedSpecialRoundCount)
 	{
-		ForceNextSpecialRound = true;
-		ForceSpecialRound = id;
+		g_bForceSpecialRound = true;
+		g_iForceSpecialRoundId = id;
 
 		ReplyToCommand(client, "[WWR] The next special round has been set to %i", id);
 
@@ -622,8 +627,8 @@ public Action Command_ChangeSpecialRound(int client, int args)
 
 	if (id >= SPR_MIN && id <= SPR_MAX)
 	{
-		GamemodeID = SPR_GAMEMODEID;
-		SpecialRoundID = id;
+		g_iActiveGamemodeId = SPR_GAMEMODEID;
+		g_iSpecialRoundId = id;
 
 		return Plugin_Handled;
 	}

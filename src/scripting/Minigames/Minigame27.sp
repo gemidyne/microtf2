@@ -4,32 +4,32 @@
  * Hit someone! 
  */
 
-bool Minigame27_UseBleedingMode = false;
+bool g_bMinigame27UseBleedingMode = false;
 
 public void Minigame27_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame27_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame27_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame27_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame27_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame27_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame27_OnPlayerTakeDamage);
 }
 
 public void Minigame27_OnMinigameSelectedPre()
 {
-	if (MinigameID == 27)
+	if (g_iActiveMinigameId == 27)
 	{
-		IsBlockingDamage = false;
-		Minigame27_UseBleedingMode = GetRandomInt(0, 1) == 1;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
+		g_bMinigame27UseBleedingMode = GetRandomInt(0, 1) == 1;
 	}
 }
 
 public void Minigame27_OnMinigameSelected(int client)
 {
-	if (MinigameID != 27)
+	if (g_iActiveMinigameId != 27)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -42,11 +42,11 @@ public void Minigame27_OnMinigameSelected(int client)
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
 		
-		if (Minigame27_UseBleedingMode)
+		if (g_bMinigame27UseBleedingMode)
 		{
 			player.SetHealth(25);
 			player.GiveWeapon(812);
-			player.SetWeaponPrimaryAmmoCount(ActiveParticipantCount > 10 ? 1 : 2);
+			player.SetWeaponPrimaryAmmoCount(g_iActiveParticipantCount > 10 ? 1 : 2);
 		}
 		else
 		{
@@ -58,7 +58,7 @@ public void Minigame27_OnMinigameSelected(int client)
 
 public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (IsMinigameActive && MinigameID == 27)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 27)
 	{
 		Player victim = new Player(victimId);
 		Player attacker = new Player(attackerId);

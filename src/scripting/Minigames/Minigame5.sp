@@ -6,29 +6,29 @@
 
 public void Minigame5_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame5_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame5_OnMinigameSelected);
-	AddToForward(GlobalForward_OnStickyJump, INVALID_HANDLE, Minigame5_OnStickyJump);
-	AddToForward(GlobalForward_OnMinigameFinish, INVALID_HANDLE, Minigame5_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame5_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame5_OnMinigameSelected);
+	AddToForward(g_pfOnStickyJump, INVALID_HANDLE, Minigame5_OnStickyJump);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame5_OnMinigameFinish);
 }
 
 public void Minigame5_OnMinigameSelectedPre()
 {
-	if (MinigameID == 5)
+	if (g_iActiveMinigameId == 5)
 	{
-		IsBlockingDamage = false;
-		IsBlockingDeathCommands = true;
+		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
+		g_bIsBlockingKillCommands = true;
 	}
 }
 
 public void Minigame5_OnMinigameSelected(int client)
 {
-	if (MinigameID != 5)
+	if (g_iActiveMinigameId != 5)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -48,12 +48,12 @@ public void Minigame5_OnMinigameSelected(int client)
 
 public void Minigame5_OnStickyJump(int client)
 {
-	if (MinigameID != 5)
+	if (g_iActiveMinigameId != 5)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -69,7 +69,7 @@ public void Minigame5_OnStickyJump(int client)
 
 public void Minigame5_OnMinigameFinish()
 {
-	if (MinigameID == 5)
+	if (g_iActiveMinigameId == 5)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{

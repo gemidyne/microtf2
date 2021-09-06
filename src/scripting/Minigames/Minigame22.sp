@@ -6,28 +6,28 @@
 
 public void Minigame22_EntryPoint()
 {
-	AddToForward(GlobalForward_OnMinigameSelectedPre, INVALID_HANDLE, Minigame22_OnMinigameSelectedPre);
-	AddToForward(GlobalForward_OnMinigameSelected, INVALID_HANDLE, Minigame22_OnMinigameSelected);
-	AddToForward(GlobalForward_OnPlayerTakeDamage, INVALID_HANDLE, Minigame22_OnPlayerTakeDamage);
-	AddToForward(GlobalForward_OnMinigameFinishPre, INVALID_HANDLE, Minigame22_OnMinigameFinishPre);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame22_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame22_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Minigame22_OnPlayerTakeDamage);
+	AddToForward(g_pfOnMinigameFinishPre, INVALID_HANDLE, Minigame22_OnMinigameFinishPre);
 }
 
 public void Minigame22_OnMinigameSelectedPre()
 {
-	if (MinigameID == 22)
+	if (g_iActiveMinigameId == 22)
 	{
-		IsBlockingDamage = false;
+		g_eDamageBlockMode = EDamageBlockMode_Nothing;
 	}
 }
 
 public void Minigame22_OnMinigameSelected(int client)
 {
-	if (MinigameID != 22)
+	if (g_iActiveMinigameId != 22)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -49,12 +49,12 @@ public void Minigame22_OnMinigameSelected(int client)
 
 public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
 {
-	if (MinigameID != 22)
+	if (g_iActiveMinigameId != 22)
 	{
 		return;
 	}
 
-	if (!IsMinigameActive)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
@@ -80,9 +80,9 @@ public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 public void Minigame22_OnMinigameFinishPre()
 {
-	if (MinigameID == 22)
+	if (g_iActiveMinigameId == 22)
 	{
-		IsBlockingDeathCommands = false;
+		g_bIsBlockingKillCommands = false;
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -102,6 +102,6 @@ public void Minigame22_OnMinigameFinishPre()
 			}
 		}
 
-		IsBlockingDeathCommands = true;
+		g_bIsBlockingKillCommands = true;
 	}
 }

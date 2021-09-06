@@ -3,8 +3,8 @@
 
 #define HUD_RENDER_INTERVAL 10
 
-Handle HudSync_Stats;
-Handle HudSync_Caption;
+Handle g_hHudSyncStats;
+Handle g_hHudSyncCaption;
 
 int g_iCenterHudUpdateFrame = 0;
 char g_sCustomHudText[MAXPLAYERS][CUSTOM_HUD_TEXT_LENGTH];
@@ -16,11 +16,11 @@ stock void InitialiseHud()
     LogMessage("Initializing HUD...");
     #endif
     
-    HudSync_Stats = CreateHudSynchronizer();
-    HudSync_Caption = CreateHudSynchronizer();
+    g_hHudSyncStats = CreateHudSynchronizer();
+    g_hHudSyncCaption = CreateHudSynchronizer();
 
-    AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, Hud_OnMapStart);
-    AddToForward(GlobalForward_OnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
+    AddToForward(g_pfOnMapStart, INVALID_HANDLE, Hud_OnMapStart);
+    AddToForward(g_pfOnGameFrame, INVALID_HANDLE, Hud_OnGameFrame);
 
     RegConsoleCmd("sm_credits", Command_ViewGamemodeCredits);
 }
@@ -43,15 +43,15 @@ public void Hud_OnMapStart()
 
 public void Hud_OnGameFrame()
 {
-    if (!TimelimitManager_HasTimeLimit() && MaxRounds > 0 && RoundsPlayed >= MaxRounds)
+    if (!TimelimitManager_HasTimeLimit() && g_iMaxRoundsPlayable > 0 && g_iTotalRoundsPlayed >= g_iMaxRoundsPlayable)
     {
         return;
     }
 
     #if defined DEBUG
-	if (GamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > HUD_RENDER_INTERVAL)
+	if (g_eGamemodeStatus != GameStatus_WaitingForPlayers && g_iCenterHudUpdateFrame > HUD_RENDER_INTERVAL)
 	{
-		PrintHintTextToAll("MinigameID: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", MinigameID, BossgameID, SpecialRoundID, MinigamesPlayed, SpeedLevel);
+		PrintHintTextToAll("g_iActiveMinigameId: %i\nBossgameID: %i\nSpecialRoundID: %i\nMinigamesPlayed: %i\nSpeedLevel: %.1f", g_iActiveMinigameId, g_iActiveBossgameId, g_iSpecialRoundId, g_iMinigamesPlayedCount, g_fActiveGameSpeed);
 	}
 	#endif
 
@@ -68,7 +68,7 @@ public void Hud_OnGameFrame()
                 char buffer[CAPTION_LENGTH];
                 Format(buffer, sizeof(buffer), g_sCaptionText[i]);
 
-                if (SpecialRoundID == 19)
+                if (g_iSpecialRoundId == 19)
                 {
                     char rewritten[CAPTION_LENGTH];
                     ReverseString(buffer, sizeof(buffer), rewritten);
@@ -76,7 +76,7 @@ public void Hud_OnGameFrame()
                 }
 
                 SetHudTextParamsEx(-1.0, 0.2, 1.0, { 255, 255, 255, 255 }, { 0, 0, 0, 0 }, 2, 0.0, 0.0, 0.0);
-                ShowSyncHudText(i, HudSync_Caption, buffer);
+                ShowSyncHudText(i, g_hHudSyncCaption, buffer);
 
                 DisplayStatsHud(player);
             }
@@ -90,9 +90,9 @@ public void DisplayStatsHud(Player player)
 {
     char buffer[128];
 
-    if (GlobalForward_OnRenderHudFrame != INVALID_HANDLE)
+    if (g_pfOnRenderHudFrame != INVALID_HANDLE)
     {
-        Call_StartForward(GlobalForward_OnRenderHudFrame);
+        Call_StartForward(g_pfOnRenderHudFrame);
         Call_PushCell(player.ClientId);
         Call_Finish();
     }
@@ -107,7 +107,7 @@ public void DisplayStatsHud(Player player)
     DisplaySpecialHud(player, buffer);
     
     SetHudTextParamsEx(0.2, 0.9, 1.0, { 255, 255, 255, 255 }, {0, 0, 0, 0}, 2, 0.01, 0.01, 0.01);
-    ShowSyncHudText(player.ClientId, HudSync_Stats, buffer);
+    ShowSyncHudText(player.ClientId, g_hHudSyncStats, buffer);
 }
 
 public void DisplayScoreHud(Player player, char buffer[128])
@@ -119,7 +119,7 @@ public void DisplayScoreHud(Player player, char buffer[128])
 
     char scoreText[32];
 
-    switch (SpecialRoundID)
+    switch (g_iSpecialRoundId)
     {
         case 11:
         {
@@ -139,7 +139,7 @@ public void DisplayScoreHud(Player player, char buffer[128])
         }
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(scoreText, sizeof(scoreText), rewritten);
@@ -153,16 +153,16 @@ public void DisplayRoundHud(Player player, char buffer[128])
 {
     char roundDisplay[32];
 
-    if (TimelimitManager_HasTimeLimit() || MaxRounds <= 0)
+    if (TimelimitManager_HasTimeLimit() || g_iMaxRoundsPlayable <= 0)
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, RoundsPlayed + 1);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplayUnlimited", player.ClientId, g_iTotalRoundsPlayed + 1);
     }
     else
     {
-        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, RoundsPlayed + 1, MaxRounds);
+        Format(roundDisplay, sizeof(roundDisplay), "%T", "Hud_RoundDisplay", player.ClientId, g_iTotalRoundsPlayed + 1, g_iMaxRoundsPlayable);
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(roundDisplay, sizeof(roundDisplay), rewritten);
@@ -174,7 +174,7 @@ public void DisplayRoundHud(Player player, char buffer[128])
 
 public void DisplaySpecialHud(Player player, char buffer[128])
 {
-    if (HideHudGamemodeText)
+    if (g_bHideHudGamemodeText)
     {
         Format(buffer, sizeof(buffer), "%s??????\n", buffer);
         return;
@@ -182,19 +182,19 @@ public void DisplaySpecialHud(Player player, char buffer[128])
 
     char themeSpecialText[32];
 
-    if (GamemodeID == SPR_GAMEMODEID)
+    if (g_iActiveGamemodeId == SPR_GAMEMODEID)
     {
         char key[32];
         
-        Format(key, sizeof(key), "SpecialRound%i_Name", SpecialRoundID);
+        Format(key, sizeof(key), "SpecialRound%i_Name", g_iSpecialRoundId);
         Format(themeSpecialText, sizeof(themeSpecialText), "%T", key, player.ClientId);
     }
     else
     {
-        Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", player.ClientId, SystemNames[GamemodeID]);
+        Format(themeSpecialText, sizeof(themeSpecialText), "%T", "Hud_ThemeDisplay", player.ClientId, g_sGamemodeThemeName[g_iActiveGamemodeId]);
     }
 
-    if (SpecialRoundID == 19)
+    if (g_iSpecialRoundId == 19)
     {
         char rewritten[32];
         ReverseString(themeSpecialText, sizeof(themeSpecialText), rewritten);
@@ -237,11 +237,7 @@ public Action Timer_Advertise(Handle timer)
 
         if (player.IsInGame && !player.IsBot)
         {
-            char text[128];
-
-            Format(text, sizeof(text), "%T", "System_Advertisement", player.ClientId, PLUGIN_VERSION);
-
-            CPrintToChat(player.ClientId, "%s%s", PLUGIN_PREFIX, text);
+            player.PrintChatText("%T", "System_Advertisement", player.ClientId, PLUGIN_VERSION);
         }
     }
 
@@ -250,7 +246,7 @@ public Action Timer_Advertise(Handle timer)
 
 public Action Command_ViewGamemodeCredits(int client, int args)
 {
-    if (!IsPluginEnabled)
+    if (!g_bIsPluginEnabled)
     {
         return Plugin_Handled;
     }

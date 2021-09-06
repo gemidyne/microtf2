@@ -1,7 +1,7 @@
 /**
- * MicroTF2 - System.inc
+ * MicroTF2 - System.sp
  * 
- * Implements main system
+ * Implements the coordinator that orchestrates the gameplay
  */
 
 #define TOTAL_GAMEMODES 100
@@ -14,14 +14,6 @@
 #define SYSMUSIC_GAMEOVER 3
 #define SYSMUSIC_FAILURE 4
 #define SYSMUSIC_WINNER 5
-
-#define SYSBGM_WAITING "gemidyne/warioware/system/bgm/waitingforplayers.wav"
-#define SYSBGM_SPECIAL "gemidyne/warioware/system/bgm/specialround.mp3"
-#define SYSBGM_ENDING "gemidyne/warioware/system/bgm/mapend.mp3"
-
-#define SYSFX_CLOCK "gemidyne/warioware/system/sfx/clock.mp3"
-#define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
-#define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
 
 #define SYSMUSIC_MAXFILES 32
 #define SYSMUSIC_MAXSTRINGLENGTH 192
@@ -37,63 +29,14 @@
 #define OVERLAY_WELCOME "gemidyne/warioware/overlays/system_waitingforplayers"
 #define OVERLAY_SPECIALROUND "gemidyne/warioware/overlays/system_specialround"
 
-char SystemNames[TOTAL_GAMEMODES+1][32];
-char SystemMusic[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
-int SystemMusicCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
-float SystemMusicLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
+char g_sGamemodeThemeName[TOTAL_GAMEMODES+1][32];
+char g_sGamemodeThemeBgm[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES][SYSMUSIC_MAXSTRINGLENGTH];
+int g_iGamemodeThemeBgmCount[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1];
+float g_fGamemodeThemeBgmLength[TOTAL_GAMEMODES+1][TOTAL_SYSMUSIC+1][SYSMUSIC_MAXFILES];
+bool g_bGamemodeThemeAllowVoices[TOTAL_GAMEMODES+1];
 
-int GamemodeID = 0;
-int MaxGamemodesSelectable = 0;
-
-
-stock void InitializeSystem()
-{
-	char gameFolder[32];
-	GetGameFolderName(gameFolder, sizeof(gameFolder));
-
-	if (!StrEqual(gameFolder, "tf"))
-	{
-		SetFailState("WarioWare can only be run on Team Fortress 2.");
-	}
-
-	if (GetExtensionFileStatus("sdkhooks.ext") < 1) 
-	{
-		SetFailState("The SDKHooks Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("tf2items.ext") < 1)
-	{
-		SetFailState("The TF2Items Extension is not loaded.");
-	}
-
-	if (GetExtensionFileStatus("steamtools.ext") < 1)
-	{
-		SetFailState("The SteamTools Extension is not loaded.");
-	}
-
-	LoadTranslations("microtf2.phrases.txt");
-
-	#if defined LOGGING_STARTUP
-	LogMessage("Initializing System...");
-	#endif
-	
-	HookEvents();
-	InitializeForwards();
-	InitializePluginForwards();
-	InitialiseHud();
-	LoadOffsets();
-	InitializeCommands();
-	InitializeSpecialRounds();
-	InitialiseSounds();
-	LoadGamemodeInfo();
-	InitialiseVoices();
-
-	AddToForward(GlobalForward_OnMapStart, INVALID_HANDLE, System_OnMapStart);
-	InitializeMinigames();
-	InitialisePrecacheSystem();
-
-	InitialiseWeapons();
-}
+int g_iActiveGamemodeId = 0;
+int g_iLoadedGamemodeCount = 0;
 
 public void System_OnMapStart()
 {
@@ -106,38 +49,37 @@ public void System_OnMapStart()
 	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
 	Steam_SetGameDescription(gameDescription);
 
-	MinigameID = 0;
-	BossgameID = 0;
-	PreviousMinigameID = 0;
-	PreviousBossgameID = 0;
-	SpecialRoundID = 0;
-	ScoreAmount = 1;
-	MinigamesPlayed = 0;
-	NextMinigamePlayedSpeedTestThreshold = 0;
-	BossGameThreshold = 20;
-	MaxRounds = GetConVarInt(ConVar_MTF2MaxRounds);
-	RoundsPlayed = 0;
-	SpeedLevel = 1.0;
+	g_iActiveMinigameId = 0;
+	g_iActiveBossgameId = 0;
+	g_iLastPlayedMinigameId = 0;
+	g_iLastPlayedBossgameId = 0;
+	g_iSpecialRoundId = 0;
+	g_iWinnerScorePointsAmount = 1;
+	g_iMinigamesPlayedCount = 0;
+	g_iNextMinigamePlayedSpeedTestThreshold = 0;
+	g_iBossGameThreshold = 20;
+	g_iMaxRoundsPlayable = g_hConVarPluginMaxRounds.IntValue;
+	g_iTotalRoundsPlayed = 0;
+	g_fActiveGameSpeed = 1.0;
 
-	IsMinigameActive = false;
-	IsMinigameEnding = false;
-	IsMapEnding = false;
-	IsBonusRound = false;
-	IsBlockingTaunts = true;
-	IsBlockingDeathCommands = true;
-	IsBlockingDamage = true;
-	IsOnlyBlockingDamageByPlayers = false;
+	g_bIsMinigameActive = false;
+	g_bIsMinigameEnding = false;
+	g_bIsMapEnding = false;
+	g_bIsGameOver = false;
+	g_bIsBlockingTaunts = true;
+	g_bIsBlockingKillCommands = true;
+	g_eDamageBlockMode = EDamageBlockMode_All;
 
 	for (int g = 0; g < TOTAL_GAMEMODES; g++)
 	{
 		for (int i = 0; i < TOTAL_SYSMUSIC; i++)
 		{
-			for (int k = 0; k < SystemMusicCount[g][i]; k++)
+			for (int k = 0; k < g_iGamemodeThemeBgmCount[g][i]; k++)
 			{
 				// Preload (Precache and Add To Downloads Table) all Sounds needed for every gamemode
 				char buffer[SYSMUSIC_MAXSTRINGLENGTH];
 
-				strcopy(buffer, sizeof(buffer), SystemMusic[g][i][k]);
+				strcopy(buffer, sizeof(buffer), g_sGamemodeThemeBgm[g][i][k]);
 
 				if (strlen(buffer) > 0)
 				{
@@ -146,22 +88,6 @@ public void System_OnMapStart()
 			}
 		}
 	}
-
-	PreloadSound(SYSBGM_WAITING);
-	PreloadSound(SYSBGM_SPECIAL);
-	PreloadSound(SYSBGM_ENDING);
-	PreloadSound(SYSFX_SELECTED);
-	PreloadSound(SYSFX_CLOCK);
-	PreloadSound(SYSFX_WINNER);
-
-	PrecacheSound("ui/system_message_alert.wav", true);
-	PrecacheSound("vo/announcer_ends_10sec.wav", true);
-	PrecacheSound("vo/announcer_ends_5sec.wav", true);
-	PrecacheSound("vo/announcer_ends_4sec.wav", true);
-	PrecacheSound("vo/announcer_ends_3sec.wav", true);
-	PrecacheSound("vo/announcer_ends_2sec.wav", true);
-	PrecacheSound("vo/announcer_ends_1sec.wav", true);
-	PrecacheSound("vo/announcer_success.wav", true);
 
 	PrecacheMaterial(OVERLAY_MINIGAMEBLANK);
 	PrecacheMaterial(OVERLAY_WON);
@@ -195,29 +121,30 @@ public void LoadGamemodeInfo()
 			int gamemodeId = GetIdFromSectionName(kv);
 
 			// These 2 cannot have the different lengths; they're played at the same time
-			kv.GetString("SysMusic_Failure", SystemMusic[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
-			kv.GetFloat("SysMusic_Failure_Length", SystemMusicLength[gamemodeId][SYSMUSIC_FAILURE][0]);
+			kv.GetString("SysMusic_Failure", g_sGamemodeThemeBgm[gamemodeId][SYSMUSIC_FAILURE][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Failure_Length", g_fGamemodeThemeBgmLength[gamemodeId][SYSMUSIC_FAILURE][0]);
 
-			SystemMusicCount[gamemodeId][SYSMUSIC_FAILURE]++;
+			g_iGamemodeThemeBgmCount[gamemodeId][SYSMUSIC_FAILURE]++;
 
-			kv.GetString("SysMusic_Winner", SystemMusic[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
-			kv.GetFloat("SysMusic_Winner_Length", SystemMusicLength[gamemodeId][SYSMUSIC_WINNER][0]);
+			kv.GetString("SysMusic_Winner", g_sGamemodeThemeBgm[gamemodeId][SYSMUSIC_WINNER][0], SYSMUSIC_MAXSTRINGLENGTH);
+			kv.GetFloat("SysMusic_Winner_Length", g_fGamemodeThemeBgmLength[gamemodeId][SYSMUSIC_WINNER][0]);
 
-			SystemMusicCount[gamemodeId][SYSMUSIC_WINNER]++;
+			g_iGamemodeThemeBgmCount[gamemodeId][SYSMUSIC_WINNER]++;
 
-			kv.GetString("FriendlyName", SystemNames[gamemodeId], 32);
+			kv.GetString("FriendlyName", g_sGamemodeThemeName[gamemodeId], 32);
+			g_bGamemodeThemeAllowVoices[gamemodeId] = kv.GetNum("AllowVoices", 1) == 1;
 
 			if (kv.GetNum("Selectable", 0) == 1)
 			{
 				// Selectable Gamemodes must be at the start of the Gamemodes.txt file
-				MaxGamemodesSelectable++;
+				g_iLoadedGamemodeCount++;
 			}
 
 			// Get sections
 			LoadSysMusicSection(kv, gamemodeId);
 
 			#if defined LOGGING_STARTUP
-			LogMessage("Loaded gamemode %d - %s", gamemodeId, SystemNames[gamemodeId]);
+			LogMessage("Loaded gamemode %d - %s", gamemodeId, g_sGamemodeThemeName[gamemodeId]);
 			#endif
 		}
 		while (kv.GotoNextKey());
@@ -272,10 +199,10 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 
 			do
 			{
-				kv.GetString("File", SystemMusic[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
+				kv.GetString("File", g_sGamemodeThemeBgm[gamemodeId][bgmType][idx], SYSMUSIC_MAXSTRINGLENGTH);
 
-				SystemMusicLength[gamemodeId][bgmType][idx] = kv.GetFloat("Length");
-				SystemMusicCount[gamemodeId][bgmType]++;
+				g_fGamemodeThemeBgmLength[gamemodeId][bgmType][idx] = kv.GetFloat("Length");
+				g_iGamemodeThemeBgmCount[gamemodeId][bgmType]++;
 			}
 			while (kv.GotoNextKey());
 
@@ -287,15 +214,15 @@ stock void LoadSysMusicSection(KeyValues kv, int gamemodeId)
 	kv.GoBack();
 }
 
-stock void LoadOffsets()
+void LoadOffsets()
 {
-	Offset_Collision = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
-	Offset_WeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
-	Offset_PlayerActiveWeapon = TryFindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
-	Offset_PlayerAmmo = FindSendPropInfo("CTFPlayer", "m_iAmmo");
+	g_oCollisionGroup = TryFindSendPropInfo("CBaseEntity", "m_CollisionGroup");
+	g_oWeaponBaseClip1 = TryFindSendPropInfo("CTFWeaponBase", "m_iClip1");
+	g_oPlayerActiveWeapon = TryFindSendPropInfo("CTFPlayer", "m_hActiveWeapon");
+	g_oPlayerAmmo = TryFindSendPropInfo("CTFPlayer", "m_iAmmo");
 }
 
-stock void PrecacheMaterial(const char[] material)
+void PrecacheMaterial(const char[] material)
 {
 	char path[128];
 
@@ -303,7 +230,7 @@ stock void PrecacheMaterial(const char[] material)
 	PrecacheGeneric(path, true);
 }
 
-stock int TryFindSendPropInfo(const char[] cls, const char[] prop)
+int TryFindSendPropInfo(const char[] cls, const char[] prop)
 {
 	int offset = FindSendPropInfo(cls, prop);
 

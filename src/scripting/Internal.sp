@@ -14,35 +14,6 @@ stock int FindEntityByClassname2(int startEntityId, const char[] classname)
 	return FindEntityByClassname(startEntityId, classname);
 }
 
-stock bool IsWarioWareMap()
-{
-	char map[32];
-	GetCurrentMap(map, sizeof(map));
-	
-	return strncmp(PLUGIN_MAPPREFIX, map, strlen(PLUGIN_MAPPREFIX), false) == 0;
-}
-
-stock void UnloadPlugin()
-{
-	char fileName[244];
-	GetPluginFilename(GetMyHandle(), fileName, sizeof(fileName));
-	ServerCommand("sm plugins unload %s", fileName);
-}
-
-stock void PreloadSound(const char[] sound)
-{
-	if (strlen(sound) == 0)
-	{
-		return;
-	}
-
-	PrecacheSound(sound, true);
-
-	// This call intentionally does not add sounds to the files download table.
-	// This is because the correct approach to distributing the gamemode is to pack 
-	// the resources into the BSP so your players only require one download.
-}
-
 stock int GetHighestScore()
 {
 	int threshold = 0;
@@ -94,10 +65,8 @@ stock int CalculateTeamScore(TFTeam team)
 	return threshold;
 }
 
-stock void EndGame()
+void EndGame()
 {
-	SetConVarInt(FindConVar("mp_timelimit"), 1);
-
 	int entity = FindEntityByClassname(-1, "game_end");
 
 	if (entity == -1)
@@ -135,53 +104,37 @@ stock int GetActivePlayers(int team = 0, bool mustbealive = false)
     return output;
 }
 
-stock void UpdatePlayerIndexes(bool mustbealive = false)
+void ResetGamemode()
 {
-	int id = 0;
-	for (int i = 1; i <= MaxClients; i++)
-	{
-		Player player = new Player(i);
-
-		if (player.IsValid && (!mustbealive || player.IsAlive))
-		{
-			id += 1;
-			PlayerIndex[i] = id;
-		}
-	}
-}
-
-stock void ResetGamemode()
-{
-	GamemodeStatus = GameStatus_WaitingForPlayers;
+	g_eGamemodeStatus = GameStatus_WaitingForPlayers;
 
 	PrepareConVars();
 
-	RoundsPlayed = 0;
+	g_iTotalRoundsPlayed = 0;
 
-	BossgameID = 0;
-	MinigameID = 0;
-	SpecialRoundID = 0;
-	PreviousMinigameID = 0;
-	PreviousBossgameID = 0;
-	MinigamesPlayed = 0;
-	NextMinigamePlayedSpeedTestThreshold = 0;
+	g_iActiveBossgameId = 0;
+	g_iActiveMinigameId = 0;
+	g_iSpecialRoundId = 0;
+	g_iLastPlayedMinigameId = 0;
+	g_iLastPlayedBossgameId = 0;
+	g_iMinigamesPlayedCount = 0;
+	g_iNextMinigamePlayedSpeedTestThreshold = 0;
 	
-	IsMinigameActive = false;
-	IsBonusRound = false;
+	g_bIsMinigameActive = false;
+	g_bIsGameOver = false;
 
-	IsBlockingDamage = true;
-	IsOnlyBlockingDamageByPlayers = false;
-	IsBlockingDeathCommands = true;
-	IsBlockingTaunts = true;
+	g_eDamageBlockMode = EDamageBlockMode_All;
+	g_bIsBlockingKillCommands = true;
+	g_bIsBlockingTaunts = true;
 
 	SetTeamScore(view_as<int>(TFTeam_Red), 0);
 	SetTeamScore(view_as<int>(TFTeam_Blue), 0);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
-		PlayerScore[i] = 0;
-		PlayerStatus[i] = PlayerStatus_NotWon;
-		PlayerMinigamesWon[i] = 0;
-		PlayerMinigamesLost[i] = 0;
+		g_iPlayerScore[i] = 0;
+		g_ePlayerStatus[i] = PlayerStatus_NotWon;
+		g_iPlayerMinigamesWon[i] = 0;
+		g_iPlayerMinigamesLost[i] = 0;
 	}
 }

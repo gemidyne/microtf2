@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"en"		"{1}The special round condition is... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"en"		"The special round condition is... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"en"		"and"
+		"#format"		"{1:s},{2:s}"
+		"en"		"{1} and {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -120,23 +121,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"en"		"{1}{2} {3} {green}with {4} points!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"en"		"{1} {2} {default}with {3} points!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The winning team is the RED team with {2} points!"
+		"#format"		"{1:i}"
+		"en"		"The winning team is the RED team with {1} points!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The winning team is the BLU team with {2} points!"
+		"#format"		"{1:i}"
+		"en"		"The winning team is the BLU team with {1} points!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"en"		"{1}Stalemate! Both teams have the same points!"
+		"en"		"Stalemate! Both teams have the same points!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +152,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} reached the top first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} reached the top first! (Bonus point!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,12 +161,12 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} escaped the factory first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} escaped the factory first! (Bonus point!)"
 	}
 	"Bossgame3_Caption"
 	{
-		"en"		"DEFEAT THE ENEMY TEAM!"
+		"en"		"STAY ON THE GREEN BLOCK!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -178,16 +178,65 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} reached the goal first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} reached the goal first! (Bonus point!)"
 	}
 	"Bossgame6_Caption"
 	{
 		"en"		"SHOOT THE MOST BARRELS!"
 	}
-	"Bossgame7_Caption"
+	"Bossgame8_Caption_CountTheProps"
 	{
-		"en"		""
+		"en"		"COUNT THE PROPS!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"en"		"GET READY..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"en"		"THE CORRECT ANSWER WAS...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"en"		"THE CORRECT ANSWER WAS...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"en"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"en"		"Dispensers"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"en"		"Ammo Packs"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"en"		"Barrels"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"en"		"Chairs"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"en"		"Room A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"en"		"Room B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"en"		"Room C: {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -216,8 +265,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} said the word first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} said the word first! (Bonus point!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +279,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"en"		"{1}The correct answer was {2}!"
+		"#format"		"{1:i}"
+		"en"		"The correct answer was {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"en"		"{1}{2} got the correct answer first! (Bonus point!)"
+		"#format"		"{1:s}"
+		"en"		"{1} got the correct answer first! (Bonus point!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -453,6 +502,14 @@
 	"Minigame27_Caption"
 	{
 		"en"		"HIT AN ENEMY!"
+	}
+	"Minigame28_Caption"
+	{
+		"en"		"BOMB JUMP ONTO THE PLATFORM!"
+	}
+	"Minigame29_Caption"
+	{
+		"en"		"DON'T TOUCH ANYONE!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

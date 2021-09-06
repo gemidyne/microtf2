@@ -47,8 +47,8 @@
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
-		"#format"		"{1:s},{2:s},{3:s}"
-		"pl"		"{1}Warunek rundy specjalnej to... {2}!\n{3}"
+		"#format"		"{1:s},{2:s}"
+		"pl"		"Warunek rundy specjalnej to... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
@@ -56,7 +56,7 @@
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
-		"pl"		"ZOSTAŁEŚ WYELIMINOWANY!"
+		"pl"		"NOKAUT! ODPADASZ!"
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
@@ -64,39 +64,39 @@
 	}
 	"General_Loser"
 	{
-		"pl"		"Przegrany!"
+		"pl"		"Przegrywasz!"
 	}
 	"General_Winner"
 	{
-		"pl"		"Zwycięzca!"
+		"pl"		"Wygrywasz!"
 	}
 	"General_SpeedUp"
 	{
-		"pl"		"SPEED UP!"
+		"pl"		"SZYBCIEJ!"
 	}
 	"General_SpeedDown"
 	{
-		"pl"		"SPEED DOWN!"
+		"pl"		"WOLNIEJ!"
 	}
 	"General_Failure"
 	{
-		"pl"		"FAILURE!"
+		"pl"		"PORAŻKA!"
 	}
 	"General_Success"
 	{
-		"pl"		"SUCCESS!"
+		"pl"		"SUKCES!"
 	}
 	"General_BossTime"
 	{
-		"pl"		"BOSS TIME!"
+		"pl"		"CZAS NA BOSSA!"
 	}
 	"General_GameOver"
 	{
-		"pl"		"GAME OVER!"
+		"pl"		"KONIEC GRY!"
 	}
 	"General_SpecialRound"
 	{
-		"pl"		"SPECIAL ROUND!"
+		"pl"		"RUNDA SPECJALNA!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -104,7 +104,7 @@
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"pl"		"Zwycięzcą został..."
+		"pl"		"Zwycięzcą został(a)..."
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
@@ -112,7 +112,8 @@
 	}
 	"GameOver_WinnersAnd"
 	{
-		"pl"		"oraz"
+		"#format"		"{1:s},{2:s}"
+		"pl"		"{1} oraz {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
@@ -120,23 +121,22 @@
 	}
 	"GameOver_WinnerSuffix"
 	{
-		"#format"		"{1:s},{2:s},{3:s},{4:i}"
-		"pl"		"{1}{2} {3} {green}z wynikiem {4}!"
+		"#format"		"{1:s},{2:s},{3:i}"
+		"pl"		"{1} {2} {default}z wynikiem {3}!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Zwyciężyła drużyna RED z wynikiem {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Zwyciężyła drużyna RED z wynikiem {1}!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Zwyciężyła drużyna BLU z wynikiem {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Zwyciężyła drużyna BLU z wynikiem {1}!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"#format"		"{1:s}"
-		"pl"		"{1}Impas! Obie drużyny mają tyle samo punktów!"
+		"pl"		"Pat! Obie drużyny mają tyle samo punktów!"
 	}
 	"System_Intermission_Header"
 	{
@@ -152,8 +152,8 @@
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy dotarł na szczyt! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jest pierwszą osobą, która dotarła na szczyt! (Bonusowy punkt!)"
 	}
 	"Bossgame2_Caption"
 	{
@@ -161,12 +161,12 @@
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy uciekł z fabryki! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jest pierwszą osobą, która uciekła z fabryki! (Bonusowy punkt!)"
 	}
 	"Bossgame3_Caption"
 	{
-		"pl"		"POKONAJ WROGĄ DRUŻYNĘ!"
+		"pl"		"ZOSTAŃ NA ZIELONYM BLOKU!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -178,16 +178,65 @@
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy dotarł do celu! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jest pierwszą osobą, która dotarła do celu! (Bonusowy punkt!)"
 	}
 	"Bossgame6_Caption"
 	{
 		"pl"		"TRAF W JAK NAJWIĘCEJ BECZEK!"
 	}
-	"Bossgame7_Caption"
+	"Bossgame8_Caption_CountTheProps"
 	{
-		"pl"		""
+		"pl"		"POLICZ PRZEDMIOTY!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"pl"		"NA MIEJSCA..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"pl"		"POPRAWNA ODPOWIEDŹ TO...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"pl"		"POPRAWNA ODPOWIEDŹ TO...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"pl"		"Ile tam było {1}? Wejdź do odpowiedniego pomieszczenia!\nPokój A: {2}   Pokój B: {3}   Pokój C: {4}\nPozostały czas: {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"pl"		"Zasobników"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"pl"		"Paczek z Amunicją"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"pl"		"Beczek"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"pl"		"Krzeseł"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Pokój A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Pokój B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"pl"		"Pokój C: {1}"
 	}
 	"Minigame1_Caption"
 	{
@@ -216,8 +265,8 @@
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy napisał podane słowo! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jest pierwszą osobą, która napisała podane słowo! (Bonusowy punkt!)"
 	}
 	"Minigame7_Caption"
 	{
@@ -230,13 +279,13 @@
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
-		"#format"		"{1:s},{2:i}"
-		"pl"		"{1}Poprawna odpowiedź to {2}!"
+		"#format"		"{1:i}"
+		"pl"		"Poprawna odpowiedź to {1}!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
-		"#format"		"{1:s},{2:s}"
-		"pl"		"{1}{2} jako pierwszy podał poprawną odpowiedź! (Bonusowy punkt!)"
+		"#format"		"{1:s}"
+		"pl"		"{1} jest pierwszą osobą, która podała poprawną odpowiedź! (Bonusowy punkt!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
@@ -454,9 +503,17 @@
 	{
 		"pl"		"UDERZ WROGA!"
 	}
+	"Minigame28_Caption"
+	{
+		"pl"		"WSKOCZ NA PLATFORMĘ GRANATEM!"
+	}
+	"Minigame29_Caption"
+	{
+		"pl"		"NIKOGO NIE DOTYKAJ!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"pl"		"TYPE THE WORDS!"
+		"pl"		"NAPISZ SŁOWA!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
@@ -479,7 +536,7 @@
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"		"{1:s}"
-		"pl"		"== OGŁOSZENIE ==\n\nZwycięzcą został...\n{1}!"
+		"pl"		"== OGŁOSZENIE ==\n\nZwycięzcą został(a)...\n{1}!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
