@@ -2,8 +2,8 @@
 
 A custom gamemode for Team Fortress 2 - Players compete against each other to get the most points by playing a series of rapid fire microgames in order to win the round!
 
-## Install Guide
-We have written a guide to assist you on installing the gamemode on your TF2 Server - read it here: https://www.gemidyne.com/projects/microtf2/install-guide/
+## How to install the gamemode
+We have created an install guide to help you install the gamemode - see wiki page here: https://github.com/gemidyne/microtf2/wiki/How-to-install-the-gamemode
 
 ## Commands 
 See wiki page for more information: https://github.com/gemidyne/microtf2/wiki/Console-Commands
