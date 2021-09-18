@@ -20,7 +20,7 @@
 #define REQUIRE_EXTENSIONS
 
 #include <sdkhooks>
-#include <steamtools>
+#include <SteamWorks>
 #include <tf2items>
 #include <tf2attributes>
 
@@ -89,9 +89,9 @@ public void OnPluginStart()
 		SetFailState("The TF2Items Extension is not loaded.");
 	}
 
-	if (GetExtensionFileStatus("steamtools.ext") < 1)
+	if (GetExtensionFileStatus("SteamWorks.ext") < 1)
 	{
-		SetFailState("The SteamTools Extension is not loaded.");
+		SetFailState("The SteamWorks Extension is not loaded.");
 	}
 
 	LoadTranslations("microtf2.phrases.txt");
