@@ -20,7 +20,7 @@
 #define REQUIRE_EXTENSIONS
 
 #include <sdkhooks>
-#include <steamtools>
+#include <SteamWorks>
 #include <tf2items>
 #include <tf2attributes>
 
@@ -28,7 +28,7 @@
 
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "5.0.2"
+#define PLUGIN_VERSION "5.1.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
@@ -89,9 +89,9 @@ public void OnPluginStart()
 		SetFailState("The TF2Items Extension is not loaded.");
 	}
 
-	if (GetExtensionFileStatus("steamtools.ext") < 1)
+	if (GetExtensionFileStatus("SteamWorks.ext") < 1)
 	{
-		SetFailState("The SteamTools Extension is not loaded.");
+		SetFailState("The SteamWorks Extension is not loaded.");
 	}
 
 	LoadTranslations("microtf2.phrases.txt");

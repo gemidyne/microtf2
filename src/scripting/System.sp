@@ -47,7 +47,7 @@ public void System_OnMapStart()
 
 	char gameDescription[32];
 	Format(gameDescription, sizeof(gameDescription), "WarioWare (v%s)", PLUGIN_VERSION);
-	Steam_SetGameDescription(gameDescription);
+	SteamWorks_SetGameDescription(gameDescription);
 
 	g_iActiveMinigameId = 0;
 	g_iActiveBossgameId = 0;

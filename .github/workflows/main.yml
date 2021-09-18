@@ -26,7 +26,6 @@ jobs:
       - name: Download includes
         uses: actions/checkout@v2
         with:
-          name: gemidyne/gh-actions-resources 
           repository: gemidyne/gh-actions-resources
           path: './ext'
           
