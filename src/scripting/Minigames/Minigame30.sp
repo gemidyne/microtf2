@@ -10,7 +10,7 @@ public void Minigame30_EntryPoint()
 {
 	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame30_OnMinigameSelectedPre);
 	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame30_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerStealSandvich, INVALID_HANDLE, Minigame30_OnPlayerStealSandvich);
+	AddToForward(g_pfOnPlayerHealed, INVALID_HANDLE, Minigame30_OnPlayerHealed);
 }
 
 public void Minigame30_OnMinigameSelectedPre()
@@ -51,6 +51,7 @@ public void Minigame30_OnMinigameSelected(int client)
 			player.ResetHealth();
 			player.ResetWeapon(true);
 			player.GiveWeapon(42);
+			player.ChargeMeter = 100.0;
 		}
 	}
 }
@@ -76,7 +77,7 @@ public void Minigame30_GetDynamicCaption(int client)
 	}
 }
 
-public void Minigame30_OnPlayerStealSandvich(int targetId, int ownerId)
+public void Minigame30_OnPlayerHealed(int targetId, int ownerId)
 {
 	if (g_bIsMinigameActive && g_iActiveMinigameId == 30)
 	{

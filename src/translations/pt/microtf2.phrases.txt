@@ -511,6 +511,14 @@
 	{
 		"pt"		"DON'T TOUCH ANYONE!"
 	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"pt"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"pt"		"HEAL A MEDIC!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"pt"		"TYPE THE WORDS!"

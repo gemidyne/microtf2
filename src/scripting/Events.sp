@@ -321,19 +321,21 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 	}
 }
 
-public void Event_PlayerStealSandvich(Handle event, const char[] name, bool dontBroadcast)
+public void Event_PlayerHealed(Handle event, const char[] name, bool dontBroadcast)
 {
 	if (!g_bIsPluginEnabled)
 	{
 		return;
 	}
 
-	Player target = new Player(GetClientOfUserId(GetEventInt(event, "target")));
-	Player owner = new Player(GetClientOfUserId(GetEventInt(event, "owner")));
+	Player target = new Player(GetClientOfUserId(GetEventInt(event, "patient")));
+	Player owner = new Player(GetClientOfUserId(GetEventInt(event, "healer")));
 
-	if (g_pfOnPlayerStealSandvich != INVALID_HANDLE && target.IsParticipating && owner.IsParticipating)
+	PrintToChatAll("Event_PlayerHealed: healer is %i, patient is %i", owner.ClientId, target.ClientId);
+
+	if (g_pfOnPlayerHealed != INVALID_HANDLE && target.IsParticipating && owner.IsParticipating)
 	{
-		Call_StartForward(g_pfOnPlayerStealSandvich);
+		Call_StartForward(g_pfOnPlayerHealed);
 		Call_PushCell(target.ClientId);
 		Call_PushCell(owner.ClientId);
 		Call_Finish();
@@ -708,7 +710,7 @@ stock void HookEvents()
 	HookEvent("teamplay_round_win", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("post_inventory_application", Event_Regenerate, EventHookMode_Post);
 	HookEvent("player_sapped_object", Event_PlayerSappedObject);
-	HookEvent("player_stealsandvich", Event_PlayerStealSandvich);
+	HookEvent("player_healed", Event_PlayerHealed);
 	HookUserMessage(GetUserMessageId("PlayerJarated"), Event_PlayerJarated);
 }
 

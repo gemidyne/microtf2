@@ -511,6 +511,14 @@
 	{
 		"it"		"NON TOCCARE NESSUNO!"
 	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"it"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"it"		"HEAL A MEDIC!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"it"		"SCRIVI LE PAROLE!"

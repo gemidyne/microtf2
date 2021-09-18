@@ -511,6 +511,14 @@
 	{
 		"ru"		"НЕ ПРИКАСАЙТЕСЬ!"
 	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"ru"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"ru"		"HEAL A MEDIC!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"ru"		"НАПИШИТЕ СЛОВА!"
