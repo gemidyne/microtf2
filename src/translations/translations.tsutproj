@@ -2364,6 +2364,40 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame30_Caption_EatASandvich",
+      "description": "Tell the medics to eat a sandvich to heal!",
+      "text": "EAT A SANDVICH!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
+      "key": "Minigame30_Caption_HealAMedic",
+      "description": "Tell the heavies to heal a medic by throwing a sandvich!",
+      "text": "HEAL A MEDIC!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame7_Caption_TypeTheWords",
       "description": null,
       "text": "TYPE THE WORDS!",

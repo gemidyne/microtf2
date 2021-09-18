@@ -54,6 +54,7 @@ methodmap Player __nullable__
         public set(TFClassType value)
         {
             TF2_SetPlayerClass(this.ClientId, value);
+            this.RemoveAllWeapons();
         }
     }
 
