@@ -59,7 +59,7 @@ public void Bossgame2_OnSelection(int client)
 	player.ResetWeapon(false);
 
 	float vel[3] = { 0.0, 0.0, 0.0 };
-	float ang[3] = { 0.0, 137.0, 0.0 };
+	float ang[3] = { 0.0, 144.0, 0.0 };
 	float pos[3];
 
 	int column = client;
@@ -73,7 +73,7 @@ public void Bossgame2_OnSelection(int client)
 
 	pos[0] = 4417.0 + float(row*70); 
 	pos[1] = 2164.0 + float(column*70);
-	pos[2] = 11.0;
+	pos[2] = 2.0;
 
 	TeleportEntity(client, pos, ang, vel);
 }
