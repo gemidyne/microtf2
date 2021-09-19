@@ -100,7 +100,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 	angle[0] += NormalizeAngle(direction[0] - angle[0]);
 	angle[1] += NormalizeAngle(direction[1] - angle[1]);
 
-	TeleportEntity(client, NULL_VECTOR, angle, NULL_VECTOR);
+	TeleportEntity(client, NULL_VECTOR, angle, vel);
 }
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
