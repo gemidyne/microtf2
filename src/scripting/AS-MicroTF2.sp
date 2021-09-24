@@ -28,14 +28,19 @@
 
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "5.1.0"
+#define PLUGIN_VERSION "5.2.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
+
+// This needs updated every map release, so you avoid intermittent sound.cache corruption issues.
+// REMEMBER: Don't put a . (dot) in ASSET_VERSION, Source doesn't parse this properly...
+#define ASSET_VERSION "v5_2b"
 
 #define MAXIMUM_MINIGAMES 64
 #define SPR_GAMEMODEID 99
 #define SPR_MIN 0
 #define SPR_MAX 32
+#define MAX_PATH_LENGTH 128
 
 #include "Header.sp"
 #include "Forwards.sp"
@@ -353,8 +358,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			{
 				player.DisplayOverlay(OVERLAY_BLANK);
 				player.SetCaption("");
-
-				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && g_iSpecialRoundId != 12 && g_iSpecialRoundId != 17)
 				{
@@ -378,8 +382,7 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.Status = PlayerStatus_NotWon;
 			player.DisplayOverlay(OVERLAY_BLANK);
 			player.SetCaption("");
-			
-			PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 		}
 	}
 
@@ -472,7 +475,7 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 				if (strlen(g_sBossgameBgm[g_iActiveBossgameId]) > 0)
 				{
-					PlaySoundToPlayer(i, g_sBossgameBgm[g_iActiveBossgameId]);
+					player.PlaySound(g_sBossgameBgm[g_iActiveBossgameId]);
 				}
 			}
 			else if (g_iActiveMinigameId > 0)
@@ -490,8 +493,8 @@ public Action Timer_GameLogic_StartMinigame(Handle timer)
 
 				if (strlen(g_sMinigameBgm[g_iActiveMinigameId]) > 0)
 				{
-					PlaySoundToPlayer(i, g_sMinigameBgm[g_iActiveMinigameId]);
-					PlaySoundToPlayer(i, SYSFX_CLOCK);
+					player.PlaySound(g_sMinigameBgm[g_iActiveMinigameId]);
+					player.PlaySound(SYSFX_CLOCK);
 				}
 			}
 			
@@ -587,7 +590,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.IsInGame)
 			{
-				StopSound(i, SNDCHAN_AUTO, g_sBossgameBgm[g_iLastPlayedBossgameId]);
+				StopSoundEx(i, g_sBossgameBgm[g_iLastPlayedBossgameId]);
 			}
 		}
 	}
@@ -622,7 +625,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
-				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
 
 				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
 				{
@@ -719,7 +722,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PluginForward_SendPlayerWinMinigame(player.ClientId, g_iLastPlayedMinigameId);
 				}
 
-				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
 
 				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
 				{
@@ -775,7 +778,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
-			PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
+			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
 			
 			if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
 			{
@@ -917,7 +920,7 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 					player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
 				}
 
-				PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
 
@@ -960,7 +963,7 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 				player.DisplayOverlay(OVERLAY_BOSS);
 			}
 
-			PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
+			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
 		}
 	}
 
@@ -1040,7 +1043,7 @@ public Action Timer_GameLogic_GameOverStart(Handle timer)
 				player.DisplayOverlay(OVERLAY_GAMEOVER);
 			}
 
-			PlaySoundToPlayer(i, g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
+			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_GAMEOVER][selectedBgmIdx]);
 
 			SetEntityRenderColor(i, 255, 255, 255, 255);
 			SetEntityRenderMode(i, RENDER_NORMAL);
@@ -1334,7 +1337,7 @@ public Action Timer_GameLogic_GameOverEnd(Handle timer)
 					Format(combined, sizeof(combined), "%s\n%s", header, body);
 
 					player.PrintChatText(combined);
-					EmitSoundToClient(i, SYSBGM_WAITING);
+					player.PlaySound(SYSBGM_WAITING);
 				}
 			}
 
@@ -1374,7 +1377,7 @@ public Action Timer_GameLogic_WaitForVoteToFinishIfAny(Handle timer)
 
 		if (player.IsInGame && !player.IsBot)
 		{
-			StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
+			StopSoundEx(i, SYSBGM_WAITING);
 		}
 	}
 

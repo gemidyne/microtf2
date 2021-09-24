@@ -9,7 +9,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/wario/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/wario/preminigame.mp3"
 				"Length"		"2.073550"
 			}
 		}
@@ -17,7 +17,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/wario/boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/wario/boss.mp3"
 				"Length"		"4.048937"
 			}
 		}
@@ -25,7 +25,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/wario/speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/wario/speed.mp3"
 				"Length"		"3.735500"
 			}
 		}
@@ -33,12 +33,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/wario/gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/wario/gameover.mp3"
 				"Length"		"8.422667"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/wario/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/wario/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/wario/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/wario/winner.mp3"
 		"SysMusic_Failure_Length"		"1.814388"
 		"SysMusic_Winner_Length"		"2.021705"
 	}
@@ -51,7 +51,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/mona/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/mona/preminigame.mp3"
 				"Length"		"3.997863"
 			}
 		}
@@ -59,7 +59,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/boss.mp3"
 				"Length"		"3.813878"
 			}
 		}
@@ -67,7 +67,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/speed.mp3"
 				"Length"		"3.787755"
 			}
 		}
@@ -75,12 +75,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/gameover.mp3"
 				"Length"		"8.359125"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/mona/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/mona/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/mona/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/mona/winner.mp3"
 		"SysMusic_Failure_Length"		"2.012395"
 		"SysMusic_Winner_Length"		"2.012395"
 	}
@@ -93,7 +93,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/preminigame.mp3"
 				"Length"		"2.073550"
 			}
 		}
@@ -101,7 +101,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/boss.mp3"
 				"Length"		"4.048937"
 			}
 		}
@@ -109,7 +109,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/speed.mp3"
 				"Length"		"3.761625"
 			}
 		}
@@ -117,12 +117,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/orbulon/gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/gameover.mp3"
 				"Length"		"8.432053"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/orbulon/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/orbulon/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/orbulon/winner.mp3"
 		"SysMusic_Failure_Length"		"2.047628"
 		"SysMusic_Winner_Length"		"2.021705"
 	}
@@ -135,7 +135,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/jimmyt/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/jimmyt/preminigame.mp3"
 				"Length"		"2.021705"
 			}
 		}
@@ -143,7 +143,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-boss.mp3"
 				"Length"		"4.048937"
 			}
 		}
@@ -151,7 +151,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-speed.mp3"
 				"Length"		"3.735500"
 			}
 		}
@@ -159,12 +159,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-gameover.mp3"
 				"Length"		"8.412416"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/jimmyt/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/jimmyt/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/jimmyt/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/jimmyt/winner.mp3"
 		"SysMusic_Failure_Length"		"2.047628"
 		"SysMusic_Winner_Length"		"2.021705"
 	}
@@ -177,7 +177,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/twario/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/twario/preminigame.mp3"
 				"Length"		"2.021705"
 			}
 		}
@@ -185,7 +185,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-boss.mp3"
 				"Length"		"4.048937"
 			}
 		}
@@ -193,7 +193,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-speed.mp3"
 				"Length"		"3.735500"
 			}
 		}
@@ -201,12 +201,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-gameover.mp3"
 				"Length"		"8.412416"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twario/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twario/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/twario/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/twario/winner.mp3"
 		"SysMusic_Failure_Length"		"2.021705"
 		"SysMusic_Winner_Length"		"2.073550"
 	}
@@ -219,7 +219,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/twarioman/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/twarioman/preminigame.mp3"
 				"Length"		"2.021705"
 			}
 		}
@@ -227,7 +227,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-boss.mp3"
 				"Length"		"4.048937"
 			}
 		}
@@ -235,7 +235,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-speed.mp3"
 				"Length"		"3.735500"
 			}
 		}
@@ -243,12 +243,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/t-gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/t-gameover.mp3"
 				"Length"		"8.412416"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/twarioman/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/twarioman/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/twarioman/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/twarioman/winner.mp3"
 		"SysMusic_Failure_Length"		"2.021705"
 		"SysMusic_Winner_Length"		"2.021705"
 	}
@@ -260,7 +260,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/preminigame.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/preminigame.mp3"
 				"Length"		"4.205688"
 			}
 		}
@@ -268,7 +268,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/boss.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/boss.mp3"
 				"Length"		"3.813878"
 			}
 		}
@@ -276,7 +276,7 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/speed.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/speed.mp3"
 				"Length"		"3.787755"
 			}
 		}
@@ -284,12 +284,12 @@
 		{
 			"0"
 			{
-				"file"		"gemidyne/warioware/system/bgm/themes/special/gameover.mp3"
+				"file"		"gemidyne/warioware/{version}/system/bgm/themes/special/gameover.mp3"
 				"Length"		"8.359125"
 			}
 		}
-		"SysMusic_Failure"		"gemidyne/warioware/system/bgm/themes/special/failure.mp3"
-		"SysMusic_Winner"		"gemidyne/warioware/system/bgm/themes/special/winner.mp3"
+		"SysMusic_Failure"		"gemidyne/warioware/{version}/system/bgm/themes/special/failure.mp3"
+		"SysMusic_Winner"		"gemidyne/warioware/{version}/system/bgm/themes/special/winner.mp3"
 		"SysMusic_Failure_Length"		"2.099473"
 		"SysMusic_Winner_Length"		"2.099473"
 	}

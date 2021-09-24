@@ -200,7 +200,7 @@ stock bool SpecialRound_IsAvailable()
 
 stock void PrintSelectedSpecialRound()
 {
-	EmitSoundToAll(SYSFX_SELECTED);
+	PlaySoundToAll(SYSFX_SELECTED);
 
 	for (int i = 1; i <= MaxClients; i++)
 	{
@@ -504,15 +504,7 @@ stock void Special_LoadFakeConditions()
 
 public Action Timer_GameLogic_SpecialRoundSelectionStart(Handle timer)
 {
-	if (g_fActiveGameSpeed == 1.0)
-	{
-		EmitSoundToAll(SYSBGM_SPECIAL);
-	}
-	else
-	{
-		PlaySoundToAll(SYSBGM_SPECIAL);
-	}
-	
+	PlaySoundToAll(SYSBGM_SPECIAL);
 	CreateTimer(0.8, Timer_GameLogic_SpecialRoundChoosingStartSelection, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }

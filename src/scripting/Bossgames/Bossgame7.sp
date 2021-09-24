@@ -9,41 +9,42 @@
 int g_iBossgame7LastBgmPlayedIndex = -1;
 char g_sBossgame7Bgm[][] = 
 { 
-	"gemidyne/warioware/bosses/bgm/danganronpa_hga.mp3",
-	"gemidyne/warioware/bosses/bgm/danganronpa_hvd.mp3",
-	"gemidyne/warioware/bosses/bgm/danganronpa_lod.mp3",
-	"gemidyne/warioware/bosses/bgm/danganronpa_pta.mp3",
-	"gemidyne/warioware/bosses/bgm/danganronpa_spc.mp3",
-	"gemidyne/warioware/bosses/bgm/danganronpa_tuh.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_hga.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_hvd.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_lod.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_pta.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_spc.mp3",
+	"gemidyne/warioware/{version}/bosses/bgm/danganronpa_tuh.mp3",
 };
 
-#define BOSSGAME7_BGM_FINALOVERVIEW_GOOD "gemidyne/warioware/bosses/bgm/danganronpa_goodend.mp3"
-#define BOSSGAME7_BGM_FINALOVERVIEW_BAD "gemidyne/warioware/bosses/bgm/danganronpa_badend.mp3"
+#define BOSSGAME7_BGM_FINALOVERVIEW_GOOD "gemidyne/warioware/{version}/bosses/bgm/danganronpa_goodend.mp3"
+#define BOSSGAME7_BGM_FINALOVERVIEW_BAD "gemidyne/warioware/{version}/bosses/bgm/danganronpa_badend.mp3"
 
-#define BOSSGAME7_SFX_BOSS_START "gemidyne/warioware/bosses/sfx/drpa_bossstart.mp3"
-#define BOSSGAME7_SFX_DESCENT_BEGIN "gemidyne/warioware/bosses/sfx/drpa_descentbegin.mp3"
-#define BOSSGAME7_SFX_OVERVIEW "gemidyne/warioware/bosses/sfx/drpa_overviewstart.mp3"
-#define BOSSGAME7_SFX_OVERVIEW_SURVIVE "gemidyne/warioware/bosses/sfx/drpa_overviewsurvive.mp3"
-#define BOSSGAME7_SFX_OVERVIEW_DEFEAT "gemidyne/warioware/bosses/sfx/drpa_gameover.mp3"
-#define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/bosses/sfx/drpa_spiralinward.mp3"
-#define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/bosses/sfx/drpa_typingstart.mp3"
-#define BOSSGAME7_SFX_LEVEL_UP "gemidyne/warioware/bosses/sfx/drpa_levelup.mp3"
+#define BOSSGAME7_SFX_BOSS_START "gemidyne/warioware/{version}/bosses/sfx/drpa_bossstart.mp3"
+#define BOSSGAME7_SFX_DESCENT_BEGIN "gemidyne/warioware/{version}/bosses/sfx/drpa_descentbegin.mp3"
+#define BOSSGAME7_SFX_OVERVIEW "gemidyne/warioware/{version}/bosses/sfx/drpa_overviewstart.mp3"
+#define BOSSGAME7_SFX_OVERVIEW_SURVIVE "gemidyne/warioware/{version}/bosses/sfx/drpa_overviewsurvive.mp3"
+#define BOSSGAME7_SFX_OVERVIEW_DEFEAT "gemidyne/warioware/{version}/bosses/sfx/drpa_gameover.mp3"
+#define BOSSGAME7_SFX_SPIRAL "gemidyne/warioware/{version}/bosses/sfx/drpa_spiralinward.mp3"
+#define BOSSGAME7_SFX_TYPING_START "gemidyne/warioware/{version}/bosses/sfx/drpa_typingstart.mp3"
+#define BOSSGAME7_SFX_LEVEL_UP "gemidyne/warioware/{version}/bosses/sfx/drpa_levelup.mp3"
+
 #define BOSSGAME7_VO_LEVEL_UP "vo/announcer_warning.mp3"
 
 char g_sBossgame7WordFailSfx[][] = 
 { 
-	"gemidyne/warioware/bosses/sfx/drpa_wordfail_1.mp3",
-	"gemidyne/warioware/bosses/sfx/drpa_wordfail_2.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordfail_1.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordfail_2.mp3",
 };
 
-#define BOSSGAME7_SFX_WORDSUCCESS_RELAX "gemidyne/warioware/bosses/sfx/drpa_wordsuccess_relax.mp3"
+#define BOSSGAME7_SFX_WORDSUCCESS_RELAX "gemidyne/warioware/{version}/bosses/sfx/drpa_wordsuccess_relax.mp3"
 
 char g_sBossgame7WordSuccessPinchSfx[][] = 
 { 
-	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch1.mp3",
-	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch2.mp3",
-	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch3.mp3",
-	"gemidyne/warioware/bosses/sfx/drpa_wordsuccess_pinch4.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordsuccess_pinch1.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordsuccess_pinch2.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordsuccess_pinch3.mp3",
+	"gemidyne/warioware/{version}/bosses/sfx/drpa_wordsuccess_pinch4.mp3",
 };
 
 #define BOSSGAME7_VO_10SEC "vo/announcer_ends_10sec.mp3"
@@ -94,39 +95,39 @@ public void Bossgame7_OnMapStart()
 {
 	for (int i = 0; i < sizeof(g_sBossgame7Bgm); i++)
 	{
-		PrecacheSound(g_sBossgame7Bgm[i], true);
+		PreloadSound(g_sBossgame7Bgm[i]);
 	}
 
-	PrecacheSound(BOSSGAME7_BGM_FINALOVERVIEW_GOOD, true);
-	PrecacheSound(BOSSGAME7_BGM_FINALOVERVIEW_BAD, true);
+	PreloadSound(BOSSGAME7_BGM_FINALOVERVIEW_GOOD);
+	PreloadSound(BOSSGAME7_BGM_FINALOVERVIEW_BAD);
 
 	for (int i = 0; i < sizeof(g_sBossgame7WordFailSfx); i++)
 	{
-		PrecacheSound(g_sBossgame7WordFailSfx[i], true);
+		PreloadSound(g_sBossgame7WordFailSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sBossgame7WordSuccessPinchSfx); i++)
 	{
-		PrecacheSound(g_sBossgame7WordSuccessPinchSfx[i], true);
+		PreloadSound(g_sBossgame7WordSuccessPinchSfx[i]);
 	}
 
-	PrecacheSound(BOSSGAME7_SFX_BOSS_START, true);
-	PrecacheSound(BOSSGAME7_SFX_DESCENT_BEGIN, true);
-	PrecacheSound(BOSSGAME7_SFX_OVERVIEW, true);
-	PrecacheSound(BOSSGAME7_SFX_OVERVIEW_SURVIVE, true);
-	PrecacheSound(BOSSGAME7_SFX_OVERVIEW_DEFEAT, true);
-	PrecacheSound(BOSSGAME7_SFX_SPIRAL, true);
-	PrecacheSound(BOSSGAME7_SFX_TYPING_START, true);
-	PrecacheSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX, true);
-	PrecacheSound(BOSSGAME7_SFX_LEVEL_UP, true);
-	PrecacheSound(BOSSGAME7_VO_LEVEL_UP, true);
-	PrecacheSound(BOSSGAME7_VO_10SEC, true);
-	PrecacheSound(BOSSGAME7_VO_5SEC, true);
-	PrecacheSound(BOSSGAME7_VO_4SEC, true);
-	PrecacheSound(BOSSGAME7_VO_3SEC, true);
-	PrecacheSound(BOSSGAME7_VO_2SEC, true);
-	PrecacheSound(BOSSGAME7_VO_1SEC, true);
-	PrecacheSound(BOSSGAME7_VO_BEGIN, true);
+	PreloadSound(BOSSGAME7_SFX_BOSS_START);
+	PreloadSound(BOSSGAME7_SFX_DESCENT_BEGIN);
+	PreloadSound(BOSSGAME7_SFX_OVERVIEW);
+	PreloadSound(BOSSGAME7_SFX_OVERVIEW_SURVIVE);
+	PreloadSound(BOSSGAME7_SFX_OVERVIEW_DEFEAT);
+	PreloadSound(BOSSGAME7_SFX_SPIRAL);
+	PreloadSound(BOSSGAME7_SFX_TYPING_START);
+	PreloadSound(BOSSGAME7_SFX_WORDSUCCESS_RELAX);
+	PreloadSound(BOSSGAME7_SFX_LEVEL_UP);
+	PreloadSound(BOSSGAME7_VO_LEVEL_UP);
+	PreloadSound(BOSSGAME7_VO_10SEC);
+	PreloadSound(BOSSGAME7_VO_5SEC);
+	PreloadSound(BOSSGAME7_VO_4SEC);
+	PreloadSound(BOSSGAME7_VO_3SEC);
+	PreloadSound(BOSSGAME7_VO_2SEC);
+	PreloadSound(BOSSGAME7_VO_1SEC);
+	PreloadSound(BOSSGAME7_VO_BEGIN);
 }
 
 public bool Bossgame7_LoadDictionary(int indice, const char[] path)
@@ -264,11 +265,11 @@ public Action Bossgame7_OnChatMessage(int client, const char[] messageText, bool
 
 					int soundIdx = GetRandomInt(0, sizeof(g_sBossgame7WordSuccessPinchSfx)-1);
 
-					EmitSoundToClient(client, g_sBossgame7WordSuccessPinchSfx[soundIdx], g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(client, g_sBossgame7WordSuccessPinchSfx[soundIdx], g_iBossgame7ActiveCameraEntityId);
 				}
 				else
 				{
-					EmitSoundToClient(client, BOSSGAME7_SFX_WORDSUCCESS_RELAX, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(client, BOSSGAME7_SFX_WORDSUCCESS_RELAX, g_iBossgame7ActiveCameraEntityId);
 				}
 
 				g_iBossgame7PlayerActiveAnswerCount[client]++;
@@ -279,7 +280,7 @@ public Action Bossgame7_OnChatMessage(int client, const char[] messageText, bool
 			{
 				int soundIdx = GetRandomInt(0, sizeof(g_sBossgame7WordFailSfx)-1);
 
-				EmitSoundToClient(client, g_sBossgame7WordFailSfx[soundIdx], g_iBossgame7ActiveCameraEntityId);
+				Bossgame7_EmitSoundFromEntity(client, g_sBossgame7WordFailSfx[soundIdx], g_iBossgame7ActiveCameraEntityId);
 			}
 		}
 	}
@@ -339,7 +340,7 @@ public void Bossgame7_OnPlayerClassChange(int client, int class)
 	}
 
 	player.Status = PlayerStatus_Failed;
-	EmitSoundToClient(client, BOSSGAME7_SFX_OVERVIEW_DEFEAT, g_iBossgame7ActiveCameraEntityId);
+	Bossgame7_EmitSoundFromEntity(client, BOSSGAME7_SFX_OVERVIEW_DEFEAT, g_iBossgame7ActiveCameraEntityId);
 
 	player.PrintChatText("%T", "Bossgame7_ClassChangeWarning", client);
 }
@@ -379,7 +380,7 @@ public Action Bossgame7_DoDescentSequence(Handle timer)
 			SetClientViewEntity(i, camera);
 
 			Bossgame7_PlaySnd(i, g_sBossgame7Bgm[randomBgmIdx]);
-			EmitSoundToClient(i, BOSSGAME7_SFX_DESCENT_BEGIN, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_DESCENT_BEGIN, g_iBossgame7ActiveCameraEntityId);
 		}
 	}
 
@@ -431,7 +432,7 @@ public Action Bossgame7_DoSpinSequence(Handle timer)
 				player.DisplayOverlay("gemidyne/warioware/overlays/bossgame_typethewords");
 			}
 
-			EmitSoundToClient(i, BOSSGAME7_SFX_SPIRAL, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_SPIRAL, camera);
 		}
 	}
 
@@ -471,8 +472,8 @@ public Action Bossgame7_DoCloseupSequence(Handle timer)
 			player.PrintHintBox(text);
 			player.DisplayOverlay(OVERLAY_BLANK);
 
-			EmitSoundToClient(i, BOSSGAME7_SFX_TYPING_START, g_iBossgame7ActiveCameraEntityId);
-			EmitSoundToClient(i, BOSSGAME7_VO_BEGIN, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_TYPING_START, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_VO_BEGIN, g_iBossgame7ActiveCameraEntityId);
 		}
 	}
 
@@ -545,22 +546,22 @@ public Action Bossgame7_DoTypingTick(Handle timer)
 			switch (g_iBossgame7RemainingTime)
 			{
 				case 10:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_10SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_10SEC, g_iBossgame7ActiveCameraEntityId);
 
 				case 5:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_5SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_5SEC, g_iBossgame7ActiveCameraEntityId);
 
 				case 4:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_4SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_4SEC, g_iBossgame7ActiveCameraEntityId);
 
 				case 3:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_3SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_3SEC, g_iBossgame7ActiveCameraEntityId);
 
 				case 2:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_2SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_2SEC, g_iBossgame7ActiveCameraEntityId);
 
 				case 1:
-					EmitSoundToClient(player.ClientId, BOSSGAME7_VO_1SEC, g_iBossgame7ActiveCameraEntityId);
+					Bossgame7_EmitSoundFromEntity(player.ClientId, BOSSGAME7_VO_1SEC, g_iBossgame7ActiveCameraEntityId);
 			}
 		}
 	}
@@ -607,7 +608,7 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 
 			player.SetCaption("");
 			player.DisplayOverlay(OVERLAY_BLANK);
-			EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_OVERVIEW, g_iBossgame7ActiveCameraEntityId);
 		}
 	}
 
@@ -727,7 +728,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 			if (g_iBossgame7PlayerActiveAnswerCount[i] <= data)
 			{
 				player.Status = PlayerStatus_Failed;
-				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_DEFEAT, g_iBossgame7ActiveCameraEntityId);
+				Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_OVERVIEW_DEFEAT, g_iBossgame7ActiveCameraEntityId);
 				CreateTimer(additionalDelay, Bossgame7_DeferredDeath, player.ClientId);
 
 				additionalDelay += 0.1;
@@ -736,7 +737,7 @@ public Action Bossgame7_DoReviewSequencePost(Handle timer, any data)
 			{
 				activePlayers++;
 				player.Status = PlayerStatus_Winner;
-				EmitSoundToClient(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, g_iBossgame7ActiveCameraEntityId);
+				Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_OVERVIEW_SURVIVE, g_iBossgame7ActiveCameraEntityId);
 				lastWinnerId = i;
 			}
 		}
@@ -805,8 +806,8 @@ public Action Bossgame7_DoLevelChange(Handle timer)
 			char text[256];
 			Format(text, sizeof(text), "%T", "Bossgame7_Caption_LevelUpAnnouncement", player.ClientId);
 
-			EmitSoundToClient(i, BOSSGAME7_SFX_LEVEL_UP, g_iBossgame7ActiveCameraEntityId);
-			EmitSoundToClient(i, BOSSGAME7_VO_LEVEL_UP, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_SFX_LEVEL_UP, g_iBossgame7ActiveCameraEntityId);
+			Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_VO_LEVEL_UP, g_iBossgame7ActiveCameraEntityId);
 
 			player.SetCaption(text);
 		}
@@ -844,11 +845,11 @@ public Action Bossgame7_DoFinalReview(Handle timer, any winnerId)
 
 			if (i == winnerId)
 			{
-				EmitSoundToClient(i, BOSSGAME7_BGM_FINALOVERVIEW_GOOD, g_iBossgame7ActiveCameraEntityId);
+				Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_BGM_FINALOVERVIEW_GOOD, g_iBossgame7ActiveCameraEntityId);
 			}
 			else
 			{
-				EmitSoundToClient(i, BOSSGAME7_BGM_FINALOVERVIEW_BAD, g_iBossgame7ActiveCameraEntityId);
+				Bossgame7_EmitSoundFromEntity(i, BOSSGAME7_BGM_FINALOVERVIEW_BAD, g_iBossgame7ActiveCameraEntityId);
 			}
 		}
 	}
@@ -977,4 +978,11 @@ public void Bossgame7_PlaySnd(int client, const char[] file)
 	Format(path, sizeof(path), "play %s", file);
 
 	ClientCommand(client, path);
+}
+
+public void Bossgame7_EmitSoundFromEntity(int client, const char[] sound, int emittingEntity)
+{
+	char path[MAX_PATH_LENGTH];
+	Sounds_ConvertTokens(sound, path, sizeof(path));
+	EmitSoundToClient(client, path, emittingEntity);
 }

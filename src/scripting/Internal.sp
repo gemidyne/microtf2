@@ -82,7 +82,7 @@ void EndGame()
 	AcceptEntityInput(entity, "EndGame");
 
 	ResetConVars();
-	EmitSoundToAll(SYSBGM_ENDING);
+	PlaySoundToAll(SYSBGM_ENDING, true);
 }
 
 stock int GetActivePlayers(int team = 0, bool mustbealive = false)

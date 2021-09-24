@@ -24,10 +24,10 @@ bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
 bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
 float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 
-char g_sMinigameBgm[MAXIMUM_MINIGAMES][128];
+char g_sMinigameBgm[MAXIMUM_MINIGAMES][MAX_PATH_LENGTH];
 float g_fMinigameBgmLength[MAXIMUM_MINIGAMES];
 
-char g_sBossgameBgm[MAXIMUM_MINIGAMES][128];
+char g_sBossgameBgm[MAXIMUM_MINIGAMES][MAX_PATH_LENGTH];
 float g_fBossgameBgmLength[MAXIMUM_MINIGAMES];
 
 ArrayList g_hPlayedMinigamePool;

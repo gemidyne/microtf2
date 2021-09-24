@@ -21,9 +21,9 @@ public void Bossgame5_EntryPoint()
 
 public void Bossgame5_OnMapStart()
 {
-	PrecacheSound("gemidyne/warioware/bosses/sfx/beatblock_count.mp3", true);
-	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
-	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PreloadSound(BOSSGAME_SFX_BBCOUNT);
+	PreloadSound("ui/chime_rd_2base_pos.wav");
+	PreloadSound("ui/hitsound_retro1.wav");
 }
 
 public void Bossgame5_OnMinigameSelectedPre()
@@ -210,7 +210,7 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 		}
 		else if (g_fBossgame5Timer > 0)
 		{
-			EmitSoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
+			PlaySoundToAll(BOSSGAME_SFX_BBCOUNT);
 		}
 		else 
 		{

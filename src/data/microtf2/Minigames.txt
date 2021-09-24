@@ -3,14 +3,14 @@
 	"1"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/1.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/1.mp3"
 		"EntryPoint"		"Minigame1_EntryPoint"
 		"BackgroundMusic_Length"		"3.900250"
 	}
 	"2"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/2.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/2.mp3"
 		"EntryPoint"		"Minigame2_EntryPoint"
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
@@ -19,7 +19,7 @@
 	"3"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/3.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/3.mp3"
 		"EntryPoint"		"Minigame3_EntryPoint"
 		"RequiresMultiplePlayers"		"1"
 		"BackgroundMusic_Length"		"3.926375"
@@ -27,7 +27,7 @@
 	"4"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/4.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/4.mp3"
 		"EntryPoint"		"Minigame4_EntryPoint"
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
@@ -36,14 +36,14 @@
 	"5"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/5.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/5.mp3"
 		"EntryPoint"		"Minigame5_EntryPoint"
 		"BackgroundMusic_Length"		"4.030875"
 	}
 	"6"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/6.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/6.mp3"
 		"CaptionIsDynamic"		"1"
 		"EntryPoint"		"Minigame6_EntryPoint"
 		"DynamicCaptionMethod"		"Minigame6_GetDynamicCaption"
@@ -52,14 +52,14 @@
 	"7"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/7.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/7.mp3"
 		"EntryPoint"		"Minigame7_EntryPoint"
 		"BackgroundMusic_Length"		"3.874125"
 	}
 	"8"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/8.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/8.mp3"
 		"CaptionIsDynamic"		"1"
 		"EntryPoint"		"Minigame8_EntryPoint"
 		"DynamicCaptionMethod"		"Minigame8_GetDynamicCaption"
@@ -68,7 +68,7 @@
 	"9"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/9.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/9.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame9_GetDynamicCaption"
 		"EntryPoint"		"Minigame9_EntryPoint"
@@ -77,7 +77,7 @@
 	"10"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/10.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/10.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame10_GetDynamicCaption"
 		"EntryPoint"		"Minigame10_EntryPoint"
@@ -88,7 +88,7 @@
 	"11"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/11.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/11.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame11_GetDynamicCaption"
 		"EntryPoint"		"Minigame11_EntryPoint"
@@ -97,7 +97,7 @@
 	"12"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/platforms.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/platforms.mp3"
 		"EntryPoint"		"Minigame12_EntryPoint"
 		"BlockedSpecialRounds"		"3"
 		"BackgroundMusic_Length"		"4.030875"
@@ -105,14 +105,14 @@
 	"13"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/spycrab.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/spycrab.mp3"
 		"EntryPoint"		"Minigame13_EntryPoint"
 		"BackgroundMusic_Length"		"4.057000"
 	}
 	"14"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/sapabuilding.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/sapabuilding.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame14_GetDynamicCaption"
 		"EntryPoint"		"Minigame14_EntryPoint"
@@ -122,7 +122,7 @@
 	"15"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/spycrab.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/spycrab.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame15_GetDynamicCaption"
 		"EntryPoint"		"Minigame15_EntryPoint"
@@ -131,7 +131,7 @@
 	"16"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jarate.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/jarate.mp3"
 		"EntryPoint"		"Minigame16_EntryPoint"
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
@@ -140,7 +140,7 @@
 	"17"
 	{
 		"enabled"		"0"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/hitorgethit.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/hitorgethit.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame17_GetDynamicCaption"
 		"EntryPoint"		"Minigame17_EntryPoint"
@@ -151,7 +151,7 @@
 	"18"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/hitthetarget.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/hitthetarget.mp3"
 		"EntryPoint"		"Minigame18_EntryPoint"
 		"BlockedSpecialRounds"		"11"
 		"BackgroundMusic_Length"		"4.075102"
@@ -159,7 +159,7 @@
 	"19"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/changeclass.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/changeclass.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame19_GetDynamicCaption"
 		"EntryPoint"		"Minigame19_EntryPoint"
@@ -169,7 +169,7 @@
 	"20"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/20.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/20.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame20_GetDynamicCaption"
 		"EntryPoint"		"Minigame20_EntryPoint"
@@ -178,7 +178,7 @@
 	"21"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/stunanenemy.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/stunanenemy.mp3"
 		"EntryPoint"		"Minigame21_EntryPoint"
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
@@ -187,21 +187,21 @@
 	"22"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/7.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/7.mp3"
 		"EntryPoint"		"Minigame22_EntryPoint"
 		"BackgroundMusic_Length"		"3.874125"
 	}
 	"23"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/23.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/23.mp3"
 		"EntryPoint"		"Minigame23_EntryPoint"
 		"BackgroundMusic_Length"		"4.101188"
 	}
 	"24"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/5.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/5.mp3"
 		"EntryPoint"		"Minigame24_EntryPoint"
 		"BlockedOnSpeedsHigherThan"		"1.500000"
 		"BackgroundMusic_Length"		"4.030875"
@@ -209,7 +209,7 @@
 	"25"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/jetpack.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/jetpack.mp3"
 		"EntryPoint"		"Minigame25_EntryPoint"
 		"BackgroundMusic_Length"		"4.153470"
 		"MaximumPlayerCount"		"10"
@@ -217,7 +217,7 @@
 	"26"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/dontlaugh.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/dontlaugh.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame26_GetDynamicCaption"
 		"EntryPoint"		"Minigame26_EntryPoint"
@@ -228,7 +228,7 @@
 	"27"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/hitsomeone.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/hitsomeone.mp3"
 		"EntryPoint"		"Minigame27_EntryPoint"
 		"BackgroundMusic_Length"		"4.060270"
 		"RequiresMultiplePlayers"		"1"
@@ -236,7 +236,7 @@
 	"28"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/bombjump.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/bombjump.mp3"
 		"EntryPoint"		"Minigame28_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
 		"MaximumPlayerCount"		"24"
@@ -244,7 +244,7 @@
 	"29"
 	{
 		"enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/donttouch.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/donttouch.mp3"
 		"EntryPoint"		"Minigame29_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
 		"MaximumPlayerCount"		"24"

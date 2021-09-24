@@ -177,47 +177,47 @@ public void Minigame18_OnMapStart()
 
 	for (int i = 0; i < sizeof(g_sMinigame18ScoutHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18ScoutHurtSfx[i], true);
+		PreloadSound(g_sMinigame18ScoutHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18SoldierHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18SoldierHurtSfx[i], true);
+		PreloadSound(g_sMinigame18SoldierHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18PyroHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18PyroHurtSfx[i], true);
+		PreloadSound(g_sMinigame18PyroHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18DemoManHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18DemoManHurtSfx[i], true);
+		PreloadSound(g_sMinigame18DemoManHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18HeavyHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18HeavyHurtSfx[i], true);
+		PreloadSound(g_sMinigame18HeavyHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18EngineerHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18EngineerHurtSfx[i], true);
+		PreloadSound(g_sMinigame18EngineerHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18SniperHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18SniperHurtSfx[i], true);
+		PreloadSound(g_sMinigame18SniperHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18MedicHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18MedicHurtSfx[i], true);
+		PreloadSound(g_sMinigame18MedicHurtSfx[i]);
 	}
 
 	for (int i = 0; i < sizeof(g_sMinigame18SpyHurtSfx); i++)
 	{
-		PrecacheSound(g_sMinigame18SpyHurtSfx[i], true);
+		PreloadSound(g_sMinigame18SpyHurtSfx[i]);
 	}
 }
 

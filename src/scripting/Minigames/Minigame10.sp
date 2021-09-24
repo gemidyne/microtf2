@@ -26,8 +26,8 @@ public void Minigame10_EntryPoint()
 
 public void Minigame10_OnMapStart()
 {
-	PrecacheSound(MINIGAME10_SFX_FINALTICK, true);
-	PrecacheSound(MINIGAME10_SFX_EXPLOSION, true);
+	PreloadSound(MINIGAME10_SFX_FINALTICK);
+	PreloadSound(MINIGAME10_SFX_EXPLOSION);
 }
 
 public void Minigame10_OnMinigameSelectedPre()

@@ -1,10 +1,19 @@
-#define SYSBGM_WAITING "gemidyne/warioware/system/bgm/waitingforplayers.wav"
-#define SYSBGM_SPECIAL "gemidyne/warioware/system/bgm/specialround.mp3"
-#define SYSBGM_ENDING "gemidyne/warioware/system/bgm/mapend.mp3"
+/**
+ * MicroTF2 - Sounds.sp
+ * 
+ * All custom sounds should be defined here
+ */
 
-#define SYSFX_CLOCK "gemidyne/warioware/system/sfx/clock.mp3"
-#define SYSFX_WINNER "gemidyne/warioware/system/sfx/bing.wav"
-#define SYSFX_SELECTED "gemidyne/warioware/system/sfx/beep.mp3"
+#define SYSBGM_WAITING "gemidyne/warioware/{version}/system/bgm/waitingforplayers.wav"
+#define SYSBGM_SPECIAL "gemidyne/warioware/{version}/system/bgm/specialround.mp3"
+#define SYSBGM_ENDING "gemidyne/warioware/{version}/system/bgm/mapend.mp3"
+
+#define SYSFX_CLOCK "gemidyne/warioware/{version}/system/sfx/clock.mp3"
+#define SYSFX_WINNER "gemidyne/warioware/{version}/system/sfx/bing.wav"
+#define SYSFX_SELECTED "gemidyne/warioware/{version}/system/sfx/beep.mp3"
+
+// Bossgame Sound Effects
+#define BOSSGAME_SFX_BBCOUNT "gemidyne/warioware/{version}/bosses/sfx/beatblock_count.mp3"
 
 bool g_bIsBlockingPlayerClassVoices = false;
 
@@ -13,18 +22,35 @@ public void InitialiseSounds()
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Sounds_OnMapStart);
 }
 
-stock void PreloadSound(const char[] sound)
+stock void PreloadSound(const char[] path)
 {
-	if (strlen(sound) == 0)
+	if (strlen(path) == 0)
 	{
 		return;
 	}
 
-	PrecacheSound(sound, true);
+	char rewritten[MAX_PATH_LENGTH];
+	Sounds_ConvertTokens(path, rewritten, sizeof(rewritten));
+
+	LogMessage("Preloading %s...", rewritten);
+	PrecacheSound(rewritten, true);
 
 	// This call intentionally does not add sounds to the files download table.
 	// This is because the correct approach to distributing the gamemode is to pack 
 	// the resources into the BSP so your players only require one download.
+}
+
+stock void StopSoundEx(int client, const char[] path)
+{
+	if (strlen(path) == 0)
+	{
+		return;
+	}
+
+	char rewritten[MAX_PATH_LENGTH];
+	Sounds_ConvertTokens(path, rewritten, sizeof(rewritten));
+
+	StopSound(client, SNDCHAN_AUTO, rewritten);
 }
 
 public void Sounds_OnMapStart()
@@ -38,14 +64,14 @@ public void Sounds_OnMapStart()
 	PreloadSound(SYSFX_CLOCK);
 	PreloadSound(SYSFX_WINNER);
 
-	PrecacheSound("ui/system_message_alert.wav", true);
-	PrecacheSound("vo/announcer_ends_10sec.wav", true);
-	PrecacheSound("vo/announcer_ends_5sec.wav", true);
-	PrecacheSound("vo/announcer_ends_4sec.wav", true);
-	PrecacheSound("vo/announcer_ends_3sec.wav", true);
-	PrecacheSound("vo/announcer_ends_2sec.wav", true);
-	PrecacheSound("vo/announcer_ends_1sec.wav", true);
-	PrecacheSound("vo/announcer_success.wav", true);
+	PreloadSound("ui/system_message_alert.wav");
+	PreloadSound("vo/announcer_ends_10sec.wav");
+	PreloadSound("vo/announcer_ends_5sec.wav");
+	PreloadSound("vo/announcer_ends_4sec.wav");
+	PreloadSound("vo/announcer_ends_3sec.wav");
+	PreloadSound("vo/announcer_ends_2sec.wav");
+	PreloadSound("vo/announcer_ends_1sec.wav");
+	PreloadSound("vo/announcer_success.wav");
 }
 
 public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATFORM_MAX_PATH], int &entity, int &channel, float &volume, int &level, int &pitch, int &flags, char soundEntry[PLATFORM_MAX_PATH], int &seed)
@@ -90,4 +116,14 @@ public Action Hook_GameSound(int clients[64], int &numClients, char sample[PLATF
 	}
 
 	return Plugin_Continue;
+}
+
+void Sounds_ConvertTokens(const char[] path, char[] output, int size)
+{
+	char rewritten[MAX_PATH_LENGTH];
+
+	strcopy(rewritten, sizeof(rewritten), path);
+	ReplaceString(rewritten, sizeof(rewritten), "{version}", ASSET_VERSION);
+
+	strcopy(output, size, rewritten);
 }

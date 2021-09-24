@@ -675,11 +675,11 @@ methodmap Player __nullable__
 
         if (g_iActiveParticipantCount > 12)
         {
-            EmitSoundToClient(this.ClientId, SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+            PlaySoundToPlayer(this.ClientId, SYSFX_WINNER);
         }
         else
         {
-            EmitSoundToAll(SYSFX_WINNER, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+            PlaySoundToAll(SYSFX_WINNER);
         }
 
         if (this.Team == TFTeam_Blue)
@@ -700,5 +700,16 @@ methodmap Player __nullable__
     public void ResetWeapon(bool viewModel)
     {
         Weapons_ResetToMelee(this.ClientId, viewModel);
+    }
+
+    public void PlaySound(const char[] sound)
+    {
+        if (this.IsInGame && !this.IsBot && !g_bIsMapEnding)
+        {
+            char path[MAX_PATH_LENGTH];
+            Sounds_ConvertTokens(sound, path, sizeof(path));
+
+            EmitSoundToClient(this.ClientId, path, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+        }
     }
 }
