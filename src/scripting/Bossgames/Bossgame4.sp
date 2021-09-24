@@ -4,6 +4,18 @@
  * Smash Arena
  */
 
+#define BOSSGAME4_SFX_SMALLHIT_FORMATTABLE "gemidyne/warioware/{version}/bosses/sfx/ff_small%d.mp3"
+#define BOSSGAME4_SFX_SMALLHIT1 "gemidyne/warioware/{version}/bosses/sfx/ff_small1.mp3"
+#define BOSSGAME4_SFX_SMALLHIT2 "gemidyne/warioware/{version}/bosses/sfx/ff_small2.mp3"
+
+#define BOSSGAME4_SFX_MEDIUMHIT_FORMATTABLE "gemidyne/warioware/{version}/bosses/sfx/ff_mod%d.mp3"
+#define BOSSGAME4_SFX_MEDIUMHIT1 "gemidyne/warioware/{version}/bosses/sfx/ff_mod1.mp3"
+#define BOSSGAME4_SFX_MEDIUMHIT2 "gemidyne/warioware/{version}/bosses/sfx/ff_mod2.mp3"
+
+#define BOSSGAME4_SFX_STRONGHIT_FORMATTABLE "gemidyne/warioware/{version}/bosses/sfx/ff_stro%d.mp3"
+#define BOSSGAME4_SFX_STRONGHIT1 "gemidyne/warioware/{version}/bosses/sfx/ff_stro1.mp3"
+#define BOSSGAME4_SFX_STRONGHIT2 "gemidyne/warioware/{version}/bosses/sfx/ff_stro2.mp3"
+
 float g_fBossgame4PlayerDamageAccumulated[MAXPLAYERS];
 
 public void Bossgame4_EntryPoint()
@@ -19,12 +31,12 @@ public void Bossgame4_EntryPoint()
 
 public void Bossgame4_OnMapStart()
 {
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_small1.mp3", true);
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_small2.mp3", true);
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_mod1.mp3", true);
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_mod2.mp3", true);
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_stro1.mp3", true);
-	PrecacheSound("gemidyne/warioware/bosses/sfx/ff_stro2.mp3", true);
+	PreloadSound(BOSSGAME4_SFX_SMALLHIT1);
+	PreloadSound(BOSSGAME4_SFX_SMALLHIT2);
+	PreloadSound(BOSSGAME4_SFX_MEDIUMHIT1);
+	PreloadSound(BOSSGAME4_SFX_MEDIUMHIT2);
+	PreloadSound(BOSSGAME4_SFX_STRONGHIT1);
+	PreloadSound(BOSSGAME4_SFX_STRONGHIT2);
 }
 
 public void Bossgame4_OnMinigameSelectedPre()
@@ -100,7 +112,7 @@ public void Bossgame4_OnMinigameSelected(int client)
 	angle[0] += NormalizeAngle(direction[0] - angle[0]);
 	angle[1] += NormalizeAngle(direction[1] - angle[1]);
 
-	TeleportEntity(client, NULL_VECTOR, angle, NULL_VECTOR);
+	TeleportEntity(client, NULL_VECTOR, angle, vel);
 }
 
 public void Bossgame4_OnPlayerDeath(int victim, int attacker)
@@ -212,18 +224,20 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 		if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 300.0)
 		{
-			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_small%d.mp3", GetRandomInt(1, 2));
+			Format(path, sizeof(path), BOSSGAME4_SFX_SMALLHIT_FORMATTABLE, GetRandomInt(1, 2));
 		}
 		else if (g_fBossgame4PlayerDamageAccumulated[victim.ClientId] >= 300.0 && g_fBossgame4PlayerDamageAccumulated[victim.ClientId] < 450.0)
 		{
-			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_mod%d.mp3", GetRandomInt(1, 2));
+			Format(path, sizeof(path), BOSSGAME4_SFX_MEDIUMHIT_FORMATTABLE, GetRandomInt(1, 2));
 		}
 		else
 		{
-			Format(path, sizeof(path), "gemidyne/warioware/bosses/sfx/ff_stro%d.mp3", GetRandomInt(1, 2));
+			Format(path, sizeof(path), BOSSGAME4_SFX_STRONGHIT_FORMATTABLE, GetRandomInt(1, 2));
 		}
 
-		EmitSoundToAll(path, victim.ClientId, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
+		char rewritten[MAX_PATH_LENGTH];
+		Sounds_ConvertTokens(path, rewritten, sizeof(rewritten));
+		EmitSoundToAll(rewritten, victim.ClientId, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 	}
 }
 

@@ -32,8 +32,9 @@ public void Bossgame3_EntryPoint()
 
 public void Bossgame3_OnMapStart()
 {
-	PrecacheSound("ui/hitsound_retro1.wav", true);
-	PrecacheSound("ui/killsound_retro.wav", true);
+	PreloadSound("ui/hitsound_retro1.wav");
+	PreloadSound("ui/killsound_retro.wav");
+	PreloadSound(BOSSGAME_SFX_BBCOUNT);
 }
 
 public void Bossgame3_OnMinigameSelectedPre()
@@ -288,7 +289,7 @@ public Action Bossgame3_BeginIntervalSequence(Handle timer)
 
 public Action Bossgame3_DoTickSfx(Handle timer)
 {
-	PlaySoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
+	PlaySoundToAll(BOSSGAME_SFX_BBCOUNT);
 	return Plugin_Handled;
 }
 

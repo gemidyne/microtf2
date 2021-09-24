@@ -21,9 +21,9 @@ public void Bossgame5_EntryPoint()
 
 public void Bossgame5_OnMapStart()
 {
-	PrecacheSound("gemidyne/warioware/bosses/sfx/beatblock_count.mp3", true);
-	PrecacheSound("ui/chime_rd_2base_pos.wav", true);
-	PrecacheSound("ui/hitsound_retro1.wav", true);
+	PreloadSound(BOSSGAME_SFX_BBCOUNT);
+	PreloadSound("ui/chime_rd_2base_pos.wav");
+	PreloadSound("ui/hitsound_retro1.wav");
 }
 
 public void Bossgame5_OnMinigameSelectedPre()
@@ -68,22 +68,22 @@ public void Bossgame5_OnMinigameSelected(int client)
 		player.ResetHealth();
 		player.ResetWeapon(true);
 
+		int column = player.ClientId;
+		int row = 0;
+
+		while (column > 3)
+		{
+			column = column - 3;
+			row = row + 1;
+		}
+
 		float pos[3];
+		pos[0] = -13495.0 + float(column*90);
+		pos[1] = -14510.0 + float(row*85);
+		pos[2] = 490.0;
+
 		float vel[3] = { 0.0, 0.0, 0.0 };
 		float ang[3] = { 0.0, 90.0, 0.0 };
-
-		if (player.Team == TFTeam_Red) // RED
-		{
-			pos[0] = -13436.6;
-			pos[1] = -14211.9;
-			pos[2] = 490.0;
-		}
-		else // BLU
-		{
-			pos[0] = -13180.6;
-			pos[1] = -14211.9;
-			pos[2] = 490.0;
-		}
 
 		TeleportEntity(client, pos, ang, vel);
 	}
@@ -210,7 +210,7 @@ public Action Bossgame5_SwitchTimer(Handle timer)
 		}
 		else if (g_fBossgame5Timer > 0)
 		{
-			EmitSoundToAll("gemidyne/warioware/bosses/sfx/beatblock_count.mp3");
+			PlaySoundToAll(BOSSGAME_SFX_BBCOUNT);
 		}
 		else 
 		{

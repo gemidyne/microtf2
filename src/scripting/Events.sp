@@ -532,7 +532,7 @@ public void TF2_OnWaitingForPlayersEnd()
 		{
 			if (!player.IsBot)
 			{
-				StopSound(i, SNDCHAN_AUTO, SYSBGM_WAITING);
+				StopSoundEx(i, SYSBGM_WAITING);
 			}
 
 			player.IsParticipating = true;
@@ -646,7 +646,7 @@ public void OnClientPostAdminCheck(int client)
 			if (g_eGamemodeStatus == GameStatus_WaitingForPlayers)
 			{
 				player.DisplayOverlay(OVERLAY_WELCOME);
-				EmitSoundToClient(client, SYSBGM_WAITING);
+				PlaySoundToPlayer(client, SYSBGM_WAITING);
 			}
 		}
 

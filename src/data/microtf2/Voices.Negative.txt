@@ -1,5 +1,5 @@
-gemidyne/warioware/system/sfx/vo/response02.mp3
-gemidyne/warioware/system/sfx/vo/response03.mp3
-gemidyne/warioware/system/sfx/vo/response04.mp3
-gemidyne/warioware/system/sfx/vo/response05.mp3
-gemidyne/warioware/system/sfx/vo/response06.mp3
+gemidyne/warioware/{version}/system/sfx/vo/response02.mp3
+gemidyne/warioware/{version}/system/sfx/vo/response03.mp3
+gemidyne/warioware/{version}/system/sfx/vo/response04.mp3
+gemidyne/warioware/{version}/system/sfx/vo/response05.mp3
+gemidyne/warioware/{version}/system/sfx/vo/response06.mp3

@@ -116,15 +116,15 @@ public void Bossgame8_OnMapStart()
 		PrecacheModel(g_sBossgame8Group4Models[i]);
 	}
 
-	PrecacheSound(BOSSGAME8_VO_10SEC, true);
-	PrecacheSound(BOSSGAME8_VO_5SEC, true);
-	PrecacheSound(BOSSGAME8_VO_4SEC, true);
-	PrecacheSound(BOSSGAME8_VO_3SEC, true);
-	PrecacheSound(BOSSGAME8_VO_2SEC, true);
-	PrecacheSound(BOSSGAME8_VO_1SEC, true);
-	PrecacheSound(BOSSGAME8_SFX_QUESTION_PROMPT, true);
-	PrecacheSound(BOSSGAME8_SFX_ANSWER_ANTICIPATION, true);
-	PrecacheSound(BOSSGAME8_SFX_ANSWER_REVEAL, true);
+	PreloadSound(BOSSGAME8_VO_10SEC);
+	PreloadSound(BOSSGAME8_VO_5SEC);
+	PreloadSound(BOSSGAME8_VO_4SEC);
+	PreloadSound(BOSSGAME8_VO_3SEC);
+	PreloadSound(BOSSGAME8_VO_2SEC);
+	PreloadSound(BOSSGAME8_VO_1SEC);
+	PreloadSound(BOSSGAME8_SFX_QUESTION_PROMPT);
+	PreloadSound(BOSSGAME8_SFX_ANSWER_ANTICIPATION);
+	PreloadSound(BOSSGAME8_SFX_ANSWER_REVEAL);
 }
 
 public void Bossgame8_OnTfRoundStart()
@@ -504,22 +504,22 @@ public Action Bossgame8_ViewingTimer(Handle timer)
 		switch (g_iBossgame8Timer)
 		{
 			case 10:
-				EmitSoundToAll(BOSSGAME7_VO_10SEC);
+				PlaySoundToAll(BOSSGAME7_VO_10SEC);
 
 			case 5:
-				EmitSoundToAll(BOSSGAME7_VO_5SEC);
+				PlaySoundToAll(BOSSGAME7_VO_5SEC);
 
 			case 4:
-				EmitSoundToAll(BOSSGAME7_VO_4SEC);
+				PlaySoundToAll(BOSSGAME7_VO_4SEC);
 
 			case 3:
-				EmitSoundToAll(BOSSGAME7_VO_3SEC);
+				PlaySoundToAll(BOSSGAME7_VO_3SEC);
 
 			case 2:
-				EmitSoundToAll(BOSSGAME7_VO_2SEC);
+				PlaySoundToAll(BOSSGAME7_VO_2SEC);
 
 			case 1:
-				EmitSoundToAll(BOSSGAME7_VO_1SEC);
+				PlaySoundToAll(BOSSGAME7_VO_1SEC);
 		}
 
 		Bossgame8_ShowHudQuestionnaire();

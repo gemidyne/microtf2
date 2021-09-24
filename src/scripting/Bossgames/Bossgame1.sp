@@ -97,19 +97,19 @@ public void Bossgame1_OnMinigameSelected(int client)
 		int column = client;
 		int row = 0;
 
-		while (column > 12)
+		while (column > 9)
 		{
-			column = column - 12;
+			column = column - 9;
 			row = row + 1;
 		}
 
 		float pos[3];
-		pos[0] = 1821.0 - float(row*75);
-		pos[1] = 4397.0 + float(column*75);
-		pos[2] = -308.0;
+		pos[0] = 2160.0 - float(row*75);
+		pos[1] = 4356.0 + float(column*75);
+		pos[2] = -325.0;
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		float ang[3] = { 0.0, 180.0, 0.0 };
+		float ang[3] = { -6.0, 180.0, 0.0 };
 
 		TeleportEntity(client, pos, ang, vel);
 	}

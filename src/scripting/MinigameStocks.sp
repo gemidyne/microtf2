@@ -182,7 +182,7 @@ public void EndBoss()
 			{
                 for (int a = 0; a < 10; a++)
                 {
-                    StopSound(i, SNDCHAN_AUTO, g_sBossgameBgm[g_iActiveBossgameId]);
+                    StopSoundEx(i, g_sBossgameBgm[g_iActiveBossgameId]);
                 }
 
                 if (player.IsParticipating)
