@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"fr"		"DOUBLE SAUT !"
+		"fr"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{

@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"de"		"DOPPEL SPRUNG!"
+		"de"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{

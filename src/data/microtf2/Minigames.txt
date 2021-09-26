@@ -196,7 +196,7 @@
 		"enabled"		"1"
 		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/23.mp3"
 		"EntryPoint"		"Minigame23_EntryPoint"
-		"BackgroundMusic_Length"		"4.101188"
+		"BackgroundMusic_Length"		"6.0"
 	}
 	"24"
 	{

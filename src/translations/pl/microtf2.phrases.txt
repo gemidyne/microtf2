@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"pl"		"WYKONAJ PODWÓJNY SKOK!"
+		"pl"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{

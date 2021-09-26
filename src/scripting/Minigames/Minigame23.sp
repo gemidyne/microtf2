@@ -6,9 +6,21 @@
 
 public void Minigame23_EntryPoint()
 {
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Minigame23_OnMinigameSelectedPre);
 	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Minigame23_OnMinigameSelected);
 	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Minigame23_OnPlayerDeath);
 	g_pfOnPlayerTakeDamage.AddFunction(INVALID_HANDLE, Minigame23_OnPlayerTakeDamage);
+}
+
+public void Minigame23_OnMinigameSelectedPre()
+{
+	if (g_iActiveMinigameId != 23)
+	{
+		return;
+	}
+
+	g_bIsBlockingTaunts = false;
+	g_bIsBlockingKillCommands = false;
 }
 
 public void Minigame23_OnMinigameSelected(int client)
@@ -30,6 +42,7 @@ public void Minigame23_OnMinigameSelected(int client)
 		player.Class = TFClass_Soldier;
 		player.RemoveAllWeapons();
 		player.GiveWeapon(775);
+		player.SetGodMode(false);
 	}
 }
 
@@ -55,7 +68,7 @@ public void Minigame23_OnPlayerDeath(int victimId, int attackerId)
 	}
 }
 
-public DamageBlockResults Minigame23_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+public DamageBlockResults Minigame23_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageCustom)
 {
 	if (g_bIsMinigameActive && g_iActiveMinigameId == 23)
 	{
@@ -65,9 +78,14 @@ public DamageBlockResults Minigame23_OnPlayerTakeDamage(int victimId, int attack
 		bool victimValid = victim.IsValid && victim.IsParticipating;
 		bool attackerValid = attacker.IsValid && attacker.IsParticipating;
 
-		if (attackerValid && victimValid && victim.ClientId != attacker.ClientId && damageType == TF_CUSTOM_TAUNT_GRENADE)
+		PrintToChatAll("Minigame23_OnPlayerTakeDamage: damageCustom is %i (looking for %i)", damageCustom, TF_CUSTOM_TAUNT_GRENADE);
+
+		if (attackerValid && victimValid && victim.ClientId != attacker.ClientId && damageCustom == TF_CUSTOM_TAUNT_GRENADE)
 		{
 			attacker.TriggerSuccess();
+
+			PrintToChatAll("Minigame23_OnPlayerTakeDamage: attacker success (%i)", attacker.ClientId);
+
 			return EDamageBlockResult_AllowDamage;
 		}
 	}

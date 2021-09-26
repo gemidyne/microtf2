@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"en"		"DOUBLE JUMP!"
+		"en"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{

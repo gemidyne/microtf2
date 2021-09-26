@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"ru"		"ДВОЙНОЙ ПРЫЖОК!"
+		"ru"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{
