@@ -99,6 +99,11 @@ public void OnPluginStart()
 		SetFailState("The SteamWorks Extension is not loaded.");
 	}
 
+	if (GetFeatureStatus(FeatureType_Capability, "SDKHook_DmgCustomInOTD") != FeatureStatus_Available)
+	{
+		SetFailState("SDKHooks 2.1+ is required to run this plugin.");
+	}
+
 	LoadTranslations("microtf2.phrases.txt");
 
 	HookEvents();
