@@ -47,7 +47,7 @@ public void Minigame22_OnMinigameSelected(int client)
 	}
 }
 
-public DamageBlockResults Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+public DamageBlockResults Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageCustom)
 {
 	if (g_iActiveMinigameId != 22)
 	{

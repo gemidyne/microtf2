@@ -176,7 +176,7 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	return Plugin_Handled;
 }
 
-public DamageBlockResults Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+public DamageBlockResults Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageCustom)
 {
 	if (g_iActiveBossgameId != 4)
 	{

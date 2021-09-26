@@ -10,7 +10,7 @@ public void DetachPlayerHooks(int client)
 	SDKUnhook(client, SDKHook_Touch, Hooks_OnTouch);
 }
 
-public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype)
+public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, float &damage, int &damagetype, int &weapon, const float damageForce[3], const float damagePosition[3], int damagecustom)
 {
 	if (!g_bIsPluginEnabled)
 	{
@@ -25,7 +25,7 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		Call_PushCell(victim);
 		Call_PushCell(attackerId);
 		Call_PushFloat(damage);
-		Call_PushCell(damagetype);
+		Call_PushCell(damagecustom);
 		Call_Finish(forwardResult);
 	}
 

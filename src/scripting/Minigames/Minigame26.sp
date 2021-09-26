@@ -186,7 +186,7 @@ public void Minigame26_OnPlayerConditionAdded(int client, int conditionId)
 	}
 }
 
-public DamageBlockResults Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+public DamageBlockResults Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageCustom)
 {
 	if (g_iActiveMinigameId != 26)
 	{

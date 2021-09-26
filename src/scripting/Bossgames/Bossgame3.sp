@@ -181,7 +181,7 @@ public void Bossgame3_OnBossStopAttempt()
 	}
 }
 
-public DamageBlockResults Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+public DamageBlockResults Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageCustom)
 {
 	if (g_iActiveBossgameId != 3)
 	{
