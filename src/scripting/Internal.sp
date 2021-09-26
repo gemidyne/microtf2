@@ -119,6 +119,7 @@ void ResetGamemode()
 	g_iLastPlayedBossgameId = 0;
 	g_iMinigamesPlayedCount = 0;
 	g_iNextMinigamePlayedSpeedTestThreshold = 0;
+	g_fActiveGameSpeed = 1.0;
 	
 	g_bIsMinigameActive = false;
 	g_bIsGameOver = false;
