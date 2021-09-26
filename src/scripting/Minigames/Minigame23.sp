@@ -1,31 +1,14 @@
 /**
  * MicroTF2 - Minigame 23
  *
- * Double jump!
+ * Taunt Kill!
  */
-
-bool g_bMinigame23CanCheckConditions = false;
 
 public void Minigame23_EntryPoint()
 {
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame23_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame23_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerRunCmd, INVALID_HANDLE, Minigame23_OnPlayerRunCmd);
-}
-
-public void Minigame23_OnMinigameSelectedPre()
-{
-	if (g_iActiveMinigameId == 23)
-	{
-		g_bMinigame23CanCheckConditions = false;
-		CreateTimer(1.5, Timer_Minigame23_AllowConditions);
-	}
-}
-
-public Action Timer_Minigame23_AllowConditions(Handle timer)
-{
-	g_bMinigame23CanCheckConditions = true;
-	return Plugin_Handled;
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Minigame23_OnMinigameSelected);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Minigame23_OnPlayerDeath);
+	g_pfOnPlayerTakeDamage.AddFunction(INVALID_HANDLE, Minigame23_OnPlayerTakeDamage);
 }
 
 public void Minigame23_OnMinigameSelected(int client)
@@ -44,56 +27,50 @@ public void Minigame23_OnMinigameSelected(int client)
 
 	if (player.IsValid)
 	{
-		player.Class = TFClass_Scout;
-		player.ResetWeapon(false);
+		player.Class = TFClass_Soldier;
+		player.RemoveAllWeapons();
+		player.GiveWeapon(775);
 	}
 }
 
-public void Minigame23_OnPlayerRunCmd(int client, int &buttons, int &impulse, float vel[3], float angles[3], int &weapon)
+public void Minigame23_OnPlayerDeath(int victimId, int attackerId)
 {
-	if (!g_bIsMinigameActive)
-	{
-		return;
-	}
-
 	if (g_iActiveMinigameId != 23)
 	{
 		return;
 	}
 
-	if (!g_bMinigame23CanCheckConditions)
+	if (!g_bIsMinigameActive)
 	{
 		return;
 	}
 
-	Player player = new Player(client);
+	Player victim = new Player(victimId);
+	Player attacker = new Player(attackerId);
 
-	if (!player.IsValid)
+	if (victim.IsValid && attacker.IsValid && victim.IsParticipating && attacker.IsParticipating)
 	{
-		return;
+		victim.Status = PlayerStatus_Failed;
+		attacker.Status = PlayerStatus_Winner;
 	}
+}
 
-	if (!player.IsParticipating)
+public DamageBlockResults Minigame23_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
+{
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 23)
 	{
-		return;
-	}
+		Player victim = new Player(victimId);
+		Player attacker = new Player(attackerId);
 
-	if (player.Status != PlayerStatus_NotWon)
-	{
-		return;
-	}
+		bool victimValid = victim.IsValid && victim.IsParticipating;
+		bool attackerValid = attacker.IsValid && attacker.IsParticipating;
 
-	int flags = GetEntityFlags(client);
-
-	if (buttons & IN_JUMP)
-	{
-		if (flags & FL_ONGROUND)
+		if (attackerValid && victimValid && victim.ClientId != attacker.ClientId && damageType == TF_CUSTOM_TAUNT_GRENADE)
 		{
-			// First jump
-		}
-		else
-		{
-			player.TriggerSuccess();
+			attacker.TriggerSuccess();
+			return EDamageBlockResult_AllowDamage;
 		}
 	}
+
+	return EDamageBlockResult_DoNothing;
 }

@@ -2107,19 +2107,19 @@
     },
     {
       "key": "Minigame23_Caption",
-      "description": null,
-      "text": "DOUBLE JUMP!",
+      "description": "Tell players to do a taunt kill!",
+      "text": "TAUNT KILL!",
       "formatArguments": [],
       "translations": {
-        "pt": "SALTO DUPLO!",
-        "fr": "DOUBLE SAUT !",
-        "it": "DOPPIO SALTO!",
-        "pt_p": "SALTO DUPLO!",
-        "ru": "ДВОЙНОЙ ПРЫЖОК!",
-        "es": "¡SALTO DOBLE!",
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
         "jp": null,
-        "pl": "WYKONAJ PODWÓJNY SKOK!",
-        "de": "DOPPEL SPRUNG!"
+        "pl": null,
+        "de": null
       },
       "ignoreEmptyValue": false
     },
