@@ -56,7 +56,7 @@ public void Minigame27_OnMinigameSelected(int client)
 	}
 }
 
-public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_bIsMinigameActive && g_iActiveMinigameId == 27)
 	{
@@ -68,4 +68,6 @@ public void Minigame27_OnPlayerTakeDamage(int victimId, int attackerId, float da
 			attacker.TriggerSuccess();
 		}
 	}
+
+	return EDamageBlockResult_DoNothing;
 }

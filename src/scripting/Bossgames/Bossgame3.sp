@@ -181,16 +181,16 @@ public void Bossgame3_OnBossStopAttempt()
 	}
 }
 
-public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_iActiveBossgameId != 3)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (!g_bIsMinigameActive)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	Player attacker = new Player(attackerId);
@@ -208,6 +208,8 @@ public void Bossgame3_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 
 		TeleportEntity(victimId, NULL_VECTOR, NULL_VECTOR, vel);
 	}
+
+	return EDamageBlockResult_DoNothing;
 }
 
 

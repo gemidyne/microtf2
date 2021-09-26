@@ -74,7 +74,7 @@ public void Minigame17_GetDynamicCaption(int client)
 	}
 }
 
-public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_bIsMinigameActive && g_iActiveMinigameId == 17)
 	{
@@ -90,4 +90,6 @@ public void Minigame17_OnPlayerTakeDamage(int victimId, int attackerId, float da
 			victim.TriggerSuccess();
 		}
 	}
+
+	return EDamageBlockResult_DoNothing;
 }

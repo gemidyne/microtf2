@@ -343,7 +343,7 @@ void InitializeForwards()
 	g_pfOnPlayerSpawn = new PrivateForward(ET_Ignore, Param_Any);
 	g_pfOnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerHurt = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
-	g_pfOnPlayerTakeDamage = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
+	g_pfOnPlayerTakeDamage = new PrivateForward(ET_Event, Param_Cell, Param_Cell, Param_Float, Param_Cell);
 	g_pfOnPlayerJarated = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerClassChange = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerStunned = new PrivateForward(ET_Ignore, Param_Any, Param_Any);

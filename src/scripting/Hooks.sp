@@ -17,13 +17,16 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		return Plugin_Continue;
 	}
 
+	DamageBlockResults forwardResult;
+
 	if (g_pfOnPlayerTakeDamage != INVALID_HANDLE)
 	{
 		Call_StartForward(g_pfOnPlayerTakeDamage);
 		Call_PushCell(victim);
 		Call_PushCell(attackerId);
 		Call_PushFloat(damage);
-		Call_Finish();
+		Call_PushCell(damagetype);
+		Call_Finish(forwardResult);
 	}
 
 	bool doBlock = false;
@@ -60,6 +63,18 @@ public Action Hooks_OnTakeDamage(int victim, int &attackerId, int &inflictor, fl
 		{
 			doBlock = true;
 		}
+	}
+
+	// This check is here so we can inherit default global rules, and then allow them to be
+	// overridden by a forward function (i.e. minigame or bossgame)
+	// The default for the g_pfOnPlayerTakeDamage is DoNothing in which can we assume the global rule
+	if (forwardResult == EDamageBlockResult_AllowDamage)
+	{
+		doBlock = false;
+	}
+	else if (forwardResult == EDamageBlockResult_BlockDamage)
+	{
+		doBlock = true;
 	}
 
 	if (doBlock)

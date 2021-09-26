@@ -176,16 +176,16 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 	return Plugin_Handled;
 }
 
-public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_iActiveBossgameId != 4)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (!g_bIsMinigameActive)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	Player attacker = new Player(attackerId);
@@ -239,6 +239,8 @@ public void Bossgame4_OnPlayerTakeDamage(int victimId, int attackerId, float dam
 		Sounds_ConvertTokens(path, rewritten, sizeof(rewritten));
 		EmitSoundToAll(rewritten, victim.ClientId, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
 	}
+
+	return EDamageBlockResult_DoNothing;
 }
 
 public void Bossgame4_OnMinigameFinish()

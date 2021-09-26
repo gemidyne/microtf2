@@ -186,16 +186,16 @@ public void Minigame26_OnPlayerConditionAdded(int client, int conditionId)
 	}
 }
 
-public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_iActiveMinigameId != 26)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (!g_bIsMinigameActive)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	Player victim = new Player(victimId);
@@ -203,12 +203,12 @@ public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 	if (!attacker.IsValid || !victim.IsValid)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (!attacker.IsParticipating || !victim.IsParticipating)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (g_bMinigame26IsPlayerSelected[attacker.ClientId] && !g_bMinigame26IsPlayerSelected[victim.ClientId])
@@ -216,6 +216,8 @@ public void Minigame26_OnPlayerTakeDamage(int victimId, int attackerId, float da
 		attacker.Status = PlayerStatus_Winner;
 		victim.Status = PlayerStatus_Failed;
 	}
+
+	return EDamageBlockResult_DoNothing;
 }
 
 void Minigame26_SetupAttacker(Player player)

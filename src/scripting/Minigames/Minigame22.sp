@@ -47,16 +47,16 @@ public void Minigame22_OnMinigameSelected(int client)
 	}
 }
 
-public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage)
+public DamageBlockResults Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float damage, int damageType)
 {
 	if (g_iActiveMinigameId != 22)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	if (!g_bIsMinigameActive)
 	{
-		return;
+		return EDamageBlockResult_DoNothing;
 	}
 
 	Player attacker = new Player(attackerId);
@@ -76,6 +76,8 @@ public void Minigame22_OnPlayerTakeDamage(int victimId, int attackerId, float da
 
 		TeleportEntity(victimId, NULL_VECTOR, ang, vel);
 	}
+
+	return EDamageBlockResult_DoNothing;
 }
 
 public void Minigame22_OnMinigameFinishPre()
