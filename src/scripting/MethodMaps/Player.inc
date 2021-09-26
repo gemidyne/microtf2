@@ -377,6 +377,32 @@ methodmap Player __nullable__
         }
     }
 
+    property float ChargeLevel
+    {
+        public get()
+        {
+            int secondaryWeapon = GetPlayerWeaponSlot(this.ClientId, 1);
+
+            if (IsValidEntity(secondaryWeapon) && HasEntProp(secondaryWeapon, Prop_Send, "m_flChargeLevel"))
+            {
+                return GetEntPropFloat(secondaryWeapon, Prop_Send, "m_flChargeLevel");
+            }
+
+            return 0.0;
+        }
+
+        public set(float value)
+        {
+            int secondaryWeapon = GetPlayerWeaponSlot(this.ClientId, 1);
+
+            if (IsValidEntity(secondaryWeapon) && HasEntProp(secondaryWeapon, Prop_Send, "m_flChargeLevel"))
+            {
+                // Float scale: 0.0 = 0%, 1.0 = 100%
+                SetEntPropFloat(secondaryWeapon, Prop_Send, "m_flChargeLevel", value);
+            }
+        }
+    }
+
     public void ResetHealth()
     {
 		this.SetHealth(this.DefaultHealth);

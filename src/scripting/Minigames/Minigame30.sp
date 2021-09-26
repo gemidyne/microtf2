@@ -8,9 +8,9 @@ TFTeam g_tMinigame30MedicTeam;
 
 public void Minigame30_EntryPoint()
 {
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame30_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame30_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerHealed, INVALID_HANDLE, Minigame30_OnPlayerHealed);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Minigame30_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Minigame30_OnMinigameSelected);
+	g_pfOnEntityCreated.AddFunction(INVALID_HANDLE, Minigame30_OnEntityCreated);
 }
 
 public void Minigame30_OnMinigameSelectedPre()
@@ -51,7 +51,8 @@ public void Minigame30_OnMinigameSelected(int client)
 			player.ResetHealth();
 			player.ResetWeapon(true);
 			player.GiveWeapon(42);
-			player.ChargeMeter = 100.0;
+			player.ChargeLevel = 1.0;
+			player.SetWeaponPrimaryAmmoCount(1);
 		}
 	}
 }
@@ -77,20 +78,61 @@ public void Minigame30_GetDynamicCaption(int client)
 	}
 }
 
-public void Minigame30_OnPlayerHealed(int targetId, int ownerId)
+public void Minigame30_OnEntityCreated(int entity, const char[] classname)
 {
-	if (g_bIsMinigameActive && g_iActiveMinigameId == 30)
+	if (g_iActiveMinigameId != 30)
 	{
-		Player target = new Player(targetId);
-		Player owner = new Player(ownerId);
+		return;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return;
+	}
+
+	if (strncmp("item_healthkit_", classname, strlen("item_healthkit_"), false) == 0)
+	{
+		SDKHook(entity, SDKHook_StartTouch, Minigame30_OnLunchboxTouch);
+	}
+}
+
+public Action Minigame30_OnLunchboxTouch(int entity, int other)
+{
+	if (g_iActiveMinigameId != 30)
+	{
+		return Plugin_Continue;
+	}
+
+	if (!g_bIsMinigameActive)
+	{
+		return Plugin_Continue;
+	}
+
+	if (HasEntProp(entity, Prop_Send, "m_hOwnerEntity"))
+	{
+		Player target = new Player(other);
+		Player owner = new Player(GetEntPropEnt(entity, Prop_Send, "m_hOwnerEntity"));
 
 		bool targetValid = target.IsValid && target.IsParticipating;
 		bool ownerValid = owner.IsValid && owner.IsParticipating;
 
-		if (targetValid && ownerValid && target.Team == g_tMinigame17MedicTeam && owner.Team != g_tMinigame17MedicTeam)
+		if (targetValid && ownerValid && target.Class == TFClass_Medic && owner.Class == TFClass_Heavy)
 		{
 			target.TriggerSuccess();
 			owner.TriggerSuccess();
+
+			SDKUnhook(entity, SDKHook_StartTouch, Minigame30_OnLunchboxTouch);
+
+			if (entity != -1)
+			{
+				RemoveEntity(entity);
+			}
 		}
 	}
+	else
+	{
+		SDKUnhook(entity, SDKHook_StartTouch, Minigame30_OnLunchboxTouch);
+	}
+
+	return Plugin_Continue;
 }
