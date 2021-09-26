@@ -78,13 +78,9 @@ public DamageBlockResults Minigame23_OnPlayerTakeDamage(int victimId, int attack
 		bool victimValid = victim.IsValid && victim.IsParticipating;
 		bool attackerValid = attacker.IsValid && attacker.IsParticipating;
 
-		PrintToChatAll("Minigame23_OnPlayerTakeDamage: damageCustom is %i (looking for %i)", damageCustom, TF_CUSTOM_TAUNT_GRENADE);
-
 		if (attackerValid && victimValid && victim.ClientId != attacker.ClientId && damageCustom == TF_CUSTOM_TAUNT_GRENADE)
 		{
 			attacker.TriggerSuccess();
-
-			PrintToChatAll("Minigame23_OnPlayerTakeDamage: attacker success (%i)", attacker.ClientId);
 
 			return EDamageBlockResult_AllowDamage;
 		}
