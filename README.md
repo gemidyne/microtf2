@@ -23,6 +23,7 @@ The "dev" branch is used for the latest development version of the gamemode. Thi
 
 The gamemode utilises the following extensions and plugins to run:
 
+- SDKHooks extension (2.1 or above)
 - SteamWorks extension - https://forums.alliedmods.net/showthread.php?t=229556 (Used for setting the game description)
 - TF2Items extension - https://forums.alliedmods.net/showthread.php?t=115100 (Used for blocking wearables)
 - TF2Attributes plugin - https://github.com/FlaminSarge/tf2attributes (Used for applying attributes to weapons)
