@@ -331,8 +331,6 @@ public void Event_PlayerHealed(Handle event, const char[] name, bool dontBroadca
 	Player target = new Player(GetClientOfUserId(GetEventInt(event, "patient")));
 	Player owner = new Player(GetClientOfUserId(GetEventInt(event, "healer")));
 
-	PrintToChatAll("Event_PlayerHealed: healer is %i, patient is %i", owner.ClientId, target.ClientId);
-
 	if (g_pfOnPlayerHealed != INVALID_HANDLE && target.IsParticipating && owner.IsParticipating)
 	{
 		Call_StartForward(g_pfOnPlayerHealed);
