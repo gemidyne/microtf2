@@ -253,7 +253,7 @@
 	"30"
 	{
 		"Enabled"		"1"
-		"BackgroundMusic"		"gemidyne/warioware/minigames/bgm/dontlaugh.mp3"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/dontlaugh.mp3"
 		"CaptionIsDynamic"		"1"
 		"DynamicCaptionMethod"		"Minigame30_GetDynamicCaption"
 		"EntryPoint"		"Minigame30_EntryPoint"
