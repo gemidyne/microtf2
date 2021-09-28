@@ -187,56 +187,56 @@
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"es"		"COUNT THE PROPS!"
+		"es"		""
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"es"		"GET READY..."
+		"es"		""
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"es"		"THE CORRECT ANSWER WAS...\n???"
+		"es"		""
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"es"		"THE CORRECT ANSWER WAS...\n{1}!"
+		"es"		""
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"es"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+		"es"		""
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"es"		"Dispensers"
+		"es"		""
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"es"		"Ammo Packs"
+		"es"		""
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"es"		"Barrels"
+		"es"		""
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"es"		"Chairs"
+		"es"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"es"		"Room A: {1}"
+		"es"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"es"		"Room B: {1}"
+		"es"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"es"		"Room C: {1}"
+		"es"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"es"		"TAUNT KILL!"
+		"es"		""
 	}
 	"Minigame24_Caption"
 	{
@@ -513,11 +513,11 @@
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"es"		"EAT A SANDVICH!"
+		"es"		""
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"es"		"HEAL A MEDIC!"
+		"es"		""
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
