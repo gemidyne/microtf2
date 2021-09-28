@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"fr"		"TAUNT KILL!"
+		"fr"		""
 	}
 	"Minigame24_Caption"
 	{
@@ -513,11 +513,11 @@
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"fr"		"EAT A SANDVICH!"
+		"fr"		""
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"fr"		"HEAL A MEDIC!"
+		"fr"		""
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
