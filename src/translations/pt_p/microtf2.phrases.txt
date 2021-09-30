@@ -72,31 +72,31 @@
 	}
 	"General_SpeedUp"
 	{
-		"pt_p"		"SPEED UP!"
+		"pt_p"		""
 	}
 	"General_SpeedDown"
 	{
-		"pt_p"		"SPEED DOWN!"
+		"pt_p"		""
 	}
 	"General_Failure"
 	{
-		"pt_p"		"FAILURE!"
+		"pt_p"		""
 	}
 	"General_Success"
 	{
-		"pt_p"		"SUCCESS!"
+		"pt_p"		""
 	}
 	"General_BossTime"
 	{
-		"pt_p"		"BOSS TIME!"
+		"pt_p"		""
 	}
 	"General_GameOver"
 	{
-		"pt_p"		"GAME OVER!"
+		"pt_p"		""
 	}
 	"General_SpecialRound"
 	{
-		"pt_p"		"SPECIAL ROUND!"
+		"pt_p"		""
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"pt_p"		"STAY ON THE GREEN BLOCK!"
+		"pt_p"		""
 	}
 	"Bossgame4_Caption"
 	{
@@ -187,56 +187,56 @@
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"pt_p"		"COUNT THE PROPS!"
+		"pt_p"		""
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"pt_p"		"GET READY..."
+		"pt_p"		""
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"pt_p"		"THE CORRECT ANSWER WAS...\n???"
+		"pt_p"		""
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"THE CORRECT ANSWER WAS...\n{1}!"
+		"pt_p"		""
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"pt_p"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+		"pt_p"		""
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"pt_p"		"Dispensers"
+		"pt_p"		""
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"pt_p"		"Ammo Packs"
+		"pt_p"		""
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"pt_p"		"Barrels"
+		"pt_p"		""
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"pt_p"		"Chairs"
+		"pt_p"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Room A: {1}"
+		"pt_p"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Room B: {1}"
+		"pt_p"		""
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"pt_p"		"Room C: {1}"
+		"pt_p"		""
 	}
 	"Minigame1_Caption"
 	{
@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"pt_p"		"TAUNT KILL!"
+		"pt_p"		""
 	}
 	"Minigame24_Caption"
 	{
@@ -505,23 +505,23 @@
 	}
 	"Minigame28_Caption"
 	{
-		"pt_p"		"BOMB JUMP ONTO THE PLATFORM!"
+		"pt_p"		""
 	}
 	"Minigame29_Caption"
 	{
-		"pt_p"		"DON'T TOUCH ANYONE!"
+		"pt_p"		""
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"pt_p"		"EAT A SANDVICH!"
+		"pt_p"		""
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"pt_p"		"HEAL A MEDIC!"
+		"pt_p"		""
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"pt_p"		"TYPE THE WORDS!"
+		"pt_p"		""
 	}
 	"Bossgame7_Caption_Explain"
 	{
