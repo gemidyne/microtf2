@@ -6,6 +6,10 @@
 
 #pragma semicolon 1
 
+#define AUTOLOAD_EXTENSIONS
+#define REQUIRE_EXTENSIONS
+#define REQUIRE_PLUGIN
+
 #include <sourcemod>
 #include <sdktools>
 #include <tf2>
@@ -13,12 +17,6 @@
 #include <morecolors>
 #include <tf_econ_data>
 #include <warioware>
-
-#undef REQUIRE_PLUGIN
-
-#define AUTOLOAD_EXTENSIONS
-#define REQUIRE_EXTENSIONS
-
 #include <sdkhooks>
 #include <SteamWorks>
 #include <tf2items>
@@ -129,6 +127,14 @@ public APLRes AskPluginLoad2(Handle plugin, bool late, char[] error, int err_max
 	InitializePluginNatives();
 
 	return APLRes_Success;
+}
+
+public void OnAllPluginsLoaded()
+{
+	if (!TF2Attrib_IsReady())
+	{
+		SetFailState("TF2Attributes is required to run this plugin.");
+	}
 }
 
 public void OnPluginEnd()
