@@ -32,7 +32,6 @@ stock void PreloadSound(const char[] path)
 	char rewritten[MAX_PATH_LENGTH];
 	Sounds_ConvertTokens(path, rewritten, sizeof(rewritten));
 
-	LogMessage("Preloading %s...", rewritten);
 	PrecacheSound(rewritten, true);
 
 	// This call intentionally does not add sounds to the files download table.
