@@ -71,7 +71,7 @@ int g_iBossgame7ActiveRoundNumber = 0;
 int g_iBossgame7HighestScore = 0;
 
 int g_iBossgame7ParticipatingPlayerCount;
-int g_iBossgame7PlayerActiveAnswerIndex[MAXPLAYERS+1] = 0;
+int g_iBossgame7PlayerActiveAnswerIndex[MAXPLAYERS+1];
 int g_iBossgame7PlayerActiveAnswerCount[MAXPLAYERS+1];
 int g_iBossgame7RemainingTime = 20;
 int g_iBossgame7ActiveCameraEntityId = 0;

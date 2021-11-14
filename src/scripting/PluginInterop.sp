@@ -44,8 +44,8 @@ stock void InitializePluginNatives()
 
 stock void RemovePluginForwardsFromMemory()
 {
-	SafelyRemoveAllFromForward(g_nfIntermissionStartMapVote);
-	SafelyRemoveAllFromForward(g_nfIntermissionHasMapVoteEnded);
+	SafelyRemoveAllFromGlobalForward(g_nfIntermissionStartMapVote);
+	SafelyRemoveAllFromGlobalForward(g_nfIntermissionHasMapVoteEnded);
 }
 
 public bool PluginForward_HasMapIntegrationLoaded()
@@ -179,4 +179,12 @@ public int Native_WarioWare_SetMaxRounds(Handle plugin, int numParams)
 	g_hConVarPluginMaxRounds.IntValue = value;
 
 	return 0;
+}
+
+void SafelyRemoveAllFromGlobalForward(GlobalForward fwd)
+{
+	if (fwd != INVALID_HANDLE)
+	{
+		fwd.RemoveAllFunctions(INVALID_HANDLE);
+	}
 }
