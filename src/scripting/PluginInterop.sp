@@ -19,7 +19,7 @@ GlobalForward g_nfEventOnGamemodeChanged;
 GlobalForward g_nfEventOnSpeedChange;
 GlobalForward g_nfEventOnSpecialRoundSelected;
 
-stock void InitializePluginForwards()
+void InitializePluginForwards()
 {
 	g_nfIntermissionStartMapVote = new GlobalForward("WarioWare_Intermission_StartMapVote", ET_Ignore);
 	g_nfIntermissionHasMapVoteEnded = new GlobalForward("WarioWare_Intermission_HasMapVoteEnded", ET_Single);
@@ -36,16 +36,10 @@ stock void InitializePluginForwards()
 	g_nfEventOnSpecialRoundSelected = new GlobalForward("WarioWare_Event_OnSpecialRoundSelected", ET_Ignore, Param_Any);
 }
 
-stock void InitializePluginNatives()
+void InitializePluginNatives()
 {
 	CreateNative("WarioWare_GetMaxRounds", Native_WarioWare_GetMaxRounds);
 	CreateNative("WarioWare_SetMaxRounds", Native_WarioWare_SetMaxRounds);
-}
-
-stock void RemovePluginForwardsFromMemory()
-{
-	SafelyRemoveAllFromForward(g_nfIntermissionStartMapVote);
-	SafelyRemoveAllFromForward(g_nfIntermissionHasMapVoteEnded);
 }
 
 public bool PluginForward_HasMapIntegrationLoaded()

@@ -11,7 +11,7 @@ bool g_bBossgame6IsEntityBarrel[BOSSGAME6_ENTITYSPAWN_COUNT];
 
 int g_iBossgame6Timer = 6;
 int g_iBossgame6ParticipatingPlayerCount;
-int g_iBossgame6PlayerScore[MAXPLAYERS+1] = 0;
+int g_iBossgame6PlayerScore[MAXPLAYERS+1];
 char g_sBossgame6EntityModels[][] =
 {
 	"models/props_hydro/keg_large.mdl",

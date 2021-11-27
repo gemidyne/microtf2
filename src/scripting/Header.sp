@@ -47,9 +47,9 @@ int g_iNextMinigamePlayedSpeedTestThreshold = 0;
 int g_iBossGameThreshold = 20;
 int g_iMaxRoundsPlayable = 4;
 int g_iTotalRoundsPlayed = 0;
-int g_iPlayerScore[MAXPLAYERS+1] = 0;
-int g_iPlayerMinigamesLost[MAXPLAYERS+1] = 0;
-int g_iPlayerMinigamesWon[MAXPLAYERS+1] = 0;
+int g_iPlayerScore[MAXPLAYERS+1];
+int g_iPlayerMinigamesLost[MAXPLAYERS+1];
+int g_iPlayerMinigamesWon[MAXPLAYERS+1];
 int g_iActiveParticipantCount = 0;
 int g_iActiveRedParticipantCount = 0;
 int g_iActiveBlueParticipantCount = 0;
@@ -72,18 +72,18 @@ bool g_bIsMapEnding = false;
 bool g_bIsGameOver = false;
 bool g_bIsBlockingTaunts = true;
 bool g_bIsBlockingKillCommands = true;
-bool g_bIsPlayerParticipant[MAXPLAYERS+1] = false;
-bool g_bIsPlayerWinner[MAXPLAYERS+1] = false;
+bool g_bIsPlayerParticipant[MAXPLAYERS+1];
+bool g_bIsPlayerWinner[MAXPLAYERS+1];
 bool g_bHideHudGamemodeText = false;
 bool g_bAllowCosmetics = false;
-bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1] = false;
+bool g_bIsPlayerUsingLegacyDirectX[MAXPLAYERS+1];
 
 /**
  * Enums
  */
 
 GameStatus g_eGamemodeStatus = GameStatus_Unknown;
-PlayerStatuses g_ePlayerStatus[MAXPLAYERS+1] = PlayerStatus_Unknown;
+PlayerStatuses g_ePlayerStatus[MAXPLAYERS+1];
 DamageBlockModes g_eDamageBlockMode = EDamageBlockMode_All;
 
 /**

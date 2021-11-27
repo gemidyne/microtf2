@@ -867,7 +867,7 @@ void Bossgame8_ShowHudQuestionnaire()
 	}
 }
 
-void Bossgame8_ShowAnswerRoomAnnotation(float[3] position, const char[] translationKey, int answer)
+void Bossgame8_ShowAnswerRoomAnnotation(float position[3], const char[] translationKey, int answer)
 {
 	for (int i = 1; i <= MaxClients; i++)
 	{

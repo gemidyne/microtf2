@@ -71,10 +71,12 @@ int g_iBossgame7ActiveRoundNumber = 0;
 int g_iBossgame7HighestScore = 0;
 
 int g_iBossgame7ParticipatingPlayerCount;
-int g_iBossgame7PlayerActiveAnswerIndex[MAXPLAYERS+1] = 0;
+int g_iBossgame7PlayerActiveAnswerIndex[MAXPLAYERS+1];
 int g_iBossgame7PlayerActiveAnswerCount[MAXPLAYERS+1];
 int g_iBossgame7RemainingTime = 20;
 int g_iBossgame7ActiveCameraEntityId = 0;
+
+float g_fBossgame7AntiFloodOriginalValue = 0.0;
 
 public void Bossgame7_EntryPoint()
 {
@@ -186,6 +188,13 @@ public void Bossgame7_OnMinigameSelectedPre()
 		g_iBossgame7ActiveRoundNumber = 0;
 		g_iBossgame7HighestScore = 0;
 
+		if (g_hConVarAntiFloodTime != INVALID_HANDLE)
+		{
+			// We need to temporarily disable SM's antiflood plugin if loaded. Tried OnClientFloodCheck, but returning false does not override the return value, if antiflood.smx returns true
+			g_fBossgame7AntiFloodOriginalValue = g_hConVarAntiFloodTime.FloatValue;
+			g_hConVarAntiFloodTime.SetFloat(-1.0);
+		}
+
 		for (int i = 1; i <= MaxClients; i++)
 		{
 			Player player = new Player(i);
@@ -292,6 +301,12 @@ public void Bossgame7_OnMinigameFinish()
 {
 	if (g_iActiveBossgameId == 7 && g_bIsMinigameActive) 
 	{
+		if (g_hConVarAntiFloodTime != INVALID_HANDLE)
+		{
+			// Now that we're finishing, we can go and reset the original value for antiflood
+			g_hConVarAntiFloodTime.SetFloat(g_fBossgame7AntiFloodOriginalValue);
+		}
+
 		for (int i = 1; i <= MaxClients; i++)
 		{
 			Player player = new Player(i);

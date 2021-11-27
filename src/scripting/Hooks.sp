@@ -113,4 +113,6 @@ public Action Hooks_OnTouch(int entity, int other)
 			Call_Finish();
 		}
 	}
+
+	return Plugin_Continue;
 }

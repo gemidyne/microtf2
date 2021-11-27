@@ -96,7 +96,7 @@ stock void ShowAnnotationWithBitfield(int client, int attachToEntity, float life
 	annotation.Cancel();	//Free the handle memory
 }
 
-stock void ShowPositionalAnnotation(int client, float[3] position, float lifetime, char text[32], bool showDistance)
+stock void ShowPositionalAnnotation(int client, float position[3], float lifetime, char text[32], bool showDistance)
 {
 	Annotation annotation = new Annotation();
 

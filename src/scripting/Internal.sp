@@ -6,7 +6,7 @@
 
 stock int FindEntityByClassname2(int startEntityId, const char[] classname)
 {
-	while (startEntityID > -1 && !IsValidEntity(startEntityId)) 
+	while (startEntityId > -1 && !IsValidEntity(startEntityId)) 
 	{
 		startEntityId--;
 	}
