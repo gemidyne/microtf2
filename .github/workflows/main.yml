@@ -41,9 +41,6 @@ jobs:
         with:
          version: ${{ matrix.smver }}
 
-      - name: Setup zip
-        uses: montudor/action-zip@v1
-
       - name: Copy includes
         run: |
           cp ./ext/sourcepawn/includes/* $includePath
@@ -71,19 +68,21 @@ jobs:
           mkdir -p rel/tf/addons/sourcemod/gamedata
           mkdir -p rel/tf/addons/sourcemod/plugins
           mkdir -p rel/tf/addons/sourcemod/translations
-          cp src/data/* rel/tf/addons/sourcemod/data/
-          cp src/gamedata/* rel/tf/addons/sourcemod/gamedata/
+          cp -r src/data/* rel/tf/addons/sourcemod/data/
+          cp -r src/gamedata/* rel/tf/addons/sourcemod/gamedata/
           cp src/scripting/AS-MicroTF2.smx rel/tf/addons/sourcemod/plugins/AS-MicroTF2.smx
-          cp -R src/translations/* rel/tf/addons/sourcemod/translations/
+          cp -r src/translations/* rel/tf/addons/sourcemod/translations/
           rm rel/tf/addons/sourcemod/translations/*.tsutproj
         working-directory: ${{ env.SCRIPTS_PATH }}
 
-      - name: Zip output
-        run: zip -qq -r plugin.zip tf
-        working-directory: ${{ env.SCRIPTS_PATH }}/rel
+        uses: papeloto/action-zip@v1
+        with:
+          files: rel/
+          recursive: true
+          dest: plugin.zip
 
       - name: 'Upload Artifact'
         uses: actions/upload-artifact@v2
         with:
           name: plugin
-          path: rel/plugin.zip
+          path: plugin.zip
