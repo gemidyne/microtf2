@@ -79,11 +79,11 @@ jobs:
         uses: papeloto/action-zip@v1
         with:
           files: rel/
-          recursive: true
+          recursive: false
           dest: plugin.zip
 
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: plugin
+          name: plugin_SM${{ matrix.smver }}
           path: plugin.zip
