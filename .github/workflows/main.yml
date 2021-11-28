@@ -75,13 +75,14 @@ jobs:
           rm rel/tf/addons/sourcemod/translations/*.tsutproj
         working-directory: ${{ env.SCRIPTS_PATH }}
 
+      - name: Zip artifacts
         uses: papeloto/action-zip@v1
         with:
           files: rel/
           recursive: true
           dest: plugin.zip
 
-      - name: 'Upload Artifact'
+      - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
           name: plugin
