@@ -47,17 +47,17 @@ jobs:
           cp ./src/scripting/include/* $includePath
 
       - name: Compile gamemode 
-        run: spcomp src/scripting/AS-MicroTF2.sp -o src/scripting/AS-MicroTF2.smx -E -h
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2.sp -o src/scripting/AS-MicroTF2.smx -E -h
         working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK
-        run: spcomp src/scripting/AS-MicroTF2-SDK.sp -o src/scripting/AS-MicroTF2-SDK.smx -E -h
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2-SDK.sp -o src/scripting/AS-MicroTF2-SDK.smx -E -h
         working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK/MapChooser integration
-        run: spcomp src/scripting/AS-MicroTF2-MapChooser.sp -o src/scripting/AS-MicroTF2-MapChooser.smx -E -h
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2-MapChooser.sp -o src/scripting/AS-MicroTF2-MapChooser.smx -E -h
         working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK/Example integration
-        run: spcomp src/scripting/AS-MicroTF2-ExampleIntegration.sp -o src/scripting/AS-MicroTF2-ExampleIntegration.smx -E -h
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2-ExampleIntegration.sp -o src/scripting/AS-MicroTF2-ExampleIntegration.smx -E -h
         working-directory: ${{ env.SCRIPTS_PATH }}
