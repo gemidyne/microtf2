@@ -43,8 +43,8 @@ jobs:
 
       - name: Copy includes
         run: |
-          cp ./ext/sourcepawn/includes $includePath
-          cp ./src/scripting/include $includePath
+          cp ./ext/sourcepawn/includes/* $includePath
+          cp ./src/scripting/include/* $includePath
 
       - name: Compile gamemode 
         run: spcomp src/scripting/AS-MicroTF2.sp -o src/scripting/AS-MicroTF2.smx -E -h
