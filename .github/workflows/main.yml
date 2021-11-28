@@ -67,11 +67,10 @@ jobs:
 
       - name: Create artifact structure
         run: |
-          mkdir rel/tf/addons/sourcemod/
-          mkdir rel/tf/addons/sourcemod/data
-          mkdir rel/tf/addons/sourcemod/gamedata
-          mkdir rel/tf/addons/sourcemod/plugins
-          mkdir rel/tf/addons/sourcemod/translations
+          mkdir -p rel/tf/addons/sourcemod/data
+          mkdir -p rel/tf/addons/sourcemod/gamedata
+          mkdir -p rel/tf/addons/sourcemod/plugins
+          mkdir -p rel/tf/addons/sourcemod/translations
           cp src/data/* rel/tf/addons/sourcemod/data/
           cp src/gamedata/* rel/tf/addons/sourcemod/gamedata/
           cp src/scripting/AS-MicroTF2.smx rel/tf/addons/sourcemod/plugins/AS-MicroTF2.smx
