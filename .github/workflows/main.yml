@@ -26,6 +26,9 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: echo SCRIPTS_PATH=$(pwd) >> $GITHUB_ENV
       
       - name: Download includes
         uses: actions/checkout@v2
@@ -39,13 +42,17 @@ jobs:
          version: ${{ matrix.smver }}
 
       - name: Compile gamemode 
-        run: spcomp -i'./ext/sourcepawn/includes' -i'./src/scripting/include/' './src/scripting/AS-MicroTF2.sp' -o './src/scripting/AS-MicroTF2.smx' -E -h
+        run: spcomp -i include -i ext/sourcepawn/includes -i src/scripting/include src/scripting/AS-MicroTF2.sp -o src/scripting/AS-MicroTF2.smx -E -h
+        working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK
-        run: spcomp -i'./ext/sourcepawn/includes' -i'./src/scripting/include/' './src/scripting/AS-MicroTF2-SDK.sp' -o './src/scripting/AS-MicroTF2-SDK.smx' -E -h
+        run: spcomp -i include -i ext/sourcepawn/includes -i src/scripting/include src/scripting/AS-MicroTF2-SDK.sp -o src/scripting/AS-MicroTF2-SDK.smx -E -h
+        working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK/MapChooser integration
-        run: spcomp -i'./ext/sourcepawn/includes' -i'./src/scripting/include/' './src/scripting/AS-MicroTF2-MapChooser.sp' -o './src/scripting/AS-MicroTF2-MapChooser.smx' -E -h
+        run: spcomp -i include -i ext/sourcepawn/includes -i src/scripting/include src/scripting/AS-MicroTF2-MapChooser.sp -o src/scripting/AS-MicroTF2-MapChooser.smx -E -h
+        working-directory: ${{ env.SCRIPTS_PATH }}
         
       - name: Compile SDK/Example integration
-        run: spcomp -i'./ext/sourcepawn/includes' -i'./src/scripting/include/' './src/scripting/AS-MicroTF2-ExampleIntegration.sp' -o './src/scripting/AS-MicroTF2-ExampleIntegration.smx' -E -h
+        run: spcomp -i include -i ext/sourcepawn/includes -i src/scripting/include src/scripting/AS-MicroTF2-ExampleIntegration.sp -o src/scripting/AS-MicroTF2-ExampleIntegration.smx -E -h
+        working-directory: ${{ env.SCRIPTS_PATH }}
