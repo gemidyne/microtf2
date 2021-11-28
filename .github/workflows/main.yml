@@ -87,5 +87,4 @@ jobs:
         uses: actions/upload-artifact@v2
         with:
           name: plugin
-          path: plugin.zip
-        working-directory: ${{ env.SCRIPTS_PATH }}/rel
+          path: rel/plugin.zip
