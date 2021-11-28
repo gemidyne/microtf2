@@ -75,15 +75,8 @@ jobs:
           rm rel/tf/addons/sourcemod/translations/*.tsutproj
         working-directory: ${{ env.SCRIPTS_PATH }}
 
-      - name: Zip artifacts
-        uses: papeloto/action-zip@v1
-        with:
-          files: rel/
-          recursive: false
-          dest: plugin.zip
-
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: plugin_SM${{ matrix.smver }}
-          path: plugin.zip
+          name: plugin_SM_${{ matrix.smver }}
+          path: rel/
