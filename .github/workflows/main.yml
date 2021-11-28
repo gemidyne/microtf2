@@ -41,6 +41,9 @@ jobs:
         with:
          version: ${{ matrix.smver }}
 
+      - name: Setup zip
+        uses: montudor/action-zip@v1
+
       - name: Copy includes
         run: |
           cp ./ext/sourcepawn/includes/* $includePath
@@ -61,3 +64,28 @@ jobs:
       - name: Compile SDK/Example integration
         run: spcomp -i $includePath src/scripting/AS-MicroTF2-ExampleIntegration.sp -o src/scripting/AS-MicroTF2-ExampleIntegration.smx -E -O2 -v2
         working-directory: ${{ env.SCRIPTS_PATH }}
+
+      - name: Create artifact structure
+        run: |
+          mkdir rel/tf/addons/sourcemod/
+          mkdir rel/tf/addons/sourcemod/data
+          mkdir rel/tf/addons/sourcemod/gamedata
+          mkdir rel/tf/addons/sourcemod/plugins
+          mkdir rel/tf/addons/sourcemod/translations
+          cp src/data/* rel/tf/addons/sourcemod/data/
+          cp src/gamedata/* rel/tf/addons/sourcemod/gamedata/
+          cp src/scripting/AS-MicroTF2.smx rel/tf/addons/sourcemod/plugins/AS-MicroTF2.smx
+          cp -R src/translations/* rel/tf/addons/sourcemod/translations/
+          rm rel/tf/addons/sourcemod/translations/*.tsutproj
+        working-directory: ${{ env.SCRIPTS_PATH }}
+
+      - name: Zip output
+        run: zip -qq -r plugin.zip tf
+        working-directory: ${{ env.SCRIPTS_PATH }}/rel
+
+      - name: 'Upload Artifact'
+        uses: actions/upload-artifact@v2
+        with:
+          name: plugin
+          path: plugin.zip
+        working-directory: ${{ env.SCRIPTS_PATH }}/rel
