@@ -2113,7 +2113,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "UCCISIONE INSULTO!",
         "pt_p": null,
         "ru": "УБЕЙТЕ НАСМЕШКОЙ!",
         "es": null,
@@ -2369,7 +2369,7 @@
       "text": "EAT A SANDVICH!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "MANGIA UN SANDVICH!",
         "es": null,
         "fr": null,
         "ru": "СЪЕШЬТЕ БУТЕРБРОД!",
@@ -2386,7 +2386,7 @@
       "text": "HEAL A MEDIC!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "CURA UN MEDICO!",
         "es": null,
         "fr": null,
         "ru": "ПОЛЕЧИТЕ МЕДИКА!",
