@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"it"		""
+		"it"		"UCCISIONE INSULTO!"
 	}
 	"Minigame24_Caption"
 	{
@@ -513,11 +513,11 @@
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"it"		""
+		"it"		"MANGIA UN SANDVICH!"
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"it"		""
+		"it"		"CURA UN MEDICO!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
