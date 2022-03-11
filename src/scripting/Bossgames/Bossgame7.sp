@@ -639,10 +639,6 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 		}
 	}
 
-	//TODO: HAVE TO TEST THIS
-	int medianNbWordsTyped = 0;
-	int maxNbWordsTyped = 0;
-
 	int sortedAnswers[MAXPLAYERS+1];
 
 	for (int i = 0; i <= MaxClients; i++)
@@ -653,15 +649,9 @@ public Action Bossgame7_DoReviewSequence(Handle timer)
 	// NOTE: SortIntegers modifies the input array and does not return a separate sorted array!!
 	SortIntegers(sortedAnswers, MAXPLAYERS+1, Sort_Descending);
 
-	maxNbWordsTyped = sortedAnswers[0];
-	if (nbPlayersActive % 2 == 0)
-	{
-		medianNbWordsTyped = (sortedAnswers[nbPlayersActive/2] + sortedAnswers[nbPlayersActive/2 - 1]) / 2;
-	}
-	else
-	{
-		medianNbWordsTyped = sortedAnswers[nbPlayersActive/2];
-	}
+	//TODO: HAVE TO TEST THIS
+	int maxNbWordsTyped = sortedAnswers[0];
+	int medianNbWordsTyped = (sortedAnswers[nbPlayersActive/2] + sortedAnswers[nbPlayersActive/2 + nbPlayersActive%2 - 1]) / 2;
 
 	bool allWordsAnsweredByAll = maxNbWordsTyped == medianNbWordsTyped;
 
