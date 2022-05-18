@@ -989,8 +989,8 @@ public int GetEntityId(const char[] entityType, const char[] name)
 public void Bossgame7_PlaySnd(int client, const char[] file)
 {
 	char path[MAX_PATH_LENGTH];
-	Format(path, sizeof(path), "play %s", file);
-	Sounds_ConvertTokens(sound, path, sizeof(path));
+	Sounds_ConvertTokens(file, path, sizeof(path));
+	Format(path, sizeof(path), "play %s", path);
 	ClientCommand(client, path);
 }
 
