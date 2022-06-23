@@ -333,7 +333,7 @@
         "ru": "Проиграл!",
         "es": "¡Perdedor!",
         "jp": null,
-        "pl": "Przegrywasz!",
+        "pl": "Przegrałeś!",
         "de": "Verlierer!"
       },
       "ignoreEmptyValue": false
@@ -351,7 +351,7 @@
         "ru": "Выиграл!",
         "es": "¡Ganador!",
         "jp": null,
-        "pl": "Wygrywasz!",
+        "pl": "Udało Ci się!",
         "de": "Gewinner!"
       },
       "ignoreEmptyValue": false
@@ -1213,7 +1213,7 @@
         "ru": "ИСПОЛЬЗУЙТЕ СЖАТЫЙ ВОЗДУХ И ВЫЖИВИТЕ!",
         "es": "¡EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
         "jp": null,
-        "pl": "ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!",
+        "pl": "ODEPCHNIJ INNYCH I PRZEŻYJ!",
         "de": "AIRBLAST UND AM LEBEN BLEIBEN!"
       },
       "ignoreEmptyValue": false
@@ -2118,7 +2118,7 @@
         "ru": "УБЕЙТЕ НАСМЕШКОЙ!",
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "ZABIJ DRWINĄ!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -2375,7 +2375,7 @@
         "ru": "СЪЕШЬТЕ БУТЕРБРОД!",
         "pt_p": null,
         "pt": null,
-        "pl": null,
+        "pl": "ZJEDZ KANAPKĘ!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -2392,7 +2392,7 @@
         "ru": "ПОЛЕЧИТЕ МЕДИКА!",
         "pt_p": null,
         "pt": null,
-        "pl": null,
+        "pl": "ULECZ MEDYKA!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -3154,7 +3154,7 @@
         "ru": "Малютка",
         "es": "Pequeñito",
         "jp": null,
-        "pl": "Mały",
+        "pl": "Maleńkość",
         "de": "Winzig"
       },
       "ignoreEmptyValue": false
