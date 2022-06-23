@@ -64,11 +64,11 @@
 	}
 	"General_Loser"
 	{
-		"pl"		"Przegrywasz!"
+		"pl"		"Przegrałeś!"
 	}
 	"General_Winner"
 	{
-		"pl"		"Wygrywasz!"
+		"pl"		"Udało Ci się!"
 	}
 	"General_SpeedUp"
 	{
@@ -252,7 +252,7 @@
 	}
 	"Minigame4_Caption"
 	{
-		"pl"		"ODEPCHNIJ INNYCH I UTRZYMAJ SIĘ PRZY ŻYCIU!"
+		"pl"		"ODEPCHNIJ INNYCH I PRZEŻYJ!"
 	}
 	"Minigame5_Caption"
 	{
@@ -453,7 +453,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"pl"		"TAUNT KILL!"
+		"pl"		"ZABIJ DRWINĄ!"
 	}
 	"Minigame24_Caption"
 	{
@@ -513,11 +513,11 @@
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"pl"		"EAT A SANDVICH!"
+		"pl"		"ZJEDZ KANAPKĘ!"
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"pl"		"HEAL A MEDIC!"
+		"pl"		"ULECZ MEDYKA!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -683,7 +683,7 @@
 	}
 	"SpecialRound14_Name"
 	{
-		"pl"		"Mały"
+		"pl"		"Maleńkość"
 	}
 	"SpecialRound14_Description"
 	{
