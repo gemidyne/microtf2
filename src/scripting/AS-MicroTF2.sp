@@ -23,6 +23,7 @@
 #include <tf2attributes>
 
 #pragma newdecls required
+#pragma dynamic 131072
 
 //#define DEBUG
 //#define LOGGING_STARTUP
