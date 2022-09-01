@@ -668,7 +668,7 @@ methodmap Player __nullable__
             strcopy(buffer2, sizeof(buffer2), rewritten);
         }
 
-        MC_PrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer2);
+        CPrintToChat(this.ClientId, "%s%s", PLUGIN_PREFIX, buffer2);
     }
 
     public void ShowAnnotation(int attachToEntity, float lifetime, char text[32])

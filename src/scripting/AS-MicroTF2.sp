@@ -23,6 +23,7 @@
 #include <tf2attributes>
 
 #pragma newdecls required
+#pragma dynamic 131072
 
 //#define DEBUG
 //#define LOGGING_STARTUP
@@ -32,7 +33,7 @@
 
 // This needs updated every map release, so you avoid intermittent sound.cache corruption issues.
 // REMEMBER: Don't put a . (dot) in ASSET_VERSION, Source doesn't parse this properly...
-#define ASSET_VERSION "v5_2b"
+#define ASSET_VERSION "v6"
 
 #define MAXIMUM_MINIGAMES 64
 #define SPR_GAMEMODEID 99
