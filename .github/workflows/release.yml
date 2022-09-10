@@ -56,7 +56,7 @@ jobs:
       - name: Zip artifact
         uses: montudor/action-zip@v1
         with:
-          args: zip -qq -r warioware_v${{ env. }}.zip rel/
+          args: zip -qq -r warioware.zip rel/
           
       - name: Create release
         uses: "marvinpinto/action-automatic-releases@latest"
@@ -65,4 +65,4 @@ jobs:
           automatic_release_tag: "latest"
           draft: true
           files: |
-            warioware_v*.zip
+            warioware.zip
