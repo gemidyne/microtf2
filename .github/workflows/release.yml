@@ -22,10 +22,10 @@ jobs:
           repository: gemidyne/gh-actions-resources
           path: './ext'
 
-      - name: Setup SourceMod compiler (${{ matrix.smver }})
+      - name: Setup SourceMod compiler (1.11.x)
         uses: rumblefrog/setup-sp@master
         with:
-         version: ${{ matrix.smver }}
+         version: 1.11.x
 
       - name: Copy includes
         run: |
