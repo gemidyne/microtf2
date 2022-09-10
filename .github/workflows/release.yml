@@ -2,8 +2,9 @@ name: "Draft release"
 
 on:
   push:
-    branches:
-      - "master"
+    tags:
+      - "v*"
+      
 jobs: 
   release:
     name: Create prerelease 
@@ -62,7 +63,6 @@ jobs:
         uses: "marvinpinto/action-automatic-releases@latest"
         with:
           repo_token: "${{ secrets.GITHUB_TOKEN }}"
-          automatic_release_tag: "latest"
           draft: true
           files: |
             warioware.zip
