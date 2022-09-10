@@ -98,12 +98,6 @@ void ResetConVars()
 	{
 		ResetConVar(conVar);
 	}
-
-	conVar = FindConVar("sm_umc_vc_extend");
-	if (conVar != INVALID_HANDLE)
-	{
-		ResetConVar(conVar);
-	}
 }
 
 void PrepareConVars()
@@ -132,12 +126,6 @@ void PrepareConVars()
 	g_hConVarPhysTimescale.FloatValue = 1.0;
 
 	Handle conVar = FindConVar("sm_mapvote_extend");
-	if (conVar != INVALID_HANDLE)
-	{
-		SetConVarInt(conVar, 0);
-	}
-
-	conVar = FindConVar("sm_umc_vc_extend");
 	if (conVar != INVALID_HANDLE)
 	{
 		SetConVarInt(conVar, 0);

@@ -1,0 +1,68 @@
+name: "Draft release"
+
+on:
+  push:
+    tags:
+      - "v*"
+      
+jobs: 
+  release:
+    name: Create prerelease 
+    runs-on: 'ubuntu-latest'
+    
+    steps: 
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: echo SCRIPTS_PATH=$(pwd) >> $GITHUB_ENV
+      
+      - name: Download includes
+        uses: actions/checkout@v2
+        with:
+          repository: gemidyne/gh-actions-resources
+          path: './ext'
+
+      - name: Setup SourceMod compiler (1.11.x)
+        uses: rumblefrog/setup-sp@master
+        with:
+         version: 1.11.x
+
+      - name: Copy includes
+        run: |
+          cp ./ext/sourcepawn/includes/* $includePath
+          cp ./src/scripting/include/* $includePath
+
+      - name: Compile gamemode 
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2.sp -o src/scripting/AS-MicroTF2.smx -E -O2 -v2
+        working-directory: ${{ env.SCRIPTS_PATH }}
+        
+      - name: Compile MapChooser integration
+        run: spcomp -i $includePath src/scripting/AS-MicroTF2-MapChooser.sp -o src/scripting/AS-MicroTF2-MapChooser.smx -E -O2 -v2
+        working-directory: ${{ env.SCRIPTS_PATH }}
+
+      - name: Create artifact structure
+        run: |
+          mkdir -p rel/tf/addons/sourcemod/data
+          mkdir -p rel/tf/addons/sourcemod/gamedata
+          mkdir -p rel/tf/addons/sourcemod/plugins
+          mkdir -p rel/tf/addons/sourcemod/translations
+          cp -r src/data/* rel/tf/addons/sourcemod/data/
+          cp -r src/gamedata/* rel/tf/addons/sourcemod/gamedata/
+          cp src/scripting/AS-MicroTF2.smx rel/tf/addons/sourcemod/plugins/AS-MicroTF2.smx
+          cp -r src/translations/* rel/tf/addons/sourcemod/translations/
+          rm rel/tf/addons/sourcemod/translations/*.tsutproj
+        working-directory: ${{ env.SCRIPTS_PATH }}
+
+      - name: Zip artifact
+        uses: montudor/action-zip@v1
+        with:
+          args: zip -qq -r warioware.zip rel/
+          
+      - name: Create release
+        uses: "marvinpinto/action-automatic-releases@latest"
+        with:
+          repo_token: "${{ secrets.GITHUB_TOKEN }}"
+          draft: true
+          files: |
+            warioware.zip
