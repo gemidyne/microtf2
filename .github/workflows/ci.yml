@@ -18,7 +18,7 @@ jobs:
 
     strategy:
       matrix:
-        smver: ['1.10.x', '1.11.x']
+        smver: ['1.11.x', '1.12.x']
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
