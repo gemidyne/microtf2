@@ -14,7 +14,6 @@
 #include <sdktools>
 #include <tf2>
 #include <tf2_stocks>
-#include <morecolors>
 #include <tf_econ_data>
 #include <warioware>
 #include <sdkhooks>
@@ -41,6 +40,7 @@
 #define SPR_MAX 32
 #define MAX_PATH_LENGTH 128
 
+#include "MoreColors.sp"
 #include "Header.sp"
 #include "Forwards.sp"
 #include "Sounds.sp"
