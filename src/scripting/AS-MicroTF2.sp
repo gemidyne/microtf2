@@ -1,10 +1,12 @@
+#pragma dynamic 131072
+#pragma semicolon 1
+#pragma newdecls required
+
 /* 
  * Microgames for Team Fortress 2
  *
  * https://www.gemidyne.com/
  */
-
-#pragma semicolon 1
 
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
@@ -20,9 +22,6 @@
 #include <SteamWorks>
 #include <tf2items>
 #include <tf2attributes>
-
-#pragma newdecls required
-#pragma dynamic 131072
 
 //#define DEBUG
 //#define LOGGING_STARTUP
