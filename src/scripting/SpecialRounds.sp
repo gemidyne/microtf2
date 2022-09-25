@@ -9,20 +9,20 @@
 #define SPR_FAKECOND_LENGTH 64
 #define SPR_FAKECOND_CAPACITY 256
 
-int g_iLoadedSpecialRoundCount = 0;
+static int g_iLoadedSpecialRoundCount = 0;
 
-bool g_bSpecialRoundSpeedEventsDisabled[SPR_MAX+1];
-bool g_bSpecialRoundMultiplePlayersOnly[SPR_MAX+1];
-int g_iSpecialRoundBossGameThreshold[SPR_MAX+1];
+static bool g_bSpecialRoundSpeedEventsDisabled[SPR_MAX+1];
+static bool g_bSpecialRoundMultiplePlayersOnly[SPR_MAX+1];
+static int g_iSpecialRoundBossGameThreshold[SPR_MAX+1];
 
-char g_sSpecialRoundFakeConditionNames[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
-int g_iSpecialRoundFakeConditionCount = 0;
+static char g_sSpecialRoundFakeConditionNames[SPR_FAKECOND_CAPACITY][SPR_FAKECOND_LENGTH];
+static int g_iSpecialRoundFakeConditionCount = 0;
 
-bool g_bIsChoosingSpecialRound = false;
+static bool g_bIsChoosingSpecialRound = false;
 bool g_bForceSpecialRound = false;
-int g_iForceSpecialRoundId = 0;
+static int g_iForceSpecialRoundId = 0;
 
-float g_fSpecialRoundScaleEffect = 1.0;
+static float g_fSpecialRoundScaleEffect = 1.0;
 
 #define SPECIALROUND_SKELETON_MODEL "models/gemidyne/warioware/skeleton.mdl"
 
