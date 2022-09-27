@@ -360,10 +360,11 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 				PrintCenterText(i, buffer);
 			}
 
+			player.DisplayOverlay(OVERLAY_BLANK);
+			player.SetCaption("");
+
 			if (duration >= 1.0)
 			{
-				player.DisplayOverlay(OVERLAY_BLANK);
-				player.SetCaption("");
 				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
 
 				if (player.IsParticipating && g_iSpecialRoundId != 12 && g_iSpecialRoundId != 17)
