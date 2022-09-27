@@ -1,5 +1,5 @@
-Handle g_hGameConfig = INVALID_HANDLE;
-Handle g_hWearableEquip = INVALID_HANDLE;
+static Handle g_hGameConfig = INVALID_HANDLE;
+static Handle g_hWearableEquip = INVALID_HANDLE;
 
 void InitialiseWeapons() 
 {

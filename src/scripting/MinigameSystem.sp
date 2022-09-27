@@ -4,25 +4,25 @@
  * Implements a System for Minigames.
  */
 
-int g_iMinigamesLoadedCount = 0;
-int g_iBossgamesLoadedCount = 0;
+static int g_iMinigamesLoadedCount = 0;
+static int g_iBossgamesLoadedCount = 0;
 
-bool g_bMinigameIsEnabled[MAXIMUM_MINIGAMES];
+static bool g_bMinigameIsEnabled[MAXIMUM_MINIGAMES];
 char g_sDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bMinigameHasDynamicCaption[MAXIMUM_MINIGAMES];
-bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
-bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
-float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
-int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
-int g_iMinigameMinimumParticipantCount[MAXIMUM_MINIGAMES];
+static bool g_bMinigameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
+static bool g_bMinigameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+static float g_fMinigameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
+static int g_iMinigameMaximumParticipantCount[MAXIMUM_MINIGAMES];
+static int g_iMinigameMinimumParticipantCount[MAXIMUM_MINIGAMES];
 
-bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
+static bool g_bBossgameIsEnabled[MAXIMUM_MINIGAMES];
 bool g_bBossgameUsesCaption[MAXIMUM_MINIGAMES];
 char g_sBossgameDynamicCaptionFunctionName[MAXIMUM_MINIGAMES][64];
 bool g_bBossgameHasDynamicCaption[MAXIMUM_MINIGAMES];
-bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
-bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
-float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
+static bool g_bBossgameBlockedSpecialRound[MAXIMUM_MINIGAMES][SPR_MAX];
+static bool g_bBossgameRequiresMultiplePlayers[MAXIMUM_MINIGAMES];
+static float g_fBossgameBlockedOnSpeedsGreaterThan[MAXIMUM_MINIGAMES];
 
 char g_sMinigameBgm[MAXIMUM_MINIGAMES][MAX_PATH_LENGTH];
 float g_fMinigameBgmLength[MAXIMUM_MINIGAMES];
@@ -30,8 +30,8 @@ float g_fMinigameBgmLength[MAXIMUM_MINIGAMES];
 char g_sBossgameBgm[MAXIMUM_MINIGAMES][MAX_PATH_LENGTH];
 float g_fBossgameBgmLength[MAXIMUM_MINIGAMES];
 
-ArrayList g_hPlayedMinigamePool;
-ArrayList g_hPlayedBossgamePool;
+static ArrayList g_hPlayedMinigamePool;
+static ArrayList g_hPlayedBossgamePool;
 
 #include "MinigameStocks.sp"
 
@@ -91,7 +91,7 @@ public void InitializeMinigames()
 	AddToForward(g_pfOnMapEnd, INVALID_HANDLE, MinigameSystem_OnMapEnd);
 }
 
-public void MinigameSystem_OnMapStart()
+void MinigameSystem_OnMapStart()
 {
 	g_hPlayedMinigamePool = new ArrayList();
 	g_hPlayedBossgamePool = new ArrayList();
@@ -117,13 +117,13 @@ public void MinigameSystem_OnMapStart()
 	}
 }
 
-public void MinigameSystem_OnMapEnd()
+void MinigameSystem_OnMapEnd()
 {
 	g_hPlayedMinigamePool.Close();
 	g_hPlayedBossgamePool.Close();
 }
 
-public void LoadMinigameData()
+void LoadMinigameData()
 {
 	char funcName[64];
 	char file[128];
@@ -205,7 +205,7 @@ public void LoadMinigameData()
 	kv.Close();
 }
 
-public void LoadBossgameData()
+void LoadBossgameData()
 {
 	char funcName[64];
 	char file[128];

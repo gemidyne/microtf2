@@ -1,10 +1,12 @@
+#pragma dynamic 131072
+#pragma semicolon 1
+#pragma newdecls required
+
 /* 
  * Microgames for Team Fortress 2
  *
  * https://www.gemidyne.com/
  */
-
-#pragma semicolon 1
 
 #define AUTOLOAD_EXTENSIONS
 #define REQUIRE_EXTENSIONS
@@ -14,16 +16,12 @@
 #include <sdktools>
 #include <tf2>
 #include <tf2_stocks>
-#include <morecolors>
 #include <tf_econ_data>
 #include <warioware>
 #include <sdkhooks>
 #include <SteamWorks>
 #include <tf2items>
 #include <tf2attributes>
-
-#pragma newdecls required
-#pragma dynamic 131072
 
 //#define DEBUG
 //#define LOGGING_STARTUP
@@ -41,6 +39,7 @@
 #define SPR_MAX 32
 #define MAX_PATH_LENGTH 128
 
+#include "MoreColors.sp"
 #include "Header.sp"
 #include "Forwards.sp"
 #include "Sounds.sp"

@@ -10,8 +10,8 @@
 
 public Plugin myinfo = 
 {
-	name = "WarioWare REDUX: SourceMod Mapchooser Integration",
-	author = "Gemidyne Softworks / Team WarioWare",
+	name = "Microgames in Team Fortress 2: SourceMod Mapchooser Integration",
+	author = "gemidyne",
 	description = "SourceMod Mapchooser Plugin integration",
 	version = "1.0",
 	url = "https://www.gemidyne.com/"
