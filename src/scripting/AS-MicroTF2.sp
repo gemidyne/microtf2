@@ -25,13 +25,13 @@
 
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "5.2.6"
+#define PLUGIN_VERSION "5.2.7"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
 // This needs updated every map release, so you avoid intermittent sound.cache corruption issues.
 // REMEMBER: Don't put a . (dot) in ASSET_VERSION, Source doesn't parse this properly...
-#define ASSET_VERSION "v5_2b"
+#define ASSET_VERSION "v5_2c"
 
 #define MAXIMUM_MINIGAMES 64
 #define SPR_GAMEMODEID 99
