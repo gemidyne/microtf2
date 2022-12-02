@@ -10,8 +10,8 @@
 
 public Plugin myinfo = 
 {
-	name = "WarioWare REDUX: Example Integration plugin",
-	author = "Gemidyne Softworks / Team WarioWare",
+	name = "Microgames in Team Fortress 2: Example Integration plugin",
+	author = "gemidyne",
 	description = "This is an example plugin to demonstrate integration possibilities.",
 	version = "1.0",
 	url = "https://www.gemidyne.com/"
