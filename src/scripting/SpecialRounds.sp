@@ -52,7 +52,7 @@ void InitializeSpecialRounds()
 		{
 			g_bSpecialRoundSpeedEventsDisabled[i] = (kv.GetNum("DisableSpeedEvents", 0) == 1);
 			g_bSpecialRoundMultiplePlayersOnly[i] = (kv.GetNum("MultiplePlayersOnly", 0) == 1);
-			g_iSpecialRoundBossGameThreshold[i] = kv.GetNum("g_iBossGameThreshold", 0);
+			g_iSpecialRoundBossGameThreshold[i] = kv.GetNum("BossGameThreshold", 0);
 
 			i++;
 		}
