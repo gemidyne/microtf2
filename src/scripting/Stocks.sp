@@ -297,3 +297,20 @@ stock int GetRandomParticipatingPlayerId()
 
 	return -1;
 }
+
+stock void SendEntityInput(const char[] entityType, const char[] name, const char[] input)
+{
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, entityType)) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, name) == 0)
+		{
+			AcceptEntityInput(entity, input, -1, -1, -1);
+			break;
+		}
+	}
+}

@@ -935,9 +935,21 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
+		
+		// Emit speed arrow particles in main room
+		SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Start");
+		CreateTimer(duration, Timer_GameLogic_SpeedChangeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
 
 		CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
+
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_SpeedChangeStopParticle(Handle timer)
+{
+	bool down = g_iSpecialRoundId == 1;
+	SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Stop");
 
 	return Plugin_Handled;
 }
@@ -979,7 +991,21 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 		}
 	}
 
+	if (duration > 0)
+	{
+		// Emit danger particles in main room
+		SendEntityInput("info_particle_system", "skybox_danger_particle", "Start");
+		CreateTimer(duration, Timer_GameLogic_BossTimeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
+	}
+
 	CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_BossTimeStopParticle(Handle timer)
+{
+	SendEntityInput("info_particle_system", "skybox_danger_particle", "Stop");
+
 	return Plugin_Handled;
 }
 
