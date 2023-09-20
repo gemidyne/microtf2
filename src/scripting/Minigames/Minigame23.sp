@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Minigame 23
  *
- * Taunt Kill!
+ * Taunt Kill! TODO: Needs better/louder BGM 
  */
 
 public void Minigame23_EntryPoint()

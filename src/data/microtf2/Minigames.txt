@@ -197,6 +197,7 @@
 		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/tauntkill.mp3"
 		"EntryPoint"		"Minigame23_EntryPoint"
 		"BackgroundMusic_Length"		"6.0"
+		"RequiresMultiplePlayers"		"1"
 	}
 	"24"
 	{
