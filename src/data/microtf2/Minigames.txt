@@ -196,7 +196,7 @@
 		"enabled"		"1"
 		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/tauntkill.mp3"
 		"EntryPoint"		"Minigame23_EntryPoint"
-		"BackgroundMusic_Length"		"8.0"
+		"BackgroundMusic_Length"		"8.0"  // TODO: Recalculate
 		"RequiresMultiplePlayers"		"1"
 	}
 	"24"
@@ -261,5 +261,13 @@
 		"BackgroundMusic_Length"		"4.061673"
 		"RequiresMultiplePlayers"		"1"
 		"BlockedSpecialRounds"		"11,12,13"
+	}
+	"31"
+	{
+		"Enabled"		"1"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/landsafely.mp3" 
+		"EntryPoint"		"Minigame31_EntryPoint"
+		"BlockedSpecialRounds"		"12"
+		"BackgroundMusic_Length"		"3.874125" // TODO: Recalculate
 	}
 }
