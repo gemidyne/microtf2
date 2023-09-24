@@ -198,6 +198,7 @@
 		"EntryPoint"		"Minigame23_EntryPoint"
 		"BackgroundMusic_Length"		"8.0"  // TODO: Recalculate
 		"RequiresMultiplePlayers"		"1"
+		"MinimumPlayerCount"		"12"
 	}
 	"24"
 	{
