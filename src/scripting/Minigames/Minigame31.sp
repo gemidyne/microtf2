@@ -35,8 +35,8 @@ public void Minigame31_OnMinigameSelected(int client)
 
     Player player = new Player(client);
 
-	if (player.IsValid)
-	{
+    if (player.IsValid)
+    {
         player.Class = TFClass_DemoMan;
         player.SetGodMode(false);
         player.SetHealth(10);
@@ -47,21 +47,21 @@ public void Minigame31_OnMinigameSelected(int client)
         g_iMinigame31PlayerIndex++;
         
         // Teleport center point is 5388 396 -180
-		float vel[3] = { 0.0, 0.0, 0.0 };
-		int posa = 360 / g_iActiveParticipantCount * (g_iMinigame31PlayerIndex-1);
-		float pos[3];
-		float ang[3];
+        float vel[3] = { 0.0, 0.0, 0.0 };
+        int posa = 360 / g_iActiveParticipantCount * (g_iMinigame31PlayerIndex-1);
+        float pos[3];
+        float ang[3];
 
-		pos[0] = 5388.0 + (Cosine(DegToRad(float(posa)))*300.0);
-		pos[1] = 396.0 - (Sine(DegToRad(float(posa)))*300.0);
-		pos[2] = -180.0;
+        pos[0] = 5388.0 + (Cosine(DegToRad(float(posa)))*300.0);
+        pos[1] = 396.0 - (Sine(DegToRad(float(posa)))*300.0);
+        pos[2] = -180.0;
 
-		ang[0] = 0.0;
-		ang[1] = float(180-posa);
-		ang[2] = 0.0;
+        ang[0] = 0.0;
+        ang[1] = float(180-posa);
+        ang[2] = 0.0;
 
-		TeleportEntity(client, pos, ang, vel);
-	}
+        TeleportEntity(client, pos, ang, vel);
+    }
 }
 
 public void Minigame31_OnMinigameFinish()
