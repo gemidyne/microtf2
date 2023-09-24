@@ -4,6 +4,9 @@
  * Land Safely!
  */
 
+#define MINIGAME31_PLATFORM_MIN 1
+#define MINIGAME31_PLATFORM_MAX 4
+
 int g_iMinigame31PlayerIndex;
 
 public void Minigame31_EntryPoint()
@@ -18,6 +21,8 @@ public void Minigame31_OnMinigameSelectedPre()
     if (g_iActiveMinigameId == 31)
     {
         g_iMinigame31PlayerIndex = 0;
+
+        Minigame31_OpenPlatforms();
     }
 }
 
@@ -78,4 +83,27 @@ public void Minigame31_OnMinigameFinish()
 			}
 		}
 	}
+}
+
+void Minigame31_OpenPlatforms()
+{
+    int platform1 = GetRandomInt(MINIGAME31_PLATFORM_MIN, MINIGAME31_PLATFORM_MAX);
+    int platform2 = platform1;
+
+    do
+    {
+        platform2 = GetRandomInt(MINIGAME31_PLATFORM_MIN, MINIGAME31_PLATFORM_MAX);
+    }
+    while (platform2 == platform1);
+
+    Minigame31_TriggerPlatform(platform1);
+    Minigame31_TriggerPlatform(platform2);
+}
+
+void Minigame31_TriggerPlatform(int platformId)
+{
+    char name[64];
+
+    Format(name, sizeof(name), "Minigame31_Platform%d", platformId);
+    SendEntityInput("func_door", name, "Open");
 }
