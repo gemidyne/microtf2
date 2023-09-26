@@ -2398,6 +2398,23 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Minigame31_Caption",
+      "description": "Tell the player to land safely",
+      "text": "LAND SAFELY!",
+      "formatArguments": [],
+      "translations": {
+        "it": null,
+        "es": null,
+        "fr": null,
+        "ru": null,
+        "pt_p": null,
+        "pt": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Bossgame7_Caption_TypeTheWords",
       "description": null,
       "text": "TYPE THE WORDS!",

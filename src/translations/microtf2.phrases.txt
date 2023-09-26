@@ -519,6 +519,10 @@
 	{
 		"en"		"HEAL A MEDIC!"
 	}
+	"Minigame31_Caption"
+	{
+		"en"		"LAND SAFELY!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"en"		"TYPE THE WORDS!"
