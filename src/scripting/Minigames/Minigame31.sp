@@ -22,7 +22,7 @@ public void Minigame31_OnMinigameSelectedPre()
     {
         g_iMinigame31PlayerIndex = 0;
         g_eDamageBlockMode = EDamageBlockMode_Nothing;
-		g_bIsBlockingKillCommands = true;
+        g_bIsBlockingKillCommands = true;
 
         Minigame31_OpenPlatforms();
     }
