@@ -61,7 +61,7 @@ public void Minigame31_OnMinigameSelected(int client)
 
         pos[0] = 5388.0 + (Cosine(DegToRad(float(posa)))*300.0);
         pos[1] = 396.0 - (Sine(DegToRad(float(posa)))*300.0);
-        pos[2] = 180.0;
+        pos[2] = 650.0;
 
         ang[0] = 0.0;
         ang[1] = float(180-posa);
