@@ -519,6 +519,10 @@
 	{
 		"pl"		"ULECZ MEDYKA!"
 	}
+	"Minigame31_Caption"
+	{
+		"pl"		"LAND SAFELY!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"pl"		"NAPISZ SŁOWA!"

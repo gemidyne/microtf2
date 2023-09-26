@@ -519,6 +519,10 @@
 	{
 		"ru"		"ПОЛЕЧИТЕ МЕДИКА!"
 	}
+	"Minigame31_Caption"
+	{
+		"ru"		"LAND SAFELY!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"ru"		"НАПИШИТЕ СЛОВА!"

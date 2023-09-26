@@ -519,6 +519,10 @@
 	{
 		"pt_p"		"HEAL A MEDIC!"
 	}
+	"Minigame31_Caption"
+	{
+		"pt_p"		"LAND SAFELY!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"pt_p"		"TYPE THE WORDS!"
