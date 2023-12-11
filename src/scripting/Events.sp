@@ -574,7 +574,8 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Bleeding,
 			TFCond_RuneHaste,
 			TFCond_CritCola,
-			TFCond_HalloweenCritCandy:
+			TFCond_HalloweenCritCandy,
+			TFCond_Parachute:
 		{
 			removeCondition = false;
 		}

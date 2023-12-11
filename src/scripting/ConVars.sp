@@ -123,7 +123,7 @@ void PrepareConVars()
 
 	g_hConVarTFFastBuild.BoolValue = false;
 	g_hConVarTFWeaponSpreads.BoolValue = true;
-	g_hConVarTFParachuteToggle.BoolValue = true;
+	g_hConVarTFParachuteToggle.BoolValue = false;
 
 	g_hConVarServerGravity.IntValue = 800;
 	g_hConVarHostTimescale.FloatValue = 1.0;

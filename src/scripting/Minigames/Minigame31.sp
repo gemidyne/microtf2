@@ -48,20 +48,19 @@ public void Minigame31_OnMinigameSelected(int client)
         player.SetGodMode(false);
         player.SetHealth(10);
         player.ResetWeapon(true);
-        player.GiveWeapon(1101);
         player.SetCollisionsEnabled(true);
+        player.GiveWeapon(1101);
 
         g_iMinigame31PlayerIndex++;
         
-        // Teleport center point is 5388 396 -180
-        float vel[3] = { 0.0, 0.0, 0.0 };
+        float vel[3] = { 0.0, 0.0, -400.0 };
         int posa = 360 / g_iActiveParticipantCount * (g_iMinigame31PlayerIndex-1);
         float pos[3];
         float ang[3];
 
         pos[0] = 5389.0 + (Cosine(DegToRad(float(posa)))*300.0);
         pos[1] = 395.0 - (Sine(DegToRad(float(posa)))*300.0);
-        pos[2] = 2262.0;
+        pos[2] = 1650.0;
 
         ang[0] = 0.0;
         ang[1] = float(180-posa);
