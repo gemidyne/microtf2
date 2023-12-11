@@ -1,5 +1,7 @@
 #pragma semicolon 1
+#if !defined REQUIRE_PLUGIN
 #define REQUIRE_PLUGIN
+#endif
 
 #include <sourcemod>
 #include <sdktools>
