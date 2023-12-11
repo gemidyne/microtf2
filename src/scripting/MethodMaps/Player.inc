@@ -592,6 +592,15 @@ methodmap Player __nullable__
         {
             AcceptEntityInput(entity, "kill");
         }
+
+        // Ensure zombie skins are off 
+        TF2Attrib_SetByName(this.ClientId, "player skin override", 0.0);
+        TF2Attrib_SetByName(this.ClientId, "zombiezombiezombiezombie", 0.0);
+        TF2Attrib_SetByName(this.ClientId, "SPELL: Halloween voice modulation", 0.0);
+
+        // Ensure we are not forcing any forced skin on the player
+        SetEntProp(this.ClientId, Prop_Send, "m_nForcedSkin", 0);
+        SetEntProp(this.ClientId, Prop_Send, "m_bForcedSkin", 0);
     }
 
     public void PrintCenterTextLocalised(const char[] translationKey)
