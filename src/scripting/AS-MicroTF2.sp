@@ -8,9 +8,15 @@
  * https://www.gemidyne.com/
  */
 
+#if !defined AUTOLOAD_EXTENSIONS
 #define AUTOLOAD_EXTENSIONS
+#endif
+#if !defined REQUIRE_EXTENSIONS
 #define REQUIRE_EXTENSIONS
+#endif
+#if !defined REQUIRE_PLUGIN
 #define REQUIRE_PLUGIN
+#endif
 
 #include <sourcemod>
 #include <sdktools>
