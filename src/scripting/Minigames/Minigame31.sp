@@ -21,7 +21,7 @@ public void Minigame31_OnMinigameSelectedPre()
     if (g_iActiveMinigameId == 31)
     {
         g_iMinigame31PlayerIndex = 0;
-        g_eDamageBlockMode = EDamageBlockMode_Nothing;
+        g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
         g_bIsBlockingKillCommands = true;
 
         Minigame31_OpenPlatforms();
