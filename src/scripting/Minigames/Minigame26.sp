@@ -213,7 +213,7 @@ public DamageBlockResults Minigame26_OnPlayerTakeDamage(int victimId, int attack
 
 	if (g_bMinigame26IsPlayerSelected[attacker.ClientId] && !g_bMinigame26IsPlayerSelected[victim.ClientId])
 	{
-		attacker.Status = PlayerStatus_Winner;
+		attacker.TriggerSuccess();
 		victim.Status = PlayerStatus_Failed;
 	}
 
