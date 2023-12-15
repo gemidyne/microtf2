@@ -157,20 +157,17 @@ public Action Bossgame4_OnPlayerDeathTimer(Handle timer, int client)
 		player.SetGodMode(true);
 		player.ResetHealth();
 
-		if (player.Team == TFTeam_Red)
-		{
-			float pos[3] = { -1354.0, 464.0, -860.0 };
-			float ang[3] = { 0.0, 180.0, 0.0 };
+		float pos[3];
+		pos[0] = GetRandomFloat(-1343.0, 1.0);
+		pos[1] = player.Team == TFTeam_Red ? -257.0 : 1151.0;
+		pos[2] = -682.0;
 
-			TeleportEntity(client, pos, ang, NULL_VECTOR);
-		}
-		else 
-		{
-			float pos[3] = { 10.0, 464.0, -860.0 };
-			float ang[3] = { 0.0, 0.0, 0.0 };
+		float ang[3];
+		ang[0] = 0.0;
+		ang[1] = player.Team == TFTeam_Red ? 90.0 : 270.0;
+		ang[2] = 0.0;
 
-			TeleportEntity(client, pos, ang, NULL_VECTOR);
-		}
+		TeleportEntity(client, pos, ang, NULL_VECTOR);
 	}
 
 	return Plugin_Handled;
