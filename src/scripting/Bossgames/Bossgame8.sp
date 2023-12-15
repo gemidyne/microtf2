@@ -85,13 +85,13 @@ float g_fBossgame8ViewingTime = BOSSGAME8_TIMER_VIEWING_TIME_MAX;
 
 public void Bossgame8_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame8_OnMapStart);
-	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame8_OnTfRoundStart);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame8_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame8_OnMinigameSelected);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame8_OnMinigameFinish);
-	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame8_OnBossStopAttempt);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame8_OnPlayerDeath);
+	g_pfOnMapStart.AddFunction(INVALID_HANDLE, Bossgame8_OnMapStart);
+	g_pfOnTfRoundStart.AddFunction(INVALID_HANDLE, Bossgame8_OnTfRoundStart);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame8_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame8_OnMinigameSelected);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Bossgame8_OnMinigameFinish);
+	g_pfOnBossStopAttempt.AddFunction(INVALID_HANDLE, Bossgame8_OnBossStopAttempt);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Bossgame8_OnPlayerDeath);
 }
 
 public void Bossgame8_OnMapStart()

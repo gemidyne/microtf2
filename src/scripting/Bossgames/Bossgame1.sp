@@ -9,11 +9,11 @@ bool g_bBossgame1HasAnyPlayerWon;
 
 public void Bossgame1_EntryPoint()
 {
-	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame1_OnTfRoundStart);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame1_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame1_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame1_OnPlayerDeath);
-	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame1_BossCheck);
+	g_pfOnTfRoundStart.AddFunction(INVALID_HANDLE, Bossgame1_OnTfRoundStart);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame1_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame1_OnMinigameSelected);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Bossgame1_OnPlayerDeath);
+	g_pfOnBossStopAttempt.AddFunction(INVALID_HANDLE, Bossgame1_BossCheck);
 }
 
 public void Bossgame1_OnTfRoundStart()

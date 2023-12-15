@@ -9,11 +9,11 @@ bool g_bBossgame2HasAnyPlayerWon = false;
 
 public void Bossgame2_EntryPoint()
 {
-	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame2_OnTfRoundStart);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame2_OnSelection);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
-	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame2_BossCheck);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame2_OnPlayerDeath);
+	g_pfOnTfRoundStart.AddFunction(INVALID_HANDLE, Bossgame2_OnTfRoundStart);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame2_OnSelection);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame2_OnMinigameSelectedPre);
+	g_pfOnBossStopAttempt.AddFunction(INVALID_HANDLE, Bossgame2_BossCheck);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Bossgame2_OnPlayerDeath);
 }
 
 public void Bossgame2_OnMinigameSelectedPre()

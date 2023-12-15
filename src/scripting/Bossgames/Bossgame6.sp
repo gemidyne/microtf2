@@ -27,12 +27,12 @@ char g_sBossgame6EntityModels[][] =
 
 public void Bossgame6_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame6_OnMapStart);
-	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame6_OnTfRoundStart);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame6_OnMinigameSelected);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame6_OnMinigameFinish);
-	AddToForward(g_pfOnRenderHudFrame, INVALID_HANDLE, Bossgame6_OnRenderHudFrame);
+	g_pfOnMapStart.AddFunction(INVALID_HANDLE, Bossgame6_OnMapStart);
+	g_pfOnTfRoundStart.AddFunction(INVALID_HANDLE, Bossgame6_OnTfRoundStart);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame6_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame6_OnMinigameSelected);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Bossgame6_OnMinigameFinish);
+	g_pfOnRenderHudFrame.AddFunction(INVALID_HANDLE, Bossgame6_OnRenderHudFrame);
 }
 
 public void Bossgame6_OnMapStart()

@@ -21,13 +21,13 @@ float g_fBossgame3IntervalDuration = BOSSGAME3_STARTING_INTERVAL_DURATION;
 
 public void Bossgame3_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame3_OnMapStart);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame3_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame3_OnMinigameSelected);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Bossgame3_OnMinigameFinish);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame3_OnPlayerDeath);
-	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
-	AddToForward(g_pfOnPlayerTakeDamage, INVALID_HANDLE, Bossgame3_OnPlayerTakeDamage);
+	g_pfOnMapStart.AddFunction(INVALID_HANDLE, Bossgame3_OnMapStart);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame3_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame3_OnMinigameSelected);
+	g_pfOnMinigameFinish.AddFunction(INVALID_HANDLE, Bossgame3_OnMinigameFinish);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Bossgame3_OnPlayerDeath);
+	g_pfOnBossStopAttempt.AddFunction(INVALID_HANDLE, Bossgame3_OnBossStopAttempt);
+	g_pfOnPlayerTakeDamage.AddFunction(INVALID_HANDLE, Bossgame3_OnPlayerTakeDamage);
 }
 
 public void Bossgame3_OnMapStart()

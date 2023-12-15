@@ -11,12 +11,12 @@ float g_fBossgame5Timer = 4.0;
 
 public void Bossgame5_EntryPoint()
 {
-	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Bossgame5_OnMapStart);
-	AddToForward(g_pfOnTfRoundStart, INVALID_HANDLE, Bossgame5_OnTfRoundStart);
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Bossgame5_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Bossgame5_OnPlayerDeath);
-	AddToForward(g_pfOnBossStopAttempt, INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
+	g_pfOnMapStart.AddFunction(INVALID_HANDLE, Bossgame5_OnMapStart);
+	g_pfOnTfRoundStart.AddFunction(INVALID_HANDLE, Bossgame5_OnTfRoundStart);
+	g_pfOnMinigameSelectedPre.AddFunction(INVALID_HANDLE, Bossgame5_OnMinigameSelectedPre);
+	g_pfOnMinigameSelected.AddFunction(INVALID_HANDLE, Bossgame5_OnMinigameSelected);
+	g_pfOnPlayerDeath.AddFunction(INVALID_HANDLE, Bossgame5_OnPlayerDeath);
+	g_pfOnBossStopAttempt.AddFunction(INVALID_HANDLE, Bossgame5_OnBossStopAttempt);
 }
 
 public void Bossgame5_OnMapStart()
