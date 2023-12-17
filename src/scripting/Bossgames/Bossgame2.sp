@@ -216,7 +216,7 @@ public Action Bossgame2_HurtTimer(Handle timer)
 
 			if (player.IsValid && player.IsAlive && player.IsParticipating)
 			{
-				if (player.Health > 0)
+				if (player.Health > 0 && player.Status != PlayerStatus_Winner)
 				{
 					player.Health--;
 				}
