@@ -12,6 +12,7 @@ ConVar g_hConVarTFCheapObjects;
 ConVar g_hConVarTFFastBuild;
 ConVar g_hConVarTFWeaponSpreads;
 ConVar g_hConVarTFParachuteToggle;
+ConVar g_hConVarTFParachuteAirControl;
 ConVar g_hConVarFriendlyFire;
 ConVar g_hConVarServerTimelimit;
 ConVar g_hConVarAntiFloodTime;
@@ -38,6 +39,7 @@ void InitializeConVars()
 	g_hConVarTFFastBuild = FindConVar("tf_fastbuild");
 	g_hConVarTFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
 	g_hConVarTFParachuteToggle = FindConVar("tf_parachute_deploy_toggle_allowed");
+	g_hConVarTFParachuteAirControl = FindConVar("tf_parachute_aircontrol");
 	g_hConVarFriendlyFire = FindConVar("mp_friendlyfire");
 	g_hConVarServerTimelimit = FindConVar("mp_timelimit");
 	g_hConVarAntiFloodTime = FindConVar("sm_flood_time");
@@ -72,6 +74,7 @@ void ResetConVars()
 	g_hConVarTFFastBuild.RestoreDefault();
 	g_hConVarTFWeaponSpreads.RestoreDefault();
 	g_hConVarTFParachuteToggle.RestoreDefault();
+	g_hConVarTFParachuteAirControl.RestoreDefault();
 	g_hConVarFriendlyFire.RestoreDefault();
 
 	// Debugging: 
@@ -124,6 +127,7 @@ void PrepareConVars()
 	g_hConVarTFFastBuild.BoolValue = false;
 	g_hConVarTFWeaponSpreads.BoolValue = true;
 	g_hConVarTFParachuteToggle.BoolValue = false;
+	g_hConVarTFParachuteAirControl.FloatValue = 10.0;
 
 	g_hConVarServerGravity.IntValue = 800;
 	g_hConVarHostTimescale.FloatValue = 1.0;

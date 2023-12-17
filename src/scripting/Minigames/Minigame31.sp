@@ -147,7 +147,20 @@ public Action Minigame31_OnPlatformTriggerTouched(int entity, int other)
         return Plugin_Continue;
     }
 
-    Player activator = new Player(other);
+    // Defer the check to ensure the player is still alive
+    // (So they haven't died from fall damage)
+    CreateTimer(0.1, Minigame31_ValidatePlatformTriggerTouch, other);
+    return Plugin_Continue;
+}
+
+public Action Minigame31_ValidatePlatformTriggerTouch(Handle timer, int client)
+{
+    if (g_iActiveMinigameId != 31 || !g_bIsMinigameActive)
+    {
+        return Plugin_Continue;
+    }
+
+    Player activator = new Player(client);
 
     if (activator.IsValid && activator.IsAlive && activator.IsParticipating && activator.Status == PlayerStatus_NotWon)
     {
