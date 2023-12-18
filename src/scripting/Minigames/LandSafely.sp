@@ -4,8 +4,6 @@
  * Land Safely!
  */
 
-// TODO: Need to figure out better air control with parachute deployed
-
 #define MINIGAME31_PLATFORM_MIN 1
 #define MINIGAME31_PLATFORM_MAX 4
 
