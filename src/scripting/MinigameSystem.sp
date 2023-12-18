@@ -77,6 +77,7 @@ static ArrayList g_hPlayedBossgamePool;
 #include "Bossgames/TargetPracticeArena.sp"
 #include "Bossgames/SuperTypingAttack.sp"
 #include "Bossgames/InventoryDay.sp"
+#include "Bossgames/Dodgeball.sp"
 
 public void InitializeMinigames()
 {
