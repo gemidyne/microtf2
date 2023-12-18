@@ -69,14 +69,14 @@ static ArrayList g_hPlayedBossgamePool;
 #include "Minigames/Minigame31.sp"
 
 // Bossgames
-#include "Bossgames/Bossgame1.sp"
-#include "Bossgames/Bossgame2.sp"
-#include "Bossgames/Bossgame3.sp"
-#include "Bossgames/Bossgame4.sp"
-#include "Bossgames/Bossgame5.sp"
-#include "Bossgames/Bossgame6.sp"
-#include "Bossgames/Bossgame7.sp"
-#include "Bossgames/Bossgame8.sp"
+#include "Bossgames/AcidPitEscape.sp"
+#include "Bossgames/FactoryEscape.sp"
+#include "Bossgames/DisappearingBlocks.sp"
+#include "Bossgames/SmashArena.sp"
+#include "Bossgames/BeatblockGalaxy.sp"
+#include "Bossgames/TargetPracticeArena.sp"
+#include "Bossgames/SuperTypingAttack.sp"
+#include "Bossgames/InventoryDay.sp"
 
 public void InitializeMinigames()
 {
