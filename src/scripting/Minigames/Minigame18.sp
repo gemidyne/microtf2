@@ -160,6 +160,10 @@ char g_sMinigame18SpyHurtSfx[][] =
 int g_iMinigame18TargetEntity = -1;
 int g_iMinigame18SelectedTargetModel = 0;
 
+PathTrack g_ptMinigame18PathTrackEnd;
+PathTrack g_ptMinigame18PathTrackStart;
+TrackTrain g_ttMinigame18TrackTrain;
+
 public void Minigame18_EntryPoint()
 {
 	AddToForward(g_pfOnMapStart, INVALID_HANDLE, Minigame18_OnMapStart);
@@ -242,17 +246,48 @@ public void Minigame18_OnMinigameSelectedPre()
 
 			SDKHook(g_iMinigame18TargetEntity, SDKHook_OnTakeDamage, Minigame18_OnTakeDamage2);
 			
-			float pos[3];
+			float startPosition[3];
+			float endPosition[3];
 			float ang[3] = { 0.0, -90.0, 0.0 };
 
-			pos[0] = GetRandomFloat(10240.0, 12322.0);
-			pos[1] = GetRandomFloat(7845.0, 8969.0);
-			pos[2] = -330.0;
+			startPosition[0] = GetRandomFloat(10240.0, 12322.0);
+			startPosition[1] = GetRandomFloat(7845.0, 8969.0);
+			startPosition[2] = -330.0;
+
+			endPosition[0] = GetRandomFloat(10240.0, 12322.0);
+			endPosition[1] = GetRandomFloat(7845.0, 8969.0);
+			endPosition[2] = -330.0;
 
 			if (IsValidEntity(g_iMinigame18TargetEntity))
 			{
-				TeleportEntity(g_iMinigame18TargetEntity, pos, ang, NULL_VECTOR);
+				TeleportEntity(g_iMinigame18TargetEntity, startPosition, ang, NULL_VECTOR);
 				CreateParticle(g_iMinigame18TargetEntity, "bombinomicon_flash", 1.0);
+
+				g_ptMinigame18PathTrackEnd = new PathTrack();
+				g_ptMinigame18PathTrackEnd.SetName("Minigame18_TargetPath_End");
+				g_ptMinigame18PathTrackEnd.SetNextTarget("");
+				g_ptMinigame18PathTrackEnd.Build(endPosition)
+
+				g_ptMinigame18PathTrackStart = new PathTrack();
+				g_ptMinigame18PathTrackStart.SetName("Minigame18_TargetPath_Start");
+				g_ptMinigame18PathTrackStart.SetNextTarget("Minigame18_TargetPath_End");
+				g_ptMinigame18PathTrackStart.Build(startPosition);
+
+				g_ttMinigame18TrackTrain = new TrackTrain();
+				g_ttMinigame18TrackTrain.SetName("Minigame18_TrackTrain");
+				g_ttMinigame18TrackTrain.SetTarget("Minigame18_TargetPath_Start");
+				g_ttMinigame18TrackTrain.SetSpeed("100");
+				g_ttMinigame18TrackTrain.SetStartSpeed("100");
+				g_ttMinigame18TrackTrain.SetBanking("30");
+				g_ttMinigame18TrackTrain.SetWheels("50");
+				g_ttMinigame18TrackTrain.KeyValue("orientationtype", "0");
+				g_ttMinigame18TrackTrain.KeyValue("spawnflags", "26");
+				g_ttMinigame18TrackTrain.SetEffects(32);
+				g_ttMinigame18TrackTrain.Dispatch();
+				g_ttMinigame18TrackTrain.Teleport(startPosition);
+
+				SetVariantEntity(g_ttMinigame18TrackTrain.Id);
+				AcceptEntityInput(g_iMinigame18TargetEntity, "SetParent");
 			}
 		}
 	}
@@ -308,6 +343,10 @@ public void Minigame18_OnMinigameFinish()
 		}
 
 		g_iMinigame18TargetEntity = -1;
+
+		g_ttMinigame18TrackTrain.Kill();
+		g_ptMinigame18PathTrackEnd.Kill();
+		g_ptMinigame18PathTrackStart.Kill();
 
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -407,7 +446,10 @@ void Minigame18_PlaySpyHurtSfx(int attacker)
 
 public void DoSniperDamageCheck(int client, int weapon, char[] weaponname)
 {
-	if (strncmp(weaponname, "tf_weapon_sniperrifle", 21, false) != 0) return;
+	if (strncmp(weaponname, "tf_weapon_sniperrifle", 21, false) != 0) 
+	{
+		return;
+	}
 
 	float pos[3];
 	float dist;
