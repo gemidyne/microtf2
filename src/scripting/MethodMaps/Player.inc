@@ -769,4 +769,14 @@ methodmap Player __nullable__
             EmitSoundToClient(this.ClientId, path, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
         }
     }
+
+    public void GetEyeViewAngles(float angles[3])
+    {
+        GetClientEyeAngles(this.ClientId, angles);
+    }
+
+    public void GetEyePosition(float position[3])
+    {
+        GetClientEyePosition(this.ClientId, position);
+    }
 }
