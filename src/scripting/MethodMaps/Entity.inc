@@ -1,10 +1,15 @@
 methodmap Entity __nullable__
 {
-    public Entity(const char[] className)
+    public static Entity Create(const char[] className)
     {
         int entity = CreateEntityByName(className);
 
-        return view_as<Entity>(entity);
+        return new Entity(entity);
+    }
+
+    public Entity(int entityId)
+    {
+        return view_as<Entity>(entityId);
     }
 
     property int Id
@@ -15,9 +20,17 @@ methodmap Entity __nullable__
         }
     }
 
+    property bool IsValid
+    {
+        public get()
+        {
+            return IsValidEntity(this.Id);
+        }
+    }
+
     public void Kill()
     {
-        if (IsValidEntity(this.Id))
+        if (this.IsValid)
         {
             RemoveEntity(this.Id);
         }
@@ -28,7 +41,7 @@ methodmap Entity __nullable__
         DispatchKeyValue(this.Id, keyName, value);
     }
 
-    public void Dispatch()
+    public void DispatchSpawn()
     {
         DispatchSpawn(this.Id);
     }
@@ -60,5 +73,59 @@ methodmap Entity __nullable__
     public void SetExpiry(float duration)
     {
         CreateTimer(duration, Timer_RemoveEntity, this.Id);
+    }
+
+
+    // Entity Props
+    public int GetPropInt(PropType type, const char[] name, int size = 4, int element = 0)
+    {
+        return GetEntProp(this.Id, type, name, size, element);
+    }
+
+    public void SetPropInt(PropType type, const char[] name, int value, int size = 4, int element = 0)
+    {
+        SetEntProp(this.Id, type, name, value, size, element);
+    }
+
+    public float GetPropFloat(PropType type, const char[] name, int element = 0)
+    {
+        return GetEntPropFloat(this.Id, type, name, element);
+    }
+
+    public void SetPropFloat(PropType type, const char[] name, float value, int element = 0)
+    {
+        SetEntPropFloat(this.Id, type, name, value, element);
+    }
+
+    public Entity GetPropEntity(PropType type, const char[] name, int element = 0)
+    {
+        int id = GetEntPropEnt(this.Id, type, name, element);
+
+        return new Entity(id);
+    }
+
+    public void SetPropEntityId(PropType type, const char[] name, int entityId, int element = 0)
+    {
+        SetEntPropEnt(this.Id, type, name, entityId, element);
+    }
+
+    public void SetPropEntity(PropType type, const char[] name, Entity entity, int element = 0)
+    {
+        SetEntPropEnt(this.Id, type, name, entity.Id, element);
+    }
+
+    public void GetPropVector(PropType type, const char[] name, float buffer[3], int element = 0)
+    {
+        GetEntPropVector(this.Id, type, name, buffer, element);
+    }
+
+    public void SetPropVector(PropType type, const char[] name, float buffer[3], int element = 0)
+    {
+        SetEntPropVector(this.Id, type, name, buffer, element);
+    }
+
+    public void SetModel(const char[] model)
+    {
+        SetEntityModel(this.Id, model);
     }
 }

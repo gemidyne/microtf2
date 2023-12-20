@@ -2,7 +2,7 @@ methodmap TrackTrain __nullable__ < Entity
 {
     public TrackTrain()
     {
-        return view_as<TrackTrain>(new Entity("func_tracktrain"));
+        return view_as<TrackTrain>(Entity.Create("func_tracktrain"));
     }
 
     public void SetName(const char[] name)

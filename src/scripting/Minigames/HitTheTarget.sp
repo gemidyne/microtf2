@@ -283,7 +283,7 @@ public void Minigame18_OnMinigameSelectedPre()
 				g_ttMinigame18TrackTrain.KeyValue("orientationtype", "0");
 				g_ttMinigame18TrackTrain.KeyValue("spawnflags", "26");
 				g_ttMinigame18TrackTrain.SetEffects(32);
-				g_ttMinigame18TrackTrain.Dispatch();
+				g_ttMinigame18TrackTrain.DispatchSpawn();
 				g_ttMinigame18TrackTrain.Teleport(startPosition);
 
 				SetVariantEntity(g_ttMinigame18TrackTrain.Id);

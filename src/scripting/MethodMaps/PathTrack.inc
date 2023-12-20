@@ -2,7 +2,7 @@ methodmap PathTrack __nullable__ < Entity
 {
     public PathTrack()
     {
-        return view_as<PathTrack>(new Entity("path_track"));
+        return view_as<PathTrack>(Entity.Create("path_track"));
     }
 
     public void SetName(const char[] name)
@@ -17,7 +17,7 @@ methodmap PathTrack __nullable__ < Entity
 
     public void Build(const float position[3])
     {
-        this.Dispatch();
+        this.DispatchSpawn();
         this.Activate();
         this.Teleport(position, NULL_VECTOR, NULL_VECTOR);
     }
