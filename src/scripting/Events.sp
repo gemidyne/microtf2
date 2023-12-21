@@ -134,17 +134,16 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 	{
 		if (g_bIsMinigameActive)
 		{
-			if (g_bIsPlayerParticipant[client])
+			if (g_bIsPlayerParticipant[client] && g_pfOnPlayerDeath != INVALID_HANDLE)
 			{
-				if (g_pfOnPlayerDeath != INVALID_HANDLE)
-				{
-					int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+				int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+				int inflictor = GetEventInt(event, "inflictor_entindex");
 
-					Call_StartForward(g_pfOnPlayerDeath);
-					Call_PushCell(client);
-					Call_PushCell(attacker);
-					Call_Finish();
-				}
+				Call_StartForward(g_pfOnPlayerDeath);
+				Call_PushCell(client);
+				Call_PushCell(attacker);
+				Call_PushCell(inflictor);
+				Call_Finish();
 			}
 		}
 		else
