@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"ru"		"Комната C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"ru"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"ru"		"ДОБЕРИТЕСЬ ДО КОНЦА!"

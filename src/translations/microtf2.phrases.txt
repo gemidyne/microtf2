@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"en"		"Room C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"en"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"en"		"GET TO THE END!"

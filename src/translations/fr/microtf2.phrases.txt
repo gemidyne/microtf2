@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"fr"		"Pièce C : {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"fr"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"fr"		"REJOIGNEZ L'AUTRE BOUT !"

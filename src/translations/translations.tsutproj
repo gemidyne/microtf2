@@ -1147,6 +1147,24 @@
       "ignoreEmptyValue": false
     },
     {
+      "key": "Bossgame9_Caption",
+      "description": null,
+      "text": "REFLECT THE ROCKETS!",
+      "formatArguments": [],
+      "translations": {
+        "pt": null,
+        "fr": null,
+        "it": null,
+        "pt_p": null,
+        "ru": null,
+        "es": null,
+        "jp": null,
+        "pl": null,
+        "de": null
+      },
+      "ignoreEmptyValue": false
+    },
+    {
       "key": "Minigame1_Caption",
       "description": null,
       "text": "GET TO THE END!",

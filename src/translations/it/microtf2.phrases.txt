@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"it"		"Stanza C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"it"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"it"		"RAGGIUNGI LA META!"
