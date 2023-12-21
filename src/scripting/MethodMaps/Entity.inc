@@ -24,7 +24,7 @@ methodmap Entity __nullable__
     {
         public get()
         {
-            return IsValidEntity(this.Id);
+            return this.Id > 0 && IsValidEntity(this.Id);
         }
     }
 
