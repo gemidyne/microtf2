@@ -54,6 +54,7 @@
 #include "MethodMaps/Annotation.inc"
 #include "MethodMaps/PathTrack.inc"
 #include "MethodMaps/TrackTrain.inc"
+#include "MethodMaps/DodgeballRocket.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
 #include "ConVars.sp"
