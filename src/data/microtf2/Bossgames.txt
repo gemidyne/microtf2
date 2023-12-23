@@ -89,7 +89,7 @@
 		"Name"			"Dodgeball"
 		"Enabled"		"1"
 		"Duration"		"120.0"
-		"BackgroundMusic"	"gemidyne/warioware/{version}/bosses/bgm/propcount.mp3"
+		"BackgroundMusic"	"gemidyne/warioware/{version}/bosses/bgm/dodgeball.mp3"
 		"EntryPoint"		"Bossgame9_EntryPoint"
 		"RequiresMultiplePlayers"	"1"
 		"BlockedSpecialRounds" "1,3,7,12"
