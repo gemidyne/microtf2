@@ -177,6 +177,40 @@ public void Bossgame9_OnPlayerDeath(int victimId, int attackerId, int inflictor)
     {
         g_eBossgame9LastDeadTeam = victim.Team;
         g_iBossgame9RocketEntity = new DodgeballRocket(-1); // Mark rocket as invalid to spawn a new one
+
+        if (g_bBossgame9NukeSpawned)
+        {
+            float victimPosition[3];
+            victim.GetAbsoluteOrigin(victimPosition);
+
+            for (int i = 1; i <= MaxClients; i++)
+            {
+                if (i == victimId)
+                {
+                    continue;
+                }
+
+                Player player = new Player(i);
+
+                if (player.IsValid && player.IsParticipating && player.IsAlive)
+                {
+                    float playerPosition[3];
+                    player.GetEyePosition(playerPosition);
+
+                    float distance = GetVectorDistance(victimPosition, playerPosition);
+
+                    if (distance > 600)
+                    {
+                        continue;
+                    }
+
+                    float damage = 300.0;
+                    damage = damage * (700.0 - distance) / 700.0;
+
+                    SDKHooks_TakeDamage(player.ClientId, player.ClientId, attackerId, damage, DMG_BLAST);
+                }
+            }
+        }
     }
 }
 

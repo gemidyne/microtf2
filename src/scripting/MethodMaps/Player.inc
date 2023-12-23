@@ -779,4 +779,9 @@ methodmap Player __nullable__
     {
         GetClientEyePosition(this.ClientId, position);
     }
+
+    public void GetAbsoluteOrigin(float origin[3])
+    {
+        GetClientAbsOrigin(this.ClientId, origin);
+    }
 }
