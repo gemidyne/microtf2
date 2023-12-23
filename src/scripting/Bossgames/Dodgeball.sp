@@ -16,8 +16,8 @@
 #define BOSSGAME9_ROCKET_DAMAGE 200.0
 #define BOSSGAME9_ROCKET_BASE_SPEED 600.0
 #define BOSSGAME9_ROCKET_SPEED_INCREMENT 112.5
-#define BOSSGAME9_NUKE_BASE_SPEED 433.3
-#define BOSSGAME9_NUKE_SPEED_INCREMENT 180.7
+#define BOSSGAME9_NUKE_BASE_SPEED 750.0
+#define BOSSGAME9_NUKE_SPEED_INCREMENT 310.0
 #define BOSSGAME9_ROCKET_TURN_RATE 0.233
 #define BOSSGAME9_ROCKET_TURN_RATE_INCREMENT 0.0275
 #define BOSSGAME9_NUKE_TURN_RATE 0.133
@@ -566,7 +566,14 @@ int SelectRocketTarget(TFTeam team)
 
 float GetRocketModifier()
 {
-    return g_iBossgame9RocketLastDeflectionCount + (g_iBossgame9RocketsFiredCount * 0.1) + (g_iBossgame9ParticipantCount * 0.01);
+    float multiplier = 0.1;
+
+    if (g_bBossgame9NukeSpawned)
+    {
+        multiplier = 1.0;
+    }
+
+    return g_iBossgame9RocketLastDeflectionCount + (g_iBossgame9RocketsFiredCount * multiplier) + (g_iBossgame9ParticipantCount * 0.01);
 }
 
 float GetRocketSpeed(float modifier)
