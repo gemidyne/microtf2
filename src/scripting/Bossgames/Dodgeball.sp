@@ -357,22 +357,22 @@ void SpawnRocket(TFTeam owningTeam)
         {
             if (GetRandomInt(0, 1) == 1)
             {
-                origin = { -4908.0, -994.0, -400.0 };
+                origin = { -4928.0, -676.0, -370.0 };
             }
             else
             {
-                origin = { -3267.0, -1000.0, -400.0 };
+                origin = { -3261.0, -676.0, -370.0 };
             }
         }
         else
         {
             if (GetRandomInt(0, 1) == 1)
             {
-                origin = { -3276.0, -3097.0, -400.0 };
+                origin = { -3261.0, -3243.0, -370.0 };
             }
             else
             {
-                origin = { -4924.0, -3097.0, -400.0 };
+                origin = { -4928.0, -3243.0, -370.0 };
             }
         }
 
