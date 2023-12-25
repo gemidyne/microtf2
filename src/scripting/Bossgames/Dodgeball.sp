@@ -3,6 +3,7 @@
  * 
  * Dodgeball
  * Credit to Damizean for the original dodgeball/rocket code
+ * Credit to the original model creator for the nuke model
  */
 
 #define BOSSGAME9_SFX_ROCKET_SPAWN "weapons/sentry_rocket.wav"
@@ -25,6 +26,8 @@
 #define BOSSGAME9_ROCKET_ELEV_RATE 0.1237
 #define BOSSGAME9_ROCKET_CTRL_DELAY 0.1 // 0.01
 #define BOSSGAME9_ROCKET_SPAWN_INTERVAL 1.0
+
+#define BOSSGAME9_NUKE_MODEL "models/custom/dodgeball/nuke/nuke.mdl"
 
 Handle g_hBossgame9LogicTimer;
 DodgeballRocket g_iBossgame9RocketEntity;
@@ -55,6 +58,7 @@ public void Bossgame9_OnMapStart()
     PreloadSound(BOSSGAME9_SFX_ROCKET_SPAWN);
     PreloadSound(BOSSGAME9_SFX_ROCKET_SPAWN_NUKE);
     PreloadSound(BOSSGAME9_SFX_ROCKET_RETARGET);
+    PrecacheModel(BOSSGAME9_NUKE_MODEL);
 }
 
 public void Bossgame9_OnMinigameSelectedPre()
@@ -368,11 +372,11 @@ void SpawnRocket(TFTeam owningTeam)
         {
             if (GetRandomInt(0, 1) == 1)
             {
-                origin = { -3261.0, -3243.0, -370.0 };
+                origin = { -3261.0, -3424.0, -370.0 };
             }
             else
             {
-                origin = { -4928.0, -3243.0, -370.0 };
+                origin = { -4928.0, -3424.0, -370.0 };
             }
         }
 
@@ -382,7 +386,6 @@ void SpawnRocket(TFTeam owningTeam)
         rocket.IsCritical = true;
         rocket.Team = owningTeam;
         rocket.DeflectionCount = 1;
-        rocket.SetNukeFlag(g_bBossgame9SpawnNukes);
         rocket.Teleport(origin, rotation, velocity);
 
         g_fBossgame9RocketDirection[0] = direction[0];
@@ -391,6 +394,11 @@ void SpawnRocket(TFTeam owningTeam)
 
         rocket.SetDamage(GetRocketDamage(modifier));
         rocket.DispatchSpawn();
+
+        if (g_bBossgame9SpawnNukes)
+        {
+            rocket.SetModel(BOSSGAME9_NUKE_MODEL);
+        }
 
         g_iBossgame9RocketsFiredCount++;
         g_iBossgame9RocketLastDeflectionCount = 0;

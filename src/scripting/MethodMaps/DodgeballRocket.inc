@@ -76,11 +76,6 @@ methodmap DodgeballRocket __nullable__ < Entity
         this.SetPropVector(Prop_Send, "m_angRotation", angles);
     }
 
-    public void SetNukeFlag(bool isNuke)
-    {
-        this.SetPropFloat(Prop_Send, "m_flModelScale", isNuke ? 1.75 : 1.0);
-    }
-
     public void SetDamage(float damage)
     {
         SetEntDataFloat(this.Id, FindSendPropInfo("CTFProjectile_Rocket", "m_iDeflected") + 4, damage, true);
