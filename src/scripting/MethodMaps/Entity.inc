@@ -41,6 +41,11 @@ methodmap Entity __nullable__
         DispatchKeyValue(this.Id, keyName, value);
     }
 
+    public bool SendInput(const char[] input, int activator = -1, int caller = -1)
+    {
+        return AcceptEntityInput(this.Id, input, activator, caller);
+    }
+
     public void DispatchSpawn()
     {
         DispatchSpawn(this.Id);

@@ -28,6 +28,7 @@
 #define BOSSGAME9_ROCKET_SPAWN_INTERVAL 1.0
 
 #define BOSSGAME9_NUKE_MODEL "models/custom/dodgeball/nuke/nuke.mdl"
+#define BOSSGAME9_NUKE_EXPLODE_PARTICLE "asplode_hoodoo"
 
 Handle g_hBossgame9LogicTimer;
 DodgeballRocket g_iBossgame9RocketEntity;
@@ -187,6 +188,13 @@ public void Bossgame9_OnPlayerDeath(int victimId, int attackerId, int inflictor)
         {
             float victimPosition[3];
             victim.GetAbsoluteOrigin(victimPosition);
+
+            Particle explosion = new Particle();
+
+            explosion.SetParticleEffect(BOSSGAME9_NUKE_EXPLODE_PARTICLE);
+            explosion.Teleport(victimPosition);
+            explosion.SetExpiry(2.5);
+            explosion.Create();
 
             for (int i = 1; i <= MaxClients; i++)
             {

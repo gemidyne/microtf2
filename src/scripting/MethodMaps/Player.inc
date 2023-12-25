@@ -115,7 +115,7 @@ methodmap Player __nullable__
         }
         public set(float value)
         {
-	        SetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed", value);
+            SetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed", value);
         }
     }
 

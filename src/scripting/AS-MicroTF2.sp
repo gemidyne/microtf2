@@ -51,6 +51,7 @@
 #include "Sounds.sp"
 #include "MethodMaps/Entity.inc"
 #include "MethodMaps/Player.inc"
+#include "MethodMaps/Particle.inc"
 #include "MethodMaps/Annotation.inc"
 #include "MethodMaps/PathTrack.inc"
 #include "MethodMaps/TrackTrain.inc"
