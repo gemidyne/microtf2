@@ -26,6 +26,7 @@
 #define BOSSGAME9_ROCKET_ELEV_RATE 0.1237
 #define BOSSGAME9_ROCKET_CTRL_DELAY 0.1 // 0.01
 #define BOSSGAME9_ROCKET_SPAWN_INTERVAL 1.0
+#define BOSSGAME9_NUKE_SPAWN_INTERVAL 2.0
 
 #define BOSSGAME9_NUKE_MODEL "models/custom/dodgeball/nuke/nuke.mdl"
 #define BOSSGAME9_NUKE_EXPLODE_PARTICLE "asplode_hoodoo"
@@ -412,19 +413,21 @@ void SpawnRocket(TFTeam owningTeam)
         g_iBossgame9RocketLastDeflectionCount = 0;
         g_fBossgame9RocketSpeed = GetRocketSpeed(modifier);
         g_iBossgame9RocketEntity = rocket;
-        g_fBossgame9NextRocketSpawnTime = GetGameTime() + BOSSGAME9_ROCKET_SPAWN_INTERVAL;
 
         if (g_bBossgame9SpawnNukes)
         {
             g_bBossgame9NukeSpawned = true; // Applies faster nuke speed
+            g_fBossgame9NextRocketSpawnTime = GetGameTime() + BOSSGAME9_NUKE_SPAWN_INTERVAL;
+
             EmitSoundToAll(BOSSGAME9_SFX_ROCKET_SPAWN_NUKE);
         }
         else
         {
+            g_fBossgame9NextRocketSpawnTime = GetGameTime() + BOSSGAME9_ROCKET_SPAWN_INTERVAL;
+
             EmitSoundToAll(BOSSGAME9_SFX_ROCKET_SPAWN, rocket.Id);
         }
         
-        EmitSoundToAll(BOSSGAME9_SFX_ROCKET_RETARGET, rocket.Id);
         EmitSoundToClient(target.ClientId, BOSSGAME9_SFX_ROCKET_RETARGET);
     }
 }
