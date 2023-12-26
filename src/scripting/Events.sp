@@ -138,11 +138,15 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 			{
 				int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
 				int inflictor = GetEventInt(event, "inflictor_entindex");
+				char weapon[64];
+
+				GetEventString(event, "weapon", weapon, sizeof(weapon));
 
 				Call_StartForward(g_pfOnPlayerDeath);
 				Call_PushCell(client);
 				Call_PushCell(attacker);
 				Call_PushCell(inflictor);
+				Call_PushString(weapon);
 				Call_Finish();
 			}
 		}

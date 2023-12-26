@@ -164,9 +164,10 @@ PrivateForward g_pfOnPlayerSpawn;
 /**
  * Forward is called when a Player dies.
  *
- * @param Client who was the Victim
- * @param Client who was the Attacker
+ * @param victim
+ * @param attacker
  * @param inflictor
+ * @param weapon
  * @noreturn
  */
 PrivateForward g_pfOnPlayerDeath;
@@ -342,7 +343,7 @@ void InitializeForwards()
 	g_pfOnRocketJump = new PrivateForward(ET_Ignore, Param_Any);
 	g_pfOnBuildObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerSpawn = new PrivateForward(ET_Ignore, Param_Any);
-	g_pfOnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Any);
+	g_pfOnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Any, Param_String);
 	g_pfOnPlayerHurt = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerTakeDamage = new PrivateForward(ET_Event, Param_Cell, Param_Cell, Param_Float, Param_Cell);
 	g_pfOnPlayerJarated = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
