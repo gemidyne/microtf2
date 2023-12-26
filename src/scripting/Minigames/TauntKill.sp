@@ -46,7 +46,9 @@ public void Minigame23_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.Class = g_eMinigame23Class;
+		player.ResetHealth();
 		player.RemoveAllWeapons();
+		player.SetCollisionsEnabled(true);
 
 		switch (g_eMinigame23Class)
 		{
