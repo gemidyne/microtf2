@@ -23,10 +23,10 @@ public void Minigame23_OnMinigameSelectedPre()
 	}
 
 	g_bIsBlockingTaunts = false;
-	g_bIsBlockingKillCommands = false;
+	g_bIsBlockingKillCommands = true;
 	g_eDamageBlockMode = EDamageBlockMode_Nothing;
 
-	g_eMinigame23Class = g_eMinigame23AvailableClasses[GetRandomInt(0, sizeof(g_eMinigame23AvailableClasses))];
+	g_eMinigame23Class = g_eMinigame23AvailableClasses[GetRandomInt(0, sizeof(g_eMinigame23AvailableClasses) - 1)];
 }
 
 public void Minigame23_OnMinigameSelected(int client)
@@ -138,12 +138,6 @@ public void Minigame23_RemoveFireButtons(int client)
 	if ((buttons & IN_ATTACK2))
 	{
 		buttons &= ~IN_ATTACK2;
-		SetEntProp(client, Prop_Data, "m_nButtons", buttons);
-	}
-
-	if ((buttons & IN_ATTACK3))
-	{
-		buttons &= ~IN_ATTACK3;
 		SetEntProp(client, Prop_Data, "m_nButtons", buttons);
 	}
 }
