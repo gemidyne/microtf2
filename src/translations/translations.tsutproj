@@ -1516,7 +1516,7 @@
     {
       "key": "Minigame10_KamikazeIsHere",
       "description": null,
-      "text": "Kamikaze is over here!",
+      "text": "Sentry Buster is over here!",
       "formatArguments": [],
       "translations": {
         "pt": "O Kamikaze chegou!",
@@ -1552,7 +1552,7 @@
     {
       "key": "Minigame10_Caption_RunFromKamikaze",
       "description": null,
-      "text": "RUN FROM THE KAMIKAZE!",
+      "text": "RUN FROM THE SENTRY BUSTER!",
       "formatArguments": [],
       "translations": {
         "pt": "FUJA PARA LONGE DO KAMIKAZE!",

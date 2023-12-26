@@ -205,7 +205,7 @@
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"it"		"Quanti/e {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}"
+		"it"		"Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
@@ -240,7 +240,7 @@
 	}
 	"Bossgame9_Caption"
 	{
-		"it"		"RIFLETTI I RAZZI!"
+		"it"		"REFLECT THE ROCKETS!"
 	}
 	"Minigame1_Caption"
 	{
@@ -457,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"it"		"UCCIDI CON L'INSULTO!"
+		"it"		"UCCISIONE INSULTO!"
 	}
 	"Minigame24_Caption"
 	{
@@ -525,7 +525,7 @@
 	}
 	"Minigame31_Caption"
 	{
-		"it"		"ATTERRA SANO E SALVO!"
+		"it"		"LAND SAFELY!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -711,7 +711,7 @@
 	}
 	"SpecialRound16_Description"
 	{
-		"it"		"I minigiochi vinti danno un numero casuale di punti!"
+		"it"		"I minigiochi vinti danno un numero causale di punti!"
 	}
 	"SpecialRound16_Caption_Points"
 	{

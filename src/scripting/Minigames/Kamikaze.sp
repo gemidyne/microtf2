@@ -1,7 +1,7 @@
 /**
  * MicroTF2 - Minigame 10
  * 
- * Avoid the Kamikaze! / Explode a Player
+ * Avoid the Sentry Buster! / Explode a Player
  */
 
 #define MINIGAME10_SFX_FINALTICK "weapons/mortar/mortar_shell_incomming1.wav"
