@@ -995,7 +995,7 @@
       "translations": {
         "pt": null,
         "fr": "Combien de {1} il y avait ? Rentrez dans la bonne pièce !\nPièce A : {2}   Pièce B : {3}   Pièce C : {4}\nTemps restant : {5}",
-        "it": "Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}",
+        "it": "Quanti/e {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}",
         "pt_p": null,
         "ru": "Сколько там было {1}? Войдите в комнату с правильным ответом!\nКомната A: {2}   Комната B: {3}   Комната C: {4}\nОставшееся время: {5}",
         "es": null,
@@ -1154,7 +1154,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "RIFLETTI I RAZZI!",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -1521,7 +1521,7 @@
       "translations": {
         "pt": "O Kamikaze chegou!",
         "fr": "Un kamikaze est dans les parages !",
-        "it": "Il kamikaze è qui!",
+        "it": "L'Abbatti-Torrette è qui!",
         "pt_p": "O Kamikaze chegou!",
         "ru": "Камикадзе здесь!",
         "es": "¡El Kamikaze está por aquí!",
@@ -1557,7 +1557,7 @@
       "translations": {
         "pt": "FUJA PARA LONGE DO KAMIKAZE!",
         "fr": "ÉCHAPPEZ AU KAMIKAZE !",
-        "it": "SCAPPA DAL KAMIKAZE!",
+        "it": "SCAPPA DALL'ABBATTI-TORRETTE!",
         "pt_p": "FUJA PARA LONGE DO KAMIKAZE!",
         "ru": "УБЕГИТЕ ОТ КАМИКАДЗЕ!",
         "es": "¡HUYE DEL KAMIKAZE!",
@@ -2131,7 +2131,7 @@
       "translations": {
         "pt": null,
         "fr": null,
-        "it": "UCCISIONE INSULTO!",
+        "it": "UCCIDI CON L'INSULTO!",
         "pt_p": null,
         "ru": "УБЕЙТЕ НАСМЕШКОЙ!",
         "es": null,
@@ -2421,7 +2421,7 @@
       "text": "LAND SAFELY!",
       "formatArguments": [],
       "translations": {
-        "it": null,
+        "it": "ATTERRA SANO E SALVO!",
         "es": null,
         "fr": null,
         "ru": null,
@@ -3274,7 +3274,7 @@
       "translations": {
         "pt": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "fr": "Si vous gagnez un mini-jeu, le score est attribué aléatoirement !",
-        "it": "I minigiochi vinti danno un numero causale di punti!",
+        "it": "I minigiochi vinti danno un numero casuale di punti!",
         "pt_p": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
         "ru": "При победе, вы получите случайное кол-во очков!",
         "es": "¡Si ganas un microjuego, recibirás una cantidad aleatoria de puntos!",
