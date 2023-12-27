@@ -4,7 +4,8 @@
  * Taunt Kill! 
  */
 
-TFClassType g_eMinigame23AvailableClasses[] = { TFClass_Sniper, TFClass_Heavy, TFClass_Pyro, TFClass_Medic, TFClass_DemoMan, TFClass_Engineer, TFClass_Spy, TFClass_Scout };
+// NOTE: Other class taunt kills require collisions to be on, which some players can get stuck due to random respawn points
+TFClassType g_eMinigame23AvailableClasses[] = { TFClass_Pyro, TFClass_Spy, TFClass_Scout };
 TFClassType g_eMinigame23Class;
 
 public void Minigame23_EntryPoint()
@@ -48,27 +49,11 @@ public void Minigame23_OnMinigameSelected(int client)
 		player.Class = g_eMinigame23Class;
 		player.ResetHealth();
 		player.RemoveAllWeapons();
-		player.SetCollisionsEnabled(true);
 
 		switch (g_eMinigame23Class)
 		{
-			case TFClass_Sniper:
-				player.GiveWeapon(56);
-			
-			case TFClass_Heavy:
-				player.GiveWeapon(5);
-
 			case TFClass_Pyro:
 				player.GiveWeapon(12);
-
-			case TFClass_Medic:
-				player.GiveWeapon(37);
-
-			case TFClass_DemoMan:
-				player.GiveWeapon(132);
-
-			case TFClass_Engineer:
-				player.GiveWeapon(142);
 
 			case TFClass_Spy:
 				player.GiveWeapon(4);
