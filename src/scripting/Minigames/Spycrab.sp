@@ -28,7 +28,7 @@ public void Minigame13_OnMinigameSelected(int client)
 	{
 		player.RemoveAllWeapons();
 		player.Class = TFClass_Spy;
-
+		player.ResetHealth();
 		player.GiveWeapon(27);
 	}
 }

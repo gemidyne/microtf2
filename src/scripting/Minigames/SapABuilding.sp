@@ -66,6 +66,7 @@ public void Minigame14_OnMinigameSelected(int client)
 		if (player.Team == g_tMinigame14SpyTeam)
 		{
 			player.Class = TFClass_Spy;
+			player.ResetHealth();
 			player.RemoveAllWeapons();
 			player.GiveWeapon(735);
 			player.SetViewModelVisible(true);
@@ -75,6 +76,7 @@ public void Minigame14_OnMinigameSelected(int client)
 		{
 			player.Class = TFClass_Engineer;
 			player.RemoveAllWeapons();
+			player.ResetHealth();
 			player.GiveWeapon(28);
 			player.GiveWeapon(25);
 			player.GiveWeapon(7);

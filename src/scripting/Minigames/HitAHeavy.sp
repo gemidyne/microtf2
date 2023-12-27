@@ -41,6 +41,7 @@ public void Minigame17_OnMinigameSelected(int client)
 		{
 			player.Class = TFClass_Medic;
 			player.SetGodMode(true);
+			player.ResetHealth();
 			player.ResetWeapon(true);
 		}
 		else
