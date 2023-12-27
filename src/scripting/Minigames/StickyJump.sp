@@ -38,9 +38,9 @@ public void Minigame5_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.Class = TFClass_DemoMan;
+		player.ResetHealth();
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
-		player.SetHealth(1000);
 		player.GiveWeapon(265);
 		player.SetWeaponPrimaryAmmoCount(72);
 	}

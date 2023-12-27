@@ -311,7 +311,7 @@ public void Minigame18_OnMinigameSelected(int client)
 	{
 		player.RemoveAllWeapons();
 		player.Class = TFClass_Sniper;
-
+		player.ResetHealth();
 		player.GiveWeapon(14);
 		player.SetWeaponPrimaryAmmoCount(25);
 

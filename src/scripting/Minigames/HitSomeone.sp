@@ -40,6 +40,7 @@ public void Minigame27_OnMinigameSelected(int client)
 	{
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
+		player.ResetHealth();
 		player.SetGodMode(false);
 		
 		if (g_bMinigame27UseBleedingMode)

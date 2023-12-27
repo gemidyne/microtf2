@@ -41,7 +41,7 @@ public void Minigame25_OnMinigameSelected(int client)
 		player.Class = TFClass_Pyro;
 		player.RemoveAllWeapons();
 		player.SetGodMode(false);
-		player.SetHealth(3000);
+		player.ResetHealth();
 
 		player.GiveWeapon(1179);
 		player.SetWeaponPrimaryAmmoCount(200);

@@ -28,6 +28,7 @@ public void Minigame16_OnMinigameSelected(int client)
 	if (player.IsValid)
 	{
 		player.Class = TFClass_Sniper;
+		player.ResetHealth();
 		player.ResetWeapon(true);
 		player.GiveWeapon(58);
 		player.SetWeaponPrimaryAmmoCount(1);

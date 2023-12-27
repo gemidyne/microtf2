@@ -31,6 +31,7 @@ public void Minigame24_OnMinigameSelected(int client)
 	{
 		player.RemoveAllWeapons();
 		player.Class = TFClass_Medic;
+		player.ResetHealth();
 		player.GiveWeapon(17);
 		player.SetWeaponPrimaryAmmoCount(150);
 
