@@ -68,6 +68,13 @@ char g_sBossgame8Group4Models[][] =
 	"models/props_spytech/terminal_chair.mdl"
 };
 
+char g_sBossgame8GasSfx[][] =
+{
+	"gemidyne/warioware/gas1.mp3",
+	"gemidyne/warioware/gas2.mp3",
+	"gemidyne/warioware/gas3.mp3"
+}
+
 #if defined BOSSGAME8_USE_OUTLINES
 int g_iBossgame8Group1OutlineColour[] = { 0, 255, 255, 255 };
 int g_iBossgame8Group2OutlineColour[] = { 255, 0, 255, 255 };
@@ -114,6 +121,11 @@ public void Bossgame8_OnMapStart()
 	for (int i = 0; i < sizeof(g_sBossgame8Group4Models); i++)
 	{
 		PrecacheModel(g_sBossgame8Group4Models[i]);
+	}
+
+	for (int i = 0; i < sizeof(g_sBossgame8GasSfx); i++)
+	{
+		PreloadSound(g_sBossgame8GasSfx[i]);
 	}
 
 	PreloadSound(BOSSGAME8_VO_10SEC);
@@ -446,6 +458,7 @@ public Action Bossgame8_RevealAnswer(Handle timer)
 	}
 
 	g_eBossgame8CurrentPhase = EBossgame8_Phase_AnswerRevealed;
+	Bossgame8_PlayGasSfx();
 	
 	CreateTimer(3.0, Bossgame8_PrepareForViewing, _, TIMER_FLAG_NO_MAPCHANGE);
 	Bossgame8_ShowHudQuestionnaire();
@@ -719,6 +732,7 @@ void Bossgame8_DecisionRoom_SetHurtActive(int roomNumber, bool active)
 	char expectedEntityName[32];
 	Format(expectedEntityName, sizeof(expectedEntityName), "plugin_PCBoss_Hurt%i", roomNumber);
 
+	// Triggers
 	while ((entity = FindEntityByClassname(entity, "trigger_hurt")) != INVALID_ENT_REFERENCE)
 	{
 		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
@@ -726,6 +740,18 @@ void Bossgame8_DecisionRoom_SetHurtActive(int roomNumber, bool active)
 		if (strcmp(entityName, expectedEntityName) == 0)
 		{
 			AcceptEntityInput(entity, active ? "Enable" : "Disable", -1, -1, -1);
+		}
+	}
+
+	// Steam effects
+	Format(expectedEntityName, sizeof(expectedEntityName), "plugin_PCBoss_Steam%i", roomNumber);
+	while ((entity = FindEntityByClassname(entity, "env_steam")) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, expectedEntityName) == 0)
+		{
+			AcceptEntityInput(entity, active ? "TurnOn" : "TurnOff", -1, -1, -1);
 		}
 	}
 }
@@ -898,4 +924,14 @@ bool Bossgame8_PossibilityHasConflict(int roomIndex, int possibility)
 	}
 
 	return false;
+}
+
+void Bossgame8_PlayGasSfx()
+{
+	int number = GetRandomInt(1, 3);
+	char sound[64];
+
+	strcopy(sound, sizeof(sound), g_sBossgame8GasSfx[number - 1]);
+
+	EmitSoundToAll(sound);
 }
