@@ -2,7 +2,7 @@
   "id": "b1ded688-cb90-4104-a1f2-1fe398ce38ce",
   "name": "Microgames in Team Fortress 2",
   "author": "Gemidyne",
-  "website": "https://www.gemidyne.com/projects/microtf2/",
+  "website": "https://www.gemidyne.com/projects/microtf2",
   "outputFileName": "microtf2.phrases.txt",
   "languages": [
     {
@@ -30,12 +30,12 @@
   "phrases": [
     {
       "key": "System_Advertisement",
-      "description": "Advertises the gamemode and the version number every 2 minutes.",
+      "description": "Advertises the gamemode and the version number in chat every 2 minutes.",
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": "The version number of the gamemode. Example: v3.0.0"
+          "description": "The version number of the gamemode. Example: v6.0.0"
         }
       ],
       "translations": {
