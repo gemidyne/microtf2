@@ -30,7 +30,7 @@
   "phrases": [
     {
       "key": "System_Advertisement",
-      "description": "Advertises the gamemode and it's version every 2 minutes.",
+      "description": "Advertises the gamemode and the version number every 2 minutes.",
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
         {
