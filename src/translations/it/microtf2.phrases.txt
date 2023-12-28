@@ -768,4 +768,8 @@
 	{
 		"it"		"Come ai vecchi tempi!"
 	}
+	"Dummy_DeleteMe"
+	{
+		"it"		"This is a test and will be deleted"
+	}
 }

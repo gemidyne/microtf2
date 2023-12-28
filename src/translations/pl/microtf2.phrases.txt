@@ -768,4 +768,8 @@
 	{
 		"pl"		"Hej! Gdzie się podziały moje wielokąty?"
 	}
+	"Dummy_DeleteMe"
+	{
+		"pl"		"This is a test and will be deleted"
+	}
 }

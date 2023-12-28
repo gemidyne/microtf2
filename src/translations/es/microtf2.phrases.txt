@@ -768,4 +768,8 @@
 	{
 		"es"		"¡Hey! ¿Donde han ido mis polígonos?"
 	}
+	"Dummy_DeleteMe"
+	{
+		"es"		"This is a test and will be deleted"
+	}
 }

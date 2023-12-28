@@ -768,4 +768,8 @@
 	{
 		"ru"		"Эй! Куда делись мои полигоны?"
 	}
+	"Dummy_DeleteMe"
+	{
+		"ru"		"This is a test and will be deleted"
+	}
 }
