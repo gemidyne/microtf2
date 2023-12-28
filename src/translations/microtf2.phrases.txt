@@ -768,8 +768,4 @@
 	{
 		"en"		"Hey! Where did my polygons go?"
 	}
-	"Dummy_DeleteMe"
-	{
-		"en"		"This is a test and will be deleted"
-	}
 }
