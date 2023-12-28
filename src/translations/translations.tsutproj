@@ -1,7 +1,7 @@
 {
   "id": "b1ded688-cb90-4104-a1f2-1fe398ce38ce",
   "name": "Microgames in Team Fortress 2",
-  "author": "Gemidyne Softworks",
+  "author": "Gemidyne",
   "website": "https://www.gemidyne.com/projects/microtf2/",
   "outputFileName": "microtf2.phrases.txt",
   "languages": [
@@ -3381,11 +3381,11 @@
       "formatArguments": [
         {
           "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "A list of player names"
         },
         {
           "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
-          "description": null
+          "description": "Number of other players still playing"
         }
       ],
       "translations": {
