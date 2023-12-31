@@ -39,7 +39,7 @@ jobs:
       - name: Setup SourceMod compiler (${{ matrix.smver }})
         uses: rumblefrog/setup-sp@master
         with:
-         version: ${{ matrix.smver }}
+          version: ${{ matrix.smver }}
 
       - name: Copy includes
         run: |

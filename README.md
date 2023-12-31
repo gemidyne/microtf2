@@ -41,9 +41,19 @@ The map's master VMF file lives in /assets/warioware_redux_master.vmf - we use h
 
 Our workflow for dev maps / release maps is to pack all necessary data into the BSP file, and then repack the BSP file. You can do all this by using Tsukuru. Packing all sounds, textures, models into the BSP file and repacking it means players will only need to download a single file to play the gamemode.
 
-We intend to use [Hammer++](https://ficool2.github.io/HammerPlusPlus-Website/index.html) going forward for map development, as this version of Hammer has many fixes over the stock version of Hammer bundled with TF2. If you want to use the original Hammer, you can - we have not tested this however.
+We use [Hammer++](https://ficool2.github.io/HammerPlusPlus-Website/index.html) for map development, as this version of Hammer has many fixes over the stock version of Hammer bundled with TF2.
 
-## Want to help translate the gamemode into other languages? 
+# Contributing
+
+## Testing
+
+We appreciate your interest in wanting to help test the gamemode. We have a tester group on Steam Community where we will be communicating test sessions. The group chat within this steam group is where we will communicate upcoming test sessions due to Steam's broken event functionality.
+
+[Steam Group](https://steamcommunity.com/groups/microtf2_testers)
+
+[Join Steam Group Chat](https://steamcommunity.com/chat/group/103582791436315556)
+
+## Translations 
 
 We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
 
@@ -65,4 +75,6 @@ We'd love to have you on board! If you are interested in contributing translatio
 
 View the full gamemode credits here: https://www.gemidyne.com/projects/microtf2/credits
 
-Resurrected by Gemidyne Softworks.
+
+#### Disclaimer
+Microgames in Team Fortress 2 is a fan project and is strictly not for profit. All logos and brands are property of their respective owners.
