@@ -42,13 +42,17 @@ Our workflow for dev maps / release maps is to pack all necessary data into the 
 
 We use [Hammer++](https://ficool2.github.io/HammerPlusPlus-Website/index.html) for map development, as this version of Hammer has many fixes over the stock version of Hammer bundled with TF2.
 
-# Contributing: Testing
+# Contributing
+
+## Testing
 
 We appreciate your interest in wanting to help test the gamemode. We have a tester group on Steam Community where we will be communicating test sessions. The group chat within this steam group is where we will communicate upcoming test sessions due to Steam's broken event functionality.
-[Steam Group](https://steamcommunity.com/groups/microtf2_testers)
-[Join Steam Group Chat](steam://openurl/https://steamcommunity.com/chat/group/103582791436315556)
 
-## Contributing: Translations 
+[Steam Group](https://steamcommunity.com/groups/microtf2_testers)
+
+[Join Steam Group Chat](https://steamcommunity.com/chat/group/103582791436315556)
+
+## Translations 
 
 We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
 
