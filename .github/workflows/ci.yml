@@ -1,12 +1,14 @@
-name: CI
+name: "Build Validation"
 
 # Controls when the action will run. 
 on:
   # Triggers the workflow on push or pull request events but only for the master branch
   push:
     branches: [ dev, master ]
+    paths: [ 'src/scripting/**' ]
   pull_request:
     branches: [ dev, master ]
+    paths: [ 'src/scripting/**' ]
   workflow_dispatch:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
@@ -37,7 +39,7 @@ jobs:
       - name: Setup SourceMod compiler (${{ matrix.smver }})
         uses: rumblefrog/setup-sp@master
         with:
-         version: ${{ matrix.smver }}
+          version: ${{ matrix.smver }}
 
       - name: Copy includes
         run: |

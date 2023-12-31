@@ -1,0 +1,51 @@
+name: "Translations"
+
+on:
+  push:
+    branches: [ dev, master ]
+    paths: [ 'src/translations/**' ]
+  pull_request:
+    paths: [ 'src/translations/**' ]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  export:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Set environment variables
+        run: echo SCRIPTS_PATH=$(pwd) >> $GITHUB_ENV
+
+      - name: Setup dotnet
+        uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '8.x'
+
+      - name: Install Tsukuru CLI
+        run: dotnet tool install -g tsukuru
+
+      - name: Validate translation project
+        run: tsukuru validate-translation -f translations.tsutproj
+        working-directory: src/translations
+
+      - name: Export SM translations
+        run: tsukuru export-translations -f translations.tsutproj
+        working-directory: src/translations
+
+      - name: Check for modified files
+        id: git-pending
+        run: echo ::set-output name=modified::$(if [ -n "$(git status --porcelain)" ]; then echo "true"; else echo "false"; fi)
+
+      - name: Push changes
+        if: steps.git-pending.outputs.modified == 'true'
+        run:  |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m '[automated] export latest translations from project'
+          git push
+

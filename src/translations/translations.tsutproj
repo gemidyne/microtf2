@@ -34,7 +34,7 @@
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The version number of the gamemode. Example: v3.0.0"
         }
       ],
@@ -57,7 +57,7 @@
       "text": "Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The amount of points the player has. Example: 5"
         }
       ],
@@ -80,7 +80,7 @@
       "text": "Microgames: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The amount of microgames that have been played. Examples: 12"
         }
       ],
@@ -103,7 +103,7 @@
       "text": "Team Score: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The team's overall score. Example: 53"
         }
       ],
@@ -126,7 +126,7 @@
       "text": "Barrels: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The number of barrels that the player has shot. Example: 8"
         }
       ],
@@ -149,11 +149,11 @@
       "text": "Round {1} of {2}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The current round number. Example: 2"
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The maximum number of rounds to be played. Example: 4"
         }
       ],
@@ -176,7 +176,7 @@
       "text": "Round {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The current round number. Example: 5"
         }
       ],
@@ -199,7 +199,7 @@
       "text": "{1}'s theme",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The theme's name. This is currently a WarioWare character's name."
         }
       ],
@@ -222,7 +222,7 @@
       "text": "SPECIAL ROUND: {1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The special round's name."
         }
       ],
@@ -245,11 +245,11 @@
       "text": "The special round condition is... {1}!\n{2}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The selected special round's name."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The selected special round's description."
         }
       ],
@@ -542,11 +542,11 @@
       "text": "{1} and {2}{default}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The names to combine. For example: \"Name1, Name2\"."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name to end the sentence with."
         }
       ],
@@ -587,15 +587,15 @@
       "text": "{1} {2} {default}with {3} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "Unknown"
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The winning number of points the player or players have."
         }
       ],
@@ -618,7 +618,7 @@
       "text": "The winning team is the RED team with {1} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -641,7 +641,7 @@
       "text": "The winning team is the BLU team with {1} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The winning number of points the team had."
         }
       ],
@@ -736,7 +736,7 @@
       "text": "{1} reached the top first! (Bonus point!)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
@@ -777,7 +777,7 @@
       "text": "{1} escaped the factory first! (Bonus point!)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
@@ -854,7 +854,7 @@
       "text": "{1} reached the goal first! (Bonus point!)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the player who reached the end first."
         }
       ],
@@ -949,7 +949,7 @@
       "text": "THE CORRECT ANSWER WAS...\n{1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The correct answer."
         }
       ],
@@ -972,23 +972,23 @@
       "text": "How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The type of prop. This string will be referred to from a different translation."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for Room A. This number is randomly chosen by the plugin."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for Room B. This number is randomly chosen by the plugin."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for Room C. This number is randomly chosen by the plugin."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "Time remaining before the doors close."
         }
       ],
@@ -1083,7 +1083,7 @@
       "text": "Room A: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for this room."
         }
       ],
@@ -1106,7 +1106,7 @@
       "text": "Room B: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for this room."
         }
       ],
@@ -1129,7 +1129,7 @@
       "text": "Room C: {1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The answer for this room."
         }
       ],
@@ -1242,7 +1242,7 @@
       "text": "SAY THE WORD!\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The word players should type into the chatbox."
         }
       ],
@@ -1265,7 +1265,7 @@
       "text": "{1} said the word first! (Bonus point!)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the player who said the word first."
         }
       ],
@@ -1306,7 +1306,7 @@
       "text": "ANSWER THE QUESTION!\n{1} = ?",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The maths equation that should be answered."
         }
       ],
@@ -1329,7 +1329,7 @@
       "text": "The correct answer was {1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The math equation's correct answer. Example: 42"
         }
       ],
@@ -1352,7 +1352,7 @@
       "text": "{1} got the correct answer first! (Bonus point!)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the player who answered."
         }
       ],
@@ -2423,7 +2423,7 @@
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         }
       ],
@@ -2446,15 +2446,15 @@
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The word the player needs to type."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The next word that will need to be typed."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "Number of seconds remaining."
         }
       ],
@@ -2477,7 +2477,7 @@
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The name of the winning player."
         }
       ],
@@ -2518,7 +2518,7 @@
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "A list of player names."
         }
       ],
@@ -2541,11 +2541,11 @@
       "text": "{1}\nand {2} more...",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The preceeding message - make sure this is at the start."
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The number of players which could not be displayed."
         }
       ],
@@ -2568,7 +2568,7 @@
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": "The preceeding message. Make sure this is at the start of the string."
         }
       ],
@@ -3221,7 +3221,7 @@
       "text": "If you win this microgame, you will be awarded {1} points!",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         }
       ],
@@ -3280,15 +3280,15 @@
       "text": "Current players ({1} of {2})\n{3}",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         }
       ],
@@ -3311,11 +3311,11 @@
       "text": "{1} (and {2} more)",
       "formatArguments": [
         {
-          "$type": "Tsukuru.Core.Translations.Data.StringFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         },
         {
-          "$type": "Tsukuru.Core.Translations.Data.IntegerFormatArgument, Tsukuru.Core.Translations",
+          "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
           "description": null
         }
       ],

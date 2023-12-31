@@ -11,7 +11,6 @@ jobs:
     runs-on: 'ubuntu-latest'
     
     steps: 
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
       - name: Set environment variables
@@ -26,7 +25,7 @@ jobs:
       - name: Setup SourceMod compiler (1.11.x)
         uses: rumblefrog/setup-sp@master
         with:
-         version: 1.11.x
+          version: 1.11.x
 
       - name: Copy includes
         run: |
