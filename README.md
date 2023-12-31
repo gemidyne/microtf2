@@ -50,7 +50,7 @@ We appreciate your interest in wanting to help test the gamemode. We have a test
 
 [Steam Group](https://steamcommunity.com/groups/microtf2_testers)
 
-[Join Steam Group Chat](https://steamcommunity.com/chat/group/103582791436315556)
+[Join Steam Group Chat](https://steamcommunity.com/chat/invite/FuU64wth)
 
 ## Translations 
 
