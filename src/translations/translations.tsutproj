@@ -30,6 +30,7 @@
   "phrases": [
     {
       "key": "System_Advertisement",
+      "category": "Misc",
       "description": "Advertises the gamemode and the version number in chat every 2 minutes.",
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
       "formatArguments": [
@@ -53,6 +54,7 @@
     },
     {
       "key": "Hud_Score_Default",
+      "category": "HUD",
       "description": "The default type of score to display on the player HUD.",
       "text": "Score: {1}",
       "formatArguments": [
@@ -76,6 +78,7 @@
     },
     {
       "key": "Hud_Score_Minigames",
+      "category": "HUD",
       "description": "A score to display on the player HUD, based on amount of microgames played. Only used on a special round.",
       "text": "Microgames: {1}",
       "formatArguments": [
@@ -99,6 +102,7 @@
     },
     {
       "key": "Hud_Score_TeamScore",
+      "category": "HUD",
       "description": "The player's own overall team score to display on the player HUD. Only used on a special round.",
       "text": "Team Score: {1}",
       "formatArguments": [
@@ -122,6 +126,7 @@
     },
     {
       "key": "Hud_Score_Barrels",
+      "category": "HUD",
       "description": "The player's current number of barrels shot. Used on the Target Practice bossgame.",
       "text": "Barrels: {1}",
       "formatArguments": [
@@ -145,6 +150,7 @@
     },
     {
       "key": "Hud_RoundDisplay",
+      "category": "HUD",
       "description": "The formatted HUD text which displays the current round number, and the maximum number of rounds that will be played.",
       "text": "Round {1} of {2}",
       "formatArguments": [
@@ -172,6 +178,7 @@
     },
     {
       "key": "Hud_RoundDisplayUnlimited",
+      "category": "HUD",
       "description": "The HUD text which displays the current round number.",
       "text": "Round {1}",
       "formatArguments": [
@@ -195,6 +202,7 @@
     },
     {
       "key": "Hud_ThemeDisplay",
+      "category": "HUD",
       "description": "The HUD text which displays the current theme being played.",
       "text": "{1}'s theme",
       "formatArguments": [
@@ -218,6 +226,7 @@
     },
     {
       "key": "Hud_SpecialRound_CenterDisplay",
+      "category": "HUD",
       "description": "The HUD text which displays what special round is being selected.",
       "text": "SPECIAL ROUND: {1}!",
       "formatArguments": [
@@ -241,6 +250,7 @@
     },
     {
       "key": "Hud_SpecialRound_ChatDisplay",
+      "category": "HUD",
       "description": "The chatbox text which displays what the new special round condition will be.",
       "text": "The special round condition is... {1}!\n{2}",
       "formatArguments": [
@@ -268,6 +278,7 @@
     },
     {
       "key": "System_PlayerSpawn_RespawnNotice",
+      "category": "HUD",
       "description": "A message displayed in the chatbox which notifies the player that they will be respawned when the current microgame or bossgame has finished.",
       "text": "You will be respawned once the current microgame or bossgame has finished.",
       "formatArguments": [],
@@ -286,6 +297,7 @@
     },
     {
       "key": "SpecialRound_SuddenDeath_PlayerKnockOutNotification",
+      "category": "Special Rounds",
       "description": "The HUD text which notifies the player that they have been knocked out from the round. Only used on the Sudden Death special round.",
       "text": "YOU HAVE BEEN KNOCKED OUT!",
       "formatArguments": [],
@@ -304,6 +316,7 @@
     },
     {
       "key": "System_SpecialRoundBlockClassChange",
+      "category": "Special Rounds",
       "description": "A message displayed in the chatbox which notifies the player cannot exploit the special round by intentionally failing by changing their class.",
       "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
       "formatArguments": [],
@@ -322,6 +335,7 @@
     },
     {
       "key": "General_Loser",
+      "category": "Misc",
       "description": "A word describing the player that did not successfully complete the microgame or bossgame.",
       "text": "Loser!",
       "formatArguments": [],
@@ -340,6 +354,7 @@
     },
     {
       "key": "General_Winner",
+      "category": "Misc",
       "description": "A word describing the player that did successfully complete the microgame or bossgame.",
       "text": "Winner!",
       "formatArguments": [],
@@ -358,6 +373,7 @@
     },
     {
       "key": "General_SpeedUp",
+      "category": "Misc",
       "description": "A term notifying the player that the round is going to speed up.",
       "text": "SPEED UP!",
       "formatArguments": [],
@@ -376,6 +392,7 @@
     },
     {
       "key": "General_SpeedDown",
+      "category": "Misc",
       "description": "A term notifying the player that the round is going to speed down. This is used on special rounds only at the moment.",
       "text": "SPEED DOWN!",
       "formatArguments": [],
@@ -394,6 +411,7 @@
     },
     {
       "key": "General_Failure",
+      "category": "Misc",
       "description": "A word notifying the player that they failed the microgame or boss.",
       "text": "FAILURE!",
       "formatArguments": [],
@@ -412,6 +430,7 @@
     },
     {
       "key": "General_Success",
+      "category": "Misc",
       "description": "A word notifying the player that they won the microgame or boss.",
       "text": "SUCCESS!",
       "formatArguments": [],
@@ -430,6 +449,7 @@
     },
     {
       "key": "General_BossTime",
+      "category": "Misc",
       "description": "A term notifying the player that it's time for the bossgame to be played.",
       "text": "BOSS TIME!",
       "formatArguments": [],
@@ -448,6 +468,7 @@
     },
     {
       "key": "General_GameOver",
+      "category": "Misc",
       "description": "A term notifying the player that the round has finished.",
       "text": "GAME OVER!",
       "formatArguments": [],
@@ -466,6 +487,7 @@
     },
     {
       "key": "General_SpecialRound",
+      "category": "Misc",
       "description": "A term notifying the player the next round is a special round.",
       "text": "SPECIAL ROUND!",
       "formatArguments": [],
@@ -484,6 +506,7 @@
     },
     {
       "key": "GameOver_SpecialRoundHasFinished",
+      "category": "Special Rounds",
       "description": "A message displayed on the HUD when a special round has ended.",
       "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
       "formatArguments": [],
@@ -502,6 +525,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixSingle",
+      "category": "HUD",
       "description": "Displayed in the chatbox when only one player has won the round.",
       "text": "The winner is...",
       "formatArguments": [],
@@ -520,6 +544,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixMultiple",
+      "category": "HUD",
       "description": "Displayed in the chatbox when more than one player has won the round.",
       "text": "The winners are...",
       "formatArguments": [],
@@ -538,6 +563,7 @@
     },
     {
       "key": "GameOver_WinnersAnd",
+      "category": "HUD",
       "description": "Used in the gameover sequence to combine one or more player names together.",
       "text": "{1} and {2}{default}",
       "formatArguments": [
@@ -565,6 +591,7 @@
     },
     {
       "key": "GameOver_WinnerPrefixNoOne",
+      "category": "HUD",
       "description": "Used in the gameover sequence in rare situations where no one wins.",
       "text": "There were no winners!",
       "formatArguments": [],
@@ -583,6 +610,7 @@
     },
     {
       "key": "GameOver_WinnerSuffix",
+      "category": "HUD",
       "description": "Used in the gameover sequence.",
       "text": "{1} {2} {default}with {3} points!",
       "formatArguments": [
@@ -614,6 +642,7 @@
     },
     {
       "key": "GameOver_WinningTeam_Red",
+      "category": "HUD",
       "description": "Used in the Team Battle special round when the winning team is the RED Team.",
       "text": "The winning team is the RED team with {1} points!",
       "formatArguments": [
@@ -637,6 +666,7 @@
     },
     {
       "key": "GameOver_WinningTeam_Blue",
+      "category": "HUD",
       "description": "Used in the Team Battle special round when the winning team is the BLU Team.",
       "text": "The winning team is the BLU team with {1} points!",
       "formatArguments": [
@@ -660,6 +690,7 @@
     },
     {
       "key": "GameOver_WinningTeam_Stalemate",
+      "category": "HUD",
       "description": "Used in the Team Battle special round in the rare condition that both teams had the same number of points.",
       "text": "Stalemate! Both teams have the same points!",
       "formatArguments": [],
@@ -678,6 +709,7 @@
     },
     {
       "key": "System_Intermission_Header",
+      "category": "HUD",
       "description": "A header displayed when the gamemode's intermission begins. This is run usually half way through the gamemode (e.g., round 2 of 4) and triggers a vote to let players decide the next map.",
       "text": "Intermission!",
       "formatArguments": [],
@@ -696,6 +728,7 @@
     },
     {
       "key": "System_Intermission_Body",
+      "category": "HUD",
       "description": "A short message displayed when the gamemode's intermission begins.",
       "text": "Break time! Time to vote for the next map.",
       "formatArguments": [],
@@ -714,6 +747,7 @@
     },
     {
       "key": "Bossgame1_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "ROCKET JUMP TO THE END!",
       "formatArguments": [],
@@ -732,6 +766,7 @@
     },
     {
       "key": "Bossgame1_PlayerReachedEndFirst",
+      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
       "text": "{1} reached the top first! (Bonus point!)",
       "formatArguments": [
@@ -755,6 +790,7 @@
     },
     {
       "key": "Bossgame2_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "ESCAPE THE FACTORY!",
       "formatArguments": [],
@@ -773,6 +809,7 @@
     },
     {
       "key": "Bossgame2_PlayerReachedEndFirst",
+      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
       "text": "{1} escaped the factory first! (Bonus point!)",
       "formatArguments": [
@@ -796,6 +833,7 @@
     },
     {
       "key": "Bossgame3_Caption",
+      "category": "Bossgames",
       "description": "Tell players to stay on the green block!",
       "text": "STAY ON THE GREEN BLOCK!",
       "formatArguments": [],
@@ -814,6 +852,7 @@
     },
     {
       "key": "Bossgame4_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "DON'T FALL INTO THE WATER!",
       "formatArguments": [],
@@ -832,6 +871,7 @@
     },
     {
       "key": "Bossgame5_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "REACH THE GOAL!",
       "formatArguments": [],
@@ -850,6 +890,7 @@
     },
     {
       "key": "Bossgame5_PlayerReachedEndFirst",
+      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the goal first.",
       "text": "{1} reached the goal first! (Bonus point!)",
       "formatArguments": [
@@ -873,6 +914,7 @@
     },
     {
       "key": "Bossgame6_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "SHOOT THE MOST BARRELS!",
       "formatArguments": [],
@@ -891,6 +933,7 @@
     },
     {
       "key": "Bossgame8_Caption_CountTheProps",
+      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "COUNT THE PROPS!",
       "formatArguments": [],
@@ -909,6 +952,7 @@
     },
     {
       "key": "Bossgame8_Caption_GetReady",
+      "category": "Bossgames",
       "description": "Displayed when the answer rooms are opening for players to go and count the next set of props.",
       "text": "GET READY...",
       "formatArguments": [],
@@ -927,6 +971,7 @@
     },
     {
       "key": "Bossgame8_Caption_CorrectAnswerWas_Hidden",
+      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "THE CORRECT ANSWER WAS...\n???",
       "formatArguments": [],
@@ -945,6 +990,7 @@
     },
     {
       "key": "Bossgame8_Caption_CorrectAnswerWas_Visible",
+      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "THE CORRECT ANSWER WAS...\n{1}!",
       "formatArguments": [
@@ -968,6 +1014,7 @@
     },
     {
       "key": "Bossgame8_Caption_ChooseARoom",
+      "category": "Bossgames",
       "description": "Displayed when its time for players to enter a room to select their answer.",
       "text": "How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}",
       "formatArguments": [
@@ -1007,6 +1054,7 @@
     },
     {
       "key": "Bossgame8_PropType_Dispensers",
+      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Dispensers",
       "formatArguments": [],
@@ -1025,6 +1073,7 @@
     },
     {
       "key": "Bossgame8_PropType_AmmoPacks",
+      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Ammo Packs",
       "formatArguments": [],
@@ -1043,6 +1092,7 @@
     },
     {
       "key": "Bossgame8_PropType_Barrels",
+      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Barrels",
       "formatArguments": [],
@@ -1061,6 +1111,7 @@
     },
     {
       "key": "Bossgame8_PropType_Chairs",
+      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Chairs",
       "formatArguments": [],
@@ -1079,6 +1130,7 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomA",
+      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room A: {1}",
       "formatArguments": [
@@ -1102,6 +1154,7 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomB",
+      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room B: {1}",
       "formatArguments": [
@@ -1125,6 +1178,7 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomC",
+      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room C: {1}",
       "formatArguments": [
@@ -1148,6 +1202,7 @@
     },
     {
       "key": "Bossgame9_Caption",
+      "category": "Bossgames",
       "description": null,
       "text": "REFLECT THE ROCKETS!",
       "formatArguments": [],
@@ -1166,6 +1221,7 @@
     },
     {
       "key": "Minigame1_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "GET TO THE END!",
       "formatArguments": [],
@@ -1184,6 +1240,7 @@
     },
     {
       "key": "Minigame2_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "KILL AN ENEMY!",
       "formatArguments": [],
@@ -1202,6 +1259,7 @@
     },
     {
       "key": "Minigame3_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "BREAK THE BARRELS!",
       "formatArguments": [],
@@ -1220,6 +1278,7 @@
     },
     {
       "key": "Minigame4_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "AIRBLAST AND STAY ALIVE!",
       "formatArguments": [],
@@ -1238,6 +1297,7 @@
     },
     {
       "key": "Minigame5_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "STICKY JUMP!",
       "formatArguments": [],
@@ -1256,6 +1316,7 @@
     },
     {
       "key": "Minigame6_SayTheWord_CaptionFormatted",
+      "category": "Microgames",
       "description": "Say the Word's microgame caption.",
       "text": "SAY THE WORD!\n{1}",
       "formatArguments": [
@@ -1279,6 +1340,7 @@
     },
     {
       "key": "Minigame6_SayTheWord_PlayerSaidWordFirst",
+      "category": "Microgames",
       "description": "This message is displayed when a bonus point is given to a player for saying the word first.",
       "text": "{1} said the word first! (Bonus point!)",
       "formatArguments": [
@@ -1302,6 +1364,7 @@
     },
     {
       "key": "Minigame7_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "ROCKET JUMP!",
       "formatArguments": [],
@@ -1320,6 +1383,7 @@
     },
     {
       "key": "Minigame8_CaptionFormatted",
+      "category": "Microgames",
       "description": null,
       "text": "ANSWER THE QUESTION!\n{1} = ?",
       "formatArguments": [
@@ -1343,6 +1407,7 @@
     },
     {
       "key": "Minigame8_CorrectAnswerWas",
+      "category": "Microgames",
       "description": null,
       "text": "The correct answer was {1}!",
       "formatArguments": [
@@ -1366,6 +1431,7 @@
     },
     {
       "key": "Minigame8_PlayerAnsweredFirst",
+      "category": "Microgames",
       "description": "This message is displayed when a bonus point is given to a player for answering the question first.",
       "text": "{1} got the correct answer first! (Bonus point!)",
       "formatArguments": [
@@ -1389,6 +1455,7 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysTaunt",
+      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: TAUNT!",
       "formatArguments": [],
@@ -1407,6 +1474,7 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysJump",
+      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: JUMP!",
       "formatArguments": [],
@@ -1425,6 +1493,7 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysCrouch",
+      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: CROUCH!",
       "formatArguments": [],
@@ -1443,6 +1512,7 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysTaunt",
+      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: TAUNT!",
       "formatArguments": [],
@@ -1461,6 +1531,7 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysJump",
+      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: JUMP!",
       "formatArguments": [],
@@ -1479,6 +1550,7 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysCrouch",
+      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: CROUCH!",
       "formatArguments": [],
@@ -1497,6 +1569,7 @@
     },
     {
       "key": "Minigame9_Caption_SimonDidntSayIt",
+      "category": "Microgames",
       "description": null,
       "text": "(Simon didn't say it..)",
       "formatArguments": [],
@@ -1515,6 +1588,7 @@
     },
     {
       "key": "Minigame10_KamikazeIsHere",
+      "category": "Microgames",
       "description": null,
       "text": "Sentry Buster is over here!",
       "formatArguments": [],
@@ -1533,6 +1607,7 @@
     },
     {
       "key": "Minigame10_Caption_ExplodeAsMany",
+      "category": "Microgames",
       "description": null,
       "text": "EXPLODE AS MANY PEOPLE AS YOU CAN!",
       "formatArguments": [],
@@ -1551,6 +1626,7 @@
     },
     {
       "key": "Minigame10_Caption_RunFromKamikaze",
+      "category": "Microgames",
       "description": null,
       "text": "RUN FROM THE SENTRY BUSTER!",
       "formatArguments": [],
@@ -1569,6 +1645,7 @@
     },
     {
       "key": "Minigame11_Caption_DontStopMoving",
+      "category": "Microgames",
       "description": null,
       "text": "DON'T STOP MOVING!",
       "formatArguments": [],
@@ -1587,6 +1664,7 @@
     },
     {
       "key": "Minigame11_Caption_DontMove",
+      "category": "Microgames",
       "description": null,
       "text": "DON'T MOVE!",
       "formatArguments": [],
@@ -1605,6 +1683,7 @@
     },
     {
       "key": "Minigame12_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "GET ON A PLATFORM!",
       "formatArguments": [],
@@ -1623,6 +1702,7 @@
     },
     {
       "key": "Minigame13_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "SPYCRAB!",
       "formatArguments": [],
@@ -1641,6 +1721,7 @@
     },
     {
       "key": "Minigame13_SpycrabsMustCrouchAndLookup",
+      "category": "Microgames",
       "description": null,
       "text": "Spycrabs must crouch and look up!",
       "formatArguments": [],
@@ -1659,6 +1740,7 @@
     },
     {
       "key": "Minigame14_Caption_Spies",
+      "category": "Microgames",
       "description": null,
       "text": "SAP A BUILDING!",
       "formatArguments": [],
@@ -1677,6 +1759,7 @@
     },
     {
       "key": "Minigame14_Caption_Engineers",
+      "category": "Microgames",
       "description": null,
       "text": "GET A BUILDING SAPPED!",
       "formatArguments": [],
@@ -1695,6 +1778,7 @@
     },
     {
       "key": "Minigame15_Caption_Any",
+      "category": "Microgames",
       "description": null,
       "text": "BUILD SOMETHING!",
       "formatArguments": [],
@@ -1713,6 +1797,7 @@
     },
     {
       "key": "Minigame15_Caption_Dispenser",
+      "category": "Microgames",
       "description": null,
       "text": "BUILD A DISPENSER!",
       "formatArguments": [],
@@ -1731,6 +1816,7 @@
     },
     {
       "key": "Minigame15_Caption_Teleporter",
+      "category": "Microgames",
       "description": null,
       "text": "BUILD A TELEPORTER!",
       "formatArguments": [],
@@ -1749,6 +1835,7 @@
     },
     {
       "key": "Minigame15_Caption_Sentry",
+      "category": "Microgames",
       "description": null,
       "text": "BUILD A SENTRY!",
       "formatArguments": [],
@@ -1767,6 +1854,7 @@
     },
     {
       "key": "Minigame16_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "JARATE AN ENEMY!",
       "formatArguments": [],
@@ -1785,6 +1873,7 @@
     },
     {
       "key": "Minigame17_Caption_HitAHeavy",
+      "category": "Microgames",
       "description": null,
       "text": "HIT A HEAVY!",
       "formatArguments": [],
@@ -1803,6 +1892,7 @@
     },
     {
       "key": "Minigame17_Caption_GetHitByMedic",
+      "category": "Microgames",
       "description": null,
       "text": "GET HIT BY A MEDIC!",
       "formatArguments": [],
@@ -1821,6 +1911,7 @@
     },
     {
       "key": "Minigame18_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "HIT THE TARGET!",
       "formatArguments": [],
@@ -1839,6 +1930,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassAny",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS!",
       "formatArguments": [],
@@ -1857,6 +1949,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassScout",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SCOUT!",
       "formatArguments": [],
@@ -1875,6 +1968,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSoldier",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SOLDIER!",
       "formatArguments": [],
@@ -1893,6 +1987,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassPyro",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO PYRO!",
       "formatArguments": [],
@@ -1911,6 +2006,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassDemoman",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO DEMOMAN!",
       "formatArguments": [],
@@ -1929,6 +2025,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassHeavy",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO HEAVY!",
       "formatArguments": [],
@@ -1947,6 +2044,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassEngineer",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO ENGINEER!",
       "formatArguments": [],
@@ -1965,6 +2063,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassMedic",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO MEDIC!",
       "formatArguments": [],
@@ -1983,6 +2082,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSniper",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SNIPER!",
       "formatArguments": [],
@@ -2001,6 +2101,7 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSpy",
+      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SPY!",
       "formatArguments": [],
@@ -2019,6 +2120,7 @@
     },
     {
       "key": "Minigame20_Caption_Drink",
+      "category": "Microgames",
       "description": "Tell players to drink.",
       "text": "DRINK!",
       "formatArguments": [],
@@ -2037,6 +2139,7 @@
     },
     {
       "key": "Minigame20_Caption_DontDrink",
+      "category": "Microgames",
       "description": "Tell players not to drink.",
       "text": "DON'T DRINK!",
       "formatArguments": [],
@@ -2054,6 +2157,7 @@
     },
     {
       "key": "Minigame20_Caption_Eat",
+      "category": "Microgames",
       "description": "Tell players to eat.",
       "text": "EAT!",
       "formatArguments": [],
@@ -2072,6 +2176,7 @@
     },
     {
       "key": "Minigame20_Caption_DontEat",
+      "category": "Microgames",
       "description": "Tell players not to eat.",
       "text": "DON'T EAT!",
       "formatArguments": [],
@@ -2089,6 +2194,7 @@
     },
     {
       "key": "Minigame21_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "STUN AN ENEMY!",
       "formatArguments": [],
@@ -2107,6 +2213,7 @@
     },
     {
       "key": "Minigame22_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "STAY ON THE GROUND!",
       "formatArguments": [],
@@ -2125,6 +2232,7 @@
     },
     {
       "key": "Minigame23_Caption",
+      "category": "Microgames",
       "description": "Tell players to do a taunt kill!",
       "text": "TAUNT KILL!",
       "formatArguments": [],
@@ -2143,6 +2251,7 @@
     },
     {
       "key": "Minigame24_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "NEEDLEJUMP!",
       "formatArguments": [],
@@ -2161,6 +2270,7 @@
     },
     {
       "key": "Minigame25_Caption",
+      "category": "Microgames",
       "description": null,
       "text": "JETPACK!",
       "formatArguments": [],
@@ -2179,6 +2289,7 @@
     },
     {
       "key": "Minigame26_Caption_DontLaugh",
+      "category": "Microgames",
       "description": "Tell players to not laugh! (By avoiding the heavies - laughing results in failure)",
       "text": "DON'T LAUGH!",
       "formatArguments": [],
@@ -2196,6 +2307,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Scout",
+      "category": "Microgames",
       "description": "Tell selected players to make the Scouts laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SCOUTS LAUGH!",
       "formatArguments": [],
@@ -2213,6 +2325,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Soldier",
+      "category": "Microgames",
       "description": "Tell selected players to make the Soldiers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SOLDIERS LAUGH!",
       "formatArguments": [],
@@ -2230,6 +2343,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Pyro",
+      "category": "Microgames",
       "description": "Tell selected players to make the Pyro laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE PYROS LAUGH!",
       "formatArguments": [],
@@ -2247,6 +2361,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Demoman",
+      "category": "Microgames",
       "description": "Tell selected players to make the Demomen laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE DEMOMEN LAUGH!",
       "formatArguments": [],
@@ -2264,6 +2379,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Engineer",
+      "category": "Microgames",
       "description": "Tell selected players to make the Engineers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE ENGINEERS LAUGH!",
       "formatArguments": [],
@@ -2281,6 +2397,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Medic",
+      "category": "Microgames",
       "description": "Tell selected players to make the Medics laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE MEDICS LAUGH!",
       "formatArguments": [],
@@ -2298,6 +2415,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Sniper",
+      "category": "Microgames",
       "description": "Tell selected players to make the Snipers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SNIPERS LAUGH!",
       "formatArguments": [],
@@ -2315,6 +2433,7 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Spy",
+      "category": "Microgames",
       "description": "Tell selected players to make the Spies laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SPIES LAUGH!",
       "formatArguments": [],
@@ -2332,6 +2451,7 @@
     },
     {
       "key": "Minigame27_Caption",
+      "category": "Microgames",
       "description": "Tell players to hit an enemy! (If they miss, they will hit themselves and fail)",
       "text": "HIT AN ENEMY!",
       "formatArguments": [],
@@ -2349,6 +2469,7 @@
     },
     {
       "key": "Minigame28_Caption",
+      "category": "Microgames",
       "description": "Tell players to bomb jump onto the platform!",
       "text": "BOMB JUMP ONTO THE PLATFORM!",
       "formatArguments": [],
@@ -2366,6 +2487,7 @@
     },
     {
       "key": "Minigame29_Caption",
+      "category": "Microgames",
       "description": "Tell players to avoid touching anyone!",
       "text": "DON'T TOUCH ANYONE!",
       "formatArguments": [],
@@ -2383,6 +2505,7 @@
     },
     {
       "key": "Minigame30_Caption_EatASandvich",
+      "category": "Microgames",
       "description": "Tell the medics to eat a sandvich to heal!",
       "text": "EAT A SANDVICH!",
       "formatArguments": [],
@@ -2400,6 +2523,7 @@
     },
     {
       "key": "Minigame30_Caption_HealAMedic",
+      "category": "Microgames",
       "description": "Tell the heavies to heal a medic by throwing a sandvich!",
       "text": "HEAL A MEDIC!",
       "formatArguments": [],
@@ -2417,6 +2541,7 @@
     },
     {
       "key": "Minigame31_Caption",
+      "category": "Microgames",
       "description": "Tell the player to land safely",
       "text": "LAND SAFELY!",
       "formatArguments": [],
@@ -2434,6 +2559,7 @@
     },
     {
       "key": "Bossgame7_Caption_TypeTheWords",
+      "category": "Bossgames",
       "description": null,
       "text": "TYPE THE WORDS!",
       "formatArguments": [],
@@ -2452,6 +2578,7 @@
     },
     {
       "key": "Bossgame7_Caption_Explain",
+      "category": "Bossgames",
       "description": null,
       "text": "Say each word in chat as quick as you can to survive!",
       "formatArguments": [],
@@ -2470,6 +2597,7 @@
     },
     {
       "key": "Bossgame7_Caption_Start",
+      "category": "Bossgames",
       "description": null,
       "text": "START!",
       "formatArguments": [],
@@ -2488,6 +2616,7 @@
     },
     {
       "key": "Bossgame7_Caption_TimeRemaining",
+      "category": "Bossgames",
       "description": null,
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
       "formatArguments": [
@@ -2511,6 +2640,7 @@
     },
     {
       "key": "Bossgame7_Caption_SayTheWord",
+      "category": "Bossgames",
       "description": "Used on the Danganronpa inspired Typing Attack boss.",
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
       "formatArguments": [
@@ -2542,6 +2672,7 @@
     },
     {
       "key": "Bossgame7_Caption_WinnerAnnouncement",
+      "category": "Bossgames",
       "description": null,
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
       "formatArguments": [
@@ -2565,6 +2696,7 @@
     },
     {
       "key": "Bossgame7_Caption_LevelUpAnnouncement",
+      "category": "Bossgames",
       "description": "This message is displayed when the difficulty level increases.",
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
       "formatArguments": [],
@@ -2583,6 +2715,7 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview",
+      "category": "Bossgames",
       "description": "This message is displayed showing players who typed the lowest number of words.",
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
       "formatArguments": [
@@ -2606,6 +2739,7 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_AndMore",
+      "category": "Bossgames",
       "description": "This message is used and appended after the names displayed in Bossgame7_Caption_RoundReview only when there are too many names to display.",
       "text": "{1}\nand {2} more...",
       "formatArguments": [
@@ -2633,6 +2767,7 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
+      "category": "Bossgames",
       "description": "This message is displayed when everyone has the same number of words typed.",
       "text": "{1}no one!\n\nEveryone survives another round!",
       "formatArguments": [
@@ -2656,6 +2791,7 @@
     },
     {
       "key": "Bossgame7_ClassChangeWarning",
+      "category": "Bossgames",
       "description": "This message is printed in chat.",
       "text": "Changing class is not allowed during bosses!",
       "formatArguments": [],
@@ -2674,6 +2810,7 @@
     },
     {
       "key": "SpecialRound0_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Thirdperson",
       "formatArguments": [],
@@ -2692,6 +2829,7 @@
     },
     {
       "key": "SpecialRound0_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "All players play the round in a whole new perspective!",
       "formatArguments": [],
@@ -2710,6 +2848,7 @@
     },
     {
       "key": "SpecialRound1_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Adrenaline Shot",
       "formatArguments": [],
@@ -2728,6 +2867,7 @@
     },
     {
       "key": "SpecialRound1_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "The round starts fast! Then slows down!",
       "formatArguments": [],
@@ -2746,6 +2886,7 @@
     },
     {
       "key": "SpecialRound2_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Extended Round",
       "formatArguments": [],
@@ -2764,6 +2905,7 @@
     },
     {
       "key": "SpecialRound2_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "30 microgames will be played before the bossgame!",
       "formatArguments": [],
@@ -2782,6 +2924,7 @@
     },
     {
       "key": "SpecialRound3_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Low Gravity",
       "formatArguments": [],
@@ -2800,6 +2943,7 @@
     },
     {
       "key": "SpecialRound3_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!",
       "formatArguments": [],
@@ -2818,6 +2962,7 @@
     },
     {
       "key": "SpecialRound4_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Chill Pill",
       "formatArguments": [],
@@ -2836,6 +2981,7 @@
     },
     {
       "key": "SpecialRound4_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "No speed changes will happen in this round!",
       "formatArguments": [],
@@ -2854,6 +3000,7 @@
     },
     {
       "key": "SpecialRound5_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Game Time Attack",
       "formatArguments": [],
@@ -2872,6 +3019,7 @@
     },
     {
       "key": "SpecialRound5_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "The round will speed up after every microgame!",
       "formatArguments": [],
@@ -2890,6 +3038,7 @@
     },
     {
       "key": "SpecialRound6_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Up and Down",
       "formatArguments": [],
@@ -2908,6 +3057,7 @@
     },
     {
       "key": "SpecialRound6_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "After every microgame, a random speed will be chosen!",
       "formatArguments": [],
@@ -2926,6 +3076,7 @@
     },
     {
       "key": "SpecialRound7_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Slow-mo",
       "formatArguments": [],
@@ -2944,6 +3095,7 @@
     },
     {
       "key": "SpecialRound7_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "The round will slow down after every microgame!",
       "formatArguments": [],
@@ -2962,6 +3114,7 @@
     },
     {
       "key": "SpecialRound8_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Maths Only",
       "formatArguments": [],
@@ -2980,6 +3133,7 @@
     },
     {
       "key": "SpecialRound8_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Time to test your maths skills!",
       "formatArguments": [],
@@ -2998,6 +3152,7 @@
     },
     {
       "key": "SpecialRound9_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Opposite Day",
       "formatArguments": [],
@@ -3016,6 +3171,7 @@
     },
     {
       "key": "SpecialRound9_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "The player with the lowest score wins the round!",
       "formatArguments": [],
@@ -3034,6 +3190,7 @@
     },
     {
       "key": "SpecialRound10_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Two Boss Battles",
       "formatArguments": [],
@@ -3052,6 +3209,7 @@
     },
     {
       "key": "SpecialRound10_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Two bossgames will be played before game over!",
       "formatArguments": [],
@@ -3070,6 +3228,7 @@
     },
     {
       "key": "SpecialRound11_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Team Battle",
       "formatArguments": [],
@@ -3088,6 +3247,7 @@
     },
     {
       "key": "SpecialRound11_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
       "formatArguments": [],
@@ -3106,6 +3266,7 @@
     },
     {
       "key": "SpecialRound12_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Single Player",
       "formatArguments": [],
@@ -3124,6 +3285,7 @@
     },
     {
       "key": "SpecialRound12_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Hey... where did everyone go?",
       "formatArguments": [],
@@ -3142,6 +3304,7 @@
     },
     {
       "key": "SpecialRound13_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Skeletons only",
       "formatArguments": [],
@@ -3160,6 +3323,7 @@
     },
     {
       "key": "SpecialRound13_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "No skin allowed in this round!",
       "formatArguments": [],
@@ -3178,6 +3342,7 @@
     },
     {
       "key": "SpecialRound14_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Tiny",
       "formatArguments": [],
@@ -3196,6 +3361,7 @@
     },
     {
       "key": "SpecialRound14_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Everyone becomes teeny tiny men!",
       "formatArguments": [],
@@ -3214,6 +3380,7 @@
     },
     {
       "key": "SpecialRound15_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Bobbleheads",
       "formatArguments": [],
@@ -3232,6 +3399,7 @@
     },
     {
       "key": "SpecialRound15_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Everyone becomes a bunch of airheads!",
       "formatArguments": [],
@@ -3250,6 +3418,7 @@
     },
     {
       "key": "SpecialRound16_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Score Randomizer",
       "formatArguments": [],
@@ -3268,6 +3437,7 @@
     },
     {
       "key": "SpecialRound16_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "If you win a microgame, you will be given a random amount of points!",
       "formatArguments": [],
@@ -3286,6 +3456,7 @@
     },
     {
       "key": "SpecialRound16_Caption_Points",
+      "category": "Special Rounds",
       "description": null,
       "text": "If you win this microgame, you will be awarded {1} points!",
       "formatArguments": [
@@ -3309,6 +3480,7 @@
     },
     {
       "key": "SpecialRound17_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Sudden Death",
       "formatArguments": [],
@@ -3327,6 +3499,7 @@
     },
     {
       "key": "SpecialRound17_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
       "formatArguments": [],
@@ -3345,6 +3518,7 @@
     },
     {
       "key": "SpecialRound17_Caption_Full",
+      "category": "Special Rounds",
       "description": null,
       "text": "Current players ({1} of {2})\n{3}",
       "formatArguments": [
@@ -3376,6 +3550,7 @@
     },
     {
       "key": "SpecialRound17_Caption_AndMore",
+      "category": "Special Rounds",
       "description": null,
       "text": "{1} (and {2} more)",
       "formatArguments": [
@@ -3403,6 +3578,7 @@
     },
     {
       "key": "SpecialRound18_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "All In",
       "formatArguments": [],
@@ -3421,6 +3597,7 @@
     },
     {
       "key": "SpecialRound18_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "If you lose a microgame, you will lose ALL your points!",
       "formatArguments": [],
@@ -3439,6 +3616,7 @@
     },
     {
       "key": "SpecialRound19_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Reversed Text",
       "formatArguments": [],
@@ -3457,6 +3635,7 @@
     },
     {
       "key": "SpecialRound19_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "!sdrawkcab era snoitcurtsni emagorciM",
       "formatArguments": [],
@@ -3475,6 +3654,7 @@
     },
     {
       "key": "SpecialRound20_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Non-stop",
       "formatArguments": [],
@@ -3493,6 +3673,7 @@
     },
     {
       "key": "SpecialRound20_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "There's no break in between microgames this round!",
       "formatArguments": [],
@@ -3511,6 +3692,7 @@
     },
     {
       "key": "SpecialRound21_Name",
+      "category": "Special Rounds",
       "description": null,
       "text": "Team Fortress 64",
       "formatArguments": [],
@@ -3529,6 +3711,7 @@
     },
     {
       "key": "SpecialRound21_Description",
+      "category": "Special Rounds",
       "description": null,
       "text": "Hey! Where did my polygons go?",
       "formatArguments": [],
