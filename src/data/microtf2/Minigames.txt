@@ -271,4 +271,13 @@
 		"BlockedSpecialRounds"		"3,12,15"
 		"BackgroundMusic_Length"		"3.9"
 	}
+	"32"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/airblast.mp3"
+		"EntryPoint"		"Minigame32_EntryPoint"
+		"BlockedSpecialRounds"		"12"
+		"RequiresMultiplePlayers"		"1"
+		"BackgroundMusic_Length"		"3.874125"
+	}
 }
