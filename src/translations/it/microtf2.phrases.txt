@@ -527,6 +527,10 @@
 	{
 		"it"		"ATTERRA SANO E SALVO!"
 	}
+	"Minigame32_Caption"
+	{
+		"it"		"SHOVE THEM OFF!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"it"		"SCRIVI LE PAROLE!"
