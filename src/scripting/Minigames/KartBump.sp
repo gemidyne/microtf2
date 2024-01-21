@@ -42,7 +42,7 @@ public void Minigame33_OnMinigameSelected(int client)
 	{
 		player.SetGodMode(false);
 		player.SetHealth(1000);
-		player.SetCollisionsEnabled(false);
+		player.SetCollisionsEnabled(true);
 
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
@@ -70,6 +70,7 @@ public void Minigame33_OnMinigameSelected(int client)
 
 		TeleportEntity(client, pos, ang, vel);
 		player.AddCondition(TFCond_HalloweenKart);
+		SetEntProp(player.ClientId, Prop_Send, "m_iKartHealth", 0);
 
 		SDKHook(client, SDKHook_PreThink, Minigame33_RemoveLeftClick);
 	}

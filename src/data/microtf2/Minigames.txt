@@ -279,6 +279,7 @@
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
 		"BackgroundMusic_Length"		"3.874125"
+		"MaximumPlayerCount"		"24"
 	}
 	"33"
 	{
@@ -288,5 +289,6 @@
 		"BlockedSpecialRounds"		"12"
 		"RequiresMultiplePlayers"		"1"
 		"BackgroundMusic_Length"		"3.874125"
+		"MaximumPlayerCount"		"24"
 	}
 }

@@ -42,7 +42,7 @@ public void Minigame32_OnMinigameSelected(int client)
 	{
 		player.SetGodMode(false);
 		player.SetHealth(1000);
-		player.SetCollisionsEnabled(false);
+		player.SetCollisionsEnabled(true);
 
 		player.Class = TFClass_Scout;
 		player.RemoveAllWeapons();
