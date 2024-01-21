@@ -527,6 +527,10 @@
 	{
 		"pt"		"LAND SAFELY!"
 	}
+	"Minigame32_Caption"
+	{
+		"pt"		"SHOVE THEM OFF!"
+	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
 		"pt"		"TYPE THE WORDS!"
