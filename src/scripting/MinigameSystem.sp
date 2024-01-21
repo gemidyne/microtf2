@@ -67,7 +67,6 @@ static ArrayList g_hPlayedBossgamePool;
 #include "Minigames/DontTouch.sp"
 #include "Minigames/HealAMedic.sp"
 #include "Minigames/LandSafely.sp"
-#include "Minigames/Shove.sp"
 #include "Minigames/KartBump.sp"
 
 // Bossgames

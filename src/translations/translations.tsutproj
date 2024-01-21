@@ -2561,25 +2561,6 @@
       "key": "Minigame32_Caption",
       "category": "Microgames",
       "description": null,
-      "text": "SHOVE THEM OFF!",
-      "formatArguments": [],
-      "translations": {
-        "pt": null,
-        "fr": null,
-        "it": null,
-        "pt_p": null,
-        "ru": null,
-        "es": null,
-        "jp": null,
-        "pl": null,
-        "de": null
-      },
-      "ignoreEmptyValue": false
-    },
-    {
-      "key": "Minigame33_Caption",
-      "category": "Microgames",
-      "description": null,
       "text": "BUMP THEM OFF!",
       "formatArguments": [],
       "translations": {

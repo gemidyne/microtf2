@@ -1,32 +1,32 @@
 /**
- * MicroTF2 - Minigame 33
+ * MicroTF2 - Minigame 32
  * 
- * Shove them off!
+ * Bump them off
  */
 
-int g_iMinigame33PlayerIndex;
+int g_iMinigame32PlayerIndex;
 
-public void Minigame33_EntryPoint()
+public void Minigame32_EntryPoint()
 {
-	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame33_OnMinigameSelectedPre);
-	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame33_OnMinigameSelected);
-	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame33_OnPlayerDeath);
-	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame33_OnMinigameFinish);
+	AddToForward(g_pfOnMinigameSelectedPre, INVALID_HANDLE, Minigame32_OnMinigameSelectedPre);
+	AddToForward(g_pfOnMinigameSelected, INVALID_HANDLE, Minigame32_OnMinigameSelected);
+	AddToForward(g_pfOnPlayerDeath, INVALID_HANDLE, Minigame32_OnPlayerDeath);
+	AddToForward(g_pfOnMinigameFinish, INVALID_HANDLE, Minigame32_OnMinigameFinish);
 }
 
-public void Minigame33_OnMinigameSelectedPre()
+public void Minigame32_OnMinigameSelectedPre()
 {
-	if (g_iActiveMinigameId == 33)
+	if (g_iActiveMinigameId == 32)
 	{
 		g_eDamageBlockMode = EDamageBlockMode_OtherPlayersOnly;
 		g_bIsBlockingKillCommands = false;
-		g_iMinigame33PlayerIndex = 0;
+		g_iMinigame32PlayerIndex = 0;
 	}
 }
 
-public void Minigame33_OnMinigameSelected(int client)
+public void Minigame32_OnMinigameSelected(int client)
 {
-	if (g_iActiveMinigameId != 33)
+	if (g_iActiveMinigameId != 32)
 	{
 		return;
 	}
@@ -45,24 +45,20 @@ public void Minigame33_OnMinigameSelected(int client)
 		player.SetCollisionsEnabled(true);
 
 		player.Class = TFClass_Scout;
-		player.RemoveAllWeapons();
+		player.ResetWeapon(false);
 
 		player.Status = PlayerStatus_Winner;
 
-		g_iMinigame33PlayerIndex++;
-
-		player.GiveWeapon(220);
-		player.SetWeaponPrimaryAmmoCount(4);
-		player.SetWeaponClipAmmoCount(32);
+		g_iMinigame32PlayerIndex++;
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
-		int posa = 360 / g_iActiveParticipantCount * (g_iMinigame33PlayerIndex-1);
+		int posa = 360 / g_iActiveParticipantCount * (g_iMinigame32PlayerIndex-1);
 		float pos[3];
 		float ang[3];
 
 		pos[0] = -7567.6 + (Cosine(DegToRad(float(posa)))*300.0);
 		pos[1] = 3183.0 - (Sine(DegToRad(float(posa)))*300.0);
-		pos[2] = -282.0;
+		pos[2] = -246.0;
 
 		ang[0] = 0.0;
 		ang[1] = float(180-posa);
@@ -72,13 +68,13 @@ public void Minigame33_OnMinigameSelected(int client)
 		player.AddCondition(TFCond_HalloweenKart);
 		SetEntProp(player.ClientId, Prop_Send, "m_iKartHealth", 0);
 
-		SDKHook(client, SDKHook_PreThink, Minigame33_RemoveLeftClick);
+		SDKHook(client, SDKHook_PreThink, Minigame32_RemoveLeftClick);
 	}
 }
 
-public void Minigame33_OnPlayerDeath(int client, int attacker)
+public void Minigame32_OnPlayerDeath(int client, int attacker)
 {
-	if (g_iActiveMinigameId != 33)
+	if (g_iActiveMinigameId != 32)
 	{
 		return;
 	}
@@ -103,9 +99,9 @@ public void Minigame33_OnPlayerDeath(int client, int attacker)
 	}
 }
 
-public void Minigame33_OnMinigameFinish()
+public void Minigame32_OnMinigameFinish()
 {
-	if (g_bIsMinigameActive && g_iActiveMinigameId == 33)
+	if (g_bIsMinigameActive && g_iActiveMinigameId == 32)
 	{
 		for (int i = 1; i <= MaxClients; i++)
 		{
@@ -115,7 +111,7 @@ public void Minigame33_OnMinigameFinish()
 			{
 				player.Status = (player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed);
 
-				SDKUnhook(i, SDKHook_PreThink, Minigame33_RemoveLeftClick);
+				SDKUnhook(i, SDKHook_PreThink, Minigame32_RemoveLeftClick);
 				player.RemoveCondition(TFCond_HalloweenKart);
 				player.Respawn();
 			}
@@ -123,7 +119,7 @@ public void Minigame33_OnMinigameFinish()
 	}
 }
 
-public void Minigame33_RemoveLeftClick(int client)
+public void Minigame32_RemoveLeftClick(int client)
 {
 	int buttons = GetClientButtons(client);
 
