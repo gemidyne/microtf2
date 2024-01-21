@@ -529,10 +529,6 @@
 	}
 	"Minigame32_Caption"
 	{
-		"en"		"SHOVE THEM OFF!"
-	}
-	"Minigame33_Caption"
-	{
 		"en"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
