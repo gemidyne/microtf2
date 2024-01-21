@@ -280,4 +280,13 @@
 		"RequiresMultiplePlayers"		"1"
 		"BackgroundMusic_Length"		"3.874125"
 	}
+	"33"
+	{
+		"enabled"		"1"
+		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/airblast.mp3"
+		"EntryPoint"		"Minigame33_EntryPoint"
+		"BlockedSpecialRounds"		"12"
+		"RequiresMultiplePlayers"		"1"
+		"BackgroundMusic_Length"		"3.874125"
+	}
 }
