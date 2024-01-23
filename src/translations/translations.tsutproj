@@ -30,9 +30,9 @@
   "phrases": [
     {
       "key": "System_Advertisement",
-      "category": "Misc",
       "description": "Advertises the gamemode and the version number in chat every 2 minutes.",
       "text": "You are playing WarioWare! Version {1}. Say !credits in chat to view gamemode credits.",
+      "category": "Misc",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -54,9 +54,9 @@
     },
     {
       "key": "Hud_Score_Default",
-      "category": "HUD",
       "description": "The default type of score to display on the player HUD.",
       "text": "Score: {1}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -78,9 +78,9 @@
     },
     {
       "key": "Hud_Score_Minigames",
-      "category": "HUD",
       "description": "A score to display on the player HUD, based on amount of microgames played. Only used on a special round.",
       "text": "Microgames: {1}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -102,9 +102,9 @@
     },
     {
       "key": "Hud_Score_TeamScore",
-      "category": "HUD",
       "description": "The player's own overall team score to display on the player HUD. Only used on a special round.",
       "text": "Team Score: {1}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -126,9 +126,9 @@
     },
     {
       "key": "Hud_Score_Barrels",
-      "category": "HUD",
       "description": "The player's current number of barrels shot. Used on the Target Practice bossgame.",
       "text": "Barrels: {1}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -150,9 +150,9 @@
     },
     {
       "key": "Hud_RoundDisplay",
-      "category": "HUD",
       "description": "The formatted HUD text which displays the current round number, and the maximum number of rounds that will be played.",
       "text": "Round {1} of {2}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -178,9 +178,9 @@
     },
     {
       "key": "Hud_RoundDisplayUnlimited",
-      "category": "HUD",
       "description": "The HUD text which displays the current round number.",
       "text": "Round {1}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -202,9 +202,9 @@
     },
     {
       "key": "Hud_ThemeDisplay",
-      "category": "HUD",
       "description": "The HUD text which displays the current theme being played.",
       "text": "{1}'s theme",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -226,9 +226,9 @@
     },
     {
       "key": "Hud_SpecialRound_CenterDisplay",
-      "category": "HUD",
       "description": "The HUD text which displays what special round is being selected.",
       "text": "SPECIAL ROUND: {1}!",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -250,9 +250,9 @@
     },
     {
       "key": "Hud_SpecialRound_ChatDisplay",
-      "category": "HUD",
       "description": "The chatbox text which displays what the new special round condition will be.",
       "text": "The special round condition is... {1}!\n{2}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -278,9 +278,9 @@
     },
     {
       "key": "System_PlayerSpawn_RespawnNotice",
-      "category": "HUD",
       "description": "A message displayed in the chatbox which notifies the player that they will be respawned when the current microgame or bossgame has finished.",
       "text": "You will be respawned once the current microgame or bossgame has finished.",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Você renascerá assim que o microgame ou o 'bossgame' forem finalizados.",
@@ -297,9 +297,9 @@
     },
     {
       "key": "SpecialRound_SuddenDeath_PlayerKnockOutNotification",
-      "category": "Special Rounds",
       "description": "The HUD text which notifies the player that they have been knocked out from the round. Only used on the Sudden Death special round.",
       "text": "YOU HAVE BEEN KNOCKED OUT!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "VOCÊ FOI ELIMINADO!",
@@ -316,9 +316,9 @@
     },
     {
       "key": "System_SpecialRoundBlockClassChange",
-      "category": "Special Rounds",
       "description": "A message displayed in the chatbox which notifies the player cannot exploit the special round by intentionally failing by changing their class.",
       "text": "Changing class is not allowed during this special round! 1 point has been added to your score.",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "A troca de classes não é permitida nessa rodada. Adicionaremos 1 ponto ao seu placar.",
@@ -335,9 +335,9 @@
     },
     {
       "key": "General_Loser",
-      "category": "Misc",
       "description": "A word describing the player that did not successfully complete the microgame or bossgame.",
       "text": "Loser!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": "Perdedor!",
@@ -354,9 +354,9 @@
     },
     {
       "key": "General_Winner",
-      "category": "Misc",
       "description": "A word describing the player that did successfully complete the microgame or bossgame.",
       "text": "Winner!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": "Vencedor!",
@@ -373,9 +373,9 @@
     },
     {
       "key": "General_SpeedUp",
-      "category": "Misc",
       "description": "A term notifying the player that the round is going to speed up.",
       "text": "SPEED UP!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -392,9 +392,9 @@
     },
     {
       "key": "General_SpeedDown",
-      "category": "Misc",
       "description": "A term notifying the player that the round is going to speed down. This is used on special rounds only at the moment.",
       "text": "SPEED DOWN!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -411,9 +411,9 @@
     },
     {
       "key": "General_Failure",
-      "category": "Misc",
       "description": "A word notifying the player that they failed the microgame or boss.",
       "text": "FAILURE!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -430,9 +430,9 @@
     },
     {
       "key": "General_Success",
-      "category": "Misc",
       "description": "A word notifying the player that they won the microgame or boss.",
       "text": "SUCCESS!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -449,9 +449,9 @@
     },
     {
       "key": "General_BossTime",
-      "category": "Misc",
       "description": "A term notifying the player that it's time for the bossgame to be played.",
       "text": "BOSS TIME!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -468,9 +468,9 @@
     },
     {
       "key": "General_GameOver",
-      "category": "Misc",
       "description": "A term notifying the player that the round has finished.",
       "text": "GAME OVER!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -487,9 +487,9 @@
     },
     {
       "key": "General_SpecialRound",
-      "category": "Misc",
       "description": "A term notifying the player the next round is a special round.",
       "text": "SPECIAL ROUND!",
+      "category": "Misc",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -506,9 +506,9 @@
     },
     {
       "key": "GameOver_SpecialRoundHasFinished",
-      "category": "Special Rounds",
       "description": "A message displayed on the HUD when a special round has ended.",
       "text": "== THE SPECIAL ROUND HAS FINISHED! ==",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "== A RODADA ESPECIAL FOI ENCERRADA! ==",
@@ -525,9 +525,9 @@
     },
     {
       "key": "GameOver_WinnerPrefixSingle",
-      "category": "HUD",
       "description": "Displayed in the chatbox when only one player has won the round.",
       "text": "The winner is...",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "O vencedor é...",
@@ -544,9 +544,9 @@
     },
     {
       "key": "GameOver_WinnerPrefixMultiple",
-      "category": "HUD",
       "description": "Displayed in the chatbox when more than one player has won the round.",
       "text": "The winners are...",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Os vencedores são...",
@@ -563,9 +563,9 @@
     },
     {
       "key": "GameOver_WinnersAnd",
-      "category": "HUD",
       "description": "Used in the gameover sequence to combine one or more player names together.",
       "text": "{1} and {2}{default}",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -591,9 +591,9 @@
     },
     {
       "key": "GameOver_WinnerPrefixNoOne",
-      "category": "HUD",
       "description": "Used in the gameover sequence in rare situations where no one wins.",
       "text": "There were no winners!",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Sem vencedores desta vez!",
@@ -610,9 +610,9 @@
     },
     {
       "key": "GameOver_WinnerSuffix",
-      "category": "HUD",
       "description": "Used in the gameover sequence.",
       "text": "{1} {2} {default}with {3} points!",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -642,9 +642,9 @@
     },
     {
       "key": "GameOver_WinningTeam_Red",
-      "category": "HUD",
       "description": "Used in the Team Battle special round when the winning team is the RED Team.",
       "text": "The winning team is the RED team with {1} points!",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -666,9 +666,9 @@
     },
     {
       "key": "GameOver_WinningTeam_Blue",
-      "category": "HUD",
       "description": "Used in the Team Battle special round when the winning team is the BLU Team.",
       "text": "The winning team is the BLU team with {1} points!",
+      "category": "HUD",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -690,9 +690,9 @@
     },
     {
       "key": "GameOver_WinningTeam_Stalemate",
-      "category": "HUD",
       "description": "Used in the Team Battle special round in the rare condition that both teams had the same number of points.",
       "text": "Stalemate! Both teams have the same points!",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Empate! Ambos os times terminaram a rodada com o mesmo número de pontos!",
@@ -709,9 +709,9 @@
     },
     {
       "key": "System_Intermission_Header",
-      "category": "HUD",
       "description": "A header displayed when the gamemode's intermission begins. This is run usually half way through the gamemode (e.g., round 2 of 4) and triggers a vote to let players decide the next map.",
       "text": "Intermission!",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Hora do Intervalo!",
@@ -728,9 +728,9 @@
     },
     {
       "key": "System_Intermission_Body",
-      "category": "HUD",
       "description": "A short message displayed when the gamemode's intermission begins.",
       "text": "Break time! Time to vote for the next map.",
+      "category": "HUD",
       "formatArguments": [],
       "translations": {
         "pt": "Uma pequena parada para votar o próximo mapa.",
@@ -747,9 +747,9 @@
     },
     {
       "key": "Bossgame1_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "ROCKET JUMP TO THE END!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "CHEGUE AO FINAL COM ROCKET JUMPS!",
@@ -766,9 +766,9 @@
     },
     {
       "key": "Bossgame1_PlayerReachedEndFirst",
-      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
       "text": "{1} reached the top first! (Bonus point!)",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -790,9 +790,9 @@
     },
     {
       "key": "Bossgame2_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "ESCAPE THE FACTORY!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "FUJA DA FÁBRICA!",
@@ -809,9 +809,9 @@
     },
     {
       "key": "Bossgame2_PlayerReachedEndFirst",
-      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the end first.",
       "text": "{1} escaped the factory first! (Bonus point!)",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -833,9 +833,9 @@
     },
     {
       "key": "Bossgame3_Caption",
-      "category": "Bossgames",
       "description": "Tell players to stay on the green block!",
       "text": "STAY ON THE GREEN BLOCK!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -852,9 +852,9 @@
     },
     {
       "key": "Bossgame4_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "DON'T FALL INTO THE WATER!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "NÃO CAIA NA ÁGUA!",
@@ -871,9 +871,9 @@
     },
     {
       "key": "Bossgame5_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "REACH THE GOAL!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "ALCANCE O OBJETIVO!",
@@ -890,9 +890,9 @@
     },
     {
       "key": "Bossgame5_PlayerReachedEndFirst",
-      "category": "Bossgames",
       "description": "This message is displayed when a bonus point is given to a player for reaching the goal first.",
       "text": "{1} reached the goal first! (Bonus point!)",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -914,9 +914,9 @@
     },
     {
       "key": "Bossgame6_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "SHOOT THE MOST BARRELS!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "ACERTE O MÁXIMO DE BARRIS QUE CONSEGUIR!",
@@ -933,9 +933,9 @@
     },
     {
       "key": "Bossgame8_Caption_CountTheProps",
-      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "COUNT THE PROPS!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -952,9 +952,9 @@
     },
     {
       "key": "Bossgame8_Caption_GetReady",
-      "category": "Bossgames",
       "description": "Displayed when the answer rooms are opening for players to go and count the next set of props.",
       "text": "GET READY...",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -971,9 +971,9 @@
     },
     {
       "key": "Bossgame8_Caption_CorrectAnswerWas_Hidden",
-      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "THE CORRECT ANSWER WAS...\n???",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -990,9 +990,9 @@
     },
     {
       "key": "Bossgame8_Caption_CorrectAnswerWas_Visible",
-      "category": "Bossgames",
       "description": "Displayed when players need to count the props.",
       "text": "THE CORRECT ANSWER WAS...\n{1}!",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -1014,9 +1014,9 @@
     },
     {
       "key": "Bossgame8_Caption_ChooseARoom",
-      "category": "Bossgames",
       "description": "Displayed when its time for players to enter a room to select their answer.",
       "text": "How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -1054,9 +1054,9 @@
     },
     {
       "key": "Bossgame8_PropType_Dispensers",
-      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Dispensers",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -1073,9 +1073,9 @@
     },
     {
       "key": "Bossgame8_PropType_AmmoPacks",
-      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Ammo Packs",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -1092,9 +1092,9 @@
     },
     {
       "key": "Bossgame8_PropType_Barrels",
-      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Barrels",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -1111,9 +1111,9 @@
     },
     {
       "key": "Bossgame8_PropType_Chairs",
-      "category": "Bossgames",
       "description": "Dynamically inserted into the Bossgame8_Caption_ChooseARoom translation string as argument 1.",
       "text": "Chairs",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -1130,9 +1130,9 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomA",
-      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room A: {1}",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -1154,9 +1154,9 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomB",
-      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room B: {1}",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -1178,9 +1178,9 @@
     },
     {
       "key": "Bossgame8_Annotation_AnswerRoomC",
-      "category": "Bossgames",
       "description": "Displayed in an annotation box within an answer room.",
       "text": "Room C: {1}",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -1202,9 +1202,9 @@
     },
     {
       "key": "Bossgame9_Caption",
-      "category": "Bossgames",
       "description": null,
       "text": "REFLECT THE ROCKETS!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -1221,9 +1221,9 @@
     },
     {
       "key": "Minigame1_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "GET TO THE END!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CHEGUE NO FINAL SE FOR CAPAZ!",
@@ -1240,9 +1240,9 @@
     },
     {
       "key": "Minigame2_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "KILL AN ENEMY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MATE UM INIMIGO!",
@@ -1259,9 +1259,9 @@
     },
     {
       "key": "Minigame3_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "BREAK THE BARRELS!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "QUEBRE OS BARRIS!",
@@ -1278,9 +1278,9 @@
     },
     {
       "key": "Minigame4_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "AIRBLAST AND STAY ALIVE!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "EMPURRE COM AIRBLAST E TENTE FICAR VIVO!",
@@ -1297,9 +1297,9 @@
     },
     {
       "key": "Minigame5_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "STICKY JUMP!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "STICKY JUMP!",
@@ -1316,9 +1316,9 @@
     },
     {
       "key": "Minigame6_SayTheWord_CaptionFormatted",
-      "category": "Microgames",
       "description": "Say the Word's microgame caption.",
       "text": "SAY THE WORD!\n{1}",
+      "category": "Microgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -1340,9 +1340,9 @@
     },
     {
       "key": "Minigame6_SayTheWord_PlayerSaidWordFirst",
-      "category": "Microgames",
       "description": "This message is displayed when a bonus point is given to a player for saying the word first.",
       "text": "{1} said the word first! (Bonus point!)",
+      "category": "Microgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -1364,9 +1364,9 @@
     },
     {
       "key": "Minigame7_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "ROCKET JUMP!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "ROCKET JUMP!",
@@ -1383,9 +1383,9 @@
     },
     {
       "key": "Minigame8_CaptionFormatted",
-      "category": "Microgames",
       "description": null,
       "text": "ANSWER THE QUESTION!\n{1} = ?",
+      "category": "Microgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -1407,9 +1407,9 @@
     },
     {
       "key": "Minigame8_CorrectAnswerWas",
-      "category": "Microgames",
       "description": null,
       "text": "The correct answer was {1}!",
+      "category": "Microgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -1431,9 +1431,9 @@
     },
     {
       "key": "Minigame8_PlayerAnsweredFirst",
-      "category": "Microgames",
       "description": "This message is displayed when a bonus point is given to a player for answering the question first.",
       "text": "{1} got the correct answer first! (Bonus point!)",
+      "category": "Microgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -1455,9 +1455,9 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysTaunt",
-      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: TAUNT!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE MANDOU: TAUNT!",
@@ -1474,9 +1474,9 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysJump",
-      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: JUMP!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE MANDOU: PULE!",
@@ -1493,9 +1493,9 @@
     },
     {
       "key": "Minigame9_Caption_SimonSaysCrouch",
-      "category": "Microgames",
       "description": null,
       "text": "SIMON SAYS: CROUCH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE MANDOU: ABAIXE!",
@@ -1512,9 +1512,9 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysTaunt",
-      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: TAUNT!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE NÃO MANDOU: TAUNT!",
@@ -1531,9 +1531,9 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysJump",
-      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: JUMP!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE NÃO MANDOU: PULE!",
@@ -1550,9 +1550,9 @@
     },
     {
       "key": "Minigame9_Caption_SomeoneSaysCrouch",
-      "category": "Microgames",
       "description": null,
       "text": "SOMEONE SAYS: CROUCH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O MESTRE NÃO MANDOU: ABAIXE!",
@@ -1569,9 +1569,9 @@
     },
     {
       "key": "Minigame9_Caption_SimonDidntSayIt",
-      "category": "Microgames",
       "description": null,
       "text": "(Simon didn't say it..)",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "(O mestre NÃO mandou você fazer isso...)",
@@ -1588,9 +1588,9 @@
     },
     {
       "key": "Minigame10_KamikazeIsHere",
-      "category": "Microgames",
       "description": null,
       "text": "Sentry Buster is over here!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "O Kamikaze chegou!",
@@ -1607,9 +1607,9 @@
     },
     {
       "key": "Minigame10_Caption_ExplodeAsMany",
-      "category": "Microgames",
       "description": null,
       "text": "EXPLODE AS MANY PEOPLE AS YOU CAN!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "EXPLODA O MÁXIMO DE PESSOAS QUE VOCÊ CONSEGUIR!",
@@ -1626,9 +1626,9 @@
     },
     {
       "key": "Minigame10_Caption_RunFromKamikaze",
-      "category": "Microgames",
       "description": null,
       "text": "RUN FROM THE SENTRY BUSTER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "FUJA PARA LONGE DO KAMIKAZE!",
@@ -1645,9 +1645,9 @@
     },
     {
       "key": "Minigame11_Caption_DontStopMoving",
-      "category": "Microgames",
       "description": null,
       "text": "DON'T STOP MOVING!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "NÃO PARE DE SE MOVIMENTAR!",
@@ -1664,9 +1664,9 @@
     },
     {
       "key": "Minigame11_Caption_DontMove",
-      "category": "Microgames",
       "description": null,
       "text": "DON'T MOVE!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "NÃO SE MOVA!",
@@ -1683,9 +1683,9 @@
     },
     {
       "key": "Minigame12_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "GET ON A PLATFORM!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "SUBA EM ALGUMA PLATAFORMA!",
@@ -1702,9 +1702,9 @@
     },
     {
       "key": "Minigame13_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "SPYCRAB!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "SPYCRAB!",
@@ -1721,9 +1721,9 @@
     },
     {
       "key": "Minigame13_SpycrabsMustCrouchAndLookup",
-      "category": "Microgames",
       "description": null,
       "text": "Spycrabs must crouch and look up!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "Spycrabs precisam abaixar olhando para cima!",
@@ -1740,9 +1740,9 @@
     },
     {
       "key": "Minigame14_Caption_Spies",
-      "category": "Microgames",
       "description": null,
       "text": "SAP A BUILDING!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "SABOTE UMA CONSTRUÇÃO!",
@@ -1759,9 +1759,9 @@
     },
     {
       "key": "Minigame14_Caption_Engineers",
-      "category": "Microgames",
       "description": null,
       "text": "GET A BUILDING SAPPED!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CONSTRUA ALGO PARA O SPY SABOTAR!",
@@ -1778,9 +1778,9 @@
     },
     {
       "key": "Minigame15_Caption_Any",
-      "category": "Microgames",
       "description": null,
       "text": "BUILD SOMETHING!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CONSTRUA QUALQUER COISA!",
@@ -1797,9 +1797,9 @@
     },
     {
       "key": "Minigame15_Caption_Dispenser",
-      "category": "Microgames",
       "description": null,
       "text": "BUILD A DISPENSER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CONSTRUA UM FORNECEDOR!",
@@ -1816,9 +1816,9 @@
     },
     {
       "key": "Minigame15_Caption_Teleporter",
-      "category": "Microgames",
       "description": null,
       "text": "BUILD A TELEPORTER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CONSTRUA UM TELEPORTE!",
@@ -1835,9 +1835,9 @@
     },
     {
       "key": "Minigame15_Caption_Sentry",
-      "category": "Microgames",
       "description": null,
       "text": "BUILD A SENTRY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "CONSTRUA UMA SENTINELA!",
@@ -1854,9 +1854,9 @@
     },
     {
       "key": "Minigame16_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "JARATE AN ENEMY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "JOGUE O JARATE NOS INIMIGOS!",
@@ -1873,9 +1873,9 @@
     },
     {
       "key": "Minigame17_Caption_HitAHeavy",
-      "category": "Microgames",
       "description": null,
       "text": "HIT A HEAVY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "ACERTE O HEAVY!",
@@ -1892,9 +1892,9 @@
     },
     {
       "key": "Minigame17_Caption_GetHitByMedic",
-      "category": "Microgames",
       "description": null,
       "text": "GET HIT BY A MEDIC!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "SEJA ATINGIDO POR UM MÉDICO!",
@@ -1911,9 +1911,9 @@
     },
     {
       "key": "Minigame18_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "HIT THE TARGET!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "ACERTE O ALVO!",
@@ -1930,9 +1930,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassAny",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE DE CLASSE!",
@@ -1949,9 +1949,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassScout",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SCOUT!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA SCOUT!",
@@ -1968,9 +1968,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSoldier",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SOLDIER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA SOLDIER!",
@@ -1987,9 +1987,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassPyro",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO PYRO!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA PYRO!",
@@ -2006,9 +2006,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassDemoman",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO DEMOMAN!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA DEMOMAN!",
@@ -2025,9 +2025,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassHeavy",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO HEAVY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA HEAVY!",
@@ -2044,9 +2044,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassEngineer",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO ENGINEER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA ENGENHEIRO!",
@@ -2063,9 +2063,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassMedic",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO MEDIC!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA MÉDICO!",
@@ -2082,9 +2082,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSniper",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SNIPER!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA SNIPER!",
@@ -2101,9 +2101,9 @@
     },
     {
       "key": "Minigame19_Caption_ChangeClassSpy",
-      "category": "Microgames",
       "description": null,
       "text": "CHANGE CLASS TO SPY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "MUDE A CLASSE PARA SPY!",
@@ -2120,9 +2120,9 @@
     },
     {
       "key": "Minigame20_Caption_Drink",
-      "category": "Microgames",
       "description": "Tell players to drink.",
       "text": "DRINK!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "BEBA RÁPIDO!",
@@ -2139,9 +2139,9 @@
     },
     {
       "key": "Minigame20_Caption_DontDrink",
-      "category": "Microgames",
       "description": "Tell players not to drink.",
       "text": "DON'T DRINK!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "NON BERE!",
@@ -2157,9 +2157,9 @@
     },
     {
       "key": "Minigame20_Caption_Eat",
-      "category": "Microgames",
       "description": "Tell players to eat.",
       "text": "EAT!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "COMA, RÁPIDO!",
@@ -2176,9 +2176,9 @@
     },
     {
       "key": "Minigame20_Caption_DontEat",
-      "category": "Microgames",
       "description": "Tell players not to eat.",
       "text": "DON'T EAT!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "NON MANGIARE!",
@@ -2194,9 +2194,9 @@
     },
     {
       "key": "Minigame21_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "STUN AN ENEMY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "ATORDOE UM INIMIGO!",
@@ -2213,9 +2213,9 @@
     },
     {
       "key": "Minigame22_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "STAY ON THE GROUND!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "PERMANEÇA NO CHÃO!",
@@ -2232,9 +2232,9 @@
     },
     {
       "key": "Minigame23_Caption",
-      "category": "Microgames",
       "description": "Tell players to do a taunt kill!",
       "text": "TAUNT KILL!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -2251,9 +2251,9 @@
     },
     {
       "key": "Minigame24_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "NEEDLEJUMP!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "PULE ATIRANDO NO CHÃO!",
@@ -2270,9 +2270,9 @@
     },
     {
       "key": "Minigame25_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "JETPACK!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": "USE O JETPACK!",
@@ -2289,9 +2289,9 @@
     },
     {
       "key": "Minigame26_Caption_DontLaugh",
-      "category": "Microgames",
       "description": "Tell players to not laugh! (By avoiding the heavies - laughing results in failure)",
       "text": "DON'T LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "NON RIDERE!",
@@ -2307,9 +2307,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Scout",
-      "category": "Microgames",
       "description": "Tell selected players to make the Scouts laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SCOUTS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI ESPLORATORI!",
@@ -2325,9 +2325,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Soldier",
-      "category": "Microgames",
       "description": "Tell selected players to make the Soldiers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SOLDIERS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I SOLDATI!",
@@ -2343,9 +2343,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Pyro",
-      "category": "Microgames",
       "description": "Tell selected players to make the Pyro laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE PYROS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I PIRO!",
@@ -2361,9 +2361,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Demoman",
-      "category": "Microgames",
       "description": "Tell selected players to make the Demomen laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE DEMOMEN LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I DEMOLITORI!",
@@ -2379,9 +2379,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Engineer",
-      "category": "Microgames",
       "description": "Tell selected players to make the Engineers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE ENGINEERS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE GLI INGEGNERI!",
@@ -2397,9 +2397,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Medic",
-      "category": "Microgames",
       "description": "Tell selected players to make the Medics laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE MEDICS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I MEDICI!",
@@ -2415,9 +2415,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Sniper",
-      "category": "Microgames",
       "description": "Tell selected players to make the Snipers laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SNIPERS LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE I CECCHINI!",
@@ -2433,9 +2433,9 @@
     },
     {
       "key": "Minigame26_Caption_MakeThemLaugh_Spy",
-      "category": "Microgames",
       "description": "Tell selected players to make the Spies laugh. (By using primary fire on another player. Only some players will be selected to make others laugh.)",
       "text": "MAKE THE SPIES LAUGH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "FAI RIDERE LE SPIE!",
@@ -2451,9 +2451,9 @@
     },
     {
       "key": "Minigame27_Caption",
-      "category": "Microgames",
       "description": "Tell players to hit an enemy! (If they miss, they will hit themselves and fail)",
       "text": "HIT AN ENEMY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "COLPISCI UN NEMICO!",
@@ -2469,9 +2469,9 @@
     },
     {
       "key": "Minigame28_Caption",
-      "category": "Microgames",
       "description": "Tell players to bomb jump onto the platform!",
       "text": "BOMB JUMP ONTO THE PLATFORM!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "SALTO BOMBA SULLA PIATTAFORMA!",
@@ -2487,9 +2487,9 @@
     },
     {
       "key": "Minigame29_Caption",
-      "category": "Microgames",
       "description": "Tell players to avoid touching anyone!",
       "text": "DON'T TOUCH ANYONE!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "NON TOCCARE NESSUNO!",
@@ -2505,9 +2505,9 @@
     },
     {
       "key": "Minigame30_Caption_EatASandvich",
-      "category": "Microgames",
       "description": "Tell the medics to eat a sandvich to heal!",
       "text": "EAT A SANDVICH!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "MANGIA UN SANDVICH!",
@@ -2523,9 +2523,9 @@
     },
     {
       "key": "Minigame30_Caption_HealAMedic",
-      "category": "Microgames",
       "description": "Tell the heavies to heal a medic by throwing a sandvich!",
       "text": "HEAL A MEDIC!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "CURA UN MEDICO!",
@@ -2541,9 +2541,9 @@
     },
     {
       "key": "Minigame31_Caption",
-      "category": "Microgames",
       "description": "Tell the player to land safely",
       "text": "LAND SAFELY!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "it": "ATTERRA SANO E SALVO!",
@@ -2559,14 +2559,14 @@
     },
     {
       "key": "Minigame32_Caption",
-      "category": "Microgames",
       "description": null,
       "text": "BUMP THEM OFF!",
+      "category": "Microgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
         "fr": null,
-        "it": null,
+        "it": "test",
         "pt_p": null,
         "ru": null,
         "es": null,
@@ -2578,9 +2578,9 @@
     },
     {
       "key": "Bossgame7_Caption_TypeTheWords",
-      "category": "Bossgames",
       "description": null,
       "text": "TYPE THE WORDS!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": null,
@@ -2597,9 +2597,9 @@
     },
     {
       "key": "Bossgame7_Caption_Explain",
-      "category": "Bossgames",
       "description": null,
       "text": "Say each word in chat as quick as you can to survive!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "No chat, digite cada palavra que surgir o mais rápido possível para sobreviver!",
@@ -2616,9 +2616,9 @@
     },
     {
       "key": "Bossgame7_Caption_Start",
-      "category": "Bossgames",
       "description": null,
       "text": "START!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "COMEÇOU!",
@@ -2635,9 +2635,9 @@
     },
     {
       "key": "Bossgame7_Caption_TimeRemaining",
-      "category": "Bossgames",
       "description": null,
       "text": "== SPECTATING ==\n\nTime remaining: {1} seconds",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -2659,9 +2659,9 @@
     },
     {
       "key": "Bossgame7_Caption_SayTheWord",
-      "category": "Bossgames",
       "description": "Used on the Danganronpa inspired Typing Attack boss.",
       "text": "== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -2691,9 +2691,9 @@
     },
     {
       "key": "Bossgame7_Caption_WinnerAnnouncement",
-      "category": "Bossgames",
       "description": null,
       "text": "== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -2715,9 +2715,9 @@
     },
     {
       "key": "Bossgame7_Caption_LevelUpAnnouncement",
-      "category": "Bossgames",
       "description": "This message is displayed when the difficulty level increases.",
       "text": "== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "== ANÚNCIO == \n\nDIFICULTANDO... AS PALAVRAS FICARÃO MAIS DIFÍCEIS AGORA!",
@@ -2734,9 +2734,9 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview",
-      "category": "Bossgames",
       "description": "This message is displayed showing players who typed the lowest number of words.",
       "text": "== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -2758,9 +2758,9 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_AndMore",
-      "category": "Bossgames",
       "description": "This message is used and appended after the names displayed in Bossgame7_Caption_RoundReview only when there are too many names to display.",
       "text": "{1}\nand {2} more...",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -2786,9 +2786,9 @@
     },
     {
       "key": "Bossgame7_Caption_RoundReview_EveryoneSurvives",
-      "category": "Bossgames",
       "description": "This message is displayed when everyone has the same number of words typed.",
       "text": "{1}no one!\n\nEveryone survives another round!",
+      "category": "Bossgames",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -2810,9 +2810,9 @@
     },
     {
       "key": "Bossgame7_ClassChangeWarning",
-      "category": "Bossgames",
       "description": "This message is printed in chat.",
       "text": "Changing class is not allowed during bosses!",
+      "category": "Bossgames",
       "formatArguments": [],
       "translations": {
         "pt": "A troca de classes não é permitida durante os 'bossgames' !",
@@ -2829,9 +2829,9 @@
     },
     {
       "key": "SpecialRound0_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Thirdperson",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Modo Terceira Pessoa",
@@ -2848,9 +2848,9 @@
     },
     {
       "key": "SpecialRound0_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "All players play the round in a whole new perspective!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Os jogadores terão a perspectiva do modo terceira pessoa durante esta rodada!",
@@ -2867,9 +2867,9 @@
     },
     {
       "key": "SpecialRound1_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Adrenaline Shot",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Injeção de Adrenalina!",
@@ -2886,9 +2886,9 @@
     },
     {
       "key": "SpecialRound1_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "The round starts fast! Then slows down!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "O rodada inicia em velocidade alta e diminui a cada microgame.",
@@ -2905,9 +2905,9 @@
     },
     {
       "key": "SpecialRound2_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Extended Round",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Rodada Extendida!",
@@ -2924,9 +2924,9 @@
     },
     {
       "key": "SpecialRound2_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "30 microgames will be played before the bossgame!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "30 microgames serão jogados e depois o 'bossgame'!",
@@ -2943,9 +2943,9 @@
     },
     {
       "key": "SpecialRound3_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Low Gravity",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Baixa Gravidade",
@@ -2962,9 +2962,9 @@
     },
     {
       "key": "SpecialRound3_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Ei ? Parece que estou na lua! E a gravidade?",
@@ -2981,9 +2981,9 @@
     },
     {
       "key": "SpecialRound4_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Chill Pill",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Relaxe com esse calmante ...",
@@ -3000,9 +3000,9 @@
     },
     {
       "key": "SpecialRound4_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "No speed changes will happen in this round!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Nenhuma mudança de velocidade nesta rodada!",
@@ -3019,9 +3019,9 @@
     },
     {
       "key": "SpecialRound5_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Game Time Attack",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Agora vai ficar sério! Atenção !",
@@ -3038,9 +3038,9 @@
     },
     {
       "key": "SpecialRound5_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "The round will speed up after every microgame!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Nesta rodada, cada microgame terá a velocidade aumentada!",
@@ -3057,9 +3057,9 @@
     },
     {
       "key": "SpecialRound6_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Up and Down",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Sobe ou Desce?",
@@ -3076,9 +3076,9 @@
     },
     {
       "key": "SpecialRound6_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "After every microgame, a random speed will be chosen!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Em cada microgame, será escolhida uma velocidade aleatória!",
@@ -3095,9 +3095,9 @@
     },
     {
       "key": "SpecialRound7_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Slow-mo",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Eu amo tartarugas, e você?",
@@ -3114,9 +3114,9 @@
     },
     {
       "key": "SpecialRound7_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "The round will slow down after every microgame!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Nesta rodada, a cada microgame a velocidade será diminuída!",
@@ -3133,9 +3133,9 @@
     },
     {
       "key": "SpecialRound8_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Maths Only",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Que tal... Matemática?",
@@ -3152,9 +3152,9 @@
     },
     {
       "key": "SpecialRound8_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Time to test your maths skills!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Hora de testar sua habilidade com as operações matemáticas!",
@@ -3171,9 +3171,9 @@
     },
     {
       "key": "SpecialRound9_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Opposite Day",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Dia do Contra",
@@ -3190,9 +3190,9 @@
     },
     {
       "key": "SpecialRound9_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "The player with the lowest score wins the round!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "O jogador com o menor número de pontos vencerá!",
@@ -3209,9 +3209,9 @@
     },
     {
       "key": "SpecialRound10_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Two Boss Battles",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Batalha dos Chefões!",
@@ -3228,9 +3228,9 @@
     },
     {
       "key": "SpecialRound10_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Two bossgames will be played before game over!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Dois 'bossgames' serão disputados antes da partida acabar!",
@@ -3247,9 +3247,9 @@
     },
     {
       "key": "SpecialRound11_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Team Battle",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Uma Batalha de Equipes",
@@ -3266,9 +3266,9 @@
     },
     {
       "key": "SpecialRound11_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Vencendo um microgame, pontos são adicionados ao placar da equipe! A equipe com mais pontos no final, vence!",
@@ -3285,9 +3285,9 @@
     },
     {
       "key": "SpecialRound12_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Single Player",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Sozinho...",
@@ -3304,9 +3304,9 @@
     },
     {
       "key": "SpecialRound12_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Hey... where did everyone go?",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Alô? Ei ... Para onde foi todo mundo?",
@@ -3323,9 +3323,9 @@
     },
     {
       "key": "SpecialRound13_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Skeletons only",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Somente Esqueletos",
@@ -3342,9 +3342,9 @@
     },
     {
       "key": "SpecialRound13_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "No skin allowed in this round!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Nenhuma pele está permitida nessa rodada!",
@@ -3361,9 +3361,9 @@
     },
     {
       "key": "SpecialRound14_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Tiny",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Minúsculos?",
@@ -3380,9 +3380,9 @@
     },
     {
       "key": "SpecialRound14_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Everyone becomes teeny tiny men!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Dessa vez todos ficarão minúsculos!",
@@ -3399,9 +3399,9 @@
     },
     {
       "key": "SpecialRound15_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Bobbleheads",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Cabeça de Vento",
@@ -3418,9 +3418,9 @@
     },
     {
       "key": "SpecialRound15_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Everyone becomes a bunch of airheads!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Mas em que todos foram transformados? Loucos?",
@@ -3437,9 +3437,9 @@
     },
     {
       "key": "SpecialRound16_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Score Randomizer",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Pontuação Aleatória",
@@ -3456,9 +3456,9 @@
     },
     {
       "key": "SpecialRound16_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "If you win a microgame, you will be given a random amount of points!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Quando você vencer um microgame, a pontuação recebida será aleatória!",
@@ -3475,9 +3475,9 @@
     },
     {
       "key": "SpecialRound16_Caption_Points",
-      "category": "Special Rounds",
       "description": null,
       "text": "If you win this microgame, you will be awarded {1} points!",
+      "category": "Special Rounds",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -3499,9 +3499,9 @@
     },
     {
       "key": "SpecialRound17_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Sudden Death",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Morte Súbita",
@@ -3518,9 +3518,9 @@
     },
     {
       "key": "SpecialRound17_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Quem perder um microgame, ESTÁ FORA! O último jogador que ficar, vence a rodada!",
@@ -3537,9 +3537,9 @@
     },
     {
       "key": "SpecialRound17_Caption_Full",
-      "category": "Special Rounds",
       "description": null,
       "text": "Current players ({1} of {2})\n{3}",
+      "category": "Special Rounds",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.IntegerFormatArgument, Tsukuru.Schemas.Translations",
@@ -3569,9 +3569,9 @@
     },
     {
       "key": "SpecialRound17_Caption_AndMore",
-      "category": "Special Rounds",
       "description": null,
       "text": "{1} (and {2} more)",
+      "category": "Special Rounds",
       "formatArguments": [
         {
           "$type": "Tsukuru.Schemas.Translations.StringFormatArgument, Tsukuru.Schemas.Translations",
@@ -3597,9 +3597,9 @@
     },
     {
       "key": "SpecialRound18_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "All In",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Agora é Vale Tudo",
@@ -3616,9 +3616,9 @@
     },
     {
       "key": "SpecialRound18_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "If you lose a microgame, you will lose ALL your points!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Agora se você perder um microgame, você perderá TODOS os seus pontos!",
@@ -3635,9 +3635,9 @@
     },
     {
       "key": "SpecialRound19_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Reversed Text",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Leia ao Contrário",
@@ -3654,9 +3654,9 @@
     },
     {
       "key": "SpecialRound19_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "!sdrawkcab era snoitcurtsni emagorciM",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "!oirártnoc oa oãtse seõçurtsni sA",
@@ -3673,9 +3673,9 @@
     },
     {
       "key": "SpecialRound20_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Non-stop",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Sem Parar",
@@ -3692,9 +3692,9 @@
     },
     {
       "key": "SpecialRound20_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "There's no break in between microgames this round!",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Não haverá intervalos entre os microgames nesta rodada.",
@@ -3711,9 +3711,9 @@
     },
     {
       "key": "SpecialRound21_Name",
-      "category": "Special Rounds",
       "description": null,
       "text": "Team Fortress 64",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Team Fortress 64",
@@ -3730,9 +3730,9 @@
     },
     {
       "key": "SpecialRound21_Description",
-      "category": "Special Rounds",
       "description": null,
       "text": "Hey! Where did my polygons go?",
+      "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
         "pt": "Ei!? Onde foram parar meus polígonos?",
