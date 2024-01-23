@@ -529,7 +529,7 @@
 	}
 	"Minigame32_Caption"
 	{
-		"it"		"test"
+		"it"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
