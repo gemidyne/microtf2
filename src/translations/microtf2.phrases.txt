@@ -148,7 +148,7 @@
 	}
 	"Bossgame1_Caption"
 	{
-		"en"		"ROCKET JUMP TO THE END!"
+		"en"		"ROCKET JUMP TO THE END!!"
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
