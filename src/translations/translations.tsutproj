@@ -3525,7 +3525,7 @@
     {
       "key": "SpecialRound17_Description",
       "description": null,
-      "text": "If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!",
+      "text": "If you lose a microgame, you will be knocked out! Last player standing wins the round!",
       "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
