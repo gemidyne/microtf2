@@ -529,7 +529,7 @@
 	}
 	"Minigame32_Caption"
 	{
-		"it"		"test(remove)"
+		"it"		"SPINGILI FUORI!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
