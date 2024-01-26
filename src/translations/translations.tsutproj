@@ -1214,7 +1214,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "RENVOYEZ LES ROQUETTES !",
         "it": "RIFLETTI I RAZZI!",
         "pt_p": null,
         "ru": null,
@@ -2244,7 +2244,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "TUEZ AVEC UNE RAILLERIE !",
         "it": "UCCIDI CON L'INSULTO!",
         "pt_p": null,
         "ru": "УБЕЙТЕ НАСМЕШКОЙ!",
@@ -2518,7 +2518,7 @@
       "translations": {
         "it": "MANGIA UN SANDVICH!",
         "es": null,
-        "fr": null,
+        "fr": "MANGEZ UN SANDVICH !",
         "ru": "СЪЕШЬТЕ БУТЕРБРОД!",
         "pt_p": null,
         "pt": null,
@@ -2536,7 +2536,7 @@
       "translations": {
         "it": "CURA UN MEDICO!",
         "es": null,
-        "fr": null,
+        "fr": "SOIGNEZ UN MEDIC !",
         "ru": "ПОЛЕЧИТЕ МЕДИКА!",
         "pt_p": null,
         "pt": null,
@@ -2554,7 +2554,7 @@
       "translations": {
         "it": "ATTERRA SANO E SALVO!",
         "es": null,
-        "fr": null,
+        "fr": "ATTERRISSEZ EN SÉCURITÉ !",
         "ru": null,
         "pt_p": null,
         "pt": null,
@@ -2571,7 +2571,7 @@
       "formatArguments": [],
       "translations": {
         "pt": null,
-        "fr": null,
+        "fr": "PERCUTEZ-LES !",
         "it": "SPINGILI FUORI!",
         "pt_p": null,
         "ru": null,
