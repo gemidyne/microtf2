@@ -52,7 +52,7 @@
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
-		"pl"		"Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca."
+		"pl"		"Odrodzisz się, gdy bieżąca mikrogra lub runda finałowa dobiegnie końca."
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
@@ -60,7 +60,7 @@
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
-		"pl"		"Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku."
+		"pl"		"Zmienianie klasy jest zabronione podczas tej rundy specjalnej! Dodano punkt do Twojego wyniku."
 	}
 	"General_Loser"
 	{
@@ -88,7 +88,7 @@
 	}
 	"General_BossTime"
 	{
-		"pl"		"CZAS NA BOSSA!"
+		"pl"		"CZAS NA RUNDĘ FINAŁOWĄ!"
 	}
 	"General_GameOver"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"pl"		"ZOSTAŃ NA ZIELONYM BLOKU!"
+		"pl"		"UTRZYMAJ SIĘ NA ZIELONYM BLOKU!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -240,7 +240,7 @@
 	}
 	"Bossgame9_Caption"
 	{
-		"pl"		"REFLECT THE ROCKETS!"
+		"pl"		"ODBIJ RAKIETY!"
 	}
 	"Minigame1_Caption"
 	{
@@ -509,7 +509,7 @@
 	}
 	"Minigame28_Caption"
 	{
-		"pl"		"WSKOCZ NA PLATFORMĘ GRANATEM!"
+		"pl"		"WSKOCZ BOMBĄ NA PLATFORMĘ!"
 	}
 	"Minigame29_Caption"
 	{
@@ -525,11 +525,11 @@
 	}
 	"Minigame31_Caption"
 	{
-		"pl"		"LAND SAFELY!"
+		"pl"		"WYLĄDUJ BEZPIECZNIE!"
 	}
 	"Minigame32_Caption"
 	{
-		"pl"		"BUMP THEM OFF!"
+		"pl"		"STRĄĆ INNYCH!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -579,7 +579,7 @@
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"pl"		"Zmienianie klas jest zabronione podczas bossgier!"
+		"pl"		"Zmienianie klas jest zabronione podczas rundy finałowej!"
 	}
 	"SpecialRound0_Name"
 	{
@@ -603,7 +603,7 @@
 	}
 	"SpecialRound2_Description"
 	{
-		"pl"		"Przed bossgrą odbędzie się 30 mikrogier!"
+		"pl"		"Przed rundą finałową odbędzie się 30 mikrogier!"
 	}
 	"SpecialRound3_Name"
 	{
@@ -635,7 +635,7 @@
 	}
 	"SpecialRound6_Description"
 	{
-		"pl"		"Po każdej mikrogrze zostanie dobrana losowa szybkość!"
+		"pl"		"Po każdej mikrogrze zostanie dobrana losowa prędkość!"
 	}
 	"SpecialRound7_Name"
 	{
@@ -663,11 +663,11 @@
 	}
 	"SpecialRound10_Name"
 	{
-		"pl"		"Dwie Walki z Bossem"
+		"pl"		"Dwie Rundy Finałowe"
 	}
 	"SpecialRound10_Description"
 	{
-		"pl"		"Przed końcem gry odbędą się dwie bossgry!"
+		"pl"		"Przed końcem gry odbędą się dwie rundy finałowe!"
 	}
 	"SpecialRound11_Name"
 	{
@@ -770,6 +770,6 @@
 	}
 	"SpecialRound21_Description"
 	{
-		"pl"		"Hej! Gdzie się podziały moje wielokąty?"
+		"pl"		"Ej, gdzie się podziały moje wielokąty?!"
 	}
 }
