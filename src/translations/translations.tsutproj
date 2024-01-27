@@ -296,7 +296,7 @@
         "ru": "Вы вернетесь в игру после окончания текущей мини-игры или босс-игры.",
         "es": "Reaparecerás cuando el minijuego o jefe actual termine.",
         "jp": null,
-        "pl": "Odrodzisz się, gdy bieżąca mikrogra lub bossgra dobiegnie końca.",
+        "pl": "Odrodzisz się, gdy bieżąca mikrogra lub runda finałowa dobiegnie końca.",
         "de": "Du wirst wiederbelebt sobald das derzeitige Mini- oder Bossspiel beendet wurde."
       },
       "ignoreEmptyValue": false
@@ -334,7 +334,7 @@
         "ru": "Смена класса невозможна во время этого особого раунда! К вашему счёту было добавлено 1 очко.",
         "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuación.",
         "jp": null,
-        "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! 1 punkt został dodany do Twojego wyniku.",
+        "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! Dodano punkt do Twojego wyniku.",
         "de": "Es ist nicht erlaubt die Klasse währen dieser Spezial Runde zu wechseln! 1 Punkt wurde zu deinem Punktestand hinzugefügt."
       },
       "ignoreEmptyValue": false
@@ -467,7 +467,7 @@
         "ru": "БОСС-ИГРА!",
         "es": "¡JEFE FINAL!",
         "jp": null,
-        "pl": "CZAS NA BOSSA!",
+        "pl": "CZAS NA RUNDĘ FINAŁOWĄ!",
         "de": "BOSSKAMPF!"
       },
       "ignoreEmptyValue": false
@@ -851,7 +851,7 @@
         "ru": "СТОЙТЕ НА ЗЕЛЕНОМ БЛОКЕ!",
         "es": "¡QUÉDATE EN EL BLOQUE VERDE!",
         "jp": null,
-        "pl": "ZOSTAŃ NA ZIELONYM BLOKU!",
+        "pl": "UTRZYMAJ SIĘ NA ZIELONYM BLOKU!",
         "de": "BLEIBE AUF DEM GRÜNEN BLOCK!"
       },
       "ignoreEmptyValue": false
@@ -1220,7 +1220,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "ODBIJ RAKIETY!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -2486,7 +2486,7 @@
         "ru": "ЗАПРЫГНИТЕ НА ПЛАТФОРМУ С ПОМОЩЬЮ БОМБ!",
         "pt_p": null,
         "pt": null,
-        "pl": "WSKOCZ NA PLATFORMĘ GRANATEM!",
+        "pl": "WSKOCZ BOMBĄ NA PLATFORMĘ!",
         "de": "BOMB JUMP AUF DIE PLATTFORM!"
       },
       "ignoreEmptyValue": false
@@ -2558,7 +2558,7 @@
         "ru": null,
         "pt_p": null,
         "pt": null,
-        "pl": null,
+        "pl": "WYLĄDUJ BEZPIECZNIE!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -2577,7 +2577,7 @@
         "ru": null,
         "es": null,
         "jp": null,
-        "pl": null,
+        "pl": "STRĄĆ INNYCH!",
         "de": null
       },
       "ignoreEmptyValue": false
@@ -2828,7 +2828,7 @@
         "ru": "Смена класса запрещена во время босс-игры!",
         "es": "¡Cambiar de clase no esta permitido durante los jefes!",
         "jp": null,
-        "pl": "Zmienianie klas jest zabronione podczas bossgier!",
+        "pl": "Zmienianie klas jest zabronione podczas rundy finałowej!",
         "de": "Es ist nicht erlaubt während eines Bosses die Klasse zu wechseln!"
       },
       "ignoreEmptyValue": false
@@ -2942,7 +2942,7 @@
         "ru": "Перед босс-игрой будет сыграно 30 мини-игр!",
         "es": "¡Se jugaran 30 microjuegos antes del jefe!",
         "jp": null,
-        "pl": "Przed bossgrą odbędzie się 30 mikrogier!",
+        "pl": "Przed rundą finałową odbędzie się 30 mikrogier!",
         "de": "30 Minispiele werden vor dem Boss gespielt!"
       },
       "ignoreEmptyValue": false
@@ -3094,7 +3094,7 @@
         "ru": "После каждой мини-игры, скорость раунда будет становиться случайной!",
         "es": "¡Después de cada microjuego, se elegirá una velocidad aleatoria!",
         "jp": null,
-        "pl": "Po każdej mikrogrze zostanie dobrana losowa szybkość!",
+        "pl": "Po każdej mikrogrze zostanie dobrana losowa prędkość!",
         "de": "Nach jedem Minispiel wird eine zufällige Geschwindigkeit gewählt!"
       },
       "ignoreEmptyValue": false
@@ -3227,7 +3227,7 @@
         "ru": "Две босс-игры",
         "es": "Jefe Doble",
         "jp": null,
-        "pl": "Dwie Walki z Bossem",
+        "pl": "Dwie Rundy Finałowe",
         "de": "Zwei Bosskämpfe"
       },
       "ignoreEmptyValue": false
@@ -3246,7 +3246,7 @@
         "ru": "Перед концом раунда будет сыграно две босс-игры!",
         "es": "¡Se jugaran dos jefes antes de que termine el juego!",
         "jp": null,
-        "pl": "Przed końcem gry odbędą się dwie bossgry!",
+        "pl": "Przed końcem gry odbędą się dwie rundy finałowe!",
         "de": "Zwei Bosse werden gespielt bevor das Spiel endet!"
       },
       "ignoreEmptyValue": false
@@ -3748,7 +3748,7 @@
         "ru": "Эй! Куда делись мои полигоны?",
         "es": "¡Hey! ¿Donde han ido mis polígonos?",
         "jp": null,
-        "pl": "Hej! Gdzie się podziały moje wielokąty?",
+        "pl": "Ej, gdzie się podziały moje wielokąty?!",
         "de": "Hey! Wo sind meine Polygons?"
       },
       "ignoreEmptyValue": false
