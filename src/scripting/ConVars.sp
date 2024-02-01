@@ -85,15 +85,12 @@ void ResetConVars()
 	g_hConVarPluginForceBossgame.RestoreDefault();
 	
 	// Non-Exclusive ConVars
-	// Server ConVars
-	SetConVarInt(FindConVar("sv_use_steam_voice"), 0);
 
 	// Multiplayer ConVars
 	ResetConVar(FindConVar("mp_stalemate_enable"));
 	ResetConVar(FindConVar("mp_waitingforplayers_time"));
 	ResetConVar(FindConVar("mp_disable_respawn_times"));
 	ResetConVar(FindConVar("mp_respawnwavetime"));
-	ResetConVar(FindConVar("mp_forcecamera"));
 	ResetConVar(FindConVar("mp_idlemaxtime"));
 
 	// TeamFortress ConVars
@@ -101,26 +98,16 @@ void ResetConVars()
 	ResetConVar(FindConVar("tf_max_health_boost"));
 	ResetConVar(FindConVar("tf_airblast_cray_ground_minz"));
 	ResetConVar(FindConVar("tf_player_movement_restart_freeze"));
-
-	ConVar conVar = FindConVar("sm_mapvote_extend");
-	if (conVar != INVALID_HANDLE)
-	{
-		ResetConVar(conVar);
-	}
 }
 
 void PrepareConVars()
 {
-	// Server ConVars	
-	SetConVarInt(FindConVar("sv_use_steam_voice"), 1);
-
 	// Multiplayer ConVars
 	SetConVarInt(FindConVar("mp_stalemate_enable"), 0);
 	SetConVarInt(FindConVar("mp_friendlyfire"), 1);
 	SetConVarInt(FindConVar("mp_waitingforplayers_time"), 90);
 	SetConVarInt(FindConVar("mp_disable_respawn_times"), 0);
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
-	SetConVarInt(FindConVar("mp_forcecamera"), 0);
 	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
@@ -136,12 +123,6 @@ void PrepareConVars()
 	g_hConVarServerGravity.IntValue = 800;
 	g_hConVarHostTimescale.FloatValue = 1.0;
 	g_hConVarPhysTimescale.FloatValue = 1.0;
-
-	Handle conVar = FindConVar("sm_mapvote_extend");
-	if (conVar != INVALID_HANDLE)
-	{
-		SetConVarInt(conVar, 0);
-	}
 }
 
 public void OnMaxRoundsChanged(Handle cvar, const char[] oldVal, const char[] newVal)
