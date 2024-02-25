@@ -319,10 +319,10 @@ public void Minigame18_OnMinigameSelected(int client)
 		float ang[3] = { 0.0, 90.0, 0.0 };
 		float pos[3];
 
-		int column = client;
-		int row = 0;
+		int column = (client - 1) % 32;
+		int row = ((client - 1) / 32) % 2;
 
-		pos[0] = 10406.0 + float(column*60); 
+		pos[0] = 10466.0 + float(column*60); 
 		pos[1] = 7100.0 - float(row*100);
 		pos[2] = -260.0;
 

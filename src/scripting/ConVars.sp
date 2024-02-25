@@ -26,6 +26,7 @@ ConVar g_hConVarPluginForceMinigame;
 ConVar g_hConVarPluginForceBossgame;
 ConVar g_hConVarPluginForceBossgameThreshold;
 ConVar g_hConVarPluginMaxRounds;
+ConVar g_hConVarWaitingForPlayersTime;
 
 void InitializeConVars()
 {
@@ -50,6 +51,7 @@ void InitializeConVars()
 	g_hConVarPluginIntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
 	g_hConVarPluginBonusPoints = CreateConVar("mtf2_bonuspoints", "0", "Controls whether or not minigames should have a bonus point.", 0, true, 0.0, true, 1.0);
 	g_hConVarPluginAllowCosmetics = CreateConVar("mtf2_cosmetics_enabled", "0", "Allows cosmetics to be worn by players. NOTE: This mode is explicitly not supported and may cause visual bugs and possible server lag spikes.", 0, true, 0.0, true, 1.0);
+	g_hConVarWaitingForPlayersTime = CreateConVar("mtf2_waitingforplayers_time", "60", "Sets the amount of time (in seconds) to wait for players to join after the map loads.", 0, true, 10.0);
 
 	if (g_hConVarPluginMaxRounds != INVALID_HANDLE)
 	{
@@ -59,6 +61,11 @@ void InitializeConVars()
 	if (g_hConVarPluginAllowCosmetics != INVALID_HANDLE)
 	{
 		HookConVarChange(g_hConVarPluginAllowCosmetics, OnAllowCosmeticsChanged);
+	}
+
+	if (g_hConVarWaitingForPlayersTime != INVALID_HANDLE)
+	{
+		HookConVarChange(g_hConVarWaitingForPlayersTime, OnWaitingForPlayersTimeChanged);
 	}
 
 	// Debugging ConVars / Commands. You don't really want these set all the time.
@@ -105,7 +112,7 @@ void PrepareConVars()
 	// Multiplayer ConVars
 	SetConVarInt(FindConVar("mp_stalemate_enable"), 0);
 	SetConVarInt(FindConVar("mp_friendlyfire"), 1);
-	SetConVarInt(FindConVar("mp_waitingforplayers_time"), 90);
+	SetConVarInt(FindConVar("mp_waitingforplayers_time"), g_hConVarWaitingForPlayersTime.IntValue);
 	SetConVarInt(FindConVar("mp_disable_respawn_times"), 0);
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
 	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
@@ -137,6 +144,16 @@ public void OnAllowCosmeticsChanged(Handle cvar, const char[] oldVal, const char
 	int value = StringToInt(newVal);
 
 	g_bAllowCosmetics = value == 1;
+}
+
+public void OnWaitingForPlayersTimeChanged(Handle cvar, const char[] oldVal, const char[] newVal)
+{
+	if (g_bIsPluginEnabled)
+	{
+		int value = StringToInt(newVal);
+
+		SetConVarInt(FindConVar("mp_waitingforplayers_time"), value);
+	}
 }
 
 public bool Config_BonusPointsEnabled()
