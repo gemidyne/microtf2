@@ -47,8 +47,6 @@ public void Minigame32_OnMinigameSelected(int client)
 		player.Class = TFClass_Scout;
 		player.ResetWeapon(false);
 
-		player.Status = PlayerStatus_Winner;
-
 		g_iMinigame32PlayerIndex++;
 
 		float vel[3] = { 0.0, 0.0, 0.0 };
@@ -89,11 +87,15 @@ public void Minigame32_OnPlayerDeath(int client, int attacker)
 
 	if (player.IsValid && player.IsParticipating)
 	{
-		player.Status = PlayerStatus_Failed;
+		if (player.Status == PlayerStatus_NotWon)
+		{
+			// Only fail players if they haven't already bumped someone off
+			player.Status = PlayerStatus_Failed;
+		}
 
 		Player attackerPlayer = new Player(attacker);
 
-		if (attackerPlayer.IsValid)
+		if (attackerPlayer.IsValid && attacker != client)
 		{
 			attackerPlayer.Status = PlayerStatus_Winner;
 		}
@@ -110,8 +112,6 @@ public void Minigame32_OnMinigameFinish()
 
 			if (player.IsValid && player.IsParticipating)
 			{
-				player.Status = (player.IsAlive ? PlayerStatus_Winner : PlayerStatus_Failed);
-
 				SDKUnhook(i, SDKHook_PreThink, Minigame32_RemoveLeftClick);
 				player.RemoveCondition(TFCond_HalloweenKart);
 				player.Respawn();
