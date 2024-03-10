@@ -67,6 +67,7 @@ public void Minigame32_OnMinigameSelected(int client)
 		TeleportEntity(client, pos, ang, vel);
 		player.AddCondition(TFCond_HalloweenKart);
 		SetEntProp(player.ClientId, Prop_Send, "m_iKartHealth", 0);
+		SetEntPropFloat(player.ClientId, Prop_Send, "m_flKartNextAvailableBoost", 0.0);
 
 		SDKHook(client, SDKHook_PreThink, Minigame32_RemoveLeftClick);
 	}
