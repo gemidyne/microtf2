@@ -273,7 +273,7 @@
 	}
 	"32"
 	{
-		"enabled"		"1"
+		"enabled"		"0"
 		"BackgroundMusic"		"gemidyne/warioware/{version}/minigames/bgm/airblast.mp3"
 		"EntryPoint"		"Minigame33_EntryPoint"
 		"BlockedSpecialRounds"		"12"
