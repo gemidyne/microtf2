@@ -3273,7 +3273,7 @@
     {
       "key": "SpecialRound11_Description",
       "description": null,
-      "text": "If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!",
+      "text": "When you win a microgame, a point will be added to your team's score! The team with the highest score at the end wins!",
       "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
@@ -3623,7 +3623,7 @@
     {
       "key": "SpecialRound18_Description",
       "description": null,
-      "text": "If you lose a microgame, you will lose ALL your points!",
+      "text": "If you lose a microgame, your score will reset to 0!",
       "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
@@ -3699,7 +3699,7 @@
     {
       "key": "SpecialRound20_Description",
       "description": null,
-      "text": "There's no break in between microgames this round!",
+      "text": "There's no break between microgames this round!",
       "category": "Special Rounds",
       "formatArguments": [],
       "translations": {
