@@ -675,7 +675,7 @@
 	}
 	"SpecialRound11_Description"
 	{
-		"en"		"If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!"
+		"en"		"When you win a microgame, a point will be added to your team's score! The team with the highest score at the end wins!"
 	}
 	"SpecialRound12_Name"
 	{
@@ -746,7 +746,7 @@
 	}
 	"SpecialRound18_Description"
 	{
-		"en"		"If you lose a microgame, you will lose ALL your points!"
+		"en"		"If you lose a microgame, your score will reset to 0!"
 	}
 	"SpecialRound19_Name"
 	{
@@ -762,7 +762,7 @@
 	}
 	"SpecialRound20_Description"
 	{
-		"en"		"There's no break in between microgames this round!"
+		"en"		"There's no break between microgames this round!"
 	}
 	"SpecialRound21_Name"
 	{
