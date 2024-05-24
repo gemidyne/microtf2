@@ -89,7 +89,6 @@ void ResetConVars()
 	ResetConVar(FindConVar("mp_waitingforplayers_time"));
 	ResetConVar(FindConVar("mp_disable_respawn_times"));
 	ResetConVar(FindConVar("mp_respawnwavetime"));
-	ResetConVar(FindConVar("mp_idlemaxtime"));
 
 	// TeamFortress ConVars
 	ResetConVar(FindConVar("tf_avoidteammates_pushaway"));
@@ -106,7 +105,6 @@ void PrepareConVars()
 	SetConVarInt(FindConVar("mp_waitingforplayers_time"), g_hConVarWaitingForPlayersTime.IntValue);
 	SetConVarInt(FindConVar("mp_disable_respawn_times"), 0);
 	SetConVarInt(FindConVar("mp_respawnwavetime"), 9999);
-	SetConVarInt(FindConVar("mp_idlemaxtime"), 8);
 	SetConVarInt(FindConVar("tf_avoidteammates_pushaway"), 0);
 	SetConVarFloat(FindConVar("tf_max_health_boost"), 1.0);
 	SetConVarFloat(FindConVar("tf_airblast_cray_ground_minz"), 268.3281572999747);
