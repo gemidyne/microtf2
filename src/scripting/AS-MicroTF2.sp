@@ -316,7 +316,6 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
-			player.SetGlow(false);
 			player.SetGravity(1.0);
 
 			SetClientViewEntity(i, i);
@@ -405,7 +404,11 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.Status = PlayerStatus_NotWon;
 			player.DisplayOverlay(OVERLAY_BLANK);
 			player.SetCaption("");
-			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+
+			if (duration >= 1.0)
+			{
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_PREMINIGAME][selectedBgmIdx]);
+			}
 		}
 	}
 
@@ -629,6 +632,8 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	g_eDamageBlockMode = EDamageBlockMode_All;
 	g_bIsBlockingPlayerClassVoices = false;
 
+	bool skipFeedback = g_iSpecialRoundId == 20;
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
@@ -648,32 +653,35 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 
 			if (player.Status == PlayerStatus_Failed || player.Status == PlayerStatus_NotWon)
 			{
-				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
-
-				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+				if (!skipFeedback)
 				{
-					PlayNegativeVoice(i);
-				}
+					player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
 
-				bool showFailure = ((g_iSpecialRoundId == 17 && player.IsParticipating) || g_iSpecialRoundId != 17);
-
-				if (showFailure)
-				{
-					if (player.IsUsingLegacyDirectX)
+					if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
 					{
-						char text[64];
-						Format(text, sizeof(text), "%T", "General_Failure", player.ClientId);
-						player.SetCaption(text);
-						player.DisplayOverlay(OVERLAY_BLANK);
+						PlayNegativeVoice(i);
+					}
+
+					bool showFailure = ((g_iSpecialRoundId == 17 && player.IsParticipating) || g_iSpecialRoundId != 17);
+
+					if (showFailure)
+					{
+						if (player.IsUsingLegacyDirectX)
+						{
+							char text[64];
+							Format(text, sizeof(text), "%T", "General_Failure", player.ClientId);
+							player.SetCaption(text);
+							player.DisplayOverlay(OVERLAY_BLANK);
+						}
+						else
+						{
+							player.DisplayOverlay(OVERLAY_FAIL);
+						}
 					}
 					else
 					{
-						player.DisplayOverlay(OVERLAY_FAIL);
+						player.DisplayOverlay(OVERLAY_BLANK);
 					}
-				}
-				else
-				{
-					player.DisplayOverlay(OVERLAY_BLANK);
 				}
 
 				if (player.IsParticipating)
@@ -691,12 +699,9 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						PluginForward_SendPlayerFailedMinigame(player.ClientId, g_iLastPlayedMinigameId);
 					}
 
-					player.SetHealth(1);
-					player.SetGlow(true);
-
 					player.MinigamesLost++;
 
-					if (g_iSpecialRoundId != 12)
+					if (g_iSpecialRoundId != 12 && !skipFeedback)
 					{
 						// Print localised annotations
 						for (int j = 1; j <= MaxClients; j++)
@@ -745,32 +750,33 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 					PluginForward_SendPlayerWinMinigame(player.ClientId, g_iLastPlayedMinigameId);
 				}
 
-				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
+				if (!skipFeedback)
+				{
+					player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_WINNER][0]);
 
-				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
-				{
-					PlayPositiveVoice(i);
-				}
+					if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+					{
+						PlayPositiveVoice(i);
+					}
 
-				if (player.IsUsingLegacyDirectX)
-				{
-					char text[64];
-					Format(text, sizeof(text), "%T", "General_Success", player.ClientId);
-					player.SetCaption(text);
-					player.DisplayOverlay(OVERLAY_BLANK);
-				}
-				else
-				{
-					player.DisplayOverlay(OVERLAY_WON);
+					if (player.IsUsingLegacyDirectX)
+					{
+						char text[64];
+						Format(text, sizeof(text), "%T", "General_Success", player.ClientId);
+						player.SetCaption(text);
+						player.DisplayOverlay(OVERLAY_BLANK);
+					}
+					else
+					{
+						player.DisplayOverlay(OVERLAY_WON);
+					}
 				}
 				
 				player.ResetHealth();
-				player.SetGlow(true);
-
 				player.Score += g_iWinnerScorePointsAmount;
 				player.MinigamesWon++;
 
-				if (g_iSpecialRoundId != 12)
+				if (g_iSpecialRoundId != 12 && !skipFeedback)
 				{
 					// Print localised annotations
 					for (int j = 1; j <= MaxClients; j++)
@@ -801,11 +807,14 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		}
 		else if (player.IsInGame && !player.IsBot && player.Team == TFTeam_Spectator)
 		{
-			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
-			
-			if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+			if (!skipFeedback)
 			{
-				PlayNegativeVoice(i);
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_FAILURE][0]); 
+			
+				if (g_bGamemodeThemeAllowVoices[g_iActiveGamemodeId])
+				{
+					PlayNegativeVoice(i);
+				}
 			}
 
 			player.DisplayOverlay(OVERLAY_BLANK);
@@ -855,20 +864,27 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 		g_iBossGameThreshold = g_iMinigamesPlayedCount;
 	}
 
+	float duration = 2.0;
+
+	if (skipFeedback)
+	{
+		duration = 0.5;
+	}
+
 	if (TrySpeedChangeEvent())
 	{
-		CreateTimer(2.0, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(duration, Timer_GameLogic_SpeedChange, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 
 	if ((g_iSpecialRoundId != 10 && g_iMinigamesPlayedCount == g_iBossGameThreshold && !playAnotherBossgame) || (g_iSpecialRoundId == 10 && (g_iMinigamesPlayedCount == g_iBossGameThreshold || playAnotherBossgame)))
 	{
-		CreateTimer(2.0, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(duration, Timer_GameLogic_BossTime, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 	else if (g_iMinigamesPlayedCount > g_iBossGameThreshold && !playAnotherBossgame)
 	{
-		CreateTimer(2.0, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
+		CreateTimer(duration, Timer_GameLogic_GameOverStart, _, TIMER_FLAG_NO_MAPCHANGE);
 		return Plugin_Handled;
 	}
 
@@ -876,7 +892,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 	PrintToChatAll("[DEBUG] Decided to continue gameplay as normal.");
 	#endif
 
-	CreateTimer(2.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	return Plugin_Handled;
 }
 
@@ -900,59 +916,43 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	if (g_iSpecialRoundId == 20)
 	{
 		// In Non-stop, speed events should not be announced!
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid)
-			{
-				player.SetGlow(false);
-			}
-		}
-
 		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+		return Plugin_Handled;
 	}
-	else
+
+	int count = g_iGamemodeThemeBgmCount[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP];
+	int selectedBgmIdx = GetRandomInt(0, count-1);
+
+	float duration = g_fGamemodeThemeBgmLength[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx];
+
+	for (int i = 1; i <= MaxClients; i++)
 	{
-		int count = g_iGamemodeThemeBgmCount[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP];
-		int selectedBgmIdx = GetRandomInt(0, count-1);
+		Player player = new Player(i);
 
-		float duration = g_fGamemodeThemeBgmLength[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx];
-
-		for (int i = 1; i <= MaxClients; i++)
+		if (player.IsInGame && !player.IsBot)
 		{
-			Player player = new Player(i);
-
-			if (player.IsInGame && !player.IsBot)
+			if (player.IsUsingLegacyDirectX)
 			{
-				if (player.IsValid)
-				{
-					player.SetGlow(false);
-				}
-				
-				if (player.IsUsingLegacyDirectX)
-				{
-					player.DisplayOverlay(OVERLAY_BLANK);
+				player.DisplayOverlay(OVERLAY_BLANK);
 
-					char text[64];
-					Format(text, sizeof(text), "%T", down ? "General_SpeedDown" : "General_SpeedUp", player.ClientId);
-					player.SetCaption(text);
-				}
-				else
-				{
-					player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
-				}
-
-				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
+				char text[64];
+				Format(text, sizeof(text), "%T", down ? "General_SpeedDown" : "General_SpeedUp", player.ClientId);
+				player.SetCaption(text);
 			}
-		}
-		
-		// Emit speed arrow particles in main room
-		SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Start");
-		CreateTimer(duration, Timer_GameLogic_SpeedChangeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
+			else
+			{
+				player.DisplayOverlay((down ? OVERLAY_SPEEDDN : OVERLAY_SPEEDUP));
+			}
 
-		CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
+		}
 	}
+	
+	// Emit speed arrow particles in main room
+	SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Start");
+	CreateTimer(duration, Timer_GameLogic_SpeedChangeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
+
+	CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 
 	return Plugin_Handled;
 }
@@ -975,34 +975,37 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 	float duration = g_fGamemodeThemeBgmLength[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx];
 
+	if (g_iSpecialRoundId == 20)
+	{
+		duration = 0.0;
+	}
+
 	for (int i = 1; i <= MaxClients; i++)
 	{
 		Player player = new Player(i);
 
 		if (player.IsInGame && !player.IsBot)
 		{
-			if (player.IsValid)
+			if (duration >= 1.0)
 			{
-				player.SetGlow(false);
-			}
-			
-			if (player.IsUsingLegacyDirectX)
-			{
-				char text[64];
-				Format(text, sizeof(text), "%T", "General_BossTime", player.ClientId);
-				player.SetCaption(text);
-				player.DisplayOverlay(OVERLAY_BLANK);
-			}
-			else
-			{
-				player.DisplayOverlay(OVERLAY_BOSS);
-			}
+				if (player.IsUsingLegacyDirectX)
+				{
+					char text[64];
+					Format(text, sizeof(text), "%T", "General_BossTime", player.ClientId);
+					player.SetCaption(text);
+					player.DisplayOverlay(OVERLAY_BLANK);
+				}
+				else
+				{
+					player.DisplayOverlay(OVERLAY_BOSS);
+				}
 
-			player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
+				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
+			}
 		}
 	}
 
-	if (duration > 0)
+	if (duration >= 1.0)
 	{
 		// Emit danger particles in main room
 		SendEntityInput("info_particle_system", "skybox_danger_particle", "Start");
