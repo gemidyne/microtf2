@@ -699,6 +699,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						PluginForward_SendPlayerFailedMinigame(player.ClientId, g_iLastPlayedMinigameId);
 					}
 
+					player.ResetHealth();
 					player.MinigamesLost++;
 
 					if (g_iSpecialRoundId != 12 && !skipFeedback)
@@ -980,13 +981,13 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 		duration = 0.0;
 	}
 
-	for (int i = 1; i <= MaxClients; i++)
+	if (duration >= 1.0)
 	{
-		Player player = new Player(i);
-
-		if (player.IsInGame && !player.IsBot)
+		for (int i = 1; i <= MaxClients; i++)
 		{
-			if (duration >= 1.0)
+			Player player = new Player(i);
+
+			if (player.IsInGame && !player.IsBot)
 			{
 				if (player.IsUsingLegacyDirectX)
 				{
@@ -1003,10 +1004,7 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_BOSSTIME][selectedBgmIdx]);
 			}
 		}
-	}
 
-	if (duration >= 1.0)
-	{
 		// Emit danger particles in main room
 		SendEntityInput("info_particle_system", "skybox_danger_particle", "Start");
 		CreateTimer(duration, Timer_GameLogic_BossTimeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
