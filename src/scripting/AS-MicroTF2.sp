@@ -316,7 +316,6 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
-			player.SetGlow(false);
 			player.SetGravity(1.0);
 
 			SetClientViewEntity(i, i);
@@ -691,9 +690,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						PluginForward_SendPlayerFailedMinigame(player.ClientId, g_iLastPlayedMinigameId);
 					}
 
-					player.SetHealth(1);
-					player.SetGlow(true);
-
+					player.ResetHealth();
 					player.MinigamesLost++;
 
 					if (g_iSpecialRoundId != 12)
@@ -765,8 +762,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				}
 				
 				player.ResetHealth();
-				player.SetGlow(true);
-
 				player.Score += g_iWinnerScorePointsAmount;
 				player.MinigamesWon++;
 
@@ -900,16 +895,6 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	if (g_iSpecialRoundId == 20)
 	{
 		// In Non-stop, speed events should not be announced!
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid)
-			{
-				player.SetGlow(false);
-			}
-		}
-
 		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
@@ -925,11 +910,6 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 
 			if (player.IsInGame && !player.IsBot)
 			{
-				if (player.IsValid)
-				{
-					player.SetGlow(false);
-				}
-				
 				if (player.IsUsingLegacyDirectX)
 				{
 					player.DisplayOverlay(OVERLAY_BLANK);
@@ -981,11 +961,6 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 		if (player.IsInGame && !player.IsBot)
 		{
-			if (player.IsValid)
-			{
-				player.SetGlow(false);
-			}
-			
 			if (player.IsUsingLegacyDirectX)
 			{
 				char text[64];
