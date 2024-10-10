@@ -57,7 +57,8 @@
         "es": "Estas jugando a WarioWare! Versión {1}. Di !credits en el chat para ver los créditos.",
         "jp": null,
         "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów.",
-        "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen."
+        "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen.",
+        "ko": null
       },
       "ignoreEmptyValue": false
     },
