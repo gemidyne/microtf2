@@ -1,0 +1,775 @@
+"Phrases"
+{
+	"System_Advertisement"
+	{
+		"#format"		"{1:s}"
+		"ko"		"."
+	}
+	"Hud_Score_Default"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Score: {1}"
+	}
+	"Hud_Score_Minigames"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Microgames: {1}"
+	}
+	"Hud_Score_TeamScore"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Team Score: {1}"
+	}
+	"Hud_Score_Barrels"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Barrels: {1}"
+	}
+	"Hud_RoundDisplay"
+	{
+		"#format"		"{1:i},{2:i}"
+		"ko"		"Round {1} of {2}"
+	}
+	"Hud_RoundDisplayUnlimited"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Round {1}"
+	}
+	"Hud_ThemeDisplay"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1}'s theme"
+	}
+	"Hud_SpecialRound_CenterDisplay"
+	{
+		"#format"		"{1:s}"
+		"ko"		"SPECIAL ROUND: {1}!"
+	}
+	"Hud_SpecialRound_ChatDisplay"
+	{
+		"#format"		"{1:s},{2:s}"
+		"ko"		"The special round condition is... {1}!\n{2}"
+	}
+	"System_PlayerSpawn_RespawnNotice"
+	{
+		"ko"		"You will be respawned once the current microgame or bossgame has finished."
+	}
+	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
+	{
+		"ko"		"YOU HAVE BEEN KNOCKED OUT!"
+	}
+	"System_SpecialRoundBlockClassChange"
+	{
+		"ko"		"Changing class is not allowed during this special round! 1 point has been added to your score."
+	}
+	"General_Loser"
+	{
+		"ko"		"Loser!"
+	}
+	"General_Winner"
+	{
+		"ko"		"Winner!"
+	}
+	"General_SpeedUp"
+	{
+		"ko"		"SPEED UP!"
+	}
+	"General_SpeedDown"
+	{
+		"ko"		"SPEED DOWN!"
+	}
+	"General_Failure"
+	{
+		"ko"		"FAILURE!"
+	}
+	"General_Success"
+	{
+		"ko"		"SUCCESS!"
+	}
+	"General_BossTime"
+	{
+		"ko"		"BOSS TIME!"
+	}
+	"General_GameOver"
+	{
+		"ko"		"GAME OVER!"
+	}
+	"General_SpecialRound"
+	{
+		"ko"		"SPECIAL ROUND!"
+	}
+	"GameOver_SpecialRoundHasFinished"
+	{
+		"ko"		"== THE SPECIAL ROUND HAS FINISHED! =="
+	}
+	"GameOver_WinnerPrefixSingle"
+	{
+		"ko"		"The winner is..."
+	}
+	"GameOver_WinnerPrefixMultiple"
+	{
+		"ko"		"The winners are..."
+	}
+	"GameOver_WinnersAnd"
+	{
+		"#format"		"{1:s},{2:s}"
+		"ko"		"{1} and {2}{default}"
+	}
+	"GameOver_WinnerPrefixNoOne"
+	{
+		"ko"		"There were no winners!"
+	}
+	"GameOver_WinnerSuffix"
+	{
+		"#format"		"{1:s},{2:s},{3:i}"
+		"ko"		"{1} {2} {default}with {3} points!"
+	}
+	"GameOver_WinningTeam_Red"
+	{
+		"#format"		"{1:i}"
+		"ko"		"The winning team is the RED team with {1} points!"
+	}
+	"GameOver_WinningTeam_Blue"
+	{
+		"#format"		"{1:i}"
+		"ko"		"The winning team is the BLU team with {1} points!"
+	}
+	"GameOver_WinningTeam_Stalemate"
+	{
+		"ko"		"Stalemate! Both teams have the same points!"
+	}
+	"System_Intermission_Header"
+	{
+		"ko"		"Intermission!"
+	}
+	"System_Intermission_Body"
+	{
+		"ko"		"Break time! Time to vote for the next map."
+	}
+	"Bossgame1_Caption"
+	{
+		"ko"		"ROCKET JUMP TO THE END!"
+	}
+	"Bossgame1_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1} reached the top first! (Bonus point!)"
+	}
+	"Bossgame2_Caption"
+	{
+		"ko"		"ESCAPE THE FACTORY!"
+	}
+	"Bossgame2_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1} escaped the factory first! (Bonus point!)"
+	}
+	"Bossgame3_Caption"
+	{
+		"ko"		"STAY ON THE GREEN BLOCK!"
+	}
+	"Bossgame4_Caption"
+	{
+		"ko"		"DON'T FALL INTO THE WATER!"
+	}
+	"Bossgame5_Caption"
+	{
+		"ko"		"REACH THE GOAL!"
+	}
+	"Bossgame5_PlayerReachedEndFirst"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1} reached the goal first! (Bonus point!)"
+	}
+	"Bossgame6_Caption"
+	{
+		"ko"		"SHOOT THE MOST BARRELS!"
+	}
+	"Bossgame8_Caption_CountTheProps"
+	{
+		"ko"		"COUNT THE PROPS!"
+	}
+	"Bossgame8_Caption_GetReady"
+	{
+		"ko"		"GET READY..."
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
+	{
+		"ko"		"THE CORRECT ANSWER WAS...\n???"
+	}
+	"Bossgame8_Caption_CorrectAnswerWas_Visible"
+	{
+		"#format"		"{1:i}"
+		"ko"		"THE CORRECT ANSWER WAS...\n{1}!"
+	}
+	"Bossgame8_Caption_ChooseARoom"
+	{
+		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
+		"ko"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+	}
+	"Bossgame8_PropType_Dispensers"
+	{
+		"ko"		"Dispensers"
+	}
+	"Bossgame8_PropType_AmmoPacks"
+	{
+		"ko"		"Ammo Packs"
+	}
+	"Bossgame8_PropType_Barrels"
+	{
+		"ko"		"Barrels"
+	}
+	"Bossgame8_PropType_Chairs"
+	{
+		"ko"		"Chairs"
+	}
+	"Bossgame8_Annotation_AnswerRoomA"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Room A: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomB"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Room B: {1}"
+	}
+	"Bossgame8_Annotation_AnswerRoomC"
+	{
+		"#format"		"{1:i}"
+		"ko"		"Room C: {1}"
+	}
+	"Bossgame9_Caption"
+	{
+		"ko"		"REFLECT THE ROCKETS!"
+	}
+	"Minigame1_Caption"
+	{
+		"ko"		"GET TO THE END!"
+	}
+	"Minigame2_Caption"
+	{
+		"ko"		"KILL AN ENEMY!"
+	}
+	"Minigame3_Caption"
+	{
+		"ko"		"BREAK THE BARRELS!"
+	}
+	"Minigame4_Caption"
+	{
+		"ko"		"AIRBLAST AND STAY ALIVE!"
+	}
+	"Minigame5_Caption"
+	{
+		"ko"		"STICKY JUMP!"
+	}
+	"Minigame6_SayTheWord_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"ko"		"SAY THE WORD!\n{1}"
+	}
+	"Minigame6_SayTheWord_PlayerSaidWordFirst"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1} said the word first! (Bonus point!)"
+	}
+	"Minigame7_Caption"
+	{
+		"ko"		"ROCKET JUMP!"
+	}
+	"Minigame8_CaptionFormatted"
+	{
+		"#format"		"{1:s}"
+		"ko"		"ANSWER THE QUESTION!\n{1} = ?"
+	}
+	"Minigame8_CorrectAnswerWas"
+	{
+		"#format"		"{1:i}"
+		"ko"		"The correct answer was {1}!"
+	}
+	"Minigame8_PlayerAnsweredFirst"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1} got the correct answer first! (Bonus point!)"
+	}
+	"Minigame9_Caption_SimonSaysTaunt"
+	{
+		"ko"		"SIMON SAYS: TAUNT!"
+	}
+	"Minigame9_Caption_SimonSaysJump"
+	{
+		"ko"		"SIMON SAYS: JUMP!"
+	}
+	"Minigame9_Caption_SimonSaysCrouch"
+	{
+		"ko"		"SIMON SAYS: CROUCH!"
+	}
+	"Minigame9_Caption_SomeoneSaysTaunt"
+	{
+		"ko"		"SOMEONE SAYS: TAUNT!"
+	}
+	"Minigame9_Caption_SomeoneSaysJump"
+	{
+		"ko"		"SOMEONE SAYS: JUMP!"
+	}
+	"Minigame9_Caption_SomeoneSaysCrouch"
+	{
+		"ko"		"SOMEONE SAYS: CROUCH!"
+	}
+	"Minigame9_Caption_SimonDidntSayIt"
+	{
+		"ko"		"(Simon didn't say it..)"
+	}
+	"Minigame10_KamikazeIsHere"
+	{
+		"ko"		"Sentry Buster is over here!"
+	}
+	"Minigame10_Caption_ExplodeAsMany"
+	{
+		"ko"		"EXPLODE AS MANY PEOPLE AS YOU CAN!"
+	}
+	"Minigame10_Caption_RunFromKamikaze"
+	{
+		"ko"		"RUN FROM THE SENTRY BUSTER!"
+	}
+	"Minigame11_Caption_DontStopMoving"
+	{
+		"ko"		"DON'T STOP MOVING!"
+	}
+	"Minigame11_Caption_DontMove"
+	{
+		"ko"		"DON'T MOVE!"
+	}
+	"Minigame12_Caption"
+	{
+		"ko"		"GET ON A PLATFORM!"
+	}
+	"Minigame13_Caption"
+	{
+		"ko"		"SPYCRAB!"
+	}
+	"Minigame13_SpycrabsMustCrouchAndLookup"
+	{
+		"ko"		"Spycrabs must crouch and look up!"
+	}
+	"Minigame14_Caption_Spies"
+	{
+		"ko"		"SAP A BUILDING!"
+	}
+	"Minigame14_Caption_Engineers"
+	{
+		"ko"		"GET A BUILDING SAPPED!"
+	}
+	"Minigame15_Caption_Any"
+	{
+		"ko"		"BUILD SOMETHING!"
+	}
+	"Minigame15_Caption_Dispenser"
+	{
+		"ko"		"BUILD A DISPENSER!"
+	}
+	"Minigame15_Caption_Teleporter"
+	{
+		"ko"		"BUILD A TELEPORTER!"
+	}
+	"Minigame15_Caption_Sentry"
+	{
+		"ko"		"BUILD A SENTRY!"
+	}
+	"Minigame16_Caption"
+	{
+		"ko"		"JARATE AN ENEMY!"
+	}
+	"Minigame17_Caption_HitAHeavy"
+	{
+		"ko"		"HIT A HEAVY!"
+	}
+	"Minigame17_Caption_GetHitByMedic"
+	{
+		"ko"		"GET HIT BY A MEDIC!"
+	}
+	"Minigame18_Caption"
+	{
+		"ko"		"HIT THE TARGET!"
+	}
+	"Minigame19_Caption_ChangeClassAny"
+	{
+		"ko"		"CHANGE CLASS!"
+	}
+	"Minigame19_Caption_ChangeClassScout"
+	{
+		"ko"		"CHANGE CLASS TO SCOUT!"
+	}
+	"Minigame19_Caption_ChangeClassSoldier"
+	{
+		"ko"		"CHANGE CLASS TO SOLDIER!"
+	}
+	"Minigame19_Caption_ChangeClassPyro"
+	{
+		"ko"		"CHANGE CLASS TO PYRO!"
+	}
+	"Minigame19_Caption_ChangeClassDemoman"
+	{
+		"ko"		"CHANGE CLASS TO DEMOMAN!"
+	}
+	"Minigame19_Caption_ChangeClassHeavy"
+	{
+		"ko"		"CHANGE CLASS TO HEAVY!"
+	}
+	"Minigame19_Caption_ChangeClassEngineer"
+	{
+		"ko"		"CHANGE CLASS TO ENGINEER!"
+	}
+	"Minigame19_Caption_ChangeClassMedic"
+	{
+		"ko"		"CHANGE CLASS TO MEDIC!"
+	}
+	"Minigame19_Caption_ChangeClassSniper"
+	{
+		"ko"		"CHANGE CLASS TO SNIPER!"
+	}
+	"Minigame19_Caption_ChangeClassSpy"
+	{
+		"ko"		"CHANGE CLASS TO SPY!"
+	}
+	"Minigame20_Caption_Drink"
+	{
+		"ko"		"DRINK!"
+	}
+	"Minigame20_Caption_DontDrink"
+	{
+		"ko"		"DON'T DRINK!"
+	}
+	"Minigame20_Caption_Eat"
+	{
+		"ko"		"EAT!"
+	}
+	"Minigame20_Caption_DontEat"
+	{
+		"ko"		"DON'T EAT!"
+	}
+	"Minigame21_Caption"
+	{
+		"ko"		"STUN AN ENEMY!"
+	}
+	"Minigame22_Caption"
+	{
+		"ko"		"STAY ON THE GROUND!"
+	}
+	"Minigame23_Caption"
+	{
+		"ko"		"TAUNT KILL!"
+	}
+	"Minigame24_Caption"
+	{
+		"ko"		"NEEDLEJUMP!"
+	}
+	"Minigame25_Caption"
+	{
+		"ko"		"JETPACK!"
+	}
+	"Minigame26_Caption_DontLaugh"
+	{
+		"ko"		"DON'T LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Scout"
+	{
+		"ko"		"MAKE THE SCOUTS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Soldier"
+	{
+		"ko"		"MAKE THE SOLDIERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Pyro"
+	{
+		"ko"		"MAKE THE PYROS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Demoman"
+	{
+		"ko"		"MAKE THE DEMOMEN LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Engineer"
+	{
+		"ko"		"MAKE THE ENGINEERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Medic"
+	{
+		"ko"		"MAKE THE MEDICS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Sniper"
+	{
+		"ko"		"MAKE THE SNIPERS LAUGH!"
+	}
+	"Minigame26_Caption_MakeThemLaugh_Spy"
+	{
+		"ko"		"MAKE THE SPIES LAUGH!"
+	}
+	"Minigame27_Caption"
+	{
+		"ko"		"HIT AN ENEMY!"
+	}
+	"Minigame28_Caption"
+	{
+		"ko"		"BOMB JUMP ONTO THE PLATFORM!"
+	}
+	"Minigame29_Caption"
+	{
+		"ko"		"DON'T TOUCH ANYONE!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"ko"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"ko"		"HEAL A MEDIC!"
+	}
+	"Minigame31_Caption"
+	{
+		"ko"		"LAND SAFELY!"
+	}
+	"Minigame32_Caption"
+	{
+		"ko"		"BUMP THEM OFF!"
+	}
+	"Bossgame7_Caption_TypeTheWords"
+	{
+		"ko"		"TYPE THE WORDS!"
+	}
+	"Bossgame7_Caption_Explain"
+	{
+		"ko"		"Say each word in chat as quick as you can to survive!"
+	}
+	"Bossgame7_Caption_Start"
+	{
+		"ko"		"START!"
+	}
+	"Bossgame7_Caption_TimeRemaining"
+	{
+		"#format"		"{1:i}"
+		"ko"		"== SPECTATING ==\n\nTime remaining: {1} seconds"
+	}
+	"Bossgame7_Caption_SayTheWord"
+	{
+		"#format"		"{1:s},{2:s},{3:i}"
+		"ko"		"== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds"
+	}
+	"Bossgame7_Caption_WinnerAnnouncement"
+	{
+		"#format"		"{1:s}"
+		"ko"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
+	}
+	"Bossgame7_Caption_LevelUpAnnouncement"
+	{
+		"ko"		"== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!"
+	}
+	"Bossgame7_Caption_RoundReview"
+	{
+		"#format"		"{1:s}"
+		"ko"		"== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}"
+	}
+	"Bossgame7_Caption_RoundReview_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"ko"		"{1}\nand {2} more..."
+	}
+	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
+	{
+		"#format"		"{1:s}"
+		"ko"		"{1}no one!\n\nEveryone survives another round!"
+	}
+	"Bossgame7_ClassChangeWarning"
+	{
+		"ko"		"Changing class is not allowed during bosses!"
+	}
+	"SpecialRound0_Name"
+	{
+		"ko"		"Thirdperson"
+	}
+	"SpecialRound0_Description"
+	{
+		"ko"		"All players play the round in a whole new perspective!"
+	}
+	"SpecialRound1_Name"
+	{
+		"ko"		"Adrenaline Shot"
+	}
+	"SpecialRound1_Description"
+	{
+		"ko"		"The round starts fast! Then slows down!"
+	}
+	"SpecialRound2_Name"
+	{
+		"ko"		"Extended Round"
+	}
+	"SpecialRound2_Description"
+	{
+		"ko"		"30 microgames will be played before the bossgame!"
+	}
+	"SpecialRound3_Name"
+	{
+		"ko"		"Low Gravity"
+	}
+	"SpecialRound3_Description"
+	{
+		"ko"		"Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!"
+	}
+	"SpecialRound4_Name"
+	{
+		"ko"		"Chill Pill"
+	}
+	"SpecialRound4_Description"
+	{
+		"ko"		"No speed changes will happen in this round!"
+	}
+	"SpecialRound5_Name"
+	{
+		"ko"		"Game Time Attack"
+	}
+	"SpecialRound5_Description"
+	{
+		"ko"		"The round will speed up after every microgame!"
+	}
+	"SpecialRound6_Name"
+	{
+		"ko"		"Up and Down"
+	}
+	"SpecialRound6_Description"
+	{
+		"ko"		"After every microgame, a random speed will be chosen!"
+	}
+	"SpecialRound7_Name"
+	{
+		"ko"		"Slow-mo"
+	}
+	"SpecialRound7_Description"
+	{
+		"ko"		"The round will slow down after every microgame!"
+	}
+	"SpecialRound8_Name"
+	{
+		"ko"		"Maths Only"
+	}
+	"SpecialRound8_Description"
+	{
+		"ko"		"Time to test your maths skills!"
+	}
+	"SpecialRound9_Name"
+	{
+		"ko"		"Opposite Day"
+	}
+	"SpecialRound9_Description"
+	{
+		"ko"		"The player with the lowest score wins the round!"
+	}
+	"SpecialRound10_Name"
+	{
+		"ko"		"Two Boss Battles"
+	}
+	"SpecialRound10_Description"
+	{
+		"ko"		"Two bossgames will be played before game over!"
+	}
+	"SpecialRound11_Name"
+	{
+		"ko"		"Team Battle"
+	}
+	"SpecialRound11_Description"
+	{
+		"ko"		"When you win a microgame, a point will be added to your team's score! The team with the highest score at the end wins!"
+	}
+	"SpecialRound12_Name"
+	{
+		"ko"		"Single Player"
+	}
+	"SpecialRound12_Description"
+	{
+		"ko"		"Hey... where did everyone go?"
+	}
+	"SpecialRound13_Name"
+	{
+		"ko"		"Skeletons only"
+	}
+	"SpecialRound13_Description"
+	{
+		"ko"		"No skin allowed in this round!"
+	}
+	"SpecialRound14_Name"
+	{
+		"ko"		"Tiny"
+	}
+	"SpecialRound14_Description"
+	{
+		"ko"		"Everyone becomes teeny tiny men!"
+	}
+	"SpecialRound15_Name"
+	{
+		"ko"		"Bobbleheads"
+	}
+	"SpecialRound15_Description"
+	{
+		"ko"		"Everyone becomes a bunch of airheads!"
+	}
+	"SpecialRound16_Name"
+	{
+		"ko"		"Score Randomizer"
+	}
+	"SpecialRound16_Description"
+	{
+		"ko"		"If you win a microgame, you will be given a random amount of points!"
+	}
+	"SpecialRound16_Caption_Points"
+	{
+		"#format"		"{1:i}"
+		"ko"		"If you win this microgame, you will be awarded {1} points!"
+	}
+	"SpecialRound17_Name"
+	{
+		"ko"		"Sudden Death"
+	}
+	"SpecialRound17_Description"
+	{
+		"ko"		"If you lose a microgame, you will be knocked out! Last player standing wins the round!"
+	}
+	"SpecialRound17_Caption_Full"
+	{
+		"#format"		"{1:i},{2:i},{3:s}"
+		"ko"		"Current players ({1} of {2})\n{3}"
+	}
+	"SpecialRound17_Caption_AndMore"
+	{
+		"#format"		"{1:s},{2:i}"
+		"ko"		"{1} (and {2} more)"
+	}
+	"SpecialRound18_Name"
+	{
+		"ko"		"All In"
+	}
+	"SpecialRound18_Description"
+	{
+		"ko"		"If you lose a microgame, your score will reset to 0!"
+	}
+	"SpecialRound19_Name"
+	{
+		"ko"		"Reversed Text"
+	}
+	"SpecialRound19_Description"
+	{
+		"ko"		"!sdrawkcab era snoitcurtsni emagorciM"
+	}
+	"SpecialRound20_Name"
+	{
+		"ko"		"Non-stop"
+	}
+	"SpecialRound20_Description"
+	{
+		"ko"		"There's no break between microgames this round!"
+	}
+	"SpecialRound21_Name"
+	{
+		"ko"		"Team Fortress 64"
+	}
+	"SpecialRound21_Description"
+	{
+		"ko"		"Hey! Where did my polygons go?"
+	}
+}
