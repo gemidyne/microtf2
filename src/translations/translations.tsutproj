@@ -58,7 +58,7 @@
         "jp": null,
         "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów.",
         "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen.",
-        "ko": null
+        "ko": "."
       },
       "ignoreEmptyValue": false
     },
