@@ -61,7 +61,7 @@ We appreciate your interest in wanting to help test the gamemode. We have a test
 
 We'd love to have you on board! If you are interested in contributing translations, there are two ways you can do it: 
 
-1. We can add you onto our gemidyne.com Translator Tool which makes editing translations super quick and easy - [click this link](https://github.com/gemidyne/microtf2/issues/new/choose) and choose **Become a translator**.
+1. We can add you onto our gemidyne.com Translator Tool which makes editing translations super quick and easy - [click this link](https://github.com/gemidyne/microtf2/issues/new/choose) and choose **Become a translator**. Once submitted we will add your Steam ID onto our tool and you will be able to add and edit your translations. If you ever lose the link to the translator tool, it is hosted at: https://translator.gemidyne.com/ 
 2. You can add your own language "microtf2.phrases.txt" file built from the english file into your own translation folder - this way is more manual but you can contribute via pull requests if you want 
 
 #### We currently have translators for the following languages:
