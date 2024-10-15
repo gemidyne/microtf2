@@ -57,7 +57,8 @@
         "es": "Estas jugando a WarioWare! Versión {1}. Di !credits en el chat para ver los créditos.",
         "jp": null,
         "pl": "Grasz w WarioWare! Wersja {1}. Napisz !credits na czacie, by wyświetlić kontrybutorów.",
-        "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen."
+        "de": "Du spielst WarioWare! Version {1}. Schreibe !credits in den Chat um den Verdienst des Spielmodus anzusehen.",
+        "ko": "현재 당신은 WarioWare 를 플레이하고 계십니다! 버전 {1}. 채팅창에 !credits 를 입력하면 이 게임 모드의 크레딧을 볼 수 있습니다."
       },
       "ignoreEmptyValue": false
     },
@@ -81,7 +82,8 @@
         "es": "Puntuación: {1}",
         "jp": null,
         "pl": "Wynik: {1}",
-        "de": "Punkte: {1}"
+        "de": "Punkte: {1}",
+        "ko": "점수 : {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -105,7 +107,8 @@
         "es": "Minijuegos: {1}",
         "jp": null,
         "pl": "Mikrogry: {1}",
-        "de": "Minispiele: {1}"
+        "de": "Minispiele: {1}",
+        "ko": "미니 게임 플레이 횟수: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -129,7 +132,8 @@
         "es": "Puntuación del Equipo: {1}",
         "jp": null,
         "pl": "Wynik Drużyny: {1}",
-        "de": "Team Punkte: {1}"
+        "de": "Team Punkte: {1}",
+        "ko": "팀 점수: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -153,7 +157,8 @@
         "es": "Barriles: {1}",
         "jp": null,
         "pl": "Beczki: {1}",
-        "de": "Fässer: {1}"
+        "de": "Fässer: {1}",
+        "ko": "파괴한 나무통 개수: {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -181,7 +186,8 @@
         "es": "Ronda {1} de {2}",
         "jp": null,
         "pl": "Runda {1} z {2}",
-        "de": "Runde {1} von {2}"
+        "de": "Runde {1} von {2}",
+        "ko": "현재 {1} 라운드를 진행 중입니다. 최대 라운드 : {2} 라운드"
       },
       "ignoreEmptyValue": false
     },
@@ -205,7 +211,8 @@
         "es": "Ronda {1}",
         "jp": null,
         "pl": "Runda {1}",
-        "de": "Runde {1}"
+        "de": "Runde {1}",
+        "ko": "현재 라운드 : {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -229,7 +236,8 @@
         "es": "Tema de {1}",
         "jp": null,
         "pl": "Piosenka przewodnia {1}",
-        "de": "{1}'s Melodie"
+        "de": "{1}'s Melodie",
+        "ko": "{1} 의 테마"
       },
       "ignoreEmptyValue": false
     },
@@ -253,7 +261,8 @@
         "es": "RONDA ESPECIAL: ¡{1}!",
         "jp": null,
         "pl": "RUNDA SPECJALNA: {1}!",
-        "de": "SPEZIAL RUNDE: {1}!"
+        "de": "SPEZIAL RUNDE: {1}!",
+        "ko": "스페셜 라운드 : {1} !"
       },
       "ignoreEmptyValue": false
     },
@@ -281,7 +290,8 @@
         "es": "La condición de la ronda especial es... ¡{1}!\n{2}",
         "jp": null,
         "pl": "Warunek rundy specjalnej to... {1}!\n{2}",
-        "de": "Die Bedingung für diese Spezial Runde ist... {1}!\n{2}"
+        "de": "Die Bedingung für diese Spezial Runde ist... {1}!\n{2}",
+        "ko": "결정된 스페셜 라운드는... {1}!\n{2}"
       },
       "ignoreEmptyValue": false
     },
@@ -300,7 +310,8 @@
         "es": "Reaparecerás cuando el minijuego o jefe actual termine.",
         "jp": null,
         "pl": "Odrodzisz się, gdy bieżąca mikrogra lub runda finałowa dobiegnie końca.",
-        "de": "Du wirst wiederbelebt sobald das derzeitige Mini- oder Bossspiel beendet wurde."
+        "de": "Du wirst wiederbelebt sobald das derzeitige Mini- oder Bossspiel beendet wurde.",
+        "ko": "현재 플레이되는 미니 게임 또는 보스전이 종료되면, 당신은 리스폰할 것입니다."
       },
       "ignoreEmptyValue": false
     },
@@ -319,7 +330,8 @@
         "es": "¡HAS SIDO ELIMINADO!",
         "jp": null,
         "pl": "NOKAUT! ODPADASZ!",
-        "de": "DU WURDEST AUSSER GEFECHT GESETZT!"
+        "de": "DU WURDEST AUSSER GEFECHT GESETZT!",
+        "ko": "당신은 이 라운드에서 영구적으로 탈락했습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -338,7 +350,8 @@
         "es": "Cambiar de clase no esta permitido en esta ronda especial! Se a añadido 1 punto a tu puntuación.",
         "jp": null,
         "pl": "Zmienianie klasy jest zabronione podczas tej rundy specjalnej! Dodano punkt do Twojego wyniku.",
-        "de": "Es ist nicht erlaubt die Klasse währen dieser Spezial Runde zu wechseln! 1 Punkt wurde zu deinem Punktestand hinzugefügt."
+        "de": "Es ist nicht erlaubt die Klasse währen dieser Spezial Runde zu wechseln! 1 Punkt wurde zu deinem Punktestand hinzugefügt.",
+        "ko": "이 스페셜 라운드에서는 병과 변경이 불가능합니다! 당신의 점수에 1점이 추가됩니다."
       },
       "ignoreEmptyValue": false
     },
@@ -357,7 +370,8 @@
         "es": "¡Perdedor!",
         "jp": null,
         "pl": "Przegrałeś!",
-        "de": "Verlierer!"
+        "de": "Verlierer!",
+        "ko": "패배자!"
       },
       "ignoreEmptyValue": false
     },
@@ -376,7 +390,8 @@
         "es": "¡Ganador!",
         "jp": null,
         "pl": "Udało Ci się!",
-        "de": "Gewinner!"
+        "de": "Gewinner!",
+        "ko": "승리자!"
       },
       "ignoreEmptyValue": false
     },
@@ -395,7 +410,8 @@
         "es": "¡MÁS RÁPIDO!",
         "jp": null,
         "pl": "SZYBCIEJ!",
-        "de": "GESCHWINDIGKEIT ERHÖHT!"
+        "de": "GESCHWINDIGKEIT ERHÖHT!",
+        "ko": "게임 진행 속도 가속!"
       },
       "ignoreEmptyValue": false
     },
@@ -414,7 +430,8 @@
         "es": "¡MÁS LENTO!",
         "jp": null,
         "pl": "WOLNIEJ!",
-        "de": "GESCHWINDIGKEIT VERLANGSAMT!"
+        "de": "GESCHWINDIGKEIT VERLANGSAMT!",
+        "ko": "게임 진행 속도 감속!"
       },
       "ignoreEmptyValue": false
     },
@@ -433,7 +450,8 @@
         "es": "¡FALLASTE!",
         "jp": null,
         "pl": "PORAŻKA!",
-        "de": "FEHLGESCHLAGEN!"
+        "de": "FEHLGESCHLAGEN!",
+        "ko": "패배!"
       },
       "ignoreEmptyValue": false
     },
@@ -452,7 +470,8 @@
         "es": "¡GANASTE!",
         "jp": null,
         "pl": "SUKCES!",
-        "de": "ERFOLG!"
+        "de": "ERFOLG!",
+        "ko": "성공!"
       },
       "ignoreEmptyValue": false
     },
@@ -471,7 +490,8 @@
         "es": "¡JEFE FINAL!",
         "jp": null,
         "pl": "CZAS NA RUNDĘ FINAŁOWĄ!",
-        "de": "BOSSKAMPF!"
+        "de": "BOSSKAMPF!",
+        "ko": "보스전!"
       },
       "ignoreEmptyValue": false
     },
@@ -490,7 +510,8 @@
         "es": "¡FIN DEL JUEGO!",
         "jp": null,
         "pl": "KONIEC GRY!",
-        "de": "SPIEL VORBEI!"
+        "de": "SPIEL VORBEI!",
+        "ko": "게임 오버!"
       },
       "ignoreEmptyValue": false
     },
@@ -509,7 +530,8 @@
         "es": "¡RONDA ESPECIAL!",
         "jp": null,
         "pl": "RUNDA SPECJALNA!",
-        "de": "SPEZIAL RUNDE!"
+        "de": "SPEZIAL RUNDE!",
+        "ko": "스페셜 라운드!"
       },
       "ignoreEmptyValue": false
     },
@@ -528,7 +550,8 @@
         "es": "== ¡LA RONDA ESPECIAL A TERMINADO! ==",
         "jp": null,
         "pl": "== RUNDA SPECJALNA DOBIEGŁA KOŃCA! ==",
-        "de": "== DIE SPEZIAL RUNDE IST VORBEI! =="
+        "de": "== DIE SPEZIAL RUNDE IST VORBEI! ==",
+        "ko": "== 스페셜 라운드가 끝났습니다! =="
       },
       "ignoreEmptyValue": false
     },
@@ -547,7 +570,8 @@
         "es": "El ganador es...",
         "jp": null,
         "pl": "Zwycięzcą został(a)...",
-        "de": "Der Gewinner ist..."
+        "de": "Der Gewinner ist...",
+        "ko": "승리자는..."
       },
       "ignoreEmptyValue": false
     },
@@ -566,7 +590,8 @@
         "es": "Los ganadores son...",
         "jp": null,
         "pl": "Zwycięzcami zostali...",
-        "de": "Die Gewinner sind..."
+        "de": "Die Gewinner sind...",
+        "ko": "승리자는..."
       },
       "ignoreEmptyValue": false
     },
@@ -594,7 +619,8 @@
         "es": "{1} y {2}{default}",
         "jp": null,
         "pl": "{1} oraz {2}{default}",
-        "de": "{1} und {2}{default}"
+        "de": "{1} und {2}{default}",
+        "ko": "{1} 과 {2}{default}"
       },
       "ignoreEmptyValue": false
     },
@@ -613,7 +639,8 @@
         "es": "¡No hay ganadores!",
         "jp": null,
         "pl": "Nie ma zwycięzców!",
-        "de": "Es gibt keinen Gewinner!"
+        "de": "Es gibt keinen Gewinner!",
+        "ko": "승리자가 없습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -645,7 +672,8 @@
         "es": "¡{1} {2} {default}con {3} puntos!",
         "jp": null,
         "pl": "{1} {2} {default}z wynikiem {3}!",
-        "de": "{1} {2} {default}mit {3} Punkte!"
+        "de": "{1} {2} {default}mit {3} Punkte!",
+        "ko": "{1} {2} {default}가 {3} 점으로 승리했습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -669,7 +697,8 @@
         "es": "¡El equipo ganador es RED con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna RED z wynikiem {1}!",
-        "de": "Das Gewinner Team ist Team RED mit {1} Punkte!"
+        "de": "Das Gewinner Team ist Team RED mit {1} Punkte!",
+        "ko": "블루팀이 {1} 점으로 승리했습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -693,7 +722,8 @@
         "es": "¡El equipo ganador es BLU con {1} puntos!",
         "jp": null,
         "pl": "Zwyciężyła drużyna BLU z wynikiem {1}!",
-        "de": "Das Gewinner Team ist Team BLU mit {1} Punkte!"
+        "de": "Das Gewinner Team ist Team BLU mit {1} Punkte!",
+        "ko": "블루팀이 {1} 점으로 승리했습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -712,7 +742,8 @@
         "es": "¡Tablas! ¡Ambos equipos tienen los mismos puntos!",
         "jp": null,
         "pl": "Pat! Obie drużyny mają tyle samo punktów!",
-        "de": "Unentschieden! Beide Teams haben die gleiche Punktezahl!"
+        "de": "Unentschieden! Beide Teams haben die gleiche Punktezahl!",
+        "ko": "무승부! 양 팀의 점수가 동일합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -731,7 +762,8 @@
         "es": "¡Intermedio!",
         "jp": null,
         "pl": "Przerwa!",
-        "de": "Unterbrechung!"
+        "de": "Unterbrechung!",
+        "ko": "인터미션!"
       },
       "ignoreEmptyValue": false
     },
@@ -750,7 +782,8 @@
         "es": "¡Descanso! Hora de votar el siguiente mapa.",
         "jp": null,
         "pl": "Czas na przerwę! Nadszedł czas, by zagłosować na następną mapę.",
-        "de": "Pause! Zeit um die nächste Karte zu wählen."
+        "de": "Pause! Zeit um die nächste Karte zu wählen.",
+        "ko": "휴식 시간입니다! 다음 맵을 투표할 준비를 하세요."
       },
       "ignoreEmptyValue": false
     },
@@ -769,7 +802,8 @@
         "es": "¡SALTA CON COHETES HASTA EL FINAL!",
         "jp": null,
         "pl": "UŻYJ RAKIETOWYCH SKOKÓW, BY DOTRZEĆ DO KOŃCA!",
-        "de": "ROCKET JUMP BIS ZUM ENDE!"
+        "de": "ROCKET JUMP BIS ZUM ENDE!",
+        "ko": "로켓 점프로 목표 지점까지 도달하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -793,7 +827,8 @@
         "es": "¡{1} llegó hasta la cima primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która dotarła na szczyt! (Bonusowy punkt!)",
-        "de": "{1} hat als erstes die Spitze erreicht! (Bonus Punkt!)"
+        "de": "{1} hat als erstes die Spitze erreicht! (Bonus Punkt!)",
+        "ko": "{1} 플레이어가 1등으로 목표 지점에 도달했습니다! (추가 점수 획득!)"
       },
       "ignoreEmptyValue": false
     },
@@ -812,7 +847,8 @@
         "es": "¡ESCAPA DE LA FABRICA!",
         "jp": null,
         "pl": "UCIEKNIJ Z FABRYKI!",
-        "de": "FLÜCHTE AUS DER FABRIK!"
+        "de": "FLÜCHTE AUS DER FABRIK!",
+        "ko": "공장을 탈출하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -836,7 +872,8 @@
         "es": "¡{1} escapó de la fabrica primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która uciekła z fabryki! (Bonusowy punkt!)",
-        "de": "{1} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)"
+        "de": "{1} flüchtete als erstes aus der Fabrik! (Bonus Punkt!)",
+        "ko": "{1} 플레이어가 1등으로 공장을 탈출했습니다! (추가 점수 획득!)"
       },
       "ignoreEmptyValue": false
     },
@@ -855,7 +892,8 @@
         "es": "¡QUÉDATE EN EL BLOQUE VERDE!",
         "jp": null,
         "pl": "UTRZYMAJ SIĘ NA ZIELONYM BLOKU!",
-        "de": "BLEIBE AUF DEM GRÜNEN BLOCK!"
+        "de": "BLEIBE AUF DEM GRÜNEN BLOCK!",
+        "ko": "초록색 블록에 서있으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -874,7 +912,8 @@
         "es": "¡NO TE CAIGAS AL AGUA!",
         "jp": null,
         "pl": "NIE WPADNIJ DO WODY!",
-        "de": "FALLE NICHT INS WASSER!"
+        "de": "FALLE NICHT INS WASSER!",
+        "ko": "물에 빠지지 마세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -893,7 +932,8 @@
         "es": "¡LLEGA HASTA LA META!",
         "jp": null,
         "pl": "DOTRZYJ DO CELU!",
-        "de": "ERREICHE DAS ZIEL!"
+        "de": "ERREICHE DAS ZIEL!",
+        "ko": "골인 지점까지 도달하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -917,7 +957,8 @@
         "es": "¡{1} alcanzó el objetivo primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która dotarła do celu! (Bonusowy punkt!)",
-        "de": "{1} erreichte das Ziel als erstes! (Bonus Punkt!)"
+        "de": "{1} erreichte das Ziel als erstes! (Bonus Punkt!)",
+        "ko": "{1} 플레이어가 1등으로 골인했습니다! (추가 점수 획득!)"
       },
       "ignoreEmptyValue": false
     },
@@ -936,7 +977,8 @@
         "es": "¡DISPARA A LOS BARRILES!",
         "jp": null,
         "pl": "TRAF W JAK NAJWIĘCEJ BECZEK!",
-        "de": "SCHIESSE DIE MEISTEN FÄSSER AB!"
+        "de": "SCHIESSE DIE MEISTEN FÄSSER AB!",
+        "ko": "나무통을 사격하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -955,7 +997,8 @@
         "es": null,
         "jp": null,
         "pl": "POLICZ PRZEDMIOTY!",
-        "de": "ZÄHLE DIE REQUISITEN"
+        "de": "ZÄHLE DIE REQUISITEN",
+        "ko": "프롭 개수를 확인하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -974,7 +1017,8 @@
         "es": null,
         "jp": null,
         "pl": "NA MIEJSCA...",
-        "de": "MACH DICH BEREIT"
+        "de": "MACH DICH BEREIT",
+        "ko": "준비..."
       },
       "ignoreEmptyValue": false
     },
@@ -993,7 +1037,8 @@
         "es": null,
         "jp": null,
         "pl": "POPRAWNA ODPOWIEDŹ TO...\n???",
-        "de": "DIE RICHTIGE ANTWORT WAR... ???"
+        "de": "DIE RICHTIGE ANTWORT WAR... ???",
+        "ko": "정답은...\n???"
       },
       "ignoreEmptyValue": false
     },
@@ -1017,7 +1062,8 @@
         "es": null,
         "jp": null,
         "pl": "POPRAWNA ODPOWIEDŹ TO...\n{1}!",
-        "de": "DIE RICHTIGE ANTWORT WAR...\n{1}!"
+        "de": "DIE RICHTIGE ANTWORT WAR...\n{1}!",
+        "ko": "정답은...\n{1} 개 였습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -1057,7 +1103,8 @@
         "es": null,
         "jp": null,
         "pl": "Ile tam było {1}? Wejdź do odpowiedniego pomieszczenia!\nPokój A: {2}   Pokój B: {3}   Pokój C: {4}\nPozostały czas: {5}",
-        "de": "Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}"
+        "de": "Wie viele {1} waren da? Betrete den richtigen Raum!\nRaum A: {2}   Raum B: {3}   Raum C: {4}\nZeit verbleibend: {5}",
+        "ko": "{1} 프롭은 몇개였나요? 그 프롭의 수와 맞는 구역으로 들어가세요!!\nA 구역 : {2}   B 구역 : {3}   C 구역 : {4}\n남은 시간: {5}"
       },
       "ignoreEmptyValue": false
     },
@@ -1076,7 +1123,8 @@
         "es": null,
         "jp": null,
         "pl": "Zasobników",
-        "de": "Dispenser"
+        "de": "Dispenser",
+        "ko": "디스펜서"
       },
       "ignoreEmptyValue": false
     },
@@ -1095,7 +1143,8 @@
         "es": null,
         "jp": null,
         "pl": "Paczek z Amunicją",
-        "de": "Munitionspackung"
+        "de": "Munitionspackung",
+        "ko": "탄약킷"
       },
       "ignoreEmptyValue": false
     },
@@ -1114,7 +1163,8 @@
         "es": null,
         "jp": null,
         "pl": "Beczek",
-        "de": "Fässer"
+        "de": "Fässer",
+        "ko": "나무통"
       },
       "ignoreEmptyValue": false
     },
@@ -1133,7 +1183,8 @@
         "es": null,
         "jp": null,
         "pl": "Krzeseł",
-        "de": "Stühle"
+        "de": "Stühle",
+        "ko": "의자"
       },
       "ignoreEmptyValue": false
     },
@@ -1157,7 +1208,8 @@
         "es": null,
         "jp": null,
         "pl": "Pokój A: {1}",
-        "de": "Raum A: {1}"
+        "de": "Raum A: {1}",
+        "ko": "A 구역 : {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1181,7 +1233,8 @@
         "es": null,
         "jp": null,
         "pl": "Pokój B: {1}",
-        "de": "Raum B: {2}"
+        "de": "Raum B: {2}",
+        "ko": "B 구역 : {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1205,7 +1258,8 @@
         "es": null,
         "jp": null,
         "pl": "Pokój C: {1}",
-        "de": "Raum C: {1}"
+        "de": "Raum C: {1}",
+        "ko": "C 구역 : {1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1224,7 +1278,8 @@
         "es": null,
         "jp": null,
         "pl": "ODBIJ RAKIETY!",
-        "de": null
+        "de": null,
+        "ko": "로켓을 반사하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1243,7 +1298,8 @@
         "es": "¡LLEGA HASTA EL FINAL!",
         "jp": null,
         "pl": "DOTRZYJ DO KOŃCA!",
-        "de": "BEGIB DICH ZUM ENDE!"
+        "de": "BEGIB DICH ZUM ENDE!",
+        "ko": "끝까지 도달하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1262,7 +1318,8 @@
         "es": "¡MATA A UN ENEMIGO!",
         "jp": null,
         "pl": "ZABIJ WROGA!",
-        "de": "TÖTE EINEN GEGNER!"
+        "de": "TÖTE EINEN GEGNER!",
+        "ko": "적을 처치하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1281,7 +1338,8 @@
         "es": "¡ROMPE LOS BARRILES!",
         "jp": null,
         "pl": "ZNISZCZ BECZKI!",
-        "de": "ZERBRICH DIE FÄSSER!"
+        "de": "ZERBRICH DIE FÄSSER!",
+        "ko": "나무통을 파괴하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1300,7 +1358,8 @@
         "es": "¡EMPUJA USANDO EL COMPRESOR Y SOBREVIVE!",
         "jp": null,
         "pl": "ODEPCHNIJ INNYCH I PRZEŻYJ!",
-        "de": "AIRBLAST UND AM LEBEN BLEIBEN!"
+        "de": "AIRBLAST UND AM LEBEN BLEIBEN!",
+        "ko": "붕붕이로 적을 밀치고 끝까지 살아남으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1319,7 +1378,8 @@
         "es": "¡SALTO CON BOMBAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK BOMBĄ SAMOPRZYLEPNĄ!",
-        "de": "STICKY JUMP!"
+        "de": "STICKY JUMP!",
+        "ko": "점착 점프를 하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1343,7 +1403,8 @@
         "es": "¡DI LA PALABRA!\n{1}",
         "jp": null,
         "pl": "NAPISZ SŁOWO!\n{1}",
-        "de": "SCHREIB DAS WORT!\n{1}"
+        "de": "SCHREIB DAS WORT!\n{1}",
+        "ko": "이 단어를 채팅으로 입력하세요!\n{1}"
       },
       "ignoreEmptyValue": false
     },
@@ -1367,7 +1428,8 @@
         "es": "¡{1} dijo la palabra primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która napisała podane słowo! (Bonusowy punkt!)",
-        "de": "{1} schrieb das Wort als erstes! (Bonus Punkt!)"
+        "de": "{1} schrieb das Wort als erstes! (Bonus Punkt!)",
+        "ko": "{1} 가 1등으로 목표를 달성했습니다! (추가 점수!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1386,7 +1448,8 @@
         "es": "¡SALTO CON COHETES!",
         "jp": null,
         "pl": "WYKONAJ RAKIETOWY SKOK!",
-        "de": "ROCKET JUMP!"
+        "de": "ROCKET JUMP!",
+        "ko": "로켓 점프를 하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1410,7 +1473,8 @@
         "es": "¡RESPONDE LA PREGUNTA!\n{1} = ?",
         "jp": null,
         "pl": "ODPOWIEDZ NA PYTANIE!\n{1} = ?",
-        "de": "BEANTWORTE DIE FRAGE!\n{1} = ?"
+        "de": "BEANTWORTE DIE FRAGE!\n{1} = ?",
+        "ko": "이 문제에 대한 답을 채팅으로 입력하세요!\n{1} = ?"
       },
       "ignoreEmptyValue": false
     },
@@ -1434,7 +1498,8 @@
         "es": "¡La respuesta correcta era {1}!",
         "jp": null,
         "pl": "Poprawna odpowiedź to {1}!",
-        "de": "Die richtige Antwort war {1}!"
+        "de": "Die richtige Antwort war {1}!",
+        "ko": "정답은 {1} 였습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -1458,7 +1523,8 @@
         "es": "¡{1} dijo la respuesta primero! (¡Punto extra!)",
         "jp": null,
         "pl": "{1} jest pierwszą osobą, która podała poprawną odpowiedź! (Bonusowy punkt!)",
-        "de": "{1} hat als erstes die richtige Antwort erraten! (Bonus Punkt!)"
+        "de": "{1} hat als erstes die richtige Antwort erraten! (Bonus Punkt!)",
+        "ko": "{1}  가 1등으로 문제를 맞췄습니다! (추가 점수!)"
       },
       "ignoreEmptyValue": false
     },
@@ -1477,7 +1543,8 @@
         "es": "SIMON DICE: ¡BÚRLATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: DRWINA!",
-        "de": "SIMON SAYS: VERSPOTTEN!"
+        "de": "SIMON SAYS: VERSPOTTEN!",
+        "ko": "완장이 말하길 : 도발하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1496,7 +1563,8 @@
         "es": "SIMON DICE: ¡SALTA!",
         "jp": null,
         "pl": "SZYMON MÓWI: SKACZ!",
-        "de": "SIMON SAYS: SPRINGEN!"
+        "de": "SIMON SAYS: SPRINGEN!",
+        "ko": "완장이 말하길 : 점프하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1515,7 +1583,8 @@
         "es": "SIMON DICE: ¡AGÁCHATE!",
         "jp": null,
         "pl": "SZYMON MÓWI: KUCNIJ!",
-        "de": "SIMON SAYS: DUCKEN!"
+        "de": "SIMON SAYS: DUCKEN!",
+        "ko": "완장이 말하길 : 앉으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1534,7 +1603,8 @@
         "es": "ALGUIEN DICE: ¡BÚRLATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: DRWINA!",
-        "de": "JEMAND SAGT: VERSPOTTEN!"
+        "de": "JEMAND SAGT: VERSPOTTEN!",
+        "ko": "원장이 말하길 : 도발하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1553,7 +1623,8 @@
         "es": "ALGUIEN DICE: ¡SALTA!",
         "jp": null,
         "pl": "KTOŚ MÓWI: SKACZ!",
-        "de": "JEMAND SAGT: SPRINGEN!"
+        "de": "JEMAND SAGT: SPRINGEN!",
+        "ko": "원장이 말하길 : 점프하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1572,7 +1643,8 @@
         "es": "ALGUIEN DICE: ¡AGÁCHATE!",
         "jp": null,
         "pl": "KTOŚ MÓWI: KUCNIJ!",
-        "de": "JEMAND SAGT: DUCKEN!"
+        "de": "JEMAND SAGT: DUCKEN!",
+        "ko": "원장이 말하길 : 앉으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1591,7 +1663,8 @@
         "es": "(Simon no a dicho eso..)",
         "jp": null,
         "pl": "(Szymon tego nie powiedział...)",
-        "de": "(Simon hat es nicht gesagt..)"
+        "de": "(Simon hat es nicht gesagt..)",
+        "ko": "(완장이 말한게 아닌데요..)"
       },
       "ignoreEmptyValue": false
     },
@@ -1610,7 +1683,8 @@
         "es": "¡El Kamikaze está por aquí!",
         "jp": null,
         "pl": "Kamikaze jest tutaj!",
-        "de": "Kamikaze ist hier!"
+        "de": "Kamikaze ist hier!",
+        "ko": "카미카제는 이 위치에 있습니다"
       },
       "ignoreEmptyValue": false
     },
@@ -1629,7 +1703,8 @@
         "es": "¡EXPLOTA A TODAS LAS PERSONAS QUE PUEDAS!",
         "jp": null,
         "pl": "ZABIJ EKSPLOZJĄ TYLU, ILU MOŻESZ!",
-        "de": "SPRENGE SO VIELE SPIELER WIE MÖGLICH IN DIE LUFT!"
+        "de": "SPRENGE SO VIELE SPIELER WIE MÖGLICH IN DIE LUFT!",
+        "ko": "최대한 많은 플레이어를 처치하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1648,7 +1723,8 @@
         "es": "¡HUYE DEL KAMIKAZE!",
         "jp": null,
         "pl": "UCIEKNIJ OD KAMIKAZE!",
-        "de": "RENN VON DER KAMIKAZE WEG!"
+        "de": "RENN VON DER KAMIKAZE WEG!",
+        "ko": "카미카제로부터 도망가세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1667,7 +1743,8 @@
         "es": "¡NO PARES DE MOVERTE!",
         "jp": null,
         "pl": "NIE PRZESTAWAJ SIĘ PORUSZAĆ!",
-        "de": "BLEIB IN BEWEGUNG!"
+        "de": "BLEIB IN BEWEGUNG!",
+        "ko": "계속 움직이세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1686,7 +1763,8 @@
         "es": "¡NO TE MUEVAS!",
         "jp": null,
         "pl": "NIE RUSZAJ SIĘ!",
-        "de": "NICHT BEWEGEN!"
+        "de": "NICHT BEWEGEN!",
+        "ko": "멈추세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1705,7 +1783,8 @@
         "es": "¡SUBE A UNA PLATAFORMA!",
         "jp": null,
         "pl": "DOSTAŃ SIĘ NA PLATFORMĘ!",
-        "de": "SPRING AUF EINE PLATFORM!"
+        "de": "SPRING AUF EINE PLATFORM!",
+        "ko": "발판 위에 올라가세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1724,7 +1803,8 @@
         "es": "¡SPYCRAB!",
         "jp": null,
         "pl": "SZPIEGOKRAB!",
-        "de": "SPYCRAB!"
+        "de": "SPYCRAB!",
+        "ko": "스파이크랩!"
       },
       "ignoreEmptyValue": false
     },
@@ -1743,7 +1823,8 @@
         "es": "¡Los Spycrabs deben agacharse y mirar hacia arriba!",
         "jp": null,
         "pl": "Szpiegokraby muszą kucać i patrzeć w górę!",
-        "de": "Spycrabs müssen sich Ducken und nach oben schauen!"
+        "de": "Spycrabs müssen sich Ducken und nach oben schauen!",
+        "ko": "스파이크랩은 반드시 앉아서 위쪽을 쳐다봐야합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -1762,7 +1843,8 @@
         "es": "¡DESTRUYE UNA CONSTRUCCIÓN!",
         "jp": null,
         "pl": "ZNISZCZ KONSTRUKCJĘ SAPEREM!",
-        "de": "SABOTIERE EIN GEBÄUDE!"
+        "de": "SABOTIERE EIN GEBÄUDE!",
+        "ko": "구조물에 전자 교란기를 부착하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1781,7 +1863,8 @@
         "es": "¡HAZ QUE DESTRUYAN UNA DE TUS CONSTRUCCIONES!",
         "jp": null,
         "pl": "POZWÓL, BY SZPIEG ZNISZCZYŁ TWOJĄ KONSTRUKCJĘ!",
-        "de": "LASS EIN GEBÄUDE SABOTIERT WERDEN!"
+        "de": "LASS EIN GEBÄUDE SABOTIERT WERDEN!",
+        "ko": "구조물에 전자 교란기를 부착당하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1800,7 +1883,8 @@
         "es": "¡CONSTRUYE ALGO!",
         "jp": null,
         "pl": "ZBUDUJ COKOLWIEK!",
-        "de": "BAUE ETWAS!"
+        "de": "BAUE ETWAS!",
+        "ko": "아무 구조물이나 건설하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1819,7 +1903,8 @@
         "es": "¡CONSTRUYE UN DISPENSADOR!",
         "jp": null,
         "pl": "ZBUDUJ ZASOBNIK!",
-        "de": "BAUE EINEN DISPENSER!"
+        "de": "BAUE EINEN DISPENSER!",
+        "ko": "디스펜서를 건설하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1838,7 +1923,8 @@
         "es": "¡CONSTRUYE UN TELETRANSPORTADOR!",
         "jp": null,
         "pl": "ZBUDUJ TELEPORT!",
-        "de": "BAUE EINEN TELEPORTER!"
+        "de": "BAUE EINEN TELEPORTER!",
+        "ko": "텔레포터를 건설하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1857,7 +1943,8 @@
         "es": "¡CONSTRUYE UN CENTINELA!",
         "jp": null,
         "pl": "ZBUDUJ DZIAŁKO STRAŻNICZE!",
-        "de": "BAUE EINE SENTRY!"
+        "de": "BAUE EINE SENTRY!",
+        "ko": "센트리 건을 건설하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1876,7 +1963,8 @@
         "es": "¡LANZA JARATE A UN ENEMIGO!",
         "jp": null,
         "pl": "TRAF WROGA SIKWONDEM!",
-        "de": "WIRF JARATE AUF EINEN GEGNER!"
+        "de": "WIRF JARATE AUF EINEN GEGNER!",
+        "ko": "적에게 병수도를 던지세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1895,7 +1983,8 @@
         "es": "¡GOLPEA A UN HEAVY!",
         "jp": null,
         "pl": "UDERZ GRUBEGO!",
-        "de": "SCHLAGE EINEN HEAVY!"
+        "de": "SCHLAGE EINEN HEAVY!",
+        "ko": "헤비를 공격하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1914,7 +2003,8 @@
         "es": "¡HAZ QUE TE GOLPEE UN MEDICO!",
         "jp": null,
         "pl": "ZOSTAŃ UDERZONYM PRZEZ MEDYKA!",
-        "de": "WERDE VON EINEM MEDIC GESCHLAGEN!"
+        "de": "WERDE VON EINEM MEDIC GESCHLAGEN!",
+        "ko": "메딕에게 공격 당하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1933,7 +2023,8 @@
         "es": "¡DALE AL OBJETIVO!",
         "jp": null,
         "pl": "TRAF W CEL!",
-        "de": "TRIFF DAS ZIEL!"
+        "de": "TRIFF DAS ZIEL!",
+        "ko": "표적을 맞추세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1952,7 +2043,8 @@
         "es": "¡CAMBIA DE CLASE!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ!",
-        "de": "WECHSLE DIE KLASSE!"
+        "de": "WECHSLE DIE KLASSE!",
+        "ko": "병과를 아무거나 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -1971,7 +2063,8 @@
         "es": "¡CAMBIA DE CLASE A SCOUT!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SKAUTA!",
-        "de": "WECHSLE DIE KLASSE ZU SCOUT!"
+        "de": "WECHSLE DIE KLASSE ZU SCOUT!",
+        "ko": "병과를 스카웃으로 변경하세요! "
       },
       "ignoreEmptyValue": false
     },
@@ -1990,7 +2083,8 @@
         "es": "¡CAMBIA DE CLASE A SOLDADO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA ŻOŁNIERZA!",
-        "de": "WECHSLE DIE KLASSE ZU SOLDIER!"
+        "de": "WECHSLE DIE KLASSE ZU SOLDIER!",
+        "ko": "병과를 솔저로 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2009,7 +2103,8 @@
         "es": "¡CAMBIA DE CLASE A PYRO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA PYRO!",
-        "de": "WECHSLE DIE KLASSE ZU PYRO!"
+        "de": "WECHSLE DIE KLASSE ZU PYRO!",
+        "ko": "병과를 파이로로 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2028,7 +2123,8 @@
         "es": "¡CAMBIA DE CLASE A DEMOMAN!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA DEMOMANA!",
-        "de": "WECHSLE DIE KLASSE ZU DEMOMAN!"
+        "de": "WECHSLE DIE KLASSE ZU DEMOMAN!",
+        "ko": "병과를 데모맨으로 변경하세요! "
       },
       "ignoreEmptyValue": false
     },
@@ -2047,7 +2143,8 @@
         "es": "¡CAMBIA DE CLASE A HEAVY!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA GRUBEGO!",
-        "de": "WECHSLE DIE KLASSE ZU HEAVY!"
+        "de": "WECHSLE DIE KLASSE ZU HEAVY!",
+        "ko": "병과를 헤비로 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2066,7 +2163,8 @@
         "es": "¡CAMBIA DE CLASE A INGENIERO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA INŻYNIERA!",
-        "de": "WECHSLE DIE KLASSE ZU ENGINEER!"
+        "de": "WECHSLE DIE KLASSE ZU ENGINEER!",
+        "ko": "병과를 엔지니어로 변경하세요! "
       },
       "ignoreEmptyValue": false
     },
@@ -2085,7 +2183,8 @@
         "es": "¡CAMBIA DE CLASE A MEDICO!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA MEDYKA!",
-        "de": "WECHLSE DIE KLASSE ZU MEDIC!"
+        "de": "WECHLSE DIE KLASSE ZU MEDIC!",
+        "ko": "병과를 메딕으로 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2104,7 +2203,8 @@
         "es": "¡CAMBIA DE CLASE A FRANCOTIRADOR!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SNAJPERA!",
-        "de": "WECHSLE DIE KLASSE ZU SNIPER!"
+        "de": "WECHSLE DIE KLASSE ZU SNIPER!",
+        "ko": "병과를 스나이퍼로 변경하세요! "
       },
       "ignoreEmptyValue": false
     },
@@ -2123,7 +2223,8 @@
         "es": "¡CAMBIA DE CLASE A ESPIA!",
         "jp": null,
         "pl": "ZMIEŃ KLASĘ NA SZPIEGA!",
-        "de": "WECHSLE DIE KLASSE ZU SPY!"
+        "de": "WECHSLE DIE KLASSE ZU SPY!",
+        "ko": "병과를 스파이로 변경하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2142,7 +2243,8 @@
         "es": "¡BEBE!",
         "jp": null,
         "pl": "PIJ!",
-        "de": "TRINK!"
+        "de": "TRINK!",
+        "ko": "마시세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2160,7 +2262,8 @@
         "pt_p": "NÃO BEBA!",
         "pt": "NÃO BEBA!",
         "pl": "NIE PIJ!",
-        "de": "NICHT TRINKEN!"
+        "de": "NICHT TRINKEN!",
+        "ko": "마시지 마세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2179,7 +2282,8 @@
         "es": "¡COME!",
         "jp": null,
         "pl": "JEDZ!",
-        "de": "ISS!"
+        "de": "ISS!",
+        "ko": "먹으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2197,7 +2301,8 @@
         "pt_p": "NÃO COMA!",
         "pt": "NÃO COMA!",
         "pl": "NIE JEDZ!",
-        "de": "NICHT ESSEN!"
+        "de": "NICHT ESSEN!",
+        "ko": "먹지 마세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2216,7 +2321,8 @@
         "es": "¡ATURDE A UN ENEMIGO!",
         "jp": null,
         "pl": "OGŁUSZ WROGA!",
-        "de": "BETÄUBE EINEN GEGNER!"
+        "de": "BETÄUBE EINEN GEGNER!",
+        "ko": "적을 둔화시키세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2235,7 +2341,8 @@
         "es": "¡QUÉDATE EN EL SUELO!",
         "jp": null,
         "pl": "UTRZYMAJ SIĘ NA ZIEMI!",
-        "de": "BLEIB AUF DEM BODEN!"
+        "de": "BLEIB AUF DEM BODEN!",
+        "ko": "지면에 붙어있으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2254,7 +2361,8 @@
         "es": null,
         "jp": null,
         "pl": "ZABIJ DRWINĄ!",
-        "de": null
+        "de": null,
+        "ko": "도발킬을 하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2273,7 +2381,8 @@
         "es": "¡SALTO CON AGUJAS!",
         "jp": null,
         "pl": "WYKONAJ SKOK STRZYKAWKAMI!",
-        "de": "NEEDLEJUMP!"
+        "de": "NEEDLEJUMP!",
+        "ko": "주사기 점프를 하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2292,7 +2401,8 @@
         "es": "¡JETPACK!",
         "jp": null,
         "pl": "UŻYJ PLECAKA ODRZUTOWEGO!",
-        "de": "JETPACK!"
+        "de": "JETPACK!",
+        "ko": "제트팩을 사용하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2310,7 +2420,8 @@
         "pt_p": "NÃO VALE RIR!",
         "pt": "NÃO VALE RIR!",
         "pl": "NIE ŚMIEJ SIĘ!",
-        "de": "NICHT LACHEN!"
+        "de": "NICHT LACHEN!",
+        "ko": "도발하면 패배!"
       },
       "ignoreEmptyValue": false
     },
@@ -2328,7 +2439,8 @@
         "pt_p": "FAÇA UM SCOUT RIR!",
         "pt": "FAÇA UM SCOUT RIR!",
         "pl": "ROZŚMIESZ SKAUTÓW!",
-        "de": "BRING DIE SCOUTS ZUM LACHEN!"
+        "de": "BRING DIE SCOUTS ZUM LACHEN!",
+        "ko": "스카웃을 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2346,7 +2458,8 @@
         "pt_p": "FAÇA UM SOLDIER RIR!",
         "pt": "FAÇA UM SOLDIER RIR!",
         "pl": "ROZŚMIESZ ŻOŁNIERZY!",
-        "de": "BRING DIE SOLDIER ZUM LACHEN!"
+        "de": "BRING DIE SOLDIER ZUM LACHEN!",
+        "ko": "솔저를 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2364,7 +2477,8 @@
         "pt_p": "FAÇA UM PYRO RIR!",
         "pt": "FAÇA UM PYRO RIR!",
         "pl": "ROZŚMIESZ PYRO!",
-        "de": "BRING DIE PYROS ZUM LACHEN!"
+        "de": "BRING DIE PYROS ZUM LACHEN!",
+        "ko": "파이로를 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2382,7 +2496,8 @@
         "pt_p": "FAÇA UM DEMOMAN RIR!",
         "pt": "FAÇA UM DEMOMAN RIR!",
         "pl": "ROZŚMIESZ DEMOMANÓW!",
-        "de": "BRING DIE DEMOMANS ZUM LACHEN!"
+        "de": "BRING DIE DEMOMANS ZUM LACHEN!",
+        "ko": "데모맨을 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2400,7 +2515,8 @@
         "pt_p": "FAÇA UM ENGENHEIRO RIR!",
         "pt": "FAÇA UM ENGENHEIRO RIR!",
         "pl": "ROZŚMIESZ INŻYNIERÓW!",
-        "de": "BRING DIE ENGINEER ZUM LACHEN!"
+        "de": "BRING DIE ENGINEER ZUM LACHEN!",
+        "ko": "엔지니어를 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2418,7 +2534,8 @@
         "pt_p": "FAÇA UM MÉDICO RIR!",
         "pt": "FAÇA UM MÉDICO RIR!",
         "pl": "ROZŚMIESZ MEDYKÓW!",
-        "de": "BRING DIE MEDICS ZUM LACHEN!"
+        "de": "BRING DIE MEDICS ZUM LACHEN!",
+        "ko": "메딕을을 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2436,7 +2553,8 @@
         "pt_p": "FAÇA UM SNIPER RIR!",
         "pt": "FAÇA UM SNIPER RIR!",
         "pl": "ROZŚMIESZ SNAJPERÓW!",
-        "de": "BRING DIE SNIPER ZUM LACHEN!"
+        "de": "BRING DIE SNIPER ZUM LACHEN!",
+        "ko": "스나이퍼를 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2454,7 +2572,8 @@
         "pt_p": "FAÇA UM SPY RIR!",
         "pt": "FAÇA UM SPY RIR!",
         "pl": "ROZŚMIESZ SZPIEGÓW!",
-        "de": "BRING DIE SPIES ZUM LACHEN!"
+        "de": "BRING DIE SPIES ZUM LACHEN!",
+        "ko": "스파이를 공격해 웃기세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2472,7 +2591,8 @@
         "pt_p": "ACERTE UM INIMIGO!",
         "pt": "ACERTE UM INIMIGO!",
         "pl": "UDERZ WROGA!",
-        "de": "ERSCHIESSE EINEN GEGNER!"
+        "de": "ERSCHIESSE EINEN GEGNER!",
+        "ko": "상대를 적중하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2490,7 +2610,8 @@
         "pt_p": null,
         "pt": null,
         "pl": "WSKOCZ BOMBĄ NA PLATFORMĘ!",
-        "de": "BOMB JUMP AUF DIE PLATTFORM!"
+        "de": "BOMB JUMP AUF DIE PLATTFORM!",
+        "ko": "폭발 점프를 하여 발판 위에 도착하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2508,7 +2629,8 @@
         "pt_p": null,
         "pt": null,
         "pl": "NIKOGO NIE DOTYKAJ!",
-        "de": "BERÜHRE NIEMANDEN!"
+        "de": "BERÜHRE NIEMANDEN!",
+        "ko": "다른 플레이어와 접촉하지 마세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2526,7 +2648,8 @@
         "pt_p": null,
         "pt": null,
         "pl": "ZJEDZ KANAPKĘ!",
-        "de": null
+        "de": null,
+        "ko": "샌드비치를 먹으세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2544,7 +2667,8 @@
         "pt_p": null,
         "pt": null,
         "pl": "ULECZ MEDYKA!",
-        "de": null
+        "de": null,
+        "ko": "메딕을 치료해주세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2562,7 +2686,8 @@
         "pt_p": null,
         "pt": null,
         "pl": "WYLĄDUJ BEZPIECZNIE!",
-        "de": null
+        "de": null,
+        "ko": "안전하게 착지하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2581,7 +2706,8 @@
         "es": null,
         "jp": null,
         "pl": "STRĄĆ INNYCH!",
-        "de": null
+        "de": null,
+        "ko": "충돌시키세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2600,7 +2726,8 @@
         "es": "¡ESCRIBE LAS PALABRAS!",
         "jp": null,
         "pl": "NAPISZ SŁOWA!",
-        "de": "SCHREIB DIE WÖRTER!"
+        "de": "SCHREIB DIE WÖRTER!",
+        "ko": "단어를 입력하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2619,7 +2746,8 @@
         "es": "¡Di cada palabra en el chat lo mas rápido que puedas para sobrevivir!",
         "jp": null,
         "pl": "Napisz każde słowo na czacie tak szybko jak tylko możesz, by przeżyć!",
-        "de": "Schreib jedes Wort so schnell wie die kannst in den Chat um zu Überleben!"
+        "de": "Schreib jedes Wort so schnell wie die kannst in den Chat um zu Überleben!",
+        "ko": "화면에 표시되는 단어를 채팅으로 입력하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -2638,7 +2766,8 @@
         "es": "¡EMPIEZA!",
         "jp": null,
         "pl": "START!",
-        "de": "START!"
+        "de": "START!",
+        "ko": "시작!"
       },
       "ignoreEmptyValue": false
     },
@@ -2662,7 +2791,8 @@
         "es": "== ESPECTANDO ==\n\nTiempo restante: {1} segundos",
         "jp": null,
         "pl": "== OBSERWACJA ==\n\nCzas do końca (w sekundach): {1}",
-        "de": "== ZUSCHAUEN ==\nZeit verbleibend: {1} Sekunden"
+        "de": "== ZUSCHAUEN ==\nZeit verbleibend: {1} Sekunden",
+        "ko": "== 관전중 ==\n\n남은 시간: {1} 초"
       },
       "ignoreEmptyValue": false
     },
@@ -2694,7 +2824,8 @@
         "es": "== ¡ESCRIBE LA PALABRA! ==\n\n{1}\n\nSiguiente palabra: {2}\nTiempo restante: {3} segundos",
         "jp": null,
         "pl": "== NAPISZ SŁOWO! ==\n\n{1}\nNastępne słowo: {2}\nCzas do końca (w sekundach): {3}",
-        "de": "== SCHREIBE DAS WORT! ==\n\n{1}\nNächstes Wort: {2}\nZeit verbleibend: {3} Sekunden!"
+        "de": "== SCHREIBE DAS WORT! ==\n\n{1}\nNächstes Wort: {2}\nZeit verbleibend: {3} Sekunden!",
+        "ko": "== 단어를 입력하세요! ==\n\n{1}\n\n다음 단어: {2}\n남은 시간: {3} 초"
       },
       "ignoreEmptyValue": false
     },
@@ -2718,7 +2849,8 @@
         "es": "== ANUNCIO ==\n\nEl ganador es...\n¡{1}!",
         "jp": null,
         "pl": "== OGŁOSZENIE ==\n\nZwycięzcą został(a)...\n{1}!",
-        "de": "== ANKÜNDIGUNG ==\n\nDer Gewinner ist...\n{1}!"
+        "de": "== ANKÜNDIGUNG ==\n\nDer Gewinner ist...\n{1}!",
+        "ko": "== 알림 ==\n\n승리자는...\n{1} 입니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2737,7 +2869,8 @@
         "es": "== ANUNCIO == \n\n¡SIGUIENTE NIVEL! ¡LAS PALABRAS AHORA SON MÁS DIFÍCILES!",
         "jp": null,
         "pl": "== OGŁOSZENIE == \n\nNASTĘPNY POZIOM! SŁOWA STANĄ SIĘ TRUDNIEJSZE!",
-        "de": "== ANKÜNDIGUNG ==\n\nLEVEL UP! DIE WÖRTER WERDEN AB JETZT SCHWIERIGER!"
+        "de": "== ANKÜNDIGUNG ==\n\nLEVEL UP! DIE WÖRTER WERDEN AB JETZT SCHWIERIGER!",
+        "ko": "== 알림 == \n\n레벨 업! 단어의 종류가 더 많아지고 더욱 어려운 단어가 등장합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2761,7 +2894,8 @@
         "es": "== REPASO DE LA RONDA == \n\nLos jugadores con el menor numero de palabras escritas fueron...\n{1}",
         "jp": null,
         "pl": "== PODSUMOWANIE RUNDY == \n\nGracze z najmniejszą liczbą napisanych słów to... \n{1}",
-        "de": "== RUNDEN VORSCHAU ==\n\nDie Spieler mit den am wenigsten geschriebenen Wörter waren...\n{1}"
+        "de": "== RUNDEN VORSCHAU ==\n\nDie Spieler mit den am wenigsten geschriebenen Wörter waren...\n{1}",
+        "ko": "== 라운드 리뷰 == \n\n이번 판에서 가장 점수가 낮은 플레이어는...\n{1}"
       },
       "ignoreEmptyValue": false
     },
@@ -2789,7 +2923,8 @@
         "es": "{1}\ny {2} mas...",
         "jp": null,
         "pl": "{1}\noraz {2} innych...",
-        "de": "{1}\nund {2} mehr..."
+        "de": "{1}\nund {2} mehr...",
+        "ko": "{1}\n그리고 {2} 명..."
       },
       "ignoreEmptyValue": false
     },
@@ -2813,7 +2948,8 @@
         "es": "{1}¡nadie!\n\n¡Todo el mundo sobrevive otra ronda!",
         "jp": null,
         "pl": "{1}nikt!\n\nWszyscy przeżyli kolejną rundę!",
-        "de": "{1}niemand!\n\nJeder Überlebt die Runde!"
+        "de": "{1}niemand!\n\nJeder Überlebt die Runde!",
+        "ko": "{1}없습니다!\n\n이번 라운드는 모두가 살아남았습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2832,7 +2968,8 @@
         "es": "¡Cambiar de clase no esta permitido durante los jefes!",
         "jp": null,
         "pl": "Zmienianie klas jest zabronione podczas rundy finałowej!",
-        "de": "Es ist nicht erlaubt während eines Bosses die Klasse zu wechseln!"
+        "de": "Es ist nicht erlaubt während eines Bosses die Klasse zu wechseln!",
+        "ko": "이 라운드에서 병과 변경은 불가능합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2851,7 +2988,8 @@
         "es": "Tercera Persona",
         "jp": null,
         "pl": "Trzecia Osoba",
-        "de": "Thirdperson"
+        "de": "Thirdperson",
+        "ko": "3인칭 모드"
       },
       "ignoreEmptyValue": false
     },
@@ -2870,7 +3008,8 @@
         "es": "¡Todos los jugadores juegan la ronda en una perspectiva completamente nueva!",
         "jp": null,
         "pl": "Wszyscy gracze w tej rundzie grają w nowej perspektywie!",
-        "de": "Alle Spieler spielen diese Runde in einer komplett neuen Perspektive!"
+        "de": "Alle Spieler spielen diese Runde in einer komplett neuen Perspektive!",
+        "ko": "이번 라운드는 3인칭 모드로 고정됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2889,7 +3028,8 @@
         "es": "Inyección de Adrenalina",
         "jp": null,
         "pl": "Zastrzyk Adrenaliny",
-        "de": "Adrenalin Schuss"
+        "de": "Adrenalin Schuss",
+        "ko": "아드레날린 주사"
       },
       "ignoreEmptyValue": false
     },
@@ -2908,7 +3048,8 @@
         "es": "¡La ronda comienza rápido! ¡Y después se ralentiza!",
         "jp": null,
         "pl": "Runda szybko się rozpoczyna, a następnie zwalnia!",
-        "de": "Die Runde beginnt schnell! Wird anschließend stetig langsamer!"
+        "de": "Die Runde beginnt schnell! Wird anschließend stetig langsamer!",
+        "ko": "첫 미니게임부터 속도가 최대치로 시작하지만, 게임이 진행될수록 속도가 점점 느려집니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2927,7 +3068,8 @@
         "es": "Ronda Extendida",
         "jp": null,
         "pl": "Wydłużona Runda",
-        "de": "Verlängerte Runde"
+        "de": "Verlängerte Runde",
+        "ko": "Warioware 확장버전.scx"
       },
       "ignoreEmptyValue": false
     },
@@ -2946,7 +3088,8 @@
         "es": "¡Se jugaran 30 microjuegos antes del jefe!",
         "jp": null,
         "pl": "Przed rundą finałową odbędzie się 30 mikrogier!",
-        "de": "30 Minispiele werden vor dem Boss gespielt!"
+        "de": "30 Minispiele werden vor dem Boss gespielt!",
+        "ko": "미니 게임을 30회 플레이 하면 보스전이 발생합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -2965,7 +3108,8 @@
         "es": "Gravedad Baja",
         "jp": null,
         "pl": "Niska Grawitacja",
-        "de": "Geringe Schwerkraft"
+        "de": "Geringe Schwerkraft",
+        "ko": "낮은 중력"
       },
       "ignoreEmptyValue": false
     },
@@ -2984,7 +3128,8 @@
         "es": "¿Espacio? ¡ESPACIO! ¡ESPAAAAAACIIIOOOOOOOO!",
         "jp": null,
         "pl": "Kosmos? KOSMOS! KOOOOOOOOOOOOOOOSMOOOOOOS!",
-        "de": "Weltraum? WELTRAUM! WELTRAAAAAAAAUUUUUUUM!"
+        "de": "Weltraum? WELTRAUM! WELTRAAAAAAAAUUUUUUUM!",
+        "ko": "중력이 낮아졌습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3003,7 +3148,8 @@
         "es": "Calmante",
         "jp": null,
         "pl": "Runda Antystresowa",
-        "de": "Beruhigungspille!"
+        "de": "Beruhigungspille!",
+        "ko": "진정제"
       },
       "ignoreEmptyValue": false
     },
@@ -3022,7 +3168,8 @@
         "es": "¡No habrá cambios de velocidad en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie będzie zmian prędkości!",
-        "de": "Keine Geschwindigkeitsveränderungen werden in dieser Runde auftreten!"
+        "de": "Keine Geschwindigkeitsveränderungen werden in dieser Runde auftreten!",
+        "ko": "이번 라운드는 게임 진행 속도 가속 이벤트가 발생하지 않습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3041,7 +3188,8 @@
         "es": "Súper-Velocidad",
         "jp": null,
         "pl": "Czas Nagli",
-        "de": "Spielzeit Attacke"
+        "de": "Spielzeit Attacke",
+        "ko": "게임 타임 어택"
       },
       "ignoreEmptyValue": false
     },
@@ -3060,7 +3208,8 @@
         "es": "¡La ronda acelerara después de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale przyspieszać po każdej mikrogrze!",
-        "de": "Diese Runde wird nach jedem Minispiel schneller!"
+        "de": "Diese Runde wird nach jedem Minispiel schneller!",
+        "ko": "미니 게임이 진행될 때마다, 게임 진행 속도가 점점 빨라집니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3079,7 +3228,8 @@
         "es": "Arriba y Abajo",
         "jp": null,
         "pl": "W górę i w dół",
-        "de": "Hoch und Runter"
+        "de": "Hoch und Runter",
+        "ko": "속도 랜더마이저"
       },
       "ignoreEmptyValue": false
     },
@@ -3098,7 +3248,8 @@
         "es": "¡Después de cada microjuego, se elegirá una velocidad aleatoria!",
         "jp": null,
         "pl": "Po każdej mikrogrze zostanie dobrana losowa prędkość!",
-        "de": "Nach jedem Minispiel wird eine zufällige Geschwindigkeit gewählt!"
+        "de": "Nach jedem Minispiel wird eine zufällige Geschwindigkeit gewählt!",
+        "ko": "미니 게임을 플레이할 때마다, 게임 진행 속도가 무작위로 결정된다. 보스전도 마찬가지입니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3117,7 +3268,8 @@
         "es": "Cámara Lenta",
         "jp": null,
         "pl": "Spowolnienie",
-        "de": "Zeitlupe"
+        "de": "Zeitlupe",
+        "ko": "슬로우 모션"
       },
       "ignoreEmptyValue": false
     },
@@ -3136,7 +3288,8 @@
         "es": "¡La ronda se ralentizara después de cada microjuego!",
         "jp": null,
         "pl": "Runda będzie stale zwalniać po każdej mikrogrze!",
-        "de": "Diese Runde wird nach jedem Minispiel langsamer!"
+        "de": "Diese Runde wird nach jedem Minispiel langsamer!",
+        "ko": "미니 게임이 진행될 때마다, 게임 진행 속도가 점점 느려집니다. 미니 게임 횟수가 10회로 감소합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3155,7 +3308,8 @@
         "es": "Solo Matemáticas",
         "jp": null,
         "pl": "Tylko Matematyka",
-        "de": "Nur Mathematik!"
+        "de": "Nur Mathematik!",
+        "ko": "수학 문제"
       },
       "ignoreEmptyValue": false
     },
@@ -3174,7 +3328,8 @@
         "es": "¡Hora de poner a prueba tus habilidades matemáticas!",
         "jp": null,
         "pl": "Czas sprawdzić Twoją wiedzę z matematyki!",
-        "de": "Zeit um dein Mathe können zu testen!"
+        "de": "Zeit um dein Mathe können zu testen!",
+        "ko": "이번 라운드에 등장하는 미니 게임은 수학 문제로 고정됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3193,7 +3348,8 @@
         "es": "Día Opuesto",
         "jp": null,
         "pl": "Dzień na Opak",
-        "de": "Gegenteiltag"
+        "de": "Gegenteiltag",
+        "ko": "거꾸로 하는 날"
       },
       "ignoreEmptyValue": false
     },
@@ -3212,7 +3368,8 @@
         "es": "¡El jugador con la puntuación mas baja gana la ronda!",
         "jp": null,
         "pl": "Gracz z najmniejszą liczbą punktów wygrywa rundę!",
-        "de": "Der Spieler mit der geringsten Punktezahl gewinnt!"
+        "de": "Der Spieler mit der geringsten Punktezahl gewinnt!",
+        "ko": "점수가 가장 낮은 플레이어가 이번 라운드의 승리자가 됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3231,7 +3388,8 @@
         "es": "Jefe Doble",
         "jp": null,
         "pl": "Dwie Rundy Finałowe",
-        "de": "Zwei Bosskämpfe"
+        "de": "Zwei Bosskämpfe",
+        "ko": "2연속 보스전"
       },
       "ignoreEmptyValue": false
     },
@@ -3250,7 +3408,8 @@
         "es": "¡Se jugaran dos jefes antes de que termine el juego!",
         "jp": null,
         "pl": "Przed końcem gry odbędą się dwie rundy finałowe!",
-        "de": "Zwei Bosse werden gespielt bevor das Spiel endet!"
+        "de": "Zwei Bosse werden gespielt bevor das Spiel endet!",
+        "ko": "보스전이 1회 더 발생합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3269,7 +3428,8 @@
         "es": "Batalla de Equipos",
         "jp": null,
         "pl": "Walka Drużyn",
-        "de": "Teamkampf"
+        "de": "Teamkampf",
+        "ko": "팀전"
       },
       "ignoreEmptyValue": false
     },
@@ -3288,7 +3448,8 @@
         "es": "¡Si ganas un microjuego, se agrega un punto a la puntuación de tu equipo! ¡El equipo con mas puntos al final gana!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, twoja drużyna otrzyma punkt! Zespół z największą liczbą punktów na koniec wygrywa!",
-        "de": "Jedes Minispiel, dass du gewinnst wird einen Punkt zu deinem Team hinzufügen! Das Team, dass die meisten Punkte am Ende hat gewinnt!"
+        "de": "Jedes Minispiel, dass du gewinnst wird einen Punkt zu deinem Team hinzufügen! Das Team, dass die meisten Punkte am Ende hat gewinnt!",
+        "ko": "이번 라운드는 팀전으로 진행됩니다! 미니 게임에서 승리한 점수가 팀 점수에 합산되며, 가장 점수가 높은 팀이 승리합니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3307,7 +3468,8 @@
         "es": "Modo Un Jugador",
         "jp": null,
         "pl": "Rozgrywka Jednoosobowa",
-        "de": "Einzelspieler"
+        "de": "Einzelspieler",
+        "ko": "싱글 플레이어"
       },
       "ignoreEmptyValue": false
     },
@@ -3326,7 +3488,8 @@
         "es": "Hey... ¿donde están todos?",
         "jp": null,
         "pl": "Hej... Gdzie są wszyscy?",
-        "de": "Hey... wo sind alle?"
+        "de": "Hey... wo sind alle?",
+        "ko": "이런... 다들 어디로 간 거죠?"
       },
       "ignoreEmptyValue": false
     },
@@ -3345,7 +3508,8 @@
         "es": "Solo Esqueletos",
         "jp": null,
         "pl": "Tylko szkielety",
-        "de": "Nur Skelette"
+        "de": "Nur Skelette",
+        "ko": "스켈레톤"
       },
       "ignoreEmptyValue": false
     },
@@ -3364,7 +3528,8 @@
         "es": "¡No se permite piel en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie posiadanie skóry jest zabronione!",
-        "de": "Keine Haut erlaubt in dieser Runde!"
+        "de": "Keine Haut erlaubt in dieser Runde!",
+        "ko": "모두의 가죽이 벗겨졌습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3383,7 +3548,8 @@
         "es": "Pequeñito",
         "jp": null,
         "pl": "Maleńkość",
-        "de": "Winzig"
+        "de": "Winzig",
+        "ko": "쪼꼬미"
       },
       "ignoreEmptyValue": false
     },
@@ -3402,7 +3568,8 @@
         "es": "¡Todos se convierten en hombres pequeñitos!",
         "jp": null,
         "pl": "Każdy gracz staje się tyciusieńki!",
-        "de": "Jeder wird winzig!"
+        "de": "Jeder wird winzig!",
+        "ko": "모두 작아지고 말았습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3421,7 +3588,8 @@
         "es": "Cabezones",
         "jp": null,
         "pl": "Bobbleheads",
-        "de": "Wackelköpfe"
+        "de": "Wackelköpfe",
+        "ko": "대두"
       },
       "ignoreEmptyValue": false
     },
@@ -3440,7 +3608,8 @@
         "es": "¡Todos se convierten en un montón de cabezas huecas!",
         "jp": null,
         "pl": "Każda głowa pęcznieje!",
-        "de": "Jeder wird zum Hohlkopf!"
+        "de": "Jeder wird zum Hohlkopf!",
+        "ko": "전부 대두가 되고 말았습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3459,7 +3628,8 @@
         "es": "Puntuación Aleatoria",
         "jp": null,
         "pl": "Losowe Punkty",
-        "de": "Punkte Zufallsgenerator"
+        "de": "Punkte Zufallsgenerator",
+        "ko": "점수 랜더마이저"
       },
       "ignoreEmptyValue": false
     },
@@ -3478,7 +3648,8 @@
         "es": "¡Si ganas un microjuego, recibirás una cantidad aleatoria de puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz mikrogrę, otrzymasz losową liczbę punktów!",
-        "de": "Wenn du ein Minispiel gewinnst bekommst du eine zufällige Anzahl an Punkte!"
+        "de": "Wenn du ein Minispiel gewinnst bekommst du eine zufällige Anzahl an Punkte!",
+        "ko": "미니 게임에서 승리하여 얻는 점수가 무작위로 결정됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3502,7 +3673,8 @@
         "es": "¡Si ganas este microjuego, recibirás {1} puntos!",
         "jp": null,
         "pl": "Jeżeli wygrasz tą mikrogrę, twój wynik wzrośnie o {1}!",
-        "de": "Wenn du dieses Minispiel gewinnst, bekommst du {1} Punkte!"
+        "de": "Wenn du dieses Minispiel gewinnst, bekommst du {1} Punkte!",
+        "ko": "이 미니 게임에서 승리하면, {1} 점을 얻습니다."
       },
       "ignoreEmptyValue": false
     },
@@ -3521,7 +3693,8 @@
         "es": "Muerte Súbita",
         "jp": null,
         "pl": "Nagła Śmierć",
-        "de": "Plötzlicher Tot"
+        "de": "Plötzlicher Tot",
+        "ko": "서든 데스"
       },
       "ignoreEmptyValue": false
     },
@@ -3540,7 +3713,8 @@
         "es": "¡Si pierdes un microjuego, serás noqueado! ¡El ultimo jugador que no haya fallado gana la ronda!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, odpadasz! Ostatni gracz, który nie przegrał, wygrywa rundę!",
-        "de": "Wenn du ein Minispiel verlierst, wirst du außer Gefecht gesetzt! Letzter Spieler welcher keinen Fehler gemacht hat gewinnt die Runde!"
+        "de": "Wenn du ein Minispiel verlierst, wirst du außer Gefecht gesetzt! Letzter Spieler welcher keinen Fehler gemacht hat gewinnt die Runde!",
+        "ko": "미니 게임에서 패배하면, 이 라운드에서 영구적으로 패배합니다!  플레이어가 1명만 남으면, 그 플레이어는 즉시 승리하게 됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3572,7 +3746,8 @@
         "es": "Jugadores actuales ({1} de {2})\n{3}",
         "jp": null,
         "pl": "Obecni gracze ({1} z {2})\n{3}",
-        "de": "Derzeitige Spieler ({1} von {2})\n{3}"
+        "de": "Derzeitige Spieler ({1} von {2})\n{3}",
+        "ko": "현재 플레이어 ({1} of {2})\n{3}"
       },
       "ignoreEmptyValue": false
     },
@@ -3600,7 +3775,8 @@
         "es": "{1} (y {2} mas)",
         "jp": null,
         "pl": "{1} (oraz {2} innych)",
-        "de": "{1} (und {2} mehr)"
+        "de": "{1} (und {2} mehr)",
+        "ko": "{1} (그리고 {2} 명 남음)"
       },
       "ignoreEmptyValue": false
     },
@@ -3619,7 +3795,8 @@
         "es": "Todo a Una",
         "jp": null,
         "pl": "Wszystko albo Nic",
-        "de": "All In"
+        "de": "All In",
+        "ko": "올인"
       },
       "ignoreEmptyValue": false
     },
@@ -3638,7 +3815,8 @@
         "es": "¡Si pierdes un microjuego, perderás TODOS tus puntos!",
         "jp": null,
         "pl": "Jeżeli przegrasz mikrogrę, stracisz WSZYSTKIE punkty!",
-        "de": "Wenn du ein Minispiel verlierst, verlierst du ALLE deine Punkte!"
+        "de": "Wenn du ein Minispiel verlierst, verlierst du ALLE deine Punkte!",
+        "ko": "미니 게임에서 패배할 때마다, 점수가 0 으로 초기화됩니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -3657,7 +3835,8 @@
         "es": "Texto Invertido",
         "jp": null,
         "pl": "Tekst Wspak",
-        "de": "Umgekehrter Text"
+        "de": "Umgekehrter Text",
+        "ko": "글자 반전화"
       },
       "ignoreEmptyValue": false
     },
@@ -3676,7 +3855,8 @@
         "es": "!sever la natse sogeujorcim sol ed senoiccurtsni saL¡",
         "jp": null,
         "pl": "!kapsw enasip ąs reigorkim od ejckurtsnI",
-        "de": "!sträwkcür dnis eleipsiniM rüf negnusiewnA"
+        "de": "!sträwkcür dnis eleipsiniM rüf negnusiewnA",
+        "ko": "모든 텍스트가 거꾸로 반전됩니다! !요세하중집"
       },
       "ignoreEmptyValue": false
     },
@@ -3695,7 +3875,8 @@
         "es": "Sin Paradas",
         "jp": null,
         "pl": "Non-stop",
-        "de": "Pausenlos"
+        "de": "Pausenlos",
+        "ko": "논스탑 액션"
       },
       "ignoreEmptyValue": false
     },
@@ -3714,7 +3895,8 @@
         "es": "¡No hay descanso entre microjuegos en esta ronda!",
         "jp": null,
         "pl": "W tej rundzie nie ma przerw pomiędzy mikrogrami!",
-        "de": "Es gibt keine Pause zwischen den Minispielen in dieser Runde!"
+        "de": "Es gibt keine Pause zwischen den Minispielen in dieser Runde!",
+        "ko": "미니 게임 사이의 준비 시간이 사라집니다. 계속되는 미니 게임을 대비하세요!"
       },
       "ignoreEmptyValue": false
     },
@@ -3733,7 +3915,8 @@
         "es": "Team Fortress 64",
         "jp": null,
         "pl": "Team Fortress 64",
-        "de": "Team Fortress 64"
+        "de": "Team Fortress 64",
+        "ko": "팀 포트리스 64"
       },
       "ignoreEmptyValue": false
     },
@@ -3752,7 +3935,8 @@
         "es": "¡Hey! ¿Donde han ido mis polígonos?",
         "jp": null,
         "pl": "Ej, gdzie się podziały moje wielokąty?!",
-        "de": "Hey! Wo sind meine Polygons?"
+        "de": "Hey! Wo sind meine Polygons?",
+        "ko": "모두 저사양 저폴리곤 외형으로 바뀌고 말았습니다!"
       },
       "ignoreEmptyValue": false
     }
