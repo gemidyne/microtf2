@@ -3,773 +3,773 @@
 	"System_Advertisement"
 	{
 		"#format"		"{1:s}"
-		"ko"		"."
+		"ko"		"현재 당신은 WarioWare 를 플레이하고 계십니다! 버전 {1}. 채팅창에 !credits 를 입력하면 이 게임 모드의 크레딧을 볼 수 있습니다."
 	}
 	"Hud_Score_Default"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Score: {1}"
+		"ko"		"점수 : {1}"
 	}
 	"Hud_Score_Minigames"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Microgames: {1}"
+		"ko"		"미니 게임 플레이 횟수: {1}"
 	}
 	"Hud_Score_TeamScore"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Team Score: {1}"
+		"ko"		"팀 점수: {1}"
 	}
 	"Hud_Score_Barrels"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Barrels: {1}"
+		"ko"		"파괴한 나무통 개수: {1}"
 	}
 	"Hud_RoundDisplay"
 	{
 		"#format"		"{1:i},{2:i}"
-		"ko"		"Round {1} of {2}"
+		"ko"		"현재 {1} 라운드를 진행 중입니다. 최대 라운드 : {2} 라운드"
 	}
 	"Hud_RoundDisplayUnlimited"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Round {1}"
+		"ko"		"현재 라운드 : {1}"
 	}
 	"Hud_ThemeDisplay"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1}'s theme"
+		"ko"		"{1} 의 테마"
 	}
 	"Hud_SpecialRound_CenterDisplay"
 	{
 		"#format"		"{1:s}"
-		"ko"		"SPECIAL ROUND: {1}!"
+		"ko"		"스페셜 라운드 : {1} !"
 	}
 	"Hud_SpecialRound_ChatDisplay"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ko"		"The special round condition is... {1}!\n{2}"
+		"ko"		"결정된 스페셜 라운드는... {1}!\n{2}"
 	}
 	"System_PlayerSpawn_RespawnNotice"
 	{
-		"ko"		"You will be respawned once the current microgame or bossgame has finished."
+		"ko"		"현재 플레이되는 미니 게임 또는 보스전이 종료되면, 당신은 리스폰할 것입니다."
 	}
 	"SpecialRound_SuddenDeath_PlayerKnockOutNotification"
 	{
-		"ko"		"YOU HAVE BEEN KNOCKED OUT!"
+		"ko"		"당신은 이 라운드에서 영구적으로 탈락했습니다!"
 	}
 	"System_SpecialRoundBlockClassChange"
 	{
-		"ko"		"Changing class is not allowed during this special round! 1 point has been added to your score."
+		"ko"		"이 스페셜 라운드에서는 병과 변경이 불가능합니다! 당신의 점수에 1점이 추가됩니다."
 	}
 	"General_Loser"
 	{
-		"ko"		"Loser!"
+		"ko"		"패배자!"
 	}
 	"General_Winner"
 	{
-		"ko"		"Winner!"
+		"ko"		"승리자!"
 	}
 	"General_SpeedUp"
 	{
-		"ko"		"SPEED UP!"
+		"ko"		"게임 진행 속도 가속!"
 	}
 	"General_SpeedDown"
 	{
-		"ko"		"SPEED DOWN!"
+		"ko"		"게임 진행 속도 감속!"
 	}
 	"General_Failure"
 	{
-		"ko"		"FAILURE!"
+		"ko"		"패배!"
 	}
 	"General_Success"
 	{
-		"ko"		"SUCCESS!"
+		"ko"		"성공!"
 	}
 	"General_BossTime"
 	{
-		"ko"		"BOSS TIME!"
+		"ko"		"보스전!"
 	}
 	"General_GameOver"
 	{
-		"ko"		"GAME OVER!"
+		"ko"		"게임 오버!"
 	}
 	"General_SpecialRound"
 	{
-		"ko"		"SPECIAL ROUND!"
+		"ko"		"스페셜 라운드!"
 	}
 	"GameOver_SpecialRoundHasFinished"
 	{
-		"ko"		"== THE SPECIAL ROUND HAS FINISHED! =="
+		"ko"		"== 스페셜 라운드가 끝났습니다! =="
 	}
 	"GameOver_WinnerPrefixSingle"
 	{
-		"ko"		"The winner is..."
+		"ko"		"승리자는..."
 	}
 	"GameOver_WinnerPrefixMultiple"
 	{
-		"ko"		"The winners are..."
+		"ko"		"승리자는..."
 	}
 	"GameOver_WinnersAnd"
 	{
 		"#format"		"{1:s},{2:s}"
-		"ko"		"{1} and {2}{default}"
+		"ko"		"{1} 과 {2}{default}"
 	}
 	"GameOver_WinnerPrefixNoOne"
 	{
-		"ko"		"There were no winners!"
+		"ko"		"승리자가 없습니다!"
 	}
 	"GameOver_WinnerSuffix"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"ko"		"{1} {2} {default}with {3} points!"
+		"ko"		"{1} {2} {default}가 {3} 점으로 승리했습니다!"
 	}
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"		"{1:i}"
-		"ko"		"The winning team is the RED team with {1} points!"
+		"ko"		"블루팀이 {1} 점으로 승리했습니다!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"		"{1:i}"
-		"ko"		"The winning team is the BLU team with {1} points!"
+		"ko"		"블루팀이 {1} 점으로 승리했습니다!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
-		"ko"		"Stalemate! Both teams have the same points!"
+		"ko"		"무승부! 양 팀의 점수가 동일합니다!"
 	}
 	"System_Intermission_Header"
 	{
-		"ko"		"Intermission!"
+		"ko"		"인터미션!"
 	}
 	"System_Intermission_Body"
 	{
-		"ko"		"Break time! Time to vote for the next map."
+		"ko"		"휴식 시간입니다! 다음 맵을 투표할 준비를 하세요."
 	}
 	"Bossgame1_Caption"
 	{
-		"ko"		"ROCKET JUMP TO THE END!"
+		"ko"		"로켓 점프로 목표 지점까지 도달하세요!"
 	}
 	"Bossgame1_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1} reached the top first! (Bonus point!)"
+		"ko"		"{1} 플레이어가 1등으로 목표 지점에 도달했습니다! (추가 점수 획득!)"
 	}
 	"Bossgame2_Caption"
 	{
-		"ko"		"ESCAPE THE FACTORY!"
+		"ko"		"공장을 탈출하세요!"
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1} escaped the factory first! (Bonus point!)"
+		"ko"		"{1} 플레이어가 1등으로 공장을 탈출했습니다! (추가 점수 획득!)"
 	}
 	"Bossgame3_Caption"
 	{
-		"ko"		"STAY ON THE GREEN BLOCK!"
+		"ko"		"초록색 블록에 서있으세요!"
 	}
 	"Bossgame4_Caption"
 	{
-		"ko"		"DON'T FALL INTO THE WATER!"
+		"ko"		"물에 빠지지 마세요!"
 	}
 	"Bossgame5_Caption"
 	{
-		"ko"		"REACH THE GOAL!"
+		"ko"		"골인 지점까지 도달하세요!"
 	}
 	"Bossgame5_PlayerReachedEndFirst"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1} reached the goal first! (Bonus point!)"
+		"ko"		"{1} 플레이어가 1등으로 골인했습니다! (추가 점수 획득!)"
 	}
 	"Bossgame6_Caption"
 	{
-		"ko"		"SHOOT THE MOST BARRELS!"
+		"ko"		"나무통을 사격하세요!"
 	}
 	"Bossgame8_Caption_CountTheProps"
 	{
-		"ko"		"COUNT THE PROPS!"
+		"ko"		"프롭 개수를 확인하세요!"
 	}
 	"Bossgame8_Caption_GetReady"
 	{
-		"ko"		"GET READY..."
+		"ko"		"준비..."
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Hidden"
 	{
-		"ko"		"THE CORRECT ANSWER WAS...\n???"
+		"ko"		"정답은...\n???"
 	}
 	"Bossgame8_Caption_CorrectAnswerWas_Visible"
 	{
 		"#format"		"{1:i}"
-		"ko"		"THE CORRECT ANSWER WAS...\n{1}!"
+		"ko"		"정답은...\n{1} 개 였습니다!"
 	}
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"ko"		"How many {1} were there? Enter the correct answer room!\nRoom A: {2}   Room B: {3}   Room C: {4}\nTime remaining: {5}"
+		"ko"		"{1} 프롭은 몇개였나요? 그 프롭의 수와 맞는 구역으로 들어가세요!!\nA 구역 : {2}   B 구역 : {3}   C 구역 : {4}\n남은 시간: {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"ko"		"Dispensers"
+		"ko"		"디스펜서"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"ko"		"Ammo Packs"
+		"ko"		"탄약킷"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"ko"		"Barrels"
+		"ko"		"나무통"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"ko"		"Chairs"
+		"ko"		"의자"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Room A: {1}"
+		"ko"		"A 구역 : {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomB"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Room B: {1}"
+		"ko"		"B 구역 : {1}"
 	}
 	"Bossgame8_Annotation_AnswerRoomC"
 	{
 		"#format"		"{1:i}"
-		"ko"		"Room C: {1}"
+		"ko"		"C 구역 : {1}"
 	}
 	"Bossgame9_Caption"
 	{
-		"ko"		"REFLECT THE ROCKETS!"
+		"ko"		"로켓을 반사하세요!"
 	}
 	"Minigame1_Caption"
 	{
-		"ko"		"GET TO THE END!"
+		"ko"		"끝까지 도달하세요!"
 	}
 	"Minigame2_Caption"
 	{
-		"ko"		"KILL AN ENEMY!"
+		"ko"		"적을 처치하세요!"
 	}
 	"Minigame3_Caption"
 	{
-		"ko"		"BREAK THE BARRELS!"
+		"ko"		"나무통을 파괴하세요!"
 	}
 	"Minigame4_Caption"
 	{
-		"ko"		"AIRBLAST AND STAY ALIVE!"
+		"ko"		"붕붕이로 적을 밀치고 끝까지 살아남으세요!"
 	}
 	"Minigame5_Caption"
 	{
-		"ko"		"STICKY JUMP!"
+		"ko"		"점착 점프를 하세요!"
 	}
 	"Minigame6_SayTheWord_CaptionFormatted"
 	{
 		"#format"		"{1:s}"
-		"ko"		"SAY THE WORD!\n{1}"
+		"ko"		"이 단어를 채팅으로 입력하세요!\n{1}"
 	}
 	"Minigame6_SayTheWord_PlayerSaidWordFirst"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1} said the word first! (Bonus point!)"
+		"ko"		"{1} 가 1등으로 목표를 달성했습니다! (추가 점수!)"
 	}
 	"Minigame7_Caption"
 	{
-		"ko"		"ROCKET JUMP!"
+		"ko"		"로켓 점프를 하세요!"
 	}
 	"Minigame8_CaptionFormatted"
 	{
 		"#format"		"{1:s}"
-		"ko"		"ANSWER THE QUESTION!\n{1} = ?"
+		"ko"		"이 문제에 대한 답을 채팅으로 입력하세요!\n{1} = ?"
 	}
 	"Minigame8_CorrectAnswerWas"
 	{
 		"#format"		"{1:i}"
-		"ko"		"The correct answer was {1}!"
+		"ko"		"정답은 {1} 였습니다!"
 	}
 	"Minigame8_PlayerAnsweredFirst"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1} got the correct answer first! (Bonus point!)"
+		"ko"		"{1}  가 1등으로 문제를 맞췄습니다! (추가 점수!)"
 	}
 	"Minigame9_Caption_SimonSaysTaunt"
 	{
-		"ko"		"SIMON SAYS: TAUNT!"
+		"ko"		"완장이 말하길 : 도발하세요!"
 	}
 	"Minigame9_Caption_SimonSaysJump"
 	{
-		"ko"		"SIMON SAYS: JUMP!"
+		"ko"		"완장이 말하길 : 점프하세요!"
 	}
 	"Minigame9_Caption_SimonSaysCrouch"
 	{
-		"ko"		"SIMON SAYS: CROUCH!"
+		"ko"		"완장이 말하길 : 앉으세요!"
 	}
 	"Minigame9_Caption_SomeoneSaysTaunt"
 	{
-		"ko"		"SOMEONE SAYS: TAUNT!"
+		"ko"		"원장이 말하길 : 도발하세요!"
 	}
 	"Minigame9_Caption_SomeoneSaysJump"
 	{
-		"ko"		"SOMEONE SAYS: JUMP!"
+		"ko"		"원장이 말하길 : 점프하세요!"
 	}
 	"Minigame9_Caption_SomeoneSaysCrouch"
 	{
-		"ko"		"SOMEONE SAYS: CROUCH!"
+		"ko"		"원장이 말하길 : 앉으세요!"
 	}
 	"Minigame9_Caption_SimonDidntSayIt"
 	{
-		"ko"		"(Simon didn't say it..)"
+		"ko"		"(완장이 말한게 아닌데요..)"
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"ko"		"Sentry Buster is over here!"
+		"ko"		"카미카제는 이 위치에 있습니다"
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
-		"ko"		"EXPLODE AS MANY PEOPLE AS YOU CAN!"
+		"ko"		"최대한 많은 플레이어를 처치하세요!"
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"ko"		"RUN FROM THE SENTRY BUSTER!"
+		"ko"		"카미카제로부터 도망가세요!"
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
-		"ko"		"DON'T STOP MOVING!"
+		"ko"		"계속 움직이세요!"
 	}
 	"Minigame11_Caption_DontMove"
 	{
-		"ko"		"DON'T MOVE!"
+		"ko"		"멈추세요!"
 	}
 	"Minigame12_Caption"
 	{
-		"ko"		"GET ON A PLATFORM!"
+		"ko"		"발판 위에 올라가세요!"
 	}
 	"Minigame13_Caption"
 	{
-		"ko"		"SPYCRAB!"
+		"ko"		"스파이크랩!"
 	}
 	"Minigame13_SpycrabsMustCrouchAndLookup"
 	{
-		"ko"		"Spycrabs must crouch and look up!"
+		"ko"		"스파이크랩은 반드시 앉아서 위쪽을 쳐다봐야합니다!"
 	}
 	"Minigame14_Caption_Spies"
 	{
-		"ko"		"SAP A BUILDING!"
+		"ko"		"구조물에 전자 교란기를 부착하세요!"
 	}
 	"Minigame14_Caption_Engineers"
 	{
-		"ko"		"GET A BUILDING SAPPED!"
+		"ko"		"구조물에 전자 교란기를 부착당하세요!"
 	}
 	"Minigame15_Caption_Any"
 	{
-		"ko"		"BUILD SOMETHING!"
+		"ko"		"아무 구조물이나 건설하세요!"
 	}
 	"Minigame15_Caption_Dispenser"
 	{
-		"ko"		"BUILD A DISPENSER!"
+		"ko"		"디스펜서를 건설하세요!"
 	}
 	"Minigame15_Caption_Teleporter"
 	{
-		"ko"		"BUILD A TELEPORTER!"
+		"ko"		"텔레포터를 건설하세요!"
 	}
 	"Minigame15_Caption_Sentry"
 	{
-		"ko"		"BUILD A SENTRY!"
+		"ko"		"센트리 건을 건설하세요!"
 	}
 	"Minigame16_Caption"
 	{
-		"ko"		"JARATE AN ENEMY!"
+		"ko"		"적에게 병수도를 던지세요!"
 	}
 	"Minigame17_Caption_HitAHeavy"
 	{
-		"ko"		"HIT A HEAVY!"
+		"ko"		"헤비를 공격하세요!"
 	}
 	"Minigame17_Caption_GetHitByMedic"
 	{
-		"ko"		"GET HIT BY A MEDIC!"
+		"ko"		"메딕에게 공격 당하세요!"
 	}
 	"Minigame18_Caption"
 	{
-		"ko"		"HIT THE TARGET!"
+		"ko"		"표적을 맞추세요!"
 	}
 	"Minigame19_Caption_ChangeClassAny"
 	{
-		"ko"		"CHANGE CLASS!"
+		"ko"		"병과를 아무거나 변경하세요!"
 	}
 	"Minigame19_Caption_ChangeClassScout"
 	{
-		"ko"		"CHANGE CLASS TO SCOUT!"
+		"ko"		"병과를 스카웃으로 변경하세요! "
 	}
 	"Minigame19_Caption_ChangeClassSoldier"
 	{
-		"ko"		"CHANGE CLASS TO SOLDIER!"
+		"ko"		"병과를 솔저로 변경하세요!"
 	}
 	"Minigame19_Caption_ChangeClassPyro"
 	{
-		"ko"		"CHANGE CLASS TO PYRO!"
+		"ko"		"병과를 파이로로 변경하세요!"
 	}
 	"Minigame19_Caption_ChangeClassDemoman"
 	{
-		"ko"		"CHANGE CLASS TO DEMOMAN!"
+		"ko"		"병과를 데모맨으로 변경하세요! "
 	}
 	"Minigame19_Caption_ChangeClassHeavy"
 	{
-		"ko"		"CHANGE CLASS TO HEAVY!"
+		"ko"		"병과를 헤비로 변경하세요!"
 	}
 	"Minigame19_Caption_ChangeClassEngineer"
 	{
-		"ko"		"CHANGE CLASS TO ENGINEER!"
+		"ko"		"병과를 엔지니어로 변경하세요! "
 	}
 	"Minigame19_Caption_ChangeClassMedic"
 	{
-		"ko"		"CHANGE CLASS TO MEDIC!"
+		"ko"		"병과를 메딕으로 변경하세요!"
 	}
 	"Minigame19_Caption_ChangeClassSniper"
 	{
-		"ko"		"CHANGE CLASS TO SNIPER!"
+		"ko"		"병과를 스나이퍼로 변경하세요! "
 	}
 	"Minigame19_Caption_ChangeClassSpy"
 	{
-		"ko"		"CHANGE CLASS TO SPY!"
+		"ko"		"병과를 스파이로 변경하세요!"
 	}
 	"Minigame20_Caption_Drink"
 	{
-		"ko"		"DRINK!"
+		"ko"		"마시세요!"
 	}
 	"Minigame20_Caption_DontDrink"
 	{
-		"ko"		"DON'T DRINK!"
+		"ko"		"마시지 마세요!"
 	}
 	"Minigame20_Caption_Eat"
 	{
-		"ko"		"EAT!"
+		"ko"		"먹으세요!"
 	}
 	"Minigame20_Caption_DontEat"
 	{
-		"ko"		"DON'T EAT!"
+		"ko"		"먹지 마세요!"
 	}
 	"Minigame21_Caption"
 	{
-		"ko"		"STUN AN ENEMY!"
+		"ko"		"적을 둔화시키세요!"
 	}
 	"Minigame22_Caption"
 	{
-		"ko"		"STAY ON THE GROUND!"
+		"ko"		"지면에 붙어있으세요!"
 	}
 	"Minigame23_Caption"
 	{
-		"ko"		"TAUNT KILL!"
+		"ko"		"도발킬을 하세요!"
 	}
 	"Minigame24_Caption"
 	{
-		"ko"		"NEEDLEJUMP!"
+		"ko"		"주사기 점프를 하세요!"
 	}
 	"Minigame25_Caption"
 	{
-		"ko"		"JETPACK!"
+		"ko"		"제트팩을 사용하세요!"
 	}
 	"Minigame26_Caption_DontLaugh"
 	{
-		"ko"		"DON'T LAUGH!"
+		"ko"		"도발하면 패배!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Scout"
 	{
-		"ko"		"MAKE THE SCOUTS LAUGH!"
+		"ko"		"스카웃을 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Soldier"
 	{
-		"ko"		"MAKE THE SOLDIERS LAUGH!"
+		"ko"		"솔저를 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Pyro"
 	{
-		"ko"		"MAKE THE PYROS LAUGH!"
+		"ko"		"파이로를 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Demoman"
 	{
-		"ko"		"MAKE THE DEMOMEN LAUGH!"
+		"ko"		"데모맨을 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Engineer"
 	{
-		"ko"		"MAKE THE ENGINEERS LAUGH!"
+		"ko"		"엔지니어를 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Medic"
 	{
-		"ko"		"MAKE THE MEDICS LAUGH!"
+		"ko"		"메딕을을 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Sniper"
 	{
-		"ko"		"MAKE THE SNIPERS LAUGH!"
+		"ko"		"스나이퍼를 공격해 웃기세요!"
 	}
 	"Minigame26_Caption_MakeThemLaugh_Spy"
 	{
-		"ko"		"MAKE THE SPIES LAUGH!"
+		"ko"		"스파이를 공격해 웃기세요!"
 	}
 	"Minigame27_Caption"
 	{
-		"ko"		"HIT AN ENEMY!"
+		"ko"		"상대를 적중하세요!"
 	}
 	"Minigame28_Caption"
 	{
-		"ko"		"BOMB JUMP ONTO THE PLATFORM!"
+		"ko"		"폭발 점프를 하여 발판 위에 도착하세요!"
 	}
 	"Minigame29_Caption"
 	{
-		"ko"		"DON'T TOUCH ANYONE!"
+		"ko"		"다른 플레이어와 접촉하지 마세요!"
 	}
 	"Minigame30_Caption_EatASandvich"
 	{
-		"ko"		"EAT A SANDVICH!"
+		"ko"		"샌드비치를 먹으세요!"
 	}
 	"Minigame30_Caption_HealAMedic"
 	{
-		"ko"		"HEAL A MEDIC!"
+		"ko"		"메딕을 치료해주세요!"
 	}
 	"Minigame31_Caption"
 	{
-		"ko"		"LAND SAFELY!"
+		"ko"		"안전하게 착지하세요!"
 	}
 	"Minigame32_Caption"
 	{
-		"ko"		"BUMP THEM OFF!"
+		"ko"		"충돌시키세요!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
-		"ko"		"TYPE THE WORDS!"
+		"ko"		"단어를 입력하세요!"
 	}
 	"Bossgame7_Caption_Explain"
 	{
-		"ko"		"Say each word in chat as quick as you can to survive!"
+		"ko"		"화면에 표시되는 단어를 채팅으로 입력하세요!"
 	}
 	"Bossgame7_Caption_Start"
 	{
-		"ko"		"START!"
+		"ko"		"시작!"
 	}
 	"Bossgame7_Caption_TimeRemaining"
 	{
 		"#format"		"{1:i}"
-		"ko"		"== SPECTATING ==\n\nTime remaining: {1} seconds"
+		"ko"		"== 관전중 ==\n\n남은 시간: {1} 초"
 	}
 	"Bossgame7_Caption_SayTheWord"
 	{
 		"#format"		"{1:s},{2:s},{3:i}"
-		"ko"		"== TYPE THE WORD! ==\n\n{1}\n\nNext word: {2}\nTime remaining: {3} seconds"
+		"ko"		"== 단어를 입력하세요! ==\n\n{1}\n\n다음 단어: {2}\n남은 시간: {3} 초"
 	}
 	"Bossgame7_Caption_WinnerAnnouncement"
 	{
 		"#format"		"{1:s}"
-		"ko"		"== ANNOUNCEMENT ==\n\nThe winner is...\n{1}!"
+		"ko"		"== 알림 ==\n\n승리자는...\n{1} 입니다!"
 	}
 	"Bossgame7_Caption_LevelUpAnnouncement"
 	{
-		"ko"		"== ANNOUNCEMENT == \n\nLEVEL UP! THE WORDS ARE ABOUT TO GET MORE DIFFICULT!"
+		"ko"		"== 알림 == \n\n레벨 업! 단어의 종류가 더 많아지고 더욱 어려운 단어가 등장합니다!"
 	}
 	"Bossgame7_Caption_RoundReview"
 	{
 		"#format"		"{1:s}"
-		"ko"		"== ROUND REVIEW == \n\nThe players with the lowest number of words typed were...\n{1}"
+		"ko"		"== 라운드 리뷰 == \n\n이번 판에서 가장 점수가 낮은 플레이어는...\n{1}"
 	}
 	"Bossgame7_Caption_RoundReview_AndMore"
 	{
 		"#format"		"{1:s},{2:i}"
-		"ko"		"{1}\nand {2} more..."
+		"ko"		"{1}\n그리고 {2} 명..."
 	}
 	"Bossgame7_Caption_RoundReview_EveryoneSurvives"
 	{
 		"#format"		"{1:s}"
-		"ko"		"{1}no one!\n\nEveryone survives another round!"
+		"ko"		"{1}없습니다!\n\n이번 라운드는 모두가 살아남았습니다!"
 	}
 	"Bossgame7_ClassChangeWarning"
 	{
-		"ko"		"Changing class is not allowed during bosses!"
+		"ko"		"이 라운드에서 병과 변경은 불가능합니다!"
 	}
 	"SpecialRound0_Name"
 	{
-		"ko"		"Thirdperson"
+		"ko"		"3인칭 모드"
 	}
 	"SpecialRound0_Description"
 	{
-		"ko"		"All players play the round in a whole new perspective!"
+		"ko"		"이번 라운드는 3인칭 모드로 고정됩니다!"
 	}
 	"SpecialRound1_Name"
 	{
-		"ko"		"Adrenaline Shot"
+		"ko"		"아드레날린 주사"
 	}
 	"SpecialRound1_Description"
 	{
-		"ko"		"The round starts fast! Then slows down!"
+		"ko"		"첫 미니게임부터 속도가 최대치로 시작하지만, 게임이 진행될수록 속도가 점점 느려집니다!"
 	}
 	"SpecialRound2_Name"
 	{
-		"ko"		"Extended Round"
+		"ko"		"Warioware 확장버전.scx"
 	}
 	"SpecialRound2_Description"
 	{
-		"ko"		"30 microgames will be played before the bossgame!"
+		"ko"		"미니 게임을 30회 플레이 하면 보스전이 발생합니다!"
 	}
 	"SpecialRound3_Name"
 	{
-		"ko"		"Low Gravity"
+		"ko"		"낮은 중력"
 	}
 	"SpecialRound3_Description"
 	{
-		"ko"		"Space? SPACE! SPAAAAAAAAAAAAAAACEEEEEEE!"
+		"ko"		"중력이 낮아졌습니다!"
 	}
 	"SpecialRound4_Name"
 	{
-		"ko"		"Chill Pill"
+		"ko"		"진정제"
 	}
 	"SpecialRound4_Description"
 	{
-		"ko"		"No speed changes will happen in this round!"
+		"ko"		"이번 라운드는 게임 진행 속도 가속 이벤트가 발생하지 않습니다!"
 	}
 	"SpecialRound5_Name"
 	{
-		"ko"		"Game Time Attack"
+		"ko"		"게임 타임 어택"
 	}
 	"SpecialRound5_Description"
 	{
-		"ko"		"The round will speed up after every microgame!"
+		"ko"		"미니 게임이 진행될 때마다, 게임 진행 속도가 점점 빨라집니다!"
 	}
 	"SpecialRound6_Name"
 	{
-		"ko"		"Up and Down"
+		"ko"		"속도 랜더마이저"
 	}
 	"SpecialRound6_Description"
 	{
-		"ko"		"After every microgame, a random speed will be chosen!"
+		"ko"		"미니 게임을 플레이할 때마다, 게임 진행 속도가 무작위로 결정된다. 보스전도 마찬가지입니다!"
 	}
 	"SpecialRound7_Name"
 	{
-		"ko"		"Slow-mo"
+		"ko"		"슬로우 모션"
 	}
 	"SpecialRound7_Description"
 	{
-		"ko"		"The round will slow down after every microgame!"
+		"ko"		"미니 게임이 진행될 때마다, 게임 진행 속도가 점점 느려집니다. 미니 게임 횟수가 10회로 감소합니다!"
 	}
 	"SpecialRound8_Name"
 	{
-		"ko"		"Maths Only"
+		"ko"		"수학 문제"
 	}
 	"SpecialRound8_Description"
 	{
-		"ko"		"Time to test your maths skills!"
+		"ko"		"이번 라운드에 등장하는 미니 게임은 수학 문제로 고정됩니다!"
 	}
 	"SpecialRound9_Name"
 	{
-		"ko"		"Opposite Day"
+		"ko"		"거꾸로 하는 날"
 	}
 	"SpecialRound9_Description"
 	{
-		"ko"		"The player with the lowest score wins the round!"
+		"ko"		"점수가 가장 낮은 플레이어가 이번 라운드의 승리자가 됩니다!"
 	}
 	"SpecialRound10_Name"
 	{
-		"ko"		"Two Boss Battles"
+		"ko"		"2연속 보스전"
 	}
 	"SpecialRound10_Description"
 	{
-		"ko"		"Two bossgames will be played before game over!"
+		"ko"		"보스전이 1회 더 발생합니다!"
 	}
 	"SpecialRound11_Name"
 	{
-		"ko"		"Team Battle"
+		"ko"		"팀전"
 	}
 	"SpecialRound11_Description"
 	{
-		"ko"		"When you win a microgame, a point will be added to your team's score! The team with the highest score at the end wins!"
+		"ko"		"이번 라운드는 팀전으로 진행됩니다! 미니 게임에서 승리한 점수가 팀 점수에 합산되며, 가장 점수가 높은 팀이 승리합니다!"
 	}
 	"SpecialRound12_Name"
 	{
-		"ko"		"Single Player"
+		"ko"		"싱글 플레이어"
 	}
 	"SpecialRound12_Description"
 	{
-		"ko"		"Hey... where did everyone go?"
+		"ko"		"이런... 다들 어디로 간 거죠?"
 	}
 	"SpecialRound13_Name"
 	{
-		"ko"		"Skeletons only"
+		"ko"		"스켈레톤"
 	}
 	"SpecialRound13_Description"
 	{
-		"ko"		"No skin allowed in this round!"
+		"ko"		"모두의 가죽이 벗겨졌습니다!"
 	}
 	"SpecialRound14_Name"
 	{
-		"ko"		"Tiny"
+		"ko"		"쪼꼬미"
 	}
 	"SpecialRound14_Description"
 	{
-		"ko"		"Everyone becomes teeny tiny men!"
+		"ko"		"모두 작아지고 말았습니다!"
 	}
 	"SpecialRound15_Name"
 	{
-		"ko"		"Bobbleheads"
+		"ko"		"대두"
 	}
 	"SpecialRound15_Description"
 	{
-		"ko"		"Everyone becomes a bunch of airheads!"
+		"ko"		"전부 대두가 되고 말았습니다!"
 	}
 	"SpecialRound16_Name"
 	{
-		"ko"		"Score Randomizer"
+		"ko"		"점수 랜더마이저"
 	}
 	"SpecialRound16_Description"
 	{
-		"ko"		"If you win a microgame, you will be given a random amount of points!"
+		"ko"		"미니 게임에서 승리하여 얻는 점수가 무작위로 결정됩니다!"
 	}
 	"SpecialRound16_Caption_Points"
 	{
 		"#format"		"{1:i}"
-		"ko"		"If you win this microgame, you will be awarded {1} points!"
+		"ko"		"이 미니 게임에서 승리하면, {1} 점을 얻습니다."
 	}
 	"SpecialRound17_Name"
 	{
-		"ko"		"Sudden Death"
+		"ko"		"서든 데스"
 	}
 	"SpecialRound17_Description"
 	{
-		"ko"		"If you lose a microgame, you will be knocked out! Last player standing wins the round!"
+		"ko"		"미니 게임에서 패배하면, 이 라운드에서 영구적으로 패배합니다!  플레이어가 1명만 남으면, 그 플레이어는 즉시 승리하게 됩니다!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
 		"#format"		"{1:i},{2:i},{3:s}"
-		"ko"		"Current players ({1} of {2})\n{3}"
+		"ko"		"현재 플레이어 ({1} of {2})\n{3}"
 	}
 	"SpecialRound17_Caption_AndMore"
 	{
 		"#format"		"{1:s},{2:i}"
-		"ko"		"{1} (and {2} more)"
+		"ko"		"{1} (그리고 {2} 명 남음)"
 	}
 	"SpecialRound18_Name"
 	{
-		"ko"		"All In"
+		"ko"		"올인"
 	}
 	"SpecialRound18_Description"
 	{
-		"ko"		"If you lose a microgame, your score will reset to 0!"
+		"ko"		"미니 게임에서 패배할 때마다, 점수가 0 으로 초기화됩니다!"
 	}
 	"SpecialRound19_Name"
 	{
-		"ko"		"Reversed Text"
+		"ko"		"글자 반전화"
 	}
 	"SpecialRound19_Description"
 	{
-		"ko"		"!sdrawkcab era snoitcurtsni emagorciM"
+		"ko"		"모든 텍스트가 거꾸로 반전됩니다! !요세하중집"
 	}
 	"SpecialRound20_Name"
 	{
-		"ko"		"Non-stop"
+		"ko"		"논스탑 액션"
 	}
 	"SpecialRound20_Description"
 	{
-		"ko"		"There's no break between microgames this round!"
+		"ko"		"미니 게임 사이의 준비 시간이 사라집니다. 계속되는 미니 게임을 대비하세요!"
 	}
 	"SpecialRound21_Name"
 	{
-		"ko"		"Team Fortress 64"
+		"ko"		"팀 포트리스 64"
 	}
 	"SpecialRound21_Description"
 	{
-		"ko"		"Hey! Where did my polygons go?"
+		"ko"		"모두 저사양 저폴리곤 외형으로 바뀌고 말았습니다!"
 	}
 }
