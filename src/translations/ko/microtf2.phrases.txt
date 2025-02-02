@@ -127,12 +127,12 @@
 	"GameOver_WinningTeam_Red"
 	{
 		"#format"		"{1:i}"
-		"ko"		"블루팀이 {1} 점으로 승리했습니다!"
+		"ko"		"레드 팀이 {1} 점으로 승리했습니다!"
 	}
 	"GameOver_WinningTeam_Blue"
 	{
 		"#format"		"{1:i}"
-		"ko"		"블루팀이 {1} 점으로 승리했습니다!"
+		"ko"		"블루 팀이 {1} 점으로 승리했습니다!"
 	}
 	"GameOver_WinningTeam_Stalemate"
 	{
