@@ -698,7 +698,7 @@
         "jp": null,
         "pl": "Zwyciężyła drużyna RED z wynikiem {1}!",
         "de": "Das Gewinner Team ist Team RED mit {1} Punkte!",
-        "ko": "블루팀이 {1} 점으로 승리했습니다!"
+        "ko": "레드 팀이 {1} 점으로 승리했습니다!"
       },
       "ignoreEmptyValue": false
     },
@@ -723,7 +723,7 @@
         "jp": null,
         "pl": "Zwyciężyła drużyna BLU z wynikiem {1}!",
         "de": "Das Gewinner Team ist Team BLU mit {1} Punkte!",
-        "ko": "블루팀이 {1} 점으로 승리했습니다!"
+        "ko": "블루 팀이 {1} 점으로 승리했습니다!"
       },
       "ignoreEmptyValue": false
     },
