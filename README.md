@@ -4,7 +4,7 @@ A custom gamemode for Team Fortress 2 - Players compete against each other to ge
 
 ![GitHub Downloads (all assets, all releases)](https://img.shields.io/github/downloads/gemidyne/microtf2/total) ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/gemidyne/microtf2/ci.yml)
 
-This repository is in maintenance mode. PRs to fix bugs will be accepted - v6 is the last official gemidyne release version of the gamemode.
+This repository is currently in read-only mode. PRs to fix bugs are appreciated however we recommend forking the repo - v6.0 is the last official gemidyne release version of the gamemode.
 
 The master branch contains code for v6.x of the gamemode. The v5 branch contains code for v5.x of the gamemode and was branched prior to merging v6 dev into master.
 
