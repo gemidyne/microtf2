@@ -257,11 +257,6 @@ public bool TraceRayDontHitSelfOrPlayers(int entity, int mask, int data)
 	return (entity != data && !player.IsValid);
 }
 
-stock void GetEntityPosition(int entity, float position[3])
-{
-	GetEntPropVector(entity, Prop_Send, "m_vecOrigin", position);
-}
-
 stock float NormalizeAngle(float angle)
 {
 	angle -= RoundToFloor(angle / 360.0) * 360.0;
@@ -296,4 +291,53 @@ stock int GetRandomParticipatingPlayerId()
 	}
 
 	return -1;
+}
+
+stock void SendEntityInput(const char[] entityType, const char[] name, const char[] input)
+{
+	int entity = -1;
+	char entityName[32];
+	
+	while ((entity = FindEntityByClassname(entity, entityType)) != INVALID_ENT_REFERENCE)
+	{
+		GetEntPropString(entity, Prop_Data, "m_iName", entityName, sizeof(entityName));
+
+		if (strcmp(entityName, name) == 0)
+		{
+			AcceptEntityInput(entity, input, -1, -1, -1);
+			break;
+		}
+	}
+}
+
+stock float GetURandomFloatRange(float min, float max)
+{
+    return min + (GetURandomFloat() * (max - min));
+}
+
+stock TFTeam GetOppositeTeam(TFTeam team)
+{
+	return team == TFTeam_Blue ? TFTeam_Red : TFTeam_Blue;
+}
+
+stock void LerpVectors(float a[3], float b[3], float out[3], float multiplier)
+{
+	if (multiplier < 0.0)
+	{
+		multiplier = 0.0;
+	}
+
+	if (multiplier > 1.0)
+	{
+		multiplier = 1.0;
+	}
+
+	out[0] = a[0] + (b[0] - a[0]) * multiplier;
+	out[1] = a[1] + (b[1] - a[1]) * multiplier;
+	out[2] = a[2] + (b[2] - a[2]) * multiplier;
+}
+
+stock float FloatMin(float a, float b)
+{
+	return a < b ? a : b;
 }

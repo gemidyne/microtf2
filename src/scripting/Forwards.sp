@@ -164,8 +164,10 @@ PrivateForward g_pfOnPlayerSpawn;
 /**
  * Forward is called when a Player dies.
  *
- * @param Client who was the Victim
- * @param Client who was the Attacker
+ * @param victim
+ * @param attacker
+ * @param inflictor
+ * @param weapon
  * @noreturn
  */
 PrivateForward g_pfOnPlayerDeath;
@@ -224,6 +226,15 @@ PrivateForward g_pfOnPlayerStunned;
  * @noreturn
  */
 PrivateForward g_pfOnPlayerSappedObject;
+
+/**
+ * Forward is called when a player is healed.
+ *
+ * @param Client who is the "patient" (the one getting healed)
+ * @param Client who is the healer. (the one who is healing the patient)
+ * @noreturn
+ */
+PrivateForward g_pfOnPlayerHealed;
 
 /**
  * Forward is called when a Player runs a command.
@@ -332,13 +343,14 @@ void InitializeForwards()
 	g_pfOnRocketJump = new PrivateForward(ET_Ignore, Param_Any);
 	g_pfOnBuildObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerSpawn = new PrivateForward(ET_Ignore, Param_Any);
-	g_pfOnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	g_pfOnPlayerDeath = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Any, Param_String);
 	g_pfOnPlayerHurt = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
-	g_pfOnPlayerTakeDamage = new PrivateForward(ET_Ignore, Param_Any, Param_Any, Param_Float);
+	g_pfOnPlayerTakeDamage = new PrivateForward(ET_Event, Param_Cell, Param_Cell, Param_Float, Param_Cell);
 	g_pfOnPlayerJarated = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerClassChange = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerStunned = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerSappedObject = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
+	g_pfOnPlayerHealed = new PrivateForward(ET_Ignore, Param_Any, Param_Any);
 	g_pfOnPlayerRunCmd = new PrivateForward(ET_Ignore, Param_Any, Param_CellByRef, Param_CellByRef, Param_Array, Param_Array, Param_CellByRef);
 	g_pfOnBossStopAttempt = new PrivateForward(ET_Single);
 	g_pfOnTfRoundStart = new PrivateForward(ET_Ignore);
@@ -377,6 +389,7 @@ void RemoveForwardsFromMemory()
 	SafelyRemoveAllFromForward(g_pfOnPlayerClassChange);
 	SafelyRemoveAllFromForward(g_pfOnPlayerStunned);
 	SafelyRemoveAllFromForward(g_pfOnPlayerSappedObject);
+	SafelyRemoveAllFromForward(g_pfOnPlayerHealed);
 	SafelyRemoveAllFromForward(g_pfOnPlayerRunCmd);
 	SafelyRemoveAllFromForward(g_pfOnBossStopAttempt);
 	SafelyRemoveAllFromForward(g_pfOnTfRoundStart);

@@ -3,7 +3,7 @@
 	"System_Advertisement"
 	{
 		"#format"		"{1:s}"
-		"ru"		"Вы играете в WarioWare! Версия {1}. Напишите !credits в чате чтобы посмотреть разработчиков режима."
+		"ru"		"Вы играете в WarioWare! Версия {1}. Напишите !credits в чате, чтобы посмотреть разработчиков режима."
 	}
 	"Hud_Score_Default"
 	{
@@ -144,7 +144,7 @@
 	}
 	"System_Intermission_Body"
 	{
-		"ru"		"Перерыв! Голосование за следующую карту началось."
+		"ru"		"Перерыв! Время голосовать за следующую карту."
 	}
 	"Bossgame1_Caption"
 	{
@@ -157,7 +157,7 @@
 	}
 	"Bossgame2_Caption"
 	{
-		"ru"		"СБЕЖИТЕ ИЗ ЗАВОДА!"
+		"ru"		"СБЕГИТЕ ИЗ ЗАВОДА!"
 	}
 	"Bossgame2_PlayerReachedEndFirst"
 	{
@@ -166,7 +166,7 @@
 	}
 	"Bossgame3_Caption"
 	{
-		"ru"		"СТОЙ НА ЗЕЛЕНОМ БЛОКЕ!"
+		"ru"		"СТОЙТЕ НА ЗЕЛЕНОМ БЛОКЕ!"
 	}
 	"Bossgame4_Caption"
 	{
@@ -209,19 +209,19 @@
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
-		"ru"		"Dispensers"
+		"ru"		"раздатчиков"
 	}
 	"Bossgame8_PropType_AmmoPacks"
 	{
-		"ru"		"Ammo Packs"
+		"ru"		"ящиков с патронами"
 	}
 	"Bossgame8_PropType_Barrels"
 	{
-		"ru"		"Barrels"
+		"ru"		"бочек"
 	}
 	"Bossgame8_PropType_Chairs"
 	{
-		"ru"		"Chairs"
+		"ru"		"стульев"
 	}
 	"Bossgame8_Annotation_AnswerRoomA"
 	{
@@ -237,6 +237,10 @@
 	{
 		"#format"		"{1:i}"
 		"ru"		"Комната C: {1}"
+	}
+	"Bossgame9_Caption"
+	{
+		"ru"		"REFLECT THE ROCKETS!"
 	}
 	"Minigame1_Caption"
 	{
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"ru"		"ДВОЙНОЙ ПРЫЖОК!"
+		"ru"		"УБЕЙТЕ НАСМЕШКОЙ!"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"ru"		"НЕ ПРИКАСАЙТЕСЬ!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"ru"		"СЪЕШЬТЕ БУТЕРБРОД!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"ru"		"ПОЛЕЧИТЕ МЕДИКА!"
+	}
+	"Minigame31_Caption"
+	{
+		"ru"		"LAND SAFELY!"
+	}
+	"Minigame32_Caption"
+	{
+		"ru"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -575,7 +595,7 @@
 	}
 	"SpecialRound1_Description"
 	{
-		"ru"		"Раунды сразу быстрые! Но теряют скорость со временнем!"
+		"ru"		"Раунд сначала быстрый! Потом замедляется со временем!"
 	}
 	"SpecialRound2_Name"
 	{

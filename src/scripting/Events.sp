@@ -134,17 +134,20 @@ public void Event_PlayerDeath(Handle event, const char[] name, bool dontBroadcas
 	{
 		if (g_bIsMinigameActive)
 		{
-			if (g_bIsPlayerParticipant[client])
+			if (g_bIsPlayerParticipant[client] && g_pfOnPlayerDeath != INVALID_HANDLE)
 			{
-				if (g_pfOnPlayerDeath != INVALID_HANDLE)
-				{
-					int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+				int attacker = GetClientOfUserId(GetEventInt(event, "attacker"));
+				int inflictor = GetEventInt(event, "inflictor_entindex");
+				char weapon[64];
 
-					Call_StartForward(g_pfOnPlayerDeath);
-					Call_PushCell(client);
-					Call_PushCell(attacker);
-					Call_Finish();
-				}
+				GetEventString(event, "weapon", weapon, sizeof(weapon));
+
+				Call_StartForward(g_pfOnPlayerDeath);
+				Call_PushCell(client);
+				Call_PushCell(attacker);
+				Call_PushCell(inflictor);
+				Call_PushString(weapon);
+				Call_Finish();
 			}
 		}
 		else
@@ -317,6 +320,25 @@ public void Event_PlayerSappedObject(Handle event, const char[] name, bool dontB
 		Call_StartForward(g_pfOnPlayerSappedObject);
 		Call_PushCell(attacker.ClientId);
 		Call_PushCell(buildingOwner.ClientId);
+		Call_Finish();
+	}
+}
+
+public void Event_PlayerHealed(Handle event, const char[] name, bool dontBroadcast)
+{
+	if (!g_bIsPluginEnabled)
+	{
+		return;
+	}
+
+	Player target = new Player(GetClientOfUserId(GetEventInt(event, "patient")));
+	Player owner = new Player(GetClientOfUserId(GetEventInt(event, "healer")));
+
+	if (g_pfOnPlayerHealed != INVALID_HANDLE && target.IsParticipating && owner.IsParticipating)
+	{
+		Call_StartForward(g_pfOnPlayerHealed);
+		Call_PushCell(target.ClientId);
+		Call_PushCell(owner.ClientId);
 		Call_Finish();
 	}
 }
@@ -555,7 +577,9 @@ public void TF2_OnConditionAdded(int client, TFCond condition)
 			TFCond_Bleeding,
 			TFCond_RuneHaste,
 			TFCond_CritCola,
-			TFCond_HalloweenCritCandy:
+			TFCond_HalloweenCritCandy,
+			TFCond_Parachute,
+			TFCond_HalloweenKart:
 		{
 			removeCondition = false;
 		}
@@ -689,6 +713,7 @@ stock void HookEvents()
 	HookEvent("teamplay_round_win", Event_RoundEnd, EventHookMode_PostNoCopy);
 	HookEvent("post_inventory_application", Event_Regenerate, EventHookMode_Post);
 	HookEvent("player_sapped_object", Event_PlayerSappedObject);
+	HookEvent("player_healed", Event_PlayerHealed);
 	HookUserMessage(GetUserMessageId("PlayerJarated"), Event_PlayerJarated);
 }
 

@@ -205,7 +205,7 @@
 	"Bossgame8_Caption_ChooseARoom"
 	{
 		"#format"		"{1:s},{2:i},{3:i},{4:i},{5:i}"
-		"it"		"Quanti {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}"
+		"it"		"Quanti/e {1} c'erano? Entra nella stanza corrispondente alla risposta corretta!\nStanza A: {2}   Stanza B: {3}   Stanza C: {4}\nTempo rimasto: {5}"
 	}
 	"Bossgame8_PropType_Dispensers"
 	{
@@ -237,6 +237,10 @@
 	{
 		"#format"		"{1:i}"
 		"it"		"Stanza C: {1}"
+	}
+	"Bossgame9_Caption"
+	{
+		"it"		"RIFLETTI I RAZZI!"
 	}
 	"Minigame1_Caption"
 	{
@@ -317,7 +321,7 @@
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"it"		"Il kamikaze è qui!"
+		"it"		"L'Abbatti-Torrette è qui!"
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
@@ -325,7 +329,7 @@
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"it"		"SCAPPA DAL KAMIKAZE!"
+		"it"		"SCAPPA DALL'ABBATTI-TORRETTE!"
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"it"		"DOPPIO SALTO!"
+		"it"		"UCCIDI CON L'INSULTO!"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"it"		"NON TOCCARE NESSUNO!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"it"		"MANGIA UN SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"it"		"CURA UN MEDICO!"
+	}
+	"Minigame31_Caption"
+	{
+		"it"		"ATTERRA SANO E SALVO!"
+	}
+	"Minigame32_Caption"
+	{
+		"it"		"SPINGILI FUORI!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -695,7 +715,7 @@
 	}
 	"SpecialRound16_Description"
 	{
-		"it"		"I minigiochi vinti danno un numero causale di punti!"
+		"it"		"I minigiochi vinti danno un numero casuale di punti!"
 	}
 	"SpecialRound16_Caption_Points"
 	{

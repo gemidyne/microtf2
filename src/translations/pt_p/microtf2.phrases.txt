@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"pt_p"		"Room C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"pt_p"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"pt_p"		"CHEGUE NO FINAL SE FOR CAPAZ!"
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"pt_p"		"SALTO DUPLO!"
+		"pt_p"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"pt_p"		"DON'T TOUCH ANYONE!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"pt_p"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"pt_p"		"HEAL A MEDIC!"
+	}
+	"Minigame31_Caption"
+	{
+		"pt_p"		"LAND SAFELY!"
+	}
+	"Minigame32_Caption"
+	{
+		"pt_p"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

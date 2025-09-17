@@ -10,7 +10,13 @@ ConVar g_hConVarPhysTimescale;
 ConVar g_hConVarServerGravity;
 ConVar g_hConVarTFCheapObjects;
 ConVar g_hConVarTFFastBuild;
+ConVar g_hConVarTFFlamethrowerBurstAmmo;
+ConVar g_hConVarTFParachuteToggle;
+ConVar g_hConVarTFParachuteAirControl;
 ConVar g_hConVarTFWeaponSpreads;
+ConVar g_hConVarTFKartDashSpeed;
+ConVar g_hConVarTFKartBoostImpactForce;
+ConVar g_hConVarTFKartDamageToForce;
 ConVar g_hConVarFriendlyFire;
 ConVar g_hConVarServerTimelimit;
 ConVar g_hConVarAntiFloodTime;
@@ -36,10 +42,16 @@ void InitializeConVars()
 	g_hConVarServerGravity = FindConVar("sv_gravity");
 	g_hConVarTFCheapObjects = FindConVar("tf_cheapobjects");
 	g_hConVarTFFastBuild = FindConVar("tf_fastbuild");
+	g_hConVarTFFlamethrowerBurstAmmo = FindConVar("tf_flamethrower_burstammo");
 	g_hConVarTFWeaponSpreads = FindConVar("tf_use_fixed_weaponspreads");
+	g_hConVarTFParachuteToggle = FindConVar("tf_parachute_deploy_toggle_allowed");
+	g_hConVarTFParachuteAirControl = FindConVar("tf_parachute_aircontrol");
 	g_hConVarFriendlyFire = FindConVar("mp_friendlyfire");
 	g_hConVarServerTimelimit = FindConVar("mp_timelimit");
 	g_hConVarAntiFloodTime = FindConVar("sm_flood_time");
+	g_hConVarTFKartDashSpeed = FindConVar("tf_halloween_kart_dash_speed");
+	g_hConVarTFKartBoostImpactForce = FindConVar("tf_halloween_kart_boost_impact_force");
+	g_hConVarTFKartDamageToForce = FindConVar("tf_halloween_kart_damage_to_force");
 
 	g_hConVarPluginMaxRounds = CreateConVar("mtf2_maxrounds", "4", "Sets the maximum rounds to be played. 0 = no limit (not recommended).", 0, true, 0.0);
 	g_hConVarPluginIntermissionEnabled = CreateConVar("mtf2_intermission_enabled", "1", "Controls whether or not intermission is to be held half way through the maximum round count. Having Intermission enabled assumes you have a intermission integration enabled - for example the SourceMod Mapchooser integration.", 0, true, 0.0, true, 1.0);
@@ -75,7 +87,13 @@ void ResetConVars()
 	g_hConVarServerGravity.RestoreDefault();	
 	g_hConVarTFCheapObjects.RestoreDefault();
 	g_hConVarTFFastBuild.RestoreDefault();
+	g_hConVarTFFlamethrowerBurstAmmo.RestoreDefault();
 	g_hConVarTFWeaponSpreads.RestoreDefault();
+	g_hConVarTFParachuteToggle.RestoreDefault();
+	g_hConVarTFParachuteAirControl.RestoreDefault();
+	g_hConVarTFKartDashSpeed.RestoreDefault();
+	g_hConVarTFKartBoostImpactForce.RestoreDefault();
+	g_hConVarTFKartDamageToForce.RestoreDefault();
 	g_hConVarFriendlyFire.RestoreDefault();
 
 	// Debugging: 
@@ -112,6 +130,12 @@ void PrepareConVars()
 
 	g_hConVarTFFastBuild.BoolValue = false;
 	g_hConVarTFWeaponSpreads.BoolValue = true;
+	g_hConVarTFParachuteToggle.BoolValue = false;
+	g_hConVarTFParachuteAirControl.FloatValue = 10.0;
+	g_hConVarTFFlamethrowerBurstAmmo.IntValue = 0;
+	g_hConVarTFKartDashSpeed.IntValue = 2000;
+	g_hConVarTFKartBoostImpactForce.FloatValue = 1.2;
+	g_hConVarTFKartDamageToForce.FloatValue = 500.0;
 
 	g_hConVarServerGravity.IntValue = 800;
 	g_hConVarHostTimescale.FloatValue = 1.0;

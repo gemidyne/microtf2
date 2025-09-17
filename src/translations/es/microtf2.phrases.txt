@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"es"		"Room C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"es"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"es"		"¡LLEGA HASTA EL FINAL!"
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"es"		"¡SALTO DOBLE!"
+		"es"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"es"		"¡NO TOQUES A NADIE!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"es"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"es"		"HEAL A MEDIC!"
+	}
+	"Minigame31_Caption"
+	{
+		"es"		"LAND SAFELY!"
+	}
+	"Minigame32_Caption"
+	{
+		"es"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

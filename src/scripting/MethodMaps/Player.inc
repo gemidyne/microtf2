@@ -54,6 +54,7 @@ methodmap Player __nullable__
         public set(TFClassType value)
         {
             TF2_SetPlayerClass(this.ClientId, value);
+            TF2_RemoveAllWeapons(this.ClientId);
         }
     }
 
@@ -114,7 +115,7 @@ methodmap Player __nullable__
         }
         public set(float value)
         {
-	        SetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed", value);
+            SetEntPropFloat(this.ClientId, Prop_Send, "m_flMaxspeed", value);
         }
     }
 
@@ -264,32 +265,6 @@ methodmap Player __nullable__
         SetEntityGravity(this.ClientId, gravity);
     }
 
-    public void SetHealth(int health)
-    {
-		int maxHealthOffset = FindDataMapInfo(this.ClientId, "m_iMaxHealth");
-		int healthOffset = FindDataMapInfo(this.ClientId, "m_iHealth");
-
-		if (maxHealthOffset == -1 || healthOffset == -1)
-		{
-			SetFailState("Failed to find m_iMaxHealth / m_iHealth on CTFPlayer.");
-		}
-
-		SetEntData(this.ClientId, maxHealthOffset, health, 4, true);
-		SetEntData(this.ClientId, healthOffset, health, 4, true);
-    }
-
-    property int Health 
-    {
-        public get()
-        {
-            return GetClientHealth(this.ClientId);
-        }
-        public set(int value)
-        {
-            this.SetHealth(value);
-        }
-    }
-  
     property int DefaultHealth
     {
         public get() 
@@ -306,6 +281,39 @@ methodmap Player __nullable__
             }
 
             return health;
+        }
+    }
+
+    public void SetHealth(int health)
+    {
+        int maxHealthOffset = FindDataMapInfo(this.ClientId, "m_iMaxHealth");
+        int healthOffset = FindDataMapInfo(this.ClientId, "m_iHealth");
+
+        if (maxHealthOffset == -1 || healthOffset == -1)
+        {
+            SetFailState("Failed to find m_iMaxHealth / m_iHealth on CTFPlayer.");
+        }
+        
+        int maxHealth = health;
+
+        if (health < this.DefaultHealth)
+        {
+            maxHealth = this.DefaultHealth;
+        }
+
+        SetEntData(this.ClientId, maxHealthOffset, maxHealth, 4, true);
+        SetEntData(this.ClientId, healthOffset, health, 4, true);
+    }
+
+    property int Health 
+    {
+        public get()
+        {
+            return GetClientHealth(this.ClientId);
+        }
+        public set(int value)
+        {
+            this.SetHealth(value);
         }
     }
 
@@ -352,6 +360,46 @@ methodmap Player __nullable__
         public set(int value)
         {
             SetEntProp(this.ClientId, Prop_Data, "m_iAmmo", value, 4, 3);
+        }
+    }
+
+    property float ChargeMeter
+    {
+        public get()
+        {
+            return GetEntPropFloat(this.ClientId, Prop_Send, "m_flChargeMeter");
+        }
+
+        public set(float value)
+        {
+            // Float scale: 0.0 = 0%, 100.0 = 100%
+	        SetEntPropFloat(this.ClientId, Prop_Send, "m_flChargeMeter", value);
+        }
+    }
+
+    property float ChargeLevel
+    {
+        public get()
+        {
+            int secondaryWeapon = GetPlayerWeaponSlot(this.ClientId, 1);
+
+            if (IsValidEntity(secondaryWeapon) && HasEntProp(secondaryWeapon, Prop_Send, "m_flChargeLevel"))
+            {
+                return GetEntPropFloat(secondaryWeapon, Prop_Send, "m_flChargeLevel");
+            }
+
+            return 0.0;
+        }
+
+        public set(float value)
+        {
+            int secondaryWeapon = GetPlayerWeaponSlot(this.ClientId, 1);
+
+            if (IsValidEntity(secondaryWeapon) && HasEntProp(secondaryWeapon, Prop_Send, "m_flChargeLevel"))
+            {
+                // Float scale: 0.0 = 0%, 1.0 = 100%
+                SetEntPropFloat(secondaryWeapon, Prop_Send, "m_flChargeLevel", value);
+            }
         }
     }
 
@@ -720,5 +768,20 @@ methodmap Player __nullable__
 
             EmitSoundToClient(this.ClientId, path, SOUND_FROM_PLAYER, SNDCHAN_AUTO, SNDLEVEL_NORMAL, SND_NOFLAGS, SNDVOL_NORMAL, GetSoundMultiplier());
         }
+    }
+
+    public void GetEyeViewAngles(float angles[3])
+    {
+        GetClientEyeAngles(this.ClientId, angles);
+    }
+
+    public void GetEyePosition(float position[3])
+    {
+        GetClientEyePosition(this.ClientId, position);
+    }
+
+    public void GetAbsoluteOrigin(float origin[3])
+    {
+        GetClientAbsOrigin(this.ClientId, origin);
     }
 }

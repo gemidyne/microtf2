@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"en"		"Room C: {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"en"		"REFLECT THE ROCKETS!"
+	}
 	"Minigame1_Caption"
 	{
 		"en"		"GET TO THE END!"
@@ -317,7 +321,7 @@
 	}
 	"Minigame10_KamikazeIsHere"
 	{
-		"en"		"Kamikaze is over here!"
+		"en"		"Sentry Buster is over here!"
 	}
 	"Minigame10_Caption_ExplodeAsMany"
 	{
@@ -325,7 +329,7 @@
 	}
 	"Minigame10_Caption_RunFromKamikaze"
 	{
-		"en"		"RUN FROM THE KAMIKAZE!"
+		"en"		"RUN FROM THE SENTRY BUSTER!"
 	}
 	"Minigame11_Caption_DontStopMoving"
 	{
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"en"		"DOUBLE JUMP!"
+		"en"		"TAUNT KILL!"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"en"		"DON'T TOUCH ANYONE!"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"en"		"EAT A SANDVICH!"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"en"		"HEAL A MEDIC!"
+	}
+	"Minigame31_Caption"
+	{
+		"en"		"LAND SAFELY!"
+	}
+	"Minigame32_Caption"
+	{
+		"en"		"BUMP THEM OFF!"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{
@@ -655,7 +675,7 @@
 	}
 	"SpecialRound11_Description"
 	{
-		"en"		"If you win a microgame, a point is added to your team's score! The team with the most points at the end wins!"
+		"en"		"When you win a microgame, a point will be added to your team's score! The team with the highest score at the end wins!"
 	}
 	"SpecialRound12_Name"
 	{
@@ -708,7 +728,7 @@
 	}
 	"SpecialRound17_Description"
 	{
-		"en"		"If you lose a microgame, you will be knocked out! Last player who hasn't failed wins the round!"
+		"en"		"If you lose a microgame, you will be knocked out! Last player standing wins the round!"
 	}
 	"SpecialRound17_Caption_Full"
 	{
@@ -726,7 +746,7 @@
 	}
 	"SpecialRound18_Description"
 	{
-		"en"		"If you lose a microgame, you will lose ALL your points!"
+		"en"		"If you lose a microgame, your score will reset to 0!"
 	}
 	"SpecialRound19_Name"
 	{
@@ -742,7 +762,7 @@
 	}
 	"SpecialRound20_Description"
 	{
-		"en"		"There's no break in between microgames this round!"
+		"en"		"There's no break between microgames this round!"
 	}
 	"SpecialRound21_Name"
 	{

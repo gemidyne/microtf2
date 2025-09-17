@@ -238,6 +238,10 @@
 		"#format"		"{1:i}"
 		"fr"		"Pièce C : {1}"
 	}
+	"Bossgame9_Caption"
+	{
+		"fr"		"RENVOYEZ LES ROQUETTES !"
+	}
 	"Minigame1_Caption"
 	{
 		"fr"		"REJOIGNEZ L'AUTRE BOUT !"
@@ -453,7 +457,7 @@
 	}
 	"Minigame23_Caption"
 	{
-		"fr"		"DOUBLE SAUT !"
+		"fr"		"TUEZ AVEC UNE RAILLERIE !"
 	}
 	"Minigame24_Caption"
 	{
@@ -510,6 +514,22 @@
 	"Minigame29_Caption"
 	{
 		"fr"		"NE TOUCHEZ PERSONNE !"
+	}
+	"Minigame30_Caption_EatASandvich"
+	{
+		"fr"		"MANGEZ UN SANDVICH !"
+	}
+	"Minigame30_Caption_HealAMedic"
+	{
+		"fr"		"SOIGNEZ UN MEDIC !"
+	}
+	"Minigame31_Caption"
+	{
+		"fr"		"ATTERRISSEZ EN SÉCURITÉ !"
+	}
+	"Minigame32_Caption"
+	{
+		"fr"		"PERCUTEZ-LES !"
 	}
 	"Bossgame7_Caption_TypeTheWords"
 	{

@@ -25,6 +25,13 @@ enum DamageBlockModes
 	EDamageBlockMode_All
 }
 
+enum DamageBlockResults
+{
+	EDamageBlockResult_DoNothing = 0,
+	EDamageBlockResult_AllowDamage,
+	EDamageBlockResult_BlockDamage,
+}
+
 /**
  * Integers
  */

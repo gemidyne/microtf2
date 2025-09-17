@@ -31,13 +31,13 @@
 
 //#define DEBUG
 //#define LOGGING_STARTUP
-#define PLUGIN_VERSION "5.2.13"
+#define PLUGIN_VERSION "6.0.0"
 #define PLUGIN_PREFIX "\x0700FFFF[ \x07FFFF00WarioWare \x0700FFFF] {default}"
 #define PLUGIN_MAPPREFIX "warioware_redux_"
 
 // This needs updated every map release, so you avoid intermittent sound.cache corruption issues.
 // REMEMBER: Don't put a . (dot) in ASSET_VERSION, Source doesn't parse this properly...
-#define ASSET_VERSION "v5_2c"
+#define ASSET_VERSION "v6"
 
 #define MAXIMUM_MINIGAMES 64
 #define SPR_GAMEMODEID 99
@@ -49,8 +49,13 @@
 #include "Header.sp"
 #include "Forwards.sp"
 #include "Sounds.sp"
+#include "MethodMaps/Entity.inc"
 #include "MethodMaps/Player.inc"
+#include "MethodMaps/Particle.inc"
 #include "MethodMaps/Annotation.inc"
+#include "MethodMaps/PathTrack.inc"
+#include "MethodMaps/TrackTrain.inc"
+#include "MethodMaps/DodgeballRocket.inc"
 #include "Weapons.sp"
 #include "Voices.sp"
 #include "ConVars.sp"
@@ -101,6 +106,11 @@ public void OnPluginStart()
 	if (GetExtensionFileStatus("SteamWorks.ext") < 1)
 	{
 		SetFailState("The SteamWorks Extension is not loaded.");
+	}
+
+	if (GetFeatureStatus(FeatureType_Capability, "SDKHook_DmgCustomInOTD") != FeatureStatus_Available)
+	{
+		SetFailState("SDKHooks 2.1+ is required to run this plugin.");
 	}
 
 	LoadTranslations("microtf2.phrases.txt");
@@ -306,7 +316,6 @@ public Action Timer_GameLogic_PrepareForMinigame(Handle timer)
 			player.SetCollisionsEnabled(false);
 			player.SetGodMode(true);
 			player.ResetHealth();
-			player.SetGlow(false);
 			player.SetGravity(1.0);
 
 			SetClientViewEntity(i, i);
@@ -681,9 +690,7 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 						PluginForward_SendPlayerFailedMinigame(player.ClientId, g_iLastPlayedMinigameId);
 					}
 
-					player.SetHealth(1);
-					player.SetGlow(true);
-
+					player.ResetHealth();
 					player.MinigamesLost++;
 
 					if (g_iSpecialRoundId != 12)
@@ -755,8 +762,6 @@ public Action Timer_GameLogic_EndMinigame(Handle timer)
 				}
 				
 				player.ResetHealth();
-				player.SetGlow(true);
-
 				player.Score += g_iWinnerScorePointsAmount;
 				player.MinigamesWon++;
 
@@ -890,16 +895,6 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 	if (g_iSpecialRoundId == 20)
 	{
 		// In Non-stop, speed events should not be announced!
-		for (int i = 1; i <= MaxClients; i++)
-		{
-			Player player = new Player(i);
-
-			if (player.IsValid)
-			{
-				player.SetGlow(false);
-			}
-		}
-
 		CreateTimer(0.0, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
 	else
@@ -915,11 +910,6 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 
 			if (player.IsInGame && !player.IsBot)
 			{
-				if (player.IsValid)
-				{
-					player.SetGlow(false);
-				}
-				
 				if (player.IsUsingLegacyDirectX)
 				{
 					player.DisplayOverlay(OVERLAY_BLANK);
@@ -936,9 +926,21 @@ public Action Timer_GameLogic_SpeedChange(Handle timer)
 				player.PlaySound(g_sGamemodeThemeBgm[g_iActiveGamemodeId][SYSMUSIC_SPEEDUP][selectedBgmIdx]);
 			}
 		}
+		
+		// Emit speed arrow particles in main room
+		SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Start");
+		CreateTimer(duration, Timer_GameLogic_SpeedChangeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
 
 		CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
 	}
+
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_SpeedChangeStopParticle(Handle timer)
+{
+	bool down = g_iSpecialRoundId == 1;
+	SendEntityInput("info_particle_system", down ? "skybox_speeddown_particle" : "skybox_speedup_particle", "Stop");
 
 	return Plugin_Handled;
 }
@@ -959,11 +961,6 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 
 		if (player.IsInGame && !player.IsBot)
 		{
-			if (player.IsValid)
-			{
-				player.SetGlow(false);
-			}
-			
 			if (player.IsUsingLegacyDirectX)
 			{
 				char text[64];
@@ -980,7 +977,21 @@ public Action Timer_GameLogic_BossTime(Handle timer)
 		}
 	}
 
+	if (duration > 0)
+	{
+		// Emit danger particles in main room
+		SendEntityInput("info_particle_system", "skybox_danger_particle", "Start");
+		CreateTimer(duration, Timer_GameLogic_BossTimeStopParticle, _, TIMER_FLAG_NO_MAPCHANGE);
+	}
+
 	CreateTimer(duration, Timer_GameLogic_PrepareForMinigame, _, TIMER_FLAG_NO_MAPCHANGE);
+	return Plugin_Handled;
+}
+
+public Action Timer_GameLogic_BossTimeStopParticle(Handle timer)
+{
+	SendEntityInput("info_particle_system", "skybox_danger_particle", "Stop");
+
 	return Plugin_Handled;
 }
 
